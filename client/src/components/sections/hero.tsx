@@ -25,7 +25,7 @@ export function HeroSection() {
                 size="lg" 
                 className="bg-fresh-green hover:bg-green-600 text-white text-lg px-8 py-4 shadow-lg button-hover"
               >
-                <Heart className="mr-2 h-5 w-5" />
+                <Heart className="mr-2 h-5 w-5 fill-red-500 text-red-500" />
                 Join For FREE
               </Button>
               <Button 
