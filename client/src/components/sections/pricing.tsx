@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { useScrollAnimation } from "@/hooks/use-scroll-animation";
+import { useScrollOpacity } from "@/hooks/use-scroll-animation";
 import { Check, X } from "lucide-react";
 
 const plans = [
@@ -45,16 +45,15 @@ const plans = [
 ];
 
 export function PricingSection() {
-  const { ref, isVisible } = useScrollAnimation();
+  const { ref, opacity } = useScrollOpacity();
 
   return (
     <section id="pricing" className="py-12 bg-gradient-to-br from-yellow-400 via-orange-500 to-red-500">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div 
           ref={ref}
-          className={`text-center mb-16 transition-all duration-700 ${
-            isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-          }`}
+          style={{ opacity }}
+          className="text-center mb-16 transition-opacity duration-100"
         >
           <h2 className="text-3xl lg:text-4xl font-bold text-white mb-6 drop-shadow-lg">
             Choose Your Career Acceleration Plan
@@ -68,9 +67,8 @@ export function PricingSection() {
           {plans.map((plan, index) => (
             <Card 
               key={index}
-              className={`relative transition-all duration-700 delay-${index * 100} ${
-                isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-              } ${plan.popular ? 'gradient-green text-white border-2 border-fresh-green' : 'bg-white border-2 border-gray-200'}`}
+              style={{ opacity }}
+              className={`relative transition-opacity duration-100 ${plan.popular ? 'gradient-green text-white border-2 border-fresh-green' : 'bg-white border-2 border-gray-200'}`}
             >
               {plan.popular && (
                 <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
@@ -132,9 +130,10 @@ export function PricingSection() {
           ))}
         </div>
 
-        <div className={`text-center mt-12 transition-all duration-700 delay-300 ${
-          isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-        }`}>
+        <div 
+          style={{ opacity }}
+          className="text-center mt-12 transition-opacity duration-100"
+        >
           <div className="bg-white/90 border-2 border-navy rounded-lg p-4 max-w-xl mx-auto shadow-lg">
             <h3 className="text-navy text-lg font-bold mb-1">
               30-Day Money-Back Guarantee
