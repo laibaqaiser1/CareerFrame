@@ -119,7 +119,7 @@ export default function Home() {
       <HeroSection />
       <FeaturesSection />
       <HowItWorksSection />
-      <TestimonialsSection />
+
       <PricingSection />
       <FAQSection />
       <NewsletterSection />

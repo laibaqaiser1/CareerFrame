@@ -50,18 +50,25 @@ export function NewsletterSection() {
 
   return (
     <>
-      {/* Partner Logos */}
+      {/* Coming Soon Section */}
       <section className="py-12 bg-light-grey">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-8">
-            <p className="text-soft-grey font-medium">Trusted by professionals at leading companies</p>
+            <p className="text-soft-grey font-medium">Revolutionary AI-powered career guidance launching soon</p>
           </div>
           <div className="flex flex-wrap justify-center items-center gap-8 opacity-60">
-            {['TechCorp', 'DesignStudio', 'Analytics Pro', 'StartupHub', 'InnovateCo'].map((company, index) => (
-              <div key={index} className="bg-gray-300 w-32 h-12 rounded flex items-center justify-center">
-                <span className="text-gray-600 font-semibold">{company}</span>
-              </div>
-            ))}
+            <div className="bg-gray-200 px-6 py-3 rounded-lg">
+              <span className="text-gray-600 font-semibold">AI Career Coach</span>
+            </div>
+            <div className="bg-gray-200 px-6 py-3 rounded-lg">
+              <span className="text-gray-600 font-semibold">Skill Gap Analysis</span>
+            </div>
+            <div className="bg-gray-200 px-6 py-3 rounded-lg">
+              <span className="text-gray-600 font-semibold">Personalized Pathways</span>
+            </div>
+            <div className="bg-gray-200 px-6 py-3 rounded-lg">
+              <span className="text-gray-600 font-semibold">Resume Builder</span>
+            </div>
           </div>
         </div>
       </section>
@@ -94,7 +101,7 @@ export function NewsletterSection() {
                 Ready to Transform Your Career?
               </h3>
               <p className="text-blue-100 text-lg mb-8">
-                Join thousands of professionals who've discovered their dream careers with CareerFrame's AI-powered guidance.
+                Be among the first to experience CareerFrame's revolutionary AI-powered career guidance platform.
               </p>
               
               <div className="flex flex-col sm:flex-row gap-4">

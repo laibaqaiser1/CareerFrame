@@ -238,16 +238,16 @@ export function FeaturesSection() {
                     </p>
                     <div className="flex items-center space-x-6">
                       <div className="text-center">
-                        <div className="text-2xl font-bold">500+</div>
-                        <div className="text-green-200 text-sm">Average XP/Week</div>
+                        <div className="text-2xl font-bold">Build</div>
+                        <div className="text-green-200 text-sm">Your Skills</div>
                       </div>
                       <div className="text-center">
-                        <div className="text-2xl font-bold">50+</div>
-                        <div className="text-green-200 text-sm">Partner Brands</div>
+                        <div className="text-2xl font-bold">Earn</div>
+                        <div className="text-green-200 text-sm">XP Points</div>
                       </div>
                       <div className="text-center">
-                        <div className="text-2xl font-bold">$200</div>
-                        <div className="text-green-200 text-sm">Avg. Savings/Month</div>
+                        <div className="text-2xl font-bold">Unlock</div>
+                        <div className="text-green-200 text-sm">Rewards</div>
                       </div>
                     </div>
                   </div>
