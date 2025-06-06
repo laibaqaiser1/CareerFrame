@@ -59,7 +59,7 @@ export function HowItWorksSection() {
                 )}
               </div>
               <h3 className="text-xl font-semibold text-navy mb-3">{step.title}</h3>
-              <p className="text-soft-grey">{step.description}</p>
+              <p className="text-black">{step.description}</p>
             </div>
           ))}
         </div>
