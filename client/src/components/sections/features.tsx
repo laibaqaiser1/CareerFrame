@@ -134,8 +134,102 @@ export function FeaturesSection() {
   });
   
   const [isPaused, setIsPaused] = useState(false);
+  const [isPuzzleMode, setIsPuzzleMode] = useState(false);
+  const [puzzleCompleted, setPuzzleCompleted] = useState(false);
+  const [showReward, setShowReward] = useState(false);
+  
+  // Correct order for puzzle completion
+  const correctOrder = additionalFeatures.map(feature => feature.title);
+  
+  const checkPuzzleCompletion = (currentGrid) => {
+    const currentOrder = currentGrid.filter(item => item !== null).map(item => item.title);
+    return JSON.stringify(currentOrder) === JSON.stringify(correctOrder);
+  };
+  
+  const handleBoxClick = (clickedIndex) => {
+    if (!isPuzzleMode || puzzleCompleted) return;
+    
+    setGridLayout(currentGrid => {
+      const newGrid = [...currentGrid];
+      const emptySpaces = [];
+      
+      newGrid.forEach((item, index) => {
+        if (item === null) emptySpaces.push(index);
+      });
+      
+      // Check if clicked box is adjacent to empty space
+      const getAdjacent = (pos) => {
+        const row = Math.floor(pos / 3);
+        const col = pos % 3;
+        const adjacent = [];
+        
+        if (row > 0) adjacent.push(pos - 3);
+        if (row < 2) adjacent.push(pos + 3);
+        if (col > 0) adjacent.push(pos - 1);
+        if (col < 2) adjacent.push(pos + 1);
+        
+        return adjacent;
+      };
+      
+      const adjacentToClicked = getAdjacent(clickedIndex);
+      const validMoves = adjacentToClicked.filter(pos => emptySpaces.includes(pos));
+      
+      if (validMoves.length > 0 && newGrid[clickedIndex] !== null) {
+        const targetPos = validMoves[0];
+        newGrid[targetPos] = newGrid[clickedIndex];
+        newGrid[clickedIndex] = null;
+        
+        // Check for completion
+        if (checkPuzzleCompletion(newGrid)) {
+          setPuzzleCompleted(true);
+          setShowReward(true);
+        }
+      }
+      
+      return newGrid;
+    });
+  };
+  
+  const startPuzzleMode = () => {
+    setIsPuzzleMode(true);
+    setIsPaused(true);
+    setPuzzleCompleted(false);
+    setShowReward(false);
+    
+    // Shuffle the grid for puzzle
+    setGridLayout(() => {
+      const shuffled = [...additionalFeatures];
+      for (let i = shuffled.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+      }
+      
+      const puzzleGrid = new Array(9).fill(null);
+      shuffled.forEach((feature, index) => {
+        puzzleGrid[index] = feature;
+      });
+      return puzzleGrid;
+    });
+  };
+  
+  const exitPuzzleMode = () => {
+    setIsPuzzleMode(false);
+    setIsPaused(false);
+    setPuzzleCompleted(false);
+    setShowReward(false);
+    
+    // Reset to original layout
+    setGridLayout(() => {
+      const initialGrid = new Array(9).fill(null);
+      additionalFeatures.forEach((feature, index) => {
+        initialGrid[index] = feature;
+      });
+      return initialGrid;
+    });
+  };
   
   useEffect(() => {
+    if (isPuzzleMode) return; // Don't auto-move in puzzle mode
     const moveBox = () => {
       setGridLayout(currentGrid => {
         const newGrid = [...currentGrid];
@@ -289,10 +383,45 @@ export function FeaturesSection() {
             ))}
           </div>
 
+          {/* Puzzle Controls */}
+          <div className="text-center mb-6">
+            {!isPuzzleMode ? (
+              <Button 
+                onClick={startPuzzleMode}
+                className="bg-fresh-green hover:bg-green-600 text-white px-8 py-3 text-lg font-semibold"
+              >
+                🧩 Try the Puzzle Challenge - Earn 20 XP!
+              </Button>
+            ) : (
+              <div className="space-y-3">
+                <div className="flex items-center justify-center gap-4">
+                  <Button 
+                    onClick={exitPuzzleMode}
+                    variant="outline"
+                    className="border-navy text-navy hover:bg-navy hover:text-white"
+                  >
+                    Exit Puzzle
+                  </Button>
+                  {puzzleCompleted && (
+                    <div className="text-fresh-green font-bold text-lg">
+                      🏆 Puzzle Complete!
+                    </div>
+                  )}
+                </div>
+                <p className="text-soft-grey">
+                  {puzzleCompleted 
+                    ? "Amazing work! You've earned 20 XP!" 
+                    : "Click boxes next to empty spaces to move them. Arrange in original order to win!"
+                  }
+                </p>
+              </div>
+            )}
+          </div>
+
           {/* Additional Features Grid - Organic 3x3 Movement */}
           <div 
             ref={additionalRef}
-            className="grid grid-cols-3 gap-6 max-w-2xl mx-auto p-8 rounded-xl"
+            className="grid grid-cols-3 gap-6 max-w-2xl mx-auto p-8 rounded-xl relative"
             style={{ 
               minHeight: '480px',
               backgroundColor: '#722F37', // Midnight red background
@@ -309,8 +438,9 @@ export function FeaturesSection() {
                   gridArea: `${Math.floor(gridIndex / 3) + 1} / ${(gridIndex % 3) + 1}`,
                   transitionTimingFunction: 'cubic-bezier(0.25, 0.46, 0.45, 0.94)' // Smooth easing
                 }}
-                onMouseEnter={() => setIsPaused(true)}
-                onMouseLeave={() => setIsPaused(false)}
+                onMouseEnter={() => !isPuzzleMode && setIsPaused(true)}
+                onMouseLeave={() => !isPuzzleMode && setIsPaused(false)}
+                onClick={() => handleBoxClick(gridIndex)}
               >
                 {feature && (
                   <Card 
@@ -333,6 +463,42 @@ export function FeaturesSection() {
                 )}
               </div>
             ))}
+            
+            {/* Reward Popup */}
+            {showReward && (
+              <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center rounded-xl">
+                <Card className="bg-white max-w-md mx-4 shadow-2xl">
+                  <CardContent className="p-8 text-center">
+                    <div className="text-6xl mb-4">🎉</div>
+                    <h3 className="text-2xl font-bold text-navy mb-4">
+                      Congratulations!
+                    </h3>
+                    <p className="text-lg text-soft-grey mb-6">
+                      You've earned <span className="font-bold text-fresh-green">20 XP</span> by completing the puzzle!
+                    </p>
+                    <div className="space-y-3">
+                      <Button 
+                        className="w-full bg-fresh-green hover:bg-green-600 text-white py-3 text-lg font-semibold"
+                        onClick={() => {
+                          // Scroll to newsletter signup
+                          document.getElementById('newsletter')?.scrollIntoView({ behavior: 'smooth' });
+                          setShowReward(false);
+                        }}
+                      >
+                        Join for Free to Claim Your Reward
+                      </Button>
+                      <Button 
+                        variant="outline" 
+                        className="w-full"
+                        onClick={() => setShowReward(false)}
+                      >
+                        Close
+                      </Button>
+                    </div>
+                  </CardContent>
+                </Card>
+              </div>
+            )}
           </div>
 
           {/* XP & Rewards Highlight */}
