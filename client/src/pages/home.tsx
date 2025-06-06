@@ -5,6 +5,7 @@ import { HowItWorksSection } from "@/components/sections/how-it-works";
 import { TestimonialsSection } from "@/components/sections/testimonials-new";
 import { PricingSection } from "@/components/sections/pricing";
 import { NewsletterSection } from "@/components/sections/newsletter";
+import { FAQSection } from "@/components/sections/faq";
 import { Footer } from "@/components/sections/footer";
 import { LiveChat } from "@/components/ui/live-chat";
 import { Button } from "@/components/ui/button";
@@ -114,6 +115,7 @@ export default function Home() {
       <HowItWorksSection />
       <TestimonialsSection />
       <PricingSection />
+      <FAQSection />
       <NewsletterSection />
       <Footer />
       <LiveChat />
