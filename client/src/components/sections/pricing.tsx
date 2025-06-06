@@ -8,6 +8,7 @@ const plans = [
   {
     name: "Freemium Plan",
     price: 0,
+    currency: "£",
     description: "Your first steps into CareerFrame - perfect for exploring the basics",
     features: [
       { text: "Personalized Career Coaching", included: true },
@@ -25,6 +26,7 @@ const plans = [
   {
     name: "Premium Plan", 
     price: 29,
+    currency: "£",
     description: "Your career, accelerated - unlock the full power of CareerFrame",
     features: [
       { text: "Everything in Freemium, plus:", included: true },
@@ -84,7 +86,7 @@ export function PricingSection() {
                     {plan.name}
                   </h3>
                   <div className={`text-4xl font-bold mb-4 ${plan.popular ? 'text-white' : 'text-navy'}`}>
-                    ${plan.price}
+                    £{plan.price}
                     <span className={`text-lg font-normal ${plan.popular ? 'opacity-80' : 'text-soft-grey'}`}>
                       /month
                     </span>
@@ -124,12 +126,17 @@ export function PricingSection() {
           ))}
         </div>
 
-        <div className={`text-center mt-8 transition-all duration-700 delay-300 ${
+        <div className={`text-center mt-12 transition-all duration-700 delay-300 ${
           isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
         }`}>
-          <p className="text-soft-grey">
-            30-day money-back guarantee • Cancel anytime • No hidden fees
-          </p>
+          <div className="bg-fresh-green/10 border-2 border-fresh-green rounded-lg p-6 max-w-2xl mx-auto">
+            <h3 className="text-navy text-2xl font-bold mb-2">
+              30-Day Money-Back Guarantee
+            </h3>
+            <p className="text-soft-grey text-lg">
+              Cancel anytime • No hidden fees • Risk-free trial
+            </p>
+          </div>
         </div>
       </div>
     </section>
