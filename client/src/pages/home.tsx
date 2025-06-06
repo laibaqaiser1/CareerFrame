@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { HeroSection } from "@/components/sections/hero";
 import { FeaturesSection } from "@/components/sections/features";
 import { HowItWorksSection } from "@/components/sections/how-it-works";
@@ -13,8 +13,22 @@ import { useScrollReveal } from "@/hooks/use-scroll-animation";
 import careerFrameLogo from "@assets/Logo Clear background.png";
 
 function Navigation() {
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 20);
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   return (
-    <nav className="fixed top-0 w-full bg-white/95 backdrop-blur-sm border-b border-gray-100 z-50">
+    <nav className={`fixed top-0 w-full z-50 nav-scroll ${
+      scrolled 
+        ? 'bg-white/95 backdrop-blur-md shadow-lg border-b border-gray-200' 
+        : 'bg-white/95 backdrop-blur-sm border-b border-gray-100'
+    }`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           <div className="flex items-center">
@@ -50,10 +64,10 @@ function Navigation() {
             <a href="#pricing" className="text-soft-grey hover:text-navy px-3 py-2 text-sm font-medium transition-colors hidden md:block">
               Pricing
             </a>
-            <Button variant="ghost" className="text-soft-grey hover:text-navy">
+            <Button variant="ghost" className="text-soft-grey hover:text-navy button-hover">
               Sign In
             </Button>
-            <Button className="bg-fresh-green hover:bg-green-600 text-white">
+            <Button className="bg-fresh-green hover:bg-green-600 text-white button-hover">
               Join For FREE
             </Button>
           </div>

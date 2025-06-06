@@ -85,7 +85,7 @@ export function NewsletterSection() {
             </h2>
             <Button 
               size="lg" 
-              className="bg-fresh-green hover:bg-green-600 text-white px-12 py-6 text-xl font-semibold"
+              className="bg-fresh-green hover:bg-green-600 text-white px-12 py-6 text-xl font-semibold button-hover"
             >
               <Rocket className="mr-3 h-6 w-6" />
               Join For FREE
@@ -107,7 +107,7 @@ export function NewsletterSection() {
               <div className="flex flex-col sm:flex-row gap-4">
                 <Button 
                   size="lg" 
-                  className="bg-fresh-green hover:bg-green-600 text-white px-8 py-4 flex-1"
+                  className="bg-fresh-green hover:bg-green-600 text-white px-8 py-4 flex-1 button-hover"
                 >
                   <Rocket className="mr-2 h-5 w-5" />
                   Start Your Career Journey
@@ -115,7 +115,7 @@ export function NewsletterSection() {
                 <Button 
                   variant="outline" 
                   size="lg" 
-                  className="border-2 border-white text-white hover:bg-white hover:text-navy px-8 py-4 flex-1"
+                  className="border-2 border-white text-white hover:bg-white hover:text-navy px-8 py-4 flex-1 button-hover"
                 >
                   <Calendar className="mr-2 h-5 w-5" />
                   Book a Demo

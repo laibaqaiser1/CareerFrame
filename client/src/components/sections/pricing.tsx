@@ -106,7 +106,7 @@ export function PricingSection() {
                 </ul>
                 
                 <Button 
-                  className={`w-full py-3 font-semibold transition-all ${
+                  className={`w-full py-3 font-semibold button-hover ${
                     plan.popular 
                       ? 'bg-white text-fresh-green hover:bg-gray-100' 
                       : 'border-2 border-navy text-navy hover:bg-navy hover:text-white'

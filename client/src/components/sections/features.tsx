@@ -142,7 +142,7 @@ export function FeaturesSection() {
             {valueProps.map((prop, index) => (
               <div 
                 key={index}
-                className={`text-center transition-all duration-700 delay-${index * 100} ${
+                className={`text-center transition-all duration-700 card-hover stagger-${index + 1} ${
                   valuePropVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
                 }`}
               >
