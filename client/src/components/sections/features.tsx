@@ -15,13 +15,14 @@ import {
 } from "lucide-react";
 import careerPathwaysImage from "@assets/Screenshot 2025-05-17 182855.png";
 import xpRewardInterface from "@assets/XP & Reward Interface.png";
+import careerChoiceImage from "@assets/East Asian Male Choosing Career.png";
 
 const features = [
   {
     icon: Bot,
     title: "1. Personalized Career Coaching",
     description: "Tailored AI-powered coaching offering personalized advice and action plans to guide your career journey.",
-    image: "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=300",
+    image: "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=300",
     alt: "AI-powered career coaching session",
     cta: "Start Coaching"
   },
@@ -37,17 +38,17 @@ const features = [
     icon: Route,
     title: "3. Tailored Career Pathways",
     description: "Receive a bespoke roadmap with clear milestones and tailored career opportunities based on your goals.",
-    image: careerPathwaysImage,
-    alt: "Professional exploring diverse career paths and opportunities",
+    image: careerChoiceImage,
+    alt: "Professional using VR to explore various career options and paths",
     cta: "Build Pathway"
   },
   {
-    icon: FileText,
-    title: "4. AI-Powered Resume Builder",
-    description: "Generate a professional, optimized resume tailored to the job you're aiming for with AI-driven insights.",
-    image: "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=300",
-    alt: "AI-generated professional resume creation",
-    cta: "Create Resume"
+    icon: Users,
+    title: "4. Industry Specific Networking",
+    description: "Create your own or join groups tailored to your chosen industry—connect with professionals already in the field or others, just like you, who are working toward the same career path.",
+    image: "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=300",
+    alt: "Professional networking groups and industry connections",
+    cta: "Join Network"
   }
 ];
 
@@ -83,9 +84,9 @@ const additionalFeatures = [
     color: "bg-yellow-100 text-yellow-500"
   },
   {
-    icon: Users,
-    title: "10. Team Networking (Freemium & Premium)",
-    description: "Connect with other professionals through team networking groups (Premium: Industry-specific communities).",
+    icon: FileText,
+    title: "10. AI-Powered Resume Builder",
+    description: "Generate a professional, optimized resume tailored to the job you're aiming for with AI-driven insights.",
     color: "bg-pink-100 text-pink-500"
   },
   {
