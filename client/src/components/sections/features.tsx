@@ -126,7 +126,7 @@ export function FeaturesSection() {
   return (
     <>
       {/* Value Proposition */}
-      <section className="py-16 bg-white">
+      <section className="py-16 bg-gradient-to-r from-emerald-400 to-teal-500">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div 
             ref={valuePropRef}
@@ -135,7 +135,7 @@ export function FeaturesSection() {
             <h2 className="text-3xl lg:text-4xl font-bold text-navy mb-6">
               More Than a Job Board - It's Your Complete Career Ecosystem
             </h2>
-            <p className="text-xl text-soft-grey max-w-3xl mx-auto mb-12">
+            <p className="text-xl text-white max-w-3xl mx-auto mb-12 drop-shadow-md">
               We don't just show you what jobs exist. We show you which roles are right for you, and exactly how to get there with AI-powered guidance every step of the way.
             </p>
           </div>
