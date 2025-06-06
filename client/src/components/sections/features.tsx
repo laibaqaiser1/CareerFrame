@@ -14,7 +14,7 @@ import {
   ArrowRight
 } from "lucide-react";
 import careerPathwaysImage from "@assets/Screenshot 2025-05-17 182855.png";
-import { LeaderboardMockup } from "@/components/ui/leaderboard-mockup";
+import xpRewardInterface from "@assets/XP & Reward Interface.png";
 
 const features = [
   {
@@ -254,7 +254,11 @@ export function FeaturesSection() {
                     </div>
                   </div>
                   <div className="text-center">
-                    <LeaderboardMockup />
+                    <img 
+                      src={xpRewardInterface}
+                      alt="CareerFrame XP and Rewards Interface showing team leaderboards and milestone tracking" 
+                      className="rounded-xl mx-auto max-w-full h-auto" 
+                    />
                   </div>
                 </div>
               </CardContent>
