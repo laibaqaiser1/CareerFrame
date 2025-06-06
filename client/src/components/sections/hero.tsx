@@ -5,7 +5,7 @@ import heroImage from "@assets/Picture1.jpg";
 
 export function HeroSection() {
   return (
-    <section className="pt-20 pb-16 bg-gradient-to-br from-purple-400 via-pink-400 to-red-400 overflow-hidden">
+    <section className="pt-20 pb-16 bg-gradient-to-br from-blue-50 to-indigo-50 overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="lg:grid lg:grid-cols-2 lg:gap-12 items-center">
           <motion.div 
@@ -14,10 +14,10 @@ export function HeroSection() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <h1 className="text-4xl lg:text-6xl font-bold text-white mb-6 leading-tight drop-shadow-lg">
-              Imagine Waking Up Excited for a Career That <span className="text-yellow-300 font-extrabold">Truly Fulfils You</span> — We'll Help You Get There
+            <h1 className="text-4xl lg:text-6xl font-bold text-navy mb-6 leading-tight">
+              Imagine Waking Up Excited for a Career That <span className="text-fresh-green">Truly Fulfils You</span> — We'll Help You Get There
             </h1>
-            <p className="text-xl text-white mb-8 leading-relaxed drop-shadow-md">
+            <p className="text-xl text-soft-grey mb-8 leading-relaxed">
               With CareerFrame's personalized coaching, powerful insights, and a clear roadmap, we'll help you unlock your true potential, bridge skill gaps, and step into a career that inspires and drives you every day.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 mb-8">
