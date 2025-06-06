@@ -106,7 +106,7 @@ export function PricingSection() {
                       )}
                       <span className={`${feature.included ? '' : 'text-gray-400'} ${feature.highlight ? 'font-bold text-yellow-400' : ''}`}>
                         {feature.text === "Everything in Freemium, plus:" ? (
-                          <span className="bg-gradient-to-r from-yellow-400 to-orange-600 bg-clip-text text-transparent font-bold">
+                          <span className="bg-gradient-to-r from-yellow-400 to-orange-700 bg-clip-text text-transparent font-bold">
                             Everything in Freemium, plus:
                           </span>
                         ) : (
