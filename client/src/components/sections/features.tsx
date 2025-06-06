@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { useScrollAnimation } from "@/hooks/use-scroll-animation";
+import { useState, useEffect } from "react";
 import { 
   Bot, 
   Search, 
@@ -122,6 +123,26 @@ export function FeaturesSection() {
   const { ref: valuePropRef, isVisible: valuePropVisible } = useScrollAnimation();
   const { ref: featuresRef, isVisible: featuresVisible } = useScrollAnimation();
   const { ref: additionalRef, isVisible: additionalVisible } = useScrollAnimation();
+  
+  // Animated shuffle state for additional features
+  const [shuffledFeatures, setShuffledFeatures] = useState(additionalFeatures);
+  
+  useEffect(() => {
+    const shuffleInterval = setInterval(() => {
+      setShuffledFeatures(prev => {
+        const newOrder = [...prev];
+        // Create a more sophisticated shuffle that uses all 9 grid positions (3x3)
+        // This ensures boxes move to different positions including the extra spaces
+        for (let i = newOrder.length - 1; i > 0; i--) {
+          const j = Math.floor(Math.random() * (i + 1));
+          [newOrder[i], newOrder[j]] = [newOrder[j], newOrder[i]];
+        }
+        return newOrder;
+      });
+    }, 3000); // Shuffle every 3 seconds
+    
+    return () => clearInterval(shuffleInterval);
+  }, []);
 
   return (
     <>
@@ -206,26 +227,34 @@ export function FeaturesSection() {
             ))}
           </div>
 
-          {/* Additional Features Grid */}
+          {/* Additional Features Grid - Animated Shuffle */}
           <div 
             ref={additionalRef}
-            className="grid md:grid-cols-2 lg:grid-cols-3 gap-6"
+            className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 min-h-[400px]"
           >
-            {additionalFeatures.map((feature, index) => (
+            {shuffledFeatures.map((feature, index) => (
               <Card 
-                key={index}
-                className={`bg-white shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-500 delay-${index * 50} ${
+                key={feature.title} // Use title as key to maintain component identity during shuffles
+                className={`bg-white shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-1000 ease-in-out delay-${index * 50} ${
                   additionalVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
                 }`}
+                style={{
+                  transitionProperty: 'all, transform, opacity',
+                  transitionDuration: '1000ms, 1000ms, 500ms'
+                }}
               >
                 <CardContent className="p-5">
-                  <div className={`w-10 h-10 ${feature.color} rounded-lg flex items-center justify-center mb-3`}>
+                  <div className={`w-10 h-10 ${feature.color} rounded-lg flex items-center justify-center mb-3 transition-colors duration-500`}>
                     <feature.icon className="h-5 w-5" />
                   </div>
                   <h4 className="text-base font-semibold text-navy mb-2">{feature.title}</h4>
                   <p className="text-sm text-soft-grey">{feature.description}</p>
                 </CardContent>
               </Card>
+            ))}
+            {/* Add empty grid cells to create the visual effect of boxes moving to "empty" spaces */}
+            {Array.from({ length: 9 - shuffledFeatures.length }).map((_, index) => (
+              <div key={`empty-${index}`} className="invisible" />
             ))}
           </div>
 
