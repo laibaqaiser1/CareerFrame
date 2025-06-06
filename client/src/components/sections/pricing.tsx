@@ -29,15 +29,15 @@ const plans = [
     currency: "£",
     description: "Your career, accelerated - unlock the full power of CareerFrame",
     features: [
-      { text: "Everything in Freemium, plus:", included: true },
-      { text: "Tailored Career Pathways (Full Access)", included: true },
+      { text: "Everything in Freemium, plus:", included: true, highlight: true },
+      { text: "Tailored Career Pathways", included: true },
       { text: "Deep Skill Gap Analysis", included: true },
       { text: "Unlimited AI CV & Cover Letters", included: true },
       { text: "Explore Roles (Unlimited)", included: true },
       { text: "Full Team Leaderboard Access", included: true },
       { text: "Industry-Specific Team Networking", included: true },
-      { text: "XP Points (Double Rate)", included: true },
-      { text: "Career Alignment & Role Insights (Full Detail)", included: true }
+      { text: "Double XP", included: true },
+      { text: "Career Alignment & Role Insights", included: true }
     ],
     cta: "Get Started",
     popular: true
@@ -104,7 +104,7 @@ export function PricingSection() {
                       ) : (
                         <X className="mr-3 h-5 w-5 text-gray-400" />
                       )}
-                      <span className={feature.included ? '' : 'text-gray-400'}>
+                      <span className={`${feature.included ? '' : 'text-gray-400'} ${feature.highlight ? 'font-bold text-yellow-300 bg-yellow-500/20 px-2 py-1 rounded' : ''}`}>
                         {feature.text}
                       </span>
                     </li>
