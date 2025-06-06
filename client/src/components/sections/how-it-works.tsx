@@ -28,7 +28,7 @@ export function HowItWorksSection() {
   const { ref, isVisible } = useScrollAnimation();
 
   return (
-    <section id="how-it-works" className="py-20 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500">
+    <section id="how-it-works" className="py-20 bg-gradient-to-r from-yellow-300 via-orange-400 to-red-500">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div 
           ref={ref}
