@@ -287,7 +287,10 @@ export function FeaturesSection() {
   
   useEffect(() => {
     if (isPuzzleMode) return; // Don't auto-move in puzzle mode
+    
     const moveBox = () => {
+      if (isPuzzleMode || isPaused) return; // Double check to prevent movement
+      
       setGridLayout(currentGrid => {
         const newGrid = [...currentGrid];
         const emptySpaces = [];
@@ -342,20 +345,29 @@ export function FeaturesSection() {
       });
     };
     
-    // Start movement after initial render, then continue at random intervals
+    let timeoutId;
+    
     const startMovement = () => {
       const move = () => {
-        if (!isPaused) {
+        if (!isPuzzleMode && !isPaused) {
           moveBox();
         }
-        // Schedule next move with random delay between 4-8 seconds for slower movement
-        setTimeout(move, 4000 + Math.random() * 4000);
+        // Only schedule next move if not in puzzle mode
+        if (!isPuzzleMode) {
+          timeoutId = setTimeout(move, 4000 + Math.random() * 4000);
+        }
       };
-      setTimeout(move, 2000); // Initial delay
+      timeoutId = setTimeout(move, 2000); // Initial delay
     };
     
     startMovement();
-  }, []);
+    
+    return () => {
+      if (timeoutId) {
+        clearTimeout(timeoutId);
+      }
+    };
+  }, [isPuzzleMode, isPaused]);
 
   return (
     <>
