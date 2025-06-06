@@ -43,31 +43,40 @@ export function useScrollOpacity() {
       const rect = element.getBoundingClientRect();
       const windowHeight = window.innerHeight;
       
-      // Calculate how much of the element is visible
+      // Calculate precise visibility percentage
       const elementTop = rect.top;
       const elementBottom = rect.bottom;
       const elementHeight = rect.height;
       
-      // Determine visible portion
       let visibleHeight = 0;
       
-      if (elementTop <= 0 && elementBottom >= windowHeight) {
+      // Calculate visible portion more precisely
+      if (elementBottom <= 0 || elementTop >= windowHeight) {
+        // Element is completely outside viewport
+        visibleHeight = 0;
+      } else if (elementTop <= 0 && elementBottom >= windowHeight) {
         // Element is larger than viewport and spans entire screen
         visibleHeight = windowHeight;
-      } else if (elementTop <= 0 && elementBottom > 0) {
-        // Element starts above viewport but is partially visible
+      } else if (elementTop <= 0) {
+        // Element starts above viewport but is partially visible from top
         visibleHeight = elementBottom;
-      } else if (elementTop < windowHeight && elementBottom >= windowHeight) {
+      } else if (elementBottom >= windowHeight) {
         // Element starts in viewport but extends below
         visibleHeight = windowHeight - elementTop;
-      } else if (elementTop >= 0 && elementBottom <= windowHeight) {
+      } else {
         // Element is completely within viewport
         visibleHeight = elementHeight;
       }
       
-      // Calculate opacity based on visibility percentage
-      const visibilityRatio = Math.min(visibleHeight / Math.min(elementHeight, windowHeight), 1);
-      const newOpacity = Math.max(0, Math.min(1, visibilityRatio));
+      // Calculate exact visibility percentage (0% to 100%)
+      const totalPossibleVisible = Math.min(elementHeight, windowHeight);
+      let visibilityPercentage = totalPossibleVisible > 0 ? (visibleHeight / totalPossibleVisible) : 0;
+      
+      // Ensure percentage is between 0 and 1
+      visibilityPercentage = Math.max(0, Math.min(1, visibilityPercentage));
+      
+      // Convert to opacity: 0% visible = 0 opacity, 1% visible = 0.01 opacity, 100% visible = 1 opacity
+      const newOpacity = visibilityPercentage;
       
       setOpacity(newOpacity);
     };

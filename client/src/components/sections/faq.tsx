@@ -1,6 +1,6 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
-import { useScrollAnimation } from "@/hooks/use-scroll-animation";
+import { useScrollOpacity } from "@/hooks/use-scroll-animation";
 import { Play } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
@@ -28,16 +28,15 @@ const faqs = [
 ];
 
 export function FAQSection() {
-  const { ref, isVisible } = useScrollAnimation();
+  const { ref, opacity } = useScrollOpacity();
 
   return (
     <section className="py-20 bg-light-grey">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <div 
           ref={ref}
-          className={`text-center mb-16 transition-all duration-700 ${
-            isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-          }`}
+          style={{ opacity }}
+          className="text-center mb-16 transition-opacity duration-100"
         >
           <h2 className="text-3xl lg:text-4xl font-bold text-navy mb-6">
             FAQs
@@ -47,9 +46,10 @@ export function FAQSection() {
           </p>
         </div>
 
-        <div className={`transition-all duration-700 delay-200 ${
-          isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-        }`}>
+        <div 
+          style={{ opacity }}
+          className="transition-opacity duration-100"
+        >
           <Card className="bg-white shadow-lg">
             <CardContent className="p-8">
               <Accordion type="single" collapsible className="space-y-4">
@@ -69,9 +69,10 @@ export function FAQSection() {
         </div>
 
         {/* Video Links Section */}
-        <div className={`mt-12 text-center transition-all duration-700 delay-400 ${
-          isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-        }`}>
+        <div 
+          style={{ opacity }}
+          className="mt-12 text-center transition-opacity duration-100"
+        >
           <h3 className="text-2xl font-bold text-navy mb-6">Learn More About CareerFrame</h3>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button 
