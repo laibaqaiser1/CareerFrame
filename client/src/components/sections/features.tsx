@@ -194,7 +194,7 @@ export function FeaturesSection() {
                   <img 
                     src={feature.image}
                     alt={feature.alt}
-                    className="rounded-lg w-full h-48 object-cover mb-4" 
+                    className="rounded-lg w-full h-48 object-cover object-top mb-4" 
                   />
                   <Button variant="link" className="text-fresh-green p-0 h-auto font-semibold">
                     {feature.cta} <ArrowRight className="ml-1 h-4 w-4" />
