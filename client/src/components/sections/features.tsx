@@ -490,9 +490,9 @@ export function FeaturesSection() {
           {/* Additional Features Grid - Organic 3x3 Movement */}
           <div 
             ref={additionalRef}
-            className="grid grid-cols-3 gap-6 max-w-2xl mx-auto p-8 rounded-xl relative"
+            className="grid grid-cols-3 gap-8 max-w-4xl mx-auto p-6 rounded-xl relative"
             style={{ 
-              minHeight: '480px',
+              minHeight: '320px',
               backgroundColor: '#722F37', // Midnight red background
               border: '2px solid #5a1e23'
             }}
