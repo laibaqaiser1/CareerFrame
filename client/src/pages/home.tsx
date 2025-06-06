@@ -10,7 +10,7 @@ import { Footer } from "@/components/sections/footer";
 import { LiveChat } from "@/components/ui/live-chat";
 import { Button } from "@/components/ui/button";
 import { useScrollReveal } from "@/hooks/use-scroll-animation";
-import careerFrameLogo from "@assets/download.png";
+import careerFrameLogo from "@assets/Logo Clear background.png";
 
 function Navigation() {
   return (

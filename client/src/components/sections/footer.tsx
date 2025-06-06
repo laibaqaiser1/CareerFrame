@@ -1,5 +1,5 @@
 import { Twitter, Linkedin, Facebook } from "lucide-react";
-import careerFrameLogo from "@assets/download.png";
+import careerFrameLogo from "@assets/Logo Clear background.png";
 
 const footerSections = [
   {
