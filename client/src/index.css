@@ -64,7 +64,7 @@
   
   html {
     scroll-behavior: smooth;
-    scroll-padding-top: 80px; /* Account for fixed navigation */
+    scroll-padding-top: 120px; /* Account for fixed navigation */
   }
 
   /* Page transition animations */

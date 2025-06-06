@@ -40,16 +40,19 @@ function Navigation() {
               />
               <span className="text-2xl font-bold text-navy">CareerFrame</span>
             </div>
-            <div className="hidden md:block ml-10">
+            <div className="hidden md:block ml-20">
               <div className="flex items-baseline space-x-8">
-                <a href="#features" className="text-soft-grey hover:text-navy px-3 py-2 text-sm font-medium transition-colors">
-                  Features
+                <a href="#features" className="text-soft-grey hover:text-navy px-3 py-2 text-sm font-medium transition-all duration-300 hover:scale-105 hover:shadow-lg relative group">
+                  <span className="relative z-10">Features</span>
+                  <div className="absolute inset-0 bg-fresh-green/10 rounded-lg scale-0 group-hover:scale-100 transition-transform duration-300"></div>
                 </a>
-                <a href="#how-it-works" className="text-soft-grey hover:text-navy px-3 py-2 text-sm font-medium transition-colors">
-                  How it Works
+                <a href="#how-it-works" className="text-soft-grey hover:text-navy px-3 py-2 text-sm font-medium transition-all duration-300 hover:scale-105 hover:shadow-lg relative group">
+                  <span className="relative z-10">How it Works</span>
+                  <div className="absolute inset-0 bg-fresh-green/10 rounded-lg scale-0 group-hover:scale-100 transition-transform duration-300"></div>
                 </a>
-                <a href="#pricing" className="text-soft-grey hover:text-navy px-3 py-2 text-sm font-medium transition-colors">
-                  Pricing
+                <a href="#pricing" className="text-soft-grey hover:text-navy px-3 py-2 text-sm font-medium transition-all duration-300 hover:scale-105 hover:shadow-lg relative group">
+                  <span className="relative z-10">Pricing</span>
+                  <div className="absolute inset-0 bg-fresh-green/10 rounded-lg scale-0 group-hover:scale-100 transition-transform duration-300"></div>
                 </a>
 
               </div>
