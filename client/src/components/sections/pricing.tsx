@@ -33,7 +33,7 @@ const plans = [
       { text: "Priority community support", included: true },
       { text: "XP rewards & partner discounts", included: true }
     ],
-    cta: "Start 7-Day Free Trial",
+    cta: "Get Started",
     popular: true
   }
 ];
@@ -123,14 +123,9 @@ export function PricingSection() {
         <div className={`text-center mt-8 transition-all duration-700 delay-300 ${
           isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
         }`}>
-          <div className="bg-white rounded-lg p-6 shadow-md border-2 border-fresh-green/20">
-            <p className="text-navy text-xl font-bold mb-2">
-              30-Day Money-Back Guarantee
-            </p>
-            <p className="text-soft-grey text-sm">
-              Cancel anytime • No hidden fees • Risk-free trial
-            </p>
-          </div>
+          <p className="text-soft-grey">
+            30-day money-back guarantee • Cancel anytime • No hidden fees
+          </p>
         </div>
       </div>
     </section>
