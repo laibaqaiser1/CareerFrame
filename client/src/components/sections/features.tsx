@@ -133,6 +133,8 @@ export function FeaturesSection() {
     return initialGrid;
   });
   
+  const [isPaused, setIsPaused] = useState(false);
+  
   useEffect(() => {
     const moveBox = () => {
       setGridLayout(currentGrid => {
@@ -192,11 +194,13 @@ export function FeaturesSection() {
     // Start movement after initial render, then continue at random intervals
     const startMovement = () => {
       const move = () => {
-        moveBox();
-        // Schedule next move with random delay between 2-5 seconds
-        setTimeout(move, 2000 + Math.random() * 3000);
+        if (!isPaused) {
+          moveBox();
+        }
+        // Schedule next move with random delay between 4-8 seconds for slower movement
+        setTimeout(move, 4000 + Math.random() * 4000);
       };
-      setTimeout(move, 1000); // Initial delay
+      setTimeout(move, 2000); // Initial delay
     };
     
     startMovement();
@@ -288,31 +292,38 @@ export function FeaturesSection() {
           {/* Additional Features Grid - Organic 3x3 Movement */}
           <div 
             ref={additionalRef}
-            className="grid grid-cols-3 gap-6 max-w-2xl mx-auto"
-            style={{ minHeight: '480px' }}
+            className="grid grid-cols-3 gap-6 max-w-2xl mx-auto p-8 rounded-xl"
+            style={{ 
+              minHeight: '480px',
+              backgroundColor: '#722F37', // Midnight red background
+              border: '2px solid #5a1e23'
+            }}
           >
             {gridLayout.map((feature, gridIndex) => (
               <div
                 key={gridIndex}
-                className={`transition-all duration-1000 ease-out ${
+                className={`transition-all duration-[2500ms] ease-out ${
                   additionalVisible ? 'opacity-100' : 'opacity-0'
                 }`}
                 style={{
                   gridArea: `${Math.floor(gridIndex / 3) + 1} / ${(gridIndex % 3) + 1}`,
+                  transitionTimingFunction: 'cubic-bezier(0.25, 0.46, 0.45, 0.94)' // Smooth easing
                 }}
+                onMouseEnter={() => setIsPaused(true)}
+                onMouseLeave={() => setIsPaused(false)}
               >
                 {feature && (
                   <Card 
-                    className="bg-white shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-700 ease-out h-full"
+                    className="bg-white shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-[2500ms] ease-out h-full cursor-pointer"
                     style={{
                       transform: 'scale(1)',
                       transitionProperty: 'all, box-shadow, transform',
-                      transitionDuration: '1200ms',
-                      transitionTimingFunction: 'cubic-bezier(0.4, 0, 0.2, 1)'
+                      transitionDuration: '2500ms', // Much slower transitions
+                      transitionTimingFunction: 'cubic-bezier(0.25, 0.46, 0.45, 0.94)'
                     }}
                   >
                     <CardContent className="p-5 h-full flex flex-col">
-                      <div className={`w-10 h-10 ${feature.color} rounded-lg flex items-center justify-center mb-3 transition-all duration-500`}>
+                      <div className={`w-10 h-10 ${feature.color} rounded-lg flex items-center justify-center mb-3 transition-all duration-700`}>
                         <feature.icon className="h-5 w-5" />
                       </div>
                       <h4 className="text-base font-semibold text-navy mb-2">{feature.title}</h4>
