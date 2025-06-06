@@ -352,9 +352,9 @@ export function FeaturesSection() {
         if (!isPuzzleMode && !isPaused) {
           moveBox();
         }
-        // Only schedule next move if not in puzzle mode - much slower intervals
+        // Only schedule next move if not in puzzle mode - faster intervals
         if (!isPuzzleMode) {
-          timeoutId = setTimeout(move, 8000 + Math.random() * 7000); // 8-15 seconds between moves
+          timeoutId = setTimeout(move, 2000 + Math.random() * 2000); // 2-4 seconds between moves
         }
       };
       timeoutId = setTimeout(move, 2000); // Initial delay
@@ -500,7 +500,7 @@ export function FeaturesSection() {
             {gridLayout.map((feature, gridIndex) => (
               <div
                 key={gridIndex}
-                className={`transition-all ${isPuzzleMode ? 'duration-500' : 'duration-[4000ms]'} ease-out ${
+                className={`transition-all ${isPuzzleMode ? 'duration-[3000ms]' : 'duration-[4000ms]'} ease-out ${
                   additionalVisible ? 'opacity-100' : 'opacity-0'
                 } ${isPuzzleMode && !feature ? 'border-2 border-dashed border-white border-opacity-30 rounded-lg' : ''}`}
                 style={{
@@ -516,14 +516,14 @@ export function FeaturesSection() {
                 {feature && (
                   <Card 
                     className={`bg-white shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all ${
-                      isPuzzleMode ? 'duration-500' : 'duration-[4000ms]'
+                      isPuzzleMode ? 'duration-[3000ms]' : 'duration-[4000ms]'
                     } ease-out h-full ${
                       isPuzzleMode ? 'cursor-grab active:cursor-grabbing' : 'cursor-pointer'
                     }`}
                     style={{
                       transform: 'scale(1)',
                       transitionProperty: 'all, box-shadow, transform',
-                      transitionDuration: isPuzzleMode ? '500ms' : '4000ms', // Very slow for auto-movement, fast for puzzle
+                      transitionDuration: isPuzzleMode ? '3000ms' : '4000ms', // 3s for puzzle, 4s for auto-movement
                       transitionTimingFunction: isPuzzleMode ? 'cubic-bezier(0.25, 0.46, 0.45, 0.94)' : 'cubic-bezier(0.165, 0.84, 0.44, 1)'
                     }}
                     draggable={isPuzzleMode && !puzzleCompleted}
