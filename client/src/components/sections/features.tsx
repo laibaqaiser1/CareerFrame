@@ -1,7 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { useScrollAnimation } from "@/hooks/use-scroll-animation";
-import { useState, useEffect } from "react";
 import { 
   Bot, 
   Search, 
@@ -123,251 +122,6 @@ export function FeaturesSection() {
   const { ref: valuePropRef, isVisible: valuePropVisible } = useScrollAnimation();
   const { ref: featuresRef, isVisible: featuresVisible } = useScrollAnimation();
   const { ref: additionalRef, isVisible: additionalVisible } = useScrollAnimation();
-  
-  // Animated grid state - 3x3 grid with 7 boxes and 2 empty spaces
-  const [gridLayout, setGridLayout] = useState(() => {
-    const initialGrid = new Array(9).fill(null);
-    additionalFeatures.forEach((feature, index) => {
-      initialGrid[index] = feature;
-    });
-    return initialGrid;
-  });
-  
-  const [isPaused, setIsPaused] = useState(false);
-  const [isPuzzleMode, setIsPuzzleMode] = useState(false);
-  const [puzzleCompleted, setPuzzleCompleted] = useState(false);
-  const [showReward, setShowReward] = useState(false);
-  const [draggedItem, setDraggedItem] = useState(null);
-  const [draggedIndex, setDraggedIndex] = useState(null);
-  
-  // Correct order for puzzle completion
-  const correctOrder = additionalFeatures.map(feature => feature.title);
-  
-  const checkPuzzleCompletion = (currentGrid) => {
-    const currentOrder = currentGrid.filter(item => item !== null).map(item => item.title);
-    return JSON.stringify(currentOrder) === JSON.stringify(correctOrder);
-  };
-  
-  const handleBoxClick = (clickedIndex) => {
-    if (!isPuzzleMode || puzzleCompleted) return;
-    
-    setGridLayout(currentGrid => {
-      const newGrid = [...currentGrid];
-      const emptySpaces = [];
-      
-      newGrid.forEach((item, index) => {
-        if (item === null) emptySpaces.push(index);
-      });
-      
-      // Check if clicked box is adjacent to empty space
-      const getAdjacent = (pos) => {
-        const row = Math.floor(pos / 3);
-        const col = pos % 3;
-        const adjacent = [];
-        
-        if (row > 0) adjacent.push(pos - 3);
-        if (row < 2) adjacent.push(pos + 3);
-        if (col > 0) adjacent.push(pos - 1);
-        if (col < 2) adjacent.push(pos + 1);
-        
-        return adjacent;
-      };
-      
-      const adjacentToClicked = getAdjacent(clickedIndex);
-      const validMoves = adjacentToClicked.filter(pos => emptySpaces.includes(pos));
-      
-      if (validMoves.length > 0 && newGrid[clickedIndex] !== null) {
-        const targetPos = validMoves[0];
-        newGrid[targetPos] = newGrid[clickedIndex];
-        newGrid[clickedIndex] = null;
-        
-        // Check for completion
-        if (checkPuzzleCompletion(newGrid)) {
-          setPuzzleCompleted(true);
-          setShowReward(true);
-        }
-      }
-      
-      return newGrid;
-    });
-  };
-  
-  const handleDragStart = (e, feature, index) => {
-    if (!isPuzzleMode || puzzleCompleted) return;
-    setDraggedItem(feature);
-    setDraggedIndex(index);
-    e.dataTransfer.effectAllowed = 'move';
-  };
-
-  const handleDragOver = (e) => {
-    e.preventDefault();
-    e.dataTransfer.dropEffect = 'move';
-  };
-
-  const handleDrop = (e, dropIndex) => {
-    e.preventDefault();
-    if (!isPuzzleMode || !draggedItem || draggedIndex === null) return;
-
-    const sourceIndex = draggedIndex;
-    
-    // Check if target position is empty or adjacent to source
-    if (gridLayout[dropIndex] !== null) return;
-    
-    const getAdjacent = (pos) => {
-      const row = Math.floor(pos / 3);
-      const col = pos % 3;
-      const adjacent = [];
-      
-      if (row > 0) adjacent.push(pos - 3);
-      if (row < 2) adjacent.push(pos + 3);
-      if (col > 0) adjacent.push(pos - 1);
-      if (col < 2) adjacent.push(pos + 1);
-      
-      return adjacent;
-    };
-
-    const adjacentPositions = getAdjacent(sourceIndex);
-    if (!adjacentPositions.includes(dropIndex)) return;
-
-    setGridLayout(currentGrid => {
-      const newGrid = [...currentGrid];
-      newGrid[dropIndex] = draggedItem;
-      newGrid[sourceIndex] = null;
-      
-      // Check for completion
-      if (checkPuzzleCompletion(newGrid)) {
-        setPuzzleCompleted(true);
-        setShowReward(true);
-      }
-      
-      return newGrid;
-    });
-
-    setDraggedItem(null);
-    setDraggedIndex(null);
-  };
-
-  const startPuzzleMode = () => {
-    setIsPuzzleMode(true);
-    setIsPaused(true); // This will stop automatic movement
-    setPuzzleCompleted(false);
-    setShowReward(false);
-    
-    // Shuffle the grid for puzzle
-    setGridLayout(() => {
-      const shuffled = [...additionalFeatures];
-      for (let i = shuffled.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1));
-        [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
-      }
-      
-      const puzzleGrid = new Array(9).fill(null);
-      shuffled.forEach((feature, index) => {
-        puzzleGrid[index] = feature;
-      });
-      return puzzleGrid;
-    });
-  };
-  
-  const exitPuzzleMode = () => {
-    setIsPuzzleMode(false);
-    setIsPaused(false);
-    setPuzzleCompleted(false);
-    setShowReward(false);
-    
-    // Reset to original layout
-    setGridLayout(() => {
-      const initialGrid = new Array(9).fill(null);
-      additionalFeatures.forEach((feature, index) => {
-        initialGrid[index] = feature;
-      });
-      return initialGrid;
-    });
-  };
-  
-  useEffect(() => {
-    if (isPuzzleMode) return; // Don't auto-move in puzzle mode
-    
-    const moveBox = () => {
-      if (isPuzzleMode || isPaused) return; // Double check to prevent movement
-      
-      setGridLayout(currentGrid => {
-        const newGrid = [...currentGrid];
-        const emptySpaces = [];
-        const filledSpaces = [];
-        
-        // Find empty and filled positions
-        newGrid.forEach((item, index) => {
-          if (item === null) {
-            emptySpaces.push(index);
-          } else {
-            filledSpaces.push(index);
-          }
-        });
-        
-        if (emptySpaces.length === 0 || filledSpaces.length === 0) return currentGrid;
-        
-        // Find boxes that can move to adjacent empty spaces
-        const getAdjacent = (pos) => {
-          const row = Math.floor(pos / 3);
-          const col = pos % 3;
-          const adjacent = [];
-          
-          // Check all 4 directions
-          if (row > 0) adjacent.push(pos - 3); // up
-          if (row < 2) adjacent.push(pos + 3); // down
-          if (col > 0) adjacent.push(pos - 1); // left
-          if (col < 2) adjacent.push(pos + 1); // right
-          
-          return adjacent;
-        };
-        
-        const movableBoxes = [];
-        filledSpaces.forEach(boxPos => {
-          const adjacentPositions = getAdjacent(boxPos);
-          const canMoveTo = adjacentPositions.filter(pos => emptySpaces.includes(pos));
-          if (canMoveTo.length > 0) {
-            movableBoxes.push({ from: boxPos, to: canMoveTo });
-          }
-        });
-        
-        if (movableBoxes.length === 0) return currentGrid;
-        
-        // Randomly select a box to move
-        const selectedBox = movableBoxes[Math.floor(Math.random() * movableBoxes.length)];
-        const targetPosition = selectedBox.to[Math.floor(Math.random() * selectedBox.to.length)];
-        
-        // Move the box
-        newGrid[targetPosition] = newGrid[selectedBox.from];
-        newGrid[selectedBox.from] = null;
-        
-        return newGrid;
-      });
-    };
-    
-    let timeoutId;
-    
-    const startMovement = () => {
-      const move = () => {
-        if (!isPuzzleMode && !isPaused) {
-          moveBox();
-        }
-        // Only schedule next move if not in puzzle mode - faster intervals
-        if (!isPuzzleMode) {
-          timeoutId = setTimeout(move, 2000 + Math.random() * 2000); // 2-4 seconds between moves
-        }
-      };
-      timeoutId = setTimeout(move, 2000); // Initial delay
-    };
-    
-    startMovement();
-    
-    return () => {
-      if (timeoutId) {
-        clearTimeout(timeoutId);
-      }
-    };
-  }, [isPuzzleMode, isPaused]);
 
   return (
     <>
@@ -452,130 +206,27 @@ export function FeaturesSection() {
             ))}
           </div>
 
-          {/* Puzzle Controls */}
-          <div className="text-center mb-6">
-            {!isPuzzleMode ? (
-              <Button 
-                onClick={startPuzzleMode}
-                className="bg-fresh-green hover:bg-green-600 text-white px-8 py-3 text-lg font-semibold"
-              >
-                🧩 Try the Puzzle Challenge - Earn 20 XP!
-              </Button>
-            ) : (
-              <div className="space-y-3">
-                <div className="flex items-center justify-center gap-4">
-                  <Button 
-                    onClick={exitPuzzleMode}
-                    variant="outline"
-                    className="border-navy text-navy hover:bg-navy hover:text-white"
-                  >
-                    Exit Puzzle
-                  </Button>
-                  {puzzleCompleted && (
-                    <div className="text-fresh-green font-bold text-lg">
-                      🏆 Puzzle Complete!
-                    </div>
-                  )}
-                </div>
-                <p className="text-soft-grey">
-                  {puzzleCompleted 
-                    ? "Amazing work! You've earned 20 XP!" 
-                    : "Drag boxes to empty spaces next to them. Arrange in original order to win!"
-                  }
-                </p>
-              </div>
-            )}
-          </div>
-
-          {/* Additional Features Grid - Organic 3x3 Movement */}
+          {/* Additional Features Grid */}
           <div 
             ref={additionalRef}
-            className="grid grid-cols-3 gap-8 max-w-4xl mx-auto p-6 rounded-xl relative"
-            style={{ 
-              minHeight: '320px',
-              backgroundColor: '#722F37', // Midnight red background
-              border: '2px solid #5a1e23'
-            }}
+            className="grid md:grid-cols-2 lg:grid-cols-3 gap-6"
           >
-            {gridLayout.map((feature, gridIndex) => (
-              <div
-                key={gridIndex}
-                className={`transition-all ${isPuzzleMode ? 'duration-[3000ms]' : 'duration-[4000ms]'} ease-out ${
-                  additionalVisible ? 'opacity-100' : 'opacity-0'
-                } ${isPuzzleMode && !feature ? 'border-2 border-dashed border-white border-opacity-30 rounded-lg' : ''}`}
-                style={{
-                  gridArea: `${Math.floor(gridIndex / 3) + 1} / ${(gridIndex % 3) + 1}`,
-                  transitionTimingFunction: isPuzzleMode ? 'cubic-bezier(0.25, 0.46, 0.45, 0.94)' : 'cubic-bezier(0.165, 0.84, 0.44, 1)' // Very smooth, slow easing for auto-movement
-                }}
-                onMouseEnter={() => !isPuzzleMode && setIsPaused(true)}
-                onMouseLeave={() => !isPuzzleMode && setIsPaused(false)}
-                onClick={() => handleBoxClick(gridIndex)}
-                onDragOver={handleDragOver}
-                onDrop={(e) => handleDrop(e, gridIndex)}
+            {additionalFeatures.map((feature, index) => (
+              <Card 
+                key={index}
+                className={`bg-white shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-500 delay-${index * 50} ${
+                  additionalVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+                }`}
               >
-                {feature && (
-                  <Card 
-                    className={`bg-white shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all ${
-                      isPuzzleMode ? 'duration-[3000ms]' : 'duration-[4000ms]'
-                    } ease-out h-full ${
-                      isPuzzleMode ? 'cursor-grab active:cursor-grabbing' : 'cursor-pointer'
-                    }`}
-                    style={{
-                      transform: 'scale(1)',
-                      transitionProperty: 'all, box-shadow, transform',
-                      transitionDuration: isPuzzleMode ? '3000ms' : '4000ms', // 3s for puzzle, 4s for auto-movement
-                      transitionTimingFunction: isPuzzleMode ? 'cubic-bezier(0.25, 0.46, 0.45, 0.94)' : 'cubic-bezier(0.165, 0.84, 0.44, 1)'
-                    }}
-                    draggable={isPuzzleMode && !puzzleCompleted}
-                    onDragStart={(e) => handleDragStart(e, feature, gridIndex)}
-                  >
-                    <CardContent className="p-5 h-full flex flex-col">
-                      <div className={`w-10 h-10 ${feature.color} rounded-lg flex items-center justify-center mb-3 transition-all duration-700`}>
-                        <feature.icon className="h-5 w-5" />
-                      </div>
-                      <h4 className="text-base font-semibold text-navy mb-2">{feature.title}</h4>
-                      <p className="text-sm text-soft-grey flex-1">{feature.description}</p>
-                    </CardContent>
-                  </Card>
-                )}
-              </div>
+                <CardContent className="p-5">
+                  <div className={`w-10 h-10 ${feature.color} rounded-lg flex items-center justify-center mb-3`}>
+                    <feature.icon className="h-5 w-5" />
+                  </div>
+                  <h4 className="text-base font-semibold text-navy mb-2">{feature.title}</h4>
+                  <p className="text-sm text-soft-grey">{feature.description}</p>
+                </CardContent>
+              </Card>
             ))}
-            
-            {/* Reward Popup */}
-            {showReward && (
-              <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center rounded-xl">
-                <Card className="bg-white max-w-md mx-4 shadow-2xl">
-                  <CardContent className="p-8 text-center">
-                    <div className="text-6xl mb-4">🎉</div>
-                    <h3 className="text-2xl font-bold text-navy mb-4">
-                      Congratulations!
-                    </h3>
-                    <p className="text-lg text-soft-grey mb-6">
-                      You've earned <span className="font-bold text-fresh-green">20 XP</span> by completing the puzzle!
-                    </p>
-                    <div className="space-y-3">
-                      <Button 
-                        className="w-full bg-fresh-green hover:bg-green-600 text-white py-3 text-lg font-semibold"
-                        onClick={() => {
-                          // Scroll to newsletter signup
-                          document.getElementById('newsletter')?.scrollIntoView({ behavior: 'smooth' });
-                          setShowReward(false);
-                        }}
-                      >
-                        Join for Free to Claim Your Reward
-                      </Button>
-                      <Button 
-                        variant="outline" 
-                        className="w-full"
-                        onClick={() => setShowReward(false)}
-                      >
-                        Close
-                      </Button>
-                    </div>
-                  </CardContent>
-                </Card>
-              </div>
-            )}
           </div>
 
           {/* XP & Rewards Highlight */}
