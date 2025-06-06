@@ -124,24 +124,90 @@ export function FeaturesSection() {
   const { ref: featuresRef, isVisible: featuresVisible } = useScrollAnimation();
   const { ref: additionalRef, isVisible: additionalVisible } = useScrollAnimation();
   
-  // Animated shuffle state for additional features
-  const [shuffledFeatures, setShuffledFeatures] = useState(additionalFeatures);
+  // Grid-based animation system for organic movement
+  const [gridLayout, setGridLayout] = useState(() => {
+    // Initialize 3x3 grid with 7 features and 2 empty spaces
+    const layout = new Array(9).fill(null);
+    additionalFeatures.forEach((feature, index) => {
+      layout[index] = feature;
+    });
+    return layout;
+  });
   
   useEffect(() => {
-    const shuffleInterval = setInterval(() => {
-      setShuffledFeatures(prev => {
-        const newOrder = [...prev];
-        // Create a more sophisticated shuffle that uses all 9 grid positions (3x3)
-        // This ensures boxes move to different positions including the extra spaces
-        for (let i = newOrder.length - 1; i > 0; i--) {
-          const j = Math.floor(Math.random() * (i + 1));
-          [newOrder[i], newOrder[j]] = [newOrder[j], newOrder[i]];
+    const moveBoxes = () => {
+      setGridLayout(prev => {
+        const newLayout = [...prev];
+        const emptySpaces: number[] = [];
+        const occupiedSpaces: number[] = [];
+        
+        // Find empty and occupied positions
+        newLayout.forEach((item, index) => {
+          if (item === null) {
+            emptySpaces.push(index);
+          } else {
+            occupiedSpaces.push(index);
+          }
+        });
+        
+        // Function to get adjacent positions in 3x3 grid
+        const getAdjacentPositions = (position: number): number[] => {
+          const row = Math.floor(position / 3);
+          const col = position % 3;
+          const adjacent: number[] = [];
+          
+          // Check all 4 directions (up, down, left, right)
+          if (row > 0) adjacent.push((row - 1) * 3 + col); // up
+          if (row < 2) adjacent.push((row + 1) * 3 + col); // down
+          if (col > 0) adjacent.push(row * 3 + (col - 1)); // left
+          if (col < 2) adjacent.push(row * 3 + (col + 1)); // right
+          
+          return adjacent;
+        };
+        
+        // Find boxes that can move (adjacent to empty spaces)
+        const movableBoxes: Array<{currentPos: number, possibleMoves: number[]}> = [];
+        occupiedSpaces.forEach(boxPos => {
+          const adjacentPositions = getAdjacentPositions(boxPos);
+          const adjacentEmpty = adjacentPositions.filter(pos => emptySpaces.includes(pos));
+          if (adjacentEmpty.length > 0) {
+            movableBoxes.push({
+              currentPos: boxPos,
+              possibleMoves: adjacentEmpty
+            });
+          }
+        });
+        
+        // If there are movable boxes, randomly select one to move
+        if (movableBoxes.length > 0) {
+          const randomBox = movableBoxes[Math.floor(Math.random() * movableBoxes.length)];
+          const randomNewPos = randomBox.possibleMoves[Math.floor(Math.random() * randomBox.possibleMoves.length)];
+          
+          // Perform the move
+          const movingFeature = newLayout[randomBox.currentPos];
+          newLayout[randomBox.currentPos] = null;
+          newLayout[randomNewPos] = movingFeature;
         }
-        return newOrder;
+        
+        return newLayout;
       });
-    }, 3000); // Shuffle every 3 seconds
+    };
     
-    return () => clearInterval(shuffleInterval);
+    // Start the organic movement system with varying intervals for more natural feel
+    const scheduleNextMove = () => {
+      const randomDelay = 1500 + Math.random() * 3000; // 1.5-4.5 seconds for organic timing
+      setTimeout(() => {
+        moveBoxes();
+        scheduleNextMove(); // Schedule the next move
+      }, randomDelay);
+    };
+    
+    // Initial delay before starting
+    const initialDelay = setTimeout(scheduleNextMove, 2000);
+    
+    return () => {
+      clearTimeout(initialDelay);
+    };
   }, []);
 
   return (
@@ -227,34 +293,38 @@ export function FeaturesSection() {
             ))}
           </div>
 
-          {/* Additional Features Grid - Animated Shuffle */}
+          {/* Additional Features Grid - Organic Movement */}
           <div 
             ref={additionalRef}
-            className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 min-h-[400px]"
+            className="grid grid-cols-3 gap-6 min-h-[400px]"
           >
-            {shuffledFeatures.map((feature, index) => (
-              <Card 
-                key={feature.title} // Use title as key to maintain component identity during shuffles
-                className={`bg-white shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-1000 ease-in-out delay-${index * 50} ${
-                  additionalVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-                }`}
-                style={{
-                  transitionProperty: 'all, transform, opacity',
-                  transitionDuration: '1000ms, 1000ms, 500ms'
-                }}
+            {gridLayout.map((feature, gridIndex) => (
+              <div
+                key={`grid-${gridIndex}`}
+                className="relative"
               >
-                <CardContent className="p-5">
-                  <div className={`w-10 h-10 ${feature.color} rounded-lg flex items-center justify-center mb-3 transition-colors duration-500`}>
-                    <feature.icon className="h-5 w-5" />
-                  </div>
-                  <h4 className="text-base font-semibold text-navy mb-2">{feature.title}</h4>
-                  <p className="text-sm text-soft-grey">{feature.description}</p>
-                </CardContent>
-              </Card>
-            ))}
-            {/* Add empty grid cells to create the visual effect of boxes moving to "empty" spaces */}
-            {Array.from({ length: 9 - shuffledFeatures.length }).map((_, index) => (
-              <div key={`empty-${index}`} className="invisible" />
+                {feature && (
+                  <Card 
+                    key={feature.title}
+                    className={`bg-white shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-1500 ease-in-out transform ${
+                      additionalVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+                    }`}
+                    style={{
+                      transitionProperty: 'all, transform, opacity, box-shadow',
+                      transitionDuration: '1500ms',
+                      transitionTimingFunction: 'cubic-bezier(0.4, 0, 0.2, 1)'
+                    }}
+                  >
+                    <CardContent className="p-5">
+                      <div className={`w-10 h-10 ${feature.color} rounded-lg flex items-center justify-center mb-3 transition-all duration-700 ease-out`}>
+                        <feature.icon className="h-5 w-5 transition-transform duration-500 hover:scale-110" />
+                      </div>
+                      <h4 className="text-base font-semibold text-navy mb-2 transition-colors duration-300">{feature.title}</h4>
+                      <p className="text-sm text-soft-grey transition-colors duration-300">{feature.description}</p>
+                    </CardContent>
+                  </Card>
+                )}
+              </div>
             ))}
           </div>
 
