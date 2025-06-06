@@ -14,6 +14,7 @@ import {
   ArrowRight
 } from "lucide-react";
 import careerPathwaysImage from "@assets/Screenshot 2025-05-17 182855.png";
+import { LeaderboardMockup } from "@/components/ui/leaderboard-mockup";
 
 const features = [
   {
@@ -253,11 +254,7 @@ export function FeaturesSection() {
                     </div>
                   </div>
                   <div className="text-center">
-                    <img 
-                      src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=400" 
-                      alt="Professional celebrating success" 
-                      className="rounded-xl mx-auto" 
-                    />
+                    <LeaderboardMockup />
                   </div>
                 </div>
               </CardContent>
