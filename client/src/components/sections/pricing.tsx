@@ -6,32 +6,36 @@ import { Check, X } from "lucide-react";
 
 const plans = [
   {
-    name: "Free Explorer",
+    name: "Freemium Plan",
     price: 0,
-    description: "Perfect for getting started on your career journey",
+    description: "Your first steps into CareerFrame - perfect for exploring the basics",
     features: [
-      { text: "Basic career assessment", included: true },
-      { text: "3 role recommendations", included: true },
-      { text: "Basic skill gap analysis", included: true },
-      { text: "Community access", included: true },
-      { text: "1 AI-generated CV", included: true },
-      { text: "Limited AI coaching (5 questions/week)", included: false }
+      { text: "Personalized Career Coaching", included: true },
+      { text: "Basic Skill Gap Analysis", included: true },
+      { text: "1x AI-Generated CV", included: true },
+      { text: "1x AI-Generated Cover Letter", included: true },
+      { text: "Explore Roles (2 per month)", included: true },
+      { text: "Team Leaderboard (View Only)", included: true },
+      { text: "Team Networking (Limited)", included: true },
+      { text: "XP Points & Rewards (Standard Rate)", included: true }
     ],
     cta: "Start Free",
     popular: false
   },
   {
-    name: "Career Accelerator", 
+    name: "Premium Plan", 
     price: 29,
-    description: "Complete career transformation toolkit",
+    description: "Your career, accelerated - unlock the full power of CareerFrame",
     features: [
-      { text: "Everything in Free, plus:", included: true },
-      { text: "Unlimited AI coaching sessions", included: true },
-      { text: "Complete milestone roadmaps", included: true },
-      { text: "Deep personality & skills analysis", included: true },
-      { text: "Unlimited CVs & cover letters", included: true },
-      { text: "Priority community support", included: true },
-      { text: "XP rewards & partner discounts", included: true }
+      { text: "Everything in Freemium, plus:", included: true },
+      { text: "Tailored Career Pathways (Full Access)", included: true },
+      { text: "Deep Skill Gap Analysis", included: true },
+      { text: "Unlimited AI CV & Cover Letters", included: true },
+      { text: "Explore Roles (Unlimited)", included: true },
+      { text: "Full Team Leaderboard Access", included: true },
+      { text: "Industry-Specific Team Networking", included: true },
+      { text: "XP Points (Double Rate)", included: true },
+      { text: "Career Alignment & Role Insights (Full Detail)", included: true }
     ],
     cta: "Get Started",
     popular: true
