@@ -1,4 +1,5 @@
 import { Twitter, Linkedin, Facebook } from "lucide-react";
+import careerFrameLogo from "@assets/download.png";
 
 const footerSections = [
   {
@@ -36,7 +37,14 @@ export function Footer() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid md:grid-cols-4 gap-8">
           <div>
-            <div className="text-2xl font-bold mb-4">CareerFrame</div>
+            <div className="flex items-center mb-4">
+              <img 
+                src={careerFrameLogo} 
+                alt="CareerFrame Logo" 
+                className="h-8 w-8 mr-3"
+              />
+              <div className="text-2xl font-bold">CareerFrame</div>
+            </div>
             <p className="text-gray-300 text-sm mb-4">
               Empowering careers through AI-powered guidance and personalized coaching.
             </p>
