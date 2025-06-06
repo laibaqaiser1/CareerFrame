@@ -13,6 +13,7 @@ import {
   Route,
   ArrowRight
 } from "lucide-react";
+import careerPathwaysImage from "@assets/Screenshot 2025-05-17 182855.png";
 
 const features = [
   {
@@ -35,8 +36,8 @@ const features = [
     icon: Route,
     title: "3. Tailored Career Pathways",
     description: "Receive a bespoke roadmap with clear milestones and tailored career opportunities based on your goals.",
-    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=300",
-    alt: "Personalized career pathway planning",
+    image: careerPathwaysImage,
+    alt: "Professional exploring diverse career paths and opportunities",
     cta: "Build Pathway"
   },
   {
