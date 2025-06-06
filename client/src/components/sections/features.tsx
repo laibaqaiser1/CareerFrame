@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { useScrollAnimation, useScrollOpacity } from "@/hooks/use-scroll-animation";
+import { useScrollAnimation } from "@/hooks/use-scroll-animation";
 import { 
   Bot, 
   Search, 
@@ -119,9 +119,9 @@ const valueProps = [
 ];
 
 export function FeaturesSection() {
-  const { ref: valuePropRef, opacity: valuePropOpacity } = useScrollOpacity();
-  const { ref: featuresRef, opacity: featuresOpacity } = useScrollOpacity();
-  const { ref: additionalRef, opacity: additionalOpacity } = useScrollOpacity();
+  const { ref: valuePropRef, isVisible: valuePropVisible } = useScrollAnimation();
+  const { ref: featuresRef, isVisible: featuresVisible } = useScrollAnimation();
+  const { ref: additionalRef, isVisible: additionalVisible } = useScrollAnimation();
 
   return (
     <>
@@ -130,8 +130,7 @@ export function FeaturesSection() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div 
             ref={valuePropRef}
-            style={{ opacity: valuePropOpacity }}
-            className="transition-opacity duration-100"
+            className={`transition-all duration-700 ${valuePropVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
           >
             <h2 className="text-3xl lg:text-4xl font-bold text-white mb-6 drop-shadow-lg">
               More Than a Job Board - It's Your Complete Career Ecosystem
@@ -144,8 +143,9 @@ export function FeaturesSection() {
             {valueProps.map((prop, index) => (
               <div 
                 key={index}
-                style={{ opacity: valuePropOpacity }}
-                className="text-center transition-opacity duration-100 card-hover"
+                className={`text-center transition-all duration-700 card-hover stagger-${index + 1} ${
+                  valuePropVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+                }`}
               >
                 <div className={`w-16 h-16 ${prop.color} rounded-full flex items-center justify-center mx-auto mb-4`}>
                   <prop.icon className="h-8 w-8" />
@@ -163,8 +163,9 @@ export function FeaturesSection() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div 
             ref={featuresRef}
-            style={{ opacity: featuresOpacity }}
-            className="text-center mb-16 transition-opacity duration-100"
+            className={`text-center mb-16 transition-all duration-700 ${
+              featuresVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+            }`}
           >
             <h2 className="text-3xl lg:text-4xl font-bold text-navy mb-6">
               Powerful Features to Accelerate Your Career
@@ -178,8 +179,9 @@ export function FeaturesSection() {
             {features.map((feature, index) => (
               <Card 
                 key={index}
-                style={{ opacity: featuresOpacity }}
-                className="bg-white shadow-lg card-hover transition-opacity duration-100"
+                className={`bg-white shadow-lg card-hover transition-all duration-500 delay-${index * 100} ${
+                  featuresVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+                }`}
               >
                 <CardContent className="p-8">
                   <div className="flex items-start mb-6">
@@ -212,8 +214,9 @@ export function FeaturesSection() {
             {additionalFeatures.map((feature, index) => (
               <Card 
                 key={index}
-                style={{ opacity: additionalOpacity }}
-                className="bg-white shadow-lg hover:shadow-xl hover:-translate-y-1 transition-opacity duration-100"
+                className={`bg-white shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-500 delay-${index * 50} ${
+                  additionalVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+                }`}
               >
                 <CardContent className="p-5">
                   <div className={`w-10 h-10 ${feature.color} rounded-lg flex items-center justify-center mb-3`}>

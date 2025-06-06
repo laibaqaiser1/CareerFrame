@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { useScrollOpacity } from "@/hooks/use-scroll-animation";
+import { useScrollAnimation } from "@/hooks/use-scroll-animation";
 import { Play } from "lucide-react";
 
 const steps = [
@@ -25,15 +25,16 @@ const steps = [
 ];
 
 export function HowItWorksSection() {
-  const { ref, opacity } = useScrollOpacity();
+  const { ref, isVisible } = useScrollAnimation();
 
   return (
     <section id="how-it-works" className="py-20 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div 
           ref={ref}
-          style={{ opacity }}
-          className="text-center mb-16 transition-opacity duration-100"
+          className={`text-center mb-16 transition-all duration-700 ${
+            isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+          }`}
         >
           <h2 className="text-3xl lg:text-4xl font-bold text-white mb-6 drop-shadow-lg">
             Your Journey from Confused to Confident
@@ -47,8 +48,9 @@ export function HowItWorksSection() {
           {steps.map((step, index) => (
             <div 
               key={index}
-              style={{ opacity }}
-              className="text-center transition-opacity duration-100"
+              className={`text-center transition-all duration-700 delay-${index * 100} ${
+                isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+              }`}
             >
               <div className={`w-20 h-20 ${step.color} rounded-full flex items-center justify-center mx-auto mb-6 relative`}>
                 <span className="text-white text-2xl font-bold">{step.number}</span>
@@ -63,10 +65,9 @@ export function HowItWorksSection() {
         </div>
 
         {/* Interactive Demo Teaser */}
-        <div 
-          style={{ opacity }}
-          className="text-center transition-opacity duration-100"
-        >
+        <div className={`text-center transition-all duration-700 delay-400 ${
+          isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+        }`}>
           <Card className="bg-white shadow-lg inline-block">
             <CardContent className="p-8">
               <h3 className="text-2xl font-semibold text-navy mb-4">See CareerFrame in Action</h3>
