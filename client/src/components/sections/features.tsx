@@ -151,7 +151,7 @@ export function FeaturesSection() {
                   <prop.icon className="h-8 w-8" />
                 </div>
                 <h3 className="text-xl font-semibold text-navy mb-3">{prop.title}</h3>
-                <p className="text-black">{prop.description}</p>
+                <p className="text-black font-bold">{prop.description}</p>
               </div>
             ))}
           </div>
