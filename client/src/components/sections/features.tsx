@@ -1,7 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { useScrollAnimation } from "@/hooks/use-scroll-animation";
-import { useState, useEffect } from "react";
 import { 
   Bot, 
   Search, 
@@ -123,92 +122,6 @@ export function FeaturesSection() {
   const { ref: valuePropRef, isVisible: valuePropVisible } = useScrollAnimation();
   const { ref: featuresRef, isVisible: featuresVisible } = useScrollAnimation();
   const { ref: additionalRef, isVisible: additionalVisible } = useScrollAnimation();
-  
-  // Grid-based animation system for organic movement
-  const [gridLayout, setGridLayout] = useState(() => {
-    // Initialize 3x3 grid with 7 features and 2 empty spaces
-    const layout = new Array(9).fill(null);
-    additionalFeatures.forEach((feature, index) => {
-      layout[index] = feature;
-    });
-    return layout;
-  });
-  
-  useEffect(() => {
-    const moveBoxes = () => {
-      setGridLayout(prev => {
-        const newLayout = [...prev];
-        const emptySpaces: number[] = [];
-        const occupiedSpaces: number[] = [];
-        
-        // Find empty and occupied positions
-        newLayout.forEach((item, index) => {
-          if (item === null) {
-            emptySpaces.push(index);
-          } else {
-            occupiedSpaces.push(index);
-          }
-        });
-        
-        // Function to get adjacent positions in 3x3 grid
-        const getAdjacentPositions = (position: number): number[] => {
-          const row = Math.floor(position / 3);
-          const col = position % 3;
-          const adjacent: number[] = [];
-          
-          // Check all 4 directions (up, down, left, right)
-          if (row > 0) adjacent.push((row - 1) * 3 + col); // up
-          if (row < 2) adjacent.push((row + 1) * 3 + col); // down
-          if (col > 0) adjacent.push(row * 3 + (col - 1)); // left
-          if (col < 2) adjacent.push(row * 3 + (col + 1)); // right
-          
-          return adjacent;
-        };
-        
-        // Find boxes that can move (adjacent to empty spaces)
-        const movableBoxes: Array<{currentPos: number, possibleMoves: number[]}> = [];
-        occupiedSpaces.forEach(boxPos => {
-          const adjacentPositions = getAdjacentPositions(boxPos);
-          const adjacentEmpty = adjacentPositions.filter(pos => emptySpaces.includes(pos));
-          if (adjacentEmpty.length > 0) {
-            movableBoxes.push({
-              currentPos: boxPos,
-              possibleMoves: adjacentEmpty
-            });
-          }
-        });
-        
-        // If there are movable boxes, randomly select one to move
-        if (movableBoxes.length > 0) {
-          const randomBox = movableBoxes[Math.floor(Math.random() * movableBoxes.length)];
-          const randomNewPos = randomBox.possibleMoves[Math.floor(Math.random() * randomBox.possibleMoves.length)];
-          
-          // Perform the move
-          const movingFeature = newLayout[randomBox.currentPos];
-          newLayout[randomBox.currentPos] = null;
-          newLayout[randomNewPos] = movingFeature;
-        }
-        
-        return newLayout;
-      });
-    };
-    
-    // Start the organic movement system with varying intervals for more natural feel
-    const scheduleNextMove = () => {
-      const randomDelay = 1500 + Math.random() * 3000; // 1.5-4.5 seconds for organic timing
-      setTimeout(() => {
-        moveBoxes();
-        scheduleNextMove(); // Schedule the next move
-      }, randomDelay);
-    };
-    
-    // Initial delay before starting
-    const initialDelay = setTimeout(scheduleNextMove, 2000);
-    
-    return () => {
-      clearTimeout(initialDelay);
-    };
-  }, []);
 
   return (
     <>
@@ -293,38 +206,26 @@ export function FeaturesSection() {
             ))}
           </div>
 
-          {/* Additional Features Grid - Organic Movement */}
+          {/* Additional Features Grid */}
           <div 
             ref={additionalRef}
-            className="grid grid-cols-3 gap-6 min-h-[400px]"
+            className="grid md:grid-cols-2 lg:grid-cols-3 gap-6"
           >
-            {gridLayout.map((feature, gridIndex) => (
-              <div
-                key={`grid-${gridIndex}`}
-                className="relative"
+            {additionalFeatures.map((feature, index) => (
+              <Card 
+                key={index}
+                className={`bg-white shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-500 delay-${index * 50} ${
+                  additionalVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+                }`}
               >
-                {feature && (
-                  <Card 
-                    key={feature.title}
-                    className={`bg-white shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-1500 ease-in-out transform ${
-                      additionalVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-                    }`}
-                    style={{
-                      transitionProperty: 'all, transform, opacity, box-shadow',
-                      transitionDuration: '1500ms',
-                      transitionTimingFunction: 'cubic-bezier(0.4, 0, 0.2, 1)'
-                    }}
-                  >
-                    <CardContent className="p-5">
-                      <div className={`w-10 h-10 ${feature.color} rounded-lg flex items-center justify-center mb-3 transition-all duration-700 ease-out`}>
-                        <feature.icon className="h-5 w-5 transition-transform duration-500 hover:scale-110" />
-                      </div>
-                      <h4 className="text-base font-semibold text-navy mb-2 transition-colors duration-300">{feature.title}</h4>
-                      <p className="text-sm text-soft-grey transition-colors duration-300">{feature.description}</p>
-                    </CardContent>
-                  </Card>
-                )}
-              </div>
+                <CardContent className="p-5">
+                  <div className={`w-10 h-10 ${feature.color} rounded-lg flex items-center justify-center mb-3`}>
+                    <feature.icon className="h-5 w-5" />
+                  </div>
+                  <h4 className="text-base font-semibold text-navy mb-2">{feature.title}</h4>
+                  <p className="text-sm text-soft-grey">{feature.description}</p>
+                </CardContent>
+              </Card>
             ))}
           </div>
 
