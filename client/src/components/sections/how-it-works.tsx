@@ -28,7 +28,7 @@ export function HowItWorksSection() {
   const { ref, isVisible } = useScrollAnimation();
 
   return (
-    <section id="how-it-works" className="py-20 bg-light-grey">
+    <section id="how-it-works" className="py-20 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div 
           ref={ref}
@@ -36,10 +36,10 @@ export function HowItWorksSection() {
             isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
           }`}
         >
-          <h2 className="text-3xl lg:text-4xl font-bold text-navy mb-6">
+          <h2 className="text-3xl lg:text-4xl font-bold text-white mb-6 drop-shadow-lg">
             Your Journey from Confused to Confident
           </h2>
-          <p className="text-xl text-soft-grey max-w-3xl mx-auto">
+          <p className="text-xl text-white max-w-3xl mx-auto drop-shadow-md">
             See how CareerFrame transforms career uncertainty into clear, actionable steps toward your dream job.
           </p>
         </div>

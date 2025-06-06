@@ -48,7 +48,7 @@ export function PricingSection() {
   const { ref, isVisible } = useScrollAnimation();
 
   return (
-    <section id="pricing" className="py-12 bg-light-grey">
+    <section id="pricing" className="py-12 bg-gradient-to-br from-yellow-400 via-orange-500 to-red-500">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div 
           ref={ref}
@@ -56,10 +56,10 @@ export function PricingSection() {
             isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
           }`}
         >
-          <h2 className="text-3xl lg:text-4xl font-bold text-navy mb-6">
+          <h2 className="text-3xl lg:text-4xl font-bold text-white mb-6 drop-shadow-lg">
             Choose Your Career Acceleration Plan
           </h2>
-          <p className="text-xl text-soft-grey max-w-3xl mx-auto">
+          <p className="text-xl text-white max-w-3xl mx-auto drop-shadow-md">
             Start free and upgrade when you're ready to unlock your full career potential.
           </p>
         </div>

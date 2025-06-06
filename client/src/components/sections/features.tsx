@@ -132,7 +132,7 @@ export function FeaturesSection() {
             ref={valuePropRef}
             className={`transition-all duration-700 ${valuePropVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
           >
-            <h2 className="text-3xl lg:text-4xl font-bold text-navy mb-6">
+            <h2 className="text-3xl lg:text-4xl font-bold text-white mb-6 drop-shadow-lg">
               More Than a Job Board - It's Your Complete Career Ecosystem
             </h2>
             <p className="text-xl text-white max-w-3xl mx-auto mb-12 drop-shadow-md">
