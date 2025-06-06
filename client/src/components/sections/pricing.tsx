@@ -13,12 +13,12 @@ const plans = [
     features: [
       { text: "Personalized Career Coaching", included: true },
       { text: "Basic Skill Gap Analysis", included: true },
-      { text: "1x AI-Generated CV", included: true },
-      { text: "1x AI-Generated Cover Letter", included: true },
-      { text: "Explore Roles (2 per month)", included: true },
-      { text: "Team Leaderboard (View Only)", included: true },
-      { text: "Team Networking (Limited)", included: true },
-      { text: "XP Points & Rewards (Standard Rate)", included: true }
+      { text: "AI-Generated CV", included: true },
+      { text: "AI-Generated Cover Letter", included: true },
+      { text: "Explore Roles", included: true },
+      { text: "Team Leaderboard", included: true },
+      { text: "Team Networking", included: true },
+      { text: "XP Points & Rewards", included: true }
     ],
     cta: "Start Free",
     popular: false
