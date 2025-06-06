@@ -51,7 +51,7 @@ export function NewsletterSection() {
   return (
     <>
       {/* Coming Soon Section */}
-      <section className="py-12 bg-gradient-to-r from-yellow-300 to-orange-400">
+      <section className="py-12 bg-gradient-to-r from-teal-400 to-blue-500">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-8">
             <p className="text-white font-medium drop-shadow-md">Revolutionary AI-powered career guidance launching soon</p>
@@ -74,7 +74,7 @@ export function NewsletterSection() {
       </section>
 
       {/* Newsletter & Final CTA */}
-      <section className="py-20 bg-gradient-to-br from-orange-400 via-yellow-500 to-amber-600 text-white">
+      <section className="py-20 bg-gradient-to-br from-green-400 via-blue-500 to-purple-600 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div 
             ref={ref}

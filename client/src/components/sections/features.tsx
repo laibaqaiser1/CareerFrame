@@ -126,7 +126,7 @@ export function FeaturesSection() {
   return (
     <>
       {/* Value Proposition */}
-      <section className="py-16 bg-gradient-to-r from-yellow-400 to-orange-500">
+      <section className="py-16 bg-gradient-to-r from-emerald-400 to-teal-500">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div 
             ref={valuePropRef}
