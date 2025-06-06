@@ -42,7 +42,7 @@ export function PricingSection() {
   const { ref, isVisible } = useScrollAnimation();
 
   return (
-    <section id="pricing" className="py-20 bg-light-grey">
+    <section id="pricing" className="py-16 bg-light-grey">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div 
           ref={ref}
@@ -120,10 +120,10 @@ export function PricingSection() {
           ))}
         </div>
 
-        <div className={`text-center mt-8 transition-all duration-700 delay-300 ${
+        <div className={`text-center mt-12 transition-all duration-700 delay-300 ${
           isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
         }`}>
-          <p className="text-soft-grey">
+          <p className="text-soft-grey text-lg font-medium">
             30-day money-back guarantee • Cancel anytime • No hidden fees
           </p>
         </div>

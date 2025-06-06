@@ -51,19 +51,12 @@ function Navigation() {
                 <a href="#pricing" className="text-soft-grey hover:text-navy px-3 py-2 text-sm font-medium transition-colors">
                   Pricing
                 </a>
-                <a href="#testimonials" className="text-soft-grey hover:text-navy px-3 py-2 text-sm font-medium transition-colors">
-                  Success Stories
-                </a>
+
               </div>
             </div>
           </div>
           <div className="flex items-center space-x-4">
-            <a href="#products" className="text-soft-grey hover:text-navy px-3 py-2 text-sm font-medium transition-colors hidden md:block">
-              Products
-            </a>
-            <a href="#pricing" className="text-soft-grey hover:text-navy px-3 py-2 text-sm font-medium transition-colors hidden md:block">
-              Pricing
-            </a>
+
             <Button variant="ghost" className="text-soft-grey hover:text-navy button-hover">
               Sign In
             </Button>
