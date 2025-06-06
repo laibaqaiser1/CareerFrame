@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import { HeroSection } from "@/components/sections/hero";
 import { FeaturesSection } from "@/components/sections/features";
 import { HowItWorksSection } from "@/components/sections/how-it-works";
-import { TestimonialsSection } from "@/components/sections/testimonials";
+import { TestimonialsSection } from "@/components/sections/testimonials-new";
 import { PricingSection } from "@/components/sections/pricing";
 import { NewsletterSection } from "@/components/sections/newsletter";
 import { Footer } from "@/components/sections/footer";
@@ -37,11 +37,17 @@ function Navigation() {
             </div>
           </div>
           <div className="flex items-center space-x-4">
+            <a href="#products" className="text-soft-grey hover:text-navy px-3 py-2 text-sm font-medium transition-colors hidden md:block">
+              Products
+            </a>
+            <a href="#pricing" className="text-soft-grey hover:text-navy px-3 py-2 text-sm font-medium transition-colors hidden md:block">
+              Pricing
+            </a>
             <Button variant="ghost" className="text-soft-grey hover:text-navy">
               Sign In
             </Button>
             <Button className="bg-fresh-green hover:bg-green-600 text-white">
-              Join Now
+              Join For FREE
             </Button>
           </div>
         </div>

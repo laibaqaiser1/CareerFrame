@@ -71,15 +71,29 @@ export function NewsletterSection() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div 
             ref={ref}
-            className="grid lg:grid-cols-2 gap-12 items-center"
+            className="text-center mb-12"
           >
+            <h2 className="text-3xl lg:text-4xl font-bold mb-6">
+              Your Future Starts Now — Take the First Step Toward a Career You Love
+            </h2>
+            <Button 
+              size="lg" 
+              className="bg-fresh-green hover:bg-green-600 text-white px-12 py-6 text-xl font-semibold"
+            >
+              <Rocket className="mr-3 h-6 w-6" />
+              Join For FREE
+            </Button>
+            <p className="text-sm text-blue-200 mt-4">Start your career transformation today • No credit card required</p>
+          </div>
+          
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className={`transition-all duration-700 ${
               isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-8'
             }`}>
-              <h2 className="text-3xl lg:text-4xl font-bold mb-6">
+              <h3 className="text-2xl font-bold mb-6">
                 Ready to Transform Your Career?
-              </h2>
-              <p className="text-blue-100 text-xl mb-8">
+              </h3>
+              <p className="text-blue-100 text-lg mb-8">
                 Join thousands of professionals who've discovered their dream careers with CareerFrame's AI-powered guidance.
               </p>
               
@@ -100,7 +114,6 @@ export function NewsletterSection() {
                   Book a Demo
                 </Button>
               </div>
-              <p className="text-sm text-blue-200 mt-4">7-day free trial • No credit card required</p>
             </div>
 
             <div className={`transition-all duration-700 delay-300 ${

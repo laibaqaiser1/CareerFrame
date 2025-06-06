@@ -6,26 +6,20 @@ import { Play } from "lucide-react";
 const steps = [
   {
     number: 1,
-    title: "Assess & Discover",
-    description: "Complete our AI-powered assessment to identify your strengths, interests, and ideal career matches.",
+    title: "Sign Up & Complete Profile",
+    description: "Sign up and complete your profile. Tell us about your skills, goals, and aspirations so we can create a personalized career plan just for you. You'll start your customized career journey with AI-powered career coaching and personalized insights that will shape your path to success.",
     color: "bg-red-500"
   },
   {
     number: 2,
-    title: "Plan & Prepare", 
-    description: "Get your personalized milestone roadmap with skill gaps identified and learning resources recommended.",
+    title: "Analysis & Roadmap Creation", 
+    description: "We analyse your profile, identify skill gaps, and provide you with a tailored career roadmap. You'll receive actionable steps, milestone tracking, and a skill Gap Analysis aligned with your goals. Your AI career coach will guide you at every step, adapting to your progress and offering the support you need.",
     color: "bg-orange-500"
   },
   {
     number: 3,
-    title: "Learn & Grow",
-    description: "Follow your milestone plan, complete recommended courses, and build essential skills with AI coaching support.",
-    color: "bg-blue-500"
-  },
-  {
-    number: 4,
-    title: "Apply & Succeed",
-    description: "Use AI-generated CVs and cover letters to apply confidently for roles that perfectly match your profile.",
+    title: "Step Into Your Dream Career",
+    description: "With CareerFrame, you'll gain the confidence, skills, and opportunities to step into the career you've always wanted. Whether it's advancing in your current field, switching to a new role, or unlocking higher-paying opportunities, you'll have the tools, insights, and support to make your dream career a reality.",
     color: "bg-fresh-green"
   }
 ];
@@ -50,7 +44,7 @@ export function HowItWorksSection() {
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-4 gap-8 mb-16">
+        <div className="grid lg:grid-cols-3 gap-8 mb-16">
           {steps.map((step, index) => (
             <div 
               key={index}

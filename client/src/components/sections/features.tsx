@@ -17,76 +17,100 @@ import {
 const features = [
   {
     icon: Bot,
-    title: "🧠 AI Career Coach",
-    description: "Real-time personalized chat support that guides you through each step of your career journey with intelligent recommendations.",
+    title: "1. Personalized Career Coaching",
+    description: "Tailored AI-powered coaching offering personalized advice and action plans to guide your career journey.",
     image: "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=300",
-    alt: "Diverse team of professionals collaborating on career planning",
-    cta: "Try AI Coach"
-  },
-  {
-    icon: Search,
-    title: "🔍 Role Discovery & Career Alignment",
-    description: "Explore thousands of job roles based on your personality, experience, and skillset. Get matched with roles that suit you.",
-    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=300",
-    alt: "Professional career coaching session with mentor and client",
-    cta: "Discover Roles"
+    alt: "AI-powered career coaching session",
+    cta: "Start Coaching"
   },
   {
     icon: TrendingUp,
-    title: "🧱 Skill Gap Analysis",
-    description: "Understand exactly what's missing between your current profile and your desired role with targeted learning resources.",
+    title: "2. Skill Gap Analysis",
+    description: "Assess your current skills, identify gaps, and receive recommendations to elevate your qualifications.",
     image: "https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=300",
-    alt: "Professional development training session with skills assessment",
+    alt: "Professional skills assessment and analysis",
     cta: "Analyze Skills"
   },
   {
-    icon: Target,
-    title: "🎯 Milestone Tracker",
-    description: "Follow structured, manageable steps toward your career goal. Regenerate or reset milestones as your path evolves.",
+    icon: Route,
+    title: "3. Tailored Career Pathways",
+    description: "Receive a bespoke roadmap with clear milestones and tailored career opportunities based on your goals.",
+    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=300",
+    alt: "Personalized career pathway planning",
+    cta: "Build Pathway"
+  },
+  {
+    icon: FileText,
+    title: "4. AI-Powered Resume Builder",
+    description: "Generate a professional, optimized resume tailored to the job you're aiming for with AI-driven insights.",
     image: "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=300",
-    alt: "Professional celebrating success and achievement in modern workplace",
-    cta: "Track Progress"
+    alt: "AI-generated professional resume creation",
+    cta: "Create Resume"
   }
 ];
 
 const additionalFeatures = [
   {
     icon: FileText,
-    title: "📑 AI CV & Cover Letter Builder",
-    description: "Instantly create professional documents tailored to your chosen role and career data.",
+    title: "5. AI-Generated Cover Letter",
+    description: "Automatically generate a personalized cover letter that fits the specific role you're applying for.",
     color: "bg-indigo-100 text-indigo-500"
   },
   {
-    icon: Users,
-    title: "🧩 Community & Group Networking",
-    description: "Connect with others in your target industry and join industry-specific chat groups.",
-    color: "bg-pink-100 text-pink-500"
+    icon: Target,
+    title: "6. Milestone Tracker",
+    description: "Track and celebrate career progress with personalized goals and visible milestones (Premium: Full visibility).",
+    color: "bg-purple-100 text-purple-500"
+  },
+  {
+    icon: Search,
+    title: "7. Explore Roles Access",
+    description: "Get limited (Freemium) or unlimited (Premium) access to in-depth role insights, including job fit, salaries, and perks.",
+    color: "bg-blue-100 text-blue-500"
+  },
+  {
+    icon: TrendingUp,
+    title: "8. Deep Skill Gap Analysis (Premium)",
+    description: "Receive a detailed skill gap report to understand areas needing improvement for career advancement.",
+    color: "bg-green-100 text-green-500"
   },
   {
     icon: Trophy,
-    title: "🏆 XP & Rewards System",
-    description: "Earn XP for completing tasks and exchange for discounts with partnered brands.",
+    title: "9. XP Points & Rewards (2x XP Premium)",
+    description: "Earn XP points for completing milestones and unlock rewards to accelerate your career progress.",
     color: "bg-yellow-100 text-yellow-500"
+  },
+  {
+    icon: Users,
+    title: "10. Team Networking (Freemium & Premium)",
+    description: "Connect with other professionals through team networking groups (Premium: Industry-specific communities).",
+    color: "bg-pink-100 text-pink-500"
+  },
+  {
+    icon: Goal,
+    title: "11. Career Alignment & Role Insights",
+    description: "Get in-depth role overviews and personalized recommendations based on your skills, experience, and career aspirations.",
+    color: "bg-cyan-100 text-cyan-500"
   }
 ];
 
 const valueProps = [
   {
-    icon: Goal,
-    title: "Perfect Role Alignment",
-    description: "Match with careers that truly suit your personality, skills, and aspirations - not just market trends.",
+    icon: Bot,
+    title: "Personalized Career Coaching",
+    description: "Get expert guidance every step of the way. Our AI-powered coach builds a relationship with you, offering tailored advice and strategies that align with your unique strengths and career goals.",
     color: "bg-fresh-green text-white"
   },
   {
-    icon: Route,
-    title: "Clear Action Plan",
-    description: "Get step-by-step milestones and learning resources to bridge the gap between where you are and where you want to be.",
+    icon: TrendingUp,
+    title: "Skill Gap Analysis & Growth",
+    description: "Discover exactly where you stand. CareerFrame identifies the gaps between your current skills and the ones required for your dream role, giving you a clear path to grow and advance.",
     color: "bg-navy text-white"
   },
   {
-    icon: Trophy,
-    title: "Motivated Progress",
-    description: "Stay engaged with XP rewards, community support, and continuous AI coaching throughout your journey.",
+    icon: Route,
+    title: "Tailored Career Pathways",
+    description: "No one-size-fits-all approach. CareerFrame creates a bespoke roadmap for your career, matching you with the right opportunities and learning resources to unlock your potential.",
     color: "bg-purple-500 text-white"
   }
 ];
@@ -182,21 +206,21 @@ export function FeaturesSection() {
           {/* Additional Features Grid */}
           <div 
             ref={additionalRef}
-            className="grid md:grid-cols-3 gap-8"
+            className="grid md:grid-cols-2 lg:grid-cols-3 gap-6"
           >
             {additionalFeatures.map((feature, index) => (
               <Card 
                 key={index}
-                className={`bg-white shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-500 delay-${index * 100} ${
+                className={`bg-white shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-500 delay-${index * 50} ${
                   additionalVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
                 }`}
               >
-                <CardContent className="p-6">
-                  <div className={`w-12 h-12 ${feature.color} rounded-lg flex items-center justify-center mb-4`}>
-                    <feature.icon className="h-6 w-6" />
+                <CardContent className="p-5">
+                  <div className={`w-10 h-10 ${feature.color} rounded-lg flex items-center justify-center mb-3`}>
+                    <feature.icon className="h-5 w-5" />
                   </div>
-                  <h4 className="text-lg font-semibold text-navy mb-2">{feature.title}</h4>
-                  <p className="text-soft-grey">{feature.description}</p>
+                  <h4 className="text-base font-semibold text-navy mb-2">{feature.title}</h4>
+                  <p className="text-sm text-soft-grey">{feature.description}</p>
                 </CardContent>
               </Card>
             ))}
