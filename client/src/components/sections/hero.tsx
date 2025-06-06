@@ -23,7 +23,7 @@ export function HeroSection() {
             <div className="flex flex-col sm:flex-row gap-4 mb-8">
               <Button 
                 size="lg" 
-                className="bg-fresh-green hover:bg-green-600 text-white text-lg px-8 py-4 shadow-lg"
+                className="bg-fresh-green hover:bg-green-600 text-white text-lg px-8 py-4 shadow-lg button-hover"
               >
                 <Heart className="mr-2 h-5 w-5" />
                 Join For FREE
@@ -31,7 +31,7 @@ export function HeroSection() {
               <Button 
                 variant="outline" 
                 size="lg" 
-                className="border-2 border-navy text-navy hover:bg-navy hover:text-white text-lg px-8 py-4"
+                className="border-2 border-navy text-navy hover:bg-navy hover:text-white text-lg px-8 py-4 button-hover"
               >
                 <Play className="mr-2 h-5 w-5" />
                 Watch Video

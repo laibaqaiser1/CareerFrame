@@ -178,7 +178,7 @@ export function FeaturesSection() {
             {features.map((feature, index) => (
               <Card 
                 key={index}
-                className={`bg-white shadow-lg hover:shadow-xl transition-all duration-500 delay-${index * 100} ${
+                className={`bg-white shadow-lg card-hover transition-all duration-500 delay-${index * 100} ${
                   featuresVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
                 }`}
               >
