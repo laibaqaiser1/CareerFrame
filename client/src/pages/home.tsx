@@ -31,16 +31,17 @@ function Navigation() {
     }`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
-          <div className="flex items-center">
-            <div className="flex-shrink-0 flex items-center">
-              <img 
-                src={careerFrameLogo} 
-                alt="CareerFrame Logo" 
-                className="h-10 w-10 mr-3"
-              />
-              <span className="text-2xl font-bold text-navy">CareerFrame</span>
-            </div>
-            <div className="hidden md:block ml-20">
+          <div className="flex-shrink-0 flex items-center">
+            <img 
+              src={careerFrameLogo} 
+              alt="CareerFrame Logo" 
+              className="h-10 w-10 mr-3"
+            />
+            <span className="text-2xl font-bold text-navy">CareerFrame</span>
+          </div>
+          
+          <div className="flex items-center space-x-8">
+            <div className="hidden md:block">
               <div className="flex items-baseline space-x-8">
                 <a href="#features" className="text-soft-grey hover:text-navy px-3 py-2 text-sm font-medium transition-all duration-300 hover:scale-105 hover:shadow-lg relative group">
                   <span className="relative z-10">Features</span>
@@ -54,12 +55,9 @@ function Navigation() {
                   <span className="relative z-10">Pricing</span>
                   <div className="absolute inset-0 bg-fresh-green/10 rounded-lg scale-0 group-hover:scale-100 transition-transform duration-300"></div>
                 </a>
-
               </div>
             </div>
-          </div>
-          <div className="flex items-center space-x-4">
-
+            
             <Button variant="ghost" className="text-soft-grey hover:text-navy button-hover">
               Sign In
             </Button>
