@@ -137,6 +137,8 @@ export function FeaturesSection() {
   const [isPuzzleMode, setIsPuzzleMode] = useState(false);
   const [puzzleCompleted, setPuzzleCompleted] = useState(false);
   const [showReward, setShowReward] = useState(false);
+  const [draggedItem, setDraggedItem] = useState(null);
+  const [draggedIndex, setDraggedIndex] = useState(null);
   
   // Correct order for puzzle completion
   const correctOrder = additionalFeatures.map(feature => feature.title);
@@ -190,9 +192,64 @@ export function FeaturesSection() {
     });
   };
   
+  const handleDragStart = (e, feature, index) => {
+    if (!isPuzzleMode || puzzleCompleted) return;
+    setDraggedItem(feature);
+    setDraggedIndex(index);
+    e.dataTransfer.effectAllowed = 'move';
+  };
+
+  const handleDragOver = (e) => {
+    e.preventDefault();
+    e.dataTransfer.dropEffect = 'move';
+  };
+
+  const handleDrop = (e, dropIndex) => {
+    e.preventDefault();
+    if (!isPuzzleMode || !draggedItem || draggedIndex === null) return;
+
+    const sourceIndex = draggedIndex;
+    
+    // Check if target position is empty or adjacent to source
+    if (gridLayout[dropIndex] !== null) return;
+    
+    const getAdjacent = (pos) => {
+      const row = Math.floor(pos / 3);
+      const col = pos % 3;
+      const adjacent = [];
+      
+      if (row > 0) adjacent.push(pos - 3);
+      if (row < 2) adjacent.push(pos + 3);
+      if (col > 0) adjacent.push(pos - 1);
+      if (col < 2) adjacent.push(pos + 1);
+      
+      return adjacent;
+    };
+
+    const adjacentPositions = getAdjacent(sourceIndex);
+    if (!adjacentPositions.includes(dropIndex)) return;
+
+    setGridLayout(currentGrid => {
+      const newGrid = [...currentGrid];
+      newGrid[dropIndex] = draggedItem;
+      newGrid[sourceIndex] = null;
+      
+      // Check for completion
+      if (checkPuzzleCompletion(newGrid)) {
+        setPuzzleCompleted(true);
+        setShowReward(true);
+      }
+      
+      return newGrid;
+    });
+
+    setDraggedItem(null);
+    setDraggedIndex(null);
+  };
+
   const startPuzzleMode = () => {
     setIsPuzzleMode(true);
-    setIsPaused(true);
+    setIsPaused(true); // This will stop automatic movement
     setPuzzleCompleted(false);
     setShowReward(false);
     
@@ -411,7 +468,7 @@ export function FeaturesSection() {
                 <p className="text-soft-grey">
                   {puzzleCompleted 
                     ? "Amazing work! You've earned 20 XP!" 
-                    : "Click boxes next to empty spaces to move them. Arrange in original order to win!"
+                    : "Drag boxes to empty spaces next to them. Arrange in original order to win!"
                   }
                 </p>
               </div>
@@ -433,7 +490,7 @@ export function FeaturesSection() {
                 key={gridIndex}
                 className={`transition-all duration-[2500ms] ease-out ${
                   additionalVisible ? 'opacity-100' : 'opacity-0'
-                }`}
+                } ${isPuzzleMode && !feature ? 'border-2 border-dashed border-white border-opacity-30 rounded-lg' : ''}`}
                 style={{
                   gridArea: `${Math.floor(gridIndex / 3) + 1} / ${(gridIndex % 3) + 1}`,
                   transitionTimingFunction: 'cubic-bezier(0.25, 0.46, 0.45, 0.94)' // Smooth easing
@@ -441,16 +498,22 @@ export function FeaturesSection() {
                 onMouseEnter={() => !isPuzzleMode && setIsPaused(true)}
                 onMouseLeave={() => !isPuzzleMode && setIsPaused(false)}
                 onClick={() => handleBoxClick(gridIndex)}
+                onDragOver={handleDragOver}
+                onDrop={(e) => handleDrop(e, gridIndex)}
               >
                 {feature && (
                   <Card 
-                    className="bg-white shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-[2500ms] ease-out h-full cursor-pointer"
+                    className={`bg-white shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-[2500ms] ease-out h-full ${
+                      isPuzzleMode ? 'cursor-grab active:cursor-grabbing' : 'cursor-pointer'
+                    }`}
                     style={{
                       transform: 'scale(1)',
                       transitionProperty: 'all, box-shadow, transform',
                       transitionDuration: '2500ms', // Much slower transitions
                       transitionTimingFunction: 'cubic-bezier(0.25, 0.46, 0.45, 0.94)'
                     }}
+                    draggable={isPuzzleMode && !puzzleCompleted}
+                    onDragStart={(e) => handleDragStart(e, feature, gridIndex)}
                   >
                     <CardContent className="p-5 h-full flex flex-col">
                       <div className={`w-10 h-10 ${feature.color} rounded-lg flex items-center justify-center mb-3 transition-all duration-700`}>
