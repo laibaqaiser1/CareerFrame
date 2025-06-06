@@ -1,0 +1,118 @@
+1. What your business/project is about
+CareerFrame is an intelligent digital platform designed to guide individuals through their career development journey with precision, clarity, and personalised support. At its core, CareerFrame uses advanced AI to align users' skills, experiences, and aspirations with the most suitable and rewarding job roles across industries.
+
+The platform functions like a virtual career coach—guiding users step-by-step with milestone-based progression plans, skill gap analysis, and tailored learning resources that bridge the gap between where users are and where they want to be professionally. Whether users are unemployed, career-changers, recent graduates, or simply feel misaligned in their current job, CareerFrame helps them regain direction and take practical steps toward meaningful employment.
+
+It’s more than a job board—it’s a complete ecosystem for career success.
+
+2. Your key value proposition or main message
+“Empowering individuals to discover, prepare for, and obtain their dream careers through personalised AI coaching, skills development, and real-time job alignment.”
+
+CareerFrame doesn’t just show people what jobs exist—it shows them which roles are right for them, and exactly how to get there.
+
+Our value lies in our intelligent, humanised approach. We offer a full-circle solution that:
+
+Aligns people to careers they’re genuinely suited for,
+
+Identifies exactly what they’re missing (skills, education, experience),
+
+Provides step-by-step milestones and learning recommendations,
+
+Tracks progress and boosts motivation with XP rewards and community support,
+
+Helps users present themselves professionally with AI-powered CV and cover letter tools.
+
+For users overwhelmed by choice or lacking clarity, CareerFrame offers direction, insight, and action—all in one platform.
+
+3. Any specific features or sections you want highlighted
+Yes—these are the key features and sections that should be prominently highlighted on the landing page:
+
+🧠 AI Career Coach
+Real-time personalised chat support from an AI assistant that guides the user through each step of their career journey.
+
+🔍 Role Discovery & Career Alignment
+Explore thousands of job roles based on your personality, experience, and skillset.
+
+Get matched with roles that suit you, not the general market.
+
+🧱 Skill Gap Analysis
+Understand exactly what’s missing between your current profile and your desired role.
+
+Receive targeted learning resources and milestones to close that gap efficiently.
+
+🎯 Milestone Tracker
+Follow structured, manageable steps toward your career goal.
+
+Regenerate or reset milestones as your path evolves.
+
+📑 AI CV & Cover Letter Builder
+Instantly create professional documents tailored to your chosen role and your career data.
+
+🧩 Community & Group Networking
+Connect with others in your target industry.
+
+Join industry-specific chat groups or build your own.
+
+🏆 XP & Rewards System
+Earn XP for completing key tasks, like CV building, skill upgrades, or inviting friends.
+
+XP can be exchanged for discounts with partnered brands or premium features.
+
+💼 Freemium & Premium Options
+Free users can explore the basics.
+
+Premium unlocks full milestone access, unlimited coaching, deep analysis, and tools.
+
+4. Your preferred style or branding (colors, tone, etc.)
+CareerFrame’s branding should evoke a sense of possibility, growth, and trust, with a modern, clean design that appeals to all ages—especially job-seekers aged 18 to 45.
+
+🎨 Brand Colours
+Deep Navy Blue – Trust, stability, intelligence
+
+Fresh Green – Growth, action, potential
+
+Soft Grey – Neutral balance, professionalism
+
+White Space – Clean layout for ease of navigation
+
+✨ Tone of Voice
+Supportive and friendly, like a mentor who’s got your back
+
+Clear, simple language with zero jargon
+
+Empowering and motivational – not overly corporate
+
+Emotionally intelligent, addressing stress, confusion, and ambition
+
+👀 Visual Style
+Realistic illustrated characters, like those in Airbnb ads
+
+Subtle animations as users scroll (e.g. characters transitioning from lost → aligned)
+
+Career “machine” metaphor: a person walks in misaligned, walks out aligned and empowered
+
+Responsive mobile-first design with scroll-triggered reveals
+
+5. Any specific functionality you need
+The landing page should not just be informative—it should convert. It needs to direct users clearly into the onboarding journey or sign-up flow.
+
+✅ Must-Have Functionality:
+Call-to-action buttons throughout (e.g. “Discover My Career Path”, “Start Free”, “Analyse My Skills”)
+
+Intro Video or Animated Hero Section showing a user journey visually (before → after using CareerFrame)
+
+Live Chat Box or AI chatbot widget for instant Q&A or demo
+
+Newsletter Sign-Up – “Get Career Tips & Job Insights”
+
+Testimonials Section – With rotating quotes from early users
+
+Pricing Comparison Table – Freemium vs Premium
+
+Interactive Demo or Tour Teaser – E.g. “See How CareerFrame Works”
+
+Partner Logos or Course Provider Badges – To add credibility
+
+Sticky Header with navigation + "Join Now" CTA
+
+Scroll-triggered milestone visual – to showcase how progression works
