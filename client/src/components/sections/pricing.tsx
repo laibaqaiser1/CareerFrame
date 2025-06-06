@@ -100,11 +100,11 @@ export function PricingSection() {
                   {plan.features.map((feature, i) => (
                     <li key={i} className="flex items-center">
                       {feature.included ? (
-                        <Check className={`mr-3 h-5 w-5 ${plan.popular ? 'text-white' : 'text-fresh-green'}`} />
+                        <Check className={`mr-3 h-5 w-5 ${feature.highlight ? 'text-yellow-400' : plan.popular ? 'text-white' : 'text-fresh-green'}`} />
                       ) : (
                         <X className="mr-3 h-5 w-5 text-gray-400" />
                       )}
-                      <span className={`${feature.included ? '' : 'text-gray-400'} ${feature.highlight ? 'font-bold text-yellow-300 bg-yellow-500/20 px-2 py-1 rounded' : ''}`}>
+                      <span className={`${feature.included ? '' : 'text-gray-400'} ${feature.highlight ? 'font-bold text-yellow-400' : ''}`}>
                         {feature.text}
                       </span>
                     </li>
