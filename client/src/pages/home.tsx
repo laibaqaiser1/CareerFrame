@@ -122,24 +122,23 @@ export default function Home() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-white page-transition">
-      <Navigation />
+    <div className="min-h-screen bg-slate-900 page-transition">
       <div className="fade-in">
         <HeroSection />
       </div>
-      <div className="slide-up">
+      <div className="slide-up bg-slate-800" id="features">
         <FeaturesSection />
       </div>
-      <div className="slide-in-left">
+      <div className="slide-in-left bg-slate-900" id="how-it-works">
         <HowItWorksSection />
       </div>
-      <div className="slide-in-right">
+      <div className="slide-in-right bg-slate-800" id="pricing">
         <PricingSection />
       </div>
-      <div className="scale-in">
+      <div className="scale-in bg-slate-900">
         <FAQSection />
       </div>
-      <div className="slide-up">
+      <div className="slide-up bg-slate-800">
         <NewsletterSection />
       </div>
       <Footer />
