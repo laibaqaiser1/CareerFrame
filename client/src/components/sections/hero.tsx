@@ -1,7 +1,8 @@
 import { Button } from "@/components/ui/button";
 import { Play, Heart, ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
-import heroImage from "@assets/Picture1.jpg";
+import careerVrImage from "@assets/Screenshot 2025-05-17 182855.png";
+import xpLeaderboardImage from "@assets/XP & Reward Interface.png";
 
 export function HeroSection() {
   return (
@@ -45,34 +46,79 @@ export function HeroSection() {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            <div className="bg-gradient-to-br from-blue-100 to-indigo-100 rounded-2xl p-8 relative overflow-hidden">
-              <img 
-                src={heroImage}
-                alt="Confident professional with strategic planning materials in urban setting" 
-                className="rounded-xl shadow-2xl w-full h-auto animate-float" 
-              />
-              {/* Overlay elements */}
+            {/* Main Desktop Mockup */}
+            <div className="relative mb-8">
+              <div className="bg-gray-800 rounded-t-xl p-2 shadow-2xl">
+                {/* Browser Chrome */}
+                <div className="flex space-x-2 mb-2">
+                  <div className="w-3 h-3 bg-red-500 rounded-full"></div>
+                  <div className="w-3 h-3 bg-yellow-500 rounded-full"></div>
+                  <div className="w-3 h-3 bg-green-500 rounded-full"></div>
+                </div>
+                <div className="bg-white rounded-lg overflow-hidden">
+                  <img 
+                    src={xpLeaderboardImage} 
+                    alt="CareerFrame XP & Leaderboard Interface showing team rankings and milestone progress" 
+                    className="w-full h-auto"
+                  />
+                </div>
+              </div>
+              
+              {/* Floating Mobile Mockup */}
               <motion.div 
-                className="absolute top-4 right-4 bg-white rounded-lg p-3 shadow-lg"
-                initial={{ scale: 0 }}
-                animate={{ scale: 1 }}
-                transition={{ delay: 1, duration: 0.3 }}
+                className="absolute -bottom-8 -right-8 w-48"
+                initial={{ opacity: 0, scale: 0.8 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ delay: 1, duration: 0.5 }}
               >
-                <div className="flex items-center text-sm">
-                  <div className="w-3 h-3 bg-fresh-green rounded-full mr-2"></div>
-                  <span className="font-semibold">Career Aligned</span>
+                <div className="bg-gray-900 rounded-3xl p-2 shadow-xl">
+                  <div className="bg-black rounded-2xl p-1">
+                    <div className="bg-white rounded-xl overflow-hidden relative">
+                      {/* Mobile notch */}
+                      <div className="absolute top-0 left-1/2 transform -translate-x-1/2 w-20 h-4 bg-black rounded-b-xl z-10"></div>
+                      <img 
+                        src={careerVrImage} 
+                        alt="CareerFrame Career Selection Interface with VR visualization of career paths" 
+                        className="w-full h-64 object-cover"
+                      />
+                    </div>
+                  </div>
                 </div>
               </motion.div>
-              <motion.div 
-                className="absolute bottom-4 left-4 bg-white rounded-lg p-3 shadow-lg"
-                initial={{ scale: 0 }}
-                animate={{ scale: 1 }}
-                transition={{ delay: 1.2, duration: 0.3 }}
-              >
-                <div className="text-xs text-soft-grey">Fulfillment Score</div>
-                <div className="text-lg font-bold text-navy">98%</div>
-              </motion.div>
             </div>
+
+            {/* Floating UI Elements */}
+            <motion.div 
+              className="absolute top-4 left-4 bg-white rounded-lg p-3 shadow-lg"
+              initial={{ scale: 0 }}
+              animate={{ scale: 1 }}
+              transition={{ delay: 1.2, duration: 0.3 }}
+            >
+              <div className="flex items-center text-sm">
+                <div className="w-3 h-3 bg-fresh-green rounded-full mr-2"></div>
+                <span className="font-semibold">100 XP Earned</span>
+              </div>
+            </motion.div>
+
+            <motion.div 
+              className="absolute bottom-20 left-8 bg-white rounded-lg p-3 shadow-lg"
+              initial={{ scale: 0 }}
+              animate={{ scale: 1 }}
+              transition={{ delay: 1.4, duration: 0.3 }}
+            >
+              <div className="text-xs text-soft-grey">Team Rank</div>
+              <div className="text-lg font-bold text-navy">#1</div>
+            </motion.div>
+
+            <motion.div 
+              className="absolute top-16 right-16 bg-white rounded-lg p-3 shadow-lg"
+              initial={{ scale: 0 }}
+              animate={{ scale: 1 }}
+              transition={{ delay: 1.6, duration: 0.3 }}
+            >
+              <div className="text-xs text-soft-grey">Career Match</div>
+              <div className="text-lg font-bold text-fresh-green">98%</div>
+            </motion.div>
           </motion.div>
         </div>
       </div>
