@@ -26,7 +26,7 @@
   
   /* Custom CareerFrame colors */
   --navy: 217 91% 25%; /* #1E3A8A */
-  --fresh-green: 166 57% 48%; /* #35C1A0 - matches CareerFrame logo */
+  --fresh-green: #35C1A0; /* matches CareerFrame logo */
   --soft-grey: 220 9% 46%; /* #6B7280 */
   --light-grey: 220 14% 96%; /* #F9FAFB */
 }
@@ -278,5 +278,22 @@
 }
 
 .gradient-green {
-  background: linear-gradient(135deg, hsl(var(--fresh-green)) 0%, #2A9D7F 100%);
+  background: linear-gradient(135deg, var(--fresh-green) 0%, #2A9D7F 100%);
+}
+
+/* Ensure exact color matching for CareerFrame logo */
+.bg-fresh-green {
+  background-color: #35C1A0 !important;
+}
+
+.text-fresh-green {
+  color: #35C1A0 !important;
+}
+
+.border-fresh-green {
+  border-color: #35C1A0 !important;
+}
+
+.hover\:bg-fresh-green\/90:hover {
+  background-color: rgba(53, 193, 160, 0.9) !important;
 }
