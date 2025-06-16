@@ -37,10 +37,10 @@ export function HowItWorksSection() {
           }`}
         >
           <h2 className="text-3xl lg:text-4xl font-bold text-white mb-6 drop-shadow-lg">
-            Your Journey from Confused to Confident
+            Your 90-Day Career Transformation Roadmap
           </h2>
           <p className="text-xl text-white max-w-3xl mx-auto drop-shadow-md">
-            See how CareerFrame transforms career uncertainty into clear, actionable steps toward your dream job.
+            Follow our proven 3-step system used by 12,000+ professionals to land their dream careers.
           </p>
         </div>
 

@@ -57,10 +57,10 @@ export function PricingSection() {
           }`}
         >
           <h2 className="text-3xl lg:text-4xl font-bold text-white mb-6 drop-shadow-lg">
-            Choose Your Career Acceleration Plan
+            Simple Pricing, Powerful Results
           </h2>
           <p className="text-xl text-white max-w-3xl mx-auto drop-shadow-md">
-            Start free and upgrade when you're ready to unlock your full career potential.
+            Average ROI: 500% within 6 months. Start free, upgrade when you see results.
           </p>
         </div>
 

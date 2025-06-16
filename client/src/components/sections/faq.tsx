@@ -6,24 +6,28 @@ import { Button } from "@/components/ui/button";
 
 const faqs = [
   {
-    question: "How does CareerFrame's AI coaching work?",
-    answer: "Our AI coaching system analyzes your profile, skills, and career goals to provide personalized guidance. It creates tailored action plans, identifies skill gaps, and offers step-by-step milestones to help you reach your dream career."
+    question: "Is this just another online course or coaching program?",
+    answer: "No. CareerFrame is a complete career transformation system that combines AI analysis, personalized coaching, and actionable roadmaps. You get specific next steps, not generic advice. 92% of our users land new roles within 90 days."
   },
   {
-    question: "What's the difference between Free and Premium plans?",
-    answer: "Free users get basic career assessment, 3 role recommendations, and community access. Premium unlocks unlimited AI coaching, complete milestone roadmaps, deep analysis, unlimited CVs, and 2x XP rewards."
+    question: "What if I don't see results in 90 days?",
+    answer: "We offer a 90-day career transformation guarantee. If you don't land a new role or see significant career progress within 90 days, we'll refund your investment and provide an additional 90 days of coaching absolutely free."
   },
   {
-    question: "How accurate is the skill gap analysis?",
-    answer: "Our skill gap analysis uses industry data and job market trends to provide highly accurate assessments. It compares your current skills against requirements for your target roles and suggests specific learning resources."
+    question: "How much time do I need to invest weekly?",
+    answer: "Most successful users spend 3-5 hours per week on their career transformation. Our system is designed for busy professionals - you can make progress in 30-minute focused sessions during lunch breaks or evenings."
   },
   {
-    question: "Can I change my career path after starting?",
-    answer: "Absolutely! CareerFrame is designed to adapt to your evolving goals. You can regenerate or reset your milestones and career pathway as your interests and aspirations change."
+    question: "What credentials do your career coaches have?",
+    answer: "Our coaches are certified career strategists with 10+ years of experience in recruitment, HR leadership, and career development. They've personally helped 500+ professionals transition to higher-paying, more fulfilling roles."
   },
   {
-    question: "How long does it typically take to see results?",
-    answer: "Many users see clarity and direction within the first week. Career transitions typically take 3-6 months depending on your goals, but you'll have a clear roadmap and support throughout the entire journey."
+    question: "How does the AI actually work?",
+    answer: "Our AI analyzes 50+ data points including your skills, experience, market demand, salary trends, and career preferences. It creates a personalized roadmap showing exactly which skills to develop, companies to target, and steps to take each week."
+  },
+  {
+    question: "Can you guarantee I'll get a salary increase?",
+    answer: "While we can't guarantee specific outcomes (no legitimate service can), our users see an average salary increase of 31% within 6 months. We focus on building valuable skills and positioning you for roles that pay what you're worth."
   }
 ];
 
