@@ -132,6 +132,9 @@ export default function Home() {
         <HeroSection />
       </div>
       <div className="slide-up">
+        <WhatToExpectSection />
+      </div>
+      <div className="slide-up">
         <TrustSignalsSection />
       </div>
       <div className="slide-in-left">
@@ -139,6 +142,9 @@ export default function Home() {
       </div>
       <div className="slide-in-left">
         <HowItWorksSection />
+      </div>
+      <div className="fade-in">
+        <FounderStorySection />
       </div>
       <div className="slide-in-right">
         <PricingSection />

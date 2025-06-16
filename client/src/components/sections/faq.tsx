@@ -44,10 +44,10 @@ export function FAQSection() {
           }`}
         >
           <h2 className="text-3xl lg:text-4xl font-bold text-navy mb-6">
-            FAQs
+            Your Questions Answered
           </h2>
           <p className="text-xl text-soft-grey">
-            Common questions about transforming your career with CareerFrame
+            Honest answers to the questions holding you back from taking action
           </p>
         </div>
 
