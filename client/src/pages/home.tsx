@@ -8,8 +8,9 @@ import { FounderStorySection } from "@/components/sections/founder-story";
 import { TestimonialsSection } from "@/components/sections/testimonials-new";
 import { PricingSection } from "@/components/sections/pricing";
 import { UrgencyCTASection } from "@/components/sections/urgency-cta";
-import { NewsletterSection } from "@/components/sections/newsletter";
 import { FAQSection } from "@/components/sections/faq";
+import { AITransparencySection } from "@/components/sections/ai-transparency";
+import { NewsletterSection } from "@/components/sections/newsletter";
 import { Footer } from "@/components/sections/footer";
 import { LiveChat } from "@/components/ui/live-chat";
 import { Button } from "@/components/ui/button";
@@ -154,6 +155,9 @@ export default function Home() {
       </div>
       <div className="scale-in">
         <FAQSection />
+      </div>
+      <div className="fade-in">
+        <AITransparencySection />
       </div>
       <div className="slide-up">
         <NewsletterSection />
