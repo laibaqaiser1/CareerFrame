@@ -19,7 +19,7 @@ export function LeaderboardMockup() {
         <Button 
           variant="outline" 
           size="sm" 
-          className="border-green-600 text-green-600 hover:bg-green-50"
+          className="border-fresh-green text-fresh-green hover:bg-fresh-green/10"
         >
           Redeem Points
         </Button>
@@ -36,8 +36,8 @@ export function LeaderboardMockup() {
       {/* Leaderboard Positions */}
       <div className="flex justify-center items-end gap-6 mb-6">
         {/* 2nd Place */}
-        <div className="bg-white border-2 border-green-500 rounded-xl p-4 text-center min-h-[120px] flex flex-col justify-between">
-          <div className="text-4xl font-bold text-green-700 mb-2">2</div>
+        <div className="bg-white border-2 border-fresh-green rounded-xl p-4 text-center min-h-[120px] flex flex-col justify-between">
+          <div className="text-4xl font-bold text-fresh-green mb-2">2</div>
           <div className="flex items-center gap-2">
             <div className="w-8 h-8 bg-blue-500 rounded-full"></div>
             <div>
@@ -48,10 +48,10 @@ export function LeaderboardMockup() {
         </div>
 
         {/* 1st Place (Taller) */}
-        <div className="bg-white border-2 border-green-500 rounded-xl p-4 text-center min-h-[140px] flex flex-col justify-between">
-          <div className="text-5xl font-bold text-green-700 mb-2">1</div>
+        <div className="bg-white border-2 border-fresh-green rounded-xl p-4 text-center min-h-[140px] flex flex-col justify-between">
+          <div className="text-5xl font-bold text-fresh-green mb-2">1</div>
           <div className="flex items-center gap-2">
-            <div className="w-8 h-8 bg-green-500 rounded-full"></div>
+            <div className="w-8 h-8 bg-fresh-green rounded-full"></div>
             <div>
               <div className="font-semibold text-sm">Alex Kim</div>
               <div className="text-xs text-gray-500">3,120 XP</div>
@@ -60,8 +60,8 @@ export function LeaderboardMockup() {
         </div>
 
         {/* 3rd Place */}
-        <div className="bg-white border-2 border-green-500 rounded-xl p-4 text-center min-h-[100px] flex flex-col justify-between">
-          <div className="text-3xl font-bold text-green-700 mb-2">3</div>
+        <div className="bg-white border-2 border-fresh-green rounded-xl p-4 text-center min-h-[100px] flex flex-col justify-between">
+          <div className="text-3xl font-bold text-fresh-green mb-2">3</div>
           <div className="flex items-center gap-2">
             <div className="w-8 h-8 bg-purple-500 rounded-full"></div>
             <div>
@@ -96,7 +96,7 @@ export function LeaderboardMockup() {
       <div className="mt-5 pt-4 border-t border-gray-200">
         <div className="flex justify-between items-center">
           <div className="text-sm text-gray-600">Your Rank: #8</div>
-          <div className="text-sm font-semibold text-green-600">1,420 XP</div>
+          <div className="text-sm font-semibold text-fresh-green">1,420 XP</div>
         </div>
       </div>
     </div>

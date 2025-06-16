@@ -12,7 +12,7 @@ export function LiveChat() {
       <Button
         onClick={handleChatClick}
         size="lg"
-        className="bg-fresh-green hover:bg-green-600 text-white p-4 rounded-full shadow-lg transition-all transform hover:scale-110"
+        className="bg-fresh-green hover:bg-fresh-green/90 text-white p-4 rounded-full shadow-lg transition-all transform hover:scale-110"
       >
         <MessageCircle className="h-6 w-6" />
       </Button>

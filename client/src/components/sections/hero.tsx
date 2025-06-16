@@ -23,9 +23,8 @@ export function HeroSection() {
             <div className="flex flex-col sm:flex-row gap-4 mb-8">
               <Button 
                 size="lg" 
-                className="bg-fresh-green hover:bg-green-600 text-white text-lg px-8 py-4 shadow-lg button-hover"
+                className="bg-fresh-green hover:bg-fresh-green/90 text-white text-lg px-8 py-4 shadow-lg button-hover"
               >
-                <Heart className="mr-2 h-5 w-5 fill-red-500 text-red-500" />
                 Join For FREE
               </Button>
               <Button 
