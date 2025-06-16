@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { HeroSection } from "@/components/sections/hero";
+import { TrustSignalsSection } from "@/components/sections/trust-signals";
 import { FeaturesSection } from "@/components/sections/features";
 import { HowItWorksSection } from "@/components/sections/how-it-works";
 import { TestimonialsSection } from "@/components/sections/testimonials-new";
@@ -128,6 +129,9 @@ export default function Home() {
         <HeroSection />
       </div>
       <div className="slide-up">
+        <TrustSignalsSection />
+      </div>
+      <div className="slide-in-left">
         <FeaturesSection />
       </div>
       <div className="slide-in-left">

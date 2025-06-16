@@ -15,17 +15,27 @@ export function HeroSection() {
             transition={{ duration: 0.6 }}
           >
             <h1 className="text-4xl lg:text-6xl font-bold text-navy mb-6 leading-tight">
-              Imagine Waking Up Excited for a Career That <span className="text-fresh-green">Truly Fulfils You</span> — We'll Help You Get There
+              Land Your Dream Career in <span className="text-fresh-green">90 Days</span> — Guaranteed
             </h1>
-            <p className="text-xl text-soft-grey mb-8 leading-relaxed">
-              With CareerFrame's personalized coaching, powerful insights, and a clear roadmap, we'll help you unlock your true potential, bridge skill gaps, and step into a career that inspires and drives you every day.
+            <p className="text-xl text-soft-grey mb-4 leading-relaxed">
+              Join 12,000+ professionals who've successfully transitioned to fulfilling careers using our AI-powered career coaching platform.
             </p>
+            <div className="flex items-center gap-4 mb-8">
+              <div className="flex items-center text-sm text-soft-grey">
+                <span className="w-2 h-2 bg-fresh-green rounded-full mr-2"></span>
+                Average salary increase: 31%
+              </div>
+              <div className="flex items-center text-sm text-soft-grey">
+                <span className="w-2 h-2 bg-fresh-green rounded-full mr-2"></span>
+                92% land new role within 90 days
+              </div>
+            </div>
             <div className="flex flex-col sm:flex-row gap-4 mb-8">
               <Button 
                 size="lg" 
                 className="bg-fresh-green hover:bg-fresh-green/90 text-white text-lg px-8 py-4 shadow-lg button-hover"
               >
-                Join For FREE
+                Start Your Career Transformation Today
               </Button>
               <Button 
                 variant="outline" 
