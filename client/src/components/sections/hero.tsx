@@ -55,13 +55,13 @@ export function HeroSection() {
           </motion.div>
 
           <motion.div 
-            className="relative h-[600px] w-full"
+            className="relative h-[500px] lg:h-[600px] w-full"
             initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
             {/* Device Mockup Stack */}
-            <div className="relative w-full h-full perspective-1000">
+            <div className="relative w-full h-full" style={{ perspective: '1000px' }}>
               
               {/* Back layer: MacBook (z-index: 10) */}
               <motion.div 
@@ -70,9 +70,9 @@ export function HeroSection() {
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ delay: 0.5, duration: 0.6 }}
               >
-                <div className="w-full max-w-[800px] mx-auto mt-8">
+                <div className="w-full max-w-[600px] lg:max-w-[800px] mx-auto mt-4 lg:mt-8">
                   {/* MacBook Frame */}
-                  <div className="bg-gray-800 rounded-t-2xl p-4 shadow-2xl transform perspective-1000 rotateX-5">
+                  <div className="bg-gray-800 rounded-t-2xl p-2 lg:p-4 shadow-2xl" style={{ transform: 'rotateX(5deg)' }}>
                     <div className="bg-black rounded-lg overflow-hidden aspect-[16/10]">
                       <img 
                         src={milestoneTracker}
@@ -82,20 +82,20 @@ export function HeroSection() {
                     </div>
                   </div>
                   {/* MacBook Base */}
-                  <div className="bg-gray-700 h-6 rounded-b-2xl shadow-lg transform perspective-1000 rotateX-5"></div>
+                  <div className="bg-gray-700 h-4 lg:h-6 rounded-b-2xl shadow-lg" style={{ transform: 'rotateX(5deg)' }}></div>
                 </div>
               </motion.div>
 
               {/* Middle-left layer: Tablet (z-index: 20) */}
               <motion.div 
-                className="absolute left-0 top-12 z-20"
+                className="absolute left-0 lg:left-0 top-8 lg:top-12 z-20"
                 initial={{ opacity: 0, x: -50 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: 0.8, duration: 0.6 }}
               >
-                <div className="w-[500px]">
+                <div className="w-[300px] lg:w-[500px]">
                   {/* Tablet Frame */}
-                  <div className="bg-gray-300 rounded-2xl p-3 shadow-2xl drop-shadow-lg">
+                  <div className="bg-gray-300 rounded-2xl p-2 lg:p-3 shadow-2xl drop-shadow-lg">
                     <div className="bg-black rounded-xl overflow-hidden aspect-[4/3]">
                       <img 
                         src={leaderboard}
@@ -109,14 +109,14 @@ export function HeroSection() {
 
               {/* Middle-right layer: Smartphone (z-index: 20) */}
               <motion.div 
-                className="absolute right-8 top-20 z-20"
+                className="absolute right-4 lg:right-8 top-12 lg:top-20 z-20"
                 initial={{ opacity: 0, x: 50, rotate: 0 }}
                 animate={{ opacity: 1, x: 0, rotate: 5 }}
                 transition={{ delay: 1.0, duration: 0.6 }}
               >
-                <div className="w-[300px]">
+                <div className="w-[180px] lg:w-[300px]">
                   {/* Phone Frame */}
-                  <div className="bg-gray-900 rounded-3xl p-2 shadow-2xl drop-shadow-lg">
+                  <div className="bg-gray-900 rounded-3xl p-1 lg:p-2 shadow-2xl drop-shadow-lg">
                     <div className="bg-black rounded-2xl overflow-hidden aspect-[9/19.5]">
                       <img 
                         src={careerCoach}
@@ -130,14 +130,14 @@ export function HeroSection() {
 
               {/* Front corners: Smartwatches (z-index: 30) */}
               <motion.div 
-                className="absolute left-4 bottom-8 z-30"
+                className="absolute left-2 lg:left-4 bottom-4 lg:bottom-8 z-30"
                 initial={{ opacity: 0, scale: 0 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ delay: 1.3, duration: 0.4 }}
               >
-                <div className="w-[120px]">
+                <div className="w-[80px] lg:w-[120px]">
                   {/* Left Watch Frame */}
-                  <div className="bg-gray-800 rounded-2xl p-2 shadow-xl">
+                  <div className="bg-gray-800 rounded-2xl p-1 lg:p-2 shadow-xl">
                     <div className="bg-black rounded-xl overflow-hidden aspect-square">
                       <img 
                         src={xpInterface}
@@ -150,14 +150,14 @@ export function HeroSection() {
               </motion.div>
 
               <motion.div 
-                className="absolute right-4 bottom-8 z-30"
+                className="absolute right-2 lg:right-4 bottom-4 lg:bottom-8 z-30"
                 initial={{ opacity: 0, scale: 0 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ delay: 1.5, duration: 0.4 }}
               >
-                <div className="w-[120px]">
+                <div className="w-[80px] lg:w-[120px]">
                   {/* Right Watch Frame */}
-                  <div className="bg-gray-800 rounded-2xl p-2 shadow-xl">
+                  <div className="bg-gray-800 rounded-2xl p-1 lg:p-2 shadow-xl">
                     <div className="bg-black rounded-xl overflow-hidden aspect-square">
                       <img 
                         src={xpInterface}
