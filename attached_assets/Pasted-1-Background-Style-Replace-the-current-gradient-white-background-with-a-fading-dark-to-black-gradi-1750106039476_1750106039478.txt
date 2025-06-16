@@ -1,0 +1,56 @@
+1. Background Style
+Replace the current gradient/white background with a fading dark-to-black gradient background.
+
+Use deep charcoal/black as base (#0A0A0A) with a soft gradient upward fade (similar to Tailwind bg-gradient-to-t from-black via-neutral-900 to-[#111827]).
+2. Device Mockup Stack – Precise Implementation
+Recreate the visual device stack shown in the attached reference (Desired Landing Page.png) by arranging four visible device frames, each containing a static CareerFrame UI screenshot.
+🧱 Placement & Order (Z-index/stacking)
+Back layer (z-index: 10):
+A MacBook-style laptop mockup
+Positioned centered, slightly tilted backward or shown flat
+Displays the CareerFrame Milestone Tracker screenshot
+Middle-left layer (z-index: 20):
+A tablet (iPad style) mockup
+Positioned slightly in front of the laptop, left-aligned
+Displays the Leaderboard or Dashboard UI screenshot
+Middle-right layer (z-index: 20):
+A smartphone (iPhone style) mockup
+Positioned to the right of the tablet, slightly rotated forward
+Displays the Career Coach or CV Upload screen
+Front corners (z-index: 30):
+Two smartwatches (Apple Watch style)
+Placed on the left and right outer corners
+Display small cropped versions of XP tracking or milestone stats
+________________________________________
+📐 Sizing and Perspective
+All device mockups should be proportionally scaled:
+Laptop width ≈ 800px
+Tablet ≈ 500px
+Phone ≈ 300px
+Watch ≈ 120px
+Maintain 3D perspective or shadow illusion to give a layered depth (you may use a Tailwind utility like drop-shadow-lg or CSS transform: perspective(...))
+________________________________________
+📄 Image Integration
+Each device should use a div with a background image (bg-[url('/assets/device-ui.png')]) or <img> inside a styled device frame container
+You may use pre-built device frame wrappers like:
+@tailwindcss/aspect-ratio
+or static SVG/PNG device outlines as containers
+________________________________________
+⚠️ Important:
+Do not use placeholder mockups or lorem ipsum — use the real CareerFrame UI screenshots previously provided
+Do not place all screenshots inside one device — they must appear across separate devices as described
+
+🖋️ 3. Typography & Text Styling
+Apply light mint green (#B1D5C8) or the closest extracted hex from the reference image to all headline, nav link, and body text within the hero section.
+
+Update buttons to match the same soft green tone for consistency with the branding in the mockup.
+
+🧩 4. Component Integrity
+Do not alter the layout logic of the HeroSection component.
+
+Keep existing motion.div logic, Join For FREE CTA, and call-to-action text structure as-is.
+
+Simply re-skin the visual container and overlay the new mockup elements for brand alignment.
+
+
+Ensure responsiveness is retained across mobile/tablet.
