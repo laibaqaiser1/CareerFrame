@@ -74,7 +74,7 @@ export function NewsletterSection() {
       </section>
 
       {/* Newsletter & Final CTA */}
-      <section className="py-20 bg-gradient-to-br from-fresh-green via-blue-500 to-purple-600 text-white">
+      <section className="py-20 bg-gradient-to-br from-green-400 via-blue-500 to-purple-600 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div 
             ref={ref}
@@ -85,7 +85,7 @@ export function NewsletterSection() {
             </h2>
             <Button 
               size="lg" 
-              className="bg-fresh-green hover:bg-fresh-green/90 text-white px-12 py-6 text-xl font-semibold button-hover"
+              className="bg-fresh-green hover:bg-green-600 text-white px-12 py-6 text-xl font-semibold button-hover"
             >
               <Rocket className="mr-3 h-6 w-6" />
               Join For FREE
@@ -107,7 +107,7 @@ export function NewsletterSection() {
               <div className="flex flex-col sm:flex-row gap-4">
                 <Button 
                   size="lg" 
-                  className="bg-fresh-green hover:bg-fresh-green/90 text-white px-8 py-4 flex-1 button-hover"
+                  className="bg-fresh-green hover:bg-green-600 text-white px-8 py-4 flex-1 button-hover"
                 >
                   <Rocket className="mr-2 h-5 w-5" />
                   Start Your Career Journey
@@ -145,7 +145,7 @@ export function NewsletterSection() {
                     <Button 
                       type="submit"
                       disabled={isSubmitting}
-                      className="w-full bg-fresh-green hover:bg-fresh-green/90 text-white py-3"
+                      className="w-full bg-fresh-green hover:bg-green-600 text-white py-3"
                     >
                       <Mail className="mr-2 h-4 w-4" />
                       {isSubmitting ? "Subscribing..." : "Subscribe to Newsletter"}

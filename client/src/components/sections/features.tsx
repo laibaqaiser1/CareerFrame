@@ -75,7 +75,7 @@ const additionalFeatures = [
     icon: TrendingUp,
     title: "8. Deep Skill Gap Analysis (Premium)",
     description: "Receive a detailed skill gap report to understand areas needing improvement for career advancement.",
-    color: "bg-fresh-green/10 text-fresh-green"
+    color: "bg-green-100 text-green-500"
   },
   {
     icon: Trophy,
@@ -236,21 +236,21 @@ export function FeaturesSection() {
                 <div className="grid lg:grid-cols-2 gap-8 items-center">
                   <div>
                     <h3 className="text-3xl font-bold mb-4">🏆 Earn XP & Unlock Rewards</h3>
-                    <p className="text-white/90 text-lg mb-6">
+                    <p className="text-green-50 text-lg mb-6">
                       Complete tasks like CV building, skill upgrades, or community engagement to earn XP. Exchange points for discounts with partner brands or unlock premium features.
                     </p>
                     <div className="flex items-center space-x-6">
                       <div className="text-center">
                         <div className="text-2xl font-bold">Build</div>
-                        <div className="text-white/80 text-sm">Your Skills</div>
+                        <div className="text-green-200 text-sm">Your Skills</div>
                       </div>
                       <div className="text-center">
                         <div className="text-2xl font-bold">Earn</div>
-                        <div className="text-white/80 text-sm">XP Points</div>
+                        <div className="text-green-200 text-sm">XP Points</div>
                       </div>
                       <div className="text-center">
                         <div className="text-2xl font-bold">Unlock</div>
-                        <div className="text-white/80 text-sm">Rewards</div>
+                        <div className="text-green-200 text-sm">Rewards</div>
                       </div>
                     </div>
                   </div>
