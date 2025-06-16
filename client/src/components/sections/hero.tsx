@@ -1,11 +1,14 @@
 import { Button } from "@/components/ui/button";
 import { Play, Heart, ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
-import heroImage from "@assets/Picture1.jpg";
+import milestoneTracker from "@assets/image_1749238417328.png";
+import leaderboard from "@assets/image_1749238465998.png";
+import careerCoach from "@assets/image_1749238613692.png";
+import xpInterface from "@assets/XP & Reward Interface.png";
 
 export function HeroSection() {
   return (
-    <section className="pt-20 pb-16 bg-gradient-to-br from-blue-50 to-indigo-50 overflow-hidden">
+    <section className="pt-20 pb-16 bg-gradient-to-t from-black via-neutral-900 to-[#111827] overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="lg:grid lg:grid-cols-2 lg:gap-12 items-center">
           <motion.div 
@@ -14,36 +17,36 @@ export function HeroSection() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <h1 className="text-4xl lg:text-6xl font-bold text-navy mb-4 leading-tight">
+            <h1 className="text-4xl lg:text-6xl font-bold text-[#B1D5C8] mb-4 leading-tight">
               Wake Up Excited for a Career That Fulfills You
             </h1>
-            <p className="text-lg text-soft-grey mb-2 font-medium">
+            <p className="text-lg text-[#B1D5C8] mb-2 font-medium opacity-90">
               CareerFrame is an AI-powered career development platform — not a job board
             </p>
-            <p className="text-xl text-soft-grey mb-4 leading-relaxed">
+            <p className="text-xl text-[#B1D5C8] mb-4 leading-relaxed opacity-80">
               Join 12,000+ professionals who've transformed their careers in just 15 minutes a day
             </p>
             <div className="flex items-center gap-4 mb-8">
-              <div className="flex items-center text-sm text-soft-grey">
-                <span className="w-2 h-2 bg-fresh-green rounded-full mr-2"></span>
+              <div className="flex items-center text-sm text-[#B1D5C8]">
+                <span className="w-2 h-2 bg-[#B1D5C8] rounded-full mr-2"></span>
                 Average salary increase: 31%
               </div>
-              <div className="flex items-center text-sm text-soft-grey">
-                <span className="w-2 h-2 bg-fresh-green rounded-full mr-2"></span>
+              <div className="flex items-center text-sm text-[#B1D5C8]">
+                <span className="w-2 h-2 bg-[#B1D5C8] rounded-full mr-2"></span>
                 92% land new role within 90 days
               </div>
             </div>
             <div className="flex flex-col sm:flex-row gap-4 mb-8">
               <Button 
                 size="lg" 
-                className="bg-fresh-green hover:bg-fresh-green/90 text-white text-lg px-8 py-4 shadow-lg button-hover"
+                className="bg-[#B1D5C8] hover:bg-[#B1D5C8]/90 text-black text-lg px-8 py-4 shadow-lg button-hover"
               >
                 Start Your Career Plan — Free
               </Button>
               <Button 
                 variant="outline" 
                 size="lg" 
-                className="border-2 border-navy text-navy hover:bg-navy hover:text-white text-lg px-8 py-4 button-hover"
+                className="border-2 border-[#B1D5C8] text-[#B1D5C8] hover:bg-[#B1D5C8] hover:text-black text-lg px-8 py-4 button-hover"
               >
                 <Play className="mr-2 h-5 w-5" />
                 Watch Video
@@ -52,38 +55,120 @@ export function HeroSection() {
           </motion.div>
 
           <motion.div 
-            className="relative"
+            className="relative h-[600px] w-full"
             initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            <div className="bg-gradient-to-br from-blue-100 to-indigo-100 rounded-2xl p-8 relative overflow-hidden">
-              <img 
-                src={heroImage}
-                alt="Confident professional with strategic planning materials in urban setting" 
-                className="rounded-xl shadow-2xl w-full h-auto animate-float" 
-              />
-              {/* Overlay elements */}
+            {/* Device Mockup Stack */}
+            <div className="relative w-full h-full perspective-1000">
+              
+              {/* Back layer: MacBook (z-index: 10) */}
               <motion.div 
-                className="absolute top-4 right-4 bg-white rounded-lg p-3 shadow-lg"
-                initial={{ scale: 0 }}
-                animate={{ scale: 1 }}
-                transition={{ delay: 1, duration: 0.3 }}
+                className="absolute inset-0 z-10"
+                initial={{ opacity: 0, scale: 0.8 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ delay: 0.5, duration: 0.6 }}
               >
-                <div className="flex items-center text-sm">
-                  <div className="w-3 h-3 bg-fresh-green rounded-full mr-2"></div>
-                  <span className="font-semibold">Career Aligned</span>
+                <div className="w-full max-w-[800px] mx-auto mt-8">
+                  {/* MacBook Frame */}
+                  <div className="bg-gray-800 rounded-t-2xl p-4 shadow-2xl transform perspective-1000 rotateX-5">
+                    <div className="bg-black rounded-lg overflow-hidden aspect-[16/10]">
+                      <img 
+                        src={milestoneTracker}
+                        alt="CareerFrame Milestone Tracker"
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
+                  </div>
+                  {/* MacBook Base */}
+                  <div className="bg-gray-700 h-6 rounded-b-2xl shadow-lg transform perspective-1000 rotateX-5"></div>
                 </div>
               </motion.div>
+
+              {/* Middle-left layer: Tablet (z-index: 20) */}
               <motion.div 
-                className="absolute bottom-4 left-4 bg-white rounded-lg p-3 shadow-lg"
-                initial={{ scale: 0 }}
-                animate={{ scale: 1 }}
-                transition={{ delay: 1.2, duration: 0.3 }}
+                className="absolute left-0 top-12 z-20"
+                initial={{ opacity: 0, x: -50 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ delay: 0.8, duration: 0.6 }}
               >
-                <div className="text-xs text-soft-grey">Fulfillment Score</div>
-                <div className="text-lg font-bold text-navy">98%</div>
+                <div className="w-[500px]">
+                  {/* Tablet Frame */}
+                  <div className="bg-gray-300 rounded-2xl p-3 shadow-2xl drop-shadow-lg">
+                    <div className="bg-black rounded-xl overflow-hidden aspect-[4/3]">
+                      <img 
+                        src={leaderboard}
+                        alt="CareerFrame Leaderboard"
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
+                  </div>
+                </div>
               </motion.div>
+
+              {/* Middle-right layer: Smartphone (z-index: 20) */}
+              <motion.div 
+                className="absolute right-8 top-20 z-20"
+                initial={{ opacity: 0, x: 50, rotate: 0 }}
+                animate={{ opacity: 1, x: 0, rotate: 5 }}
+                transition={{ delay: 1.0, duration: 0.6 }}
+              >
+                <div className="w-[300px]">
+                  {/* Phone Frame */}
+                  <div className="bg-gray-900 rounded-3xl p-2 shadow-2xl drop-shadow-lg">
+                    <div className="bg-black rounded-2xl overflow-hidden aspect-[9/19.5]">
+                      <img 
+                        src={careerCoach}
+                        alt="CareerFrame Career Coach"
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </motion.div>
+
+              {/* Front corners: Smartwatches (z-index: 30) */}
+              <motion.div 
+                className="absolute left-4 bottom-8 z-30"
+                initial={{ opacity: 0, scale: 0 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ delay: 1.3, duration: 0.4 }}
+              >
+                <div className="w-[120px]">
+                  {/* Left Watch Frame */}
+                  <div className="bg-gray-800 rounded-2xl p-2 shadow-xl">
+                    <div className="bg-black rounded-xl overflow-hidden aspect-square">
+                      <img 
+                        src={xpInterface}
+                        alt="XP Tracking"
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </motion.div>
+
+              <motion.div 
+                className="absolute right-4 bottom-8 z-30"
+                initial={{ opacity: 0, scale: 0 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ delay: 1.5, duration: 0.4 }}
+              >
+                <div className="w-[120px]">
+                  {/* Right Watch Frame */}
+                  <div className="bg-gray-800 rounded-2xl p-2 shadow-xl">
+                    <div className="bg-black rounded-xl overflow-hidden aspect-square">
+                      <img 
+                        src={xpInterface}
+                        alt="Milestone Stats"
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </motion.div>
+
             </div>
           </motion.div>
         </div>
