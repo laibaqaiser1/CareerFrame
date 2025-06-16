@@ -62,7 +62,7 @@ export default {
           ring: "hsl(var(--sidebar-ring))",
         },
         // Custom CareerFrame colors
-        'fresh-green': '#35C1A0',
+        'fresh-green': '#5A6E22',
         'navy': '#1E3A8A',
         'soft-grey': '#6B7280',
         'light-grey': '#F9FAFB',
