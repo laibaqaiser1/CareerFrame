@@ -1,0 +1,106 @@
+# CareerFrame - AI-Powered Career Guidance Platform
+
+## Overview
+
+CareerFrame is a full-stack web application that provides AI-powered career coaching and guidance. The platform helps users discover their career potential through personalized assessments, skill gap analysis, and tailored career pathways. Built with a modern tech stack featuring React frontend, Express backend, and PostgreSQL database.
+
+## System Architecture
+
+### Frontend Architecture
+- **Framework**: React with TypeScript
+- **Routing**: Wouter for client-side routing
+- **UI Components**: shadcn/ui component library with Radix UI primitives
+- **Styling**: Tailwind CSS with custom design system
+- **State Management**: TanStack Query for server state management
+- **Build Tool**: Vite for fast development and optimized builds
+- **Animations**: Custom scroll animations and smooth transitions
+
+### Backend Architecture
+- **Runtime**: Node.js with Express.js
+- **Language**: TypeScript with ES modules
+- **API Design**: RESTful API structure
+- **Request Handling**: Express middleware for logging and error handling
+- **Development**: Hot reload with Vite integration
+
+### Database Architecture
+- **Database**: PostgreSQL (configured via Drizzle)
+- **ORM**: Drizzle ORM with Zod schema validation
+- **Migrations**: Drizzle Kit for database migrations
+- **Connection**: Neon Database serverless connection (@neondatabase/serverless)
+
+## Key Components
+
+### Authentication & User Management
+- User schema with username/password authentication
+- In-memory storage implementation for development (MemStorage)
+- Interface-based storage design for easy database integration
+
+### Newsletter System
+- Email subscription endpoint with validation
+- Zod-based input validation
+- Error handling for invalid emails and server errors
+
+### UI Component System
+- Comprehensive shadcn/ui component library
+- Custom components for career-specific features (leaderboard, live chat)
+- Responsive design with mobile-first approach
+- Accessibility-compliant components
+
+### Career Features
+- Hero section with compelling value proposition
+- Features showcase (AI coaching, skill analysis, career pathways, networking)
+- How-it-works step-by-step process
+- Testimonials and social proof
+- Pricing comparison (Freemium vs Premium)
+- FAQ section for common questions
+
+## Data Flow
+
+1. **User Registration/Login**: Users authenticate through the user management system
+2. **Profile Creation**: Users complete profiles for personalized career guidance
+3. **AI Analysis**: System analyzes user data to provide career recommendations
+4. **Pathway Generation**: Tailored career roadmaps created based on user goals
+5. **Progress Tracking**: XP system and milestones track user advancement
+6. **Community Features**: Team leaderboards and industry-specific networking
+
+## External Dependencies
+
+### Core Framework Dependencies
+- **React Ecosystem**: React 18+ with TypeScript, TanStack Query for data fetching
+- **UI Libraries**: Extensive Radix UI component collection, Tailwind CSS
+- **Development Tools**: Vite, ESBuild for production builds
+- **Database**: Drizzle ORM, PostgreSQL via Neon serverless
+
+### Notable Integrations
+- **Replit**: Development environment with hot reload and error overlays
+- **Form Handling**: React Hook Form with Zod resolvers
+- **Date Handling**: date-fns for date manipulation
+- **Carousel**: Embla Carousel for interactive components
+
+## Deployment Strategy
+
+### Development Environment
+- **Platform**: Replit with Node.js 20 runtime
+- **Database**: PostgreSQL 16 module
+- **Hot Reload**: Vite development server with HMR
+- **Port Configuration**: Local port 5000, external port 80
+
+### Production Build
+- **Build Process**: Vite for client build, ESBuild for server bundle
+- **Deployment Target**: Autoscale deployment on Replit
+- **Asset Handling**: Static file serving with Express
+- **Environment**: Production mode with optimized builds
+
+### Configuration Management
+- **Environment Variables**: DATABASE_URL for database connection
+- **Build Scripts**: Separate dev/build/start commands
+- **Database Operations**: Drizzle push for schema updates
+
+## Changelog
+
+Changelog:
+- June 16, 2025. Initial setup
+
+## User Preferences
+
+Preferred communication style: Simple, everyday language.
