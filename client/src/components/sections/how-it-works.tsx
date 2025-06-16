@@ -74,7 +74,7 @@ export function HowItWorksSection() {
               <p className="text-soft-grey mb-6">Take a 2-minute interactive tour and discover how we'll transform your career journey.</p>
               <Button 
                 size="lg" 
-                className="bg-fresh-green hover:bg-green-600 text-white px-8 py-4"
+                className="bg-fresh-green hover:bg-fresh-green/90 text-white px-8 py-4"
               >
                 <Play className="mr-2 h-5 w-5" />
                 Start Interactive Demo
