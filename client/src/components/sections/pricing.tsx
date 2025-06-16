@@ -43,7 +43,7 @@ const plans = [
   },
   {
     name: "Premium Plan", 
-    price: 15,
+    price: 29,
     currency: "£",
     description: "Includes unlimited AI coaching, tailored milestone plans, and recruiter visibility",
     features: [
