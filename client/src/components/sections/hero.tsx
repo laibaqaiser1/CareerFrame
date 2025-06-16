@@ -14,11 +14,14 @@ export function HeroSection() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <h1 className="text-4xl lg:text-6xl font-bold text-navy mb-6 leading-tight">
-              Land Your Dream Career in <span className="text-fresh-green">90 Days</span> — Guaranteed
+            <h1 className="text-4xl lg:text-6xl font-bold text-navy mb-4 leading-tight">
+              Wake Up Excited for a Career That Fulfills You
             </h1>
+            <p className="text-lg text-soft-grey mb-2 font-medium">
+              CareerFrame is an AI-powered career development platform — not a job board
+            </p>
             <p className="text-xl text-soft-grey mb-4 leading-relaxed">
-              Join 12,000+ professionals who've successfully transitioned to fulfilling careers using our AI-powered career coaching platform.
+              Join 12,000+ professionals who've transformed their careers in just 15 minutes a day
             </p>
             <div className="flex items-center gap-4 mb-8">
               <div className="flex items-center text-sm text-soft-grey">
@@ -35,7 +38,7 @@ export function HeroSection() {
                 size="lg" 
                 className="bg-fresh-green hover:bg-fresh-green/90 text-white text-lg px-8 py-4 shadow-lg button-hover"
               >
-                Start Your Career Transformation Today
+                Start Your Career Plan — Free
               </Button>
               <Button 
                 variant="outline" 

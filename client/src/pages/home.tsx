@@ -1,8 +1,10 @@
 import { useEffect, useState } from "react";
 import { HeroSection } from "@/components/sections/hero";
+import { WhatToExpectSection } from "@/components/sections/what-to-expect";
 import { TrustSignalsSection } from "@/components/sections/trust-signals";
 import { FeaturesSection } from "@/components/sections/features";
 import { HowItWorksSection } from "@/components/sections/how-it-works";
+import { FounderStorySection } from "@/components/sections/founder-story";
 import { TestimonialsSection } from "@/components/sections/testimonials-new";
 import { PricingSection } from "@/components/sections/pricing";
 import { UrgencyCTASection } from "@/components/sections/urgency-cta";

@@ -19,36 +19,36 @@ import careerChoiceImage from "@assets/East Asian Male Choosing Career.png";
 
 const features = [
   {
-    icon: Bot,
-    title: "1. Personalized Career Coaching",
-    description: "Tailored AI-powered coaching offering personalized advice and action plans to guide your career journey.",
+    icon: Target,
+    title: "Gain Clarity in Your Job Search",
+    description: "Stop feeling overwhelmed by endless job listings. Get specific direction on which roles to target and how to position yourself as the ideal candidate.",
     image: "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=300",
-    alt: "AI-powered career coaching session",
-    cta: "Start Coaching"
+    alt: "Professional gaining clarity on career direction",
+    cta: "Get Clear Direction"
   },
   {
     icon: TrendingUp,
-    title: "2. Skill Gap Analysis",
-    description: "Assess your current skills, identify gaps, and receive recommendations to elevate your qualifications.",
+    title: "Overcome Self-Doubt",
+    description: "Build unshakeable confidence in your abilities. Identify your unique strengths and learn how to articulate your value to employers.",
     image: "https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=300",
-    alt: "Professional skills assessment and analysis",
-    cta: "Analyze Skills"
+    alt: "Professional building confidence and overcoming doubt",
+    cta: "Build Confidence"
   },
   {
-    icon: Route,
-    title: "3. Tailored Career Pathways",
-    description: "Receive a bespoke roadmap with clear milestones and tailored career opportunities based on your goals.",
+    icon: Trophy,
+    title: "Land a Role You're Proud Of",
+    description: "Say goodbye to settling for 'good enough' jobs. Get matched with opportunities that align with your values and ambitions.",
     image: careerChoiceImage,
-    alt: "Professional using VR to explore various career options and paths",
-    cta: "Build Pathway"
+    alt: "Professional celebrating landing their dream role",
+    cta: "Find Your Role"
   },
   {
     icon: Users,
-    title: "4. Industry Specific Networking",
-    description: "Create your own or join groups tailored to your chosen industry—connect with professionals already in the field or others, just like you, who are working toward the same career path.",
+    title: "Connect with Like-Minded Professionals",
+    description: "Join a supportive community of career-changers. Share experiences, celebrate wins, and get encouragement when you need it most.",
     image: "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=300",
-    alt: "Professional networking groups and industry connections",
-    cta: "Join Network"
+    alt: "Professionals networking and supporting each other",
+    cta: "Join Community"
   }
 ];
 

@@ -1,0 +1,104 @@
+🎯 First Impressions & Hero Section
+🔝 High Priority
+Simplify headline: Make it shorter and sharper.
+
+Tell Replit: “Please shorten the hero headline to 1–2 impactful lines that focus on the emotional benefit — e.g., ‘Wake up excited for a career that fulfils you’.”
+
+Clarify what CareerFrame is
+
+Tell Replit: “Add a short subheading or supporting line under the hero title that clarifies CareerFrame is an AI-powered career development platform — not a job board.”
+
+✅ Implementable Now
+Add social proof & differentiation
+
+“Include a short row below the hero section showing user count, employer interest, or review snippets. Add a bullet list or icon section highlighting how we differ from LinkedIn or traditional coaches.”
+
+🔍 Value Proposition Clarity
+🔝 High Priority
+Focus on outcomes, not features
+
+Tell Replit: “Please rewrite the key feature section to focus on the results users get — e.g., ‘Gain clarity in your job search’, ‘Overcome self-doubt’, ‘Land a role you’re proud of’.”
+
+Add time commitment guidance
+
+“Include a short sentence like ‘Spend just 15 minutes a day progressing toward your next career step.’”
+
+⏳ Cannot Implement Immediately
+Success metrics (e.g. salary boosts, employment rates) may not yet be available.
+
+Advice: Add a placeholder and gather early metrics as users come onboard.
+
+💰 Pricing & Plan Structure
+🔝 High Priority
+Clarify freemium limitations
+
+“Add a side-by-side feature comparison table that clearly outlines what’s free vs premium.”
+
+Justify £15/month
+
+“Add value-driven points like: ‘Includes unlimited AI coaching, tailored milestone plans, and recruiter visibility’.”
+
+⏳ Optional for MVP
+Trial period or urgency campaigns
+
+If dev time is tight, save urgency mechanics (countdown timers, discounts) for a V2 push.
+
+📱 User Experience Flow
+🔝 High Priority
+Add demo or platform screenshots
+
+“Please insert 2–3 real screenshots showing the Career Coach, Milestone Tracker, and XP leaderboard.”
+
+Clarify what happens after signup
+
+“Add a ‘What to Expect’ section after CTA: Step 1 – Meet your coach. Step 2 – Get your plan. Step 3 – Begin your journey.”
+
+✅ Implementable Now
+Add “About Us” and “Founder” section
+
+“Insert a founder bio with a personal story and mission statement.”
+
+🎨 Visual Design & Trust
+Mid Priority
+Overwhelming gradients or spacing issues
+
+“Simplify backgrounds behind key sections. Maintain consistent padding between elements.”
+
+Mobile experience
+
+Advice: Use Replit’s preview tools to test mobile responsiveness — if needed, ask: “Can you ensure all CTA buttons and sections stack cleanly on mobile?”
+
+📝 Content & Messaging
+🔝 High Priority
+Simplify language & CTAs
+
+“Break up long paragraphs into short, scannable lines. Replace ‘Join For FREE’ with something more specific like ‘Start Your Career Plan – Free’.”
+
+Reduce jargon
+
+“Replace terms like ‘ecosystem’ with more relatable alternatives — ‘platform’, ‘support system’, etc.”
+
+🛡️ Trust & Credibility
+🔝 High Priority
+Founder story
+
+“Add a small bio or quote from the founder about why CareerFrame was created — ideally tied to personal experience.”
+
+Add transparency around AI
+
+“Include a FAQ section explaining how the AI works, how suggestions are generated, and how data is used.”
+
+⏳ Plan for Post-MVP
+Guarantees or credentials
+
+Until results or partnerships are validated, use softer language like “Our mission is to get you to your goal, step-by-step — and we’ll support you all the way.”
+
+🎯 Specific Customer Journey Issues
+🔝 High Priority
+Information overload
+
+“Break up dense sections into tabs or collapsible elements like FAQs.”
+
+Community aspect
+
+“Add a line or banner about team chat features, industry-specific groups, and peer encouragement (even if not live yet).”
