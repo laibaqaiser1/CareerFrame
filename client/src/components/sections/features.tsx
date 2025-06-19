@@ -44,6 +44,14 @@ const features = [
     cta: "Explore Opportunities"
   },
   {
+    icon: Search,
+    title: "Career Alignment & Role Insights",
+    description: "Get in-depth role overviews and personalized recommendations based on your skills, experience, and career aspirations.",
+    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=300",
+    alt: "Professional analyzing career insights",
+    cta: "Get Role Insights"
+  },
+  {
     icon: Users,
     title: "Connect with Like-Minded Professionals",
     description: "Join a supportive community of career-changers. Share experiences, celebrate wins, and get encouragement when you need it most.",
@@ -55,46 +63,46 @@ const features = [
 
 const additionalFeatures = [
   {
-    icon: FileText,
-    title: "5. AI-Generated Cover Letter",
-    description: "Automatically generate a personalized cover letter that fits the specific role you're applying for.",
-    color: "bg-indigo-100 text-indigo-500"
-  },
-  {
-    icon: Target,
-    title: "6. Milestone Tracker",
-    description: "Track and celebrate career progress with personalized goals and visible milestones (Premium: Full visibility).",
-    color: "bg-purple-100 text-purple-500"
+    icon: Goal,
+    title: "Career Alignment & Role Insights",
+    description: "Get in-depth role overviews and personalized recommendations based on your skills, experience, and career aspirations.",
+    color: "bg-cyan-100 text-cyan-500"
   },
   {
     icon: Search,
-    title: "7. Explore Roles Access",
-    description: "Get limited (Freemium) or unlimited (Premium) access to in-depth role insights, including job fit, salaries, and perks.",
+    title: "Explore Roles Access (Freemium/Premium)",
+    description: "Get limited or unlimited access to job fit, salaries, and perks.",
     color: "bg-blue-100 text-blue-500"
   },
   {
     icon: TrendingUp,
-    title: "8. Deep Skill Gap Analysis (Premium)",
+    title: "Deep Skill Gap Analysis (Premium)",
     description: "Receive a detailed skill gap report to understand areas needing improvement for career advancement.",
     color: "bg-green-100 text-green-500"
   },
   {
-    icon: Trophy,
-    title: "9. XP Points & Rewards (2x XP Premium)",
-    description: "Earn XP points for completing milestones and unlock rewards to accelerate your career progress.",
-    color: "bg-yellow-100 text-yellow-500"
+    icon: Target,
+    title: "Milestone Tracker (Freemium/Premium)",
+    description: "Track and celebrate progress with personalized goals and visible milestones.",
+    color: "bg-purple-100 text-purple-500"
   },
   {
     icon: FileText,
-    title: "10. AI-Powered Resume Builder",
-    description: "Generate a professional, optimized resume tailored to the job you're aiming for with AI-driven insights.",
+    title: "AI-Powered Resume Builder",
+    description: "Generate a professional, optimized resume tailored to your goals.",
     color: "bg-pink-100 text-pink-500"
   },
   {
-    icon: Goal,
-    title: "11. Career Alignment & Role Insights",
-    description: "Get in-depth role overviews and personalized recommendations based on your skills, experience, and career aspirations.",
-    color: "bg-cyan-100 text-cyan-500"
+    icon: FileText,
+    title: "AI-Generated Cover Letter",
+    description: "Automatically generate a personalized cover letter for the role you want.",
+    color: "bg-indigo-100 text-indigo-500"
+  },
+  {
+    icon: Trophy,
+    title: "XP Points & Rewards (2x Premium)",
+    description: "Earn XP for milestones and unlock rewards to accelerate your career journey.",
+    color: "bg-yellow-100 text-yellow-500"
   }
 ];
 
