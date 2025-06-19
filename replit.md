@@ -99,7 +99,10 @@ CareerFrame is a full-stack web application that provides AI-powered career coac
 ## Changelog
 
 Changelog:
-- June 16, 2025. Initial setup
+- June 19, 2025: Added prominent 90-day guarantee throughout site with dedicated section, hero banner, pricing integration, and navigation link
+- June 19, 2025: Updated navigation with proper section references and increased font size to match logo
+- June 19, 2025: Implemented consistent #88A98F color scheme across all CTAs, icons, and accent elements
+- June 16, 2025: Initial setup
 
 ## User Preferences
 

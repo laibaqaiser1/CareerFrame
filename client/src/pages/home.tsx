@@ -164,6 +164,12 @@ export default function Home() {
       <div className="fade-in">
         <FounderStorySection />
       </div>
+      <div className="slide-up">
+        <TestimonialsSection />
+      </div>
+      <div className="slide-up">
+        <GuaranteeSection />
+      </div>
       <div className="slide-in-right">
         <PricingSection />
       </div>
