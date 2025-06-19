@@ -1,14 +1,15 @@
 import { Button } from "@/components/ui/button";
 import { Play, Heart, ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
+import careerFrameApp from "@assets/image_1750364343735.png";
 
 export function HeroSection() {
   return (
     <section className="pt-20 pb-16 overflow-hidden" style={{ backgroundColor: '#0A0F14' }}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="lg:grid lg:grid-cols-1 items-center">
+        <div className="lg:grid lg:grid-cols-2 gap-12 items-center">
           <motion.div 
-            className="text-center"
+            className="text-center lg:text-left"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
@@ -33,7 +34,7 @@ export function HeroSection() {
               </div>
             </div>
 
-            <div className="flex flex-col sm:flex-row justify-center gap-4 mb-8">
+            <div className="flex flex-col sm:flex-row justify-center lg:justify-start gap-4 mb-8">
               <Button 
                 size="lg" 
                 className="text-white text-lg px-8 py-4 shadow-lg button-hover"
@@ -51,6 +52,20 @@ export function HeroSection() {
                 Watch Video
               </Button>
             </div>
+          </motion.div>
+
+          {/* App Interface Image */}
+          <motion.div 
+            className="relative lg:block hidden"
+            initial={{ opacity: 0, x: 20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+          >
+            <img 
+              src={careerFrameApp} 
+              alt="CareerFrame App Interface" 
+              className="w-full h-auto rounded-lg shadow-2xl"
+            />
           </motion.div>
         </div>
       </div>
