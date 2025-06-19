@@ -140,12 +140,7 @@ export function FeaturesSection() {
             ref={valuePropRef}
             className={`transition-all duration-700 ${valuePropVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
           >
-            <h2 className="text-3xl lg:text-4xl font-bold text-white mb-6 drop-shadow-lg">
-              What You Get: A Complete Career Development System
-            </h2>
-            <p className="text-xl text-white max-w-3xl mx-auto mb-12 drop-shadow-md">
-              Everything you need to advance your career journey - personalized guidance, proven tools, and expert support.
-            </p>
+
           </div>
           <div className="grid md:grid-cols-3 gap-8">
             {valueProps.map((prop, index) => (
