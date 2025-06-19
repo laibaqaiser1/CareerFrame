@@ -81,6 +81,19 @@ export function TestimonialsSection() {
           ))}
         </div>
 
+        {/* 90-Day Guarantee Section */}
+        <div className={`text-center mt-16 transition-all duration-700 ${
+          isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+        }`}>
+          <Card className="bg-gradient-to-r from-fresh-green to-green-600 text-white max-w-2xl mx-auto">
+            <CardContent className="p-8">
+              <h3 className="text-2xl font-bold mb-4">90-Day Satisfaction Guarantee</h3>
+              <p className="text-lg">
+                We're so confident in CareerFrame's ability to transform your career that we offer a full 90-day money-back guarantee. If you're not completely satisfied with your progress, we'll refund every penny.
+              </p>
+            </CardContent>
+          </Card>
+        </div>
 
       </div>
     </section>

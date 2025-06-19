@@ -75,8 +75,8 @@ export function UrgencyCTASection() {
               </div>
               <div className="text-center">
                 <Clock className="h-8 w-8 mx-auto mb-2" style={{ color: '#88A98F' }} />
-                <div className="text-2xl font-bold text-navy">24/7</div>
-                <div className="text-sm text-soft-grey">Support Available</div>
+                <div className="text-2xl font-bold text-navy">90-Day</div>
+                <div className="text-sm text-soft-grey">Satisfaction Guarantee</div>
               </div>
             </div>
 
@@ -89,7 +89,7 @@ export function UrgencyCTASection() {
             </Button>
             
             <p className="text-sm text-soft-grey">
-              Next cohort starts in 7 days • No credit card required to start
+              Next cohort starts in 7 days • No credit card required to start • 90-day money-back guarantee
             </p>
           </CardContent>
         </Card>

@@ -89,7 +89,7 @@ export function PricingSection() {
           </h2>
           <p className="text-xl text-white max-w-3xl mx-auto drop-shadow-md">
             Most users see a 5x return on investment within 6 months.<br />
-            Start free — upgrade only when you see the value.
+            Start free — upgrade only when you see the value. 90-day satisfaction guarantee.
           </p>
         </div>
 
