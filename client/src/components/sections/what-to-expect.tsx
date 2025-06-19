@@ -1,4 +1,5 @@
 import { Card, CardContent } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
 import { CheckCircle, ArrowRight, Clock } from "lucide-react";
 
 export function WhatToExpectSection() {
@@ -25,7 +26,13 @@ export function WhatToExpectSection() {
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
           <h2 className="text-3xl lg:text-4xl font-bold text-navy mb-4">
-            What to Expect After You Sign Up
+            What to Expect After You{" "}
+            <Button 
+              className="text-white px-6 py-2 text-3xl lg:text-4xl font-bold inline-flex items-center mx-2"
+              style={{ backgroundColor: '#88A98F' }}
+            >
+              Sign Up
+            </Button>
           </h2>
           <p className="text-xl text-soft-grey">
             Your career transformation starts immediately — here's exactly what happens next
