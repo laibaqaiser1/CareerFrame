@@ -244,7 +244,7 @@ export function PricingSection() {
         }`}>
           <div className="bg-white/90 border-2 border-navy rounded-lg p-4 max-w-xl mx-auto shadow-lg">
             <h3 className="text-navy text-lg font-bold mb-1">
-              90-Day Career Transformation Guarantee
+              90-Day Satisfaction Guarantee
             </h3>
             <p className="text-navy text-sm">
               Cancel anytime • No hidden fees • Full refund if not satisfied

@@ -37,7 +37,7 @@ export function ProblemSolutionSection() {
               </div>
               <h3 className="text-xl font-semibold text-navy mb-3">Break Free with CareerFrame</h3>
               <p className="text-soft-grey">
-                CareerFrame is here to help you break free. With personalized coaching, skill gap analysis, and tailored career paths, we'll guide you to a job that excites and motivates you every day.
+                CareerFrame helps you break free from career confusion. With personalized coaching, skill gap analysis, and tailored career paths, we provide the tools and guidance to help you pursue work that aligns with your goals.
               </p>
             </div>
           </div>

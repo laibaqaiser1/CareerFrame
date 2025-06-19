@@ -26,8 +26,8 @@ const faqs = [
     answer: "Our AI analyzes 50+ data points including your skills, experience, market demand, salary trends, and career preferences. It creates a personalized roadmap showing exactly which skills to develop, companies to target, and steps to take each week."
   },
   {
-    question: "Can you guarantee I'll get a salary increase?",
-    answer: "While we can't guarantee specific outcomes (no legitimate service can), our users see an average salary increase of 31% within 6 months. We focus on building valuable skills and positioning you for roles that pay what you're worth."
+    question: "Can you guarantee career outcomes?",
+    answer: "We can't guarantee specific career outcomes like job placement or salary increases, as these depend on many external factors. However, we provide proven tools, personalized guidance, and skill development that our users report finding valuable. Our 90-day satisfaction guarantee ensures you're happy with the platform itself."
   }
 ];
 

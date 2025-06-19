@@ -36,11 +36,11 @@ const features = [
   },
   {
     icon: Trophy,
-    title: "Land a Role You're Proud Of",
-    description: "Say goodbye to settling for 'good enough' jobs. Get matched with opportunities that align with your values and ambitions.",
+    title: "Discover Roles That Align With You",
+    description: "Move beyond settling for 'good enough' jobs. Explore opportunities that align with your values and ambitions through our matching system.",
     image: careerChoiceImage,
-    alt: "Professional celebrating landing their dream role",
-    cta: "Find Your Role"
+    alt: "Professional exploring career opportunities",
+    cta: "Explore Opportunities"
   },
   {
     icon: Users,
@@ -133,10 +133,10 @@ export function FeaturesSection() {
             className={`transition-all duration-700 ${valuePropVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
           >
             <h2 className="text-3xl lg:text-4xl font-bold text-white mb-6 drop-shadow-lg">
-              What You Get: A Complete Career Transformation System
+              What You Get: A Complete Career Development System
             </h2>
             <p className="text-xl text-white max-w-3xl mx-auto mb-12 drop-shadow-md">
-              Everything you need to land your dream career in 90 days - no guesswork, no endless courses, just results.
+              Everything you need to advance your career journey - personalized guidance, proven tools, and expert support.
             </p>
           </div>
           <div className="grid md:grid-cols-3 gap-8">

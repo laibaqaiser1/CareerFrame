@@ -89,14 +89,14 @@ export function TestimonialsSection() {
                 <span className="text-2xl font-bold text-white">90</span>
               </div>
               <h3 className="text-3xl font-bold text-navy">
-                90-Day Career Transformation Guarantee
+                90-Day Satisfaction Guarantee
               </h3>
             </div>
             <p className="text-lg text-soft-grey mb-4 leading-relaxed">
-              If you don't land a new role or see significant career progress within 90 days, we'll refund your investment and provide an additional 90 days of coaching absolutely free.
+              If you're not completely satisfied with your CareerFrame experience within 90 days, we'll provide a full refund. We're confident in the quality of our platform and coaching.
             </p>
             <p className="text-xl font-bold text-navy">
-              No questions asked. We're that confident in our system.
+              Your satisfaction is our priority.
             </p>
           </div>
         </div>
