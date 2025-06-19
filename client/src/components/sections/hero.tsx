@@ -32,6 +32,22 @@ export function HeroSection() {
                 Our AI coach is built to fast-track your journey to a new career
               </div>
             </div>
+
+            {/* 90-Day Guarantee Banner */}
+            <div className="mb-8 p-4 rounded-lg border-2" style={{ borderColor: '#88A98F', backgroundColor: 'rgba(136, 169, 143, 0.1)' }}>
+              <div className="text-center">
+                <h3 className="text-xl font-bold mb-2" style={{ color: '#88A98F' }}>
+                  90-Day Career Transformation Guarantee
+                </h3>
+                <p className="text-white mb-2">
+                  If you don't land a new role or see significant career progress within 90 days, we'll refund your investment and provide an additional 90 days of coaching absolutely free.
+                </p>
+                <p className="text-white font-semibold">
+                  No questions asked. We're that confident in our system.
+                </p>
+              </div>
+            </div>
+
             <div className="flex flex-col sm:flex-row justify-center gap-4 mb-8">
               <Button 
                 size="lg" 

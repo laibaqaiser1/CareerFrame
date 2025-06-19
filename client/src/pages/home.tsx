@@ -6,6 +6,7 @@ import { FeaturesSection } from "@/components/sections/features";
 import { HowItWorksSection } from "@/components/sections/how-it-works";
 import { FounderStorySection } from "@/components/sections/founder-story";
 import { TestimonialsSection } from "@/components/sections/testimonials-new";
+import { GuaranteeSection } from "@/components/sections/guarantee";
 import { PricingSection } from "@/components/sections/pricing";
 import { UrgencyCTASection } from "@/components/sections/urgency-cta";
 import { FAQSection } from "@/components/sections/faq";
@@ -66,6 +67,10 @@ function Navigation() {
                 </a>
                 <a href="#founder-story" className="px-3 py-2 text-lg font-medium transition-all duration-300 hover:scale-105 hover:shadow-lg relative group" style={{ color: '#88A98F' }}>
                   <span className="relative z-10">About</span>
+                  <div className="absolute inset-0 rounded-lg scale-0 group-hover:scale-100 transition-transform duration-300" style={{ backgroundColor: 'rgba(136, 169, 143, 0.1)' }}></div>
+                </a>
+                <a href="#guarantee" className="px-3 py-2 text-lg font-medium transition-all duration-300 hover:scale-105 hover:shadow-lg relative group" style={{ color: '#88A98F' }}>
+                  <span className="relative z-10">Guarantee</span>
                   <div className="absolute inset-0 rounded-lg scale-0 group-hover:scale-100 transition-transform duration-300" style={{ backgroundColor: 'rgba(136, 169, 143, 0.1)' }}></div>
                 </a>
                 <a href="#pricing" className="px-3 py-2 text-lg font-medium transition-all duration-300 hover:scale-105 hover:shadow-lg relative group" style={{ color: '#88A98F' }}>
