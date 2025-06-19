@@ -17,12 +17,6 @@ export function HeroSection() {
           <h1 className="text-4xl lg:text-6xl font-bold mb-4 leading-tight" style={{ color: '#88A98F' }}>
             Wake Up Excited for a Career That Fulfills You
           </h1>
-          <p className="text-lg mb-2 font-medium" style={{ color: '#88A98F' }}>
-            CareerFrame is an AI-powered career development platform — not a job board
-          </p>
-          <p className="text-xl mb-6 leading-relaxed" style={{ color: '#88A98F' }}>
-            Join early adopters shaping the future of personalised career growth — your transformation could start with just 15 minutes a day.
-          </p>
         </motion.div>
 
         {/* Content Grid */}
@@ -33,6 +27,13 @@ export function HeroSection() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
+            <p className="text-lg mb-4 font-medium" style={{ color: '#88A98F' }}>
+              CareerFrame is an AI-powered career development platform — not a job board
+            </p>
+            <p className="text-xl mb-8 leading-relaxed" style={{ color: '#88A98F' }}>
+              Join early adopters shaping the future of personalised career growth — your transformation could start with just 15 minutes a day.
+            </p>
+            
             <div className="flex flex-col justify-center items-center lg:items-start gap-3 mb-8" style={{ color: '#88A98F' }}>
               <div className="flex items-center text-base">
                 <span className="w-2 h-2 rounded-full mr-3" style={{ backgroundColor: '#88A98F' }}></span>
