@@ -72,32 +72,7 @@ export function FAQSection() {
           </Card>
         </div>
 
-        {/* Video Links Section */}
-        <div className={`mt-12 text-center transition-all duration-700 delay-400 ${
-          isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-        }`}>
-          <h3 className="text-2xl font-bold text-navy mb-6">Learn More About CareerFrame</h3>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button 
-              variant="outline" 
-              size="lg" 
-              className="border-2 border-navy text-navy hover:bg-navy hover:text-white"
-              onClick={() => window.open('https://youtu.be/trfDoGoXNsE?si=tuiRsI3GMOAyux2d', '_blank')}
-            >
-              <Play className="mr-2 h-5 w-5" />
-              Watch Platform Demo
-            </Button>
-            <Button 
-              variant="outline" 
-              size="lg" 
-              className="border-2 border-fresh-green text-fresh-green hover:bg-fresh-green hover:text-white"
-              onClick={() => window.open('https://youtu.be/WgXU7XAZYmQ?si=cffhYgjeogzWe1bQ', '_blank')}
-            >
-              <Play className="mr-2 h-5 w-5" />
-              Success Stories
-            </Button>
-          </div>
-        </div>
+
       </div>
     </section>
   );
