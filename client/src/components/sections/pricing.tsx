@@ -163,9 +163,13 @@ export function PricingSection() {
                 <Button 
                   className={`w-full py-3 font-semibold button-hover ${
                     plan.popular 
-                      ? 'bg-white text-fresh-green hover:bg-gray-100' 
-                      : 'border-2 border-navy text-navy hover:bg-navy hover:text-white'
+                      ? 'bg-white hover:bg-gray-100' 
+                      : 'border-2 text-white hover:text-black'
                   }`}
+                  style={plan.popular 
+                    ? { color: '#88A98F' }
+                    : { borderColor: '#88A98F', backgroundColor: '#88A98F' }
+                  }
                   variant={plan.popular ? "default" : "outline"}
                 >
                   {plan.cta}

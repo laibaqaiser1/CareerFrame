@@ -37,7 +37,7 @@ export function WhatToExpectSection() {
             <div key={index} className="relative">
               <Card className="h-full shadow-lg hover:shadow-xl transition-shadow duration-300">
                 <CardContent className="p-8">
-                  <div className="flex items-center justify-center w-16 h-16 bg-fresh-green rounded-full mx-auto mb-6">
+                  <div className="flex items-center justify-center w-16 h-16 rounded-full mx-auto mb-6" style={{ backgroundColor: '#88A98F' }}>
                     <span className="text-white font-bold text-lg">{index + 1}</span>
                   </div>
                   
@@ -53,7 +53,7 @@ export function WhatToExpectSection() {
               
               {index < steps.length - 1 && (
                 <div className="hidden lg:block absolute top-1/2 -right-4 transform -translate-y-1/2">
-                  <ArrowRight className="h-8 w-8 text-fresh-green" />
+                  <ArrowRight className="h-8 w-8" style={{ color: '#88A98F' }} />
                 </div>
               )}
             </div>
@@ -61,8 +61,8 @@ export function WhatToExpectSection() {
         </div>
 
         <div className="mt-12 text-center">
-          <div className="bg-fresh-green/10 rounded-lg p-6 max-w-2xl mx-auto">
-            <CheckCircle className="h-8 w-8 text-fresh-green mx-auto mb-4" />
+          <div className="rounded-lg p-6 max-w-2xl mx-auto" style={{ backgroundColor: 'rgba(136, 169, 143, 0.1)' }}>
+            <CheckCircle className="h-8 w-8 mx-auto mb-4" style={{ color: '#88A98F' }} />
             <h3 className="text-lg font-semibold text-navy mb-2">
               No Credit Card Required to Start
             </h3>

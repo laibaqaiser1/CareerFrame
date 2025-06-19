@@ -22,27 +22,29 @@ export function HeroSection() {
             <p className="text-xl text-white mb-4 leading-relaxed">
               Join early adopters shaping the future of personalised career growth — your transformation could start with just 15 minutes a day.
             </p>
-            <div className="flex flex-col lg:flex-row justify-center items-center gap-4 mb-8 text-white">
+            <div className="flex flex-col lg:flex-row justify-center items-center gap-4 mb-8" style={{ color: '#88A98F' }}>
               <div className="flex items-center text-sm">
-                <span className="w-2 h-2 bg-fresh-green rounded-full mr-2"></span>
+                <span className="w-2 h-2 rounded-full mr-2" style={{ backgroundColor: '#88A98F' }}></span>
                 We're targeting meaningful career progress, including salary growth, by aligning you to roles that match your potential
               </div>
               <div className="flex items-center text-sm">
-                <span className="w-2 h-2 bg-fresh-green rounded-full mr-2"></span>
+                <span className="w-2 h-2 rounded-full mr-2" style={{ backgroundColor: '#88A98F' }}></span>
                 Our AI coach is built to fast-track your journey to a new career
               </div>
             </div>
             <div className="flex flex-col sm:flex-row justify-center gap-4 mb-8">
               <Button 
                 size="lg" 
-                className="bg-fresh-green hover:bg-fresh-green/90 text-white text-lg px-8 py-4 shadow-lg button-hover"
+                className="text-white text-lg px-8 py-4 shadow-lg button-hover"
+                style={{ backgroundColor: '#88A98F' }}
               >
                 Start Your Career Plan — Free
               </Button>
               <Button 
                 variant="outline" 
                 size="lg" 
-                className="border-2 border-white text-white hover:bg-white hover:text-black text-lg px-8 py-4 button-hover"
+                className="border-2 text-lg px-8 py-4 button-hover"
+                style={{ borderColor: '#88A98F', color: '#88A98F' }}
               >
                 <Play className="mr-2 h-5 w-5" />
                 Watch Video

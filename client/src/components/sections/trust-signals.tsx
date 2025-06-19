@@ -60,8 +60,8 @@ export function TrustSignalsSection() {
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-20">
           {stats.map((stat, index) => (
             <div key={index} className="text-center">
-              <div className="w-16 h-16 bg-fresh-green/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                <stat.icon className="h-8 w-8 text-fresh-green" />
+              <div className="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4" style={{ backgroundColor: 'rgba(136, 169, 143, 0.1)' }}>
+                <stat.icon className="h-8 w-8" style={{ color: '#88A98F' }} />
               </div>
               <div className="text-3xl font-bold text-navy mb-2">{stat.number}</div>
               <div className="text-lg font-semibold text-navy mb-1">{stat.label}</div>

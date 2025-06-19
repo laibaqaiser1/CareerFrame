@@ -43,8 +43,8 @@ export function AITransparencySection() {
               <CardContent className="p-8">
                 <div className="flex items-start gap-4">
                   <div className="flex-shrink-0">
-                    <div className="w-12 h-12 bg-fresh-green/10 rounded-lg flex items-center justify-center">
-                      <principle.icon className="h-6 w-6 text-fresh-green" />
+                    <div className="w-12 h-12 rounded-lg flex items-center justify-center" style={{ backgroundColor: 'rgba(136, 169, 143, 0.1)' }}>
+                      <principle.icon className="h-6 w-6" style={{ color: '#88A98F' }} />
                     </div>
                   </div>
                   <div>
@@ -62,7 +62,7 @@ export function AITransparencySection() {
         </div>
 
         <div className="mt-12">
-          <Card className="bg-fresh-green/5 border border-fresh-green/20">
+          <Card className="border" style={{ backgroundColor: 'rgba(136, 169, 143, 0.05)', borderColor: 'rgba(136, 169, 143, 0.2)' }}>
             <CardContent className="p-8 text-center">
               <h3 className="text-2xl font-bold text-navy mb-4">
                 Our Promise to You

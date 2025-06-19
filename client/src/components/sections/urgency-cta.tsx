@@ -48,15 +48,15 @@ export function UrgencyCTASection() {
 
             {/* Countdown Timer */}
             <div className="flex justify-center gap-4 mb-8">
-              <div className="bg-fresh-green text-white px-4 py-3 rounded-lg">
+              <div className="text-white px-4 py-3 rounded-lg" style={{ backgroundColor: '#88A98F' }}>
                 <div className="text-2xl font-bold">{timeLeft.hours}</div>
                 <div className="text-sm">Hours</div>
               </div>
-              <div className="bg-fresh-green text-white px-4 py-3 rounded-lg">
+              <div className="text-white px-4 py-3 rounded-lg" style={{ backgroundColor: '#88A98F' }}>
                 <div className="text-2xl font-bold">{timeLeft.minutes}</div>
                 <div className="text-sm">Minutes</div>
               </div>
-              <div className="bg-fresh-green text-white px-4 py-3 rounded-lg">
+              <div className="text-white px-4 py-3 rounded-lg" style={{ backgroundColor: '#88A98F' }}>
                 <div className="text-2xl font-bold">{timeLeft.seconds}</div>
                 <div className="text-sm">Seconds</div>
               </div>
@@ -64,17 +64,17 @@ export function UrgencyCTASection() {
 
             <div className="grid md:grid-cols-3 gap-6 mb-8">
               <div className="text-center">
-                <Users className="h-8 w-8 text-fresh-green mx-auto mb-2" />
+                <Users className="h-8 w-8 mx-auto mb-2" style={{ color: '#88A98F' }} />
                 <div className="text-2xl font-bold text-navy">73</div>
                 <div className="text-sm text-soft-grey">Spots Remaining</div>
               </div>
               <div className="text-center">
-                <TrendingUp className="h-8 w-8 text-fresh-green mx-auto mb-2" />
+                <TrendingUp className="h-8 w-8 mx-auto mb-2" style={{ color: '#88A98F' }} />
                 <div className="text-2xl font-bold text-navy">31%</div>
                 <div className="text-sm text-soft-grey">Avg Salary Increase</div>
               </div>
               <div className="text-center">
-                <Clock className="h-8 w-8 text-fresh-green mx-auto mb-2" />
+                <Clock className="h-8 w-8 mx-auto mb-2" style={{ color: '#88A98F' }} />
                 <div className="text-2xl font-bold text-navy">90</div>
                 <div className="text-sm text-soft-grey">Day Guarantee</div>
               </div>
@@ -82,7 +82,8 @@ export function UrgencyCTASection() {
 
             <Button 
               size="lg"
-              className="bg-fresh-green hover:bg-fresh-green/90 text-white text-xl px-12 py-6 mb-4"
+              className="text-white text-xl px-12 py-6 mb-4"
+              style={{ backgroundColor: '#88A98F' }}
             >
               Secure Your Spot Now
             </Button>
