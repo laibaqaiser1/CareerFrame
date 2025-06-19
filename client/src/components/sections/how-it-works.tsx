@@ -64,24 +64,7 @@ export function HowItWorksSection() {
           ))}
         </div>
 
-        {/* Interactive Demo Teaser */}
-        <div className={`text-center transition-all duration-700 delay-400 ${
-          isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-        }`}>
-          <Card className="bg-white shadow-lg inline-block">
-            <CardContent className="p-8">
-              <h3 className="text-2xl font-semibold text-navy mb-4">See CareerFrame in Action</h3>
-              <p className="text-soft-grey mb-6">Take a 2-minute interactive tour and discover how we'll transform your career journey.</p>
-              <Button 
-                size="lg" 
-                className="bg-fresh-green hover:bg-green-600 text-white px-8 py-4"
-              >
-                <Play className="mr-2 h-5 w-5" />
-                Start Interactive Demo
-              </Button>
-            </CardContent>
-          </Card>
-        </div>
+
       </div>
     </section>
   );
