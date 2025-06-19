@@ -45,22 +45,7 @@ export function FounderStorySection() {
               </div>
             </div>
             
-            <div className="mt-8 pt-8 border-t border-gray-200">
-              <div className="grid md:grid-cols-3 gap-6 text-center">
-                <div>
-                  <div className="text-2xl font-bold text-fresh-green">10+</div>
-                  <div className="text-sm text-soft-grey">Years in AI & Tech</div>
-                </div>
-                <div>
-                  <div className="text-2xl font-bold text-fresh-green">12,000+</div>
-                  <div className="text-sm text-soft-grey">Lives Transformed</div>
-                </div>
-                <div>
-                  <div className="text-2xl font-bold text-fresh-green">92%</div>
-                  <div className="text-sm text-soft-grey">Success Rate</div>
-                </div>
-              </div>
-            </div>
+
           </CardContent>
         </Card>
       </div>
