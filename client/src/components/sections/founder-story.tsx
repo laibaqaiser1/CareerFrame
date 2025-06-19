@@ -22,7 +22,7 @@ export function FounderStorySection() {
                   </div>
                 </div>
                 <div className="text-center mt-4">
-                  <h3 className="text-xl font-semibold text-navy">Sarah Chen</h3>
+                  <h3 className="text-xl font-semibold text-navy">Arron McWilliam</h3>
                   <p className="text-soft-grey">Founder & CEO</p>
                 </div>
               </div>
@@ -30,20 +30,16 @@ export function FounderStorySection() {
               <div className="lg:w-2/3">
                 <blockquote className="text-lg text-soft-grey leading-relaxed">
                   <p className="mb-4">
-                    "Three years ago, I was stuck in a marketing role that drained my energy every single day. 
-                    I knew I wanted something different, but I had no idea where to start or what I was even qualified for."
+                    "When I left the military in 2011, I found myself completely lost in the civilian job market. I had the discipline, the work ethic, the drive — but none of that seemed to matter. Job applications went unanswered. Roles I knew I could thrive in were out of reach because my CV didn't say the right things. I wasn't even getting feedback to know where I was going wrong. It was exhausting and demoralising."
                   </p>
                   <p className="mb-4">
-                    "After months of career coaching sessions costing £200+ per hour and generic online courses 
-                    that didn't apply to my situation, I realized there had to be a better way."
+                    "Thanks to a friend, I eventually landed a job in the gas industry and worked relentlessly to build a stable future — but that feeling of being overlooked and undervalued never really left me. At times, it felt like I had to prove I was applying for jobs just to reassure my partner, because the silence from employers made it look like I wasn't trying."
                   </p>
                   <p className="mb-4">
-                    "That's when I decided to combine my background in AI and my personal career transformation 
-                    experience to create CareerFrame — the platform I wish I'd had during my own journey."
+                    "That experience stayed with me. It lit a fire. I wanted to build something that gave people like me the guidance, clarity, and confidence I didn't have back then — without the £100-an-hour coaching fees or the irrelevant advice of generic career platforms."
                   </p>
                   <p className="font-semibold text-navy">
-                    "Today, I wake up excited about my work, and I'm passionate about helping others 
-                    experience that same transformation."
+                    "That's why I created CareerFrame — a place where you're recognised for your true potential, not just what's written on your CV. It's the platform I wish I had when I was starting over. And now, I'm here to help others find direction, regain confidence, and take control of their future."
                   </p>
                 </blockquote>
               </div>
