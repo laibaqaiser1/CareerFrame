@@ -165,6 +165,14 @@
   .stagger-3 { animation-delay: 0.3s; }
   .stagger-4 { animation-delay: 0.4s; }
   .stagger-5 { animation-delay: 0.5s; }
+
+  /* Floating Sign In Button */
+  .floating-signin {
+    position: fixed !important;
+    top: 5rem !important;
+    right: 1.5rem !important;
+    z-index: 9999 !important;
+  }
 }
 
 @keyframes fadeInUp {

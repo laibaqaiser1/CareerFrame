@@ -172,15 +172,13 @@ export default function Home() {
       <Footer />
       <LiveChat />
       
-      {/* Floating Sign In CTA */}
-      <div className="fixed top-4 right-4 z-50">
-        <Button 
-          className="text-white px-6 py-2 font-semibold button-hover shadow-lg"
-          style={{ backgroundColor: '#88A98F' }}
-        >
-          Sign In
-        </Button>
-      </div>
+      {/* Floating Sign In CTA - Fixed position that follows scroll */}
+      <Button 
+        className="floating-signin text-white px-6 py-2 font-semibold button-hover shadow-xl border border-gray-700"
+        style={{ backgroundColor: '#88A98F', position: 'fixed', top: '5rem', right: '1.5rem', zIndex: 9999 }}
+      >
+        Sign In
+      </Button>
     </div>
   );
 }
