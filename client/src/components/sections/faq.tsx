@@ -1,8 +1,10 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible";
 import { useScrollAnimation } from "@/hooks/use-scroll-animation";
-import { Play } from "lucide-react";
+import { Play, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { useState } from "react";
 
 const faqs = [
   {
@@ -33,43 +35,51 @@ const faqs = [
 
 export function FAQSection() {
   const { ref, isVisible } = useScrollAnimation();
+  const [isFAQOpen, setIsFAQOpen] = useState(false);
 
   return (
     <section className="py-20 bg-light-grey">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <div 
           ref={ref}
-          className={`text-center mb-16 transition-all duration-700 ${
+          className={`transition-all duration-700 ${
             isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
           }`}
         >
-          <h2 className="text-3xl lg:text-4xl font-bold text-navy mb-6">
-            Your Questions Answered
-          </h2>
-          <p className="text-xl text-soft-grey">
-            Honest answers to the questions holding you back from taking action
-          </p>
-        </div>
-
-        <div className={`transition-all duration-700 delay-200 ${
-          isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-        }`}>
-          <Card className="bg-white shadow-lg">
-            <CardContent className="p-8">
-              <Accordion type="single" collapsible className="space-y-4">
-                {faqs.map((faq, index) => (
-                  <AccordionItem key={index} value={`item-${index}`} className="border-b border-gray-200">
-                    <AccordionTrigger className="text-left text-lg font-semibold text-navy hover:text-fresh-green transition-colors">
-                      {faq.question}
-                    </AccordionTrigger>
-                    <AccordionContent className="text-soft-grey pt-4">
-                      {faq.answer}
-                    </AccordionContent>
-                  </AccordionItem>
-                ))}
-              </Accordion>
-            </CardContent>
-          </Card>
+          <Collapsible open={isFAQOpen} onOpenChange={setIsFAQOpen}>
+            <CollapsibleTrigger className="w-full text-center mb-8">
+              <div className="flex items-center justify-center gap-3 cursor-pointer hover:opacity-80 transition-opacity">
+                <h2 className="text-3xl lg:text-4xl font-bold text-navy">
+                  Your Questions Answered
+                </h2>
+                <ChevronDown className={`h-8 w-8 text-navy transition-transform duration-300 ${isFAQOpen ? 'rotate-180' : ''}`} />
+              </div>
+              <p className="text-xl text-soft-grey mt-4">
+                Honest answers to the questions holding you back from taking action
+              </p>
+            </CollapsibleTrigger>
+            
+            <CollapsibleContent className={`transition-all duration-700 delay-200 ${
+              isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+            }`}>
+              <Card className="bg-white shadow-lg mt-8">
+                <CardContent className="p-8">
+                  <Accordion type="single" collapsible className="space-y-4">
+                    {faqs.map((faq, index) => (
+                      <AccordionItem key={index} value={`item-${index}`} className="border-b border-gray-200">
+                        <AccordionTrigger className="text-left text-lg font-semibold text-navy hover:text-fresh-green transition-colors">
+                          {faq.question}
+                        </AccordionTrigger>
+                        <AccordionContent className="text-soft-grey pt-4">
+                          {faq.answer}
+                        </AccordionContent>
+                      </AccordionItem>
+                    ))}
+                  </Accordion>
+                </CardContent>
+              </Card>
+            </CollapsibleContent>
+          </Collapsible>
         </div>
 
 
