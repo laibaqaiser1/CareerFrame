@@ -295,23 +295,7 @@ export function FeaturesSection() {
             </Card>
           </div>
 
-          {/* Interactive Demo Teaser - Moved from How It Works */}
-          <div className="text-center mt-16">
-            <Card className="bg-white shadow-lg inline-block">
-              <CardContent className="p-8">
-                <h3 className="text-2xl font-semibold text-navy mb-4">See CareerFrame in Action</h3>
-                <p className="text-soft-grey mb-6">Take a 2-minute interactive tour and discover how we'll transform your career journey.</p>
-                <Button 
-                  size="lg" 
-                  className="text-white px-8 py-4"
-                  style={{ backgroundColor: '#88A98F' }}
-                >
-                  <Play className="mr-2 h-5 w-5" />
-                  Start Interactive Demo
-                </Button>
-              </CardContent>
-            </Card>
-          </div>
+
         </div>
       </section>
     </>
