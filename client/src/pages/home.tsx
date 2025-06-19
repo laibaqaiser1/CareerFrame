@@ -16,7 +16,7 @@ import { Footer } from "@/components/sections/footer";
 import { LiveChat } from "@/components/ui/live-chat";
 import { Button } from "@/components/ui/button";
 import { useScrollReveal } from "@/hooks/use-scroll-animation";
-import careerFrameLogo from "@assets/ChatGPT Image Jun 19, 2025, 09_02_15 PM_1750363852494.png";
+import careerFrameLogo from "@assets/ChatGPT Image Jun 19, 2025, 09_12_42 PM_1750363966951.png";
 
 function Navigation() {
   const [scrolled, setScrolled] = useState(false);
