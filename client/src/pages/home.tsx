@@ -72,7 +72,7 @@ function Navigation() {
             </div>
             
             <Button className="text-white px-6 py-2 font-semibold button-hover" style={{ backgroundColor: '#88A98F' }}>
-              Join For FREE
+              Sign In
             </Button>
           </div>
         </div>
