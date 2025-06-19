@@ -47,8 +47,8 @@ const features = [
     icon: Search,
     title: "Career Alignment & Role Insights",
     description: "Get in-depth role overviews and personalized recommendations based on your skills, experience, and career aspirations.",
-    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=300",
-    alt: "Professional analyzing career insights",
+    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=300",
+    alt: "Data analysis and career insights dashboard",
     cta: "Get Role Insights"
   },
 
