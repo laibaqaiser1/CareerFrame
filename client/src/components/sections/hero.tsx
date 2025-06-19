@@ -1,7 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Play, Heart, ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
-import heroImage from "@assets/Picture1.jpg";
 
 export function HeroSection() {
   return (
