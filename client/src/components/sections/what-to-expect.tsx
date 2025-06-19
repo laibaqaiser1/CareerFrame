@@ -22,8 +22,34 @@ export function WhatToExpectSection() {
   ];
 
   return (
-    <section id="what-to-expect" className="py-16 bg-white">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="what-to-expect" className="py-16 relative overflow-hidden" style={{ backgroundColor: '#e6e8f5' }}>
+      {/* Creative Background Pattern */}
+      <div className="absolute inset-0 opacity-20">
+        <svg className="w-full h-full" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+              <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#88A98F" strokeWidth="1" opacity="0.3"/>
+            </pattern>
+            <radialGradient id="gradient" cx="50%" cy="50%" r="50%">
+              <stop offset="0%" stopColor="#88A98F" stopOpacity="0.1"/>
+              <stop offset="100%" stopColor="#88A98F" stopOpacity="0"/>
+            </radialGradient>
+          </defs>
+          <rect width="100%" height="100%" fill="url(#pattern)"/>
+          <circle cx="100" cy="100" r="60" fill="url(#gradient)"/>
+          <circle cx="300" cy="150" r="40" fill="url(#gradient)"/>
+          <circle cx="350" cy="300" r="50" fill="url(#gradient)"/>
+          <circle cx="50" cy="300" r="35" fill="url(#gradient)"/>
+        </svg>
+      </div>
+      
+      {/* Floating Elements */}
+      <div className="absolute top-10 left-10 w-4 h-4 rounded-full opacity-40" style={{ backgroundColor: '#88A98F' }}></div>
+      <div className="absolute top-20 right-20 w-6 h-6 rounded-full opacity-30" style={{ backgroundColor: '#88A98F' }}></div>
+      <div className="absolute bottom-20 left-20 w-3 h-3 rounded-full opacity-50" style={{ backgroundColor: '#88A98F' }}></div>
+      <div className="absolute bottom-10 right-10 w-5 h-5 rounded-full opacity-35" style={{ backgroundColor: '#88A98F' }}></div>
+      
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center mb-12">
           <h2 className="text-3xl lg:text-4xl font-bold text-navy mb-4">
             What to Expect After You{" "}
