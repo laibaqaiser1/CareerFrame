@@ -94,16 +94,14 @@ export function WhatToExpectSection() {
         </div>
 
         <div className="mt-12 text-center">
-          <div className="rounded-lg p-6 max-w-2xl mx-auto" style={{ backgroundColor: 'rgba(136, 169, 143, 0.1)' }}>
-            <CheckCircle className="h-8 w-8 mx-auto mb-4" style={{ color: '#88A98F' }} />
-            <h3 className="text-lg font-semibold text-navy mb-2">
-              No Credit Card Required to Start
-            </h3>
-            <p className="text-soft-grey">
-              Begin with our free plan and upgrade when you're ready to accelerate your results. 
-              Cancel anytime, no questions asked.
-            </p>
-          </div>
+          <CheckCircle className="h-8 w-8 mx-auto mb-4" style={{ color: '#88A98F' }} />
+          <h3 className="text-lg font-semibold text-navy mb-2">
+            No Credit Card Required to Start
+          </h3>
+          <p className="text-soft-grey max-w-2xl mx-auto">
+            Begin with our free plan and upgrade when you're ready to accelerate your results. 
+            Cancel anytime, no questions asked.
+          </p>
         </div>
       </div>
     </section>
