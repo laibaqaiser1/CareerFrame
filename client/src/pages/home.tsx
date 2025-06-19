@@ -16,7 +16,7 @@ import { Footer } from "@/components/sections/footer";
 import { LiveChat } from "@/components/ui/live-chat";
 import { Button } from "@/components/ui/button";
 import { useScrollReveal } from "@/hooks/use-scroll-animation";
-import careerFrameLogo from "@assets/Logo Clear background.png";
+import careerFrameLogo from "@assets/58bb5f54-f677-421c-9f7f-f2a72a331bd5_1750363268556.png";
 
 function Navigation() {
   const [scrolled, setScrolled] = useState(false);
@@ -41,9 +41,8 @@ function Navigation() {
             <img 
               src={careerFrameLogo} 
               alt="CareerFrame Logo" 
-              className="h-10 w-10 mr-3"
+              className="h-12"
             />
-            <span className="text-2xl font-bold text-white">CareerFrame</span>
           </div>
           
           <div className="flex items-center space-x-8">
