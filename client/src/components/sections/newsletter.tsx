@@ -50,28 +50,6 @@ export function NewsletterSection() {
 
   return (
     <>
-      {/* Coming Soon Section */}
-      <section className="py-12 bg-gradient-to-r from-teal-400 to-blue-500">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-8">
-            <p className="text-white font-medium drop-shadow-md">Revolutionary AI-powered career guidance launching soon</p>
-          </div>
-          <div className="flex flex-wrap justify-center items-center gap-8 opacity-60">
-            <div className="bg-gray-200 px-6 py-3 rounded-lg">
-              <span className="text-gray-600 font-semibold">AI Career Coach</span>
-            </div>
-            <div className="bg-gray-200 px-6 py-3 rounded-lg">
-              <span className="text-gray-600 font-semibold">Skill Gap Analysis</span>
-            </div>
-            <div className="bg-gray-200 px-6 py-3 rounded-lg">
-              <span className="text-gray-600 font-semibold">Personalized Pathways</span>
-            </div>
-            <div className="bg-gray-200 px-6 py-3 rounded-lg">
-              <span className="text-gray-600 font-semibold">Resume Builder</span>
-            </div>
-          </div>
-        </div>
-      </section>
 
       {/* Newsletter & Final CTA */}
       <section className="py-20 bg-gradient-to-br from-green-400 via-blue-500 to-purple-600 text-white">
