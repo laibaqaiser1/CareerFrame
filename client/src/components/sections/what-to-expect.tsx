@@ -1,6 +1,6 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { CheckCircle, ArrowRight, Clock } from "lucide-react";
+import { CheckCircle, ArrowRight, Clock, Users, TrendingUp, Star, Award } from "lucide-react";
 
 export function WhatToExpectSection() {
   const steps = [
@@ -93,26 +93,38 @@ export function WhatToExpectSection() {
           ))}
         </div>
 
-        <div className="mt-12 grid md:grid-cols-4 gap-8 text-center">
-          <div>
+        <div className="mt-12 grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="text-center">
+            <div className="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4" style={{ backgroundColor: 'rgba(136, 169, 143, 0.1)' }}>
+              <Users className="h-8 w-8" style={{ color: '#88A98F' }} />
+            </div>
             <div className="text-3xl font-bold text-navy mb-2">12,000+</div>
-            <div className="text-sm font-semibold text-navy mb-1">Future Success Stories</div>
-            <div className="text-xs text-soft-grey">CareerFrame was created to help people land the roles they deserve — and you're next.</div>
+            <div className="text-lg font-semibold text-navy mb-1">Future Success Stories</div>
+            <div className="text-sm text-soft-grey">CareerFrame was created to help people land the roles they deserve — and you're next.</div>
           </div>
-          <div>
+          <div className="text-center">
+            <div className="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4" style={{ backgroundColor: 'rgba(136, 169, 143, 0.1)' }}>
+              <TrendingUp className="h-8 w-8" style={{ color: '#88A98F' }} />
+            </div>
             <div className="text-3xl font-bold text-navy mb-2">72%</div>
-            <div className="text-sm font-semibold text-navy mb-1">Reported Improved Career Confidence</div>
-            <div className="text-xs text-soft-grey">After creating a personalised roadmap with CareerFrame</div>
+            <div className="text-lg font-semibold text-navy mb-1">Reported Improved Career Confidence</div>
+            <div className="text-sm text-soft-grey">After creating a personalised roadmap with CareerFrame</div>
           </div>
-          <div>
+          <div className="text-center">
+            <div className="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4" style={{ backgroundColor: 'rgba(136, 169, 143, 0.1)' }}>
+              <Star className="h-8 w-8" style={{ color: '#88A98F' }} />
+            </div>
             <div className="text-3xl font-bold text-navy mb-2">Rate Us</div>
-            <div className="text-sm font-semibold text-navy mb-1">Be the first to rate us</div>
-            <div className="text-xs text-soft-grey">Your voice matters</div>
+            <div className="text-lg font-semibold text-navy mb-1">Be the first to rate us</div>
+            <div className="text-sm text-soft-grey">Your voice matters</div>
           </div>
-          <div>
+          <div className="text-center">
+            <div className="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4" style={{ backgroundColor: 'rgba(136, 169, 143, 0.1)' }}>
+              <Award className="h-8 w-8" style={{ color: '#88A98F' }} />
+            </div>
             <div className="text-3xl font-bold text-navy mb-2">90 Days</div>
-            <div className="text-sm font-semibold text-navy mb-1">Our goal: career breakthroughs</div>
-            <div className="text-xs text-soft-grey">CareerFrame is built for speed — helping you move fast with a clear, achievable plan.</div>
+            <div className="text-lg font-semibold text-navy mb-1">Our goal: career breakthroughs</div>
+            <div className="text-sm text-soft-grey">CareerFrame is built for speed — helping you move fast with a clear, achievable plan.</div>
           </div>
         </div>
       </div>

@@ -144,9 +144,6 @@ export default function Home() {
       <div className="slide-up">
         <WhatToExpectSection />
       </div>
-      <div className="slide-up">
-        <TrustSignalsSection />
-      </div>
       <div className="slide-in-left">
         <FeaturesSection />
       </div>
