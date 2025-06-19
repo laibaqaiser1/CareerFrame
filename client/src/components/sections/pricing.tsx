@@ -85,10 +85,11 @@ export function PricingSection() {
           }`}
         >
           <h2 className="text-3xl lg:text-4xl font-bold text-white mb-6 drop-shadow-lg">
-            Simple Pricing, Powerful Results
+            Simple Pricing. Powerful Results.
           </h2>
           <p className="text-xl text-white max-w-3xl mx-auto drop-shadow-md">
-            Average ROI: 500% within 6 months. Start free, upgrade when you see results.
+            Most users see a 5x return on investment within 6 months.<br />
+            Start free — upgrade only when you see the value.
           </p>
         </div>
 
