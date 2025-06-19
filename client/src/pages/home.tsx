@@ -71,9 +71,7 @@ function Navigation() {
               </div>
             </div>
             
-            <Button className="text-white px-6 py-2 font-semibold button-hover" style={{ backgroundColor: '#88A98F' }}>
-              Sign In
-            </Button>
+
           </div>
         </div>
       </div>
@@ -173,6 +171,16 @@ export default function Home() {
       </div>
       <Footer />
       <LiveChat />
+      
+      {/* Floating Sign In CTA */}
+      <div className="fixed top-4 right-4 z-50">
+        <Button 
+          className="text-white px-6 py-2 font-semibold button-hover shadow-lg"
+          style={{ backgroundColor: '#88A98F' }}
+        >
+          Sign In
+        </Button>
+      </div>
     </div>
   );
 }
