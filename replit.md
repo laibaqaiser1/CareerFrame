@@ -99,6 +99,8 @@ CareerFrame is a full-stack web application that provides AI-powered career coac
 ## Changelog
 
 Changelog:
+- June 19, 2025: Removed AI transparency section and FAQ video links section to streamline content
+- June 19, 2025: Restructured hero layout with centered headline above content, moved supporting text to left of app interface
 - June 19, 2025: Added CareerFrame app interface image to hero section with two-column layout, created separate Problem/Solution section below hero
 - June 19, 2025: Updated logo to new glitch-effect CareerFrame branding with increased size (h-32) and adjusted navigation layout
 - June 19, 2025: Changed hero section and navigation banner backgrounds to #0A0F14 for sophisticated dark theme

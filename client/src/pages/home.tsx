@@ -10,7 +10,7 @@ import { ProblemSolutionSection } from "@/components/sections/problem-solution";
 import { PricingSection } from "@/components/sections/pricing";
 import { UrgencyCTASection } from "@/components/sections/urgency-cta";
 import { FAQSection } from "@/components/sections/faq";
-import { AITransparencySection } from "@/components/sections/ai-transparency";
+
 import { NewsletterSection } from "@/components/sections/newsletter";
 import { Footer } from "@/components/sections/footer";
 import { LiveChat } from "@/components/ui/live-chat";
@@ -167,9 +167,7 @@ export default function Home() {
       <div className="scale-in">
         <FAQSection />
       </div>
-      <div className="fade-in">
-        <AITransparencySection />
-      </div>
+
       <div className="slide-up">
         <NewsletterSection />
       </div>
