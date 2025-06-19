@@ -99,6 +99,7 @@ CareerFrame is a full-stack web application that provides AI-powered career coac
 ## Changelog
 
 Changelog:
+- June 19, 2025: Removed 90-day guarantee sections from testimonials and pricing pages to eliminate guarantee messaging
 - June 19, 2025: Removed AI transparency section and FAQ video links section to streamline content
 - June 19, 2025: Restructured hero layout with centered headline above content, moved supporting text to left of app interface
 - June 19, 2025: Added CareerFrame app interface image to hero section with two-column layout, created separate Problem/Solution section below hero
