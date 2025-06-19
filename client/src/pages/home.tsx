@@ -16,7 +16,7 @@ import { Footer } from "@/components/sections/footer";
 import { LiveChat } from "@/components/ui/live-chat";
 import { Button } from "@/components/ui/button";
 import { useScrollReveal } from "@/hooks/use-scroll-animation";
-import careerFrameLogo from "@assets/58bb5f54-f677-421c-9f7f-f2a72a331bd5_1750363268556.png";
+import careerFrameLogo from "@assets/ChatGPT Image Jun 19, 2025, 09_02_15 PM_1750363852494.png";
 
 function Navigation() {
   const [scrolled, setScrolled] = useState(false);
@@ -36,12 +36,12 @@ function Navigation() {
         : 'backdrop-blur-sm border-b border-gray-800'
     }`} style={{ backgroundColor: 'rgba(10, 15, 20, 0.95)' }}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-20">
+        <div className="flex justify-between items-center h-24">
           <div className="flex-shrink-0 flex items-center">
             <img 
               src={careerFrameLogo} 
               alt="CareerFrame Logo" 
-              className="h-24"
+              className="h-28"
             />
           </div>
           
