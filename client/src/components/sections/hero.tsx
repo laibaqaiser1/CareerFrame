@@ -54,6 +54,9 @@ export function HeroSection() {
                 Start Your Career Plan — Free
               </Button>
             </div>
+            <p className="text-sm mt-3 text-center lg:text-left" style={{ color: '#88A98F' }}>
+              90-day satisfaction guarantee
+            </p>
           </motion.div>
 
           {/* App Interface Image */}
