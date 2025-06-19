@@ -1,5 +1,5 @@
 import { Twitter, Linkedin, Facebook } from "lucide-react";
-import careerFrameLogo from "@assets/Logo Clear background.png";
+import careerFrameLogo from "@assets/ChatGPT Image Jun 19, 2025, 09_12_42 PM_1750363966951.png";
 
 const footerSections = [
   {
@@ -41,9 +41,8 @@ export function Footer() {
               <img 
                 src={careerFrameLogo} 
                 alt="CareerFrame Logo" 
-                className="h-8 w-8 mr-3"
+                className="h-32"
               />
-              <div className="text-2xl font-bold">CareerFrame</div>
             </div>
             <p className="text-gray-300 text-sm mb-4">
               Empowering careers through AI-powered guidance and personalized coaching.
