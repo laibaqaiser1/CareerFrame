@@ -41,17 +41,13 @@ function Navigation() {
             <img 
               src={careerFrameLogo} 
               alt="CareerFrame Logo" 
-              className="h-12"
+              className="h-16"
             />
           </div>
           
           <div className="flex items-center space-x-8">
             <div className="hidden md:block">
               <div className="flex items-baseline space-x-8">
-                <a href="#what-to-expect" className="px-3 py-2 text-lg font-medium transition-all duration-300 hover:scale-105 hover:shadow-lg relative group" style={{ color: '#88A98F' }}>
-                  <span className="relative z-10">What to Expect</span>
-                  <div className="absolute inset-0 rounded-lg scale-0 group-hover:scale-100 transition-transform duration-300" style={{ backgroundColor: 'rgba(136, 169, 143, 0.1)' }}></div>
-                </a>
                 <a href="#trust-signals" className="px-3 py-2 text-lg font-medium transition-all duration-300 hover:scale-105 hover:shadow-lg relative group" style={{ color: '#88A98F' }}>
                   <span className="relative z-10">Success Stories</span>
                   <div className="absolute inset-0 rounded-lg scale-0 group-hover:scale-100 transition-transform duration-300" style={{ backgroundColor: 'rgba(136, 169, 143, 0.1)' }}></div>
@@ -68,10 +64,6 @@ function Navigation() {
                   <span className="relative z-10">About</span>
                   <div className="absolute inset-0 rounded-lg scale-0 group-hover:scale-100 transition-transform duration-300" style={{ backgroundColor: 'rgba(136, 169, 143, 0.1)' }}></div>
                 </a>
-                <a href="#guarantee" className="px-3 py-2 text-lg font-medium transition-all duration-300 hover:scale-105 hover:shadow-lg relative group" style={{ color: '#88A98F' }}>
-                  <span className="relative z-10">Guarantee</span>
-                  <div className="absolute inset-0 rounded-lg scale-0 group-hover:scale-100 transition-transform duration-300" style={{ backgroundColor: 'rgba(136, 169, 143, 0.1)' }}></div>
-                </a>
                 <a href="#pricing" className="px-3 py-2 text-lg font-medium transition-all duration-300 hover:scale-105 hover:shadow-lg relative group" style={{ color: '#88A98F' }}>
                   <span className="relative z-10">Pricing</span>
                   <div className="absolute inset-0 rounded-lg scale-0 group-hover:scale-100 transition-transform duration-300" style={{ backgroundColor: 'rgba(136, 169, 143, 0.1)' }}></div>
@@ -79,9 +71,6 @@ function Navigation() {
               </div>
             </div>
             
-            <Button variant="ghost" className="px-6 py-2 font-medium button-hover" style={{ color: '#88A98F' }}>
-              Sign In
-            </Button>
             <Button className="text-white px-6 py-2 font-semibold button-hover" style={{ backgroundColor: '#88A98F' }}>
               Join For FREE
             </Button>
