@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 
 export function HeroSection() {
   return (
-    <section className="pt-20 pb-16 bg-black overflow-hidden">
+    <section className="pt-20 pb-16 overflow-hidden" style={{ backgroundColor: '#0A0F14' }}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="lg:grid lg:grid-cols-1 items-center">
           <motion.div 
