@@ -233,25 +233,7 @@ export function PricingSection() {
           </div>
         </div>
 
-        {/* Prominent Guarantee Section */}
-        <div className="mt-16 text-center">
-          <div className="max-w-4xl mx-auto p-8 rounded-xl border-2" style={{ borderColor: '#88A98F', backgroundColor: 'rgba(136, 169, 143, 0.05)' }}>
-            <div className="flex items-center justify-center mb-6">
-              <div className="w-16 h-16 rounded-full flex items-center justify-center mr-4" style={{ backgroundColor: '#88A98F' }}>
-                <span className="text-2xl font-bold text-white">90</span>
-              </div>
-              <h3 className="text-3xl font-bold text-navy">
-                90-Day Career Transformation Guarantee
-              </h3>
-            </div>
-            <p className="text-lg text-soft-grey mb-4 leading-relaxed">
-              If you don't land a new role or see significant career progress within 90 days, we'll refund your investment and provide an additional 90 days of coaching absolutely free.
-            </p>
-            <p className="text-xl font-bold text-navy">
-              No questions asked. We're that confident in our system.
-            </p>
-          </div>
-        </div>
+
       </div>
     </section>
   );
