@@ -51,17 +51,16 @@ const features = [
     alt: "Professional analyzing career insights",
     cta: "Get Role Insights"
   },
+
+];
+
+const additionalFeatures = [
   {
     icon: Users,
     title: "Connect with Like-Minded Professionals",
     description: "Join a supportive community of career-changers. Share experiences, celebrate wins, and get encouragement when you need it most.",
-    image: "",
-    alt: "",
-    cta: "Join Community"
-  }
-];
-
-const additionalFeatures = [
+    color: "bg-green-100 text-green-500"
+  },
   {
     icon: Goal,
     title: "Career Alignment & Role Insights",
