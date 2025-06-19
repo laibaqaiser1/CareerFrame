@@ -81,25 +81,7 @@ export function TestimonialsSection() {
           ))}
         </div>
 
-        {/* 90-Day Guarantee Section - Added right after testimonials */}
-        <div className="mt-16 text-center">
-          <div className="max-w-4xl mx-auto p-8 rounded-xl border-2" style={{ borderColor: '#88A98F', backgroundColor: 'rgba(136, 169, 143, 0.05)' }}>
-            <div className="flex items-center justify-center mb-6">
-              <div className="w-16 h-16 rounded-full flex items-center justify-center mr-4" style={{ backgroundColor: '#88A98F' }}>
-                <span className="text-2xl font-bold text-white">90</span>
-              </div>
-              <h3 className="text-3xl font-bold text-navy">
-                90-Day Satisfaction Guarantee
-              </h3>
-            </div>
-            <p className="text-lg text-soft-grey mb-4 leading-relaxed">
-              If you're not completely satisfied with your CareerFrame experience within 90 days, we'll provide a full refund. We're confident in the quality of our platform and coaching.
-            </p>
-            <p className="text-xl font-bold text-navy">
-              Your satisfaction is our priority.
-            </p>
-          </div>
-        </div>
+
       </div>
     </section>
   );

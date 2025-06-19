@@ -75,8 +75,8 @@ export function UrgencyCTASection() {
               </div>
               <div className="text-center">
                 <Clock className="h-8 w-8 mx-auto mb-2" style={{ color: '#88A98F' }} />
-                <div className="text-2xl font-bold text-navy">90</div>
-                <div className="text-sm text-soft-grey">Day Satisfaction Guarantee</div>
+                <div className="text-2xl font-bold text-navy">24/7</div>
+                <div className="text-sm text-soft-grey">Support Available</div>
               </div>
             </div>
 

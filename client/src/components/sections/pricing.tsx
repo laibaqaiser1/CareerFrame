@@ -239,18 +239,7 @@ export function PricingSection() {
           </Card>
         </div>
 
-        <div className={`text-center mt-12 transition-all duration-700 delay-300 ${
-          isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-        }`}>
-          <div className="bg-white/90 border-2 border-navy rounded-lg p-4 max-w-xl mx-auto shadow-lg">
-            <h3 className="text-navy text-lg font-bold mb-1">
-              90-Day Satisfaction Guarantee
-            </h3>
-            <p className="text-navy text-sm">
-              Cancel anytime • No hidden fees • Full refund if not satisfied
-            </p>
-          </div>
-        </div>
+
 
 
       </div>

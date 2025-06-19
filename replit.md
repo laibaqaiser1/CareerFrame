@@ -99,6 +99,7 @@ CareerFrame is a full-stack web application that provides AI-powered career coac
 ## Changelog
 
 Changelog:
+- June 19, 2025: Removed all 90-day satisfaction guarantee sections from testimonials, pricing, and urgency CTA areas
 - June 19, 2025: Removed "Your 90-Day Career Transformation Roadmap" section completely
 - June 19, 2025: Toned down overpromising language throughout site, changed guarantees from job outcomes to satisfaction-based, removed specific career promises
 - June 19, 2025: Made feature comparison table collapsible with dropdown functionality
