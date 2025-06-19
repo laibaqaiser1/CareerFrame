@@ -55,8 +55,8 @@ const features = [
     icon: Users,
     title: "Connect with Like-Minded Professionals",
     description: "Join a supportive community of career-changers. Share experiences, celebrate wins, and get encouragement when you need it most.",
-    image: "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=300",
-    alt: "Professionals networking and supporting each other",
+    image: "",
+    alt: "",
     cta: "Join Community"
   }
 ];
