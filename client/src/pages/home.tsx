@@ -71,7 +71,9 @@ function Navigation() {
               </div>
             </div>
             
-
+            <Button className="text-white px-6 py-2 font-semibold button-hover" style={{ backgroundColor: '#88A98F' }}>
+              Sign In
+            </Button>
           </div>
         </div>
       </div>
@@ -171,14 +173,6 @@ export default function Home() {
       </div>
       <Footer />
       <LiveChat />
-      
-      {/* Floating Sign In CTA - Fixed position that follows scroll */}
-      <Button 
-        className="floating-signin text-white px-6 py-2 font-semibold button-hover shadow-xl border border-gray-700"
-        style={{ backgroundColor: '#88A98F', position: 'fixed', top: '5rem', right: '1.5rem', zIndex: 9999 }}
-      >
-        Sign In
-      </Button>
     </div>
   );
 }
