@@ -93,15 +93,27 @@ export function WhatToExpectSection() {
           ))}
         </div>
 
-        <div className="mt-12 text-center">
-          <CheckCircle className="h-8 w-8 mx-auto mb-4" style={{ color: '#88A98F' }} />
-          <h3 className="text-lg font-semibold text-navy mb-2">
-            No Credit Card Required to Start
-          </h3>
-          <p className="text-soft-grey max-w-2xl mx-auto">
-            Begin with our free plan and upgrade when you're ready to accelerate your results. 
-            Cancel anytime, no questions asked.
-          </p>
+        <div className="mt-12 grid md:grid-cols-4 gap-8 text-center">
+          <div>
+            <div className="text-3xl font-bold text-navy mb-2">12,000+</div>
+            <div className="text-sm font-semibold text-navy mb-1">Future Success Stories</div>
+            <div className="text-xs text-soft-grey">CareerFrame was created to help people land the roles they deserve — and you're next.</div>
+          </div>
+          <div>
+            <div className="text-3xl font-bold text-navy mb-2">72%</div>
+            <div className="text-sm font-semibold text-navy mb-1">Reported Improved Career Confidence</div>
+            <div className="text-xs text-soft-grey">After creating a personalised roadmap with CareerFrame</div>
+          </div>
+          <div>
+            <div className="text-3xl font-bold text-navy mb-2">Rate Us</div>
+            <div className="text-sm font-semibold text-navy mb-1">Be the first to rate us</div>
+            <div className="text-xs text-soft-grey">Your voice matters</div>
+          </div>
+          <div>
+            <div className="text-3xl font-bold text-navy mb-2">90 Days</div>
+            <div className="text-sm font-semibold text-navy mb-1">Our goal: career breakthroughs</div>
+            <div className="text-xs text-soft-grey">CareerFrame is built for speed — helping you move fast with a clear, achievable plan.</div>
+          </div>
         </div>
       </div>
     </section>
