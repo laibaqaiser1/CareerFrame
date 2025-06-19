@@ -62,9 +62,7 @@ const plans = [
       "Recruiter visibility boost"
     ],
     valueProps: [
-      "Save £200+ per hour vs traditional coaching",
-      "Land roles 3x faster on average",
-      "31% average salary increase"
+      "90-day satisfaction guarantee"
     ],
     cta: "Accelerate Your Career",
     popular: true
