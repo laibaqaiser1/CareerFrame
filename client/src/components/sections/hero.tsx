@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { Play, Heart, ArrowRight } from "lucide-react";
+import { Heart, ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
 import careerFrameApp from "@assets/image_1750364343735.png";
 
@@ -52,15 +52,6 @@ export function HeroSection() {
                 style={{ backgroundColor: '#88A98F' }}
               >
                 Start Your Career Plan — Free
-              </Button>
-              <Button 
-                variant="outline" 
-                size="lg" 
-                className="border-2 text-lg px-8 py-4 button-hover"
-                style={{ borderColor: '#88A98F', color: '#88A98F' }}
-              >
-                <Play className="mr-2 h-5 w-5" />
-                Watch Video
               </Button>
             </div>
           </motion.div>
