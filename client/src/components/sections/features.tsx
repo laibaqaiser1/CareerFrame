@@ -163,6 +163,27 @@ export function FeaturesSection() {
               </div>
             ))}
           </div>
+
+          {/* Interactive Demo Section */}
+          <div className={`mt-16 text-center transition-all duration-700 ${
+            valuePropVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+          }`}>
+            <div className="bg-white rounded-lg shadow-lg p-8 max-w-2xl mx-auto">
+              <h3 className="text-2xl font-bold text-navy mb-4">
+                See CareerFrame in Action
+              </h3>
+              <p className="text-soft-grey mb-6">
+                Take a 2-minute interactive tour and discover how we'll transform your career journey.
+              </p>
+              <Button 
+                className="text-white px-8 py-3 text-lg font-semibold inline-flex items-center gap-2"
+                style={{ backgroundColor: '#88A98F' }}
+              >
+                <Play className="h-5 w-5" />
+                Start Interactive Demo
+              </Button>
+            </div>
+          </div>
         </div>
       </section>
 
