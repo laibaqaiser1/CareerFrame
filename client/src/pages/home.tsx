@@ -6,7 +6,7 @@ import { FeaturesSection } from "@/components/sections/features";
 import { HowItWorksSection } from "@/components/sections/how-it-works";
 import { FounderStorySection } from "@/components/sections/founder-story";
 import { TestimonialsSection } from "@/components/sections/testimonials-new";
-
+import { ProblemSolutionSection } from "@/components/sections/problem-solution";
 import { PricingSection } from "@/components/sections/pricing";
 import { UrgencyCTASection } from "@/components/sections/urgency-cta";
 import { FAQSection } from "@/components/sections/faq";
@@ -136,6 +136,9 @@ export default function Home() {
       <Navigation />
       <div className="fade-in">
         <HeroSection />
+      </div>
+      <div className="slide-up">
+        <ProblemSolutionSection />
       </div>
       <div className="slide-up">
         <WhatToExpectSection />
