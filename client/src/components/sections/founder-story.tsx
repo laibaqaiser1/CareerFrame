@@ -3,7 +3,7 @@ import { Quote } from "lucide-react";
 
 export function FounderStorySection() {
   return (
-    <section className="py-16 bg-gradient-to-r from-blue-50 to-indigo-50">
+    <section id="founder-story" className="py-16 bg-gradient-to-r from-blue-50 to-indigo-50">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <Card className="bg-white shadow-xl">
           <CardContent className="p-8 lg:p-12">

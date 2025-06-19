@@ -48,25 +48,37 @@ function Navigation() {
           <div className="flex items-center space-x-8">
             <div className="hidden md:block">
               <div className="flex items-baseline space-x-8">
-                <a href="#features" className="px-3 py-2 text-sm font-medium transition-all duration-300 hover:scale-105 hover:shadow-lg relative group" style={{ color: '#88A98F' }}>
+                <a href="#what-to-expect" className="px-3 py-2 text-lg font-medium transition-all duration-300 hover:scale-105 hover:shadow-lg relative group" style={{ color: '#88A98F' }}>
+                  <span className="relative z-10">What to Expect</span>
+                  <div className="absolute inset-0 rounded-lg scale-0 group-hover:scale-100 transition-transform duration-300" style={{ backgroundColor: 'rgba(136, 169, 143, 0.1)' }}></div>
+                </a>
+                <a href="#trust-signals" className="px-3 py-2 text-lg font-medium transition-all duration-300 hover:scale-105 hover:shadow-lg relative group" style={{ color: '#88A98F' }}>
+                  <span className="relative z-10">Success Stories</span>
+                  <div className="absolute inset-0 rounded-lg scale-0 group-hover:scale-100 transition-transform duration-300" style={{ backgroundColor: 'rgba(136, 169, 143, 0.1)' }}></div>
+                </a>
+                <a href="#features" className="px-3 py-2 text-lg font-medium transition-all duration-300 hover:scale-105 hover:shadow-lg relative group" style={{ color: '#88A98F' }}>
                   <span className="relative z-10">Features</span>
                   <div className="absolute inset-0 rounded-lg scale-0 group-hover:scale-100 transition-transform duration-300" style={{ backgroundColor: 'rgba(136, 169, 143, 0.1)' }}></div>
                 </a>
-                <a href="#how-it-works" className="px-3 py-2 text-sm font-medium transition-all duration-300 hover:scale-105 hover:shadow-lg relative group" style={{ color: '#88A98F' }}>
+                <a href="#how-it-works" className="px-3 py-2 text-lg font-medium transition-all duration-300 hover:scale-105 hover:shadow-lg relative group" style={{ color: '#88A98F' }}>
                   <span className="relative z-10">How it Works</span>
                   <div className="absolute inset-0 rounded-lg scale-0 group-hover:scale-100 transition-transform duration-300" style={{ backgroundColor: 'rgba(136, 169, 143, 0.1)' }}></div>
                 </a>
-                <a href="#pricing" className="px-3 py-2 text-sm font-medium transition-all duration-300 hover:scale-105 hover:shadow-lg relative group" style={{ color: '#88A98F' }}>
+                <a href="#founder-story" className="px-3 py-2 text-lg font-medium transition-all duration-300 hover:scale-105 hover:shadow-lg relative group" style={{ color: '#88A98F' }}>
+                  <span className="relative z-10">About</span>
+                  <div className="absolute inset-0 rounded-lg scale-0 group-hover:scale-100 transition-transform duration-300" style={{ backgroundColor: 'rgba(136, 169, 143, 0.1)' }}></div>
+                </a>
+                <a href="#pricing" className="px-3 py-2 text-lg font-medium transition-all duration-300 hover:scale-105 hover:shadow-lg relative group" style={{ color: '#88A98F' }}>
                   <span className="relative z-10">Pricing</span>
-                  <div className="absolute inset-0 bg-fresh-green/10 rounded-lg scale-0 group-hover:scale-100 transition-transform duration-300"></div>
+                  <div className="absolute inset-0 rounded-lg scale-0 group-hover:scale-100 transition-transform duration-300" style={{ backgroundColor: 'rgba(136, 169, 143, 0.1)' }}></div>
                 </a>
               </div>
             </div>
             
-            <Button variant="ghost" className="text-soft-grey hover:text-navy button-hover">
+            <Button variant="ghost" className="px-6 py-2 font-medium button-hover" style={{ color: '#88A98F' }}>
               Sign In
             </Button>
-            <Button className="bg-fresh-green hover:bg-green-600 text-white button-hover">
+            <Button className="text-white px-6 py-2 font-semibold button-hover" style={{ backgroundColor: '#88A98F' }}>
               Join For FREE
             </Button>
           </div>
