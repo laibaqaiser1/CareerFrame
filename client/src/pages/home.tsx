@@ -14,6 +14,7 @@ import { FAQSection } from "@/components/sections/faq";
 import { NewsletterSection } from "@/components/sections/newsletter";
 import { Footer } from "@/components/sections/footer";
 import { LiveChat } from "@/components/ui/live-chat";
+import { CustomCursor } from "@/components/ui/custom-cursor";
 import { Button } from "@/components/ui/button";
 import { useScrollReveal } from "@/hooks/use-scroll-animation";
 import careerFrameLogo from "@assets/ChatGPT Image Jun 19, 2025, 09_12_42 PM_1750363966951.png";
@@ -173,6 +174,7 @@ export default function Home() {
       </div>
       <Footer />
       <LiveChat />
+      <CustomCursor />
     </div>
   );
 }
