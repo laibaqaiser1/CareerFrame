@@ -13,13 +13,13 @@ export function HeroSection() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <h1 className="text-4xl lg:text-6xl font-bold mb-4 leading-tight" style={{ color: '#5A6E22' }}>
+            <h1 className="text-4xl lg:text-6xl font-bold mb-4 leading-tight" style={{ color: '#88A98F' }}>
               Wake Up Excited for a Career That Fulfills You
             </h1>
-            <p className="text-lg text-white mb-2 font-medium">
+            <p className="text-lg mb-2 font-medium" style={{ color: '#88A98F' }}>
               CareerFrame is an AI-powered career development platform — not a job board
             </p>
-            <p className="text-xl text-white mb-4 leading-relaxed">
+            <p className="text-xl mb-4 leading-relaxed" style={{ color: '#88A98F' }}>
               Join early adopters shaping the future of personalised career growth — your transformation could start with just 15 minutes a day.
             </p>
             <div className="flex flex-col lg:flex-row justify-center items-center gap-4 mb-8" style={{ color: '#88A98F' }}>
