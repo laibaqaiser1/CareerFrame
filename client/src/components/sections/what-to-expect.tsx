@@ -6,20 +6,17 @@ export function WhatToExpectSection() {
     {
       step: "Step 1",
       title: "Meet Your AI Coach",
-      description: "Complete a 5-minute assessment to help us understand your goals, skills, and career preferences.",
-      timeframe: "Day 1"
+      description: "Complete a 5-minute assessment to help us understand your goals, skills, and career preferences."
     },
     {
       step: "Step 2", 
       title: "Get Your Personalized Plan",
-      description: "Receive a custom 90-day roadmap with specific milestones, skill development goals, and target roles.",
-      timeframe: "Day 2"
+      description: "Receive a custom 90-day roadmap with specific milestones, skill development goals, and target roles."
     },
     {
       step: "Step 3",
       title: "Begin Your Journey",
-      description: "Start progressing through your milestones with daily guidance, weekly check-ins, and community support.",
-      timeframe: "Day 3+"
+      description: "Start progressing through your milestones with daily guidance, weekly check-ins, and community support."
     }
   ];
 
@@ -45,10 +42,6 @@ export function WhatToExpectSection() {
                   </div>
                   
                   <div className="text-center mb-4">
-                    <div className="flex items-center justify-center gap-2 mb-2">
-                      <Clock className="h-4 w-4 text-fresh-green" />
-                      <span className="text-sm font-medium text-fresh-green">{step.timeframe}</span>
-                    </div>
                     <h3 className="text-xl font-bold text-navy mb-3">{step.title}</h3>
                   </div>
                   

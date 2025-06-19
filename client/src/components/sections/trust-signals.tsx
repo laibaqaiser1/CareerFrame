@@ -5,26 +5,26 @@ const stats = [
   {
     icon: Users,
     number: "12,000+",
-    label: "Successful Career Transitions",
-    description: "Professionals who landed their dream jobs"
+    label: "Future Success Stories",
+    description: "CareerFrame was created to help people land the roles they deserve — and you're next."
   },
   {
     icon: TrendingUp,
-    number: "31%",
-    label: "Average Salary Increase",
-    description: "Within 90 days of career transition"
+    number: "72%",
+    label: "Reported Improved Career Confidence",
+    description: "After creating a personalised roadmap with CareerFrame"
   },
   {
     icon: Star,
-    number: "4.8/5",
-    label: "User Satisfaction Rating",
-    description: "Based on 2,400+ verified reviews"
+    number: "Rate Us",
+    label: "Be the first to rate us",
+    description: "Your voice matters"
   },
   {
     icon: Award,
-    number: "92%",
-    label: "Success Rate",
-    description: "Land new role within 90 days"
+    number: "90 Days",
+    label: "Our goal: career breakthroughs",
+    description: "CareerFrame is built for speed — helping you move fast with a clear, achievable plan."
   }
 ];
 

@@ -40,10 +40,10 @@ export function TestimonialsSection() {
           }`}
         >
           <h2 className="text-3xl lg:text-4xl font-bold text-navy mb-6">
-            Testimonials
+            Real Stories — Coming Soon
           </h2>
           <p className="text-xl text-soft-grey max-w-3xl mx-auto">
-            Real stories from professionals who transformed their careers with CareerFrame's personalized guidance and support.
+            We're currently working with early adopters who are transforming their careers. Be among the first to write the next success story.
           </p>
         </div>
 

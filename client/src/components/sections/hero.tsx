@@ -5,35 +5,35 @@ import heroImage from "@assets/Picture1.jpg";
 
 export function HeroSection() {
   return (
-    <section className="pt-20 pb-16 bg-gradient-to-br from-blue-50 to-indigo-50 overflow-hidden">
+    <section className="pt-20 pb-16 bg-black overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="lg:grid lg:grid-cols-2 lg:gap-12 items-center">
+        <div className="lg:grid lg:grid-cols-1 items-center">
           <motion.div 
-            className="mb-12 lg:mb-0"
+            className="text-center"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <h1 className="text-4xl lg:text-6xl font-bold text-navy mb-4 leading-tight">
+            <h1 className="text-4xl lg:text-6xl font-bold mb-4 leading-tight" style={{ color: '#5A6E22' }}>
               Wake Up Excited for a Career That Fulfills You
             </h1>
-            <p className="text-lg text-soft-grey mb-2 font-medium">
+            <p className="text-lg text-white mb-2 font-medium">
               CareerFrame is an AI-powered career development platform — not a job board
             </p>
-            <p className="text-xl text-soft-grey mb-4 leading-relaxed">
-              Join 12,000+ professionals who've transformed their careers in just 15 minutes a day
+            <p className="text-xl text-white mb-4 leading-relaxed">
+              Join early adopters shaping the future of personalised career growth — your transformation could start with just 15 minutes a day.
             </p>
-            <div className="flex items-center gap-4 mb-8">
-              <div className="flex items-center text-sm text-soft-grey">
+            <div className="flex flex-col lg:flex-row justify-center items-center gap-4 mb-8 text-white">
+              <div className="flex items-center text-sm">
                 <span className="w-2 h-2 bg-fresh-green rounded-full mr-2"></span>
-                Average salary increase: 31%
+                We're targeting meaningful career progress, including salary growth, by aligning you to roles that match your potential
               </div>
-              <div className="flex items-center text-sm text-soft-grey">
+              <div className="flex items-center text-sm">
                 <span className="w-2 h-2 bg-fresh-green rounded-full mr-2"></span>
-                92% land new role within 90 days
+                Our AI coach is built to fast-track your journey to a new career
               </div>
             </div>
-            <div className="flex flex-col sm:flex-row gap-4 mb-8">
+            <div className="flex flex-col sm:flex-row justify-center gap-4 mb-8">
               <Button 
                 size="lg" 
                 className="bg-fresh-green hover:bg-fresh-green/90 text-white text-lg px-8 py-4 shadow-lg button-hover"
@@ -43,47 +43,11 @@ export function HeroSection() {
               <Button 
                 variant="outline" 
                 size="lg" 
-                className="border-2 border-navy text-navy hover:bg-navy hover:text-white text-lg px-8 py-4 button-hover"
+                className="border-2 border-white text-white hover:bg-white hover:text-black text-lg px-8 py-4 button-hover"
               >
                 <Play className="mr-2 h-5 w-5" />
                 Watch Video
               </Button>
-            </div>
-          </motion.div>
-
-          <motion.div 
-            className="relative"
-            initial={{ opacity: 0, x: 20 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-          >
-            <div className="bg-gradient-to-br from-blue-100 to-indigo-100 rounded-2xl p-8 relative overflow-hidden">
-              <img 
-                src={heroImage}
-                alt="Confident professional with strategic planning materials in urban setting" 
-                className="rounded-xl shadow-2xl w-full h-auto animate-float" 
-              />
-              {/* Overlay elements */}
-              <motion.div 
-                className="absolute top-4 right-4 bg-white rounded-lg p-3 shadow-lg"
-                initial={{ scale: 0 }}
-                animate={{ scale: 1 }}
-                transition={{ delay: 1, duration: 0.3 }}
-              >
-                <div className="flex items-center text-sm">
-                  <div className="w-3 h-3 bg-fresh-green rounded-full mr-2"></div>
-                  <span className="font-semibold">Career Aligned</span>
-                </div>
-              </motion.div>
-              <motion.div 
-                className="absolute bottom-4 left-4 bg-white rounded-lg p-3 shadow-lg"
-                initial={{ scale: 0 }}
-                animate={{ scale: 1 }}
-                transition={{ delay: 1.2, duration: 0.3 }}
-              >
-                <div className="text-xs text-soft-grey">Fulfillment Score</div>
-                <div className="text-lg font-bold text-navy">98%</div>
-              </motion.div>
             </div>
           </motion.div>
         </div>

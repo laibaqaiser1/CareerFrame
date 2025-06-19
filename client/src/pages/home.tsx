@@ -31,32 +31,27 @@ function Navigation() {
   return (
     <nav className={`fixed top-0 w-full z-50 nav-scroll ${
       scrolled 
-        ? 'bg-white/95 backdrop-blur-md shadow-lg border-b border-gray-200' 
-        : 'bg-white/95 backdrop-blur-sm border-b border-gray-100'
+        ? 'bg-black/95 backdrop-blur-md shadow-lg border-b border-gray-800' 
+        : 'bg-black/95 backdrop-blur-sm border-b border-gray-800'
     }`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           <div className="flex-shrink-0 flex items-center">
-            <img 
-              src={careerFrameLogo} 
-              alt="CareerFrame Logo" 
-              className="h-10 w-10 mr-3"
-            />
-            <span className="text-2xl font-bold text-navy">CareerFrame</span>
+            <span className="text-2xl font-bold text-white">CareerFrame</span>
           </div>
           
           <div className="flex items-center space-x-8">
             <div className="hidden md:block">
               <div className="flex items-baseline space-x-8">
-                <a href="#features" className="text-soft-grey hover:text-navy px-3 py-2 text-sm font-medium transition-all duration-300 hover:scale-105 hover:shadow-lg relative group">
+                <a href="#features" className="text-white hover:text-fresh-green px-3 py-2 text-sm font-medium transition-all duration-300 hover:scale-105 hover:shadow-lg relative group">
                   <span className="relative z-10">Features</span>
                   <div className="absolute inset-0 bg-fresh-green/10 rounded-lg scale-0 group-hover:scale-100 transition-transform duration-300"></div>
                 </a>
-                <a href="#how-it-works" className="text-soft-grey hover:text-navy px-3 py-2 text-sm font-medium transition-all duration-300 hover:scale-105 hover:shadow-lg relative group">
+                <a href="#how-it-works" className="text-white hover:text-fresh-green px-3 py-2 text-sm font-medium transition-all duration-300 hover:scale-105 hover:shadow-lg relative group">
                   <span className="relative z-10">How it Works</span>
                   <div className="absolute inset-0 bg-fresh-green/10 rounded-lg scale-0 group-hover:scale-100 transition-transform duration-300"></div>
                 </a>
-                <a href="#pricing" className="text-soft-grey hover:text-navy px-3 py-2 text-sm font-medium transition-all duration-300 hover:scale-105 hover:shadow-lg relative group">
+                <a href="#pricing" className="text-white hover:text-fresh-green px-3 py-2 text-sm font-medium transition-all duration-300 hover:scale-105 hover:shadow-lg relative group">
                   <span className="relative z-10">Pricing</span>
                   <div className="absolute inset-0 bg-fresh-green/10 rounded-lg scale-0 group-hover:scale-100 transition-transform duration-300"></div>
                 </a>
