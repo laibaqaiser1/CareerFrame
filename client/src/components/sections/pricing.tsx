@@ -1,8 +1,10 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible";
 import { useScrollAnimation } from "@/hooks/use-scroll-animation";
-import { Check, X } from "lucide-react";
+import { Check, X, ChevronDown } from "lucide-react";
+import { useState } from "react";
 
 const comparisonFeatures = [
   { feature: "Career Assessment", free: "Basic (1 time)", premium: "Advanced + Unlimited Retakes" },
@@ -71,6 +73,7 @@ const plans = [
 
 export function PricingSection() {
   const { ref, isVisible } = useScrollAnimation();
+  const [isComparisonOpen, setIsComparisonOpen] = useState(false);
 
   return (
     <section id="pricing" className="py-12 bg-gradient-to-br from-yellow-400 via-orange-500 to-red-500">
@@ -179,43 +182,59 @@ export function PricingSection() {
           ))}
         </div>
 
-        {/* Detailed Comparison Table */}
+        {/* Detailed Comparison Table - Collapsible */}
         <div className={`mt-16 transition-all duration-700 delay-400 ${
           isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
         }`}>
           <Card className="bg-white shadow-xl">
             <CardContent className="p-8">
-              <h3 className="text-2xl font-bold text-navy text-center mb-8">
-                Feature Comparison
-              </h3>
-              <div className="overflow-x-auto">
-                <table className="w-full">
-                  <thead>
-                    <tr className="border-b-2 border-gray-200">
-                      <th className="text-left py-4 px-4 font-semibold text-navy">Feature</th>
-                      <th className="text-center py-4 px-4 font-semibold text-navy">Free Plan</th>
-                      <th className="text-center py-4 px-4 font-semibold text-fresh-green">Premium Plan</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {comparisonFeatures.map((item, index) => (
-                      <tr key={index} className="border-b border-gray-100">
-                        <td className="py-4 px-4 font-medium text-navy">{item.feature}</td>
-                        <td className="py-4 px-4 text-center text-soft-grey">
-                          {item.free === "✗" ? (
-                            <X className="h-5 w-5 text-red-500 mx-auto" />
-                          ) : (
-                            item.free
-                          )}
-                        </td>
-                        <td className="py-4 px-4 text-center text-fresh-green font-medium">
-                          {item.premium}
-                        </td>
-                      </tr>
-                    ))}
-                  </tbody>
-                </table>
-              </div>
+              <Collapsible open={isComparisonOpen} onOpenChange={setIsComparisonOpen}>
+                <CollapsibleTrigger asChild>
+                  <Button 
+                    variant="ghost" 
+                    className="w-full flex items-center justify-between p-0 h-auto hover:bg-transparent"
+                  >
+                    <h3 className="text-2xl font-bold text-navy">
+                      Feature Comparison
+                    </h3>
+                    <ChevronDown 
+                      className={`h-6 w-6 text-navy transition-transform duration-200 ${
+                        isComparisonOpen ? 'rotate-180' : ''
+                      }`}
+                    />
+                  </Button>
+                </CollapsibleTrigger>
+                <CollapsibleContent className="mt-8">
+                  <div className="overflow-x-auto">
+                    <table className="w-full">
+                      <thead>
+                        <tr className="border-b-2 border-gray-200">
+                          <th className="text-left py-4 px-4 font-semibold text-navy">Feature</th>
+                          <th className="text-center py-4 px-4 font-semibold text-navy">Free Plan</th>
+                          <th className="text-center py-4 px-4 font-semibold text-fresh-green">Premium Plan</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        {comparisonFeatures.map((item, index) => (
+                          <tr key={index} className="border-b border-gray-100">
+                            <td className="py-4 px-4 font-medium text-navy">{item.feature}</td>
+                            <td className="py-4 px-4 text-center text-soft-grey">
+                              {item.free === "✗" ? (
+                                <X className="h-5 w-5 text-red-500 mx-auto" />
+                              ) : (
+                                item.free
+                              )}
+                            </td>
+                            <td className="py-4 px-4 text-center text-fresh-green font-medium">
+                              {item.premium}
+                            </td>
+                          </tr>
+                        ))}
+                      </tbody>
+                    </table>
+                  </div>
+                </CollapsibleContent>
+              </Collapsible>
             </CardContent>
           </Card>
         </div>
