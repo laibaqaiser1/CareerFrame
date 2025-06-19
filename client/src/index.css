@@ -32,63 +32,18 @@
 }
 
 /* Custom Cursor Styles */
-* {
-  cursor: none;
-}
-
 body {
-  cursor: none;
+  cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20"><circle cx="10" cy="10" r="8" fill="%2388A98F" opacity="0.8"/></svg>') 10 10, auto;
 }
 
-.cursor {
-  position: fixed;
-  width: 20px;
-  height: 20px;
-  background: #88A98F;
-  border-radius: 50%;
-  pointer-events: none;
-  z-index: 9999;
-  mix-blend-mode: difference;
-  transition: transform 0.1s ease;
-}
-
-.cursor-follower {
-  position: fixed;
-  width: 40px;
-  height: 40px;
-  border: 2px solid #88A98F;
-  border-radius: 50%;
-  pointer-events: none;
-  z-index: 9998;
-  transition: transform 0.15s ease;
-  opacity: 0.5;
-}
-
-/* Interactive element hover states */
-.cursor.hover-interactive {
-  transform: scale(1.5) translate(-50%, -50%);
-  background: #88A98F;
-}
-
-.cursor-follower.hover-interactive {
-  transform: scale(1.2) translate(-50%, -50%);
-  border-color: #88A98F;
-  opacity: 0.8;
-}
-
-.cursor.hover-text {
-  transform: scale(0.8) translate(-50%, -50%);
-  background: #88A98F;
-}
-
-/* Hide default cursor on interactive elements */
+/* Hover effects for interactive elements */
 button,
 a,
 [role="button"],
 input,
 textarea,
 select {
-  cursor: none !important;
+  cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" fill="%2388A98F" opacity="0.9"/></svg>') 12 12, pointer !important;
 }
 
 .dark {
