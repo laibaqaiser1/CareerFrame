@@ -70,8 +70,8 @@ export function UrgencyCTASection() {
               </div>
               <div className="text-center">
                 <TrendingUp className="h-8 w-8 mx-auto mb-2" style={{ color: '#88A98F' }} />
-                <div className="text-2xl font-bold text-navy">31%</div>
-                <div className="text-sm text-soft-grey">Avg Salary Increase</div>
+                <div className="text-2xl font-bold text-navy">72%</div>
+                <div className="text-sm text-soft-grey">Reported Improved Career Confidence</div>
               </div>
               <div className="text-center">
                 <Clock className="h-8 w-8 mx-auto mb-2" style={{ color: '#88A98F' }} />
@@ -89,7 +89,7 @@ export function UrgencyCTASection() {
             </Button>
             
             <p className="text-sm text-soft-grey">
-              Next cohort starts in 7 days • No credit card required to start • 90-day money-back guarantee
+              Next cohort starts in {Math.ceil((timeLeft.hours + timeLeft.minutes/60 + timeLeft.seconds/3600) / 24)} days • No credit card required to start • 90-day money-back guarantee
             </p>
           </CardContent>
         </Card>

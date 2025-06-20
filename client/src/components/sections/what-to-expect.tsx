@@ -53,12 +53,9 @@ export function WhatToExpectSection() {
         <div className="text-center mb-12">
           <h2 className="text-3xl lg:text-4xl font-bold text-navy mb-4">
             What to Expect After You{" "}
-            <Button 
-              className="text-white px-6 py-2 text-3xl lg:text-4xl font-bold inline-flex items-center mx-2"
-              style={{ backgroundColor: '#88A98F' }}
-            >
+            <span className="text-3xl lg:text-4xl font-bold">
               Sign Up
-            </Button>
+            </span>
           </h2>
           <p className="text-xl text-soft-grey">
             Your career transformation starts immediately — here's exactly what happens next

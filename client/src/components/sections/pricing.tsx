@@ -127,7 +127,11 @@ export function PricingSection() {
                   {plan.features.map((feature, i) => (
                     <li key={i} className="flex items-center">
                       <Check className={`mr-3 h-5 w-5 ${plan.popular ? 'text-white' : 'text-fresh-green'}`} />
-                      <span className={plan.popular ? 'text-white' : 'text-navy'}>
+                      <span className={
+                        feature === "Everything in Free Plan, plus:" 
+                          ? 'text-yellow-400 font-semibold' 
+                          : plan.popular ? 'text-white' : 'text-navy'
+                      }>
                         {feature}
                       </span>
                     </li>
