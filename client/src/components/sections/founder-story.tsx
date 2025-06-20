@@ -36,7 +36,7 @@ export function FounderStorySection() {
                     "Thanks to a friend, I eventually landed a job in the gas industry and worked relentlessly to build a stable future — but that feeling of being overlooked and undervalued never really left me. At times, it felt like I had to prove I was applying for jobs just to reassure my partner, because the silence from employers made it look like I wasn't trying."
                   </p>
                   <p className="mb-4">
-                    "That experience stayed with me. It lit a fire. I wanted to build something that gave people like me the guidance, clarity, and confidence I didn't have back then — without the £100-an-hour coaching fees or the irrelevant advice of generic career platforms."
+                    "That experience stayed with me. It lit a fire. I wanted to build something that gave people like me the guidance, clarity, and confidence I didn't have back then — without the £200-an-hour coaching fees or the irrelevant advice of generic career platforms."
                   </p>
                   <p className="font-semibold text-navy">
                     "That's why I created CareerFrame — a place where you're recognised for your true potential, not just what's written on your CV. It's the platform I wish I had when I was starting over. And now, I'm here to help others find direction, regain confidence, and take control of their future."
