@@ -68,7 +68,7 @@ export function NewsletterSection() {
               <Rocket className="mr-3 h-6 w-6" />
               Join For FREE
             </Button>
-            <p className="text-sm text-blue-200 mt-4">Start your career transformation today • No credit card required</p>
+            <p className="text-sm text-blue-200 mt-4">Start your career transformation today • Free, why wouldn't you try?</p>
           </div>
           
 

@@ -89,7 +89,7 @@ export function UrgencyCTASection() {
             </Button>
             
             <p className="text-sm text-soft-grey">
-              Next cohort starts in {Math.ceil((timeLeft.hours + timeLeft.minutes/60 + timeLeft.seconds/3600) / 24)} days • No credit card required to start • 90-day money-back guarantee
+              Next cohort starts in {Math.ceil((timeLeft.hours + timeLeft.minutes/60 + timeLeft.seconds/3600) / 24)} days • Free, why wouldn't you try? • 90-day money-back guarantee
             </p>
           </CardContent>
         </Card>
