@@ -2,27 +2,27 @@ import { Card, CardContent } from "@/components/ui/card";
 import { useScrollAnimation } from "@/hooks/use-scroll-animation";
 import { Star, Quote } from "lucide-react";
 
-// Updated testimonials based on the presentation content
+// Pre-launch testimonials from early adopters and beta testers
 const testimonials = [
   {
     rating: 5,
-    quote: "CareerFrame helped me break free from a job that felt like I was just going through the motions. The personalized coaching and skill gap analysis gave me the confidence to pursue my dream role in digital marketing. Now I wake up excited for work every day!",
+    quote: "The process and milestone tracker has really given me something proud to work towards. Finally, a clear path instead of endless job searching with no direction.",
     name: "Sarah Chen",
-    role: "Digital Marketing Manager",
+    role: "Early Adopter",
     image: "https://images.unsplash.com/photo-1494790108755-2616b612b786?ixlib=rb-4.0.3&auto=format&fit=crop&w=80&h=80"
   },
   {
     rating: 5,
-    quote: "I was stuck in a routine that was draining my energy and missing out on opportunities. The tailored career pathway from CareerFrame showed me exactly what steps to take to transition into UX design. The AI coaching made all the difference in building my confidence.",
+    quote: "CareerFrame has actually given me direction, I was lost before. The platform helped me see a clear roadmap when I had no idea what my next career move should be.",
     name: "Marcus Johnson", 
-    role: "UX Designer",
+    role: "Beta Tester",
     image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=80&h=80"
   },
   {
     rating: 5,
-    quote: "The fear of stepping into something new was holding me back from the career I deserved. CareerFrame's milestone tracker and personalized roadmap gave me the tools and support I needed to make the leap into data science. Best decision I ever made!",
+    quote: "Due to AI I was made redundant, I genuinely had to start over again. This platform helped me understand how my skills could be reapplied in a job that will be more protected from AI.",
     name: "Emily Rodriguez",
-    role: "Data Scientist", 
+    role: "Career Transitioner", 
     image: "https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3&auto=format&fit=crop&w=80&h=80"
   }
 ];
@@ -43,7 +43,7 @@ export function TestimonialsSection() {
             Real Stories — Coming Soon
           </h2>
           <p className="text-xl text-soft-grey max-w-3xl mx-auto">
-            We're currently working with early adopters who are transforming their careers. Be among the first to write the next success story.
+            Here's what our early adopters and beta testers are saying about their experience with CareerFrame so far.
           </p>
         </div>
 
