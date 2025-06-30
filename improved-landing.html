@@ -1,0 +1,898 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>CareerFrame - AI-Powered Career Development Platform</title>
+  <meta name="description" content="Discover your perfect career path with CareerFrame's AI-powered guidance. Get personalized coaching, skill gap analysis, and milestone tracking to transform your career journey from confusion to confidence."/>
+  <meta property="og:title" content="CareerFrame - AI-Powered Career Development Platform"/>
+  <meta property="og:description" content="Transform your career with AI-powered guidance, personalized coaching, and milestone-based progression. Join 50,000+ professionals who discovered their dream careers."/>
+  
+  <style>
+    *, *::before, *::after { 
+      box-sizing: border-box; 
+      margin: 0; 
+      padding: 0; 
+    }
+    
+    :root {
+      --navy: #1E3A8A;
+      --green: #88A98F;
+      --soft-grey: #6B7280;
+      --light-grey: #F9FAFB;
+      --dark-bg: #0A0F14;
+    }
+    
+    body { 
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+      line-height: 1.6; 
+      color: #222; 
+      background: #fff;
+      scroll-behavior: smooth;
+    }
+    
+    a { 
+      color: var(--green); 
+      text-decoration: none; 
+      transition: all 0.3s ease;
+    }
+    
+    a:hover {
+      opacity: 0.8;
+    }
+
+    .container { 
+      max-width: 1200px; 
+      margin: 0 auto; 
+      padding: 0 2rem; 
+    }
+
+    /* Navigation */
+    .nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: rgba(10, 15, 20, 0.95);
+      backdrop-filter: blur(10px);
+      z-index: 1000;
+      padding: 1rem 0;
+      border-bottom: 1px solid rgba(136, 169, 143, 0.2);
+    }
+    
+    .nav-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+    
+    .logo {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: var(--green);
+    }
+    
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+    }
+    
+    .nav-links a {
+      color: var(--green);
+      font-weight: 500;
+      padding: 0.5rem 1rem;
+      border-radius: 6px;
+      transition: all 0.3s ease;
+    }
+    
+    .nav-links a:hover {
+      background: rgba(136, 169, 143, 0.1);
+    }
+
+    /* Hero Section */
+    .hero {
+      background: var(--dark-bg);
+      color: var(--green);
+      text-align: center;
+      padding: 8rem 0 6rem;
+      margin-top: 4rem;
+    }
+    
+    .hero h1 {
+      font-size: clamp(2.5rem, 6vw, 4rem);
+      font-weight: 700;
+      margin-bottom: 1.5rem;
+      line-height: 1.1;
+    }
+    
+    .hero .subtitle {
+      font-size: 1.25rem;
+      margin-bottom: 1rem;
+      font-weight: 600;
+    }
+    
+    .hero .description {
+      font-size: 1.125rem;
+      margin-bottom: 3rem;
+      color: var(--green);
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
+      opacity: 0.9;
+    }
+    
+    .hero-bullets {
+      max-width: 700px;
+      margin: 0 auto 3rem;
+      text-align: left;
+    }
+    
+    .hero-bullets li {
+      display: flex;
+      align-items: center;
+      margin-bottom: 0.75rem;
+      font-size: 1rem;
+    }
+    
+    .hero-bullets li::before {
+      content: "•";
+      color: var(--green);
+      font-weight: bold;
+      margin-right: 1rem;
+      font-size: 1.2rem;
+    }
+
+    /* Buttons */
+    .btn {
+      display: inline-block;
+      padding: 1rem 2rem;
+      font-size: 1.125rem;
+      font-weight: 600;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      text-decoration: none;
+    }
+    
+    .btn-primary {
+      background-color: var(--green);
+      color: white;
+      box-shadow: 0 4px 12px rgba(136, 169, 143, 0.3);
+    }
+    
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(136, 169, 143, 0.4);
+    }
+    
+    .btn-secondary {
+      background: transparent;
+      color: var(--green);
+      border: 2px solid var(--green);
+    }
+    
+    .btn-secondary:hover {
+      background: var(--green);
+      color: white;
+    }
+
+    /* Problem/Solution Section */
+    .problem-solution {
+      padding: 6rem 0;
+      background: white;
+    }
+    
+    .section-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 3rem;
+      margin-top: 3rem;
+    }
+    
+    .problem-card, .solution-card {
+      text-align: center;
+      padding: 2.5rem 2rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+      transition: all 0.3s ease;
+    }
+    
+    .problem-card:hover, .solution-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+    }
+    
+    .problem-card {
+      background: linear-gradient(135deg, #fef2f2 0%, #fee2e2 100%);
+      border-left: 4px solid #ef4444;
+    }
+    
+    .solution-card {
+      background: linear-gradient(135deg, rgba(136, 169, 143, 0.05) 0%, rgba(136, 169, 143, 0.1) 100%);
+      border-left: 4px solid var(--green);
+    }
+    
+    .card-icon {
+      font-size: 3rem;
+      margin-bottom: 1.5rem;
+    }
+    
+    .card h3 {
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+      color: var(--navy);
+    }
+    
+    .card p {
+      color: var(--soft-grey);
+      font-size: 1rem;
+      line-height: 1.6;
+    }
+
+    /* Features Section */
+    .features {
+      padding: 6rem 0;
+      background: var(--light-grey);
+    }
+    
+    .section-header {
+      text-align: center;
+      margin-bottom: 4rem;
+    }
+    
+    .section-header h2 {
+      font-size: clamp(2rem, 4vw, 3rem);
+      color: var(--navy);
+      margin-bottom: 1rem;
+    }
+    
+    .section-header p {
+      font-size: 1.25rem;
+      color: var(--soft-grey);
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2.5rem;
+    }
+    
+    .feature {
+      background: white;
+      padding: 2.5rem 2rem;
+      border-radius: 12px;
+      text-align: center;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+      transition: all 0.3s ease;
+    }
+    
+    .feature:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+    }
+    
+    .feature-icon {
+      width: 4rem;
+      height: 4rem;
+      background: rgba(136, 169, 143, 0.1);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 1.5rem;
+      font-size: 1.5rem;
+      color: var(--green);
+    }
+    
+    .feature h3 { 
+      font-size: 1.25rem;
+      color: var(--navy);
+      margin-bottom: 1rem; 
+    }
+    
+    .feature p { 
+      color: var(--soft-grey);
+      line-height: 1.6;
+    }
+
+    /* Pricing Section */
+    .pricing {
+      padding: 6rem 0;
+      background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 50%, #dc2626 100%);
+      color: white;
+      text-align: center;
+    }
+    
+    .pricing h2 {
+      font-size: clamp(2rem, 4vw, 3rem);
+      margin-bottom: 1rem;
+      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+    
+    .pricing .subtitle {
+      font-size: 1.25rem;
+      margin-bottom: 3rem;
+      opacity: 0.95;
+    }
+    
+    .pricing-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 2rem;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    
+    .pricing-card {
+      background: white;
+      color: var(--navy);
+      padding: 3rem 2rem;
+      border-radius: 16px;
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+      position: relative;
+      transition: all 0.3s ease;
+    }
+    
+    .pricing-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+    }
+    
+    .pricing-card.popular {
+      border: 3px solid var(--green);
+      transform: scale(1.05);
+    }
+    
+    .popular-badge {
+      position: absolute;
+      top: -15px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: var(--green);
+      color: white;
+      padding: 0.5rem 1.5rem;
+      border-radius: 20px;
+      font-size: 0.875rem;
+      font-weight: 600;
+    }
+    
+    .price {
+      font-size: 3rem;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 0.5rem;
+    }
+    
+    .price-period {
+      color: var(--soft-grey);
+      font-size: 1rem;
+    }
+    
+    .plan-features {
+      list-style: none;
+      margin: 2rem 0;
+      text-align: left;
+    }
+    
+    .plan-features li {
+      padding: 0.5rem 0;
+      display: flex;
+      align-items: center;
+    }
+    
+    .plan-features li::before {
+      content: "✓";
+      color: var(--green);
+      font-weight: bold;
+      margin-right: 0.75rem;
+    }
+
+    /* Testimonials */
+    .testimonials {
+      padding: 6rem 0;
+      background: white;
+    }
+    
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      margin-top: 3rem;
+    }
+    
+    .testimonial {
+      background: var(--light-grey);
+      padding: 2.5rem;
+      border-radius: 12px;
+      position: relative;
+    }
+    
+    .testimonial::before {
+      content: '"';
+      position: absolute;
+      top: 1rem;
+      right: 1.5rem;
+      font-size: 4rem;
+      color: rgba(136, 169, 143, 0.2);
+      font-family: serif;
+    }
+    
+    .testimonial-text {
+      font-style: italic;
+      color: var(--soft-grey);
+      margin-bottom: 1.5rem;
+      font-size: 1.1rem;
+      line-height: 1.6;
+    }
+    
+    .testimonial-author {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+    
+    .author-avatar {
+      width: 3rem;
+      height: 3rem;
+      border-radius: 50%;
+      background: var(--green);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-weight: bold;
+    }
+    
+    .author-info h4 {
+      color: var(--navy);
+      font-weight: 600;
+    }
+    
+    .author-info p {
+      color: var(--soft-grey);
+      font-size: 0.875rem;
+    }
+
+    /* CTA Section */
+    .cta {
+      padding: 6rem 0;
+      background: var(--navy);
+      color: white;
+      text-align: center;
+    }
+    
+    .cta h2 {
+      font-size: clamp(2rem, 4vw, 3rem);
+      margin-bottom: 1.5rem;
+    }
+    
+    .cta p {
+      font-size: 1.25rem;
+      margin-bottom: 3rem;
+      opacity: 0.9;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    
+    .cta-buttons {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    /* Footer */
+    footer {
+      background: #1f2937;
+      color: #9ca3af;
+      padding: 3rem 0 1rem;
+      text-align: center;
+    }
+    
+    .footer-content {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+      margin-bottom: 2rem;
+    }
+    
+    .footer-section h4 {
+      color: white;
+      margin-bottom: 1rem;
+    }
+    
+    .footer-section ul {
+      list-style: none;
+    }
+    
+    .footer-section ul li {
+      margin-bottom: 0.5rem;
+    }
+    
+    .footer-section ul li a {
+      color: #9ca3af;
+      transition: color 0.3s ease;
+    }
+    
+    .footer-section ul li a:hover {
+      color: var(--green);
+    }
+    
+    .footer-bottom {
+      border-top: 1px solid #374151;
+      padding-top: 2rem;
+      font-size: 0.875rem;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+      }
+      
+      .hero {
+        padding: 6rem 0 4rem;
+      }
+      
+      .hero-bullets {
+        text-align: center;
+      }
+      
+      .container {
+        padding: 0 1rem;
+      }
+      
+      .nav-content {
+        padding: 0 1rem;
+      }
+      
+      .cta-buttons {
+        flex-direction: column;
+        align-items: center;
+      }
+      
+      .btn {
+        width: 100%;
+        max-width: 300px;
+      }
+    }
+
+    /* Animations */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
+    .fade-in-up {
+      animation: fadeInUp 0.6s ease-out;
+    }
+    
+    .section-header,
+    .hero h1,
+    .hero p {
+      animation: fadeInUp 0.8s ease-out;
+    }
+    
+    .feature,
+    .testimonial,
+    .pricing-card {
+      animation: fadeInUp 0.6s ease-out;
+    }
+  </style>
+</head>
+<body>
+  <!-- Navigation -->
+  <nav class="nav">
+    <div class="nav-content">
+      <div class="logo">CareerFrame</div>
+      <ul class="nav-links">
+        <li><a href="#features">Features</a></li>
+        <li><a href="#pricing">Pricing</a></li>
+        <li><a href="#testimonials">Success Stories</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="container">
+      <h1>Wake Up Excited for a Career That Fulfills You</h1>
+      <p class="subtitle">CareerFrame is an AI-powered career development platform — not a job board</p>
+      <p class="description">Join early adopters shaping the future of personalised career growth — your transformation could start with just 15 minutes a day.</p>
+      
+      <ul class="hero-bullets">
+        <li>We're targeting meaningful career progress, including salary growth, by aligning you to roles that match your potential</li>
+        <li>Our AI coach is built to fast-track your journey to a new career</li>
+      </ul>
+      
+      <a href="#pricing" class="btn btn-primary">Start Your Career Plan — Free</a>
+      <p style="margin-top: 1rem; font-size: 0.875rem; opacity: 0.8;">90-day satisfaction guarantee</p>
+    </div>
+  </section>
+
+  <!-- Problem/Solution Section -->
+  <section class="problem-solution">
+    <div class="container">
+      <div class="section-header">
+        <h2>From Career Confusion to Clear Direction</h2>
+        <p>Break free from the cycle of career uncertainty and take control of your professional future</p>
+      </div>
+      
+      <div class="section-grid">
+        <div class="problem-card card">
+          <div class="card-icon">😔</div>
+          <h3>Feeling Stuck</h3>
+          <p>Feeling stuck in a job that doesn't excite you? Every day feels like you're not reaching your full potential, just going through the motions without fulfilment.</p>
+        </div>
+        
+        <div class="problem-card card">
+          <div class="card-icon">⏰</div>
+          <h3>Missing Opportunities</h3>
+          <p>The longer you stay in that job, the more you miss out on the opportunities that could change your life. The routine becomes draining, and the fear of stepping into something new only holds you back.</p>
+        </div>
+
+        <div class="solution-card card">
+          <div class="card-icon">🚀</div>
+          <h3>Break Free with CareerFrame</h3>
+          <p>CareerFrame helps you break free from career confusion. With personalized coaching, skill gap analysis, and tailored career paths, we provide the tools and guidance to help you pursue work that aligns with your goals.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features Section -->
+  <section class="features" id="features">
+    <div class="container">
+      <div class="section-header">
+        <h2>Everything You Need to Transform Your Career</h2>
+        <p>Comprehensive tools and guidance to accelerate your professional growth</p>
+      </div>
+      
+      <div class="features-grid">
+        <div class="feature">
+          <div class="feature-icon">🎯</div>
+          <h3>Gain Clarity in Your Job Search</h3>
+          <p>Stop feeling overwhelmed by endless job listings. Get specific direction on which roles to target and how to position yourself as the ideal candidate.</p>
+        </div>
+        
+        <div class="feature">
+          <div class="feature-icon">📈</div>
+          <h3>Overcome Self-Doubt</h3>
+          <p>Build unshakeable confidence in your abilities. Identify your unique strengths and learn how to articulate your value to employers.</p>
+        </div>
+        
+        <div class="feature">
+          <div class="feature-icon">🤖</div>
+          <h3>AI Career Coach</h3>
+          <p>Your smart assistant keeps you on track, motivated, and moving forward every day with personalized guidance and actionable insights.</p>
+        </div>
+        
+        <div class="feature">
+          <div class="feature-icon">⚡</div>
+          <h3>15-Minute Daily Plans</h3>
+          <p>Make meaningful career moves with just 15 minutes a day — anytime, anywhere. Perfect for busy professionals.</p>
+        </div>
+        
+        <div class="feature">
+          <div class="feature-icon">🎨</div>
+          <h3>Personalized Role Matching</h3>
+          <p>We align your unique strengths to real job opportunities — faster and more accurately than traditional coaching.</p>
+        </div>
+        
+        <div class="feature">
+          <div class="feature-icon">🏆</div>
+          <h3>Milestone Tracking</h3>
+          <p>Track your progress with clear milestones and celebrate wins along your career transformation journey.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials Section -->
+  <section class="testimonials" id="testimonials">
+    <div class="container">
+      <div class="section-header">
+        <h2>Real Stories — Coming Soon</h2>
+        <p>Here's what our early adopters and beta testers are saying about their experience with CareerFrame so far</p>
+      </div>
+      
+      <div class="testimonials-grid">
+        <div class="testimonial">
+          <p class="testimonial-text">The process and milestone tracker has really given me something proud to work towards. Finally, a clear path instead of endless job searching with no direction.</p>
+          <div class="testimonial-author">
+            <div class="author-avatar">SC</div>
+            <div class="author-info">
+              <h4>Sarah Chen</h4>
+              <p>Early Adopter</p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="testimonial">
+          <p class="testimonial-text">CareerFrame has actually given me direction, I was lost before. The platform helped me see a clear roadmap when I had no idea what my next career move should be.</p>
+          <div class="testimonial-author">
+            <div class="author-avatar">MJ</div>
+            <div class="author-info">
+              <h4>Marcus Johnson</h4>
+              <p>Beta Tester</p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="testimonial">
+          <p class="testimonial-text">Due to AI I was made redundant, I genuinely had to start over again. This platform helped me understand how my skills could be reapplied in a job that will be more protected from AI.</p>
+          <div class="testimonial-author">
+            <div class="author-avatar">ER</div>
+            <div class="author-info">
+              <h4>Emily Rodriguez</h4>
+              <p>Career Transitioner</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing Section -->
+  <section class="pricing" id="pricing">
+    <div class="container">
+      <h2>Simple Pricing. Powerful Results.</h2>
+      <p class="subtitle">Most users see a 5x return on investment within 6 months.<br>Start free — upgrade only when you see the value. 90-day satisfaction guarantee.</p>
+      
+      <div class="pricing-cards">
+        <div class="pricing-card">
+          <h3>Free Plan</h3>
+          <div class="price">£0<span class="price-period">/month</span></div>
+          <p>Perfect for exploring career options and getting started</p>
+          <ul class="plan-features">
+            <li>Basic career assessment</li>
+            <li>3 AI coaching sessions per month</li>
+            <li>3 role recommendations</li>
+            <li>1 CV generation per month</li>
+            <li>Community forum access</li>
+          </ul>
+          <a href="#contact" class="btn btn-secondary" style="width: 100%;">Start Your Career Plan — Free</a>
+        </div>
+        
+        <div class="pricing-card popular">
+          <div class="popular-badge">Most Popular</div>
+          <h3>Premium Plan</h3>
+          <div class="price">£29<span class="price-period">/month</span></div>
+          <p>Includes unlimited AI coaching, tailored milestone plans, and recruiter visibility</p>
+          <ul class="plan-features">
+            <li>Everything in Free Plan, plus:</li>
+            <li>Unlimited AI coaching sessions</li>
+            <li>Custom 90-day career roadmaps</li>
+            <li>Deep skill gap analysis + learning paths</li>
+            <li>Unlimited CV & cover letter generation</li>
+            <li>ATS-optimized documents</li>
+            <li>Weekly milestone reviews</li>
+            <li>Priority support from career coaches</li>
+            <li>2x XP multiplier + bonus rewards</li>
+          </ul>
+          <a href="#contact" class="btn btn-primary" style="width: 100%; background: white; color: var(--navy);">Accelerate Your Career</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Final CTA Section -->
+  <section class="cta" id="contact">
+    <div class="container">
+      <h2>Your Future Starts Now — Take the First Step Toward a Career You Love</h2>
+      <p>Join thousands of professionals who are already transforming their careers with CareerFrame</p>
+      
+      <div class="cta-buttons">
+        <a href="#" class="btn btn-primary">Join For FREE</a>
+        <a href="#" class="btn btn-secondary">Learn More</a>
+      </div>
+      
+      <p style="margin-top: 2rem; font-size: 0.875rem; opacity: 0.8;">Start your career transformation today • Free, why wouldn't you try?</p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h4>Platform</h4>
+          <ul>
+            <li><a href="#features">Features</a></li>
+            <li><a href="#pricing">Pricing</a></li>
+            <li><a href="#testimonials">Success Stories</a></li>
+            <li><a href="#">How it Works</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-section">
+          <h4>Resources</h4>
+          <ul>
+            <li><a href="#">Career Blog</a></li>
+            <li><a href="#">Help Center</a></li>
+            <li><a href="#">Community</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-section">
+          <h4>Company</h4>
+          <ul>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms of Service</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <p>&copy; 2025 CareerFrame. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Smooth scrolling for navigation links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+        }
+      });
+    });
+
+    // Add scroll effect to navigation
+    window.addEventListener('scroll', function() {
+      const nav = document.querySelector('.nav');
+      if (window.scrollY > 100) {
+        nav.style.background = 'rgba(10, 15, 20, 0.98)';
+      } else {
+        nav.style.background = 'rgba(10, 15, 20, 0.95)';
+      }
+    });
+
+    // Simple fade-in animation on scroll
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.opacity = '1';
+          entry.target.style.transform = 'translateY(0)';
+        }
+      });
+    }, observerOptions);
+
+    // Observe elements for animation
+    document.querySelectorAll('.feature, .testimonial, .problem-card, .solution-card, .pricing-card').forEach(el => {
+      el.style.opacity = '0';
+      el.style.transform = 'translateY(30px)';
+      el.style.transition = 'all 0.6s ease-out';
+      observer.observe(el);
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>CareerFrame</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Helvetica Neue', Arial, sans-serif; line-height: 1.6; color: #222; background: #fff; }
+    a { color: #0055ff; text-decoration: none; }
+
+    .container { max-width: 960px; margin: 0 auto; padding: 2em 1em; }
+
+    .hero {
+      text-align: center;
+      padding: 4em 0;
+    }
+    .hero h1 {
+      font-size: 2.75em;
+      margin-bottom: 0.5em;
+    }
+    .hero p {
+      font-size: 1.125em;
+      margin-bottom: 1.5em;
+      color: #555;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .btn-primary {
+      display: inline-block;
+      padding: 0.75em 1.5em;
+      font-size: 1em;
+      background-color: #0055ff;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    .features {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 2em;
+      margin: 3em 0;
+    }
+    .feature {
+      text-align: center;
+    }
+    .feature h3 { margin-bottom: 0.5em; }
+    .feature p { color: #555; }
+
+    footer {
+      text-align: center;
+      margin: 3em 0 1em;
+      font-size: 0.875em;
+      color: #888;
+    }
+  </style>
+</head>
+<body>
+  <main class="container">
+    <!-- Hero -->
+    <section class="hero">
+      <h1>CareerFrame Finds the Right Roles for You — Then Helps You Get There</h1>
+      <p>CareerFrame helps real people make real progress. Forget endless job boards — we map your potential to opportunity and support you every step of the way — at a price that’s 6x cheaper than the average career coach.</p>
+      <a href="#learn-more" class="btn-primary">Start Your Plan — Free</a>
+    </section>
+
+    <!-- Features -->
+    <section class="features">
+      <div class="feature">
+        <h3>Personalised Role Matching</h3>
+        <p>We align your unique strengths to real job opportunities — faster than traditional coaching.</p>
+      </div>
+      <div class="feature">
+        <h3>AI Career Coach</h3>
+        <p>Your smart assistant keeps you on track, motivated, and moving forward every day.</p>
+      </div>
+      <div class="feature">
+        <h3>15-Minute Daily Plans</h3>
+        <p>Make meaningful career moves with just 15 minutes a day — anytime, anywhere.</p>
+      </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="hero" id="learn-more">
+      <h2>Start Now. Progress Every Day.</h2>
+      <p>CareerFrame gives you the tools to make real change — without overwhelm, without wasted effort.</p>
+      <a href="#contact" class="btn-primary">Get Started Free</a>
+    </section>
+  </main>
+
+  <footer>
+    &copy; 2025 CareerFrame. All rights reserved.
+  </footer>
+</body>
+</html>
