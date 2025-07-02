@@ -202,42 +202,82 @@ select {
     }
   }
 
-  /* Electric chainmail animation */
-  .electric-ring {
-    animation: electricPulse 3s ease-in-out infinite;
+  /* Electric chainmail animations with different speeds */
+  .electric-ring-fast {
+    animation: electricPulseFast 2s ease-in-out infinite;
+    filter: drop-shadow(0 0 4px #60a5fa);
+  }
+
+  .electric-ring-medium {
+    animation: electricPulseMedium 3s ease-in-out infinite;
     filter: drop-shadow(0 0 3px #60a5fa);
   }
 
-  @keyframes electricPulse {
+  .electric-ring-slow {
+    animation: electricPulseSlow 4s ease-in-out infinite;
+    filter: drop-shadow(0 0 2px #60a5fa);
+  }
+
+  @keyframes electricPulseFast {
+    0% {
+      stroke: #3b82f6;
+      stroke-width: 1.5;
+      opacity: 0.8;
+      filter: drop-shadow(0 0 3px #60a5fa);
+    }
+    50% {
+      stroke: #93c5fd;
+      stroke-width: 2.5;
+      opacity: 1;
+      filter: drop-shadow(0 0 8px #93c5fd) drop-shadow(0 0 15px #60a5fa);
+    }
+    100% {
+      stroke: #3b82f6;
+      stroke-width: 1.5;
+      opacity: 0.8;
+      filter: drop-shadow(0 0 3px #60a5fa);
+    }
+  }
+
+  @keyframes electricPulseMedium {
     0% {
       stroke: #2563eb;
-      stroke-width: 2;
+      stroke-width: 1.5;
       opacity: 0.7;
       filter: drop-shadow(0 0 2px #60a5fa);
-    }
-    25% {
-      stroke: #3b82f6;
-      stroke-width: 2.5;
-      opacity: 0.9;
-      filter: drop-shadow(0 0 4px #60a5fa);
     }
     50% {
       stroke: #60a5fa;
-      stroke-width: 3;
+      stroke-width: 2.5;
       opacity: 1;
       filter: drop-shadow(0 0 6px #93c5fd) drop-shadow(0 0 12px #60a5fa);
     }
-    75% {
-      stroke: #3b82f6;
-      stroke-width: 2.5;
-      opacity: 0.9;
-      filter: drop-shadow(0 0 4px #60a5fa);
-    }
     100% {
       stroke: #2563eb;
-      stroke-width: 2;
+      stroke-width: 1.5;
       opacity: 0.7;
       filter: drop-shadow(0 0 2px #60a5fa);
+    }
+  }
+
+  @keyframes electricPulseSlow {
+    0% {
+      stroke: #1d4ed8;
+      stroke-width: 2;
+      opacity: 0.6;
+      filter: drop-shadow(0 0 2px #3b82f6);
+    }
+    50% {
+      stroke: #2563eb;
+      stroke-width: 3;
+      opacity: 0.9;
+      filter: drop-shadow(0 0 5px #60a5fa) drop-shadow(0 0 10px #3b82f6);
+    }
+    100% {
+      stroke: #1d4ed8;
+      stroke-width: 2;
+      opacity: 0.6;
+      filter: drop-shadow(0 0 2px #3b82f6);
     }
   }
 
