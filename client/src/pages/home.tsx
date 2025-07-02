@@ -17,7 +17,7 @@ import { LiveChat } from "@/components/ui/live-chat";
 import { CustomCursor } from "@/components/ui/custom-cursor";
 import { Button } from "@/components/ui/button";
 import { useScrollReveal } from "@/hooks/use-scroll-animation";
-import careerFrameLogo from "@assets/ChatGPT Image Jul 2, 2025, 08_57_46 PM_1751486270595.png";
+import careerFrameLogo from "@assets/ChatGPT Image Jul 2, 2025, 11_36_56 PM_1751495822376.png";
 
 function Navigation() {
   const [scrolled, setScrolled] = useState(false);
