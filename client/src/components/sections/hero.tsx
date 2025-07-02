@@ -20,7 +20,7 @@ export function HeroSection() {
             fontFamily: 'Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif',
             letterSpacing: '-0.01em'
           }}>
-            CareerFrame Finds the Right Roles for You — Guides You There
+            CareerFrame Finds the Right Roles for You — Then Guides You There
           </h1>
         </motion.div>
 

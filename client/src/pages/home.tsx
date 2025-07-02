@@ -50,6 +50,9 @@ function Navigation() {
               src={careerFrameLogo} 
               alt="CareerFrame Logo" 
               className="h-32"
+              style={{
+                filter: 'brightness(0) saturate(100%) invert(20%) sepia(94%) saturate(1947%) hue-rotate(207deg) brightness(93%) contrast(106%)'
+              }}
             />
           </div>
           
