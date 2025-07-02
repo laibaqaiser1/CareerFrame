@@ -1,4 +1,5 @@
-import { Twitter, Linkedin, Facebook } from "lucide-react";
+import { Linkedin, Facebook } from "lucide-react";
+import { SiX, SiTiktok } from "react-icons/si";
 import careerFrameLogo from "@assets/ChatGPT Image Jun 19, 2025, 09_12_42 PM_1750363966951.png";
 
 const footerSections = [
@@ -48,7 +49,8 @@ export function Footer() {
               Empowering careers through AI-powered guidance and personalized coaching.
             </p>
             <div className="flex space-x-4">
-              <Twitter className="text-gray-400 hover:text-white cursor-pointer transition-colors" />
+              <SiX className="w-5 h-5 text-gray-400 hover:text-white cursor-pointer transition-colors" />
+              <SiTiktok className="w-5 h-5 text-gray-400 hover:text-white cursor-pointer transition-colors" />
               <Linkedin className="text-gray-400 hover:text-white cursor-pointer transition-colors" />
               <Facebook className="text-gray-400 hover:text-white cursor-pointer transition-colors" />
             </div>
