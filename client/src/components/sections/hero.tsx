@@ -14,26 +14,26 @@ export function HeroSection() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <h1 className="text-5xl lg:text-6xl xl:text-7xl font-bold mb-8 text-center" style={{ 
+            <h1 className="text-5xl lg:text-6xl xl:text-7xl font-bold mb-4 text-center" style={{ 
               color: '#1E3A8A',
-              lineHeight: '1.4',
+              lineHeight: '1.1',
               fontFamily: 'Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif',
               letterSpacing: '-0.01em'
             }}>
-              Find the Right Role.<br />
-              Get There Faster.
+              Find the Right Role<br />
+              Get There Faster
             </h1>
             
             <p className="text-lg lg:text-xl mb-8 max-w-2xl mx-auto text-center" style={{ 
               color: '#6B7280',
-              lineHeight: '1.6',
+              lineHeight: '1.3',
               fontFamily: 'Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif',
               fontWeight: '400'
             }}>
-              Real Progress - Real People,<br />
-              <span className="pulsate-green text-xl lg:text-2xl" style={{ 
+              Real Progress - Real People, <span className="pulsate-green text-xl lg:text-2xl" style={{ 
                 fontWeight: '600'
-              }}>6 x cheaper</span> than the average career coach.
+              }}>6 x cheaper</span><br />
+              than the average career coach
             </p>
 
             <div className="flex flex-col sm:flex-row justify-center gap-4 mb-4">
