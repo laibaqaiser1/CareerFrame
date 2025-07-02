@@ -22,7 +22,7 @@ export function HeroSection() {
               fontFamily: 'Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif',
               letterSpacing: '-0.01em'
             }}>
-              CareerFrame Finds the Right Roles for You — Then Guides You There
+              Get Matched. Get Moving.
             </h1>
             
             <p className="text-lg lg:text-xl mb-8 max-w-3xl mx-auto" style={{ 
