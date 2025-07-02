@@ -35,7 +35,7 @@ export function HeroSection() {
             fontFamily: 'Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif',
             fontWeight: '500'
           }}>
-            CareerFrame helps real people make real progress. Forget endless job boards — we map your potential to opportunity and support you every step of the way — at a price that's 6x cheaper than the average career coach.
+            Real Progress - Real People, <span style={{ color: '#88A98F' }}>6x cheaper</span> than the average career coach.
           </p>
 
           <div className="flex flex-col sm:flex-row justify-center gap-4">
