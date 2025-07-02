@@ -20,7 +20,7 @@ export function HeroSection() {
             fontFamily: 'Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif',
             letterSpacing: '-0.01em'
           }}>
-            Build Apps 3× Faster. Launch in Weeks
+            CareerFrame Finds the Right Roles for You — Guides You There
           </h1>
         </motion.div>
 
@@ -35,7 +35,7 @@ export function HeroSection() {
             fontFamily: 'Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif',
             fontWeight: '500'
           }}>
-            We help start-ups launch high–quality apps and websites faster, at a fraction of the cost.
+            CareerFrame helps real people make real progress. Forget endless job boards — we map your potential to opportunity and support you every step of the way — at a price that's 6x cheaper than the average career coach.
           </p>
 
           <div className="flex flex-col sm:flex-row justify-center gap-4">
@@ -44,7 +44,7 @@ export function HeroSection() {
               className="text-white text-lg px-8 py-4 shadow-lg button-hover"
               style={{ backgroundColor: '#88A98F' }}
             >
-              Start Your Project — Free
+              Start Your Career Plan — Free
             </Button>
           </div>
           <p className="text-sm mt-3" style={{ color: '#88A98F' }}>
