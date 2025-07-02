@@ -56,16 +56,16 @@ function Navigation() {
           <div className="flex items-center space-x-8">
             <div className="hidden md:block">
               <div className="flex items-baseline space-x-8">
-                <a href="#trust-signals" className="px-3 py-2 text-lg font-medium transition-all duration-300 hover:scale-105 hover:shadow-lg relative group" style={{ color: '#1E3A8A' }}>
-                  <span className="relative z-10">Success Stories</span>
+                <a href="#how-it-works" className="px-3 py-2 text-lg font-medium transition-all duration-300 hover:scale-105 hover:shadow-lg relative group" style={{ color: '#1E3A8A' }}>
+                  <span className="relative z-10">How it Works</span>
                   <div className="absolute inset-0 rounded-lg scale-0 group-hover:scale-100 transition-transform duration-300" style={{ backgroundColor: 'rgba(136, 169, 143, 0.1)' }}></div>
                 </a>
                 <a href="#features" className="px-3 py-2 text-lg font-medium transition-all duration-300 hover:scale-105 hover:shadow-lg relative group" style={{ color: '#1E3A8A' }}>
                   <span className="relative z-10">Features</span>
                   <div className="absolute inset-0 rounded-lg scale-0 group-hover:scale-100 transition-transform duration-300" style={{ backgroundColor: 'rgba(136, 169, 143, 0.1)' }}></div>
                 </a>
-                <a href="#how-it-works" className="px-3 py-2 text-lg font-medium transition-all duration-300 hover:scale-105 hover:shadow-lg relative group" style={{ color: '#1E3A8A' }}>
-                  <span className="relative z-10">How it Works</span>
+                <a href="#trust-signals" className="px-3 py-2 text-lg font-medium transition-all duration-300 hover:scale-105 hover:shadow-lg relative group" style={{ color: '#1E3A8A' }}>
+                  <span className="relative z-10">Success Stories</span>
                   <div className="absolute inset-0 rounded-lg scale-0 group-hover:scale-100 transition-transform duration-300" style={{ backgroundColor: 'rgba(136, 169, 143, 0.1)' }}></div>
                 </a>
 
