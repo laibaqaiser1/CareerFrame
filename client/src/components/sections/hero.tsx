@@ -6,36 +6,35 @@ import careerFrameApp from "@assets/image_1750364343735.png";
 export function HeroSection() {
   return (
     <section className="min-h-screen flex items-center justify-center overflow-hidden relative" style={{ backgroundColor: 'white' }}>
-      {/* Chainmail Background Pattern */}
-      <div className="absolute top-0 left-0 w-1/2 h-3/4 opacity-15 pointer-events-none">
-        <svg width="100%" height="100%" viewBox="0 0 500 400" className="w-full h-full">
+      {/* Chainmail Border - Top Left */}
+      <div className="absolute top-16 left-8 w-96 h-32 opacity-80 pointer-events-none">
+        <svg width="100%" height="100%" viewBox="0 0 400 130" className="w-full h-full">
           <defs>
-            <pattern id="chainmail" x="0" y="0" width="30" height="26" patternUnits="userSpaceOnUse">
-              {/* Row 1 - Main rings */}
-              <circle cx="8" cy="8" r="5" fill="none" stroke="#4A5568" strokeWidth="1.5" opacity="0.3"/>
-              <circle cx="22" cy="8" r="5" fill="none" stroke="#4A5568" strokeWidth="1.5" opacity="0.3"/>
-              
-              {/* Row 2 - Offset interlocking rings */}
-              <circle cx="15" cy="21" r="5" fill="none" stroke="#4A5568" strokeWidth="1.5" opacity="0.3"/>
-              <circle cx="1" cy="21" r="5" fill="none" stroke="#4A5568" strokeWidth="1.5" opacity="0.3"/>
-              <circle cx="29" cy="21" r="5" fill="none" stroke="#4A5568" strokeWidth="1.5" opacity="0.3"/>
-              
-              {/* Additional connecting rings for density */}
-              <circle cx="8" cy="21" r="4" fill="none" stroke="#6B7280" strokeWidth="1" opacity="0.2"/>
-              <circle cx="22" cy="21" r="4" fill="none" stroke="#6B7280" strokeWidth="1" opacity="0.2"/>
+            <pattern id="chainmailTopLeft" x="0" y="0" width="24" height="20" patternUnits="userSpaceOnUse">
+              <circle cx="6" cy="6" r="4" fill="none" stroke="#2563eb" strokeWidth="2" opacity="0.7" className="electric-ring"/>
+              <circle cx="18" cy="6" r="4" fill="none" stroke="#2563eb" strokeWidth="2" opacity="0.7" className="electric-ring"/>
+              <circle cx="12" cy="16" r="4" fill="none" stroke="#2563eb" strokeWidth="2" opacity="0.7" className="electric-ring"/>
+              <circle cx="0" cy="16" r="4" fill="none" stroke="#3b82f6" strokeWidth="1.5" opacity="0.5" className="electric-ring"/>
+              <circle cx="24" cy="16" r="4" fill="none" stroke="#3b82f6" strokeWidth="1.5" opacity="0.5" className="electric-ring"/>
             </pattern>
           </defs>
-          <rect width="100%" height="100%" fill="url(#chainmail)"/>
-          
-          {/* Gradient overlay for fading effect */}
+          <rect width="100%" height="100%" fill="url(#chainmailTopLeft)"/>
+        </svg>
+      </div>
+
+      {/* Chainmail Border - Bottom Right */}
+      <div className="absolute bottom-32 right-8 w-96 h-32 opacity-80 pointer-events-none">
+        <svg width="100%" height="100%" viewBox="0 0 400 130" className="w-full h-full">
           <defs>
-            <linearGradient id="fadeGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-              <stop offset="0%" style={{ stopColor: 'white', stopOpacity: 0 }} />
-              <stop offset="60%" style={{ stopColor: 'white', stopOpacity: 0.3 }} />
-              <stop offset="100%" style={{ stopColor: 'white', stopOpacity: 0.8 }} />
-            </linearGradient>
+            <pattern id="chainmailBottomRight" x="0" y="0" width="24" height="20" patternUnits="userSpaceOnUse">
+              <circle cx="6" cy="6" r="4" fill="none" stroke="#2563eb" strokeWidth="2" opacity="0.7" className="electric-ring"/>
+              <circle cx="18" cy="6" r="4" fill="none" stroke="#2563eb" strokeWidth="2" opacity="0.7" className="electric-ring"/>
+              <circle cx="12" cy="16" r="4" fill="none" stroke="#2563eb" strokeWidth="2" opacity="0.7" className="electric-ring"/>
+              <circle cx="0" cy="16" r="4" fill="none" stroke="#3b82f6" strokeWidth="1.5" opacity="0.5" className="electric-ring"/>
+              <circle cx="24" cy="16" r="4" fill="none" stroke="#3b82f6" strokeWidth="1.5" opacity="0.5" className="electric-ring"/>
+            </pattern>
           </defs>
-          <rect width="100%" height="100%" fill="url(#fadeGradient)"/>
+          <rect width="100%" height="100%" fill="url(#chainmailBottomRight)"/>
         </svg>
       </div>
       

@@ -202,6 +202,45 @@ select {
     }
   }
 
+  /* Electric chainmail animation */
+  .electric-ring {
+    animation: electricPulse 3s ease-in-out infinite;
+    filter: drop-shadow(0 0 3px #60a5fa);
+  }
+
+  @keyframes electricPulse {
+    0% {
+      stroke: #2563eb;
+      stroke-width: 2;
+      opacity: 0.7;
+      filter: drop-shadow(0 0 2px #60a5fa);
+    }
+    25% {
+      stroke: #3b82f6;
+      stroke-width: 2.5;
+      opacity: 0.9;
+      filter: drop-shadow(0 0 4px #60a5fa);
+    }
+    50% {
+      stroke: #60a5fa;
+      stroke-width: 3;
+      opacity: 1;
+      filter: drop-shadow(0 0 6px #93c5fd) drop-shadow(0 0 12px #60a5fa);
+    }
+    75% {
+      stroke: #3b82f6;
+      stroke-width: 2.5;
+      opacity: 0.9;
+      filter: drop-shadow(0 0 4px #60a5fa);
+    }
+    100% {
+      stroke: #2563eb;
+      stroke-width: 2;
+      opacity: 0.7;
+      filter: drop-shadow(0 0 2px #60a5fa);
+    }
+  }
+
   /* Staggered animation delays */
   .stagger-1 { animation-delay: 0.1s; }
   .stagger-2 { animation-delay: 0.2s; }
