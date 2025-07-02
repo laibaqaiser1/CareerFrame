@@ -5,10 +5,10 @@ import careerFrameApp from "@assets/image_1750364343735.png";
 
 export function HeroSection() {
   return (
-    <section className="min-h-screen flex items-center justify-center py-20 px-4" style={{ backgroundColor: 'white' }}>
-      <div className="relative max-w-7xl w-full">
+    <section className="min-h-screen flex items-center justify-center py-8 px-4" style={{ backgroundColor: 'white' }}>
+      <div className="relative max-w-5xl w-full">
       
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           {/* Clean, Professional Layout */}
           <motion.div 
             className="mb-8"
@@ -16,22 +16,24 @@ export function HeroSection() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <h1 className="text-3xl lg:text-4xl xl:text-5xl font-bold mb-6 text-center" style={{ 
+            <h1 className="text-3xl lg:text-4xl xl:text-5xl font-bold mb-8 text-center" style={{ 
               color: '#1E3A8A',
-              lineHeight: '1.3',
+              lineHeight: '1.4',
               fontFamily: 'Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif',
               letterSpacing: '-0.01em'
             }}>
-              Find the Right Role. Get There Faster.
+              Find the Right Role.<br />
+              Get There Faster.
             </h1>
             
-            <p className="text-lg lg:text-xl mb-8 max-w-3xl mx-auto text-center" style={{ 
+            <p className="text-lg lg:text-xl mb-8 max-w-2xl mx-auto text-center" style={{ 
               color: '#6B7280',
-              lineHeight: '1.5',
+              lineHeight: '1.6',
               fontFamily: 'Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif',
               fontWeight: '400'
             }}>
-              Real Progress - Real People, <span className="pulsate-green" style={{ 
+              Real Progress - Real People,<br />
+              <span className="pulsate-green" style={{ 
                 fontWeight: '600'
               }}>6x cheaper</span> than the average career coach.
             </p>
