@@ -38,7 +38,7 @@ export function TestimonialsSection() {
             isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
           }`}
         >
-          <h2 className="text-3xl lg:text-4xl font-bold text-navy mb-6">
+          <h2 className="text-xl lg:text-2xl font-bold text-navy mb-6">
             Success Stories from Our Community
           </h2>
           <p className="text-xl text-soft-grey max-w-3xl mx-auto">

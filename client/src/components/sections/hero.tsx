@@ -14,7 +14,7 @@ export function HeroSection() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <h1 className="text-3xl lg:text-4xl xl:text-5xl font-bold mb-8 text-center" style={{ 
+            <h1 className="text-5xl lg:text-6xl xl:text-7xl font-bold mb-8 text-center" style={{ 
               color: '#1E3A8A',
               lineHeight: '1.4',
               fontFamily: 'Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif',
@@ -31,9 +31,9 @@ export function HeroSection() {
               fontWeight: '400'
             }}>
               Real Progress - Real People,<br />
-              <span className="pulsate-green" style={{ 
+              <span className="pulsate-green text-xl lg:text-2xl" style={{ 
                 fontWeight: '600'
-              }}>6x cheaper</span> than the average career coach.
+              }}>6 x cheaper</span> than the average career coach.
             </p>
 
             <div className="flex flex-col sm:flex-row justify-center gap-4 mb-4">

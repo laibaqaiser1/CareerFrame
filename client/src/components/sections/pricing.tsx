@@ -82,7 +82,7 @@ export function PricingSection() {
             isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
           }`}
         >
-          <h2 className="text-3xl lg:text-4xl font-bold text-white mb-6 drop-shadow-lg">
+          <h2 className="text-xl lg:text-2xl font-bold text-white mb-6 drop-shadow-lg">
             Simple Pricing. Powerful Results.
           </h2>
           <p className="text-xl text-white max-w-3xl mx-auto drop-shadow-md">
