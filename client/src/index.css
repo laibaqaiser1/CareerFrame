@@ -437,3 +437,58 @@ select {
 .gradient-green {
   background: linear-gradient(135deg, hsl(var(--fresh-green)) 0%, #3BC19A 100%);
 }
+
+/* Hero Container Gradient Border */
+.hero-container {
+  background: #F9F9F9;
+  border-radius: 20px;
+  position: relative;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1), 0 4px 20px rgba(0, 0, 0, 0.06);
+  padding: 3rem;
+  border: 4px solid transparent;
+  background-clip: padding-box;
+}
+
+.hero-container::before {
+  content: '';
+  position: absolute;
+  top: -4px;
+  left: -4px;
+  right: -4px;
+  bottom: -4px;
+  border-radius: 20px;
+  background: linear-gradient(135deg, #687E35, #88A98F, #1F3A93, #88A98F);
+  z-index: -1;
+}
+
+/* Thicker top and bottom borders effect */
+.hero-container::after {
+  content: '';
+  position: absolute;
+  top: -6px;
+  left: -2px;
+  right: -2px;
+  bottom: -6px;
+  border-radius: 20px;
+  background: linear-gradient(135deg, #687E35, #88A98F, #1F3A93, #88A98F);
+  z-index: -2;
+  opacity: 0.7;
+}
+
+/* Pulse glow animation for corner circles */
+.pulse-glow {
+  animation: pulse-glow 3s ease-in-out infinite;
+}
+
+@keyframes pulse-glow {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.6;
+    box-shadow: 0 0 10px rgba(104, 126, 53, 0.4);
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 0.8;
+    box-shadow: 0 0 25px rgba(104, 126, 53, 0.6), 0 0 35px rgba(136, 169, 143, 0.4);
+  }
+}

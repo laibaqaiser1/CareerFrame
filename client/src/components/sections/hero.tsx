@@ -5,95 +5,12 @@ import careerFrameApp from "@assets/image_1750364343735.png";
 
 export function HeroSection() {
   return (
-    <section className="min-h-screen flex items-center justify-center overflow-hidden relative" style={{ backgroundColor: 'white' }}>
-      {/* Geometric Square Grid - Top Left */}
-      <div className="absolute top-20 left-12 pointer-events-none">
-        <div className="grid grid-cols-7 gap-1">
-          {/* Row 1 */}
-          <div className="w-8 h-8 border-2 border-green-500 bg-white electric-square-1"></div>
-          <div className="w-8 h-8 border-2 border-green-500 bg-white electric-square-2"></div>
-          <div className="w-8 h-8 border-2 border-green-500 bg-white electric-square-3"></div>
-          <div className="w-8 h-8 border-2 border-green-500 bg-white electric-square-1"></div>
-          <div className="w-8 h-8 border-2 border-green-500 bg-white electric-square-2"></div>
-          <div className="w-8 h-8 border-2 border-green-500 bg-white electric-square-3"></div>
-          <div className="w-8 h-8 border-2 border-green-500 bg-white electric-square-1"></div>
-          
-          {/* Row 2 */}
-          <div className="w-8 h-8 border-2 border-green-500 bg-white electric-square-2"></div>
-          <div className="w-8 h-8 border-2 border-green-500 bg-white electric-square-3"></div>
-          <div className="w-8 h-8 border-2 border-green-500 bg-white electric-square-1"></div>
-          <div className="w-8 h-8 border-2 border-green-500 bg-white electric-square-2"></div>
-          <div className="w-8 h-8 border-2 border-green-500 bg-white electric-square-3"></div>
-          <div className="col-span-2"></div>
-          
-          {/* Row 3 */}
-          <div className="w-8 h-8 border-2 border-green-500 bg-white electric-square-3"></div>
-          <div className="w-8 h-8 border-2 border-green-500 bg-white electric-square-1"></div>
-          <div className="w-8 h-8 border-2 border-green-500 bg-white electric-square-2"></div>
-          <div className="w-8 h-8 border-2 border-green-500 bg-white electric-square-3"></div>
-          <div className="w-8 h-8 border-2 border-green-500 bg-white electric-square-1"></div>
-          <div className="col-span-2"></div>
-          
-          {/* Row 4 */}
-          <div className="w-8 h-8 border-2 border-green-500 bg-white electric-square-1"></div>
-          <div className="w-8 h-8 border-2 border-green-500 bg-white electric-square-2"></div>
-          <div className="w-8 h-8 border-2 border-green-500 bg-white electric-square-3"></div>
-          <div className="col-span-4"></div>
-          
-          {/* Row 5 */}
-          <div className="w-8 h-8 border-2 border-green-500 bg-white electric-square-2"></div>
-          <div className="w-8 h-8 border-2 border-green-500 bg-white electric-square-3"></div>
-          <div className="col-span-5"></div>
-          
-          {/* Row 6 */}
-          <div className="w-8 h-8 border-2 border-green-500 bg-white electric-square-3"></div>
-          <div className="col-span-6"></div>
-        </div>
-      </div>
-
-      {/* Geometric Square Grid - Bottom Right */}
-      <div className="absolute bottom-40 right-12 pointer-events-none">
-        <div className="grid grid-cols-8 gap-1">
-          {/* Row 1 */}
-          <div className="col-span-2"></div>
-          <div className="w-8 h-8 border-2 border-green-500 bg-white electric-square-1"></div>
-          <div className="w-8 h-8 border-2 border-green-500 bg-white electric-square-2"></div>
-          <div className="w-8 h-8 border-2 border-green-500 bg-white electric-square-3"></div>
-          <div className="w-8 h-8 border-2 border-green-500 bg-white electric-square-1"></div>
-          <div className="w-8 h-8 border-2 border-green-500 bg-white electric-square-2"></div>
-          <div className="w-8 h-8 border-2 border-green-500 bg-white electric-square-3"></div>
-          
-          {/* Row 2 */}
-          <div className="w-8 h-8 border-2 border-green-500 bg-white electric-square-2"></div>
-          <div className="w-8 h-8 border-2 border-green-500 bg-white electric-square-3"></div>
-          <div className="w-8 h-8 border-2 border-green-500 bg-white electric-square-1"></div>
-          <div className="w-8 h-8 border-2 border-green-500 bg-white electric-square-2"></div>
-          <div className="w-8 h-8 border-2 border-green-500 bg-white electric-square-3"></div>
-          <div className="w-8 h-8 border-2 border-green-500 bg-white electric-square-1"></div>
-          <div className="w-8 h-8 border-2 border-green-500 bg-white electric-square-2"></div>
-          <div className="w-8 h-8 border-2 border-green-500 bg-white electric-square-3"></div>
-          
-          {/* Row 3 */}
-          <div className="w-8 h-8 border-2 border-green-500 bg-white electric-square-3"></div>
-          <div className="w-8 h-8 border-2 border-green-500 bg-white electric-square-1"></div>
-          <div className="w-8 h-8 border-2 border-green-500 bg-white electric-square-2"></div>
-          <div className="w-8 h-8 border-2 border-green-500 bg-white electric-square-3"></div>
-          <div className="w-8 h-8 border-2 border-green-500 bg-white electric-square-1"></div>
-          <div className="w-8 h-8 border-2 border-green-500 bg-white electric-square-2"></div>
-          <div className="w-8 h-8 border-2 border-green-500 bg-white electric-square-3"></div>
-          <div className="w-8 h-8 border-2 border-green-500 bg-white electric-square-1"></div>
-          
-          {/* Row 4 */}
-          <div className="w-8 h-8 border-2 border-green-500 bg-white electric-square-1"></div>
-          <div className="w-8 h-8 border-2 border-green-500 bg-white electric-square-2"></div>
-          <div className="w-8 h-8 border-2 border-green-500 bg-white electric-square-3"></div>
-          <div className="w-8 h-8 border-2 border-green-500 bg-white electric-square-1"></div>
-          <div className="w-8 h-8 border-2 border-green-500 bg-white electric-square-2"></div>
-          <div className="w-8 h-8 border-2 border-green-500 bg-white electric-square-3"></div>
-          <div className="w-8 h-8 border-2 border-green-500 bg-white electric-square-1"></div>
-          <div className="w-8 h-8 border-2 border-green-500 bg-white electric-square-2"></div>
-        </div>
-      </div>
+    <section className="min-h-screen flex items-center justify-center py-20 px-4" style={{ backgroundColor: 'white' }}>
+      {/* Modern Hero Container with Gradient Border */}
+      <div className="hero-container relative max-w-7xl w-full">
+        {/* Glowing circles for momentum effect */}
+        <div className="absolute -top-4 -left-4 w-8 h-8 rounded-full bg-gradient-to-r from-[#687E35] to-[#88A98F] opacity-60 pulse-glow"></div>
+        <div className="absolute -bottom-4 -right-4 w-8 h-8 rounded-full bg-gradient-to-r from-[#1F3A93] to-[#88A98F] opacity-60 pulse-glow"></div>
       
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
         {/* Headline Section */}
@@ -143,7 +60,7 @@ export function HeroSection() {
           </p>
         </motion.div>
       </div>
-
+      </div>
     </section>
   );
 }
