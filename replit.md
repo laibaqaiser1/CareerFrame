@@ -99,6 +99,7 @@ CareerFrame is a full-stack web application that provides AI-powered career coac
 ## Changelog
 
 Changelog:
+- July 2, 2025: Updated hero headline to "Find the Right Role. Get There Faster." and centered all text elements
 - July 2, 2025: Updated hero headline from "CareerFrame Finds the Right Roles for You — Then Guides You There" to "Get Matched. Get Moving."
 - July 2, 2025: Reduced font sizes throughout hero section for more visually pleasing appearance (headline from text-5xl-6xl to text-3xl-5xl, subtext from text-2xl to text-lg-xl)
 - July 2, 2025: Simplified hero section design by removing complex SVG animations and gradient border effects for clean, professional look

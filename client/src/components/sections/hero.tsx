@@ -16,16 +16,16 @@ export function HeroSection() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <h1 className="text-3xl lg:text-4xl xl:text-5xl font-bold mb-6" style={{ 
+            <h1 className="text-3xl lg:text-4xl xl:text-5xl font-bold mb-6 text-center" style={{ 
               color: '#1E3A8A',
               lineHeight: '1.3',
               fontFamily: 'Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif',
               letterSpacing: '-0.01em'
             }}>
-              Get Matched. Get Moving.
+              Find the Right Role. Get There Faster.
             </h1>
             
-            <p className="text-lg lg:text-xl mb-8 max-w-3xl mx-auto" style={{ 
+            <p className="text-lg lg:text-xl mb-8 max-w-3xl mx-auto text-center" style={{ 
               color: '#6B7280',
               lineHeight: '1.5',
               fontFamily: 'Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif',
@@ -45,7 +45,7 @@ export function HeroSection() {
               </Button>
             </div>
             
-            <p className="text-sm" style={{ color: '#88A98F' }}>
+            <p className="text-sm text-center" style={{ color: '#88A98F' }}>
               90-day satisfaction guarantee
             </p>
           </motion.div>
