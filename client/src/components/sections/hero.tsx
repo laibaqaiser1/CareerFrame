@@ -5,13 +5,11 @@ import careerFrameApp from "@assets/image_1750364343735.png";
 
 export function HeroSection() {
   return (
-    <section className="min-h-screen flex items-center justify-center py-8 px-4" style={{ backgroundColor: 'white' }}>
-      <div className="relative max-w-5xl w-full">
-      
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+    <section className="min-h-screen flex items-center justify-center px-4" style={{ backgroundColor: 'white' }}>
+      <div className="w-full max-w-4xl mx-auto">
+        <div className="text-center">
           {/* Clean, Professional Layout */}
           <motion.div 
-            className="mb-8"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
