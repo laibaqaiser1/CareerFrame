@@ -14,11 +14,13 @@ export function HeroSection() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <h1 className="text-5xl lg:text-6xl xl:text-7xl font-bold mb-4 text-center" style={{ 
+            <h1 className="font-bold mb-4 text-center" style={{ 
               color: '#1E3A8A',
-              lineHeight: '1.1',
-              fontFamily: 'Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif',
-              letterSpacing: '-0.01em'
+              fontSize: 'clamp(48px, 5vw, 56px)',
+              fontWeight: '700',
+              letterSpacing: 'normal',
+              lineHeight: '110%',
+              fontFamily: 'Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif'
             }}>
               Find the Right Role<br />
               Get There Faster
