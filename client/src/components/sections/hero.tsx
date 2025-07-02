@@ -35,7 +35,13 @@ export function HeroSection() {
             fontFamily: 'Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif',
             fontWeight: '500'
           }}>
-            Real Progress - Real People, <span style={{ color: '#88A98F' }}>6x cheaper</span> than the average career coach.
+            Real Progress - Real People, <span style={{ 
+              background: 'linear-gradient(135deg, #4D7C59 0%, #88A98F 50%, #A8C5B1 100%)',
+              WebkitBackgroundClip: 'text',
+              WebkitTextFillColor: 'transparent',
+              backgroundClip: 'text',
+              fontWeight: '600'
+            }}>6x cheaper</span> than the average career coach.
           </p>
 
           <div className="flex flex-col sm:flex-row justify-center gap-4">
