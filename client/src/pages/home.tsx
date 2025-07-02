@@ -17,7 +17,7 @@ import { LiveChat } from "@/components/ui/live-chat";
 import { CustomCursor } from "@/components/ui/custom-cursor";
 import { Button } from "@/components/ui/button";
 import { useScrollReveal } from "@/hooks/use-scroll-animation";
-import careerFrameLogo from "@assets/ChatGPT Image Jul 2, 2025, 08_31_51 PM_1751484757117.png";
+import careerFrameLogo from "@assets/ChatGPT Image Jul 2, 2025, 08_57_46 PM_1751486270595.png";
 
 function Navigation() {
   const [scrolled, setScrolled] = useState(false);
@@ -50,9 +50,6 @@ function Navigation() {
               src={careerFrameLogo} 
               alt="CareerFrame Logo" 
               className="h-32"
-              style={{
-                filter: 'brightness(0) saturate(100%) invert(20%) sepia(94%) saturate(1947%) hue-rotate(207deg) brightness(93%) contrast(106%)'
-              }}
             />
           </div>
           
