@@ -137,43 +137,43 @@ export default function Home() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-white page-transition">
+    <>
       <Navigation />
-      <div className="fade-in">
-        <HeroSection />
+      <div className="min-h-screen bg-white page-transition">
+        <div className="fade-in">
+          <HeroSection />
+        </div>
+        <div className="slide-up">
+          <ProblemSolutionSection />
+        </div>
+        <div className="slide-up">
+          <WhatToExpectSection />
+        </div>
+        <div className="slide-in-left">
+          <FeaturesSection />
+        </div>
+        <div className="slide-in-left">
+          <HowItWorksSection />
+        </div>
+        <div className="slide-up">
+          <TestimonialsSection />
+        </div>
+        <div className="slide-in-right">
+          <PricingSection />
+        </div>
+        <div className="fade-in">
+          <UrgencyCTASection />
+        </div>
+        <div className="scale-in">
+          <FAQSection />
+        </div>
+        <div className="slide-up">
+          <NewsletterSection />
+        </div>
+        <Footer />
+        <LiveChat />
+        <CustomCursor />
       </div>
-      <div className="slide-up">
-        <ProblemSolutionSection />
-      </div>
-      <div className="slide-up">
-        <WhatToExpectSection />
-      </div>
-      <div className="slide-in-left">
-        <FeaturesSection />
-      </div>
-      <div className="slide-in-left">
-        <HowItWorksSection />
-      </div>
-
-      <div className="slide-up">
-        <TestimonialsSection />
-      </div>
-      <div className="slide-in-right">
-        <PricingSection />
-      </div>
-      <div className="fade-in">
-        <UrgencyCTASection />
-      </div>
-      <div className="scale-in">
-        <FAQSection />
-      </div>
-
-      <div className="slide-up">
-        <NewsletterSection />
-      </div>
-      <Footer />
-      <LiveChat />
-      <CustomCursor />
-    </div>
+    </>
   );
 }
