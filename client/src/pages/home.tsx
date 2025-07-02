@@ -152,11 +152,11 @@ export default function Home() {
         <div className="slide-in-left">
           <FeaturesSection />
         </div>
-        <div className="slide-up">
-          <TestimonialsSection />
-        </div>
         <div className="slide-in-left">
           <HowItWorksSection />
+        </div>
+        <div className="slide-up">
+          <TestimonialsSection />
         </div>
         <div className="slide-in-right">
           <PricingSection />
