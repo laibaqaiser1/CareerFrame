@@ -185,6 +185,23 @@ select {
     transition: all 0.3s ease;
   }
 
+  /* Pulsating green animation */
+  .pulsate-green {
+    animation: pulsateGreen 2s ease-in-out infinite;
+  }
+
+  @keyframes pulsateGreen {
+    0% {
+      color: #2D5533;
+    }
+    50% {
+      color: #4ADE80;
+    }
+    100% {
+      color: #2D5533;
+    }
+  }
+
   /* Staggered animation delays */
   .stagger-1 { animation-delay: 0.1s; }
   .stagger-2 { animation-delay: 0.2s; }
