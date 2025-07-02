@@ -16,20 +16,20 @@ export function HeroSection() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <h1 className="text-5xl lg:text-6xl font-bold mb-6" style={{ 
+            <h1 className="text-3xl lg:text-4xl xl:text-5xl font-bold mb-6" style={{ 
               color: '#1E3A8A',
-              lineHeight: '1.2',
+              lineHeight: '1.3',
               fontFamily: 'Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif',
               letterSpacing: '-0.01em'
             }}>
               CareerFrame Finds the Right Roles for You — Then Guides You There
             </h1>
             
-            <p className="text-2xl mb-8 max-w-4xl mx-auto" style={{ 
+            <p className="text-lg lg:text-xl mb-8 max-w-3xl mx-auto" style={{ 
               color: '#6B7280',
-              lineHeight: '1.4',
+              lineHeight: '1.5',
               fontFamily: 'Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif',
-              fontWeight: '500'
+              fontWeight: '400'
             }}>
               Real Progress - Real People, <span className="pulsate-green" style={{ 
                 fontWeight: '600'
@@ -38,9 +38,8 @@ export function HeroSection() {
 
             <div className="flex flex-col sm:flex-row justify-center gap-4 mb-4">
               <Button 
-                size="lg" 
-                className="text-white text-lg px-8 py-4 shadow-lg button-hover"
-                style={{ backgroundColor: '#88A98F' }}
+                className="text-white px-6 py-3 shadow-lg button-hover"
+                style={{ backgroundColor: '#88A98F', fontSize: '16px' }}
               >
                 Start Your Career Plan — Free
               </Button>
