@@ -43,7 +43,18 @@ export function HeroSection() {
                 className="text-white px-6 py-3 shadow-lg button-hover"
                 style={{ backgroundColor: '#88A98F', fontSize: '16px' }}
               >
-                Start Your Career Plan — Free
+                Start for Free
+              </Button>
+              <Button 
+                variant="outline"
+                className="px-6 py-3 shadow-lg button-hover border-2"
+                style={{ 
+                  borderColor: '#88A98F', 
+                  color: '#88A98F',
+                  fontSize: '16px'
+                }}
+              >
+                Subscribe
               </Button>
             </div>
             
