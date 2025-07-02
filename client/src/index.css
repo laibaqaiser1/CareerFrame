@@ -202,20 +202,22 @@ select {
     }
   }
 
-  /* Electric chainmail animations with different speeds */
-  .electric-ring-fast {
-    animation: electricPulseFast 2s ease-in-out infinite;
-    filter: drop-shadow(0 0 4px #60a5fa);
+  /* Electric square animations with different speeds */
+  .electric-square-1 {
+    animation: electricSquarePulse1 2.5s ease-in-out infinite;
+    transition: all 0.3s ease;
   }
 
-  .electric-ring-medium {
-    animation: electricPulseMedium 3s ease-in-out infinite;
-    filter: drop-shadow(0 0 3px #60a5fa);
+  .electric-square-2 {
+    animation: electricSquarePulse2 3s ease-in-out infinite;
+    animation-delay: 0.5s;
+    transition: all 0.3s ease;
   }
 
-  .electric-ring-slow {
-    animation: electricPulseSlow 4s ease-in-out infinite;
-    filter: drop-shadow(0 0 2px #60a5fa);
+  .electric-square-3 {
+    animation: electricSquarePulse3 3.5s ease-in-out infinite;
+    animation-delay: 1s;
+    transition: all 0.3s ease;
   }
 
   @keyframes electricPulseFast {
@@ -260,24 +262,57 @@ select {
     }
   }
 
-  @keyframes electricPulseSlow {
+  @keyframes electricSquarePulse1 {
     0% {
-      stroke: #1d4ed8;
-      stroke-width: 2;
-      opacity: 0.6;
-      filter: drop-shadow(0 0 2px #3b82f6);
+      border-color: #10b981;
+      box-shadow: 0 0 5px rgba(16, 185, 129, 0.3);
+      transform: scale(1);
     }
     50% {
-      stroke: #2563eb;
-      stroke-width: 3;
-      opacity: 0.9;
-      filter: drop-shadow(0 0 5px #60a5fa) drop-shadow(0 0 10px #3b82f6);
+      border-color: #34d399;
+      box-shadow: 0 0 15px rgba(52, 211, 153, 0.6), 0 0 25px rgba(16, 185, 129, 0.4);
+      transform: scale(1.05);
     }
     100% {
-      stroke: #1d4ed8;
-      stroke-width: 2;
-      opacity: 0.6;
-      filter: drop-shadow(0 0 2px #3b82f6);
+      border-color: #10b981;
+      box-shadow: 0 0 5px rgba(16, 185, 129, 0.3);
+      transform: scale(1);
+    }
+  }
+
+  @keyframes electricSquarePulse2 {
+    0% {
+      border-color: #059669;
+      box-shadow: 0 0 3px rgba(5, 150, 105, 0.4);
+      transform: scale(1);
+    }
+    50% {
+      border-color: #10b981;
+      box-shadow: 0 0 12px rgba(16, 185, 129, 0.7), 0 0 20px rgba(5, 150, 105, 0.5);
+      transform: scale(1.03);
+    }
+    100% {
+      border-color: #059669;
+      box-shadow: 0 0 3px rgba(5, 150, 105, 0.4);
+      transform: scale(1);
+    }
+  }
+
+  @keyframes electricSquarePulse3 {
+    0% {
+      border-color: #047857;
+      box-shadow: 0 0 2px rgba(4, 120, 87, 0.5);
+      transform: scale(1);
+    }
+    50% {
+      border-color: #059669;
+      box-shadow: 0 0 10px rgba(5, 150, 105, 0.8), 0 0 18px rgba(4, 120, 87, 0.6);
+      transform: scale(1.02);
+    }
+    100% {
+      border-color: #047857;
+      box-shadow: 0 0 2px rgba(4, 120, 87, 0.5);
+      transform: scale(1);
     }
   }
 
