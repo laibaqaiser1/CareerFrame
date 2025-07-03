@@ -6,7 +6,7 @@ import careerFrameApp from "@assets/image_1750364343735.png";
 export function HeroSection() {
   return (
     <section className="min-h-screen flex items-center justify-center px-4 relative overflow-hidden" style={{ backgroundColor: 'white' }}>
-      {/* Animated Road Path - From Bottom Left Leading to Header */}
+      {/* Curved Road Animation - Flowing Around Header Text */}
       <motion.div
         className="absolute inset-0 pointer-events-none hidden lg:block"
         initial={{ opacity: 0 }}
@@ -18,205 +18,211 @@ export function HeroSection() {
           className="w-full h-full"
           style={{ position: 'absolute', top: 0, left: 0 }}
         >
-          {/* Road Base Path - Stops before header text */}
+          {/* Main Curved Road Path - Flows around the text */}
           <motion.path
-            d="M 50 750 Q 200 650 350 550 Q 450 480 500 450 Q 520 440 540 435"
+            d="M 100 700 Q 180 600 200 500 Q 220 400 300 350 Q 400 300 500 320 Q 600 340 700 350 Q 800 360 900 400 Q 980 440 1050 520 Q 1100 580 1080 650"
             stroke="#9CB98A"
-            strokeWidth="80"
+            strokeWidth="70"
             fill="none"
             strokeLinecap="round"
             initial={{ pathLength: 0 }}
             animate={{ pathLength: 1 }}
-            transition={{ duration: 3, ease: "easeInOut", delay: 0.5 }}
+            transition={{ duration: 4, ease: "easeInOut", delay: 0.5 }}
           />
           
-          {/* Road Edges - Darker green */}
-          <motion.path
-            d="M 50 750 Q 200 650 350 550 Q 450 480 500 450 Q 520 440 540 435"
-            stroke="#7A9471"
-            strokeWidth="84"
-            fill="none"
-            strokeLinecap="round"
-            initial={{ pathLength: 0 }}
-            animate={{ pathLength: 1 }}
-            transition={{ duration: 3, ease: "easeInOut", delay: 0.3 }}
-          />
-          
-          {/* Road Center Dashed Lines - Individual dashes with gaps like real road */}
+          {/* Road Center Dashed Lines */}
           <motion.g
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ duration: 0.5, delay: 2 }}
+            transition={{ duration: 0.5, delay: 2.5 }}
           >
-            {/* Individual dash segments following the curve */}
+            {/* Left curve dashes */}
             <motion.path
-              d="M 80 735 L 100 730"
+              d="M 120 680 L 135 670"
               stroke="white"
-              strokeWidth="6"
-              strokeLinecap="round"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 2.2 }}
-            />
-            <motion.path
-              d="M 130 720 L 150 715"
-              stroke="white"
-              strokeWidth="6"
-              strokeLinecap="round"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 2.4 }}
-            />
-            <motion.path
-              d="M 180 700 L 200 692"
-              stroke="white"
-              strokeWidth="6"
+              strokeWidth="5"
               strokeLinecap="round"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 2.6 }}
             />
             <motion.path
-              d="M 230 680 L 250 670"
+              d="M 150 640 L 165 625"
               stroke="white"
-              strokeWidth="6"
+              strokeWidth="5"
               strokeLinecap="round"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 2.8 }}
             />
             <motion.path
-              d="M 280 650 L 300 638"
+              d="M 175 580 L 185 560"
               stroke="white"
-              strokeWidth="6"
+              strokeWidth="5"
               strokeLinecap="round"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 3.0 }}
             />
             <motion.path
-              d="M 330 615 L 350 602"
+              d="M 190 520 L 200 500"
               stroke="white"
-              strokeWidth="6"
+              strokeWidth="5"
               strokeLinecap="round"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 3.2 }}
             />
             <motion.path
-              d="M 380 580 L 400 568"
+              d="M 210 460 L 225 445"
               stroke="white"
-              strokeWidth="6"
+              strokeWidth="5"
               strokeLinecap="round"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 3.4 }}
             />
+            
+            {/* Top curve dashes */}
             <motion.path
-              d="M 430 540 L 450 530"
+              d="M 280 365 L 300 360"
               stroke="white"
-              strokeWidth="6"
+              strokeWidth="5"
               strokeLinecap="round"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 3.6 }}
             />
             <motion.path
-              d="M 475 505 L 490 498"
+              d="M 340 350 L 360 352"
               stroke="white"
-              strokeWidth="6"
+              strokeWidth="5"
               strokeLinecap="round"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 3.8 }}
             />
             <motion.path
-              d="M 510 470 L 525 463"
+              d="M 420 340 L 440 342"
               stroke="white"
-              strokeWidth="6"
+              strokeWidth="5"
               strokeLinecap="round"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 4.0 }}
             />
+            <motion.path
+              d="M 500 345 L 520 348"
+              stroke="white"
+              strokeWidth="5"
+              strokeLinecap="round"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 4.2 }}
+            />
+            <motion.path
+              d="M 580 352 L 600 355"
+              stroke="white"
+              strokeWidth="5"
+              strokeLinecap="round"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 4.4 }}
+            />
+            <motion.path
+              d="M 660 360 L 680 365"
+              stroke="white"
+              strokeWidth="5"
+              strokeLinecap="round"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 4.6 }}
+            />
+            
+            {/* Right curve dashes */}
+            <motion.path
+              d="M 740 375 L 755 382"
+              stroke="white"
+              strokeWidth="5"
+              strokeLinecap="round"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 4.8 }}
+            />
+            <motion.path
+              d="M 820 405 L 835 415"
+              stroke="white"
+              strokeWidth="5"
+              strokeLinecap="round"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 5.0 }}
+            />
+            <motion.path
+              d="M 880 450 L 890 465"
+              stroke="white"
+              strokeWidth="5"
+              strokeLinecap="round"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 5.2 }}
+            />
+            <motion.path
+              d="M 920 500 L 930 520"
+              stroke="white"
+              strokeWidth="5"
+              strokeLinecap="round"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 5.4 }}
+            />
+            <motion.path
+              d="M 950 560 L 955 580"
+              stroke="white"
+              strokeWidth="5"
+              strokeLinecap="round"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 5.6 }}
+            />
           </motion.g>
           
-          {/* Milestone Points along the road */}
+          {/* Milestone Points */}
           <motion.circle
-            cx="200"
-            cy="690"
-            r="10"
-            fill="#1F3A93"
-            stroke="white"
-            strokeWidth="3"
-            initial={{ scale: 0, opacity: 0 }}
-            animate={{ scale: 1, opacity: 1 }}
-            transition={{ duration: 0.5, delay: 2.5 }}
-          />
-          
-          <motion.circle
-            cx="350"
+            cx="180"
             cy="600"
-            r="10"
+            r="8"
             fill="#1F3A93"
             stroke="white"
-            strokeWidth="3"
+            strokeWidth="2"
             initial={{ scale: 0, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
-            transition={{ duration: 0.5, delay: 3.2 }}
+            transition={{ duration: 0.5, delay: 3.5 }}
           />
           
-          {/* Journey Starting Point */}
-          <motion.g
+          <motion.circle
+            cx="600"
+            cy="340"
+            r="8"
+            fill="#1F3A93"
+            stroke="white"
+            strokeWidth="2"
             initial={{ scale: 0, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
-            transition={{ duration: 0.8, delay: 1.5 }}
-          >
-            <circle cx="50" cy="750" r="18" fill="#687E35" stroke="white" strokeWidth="4" />
-            <text x="80" y="780" fontSize="16" fill="#687E35" fontWeight="700">
-              Your Journey Starts Here
-            </text>
-          </motion.g>
-        </svg>
-      </motion.div>
-
-      {/* Future Road Path (Right Side) - Subtle preview */}
-      <motion.div
-        className="absolute inset-0 pointer-events-none hidden lg:block"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 0.2 }}
-        transition={{ duration: 0.5, delay: 4.5 }}
-      >
-        <svg
-          viewBox="0 0 1200 800"
-          className="w-full h-full"
-          style={{ position: 'absolute', top: 0, left: 0 }}
-        >
-          {/* Future path continues from where current road ends */}
-          <motion.path
-            d="M 650 435 Q 750 420 850 380 Q 950 340 1050 280 Q 1100 260 1150 240"
-            stroke="#9CB98A"
-            strokeWidth="60"
-            fill="none"
-            strokeLinecap="round"
-            strokeOpacity="0.4"
-            strokeDasharray="80 60"
-            initial={{ pathLength: 0 }}
-            animate={{ pathLength: 1 }}
-            transition={{ duration: 2.5, ease: "easeInOut", delay: 5 }}
+            transition={{ duration: 0.5, delay: 4.5 }}
           />
           
-          {/* Success Destination */}
-          <motion.g
+          <motion.circle
+            cx="1000"
+            cy="540"
+            r="8"
+            fill="#1F3A93"
+            stroke="white"
+            strokeWidth="2"
             initial={{ scale: 0, opacity: 0 }}
-            animate={{ scale: 1, opacity: 0.4 }}
-            transition={{ duration: 0.8, delay: 6 }}
-          >
-            <circle cx="1150" cy="240" r="25" fill="#687E35" stroke="white" strokeWidth="4" />
-            <text x="980" y="220" fontSize="16" fill="#687E35" fontWeight="700">
-              Career Success Awaits
-            </text>
-          </motion.g>
+            animate={{ scale: 1, opacity: 1 }}
+            transition={{ duration: 0.5, delay: 5.5 }}
+          />
         </svg>
       </motion.div>
 
