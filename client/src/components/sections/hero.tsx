@@ -5,8 +5,113 @@ import careerFrameApp from "@assets/image_1750364343735.png";
 
 export function HeroSection() {
   return (
-    <section className="min-h-screen flex items-center justify-center px-4" style={{ backgroundColor: 'white' }}>
-      <div className="w-full max-w-4xl mx-auto">
+    <section className="min-h-screen flex items-center justify-center px-4 relative overflow-hidden" style={{ backgroundColor: 'white' }}>
+      {/* Left Side Animated Elements */}
+      <div className="absolute left-0 top-1/2 transform -translate-y-1/2 hidden lg:block">
+        <motion.div
+          initial={{ x: -100, opacity: 0 }}
+          animate={{ x: 0, opacity: 1 }}
+          transition={{ duration: 1, delay: 0.2 }}
+          className="space-y-8"
+        >
+          <motion.div
+            animate={{ 
+              x: [0, 20, 0],
+              rotate: [0, 5, 0]
+            }}
+            transition={{ 
+              duration: 4, 
+              repeat: Infinity, 
+              ease: "easeInOut" 
+            }}
+            className="w-16 h-16 rounded-lg"
+            style={{ backgroundColor: '#88A98F' }}
+          />
+          <motion.div
+            animate={{ 
+              x: [0, -15, 0],
+              rotate: [0, -3, 0]
+            }}
+            transition={{ 
+              duration: 3, 
+              repeat: Infinity, 
+              ease: "easeInOut",
+              delay: 0.5
+            }}
+            className="w-12 h-12 rounded-full"
+            style={{ backgroundColor: '#687E35' }}
+          />
+          <motion.div
+            animate={{ 
+              x: [0, 25, 0],
+              scale: [1, 1.1, 1]
+            }}
+            transition={{ 
+              duration: 5, 
+              repeat: Infinity, 
+              ease: "easeInOut",
+              delay: 1
+            }}
+            className="w-20 h-8 rounded-full"
+            style={{ backgroundColor: '#1F3A93', opacity: 0.8 }}
+          />
+        </motion.div>
+      </div>
+
+      {/* Right Side Animated Elements */}
+      <div className="absolute right-0 top-1/2 transform -translate-y-1/2 hidden lg:block">
+        <motion.div
+          initial={{ x: 100, opacity: 0 }}
+          animate={{ x: 0, opacity: 1 }}
+          transition={{ duration: 1, delay: 0.4 }}
+          className="space-y-6"
+        >
+          <motion.div
+            animate={{ 
+              x: [0, -20, 0],
+              rotate: [0, -5, 0]
+            }}
+            transition={{ 
+              duration: 4, 
+              repeat: Infinity, 
+              ease: "easeInOut",
+              delay: 0.3
+            }}
+            className="w-14 h-14 rounded-lg"
+            style={{ backgroundColor: '#1F3A93' }}
+          />
+          <motion.div
+            animate={{ 
+              x: [0, 15, 0],
+              y: [0, -10, 0]
+            }}
+            transition={{ 
+              duration: 3.5, 
+              repeat: Infinity, 
+              ease: "easeInOut",
+              delay: 0.8
+            }}
+            className="w-18 h-6 rounded-full"
+            style={{ backgroundColor: '#88A98F', opacity: 0.9 }}
+          />
+          <motion.div
+            animate={{ 
+              x: [0, -25, 0],
+              scale: [1, 0.9, 1]
+            }}
+            transition={{ 
+              duration: 4.5, 
+              repeat: Infinity, 
+              ease: "easeInOut",
+              delay: 1.2
+            }}
+            className="w-10 h-10 rounded-full"
+            style={{ backgroundColor: '#687E35' }}
+          />
+        </motion.div>
+      </div>
+
+      <div className="w-full max-w-4xl mx-auto relative z-10">
         <div className="text-center">
           {/* Clean, Professional Layout */}
           <motion.div 
