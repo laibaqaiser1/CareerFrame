@@ -227,7 +227,7 @@ export function FeaturesSection() {
                     alt={feature.alt}
                     className="rounded-lg w-full h-48 object-cover object-top mb-4" 
                   />
-                  <Button variant="link" className="text-fresh-green p-0 h-auto font-semibold">
+                  <Button variant="link" className="p-0 h-auto font-semibold" style={{ color: '#1F3A93' }}>
                     {feature.cta} <ArrowRight className="ml-1 h-4 w-4" />
                   </Button>
                 </CardContent>
