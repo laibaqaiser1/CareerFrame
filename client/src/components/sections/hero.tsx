@@ -6,110 +6,117 @@ import careerFrameApp from "@assets/image_1750364343735.png";
 export function HeroSection() {
   return (
     <section className="min-h-screen flex items-center justify-center px-4 relative overflow-hidden" style={{ backgroundColor: 'white' }}>
-      {/* Left Side Animated Elements */}
-      <div className="absolute left-0 top-1/2 transform -translate-y-1/2 hidden lg:block">
-        <motion.div
-          initial={{ x: -100, opacity: 0 }}
-          animate={{ x: 0, opacity: 1 }}
-          transition={{ duration: 1, delay: 0.2 }}
-          className="space-y-8"
+      {/* Animated Road Path - Part 1: Bottom Left to Center */}
+      <motion.div
+        className="absolute inset-0 pointer-events-none hidden lg:block"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.5 }}
+      >
+        <svg
+          viewBox="0 0 1200 800"
+          className="w-full h-full"
+          style={{ position: 'absolute', top: 0, left: 0 }}
         >
-          <motion.div
-            animate={{ 
-              x: [0, 20, 0],
-              rotate: [0, 5, 0]
-            }}
-            transition={{ 
-              duration: 4, 
-              repeat: Infinity, 
-              ease: "easeInOut" 
-            }}
-            className="w-16 h-16 rounded-lg"
-            style={{ backgroundColor: '#88A98F' }}
+          {/* Road Path */}
+          <motion.path
+            d="M 50 750 Q 200 600 350 500 Q 450 450 550 400 Q 600 380 650 370"
+            stroke="#88A98F"
+            strokeWidth="60"
+            fill="none"
+            strokeLinecap="round"
+            initial={{ pathLength: 0 }}
+            animate={{ pathLength: 1 }}
+            transition={{ duration: 2.5, ease: "easeInOut", delay: 0.5 }}
           />
-          <motion.div
-            animate={{ 
-              x: [0, -15, 0],
-              rotate: [0, -3, 0]
-            }}
-            transition={{ 
-              duration: 3, 
-              repeat: Infinity, 
-              ease: "easeInOut",
-              delay: 0.5
-            }}
-            className="w-12 h-12 rounded-full"
-            style={{ backgroundColor: '#687E35' }}
+          
+          {/* Road Dashed Lines */}
+          <motion.path
+            d="M 50 750 Q 200 600 350 500 Q 450 450 550 400 Q 600 380 650 370"
+            stroke="white"
+            strokeWidth="4"
+            strokeDasharray="20 15"
+            fill="none"
+            strokeLinecap="round"
+            initial={{ pathLength: 0 }}
+            animate={{ pathLength: 1 }}
+            transition={{ duration: 2.5, ease: "easeInOut", delay: 1 }}
           />
-          <motion.div
-            animate={{ 
-              x: [0, 25, 0],
-              scale: [1, 1.1, 1]
-            }}
-            transition={{ 
-              duration: 5, 
-              repeat: Infinity, 
-              ease: "easeInOut",
-              delay: 1
-            }}
-            className="w-20 h-8 rounded-full"
-            style={{ backgroundColor: '#1F3A93', opacity: 0.8 }}
+          
+          {/* Milestone Points */}
+          <motion.circle
+            cx="200"
+            cy="600"
+            r="8"
+            fill="#1F3A93"
+            initial={{ scale: 0, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
+            transition={{ duration: 0.5, delay: 1.5 }}
           />
-        </motion.div>
-      </div>
+          
+          <motion.circle
+            cx="450"
+            cy="450"
+            r="8"
+            fill="#1F3A93"
+            initial={{ scale: 0, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
+            transition={{ duration: 0.5, delay: 2 }}
+          />
+          
+          {/* Journey Starting Point */}
+          <motion.g
+            initial={{ scale: 0, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
+            transition={{ duration: 0.8, delay: 3 }}
+          >
+            <circle cx="50" cy="750" r="15" fill="#687E35" />
+            <text x="70" y="770" fontSize="14" fill="#687E35" fontWeight="600">
+              Your Journey Starts Here
+            </text>
+          </motion.g>
+        </svg>
+      </motion.div>
 
-      {/* Right Side Animated Elements */}
-      <div className="absolute right-0 top-1/2 transform -translate-y-1/2 hidden lg:block">
-        <motion.div
-          initial={{ x: 100, opacity: 0 }}
-          animate={{ x: 0, opacity: 1 }}
-          transition={{ duration: 1, delay: 0.4 }}
-          className="space-y-6"
+      {/* Road Continuation (Right Side) - Appears after signup */}
+      <motion.div
+        className="absolute inset-0 pointer-events-none hidden lg:block"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 0.3 }}
+        transition={{ duration: 0.5, delay: 3.5 }}
+      >
+        <svg
+          viewBox="0 0 1200 800"
+          className="w-full h-full"
+          style={{ position: 'absolute', top: 0, left: 0 }}
         >
-          <motion.div
-            animate={{ 
-              x: [0, -20, 0],
-              rotate: [0, -5, 0]
-            }}
-            transition={{ 
-              duration: 4, 
-              repeat: Infinity, 
-              ease: "easeInOut",
-              delay: 0.3
-            }}
-            className="w-14 h-14 rounded-lg"
-            style={{ backgroundColor: '#1F3A93' }}
+          {/* Future Path (Preview) */}
+          <motion.path
+            d="M 750 370 Q 850 360 950 320 Q 1050 280 1150 200"
+            stroke="#88A98F"
+            strokeWidth="60"
+            fill="none"
+            strokeLinecap="round"
+            strokeOpacity="0.3"
+            strokeDasharray="60 40"
+            initial={{ pathLength: 0 }}
+            animate={{ pathLength: 1 }}
+            transition={{ duration: 2, ease: "easeInOut", delay: 4 }}
           />
-          <motion.div
-            animate={{ 
-              x: [0, 15, 0],
-              y: [0, -10, 0]
-            }}
-            transition={{ 
-              duration: 3.5, 
-              repeat: Infinity, 
-              ease: "easeInOut",
-              delay: 0.8
-            }}
-            className="w-18 h-6 rounded-full"
-            style={{ backgroundColor: '#88A98F', opacity: 0.9 }}
-          />
-          <motion.div
-            animate={{ 
-              x: [0, -25, 0],
-              scale: [1, 0.9, 1]
-            }}
-            transition={{ 
-              duration: 4.5, 
-              repeat: Infinity, 
-              ease: "easeInOut",
-              delay: 1.2
-            }}
-            className="w-10 h-10 rounded-full"
-            style={{ backgroundColor: '#687E35' }}
-          />
-        </motion.div>
-      </div>
+          
+          {/* Success Destination */}
+          <motion.g
+            initial={{ scale: 0, opacity: 0 }}
+            animate={{ scale: 1, opacity: 0.6 }}
+            transition={{ duration: 0.8, delay: 5 }}
+          >
+            <circle cx="1150" cy="200" r="20" fill="#687E35" strokeWidth="3" stroke="white" />
+            <text x="1000" y="180" fontSize="14" fill="#687E35" fontWeight="600">
+              Career Success
+            </text>
+          </motion.g>
+        </svg>
+      </motion.div>
 
       <div className="w-full max-w-4xl mx-auto relative z-10">
         <div className="text-center">
