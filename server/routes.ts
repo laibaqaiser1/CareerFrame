@@ -1,6 +1,7 @@
 import type { Express } from "express";
 import { createServer, type Server } from "http";
 import { z } from "zod";
+import { sendWaitlistNotification, sendWelcomeEmail } from "./email-service";
 
 const newsletterSubscribeSchema = z.object({
   email: z.string().email("Invalid email address"),
@@ -12,20 +13,27 @@ export async function registerRoutes(app: Express): Promise<Server> {
     try {
       const { email } = newsletterSubscribeSchema.parse(req.body);
       
-      // In a real implementation, you would:
-      // 1. Store the email in your database
-      // 2. Send a confirmation email
-      // 3. Integrate with your email service provider (e.g., Mailchimp, SendGrid)
-      
       console.log(`Newsletter subscription: ${email}`);
       
-      // Simulate processing time
-      await new Promise(resolve => setTimeout(resolve, 1000));
+      // Send notification to business owner
+      const notificationSent = await sendWaitlistNotification(email);
       
-      res.json({ 
-        success: true, 
-        message: "Successfully subscribed to newsletter" 
-      });
+      // Send welcome email to subscriber
+      const welcomeEmailSent = await sendWelcomeEmail(email);
+      
+      if (notificationSent && welcomeEmailSent) {
+        res.json({ 
+          success: true, 
+          message: "Successfully subscribed to newsletter" 
+        });
+      } else {
+        // Still return success to user even if emails fail
+        console.log('Email sending failed but user was processed');
+        res.json({ 
+          success: true, 
+          message: "Successfully subscribed to newsletter" 
+        });
+      }
     } catch (error) {
       if (error instanceof z.ZodError) {
         res.status(400).json({ 
@@ -33,6 +41,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
           message: "Invalid email address" 
         });
       } else {
+        console.error('Newsletter subscription error:', error);
         res.status(500).json({ 
           success: false, 
           message: "Internal server error" 
