@@ -104,8 +104,8 @@ export function ComingSoonPage() {
   };
 
   return (
-    <div className="min-h-screen bg-white flex flex-col justify-center items-center px-4">
-      <div className="w-full max-w-6xl mx-auto text-center">
+    <section className="py-20 bg-white">
+      <div className="w-full max-w-6xl mx-auto px-4 text-center">
         
         {/* Main Launch Message */}
         <motion.div
@@ -257,6 +257,6 @@ export function ComingSoonPage() {
           </Card>
         </motion.div>
       </div>
-    </div>
+    </section>
   );
 }
