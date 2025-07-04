@@ -124,20 +124,21 @@ export function ComingSoonPage() {
           </h1>
         </motion.div>
 
-        {/* Countdown Timer and Spots Counter */}
+        {/* Combined Countdown Timer, Spots Counter, and Signup */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
           className="mb-16"
         >
-          <Card className="bg-gradient-to-r from-navy to-navy/90 border-0 shadow-2xl max-w-4xl mx-auto">
+          <Card className="bg-gradient-to-r from-navy to-navy/90 border-0 shadow-2xl max-w-5xl mx-auto">
             <CardContent className="p-8 lg:p-12">
-              <div className="grid lg:grid-cols-2 gap-12 items-center">
+              <div className="grid lg:grid-cols-3 gap-8 items-start">
                 
                 {/* Countdown Timer */}
                 <div className="text-center">
-                  <div className="grid grid-cols-4 gap-3 mb-6">
+                  <h3 className="text-xl font-bold text-white mb-6">Launch Countdown</h3>
+                  <div className="grid grid-cols-2 gap-3 mb-6">
                     {[
                       { value: 'TBC', label: 'Days' },
                       { value: 'TBC', label: 'Hours' },
@@ -149,51 +150,51 @@ export function ComingSoonPage() {
                         initial={{ scale: 0.8 }}
                         animate={{ scale: 1 }}
                         transition={{ duration: 0.3, delay: index * 0.1 }}
-                        className="bg-white rounded-xl p-4 border-2 border-fresh-green"
+                        className="bg-white rounded-lg p-3 border-2 border-fresh-green"
                       >
-                        <div className="text-3xl lg:text-4xl font-bold text-navy mb-1">
+                        <div className="text-xl lg:text-2xl font-bold text-navy mb-1">
                           {item.value}
                         </div>
-                        <div className="text-sm text-gray-600 uppercase tracking-wide">
+                        <div className="text-xs text-gray-600 uppercase tracking-wide">
                           {item.label}
                         </div>
                       </motion.div>
                     ))}
                   </div>
-                  <p className="text-lg text-white">
-                    Until CareerFrame launches to the public
+                  <p className="text-sm text-white">
+                    Until CareerFrame launches
                   </p>
                 </div>
 
                 {/* Early Access Spots */}
                 <div className="text-center">
-                  <h3 className="text-2xl font-bold text-white mb-6">Early Access Spots</h3>
+                  <h3 className="text-xl font-bold text-white mb-6">Early Access Spots</h3>
                   
-                  <div className="bg-white rounded-xl p-8 mb-6 border-2 border-fresh-green">
-                    <div className="flex items-center justify-center gap-3 mb-4">
+                  <div className="bg-white rounded-lg p-6 mb-4 border-2 border-fresh-green">
+                    <div className="flex items-center justify-center gap-2 mb-3">
                       <motion.div
                         key={spotsRemaining}
                         initial={{ scale: 1.2, color: '#88A98F' }}
                         animate={{ scale: 1, color: '#1E3A8A' }}
                         transition={{ duration: 0.3 }}
-                        className="text-5xl lg:text-6xl font-bold text-navy"
+                        className="text-4xl lg:text-5xl font-bold text-navy"
                       >
                         {spotsRemaining}
                       </motion.div>
-                      <span className="text-3xl text-gray-600">/</span>
-                      <div className="text-3xl text-gray-600">500</div>
+                      <span className="text-2xl text-gray-600">/</span>
+                      <div className="text-2xl text-gray-600">500</div>
                     </div>
                     
-                    <div className="w-full bg-gray-200 rounded-full h-3 mb-4">
+                    <div className="w-full bg-gray-200 rounded-full h-2 mb-3">
                       <motion.div
                         initial={{ width: 0 }}
                         animate={{ width: `${((500 - spotsRemaining) / 500) * 100}%` }}
                         transition={{ duration: 1, ease: "easeOut" }}
-                        className="bg-gradient-to-r from-fresh-green to-green-400 h-3 rounded-full"
+                        className="bg-gradient-to-r from-fresh-green to-green-400 h-2 rounded-full"
                       />
                     </div>
                     
-                    <p className="text-lg text-gray-700 mb-4">
+                    <p className="text-sm text-gray-700">
                       <span className="text-fresh-green font-semibold">
                         {500 - spotsRemaining} joined
                       </span>
@@ -205,54 +206,47 @@ export function ComingSoonPage() {
                   </div>
                   
                   <div className="flex items-center justify-center gap-2">
-                    <Zap className="h-5 w-5 text-yellow-400" />
-                    <p className="text-lg text-yellow-200">
+                    <Zap className="h-4 w-4 text-orange-500" />
+                    <p className="text-sm text-orange-200">
                       {spotsRemaining <= 50 ? 'Almost full!' : 'Filling up fast!'}
                     </p>
                   </div>
                 </div>
-              </div>
-            </CardContent>
-          </Card>
-        </motion.div>
 
-        {/* Waitlist Signup */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.4 }}
-          className="max-w-md mx-auto"
-        >
-          <Card className="bg-white border-2 border-fresh-green/20 shadow-xl">
-            <CardContent className="p-8">
-              <div className="flex items-center justify-center gap-2 mb-4">
-                <Mail className="h-6 w-6 text-fresh-green" />
-                <h3 className="text-xl font-bold text-navy">Join the Waitlist</h3>
-              </div>
-              
-              <form onSubmit={handleWaitlistSignup}>
-                <div className="flex flex-col gap-4">
-                  <Input
-                    type="email"
-                    placeholder="Enter your email address"
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                    required
-                    className="px-4 py-3 text-gray-900 border-2 border-gray-200 rounded-lg focus:ring-2 focus:ring-fresh-green focus:border-fresh-green"
-                  />
-                  <Button 
-                    type="submit"
-                    disabled={isSubmitting}
-                    className="bg-fresh-green hover:bg-green-600 text-white px-8 py-3 font-semibold rounded-lg text-lg"
-                  >
-                    {isSubmitting ? "Securing your spot..." : "Secure My Spot"}
-                  </Button>
+                {/* Waitlist Signup */}
+                <div className="text-center">
+                  <div className="bg-white rounded-lg p-6 border-2 border-fresh-green">
+                    <div className="flex items-center justify-center gap-2 mb-4">
+                      <Mail className="h-5 w-5 text-fresh-green" />
+                      <h3 className="text-lg font-bold text-navy">Join the Waitlist</h3>
+                    </div>
+                    
+                    <form onSubmit={handleWaitlistSignup}>
+                      <div className="flex flex-col gap-3">
+                        <Input
+                          type="email"
+                          placeholder="Enter your email address"
+                          value={email}
+                          onChange={(e) => setEmail(e.target.value)}
+                          required
+                          className="px-3 py-2 text-gray-900 border-2 border-gray-200 rounded-lg focus:ring-2 focus:ring-fresh-green focus:border-fresh-green text-sm"
+                        />
+                        <Button 
+                          type="submit"
+                          disabled={isSubmitting}
+                          className="bg-fresh-green hover:bg-green-600 text-white px-6 py-2 font-semibold rounded-lg text-sm"
+                        >
+                          {isSubmitting ? "Securing..." : "Secure My Spot"}
+                        </Button>
+                      </div>
+                    </form>
+                    
+                    <p className="text-xs text-gray-500 mt-3 text-center">
+                      Get notified when we launch + exclusive early access
+                    </p>
+                  </div>
                 </div>
-              </form>
-              
-              <p className="text-sm text-gray-500 mt-4 text-center">
-                Get notified when we launch + exclusive early access
-              </p>
+              </div>
             </CardContent>
           </Card>
         </motion.div>
