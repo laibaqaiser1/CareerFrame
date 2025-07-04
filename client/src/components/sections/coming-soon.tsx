@@ -114,7 +114,7 @@ export function ComingSoonPage() {
           transition={{ duration: 0.8 }}
           className="mb-16"
         >
-          <h1 className="text-2xl lg:text-3xl font-semibold mb-8" style={{ 
+          <h1 className="text-3xl lg:text-4xl font-bold mb-8 max-w-4xl mx-auto" style={{ 
             color: '#1E3A8A',
             fontFamily: 'Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif',
             lineHeight: '1.3',
