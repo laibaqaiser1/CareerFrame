@@ -104,32 +104,34 @@ export function ComingSoonPage() {
   };
 
   return (
-    <section className="py-20 bg-white">
-      <div className="w-full max-w-6xl mx-auto px-4 text-center">
+    <section className="min-h-screen bg-white flex flex-col">
+      <div className="w-full max-w-6xl mx-auto px-4 flex-1 flex flex-col">
         
-        {/* Main Launch Message */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          className="mb-16"
-        >
-          <h1 className="text-3xl lg:text-4xl font-bold mb-8 max-w-4xl mx-auto" style={{ 
-            color: '#1E3A8A',
-            fontFamily: 'Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif',
-            lineHeight: '1.3',
-            letterSpacing: '-0.01em'
-          }}>
-            Launch day is soon approaching — <span style={{ color: '#88A98F' }}>we're letting in 500 people first</span> and you'll want to be one of them!
-          </h1>
-        </motion.div>
+        {/* Main Launch Message - Centered in top portion */}
+        <div className="flex-1 flex items-center justify-center">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            className="text-center"
+          >
+            <h1 className="text-3xl lg:text-4xl font-bold mb-8 max-w-4xl mx-auto" style={{ 
+              color: '#1E3A8A',
+              fontFamily: 'Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif',
+              lineHeight: '1.3',
+              letterSpacing: '-0.01em'
+            }}>
+              Launch day is soon approaching — <span style={{ color: '#88A98F' }}>we're letting in 500 people first</span> and you'll want to be one of them!
+            </h1>
+          </motion.div>
+        </div>
 
-        {/* Combined Countdown Timer, Spots Counter, and Signup */}
+        {/* Combined Countdown Timer, Spots Counter, and Signup - Bottom */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="mb-16"
+          className="pb-12"
         >
           <Card className="bg-gradient-to-r from-navy to-navy/90 border-0 shadow-2xl max-w-5xl mx-auto">
             <CardContent className="p-8 lg:p-12">
