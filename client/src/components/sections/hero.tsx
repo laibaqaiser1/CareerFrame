@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Heart, ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
 import careerFrameApp from "@assets/image_1750364343735.png";
+import { LaunchCounter } from "@/components/ui/launch-counter";
 
 export function HeroSection() {
   return (
@@ -94,6 +95,11 @@ export function HeroSection() {
               90-day satisfaction guarantee
             </p>
           </motion.div>
+        </div>
+        
+        {/* Launch Counter */}
+        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 w-full">
+          <LaunchCounter />
         </div>
       </div>
     </section>

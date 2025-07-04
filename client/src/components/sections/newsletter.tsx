@@ -31,15 +31,20 @@ export function NewsletterSection() {
         throw new Error('Failed to subscribe');
       }
 
+      // Decrease the counter when someone successfully signs up
+      if (typeof (window as any).decrementCareerFrameSpots === 'function') {
+        (window as any).decrementCareerFrameSpots();
+      }
+      
       toast({
-        title: "Successfully subscribed!",
-        description: "You'll receive weekly career insights and tips.",
+        title: "Welcome to the waitlist!",
+        description: "You've secured your spot! We'll notify you when we launch.",
       });
       
       setEmail("");
     } catch (error) {
       toast({
-        title: "Subscription failed",
+        title: "Failed to join waitlist",
         description: "Please try again later.",
         variant: "destructive",
       });
