@@ -15,7 +15,7 @@ export default function Terms() {
           </Link>
           <h1 className="text-4xl font-bold text-navy mb-4">Terms of Service</h1>
           <p className="text-lg text-soft-grey">
-            Last updated: January 3, 2025
+            Last updated: July 5, 2025
           </p>
         </div>
 
@@ -39,105 +39,77 @@ export default function Terms() {
             </div>
           </div>
 
-          <h2 className="text-2xl font-bold text-navy mb-4">Acceptance of Terms</h2>
+          <h2 className="text-2xl font-bold text-navy mb-4">Introduction</h2>
           <p className="text-soft-grey mb-6">
-            By accessing and using CareerFrame, you accept and agree to be bound by the terms and provision of this agreement. If you do not agree to abide by the above, please do not use this service.
+            Welcome to the Careerframe Ltd website. These Terms of Service ("Terms") govern your use of our website and services. By accessing or using our website, you agree to comply with and be bound by these Terms. If you do not agree to these Terms, please do not use our website.
           </p>
 
-          <h2 className="text-2xl font-bold text-navy mb-4">Use License</h2>
-          <p className="text-soft-grey mb-4">
-            Permission is granted to temporarily use CareerFrame for personal, non-commercial transitory viewing only. This is the grant of a license, not a transfer of title, and under this license you may not:
-          </p>
-          <ul className="list-disc list-inside text-soft-grey mb-6 space-y-2">
-            <li>Modify or copy the materials</li>
-            <li>Use the materials for any commercial purpose or for any public display</li>
-            <li>Attempt to reverse engineer any software contained on the website</li>
-            <li>Remove any copyright or other proprietary notations from the materials</li>
-          </ul>
-
-          <h2 className="text-2xl font-bold text-navy mb-4">User Accounts</h2>
-          <p className="text-soft-grey mb-4">
-            To access certain features of CareerFrame, you must register for an account. You agree to:
-          </p>
-          <ul className="list-disc list-inside text-soft-grey mb-6 space-y-2">
-            <li>Provide accurate, current, and complete information</li>
-            <li>Maintain and promptly update your account information</li>
-            <li>Maintain the security of your password and account</li>
-            <li>Accept responsibility for all activities that occur under your account</li>
-          </ul>
-
-          <h2 className="text-2xl font-bold text-navy mb-4">Subscription and Billing</h2>
-          <p className="text-soft-grey mb-4">
-            CareerFrame offers both free and paid subscription plans:
-          </p>
-          <ul className="list-disc list-inside text-soft-grey mb-6 space-y-2">
-            <li>Free accounts have limited access to features</li>
-            <li>Premium subscriptions are billed monthly or annually</li>
-            <li>You may cancel your subscription at any time</li>
-            <li>Refunds are available within 30 days of purchase</li>
-            <li>Price changes will be communicated 30 days in advance</li>
-          </ul>
-
-          <h2 className="text-2xl font-bold text-navy mb-4">Prohibited Uses</h2>
-          <p className="text-soft-grey mb-4">
-            You may not use CareerFrame:
-          </p>
-          <ul className="list-disc list-inside text-soft-grey mb-6 space-y-2">
-            <li>For any unlawful purpose or to solicit others to engage in unlawful acts</li>
-            <li>To violate any international, federal, provincial, or state regulations, rules, laws, or local ordinances</li>
-            <li>To infringe upon or violate our intellectual property rights or the intellectual property rights of others</li>
-            <li>To harass, abuse, insult, harm, defame, slander, disparage, intimidate, or discriminate</li>
-            <li>To submit false or misleading information</li>
-            <li>To upload or transmit viruses or any other type of malicious code</li>
-          </ul>
-
-          <h2 className="text-2xl font-bold text-navy mb-4">Content and Intellectual Property</h2>
+          <h2 className="text-2xl font-bold text-navy mb-4">About Us</h2>
           <p className="text-soft-grey mb-6">
-            All content, features, and functionality on CareerFrame are owned by us and are protected by international copyright, trademark, patent, trade secret, and other intellectual property laws.
+            This website is operated by Careerframe Ltd ("we," "us," or "our"), a company registered in the United Kingdom.
           </p>
-
-          <h2 className="text-2xl font-bold text-navy mb-4">AI-Generated Content</h2>
-          <p className="text-soft-grey mb-4">
-            CareerFrame uses artificial intelligence to provide career guidance and recommendations:
-          </p>
-          <ul className="list-disc list-inside text-soft-grey mb-6 space-y-2">
-            <li>AI-generated advice is for informational purposes only</li>
-            <li>We do not guarantee the accuracy or completeness of AI recommendations</li>
-            <li>Users should use their own judgment when making career decisions</li>
-            <li>AI advice should not replace professional career counseling when needed</li>
-          </ul>
-
-          <h2 className="text-2xl font-bold text-navy mb-4">Disclaimer</h2>
           <p className="text-soft-grey mb-6">
-            The information on this website is provided on an "as is" basis. CareerFrame makes no representations or warranties of any kind, express or implied, about the completeness, accuracy, reliability, suitability, or availability of the information, products, services, or related graphics contained on the website.
-          </p>
-
-          <h2 className="text-2xl font-bold text-navy mb-4">Limitations</h2>
-          <p className="text-soft-grey mb-6">
-            In no event shall CareerFrame or its suppliers be liable for any damages arising out of the use or inability to use the materials on CareerFrame's website, even if CareerFrame or its authorized representative has been notified of the possibility of such damage.
-          </p>
-
-          <h2 className="text-2xl font-bold text-navy mb-4">Revisions</h2>
-          <p className="text-soft-grey mb-6">
-            CareerFrame may revise these terms of service at any time without notice. By using this website, you are agreeing to be bound by the then current version of these terms of service.
-          </p>
-
-          <h2 className="text-2xl font-bold text-navy mb-4">Contact Information</h2>
-          <p className="text-soft-grey mb-4">
-            If you have any questions about these Terms of Service, please contact us:
+            For any questions, you can contact us at:
           </p>
           <ul className="list-none text-soft-grey mb-6 space-y-2">
-            <li>Email: legal@careerframe.com</li>
-            <li>Address: 123 Career Street, Suite 456, San Francisco, CA 94105</li>
+            <li><strong>Email:</strong> Arron@careerframe.co.uk</li>
+            <li><strong>Postal address:</strong> Careerframe Ltd, Registered Office, Shrewsbury, UK</li>
           </ul>
+
+          <h2 className="text-2xl font-bold text-navy mb-4">Use of the Website</h2>
+          <p className="text-soft-grey mb-4">
+            You agree to use the website only for lawful purposes and in a way that does not infringe the rights of, restrict, or inhibit anyone else's use of the website. Prohibited behaviour includes harassing or causing distress to any person, transmitting obscene or offensive content, or disrupting the normal flow of dialogue within our website.
+          </p>
+          <p className="text-soft-grey mb-6">
+            We reserve the right to suspend or terminate your access to the website if you breach these Terms.
+          </p>
+
+          <h2 className="text-2xl font-bold text-navy mb-4">Intellectual Property</h2>
+          <p className="text-soft-grey mb-6">
+            All content on this website, including text, graphics, logos, icons, images, and software, is the property of Careerframe Ltd or its licensors and is protected by intellectual property laws. You may view, download, and print content for personal use only. Any other use, including reproduction, modification, distribution, or republication, without our prior written consent, is strictly prohibited.
+          </p>
+
+          <h2 className="text-2xl font-bold text-navy mb-4">Accuracy of Information</h2>
+          <p className="text-soft-grey mb-6">
+            We endeavour to ensure that the information on our website is correct and up to date. However, we do not warrant the accuracy, completeness, or reliability of any content. Information is provided "as is," and we make no representations or warranties of any kind.
+          </p>
+
+          <h2 className="text-2xl font-bold text-navy mb-4">Links to Other Websites</h2>
+          <p className="text-soft-grey mb-6">
+            Our website may contain links to third-party websites. These links are provided for your convenience only. Careerframe Ltd has no control over the content or availability of these websites and is not responsible for any loss or damage that may arise from your use of them.
+          </p>
+
+          <h2 className="text-2xl font-bold text-navy mb-4">XP (Experience Points) and User Rewards</h2>
+          <p className="text-soft-grey mb-6">
+            Our website and services may include the ability to earn Experience Points ("XP") and other virtual rewards. XP is provided for the purpose of tracking engagement and progress within our platform. XP has no monetary value and cannot be exchanged for cash or transferred outside of our platform. We reserve the right to modify, suspend, or discontinue the XP system at any time without notice. Misuse or abuse of the XP system may result in loss of points or suspension of your account.
+          </p>
+
+          <h2 className="text-2xl font-bold text-navy mb-4">Limitation of Liability</h2>
+          <p className="text-soft-grey mb-6">
+            To the fullest extent permitted by law, Careerframe Ltd shall not be liable for any loss or damage, whether direct, indirect, incidental, or consequential, arising from your use of, or inability to use, our website, services, or XP and reward systems.
+          </p>
+
+          <h2 className="text-2xl font-bold text-navy mb-4">Changes to These Terms</h2>
+          <p className="text-soft-grey mb-6">
+            We reserve the right to amend these Terms at any time. Any changes will be posted on this page and will take effect immediately upon posting. Your continued use of the website constitutes acceptance of the updated Terms.
+          </p>
+
+          <h2 className="text-2xl font-bold text-navy mb-4">Governing Law</h2>
+          <p className="text-soft-grey mb-6">
+            These Terms shall be governed by and construed in accordance with the laws of England and Wales. Any disputes arising in connection with these Terms shall be subject to the exclusive jurisdiction of the courts of England and Wales.
+          </p>
+
+          <p className="text-soft-grey mb-6">
+            If you have any questions about these Terms, please contact us at Arron@careerframe.co.uk.
+          </p>
         </div>
 
         <div className="text-center mt-8">
-          <Link href="/contact">
+          <a href="mailto:Arron@careerframe.co.uk">
             <Button className="bg-fresh-green text-white hover:bg-opacity-90">
               Contact Us About Terms
             </Button>
-          </Link>
+          </a>
         </div>
       </div>
     </div>
