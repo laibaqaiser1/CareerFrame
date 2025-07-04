@@ -137,13 +137,13 @@ export function ComingSoonPage() {
                 
                 {/* Countdown Timer */}
                 <div className="text-center">
-                  <h3 className="text-xl font-bold text-white mb-6">Launch Countdown</h3>
+                  <h3 className="text-xl font-bold mb-6" style={{ color: '#1E3A8A' }}>Launch Countdown</h3>
                   <div className="grid grid-cols-2 gap-3 mb-6">
                     {[
-                      { value: 'T', label: 'Days' },
-                      { value: 'B', label: 'Hours' },
-                      { value: 'C', label: 'Minutes' },
-                      { value: '', label: 'Seconds' }
+                      { value: 'TBC', label: 'Days' },
+                      { value: 'TBC', label: 'Hours' },
+                      { value: 'TBC', label: 'Minutes' },
+                      { value: 'TBC', label: 'Seconds' }
                     ].map((item, index) => (
                       <motion.div
                         key={item.label}
@@ -168,7 +168,7 @@ export function ComingSoonPage() {
 
                 {/* Early Access Spots */}
                 <div className="text-center">
-                  <h3 className="text-xl font-bold text-white mb-6">Early Access Spots</h3>
+                  <h3 className="text-xl font-bold mb-6" style={{ color: '#1E3A8A' }}>Early Access Spots</h3>
                   
                   <div className="bg-white rounded-lg p-6 mb-4 border-2 border-fresh-green">
                     <div className="flex items-center justify-center gap-2 mb-3">
