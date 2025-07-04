@@ -99,6 +99,8 @@ CareerFrame is a full-stack web application that provides AI-powered career coac
 ## Changelog
 
 Changelog:
+- July 4, 2025: Updated Terms of Service with accurate Careerframe Ltd business details, UK jurisdiction, and XP rewards section per official document
+- July 4, 2025: Updated Data Protection page with comprehensive UK GDPR compliance information, data deletion procedures, and official contact details per Careerframe Ltd policy
 - July 4, 2025: Streamlined footer by removing Resources, Career Blog, Help Center, Community, and API Docs sections; reorganized into Platform, Company, and Legal sections
 - July 4, 2025: Added comprehensive Data Protection page with GDPR compliance information and user rights details
 - July 4, 2025: Created 8 new functional pages with proper routing (About, Contact, Help, Privacy, Terms, Blog, Community, API Docs, Data Protection)
