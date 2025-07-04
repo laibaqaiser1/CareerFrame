@@ -114,11 +114,11 @@ export function ComingSoonPage() {
           transition={{ duration: 0.8 }}
           className="mb-16"
         >
-          <h1 className="text-5xl lg:text-7xl font-bold mb-8" style={{ 
+          <h1 className="text-2xl lg:text-3xl font-semibold mb-8" style={{ 
             color: '#1E3A8A',
             fontFamily: 'Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif',
-            lineHeight: '1.1',
-            letterSpacing: '-0.02em'
+            lineHeight: '1.3',
+            letterSpacing: '-0.01em'
           }}>
             Launch day is soon approaching — <span style={{ color: '#88A98F' }}>we're letting in 500 people first</span> and you'll want to be one of them!
           </h1>
