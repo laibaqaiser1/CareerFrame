@@ -99,6 +99,10 @@ CareerFrame is a full-stack web application that provides AI-powered career coac
 ## Changelog
 
 Changelog:
+- July 4, 2025: Streamlined footer by removing Resources, Career Blog, Help Center, Community, and API Docs sections; reorganized into Platform, Company, and Legal sections
+- July 4, 2025: Added comprehensive Data Protection page with GDPR compliance information and user rights details
+- July 4, 2025: Created 8 new functional pages with proper routing (About, Contact, Help, Privacy, Terms, Blog, Community, API Docs, Data Protection)
+- July 4, 2025: Made all footer links functional instead of placeholder "#" links, added proper external social media links
 - July 2, 2025: Updated hero headline to "Find the Right Role. Get There Faster." and centered all text elements
 - July 2, 2025: Updated hero headline from "CareerFrame Finds the Right Roles for You — Then Guides You There" to "Get Matched. Get Moving."
 - July 2, 2025: Reduced font sizes throughout hero section for more visually pleasing appearance (headline from text-5xl-6xl to text-3xl-5xl, subtext from text-2xl to text-lg-xl)

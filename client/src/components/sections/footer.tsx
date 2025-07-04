@@ -13,21 +13,18 @@ const footerSections = [
     ]
   },
   {
-    title: "Resources",
-    links: [
-      { text: "Career Blog", href: "/blog" },
-      { text: "Help Center", href: "/help" },
-      { text: "Community", href: "/community" },
-      { text: "API Docs", href: "/api-docs" }
-    ]
-  },
-  {
     title: "Company",
     links: [
       { text: "About Us", href: "/about" },
-      { text: "Contact", href: "/contact" },
+      { text: "Contact", href: "/contact" }
+    ]
+  },
+  {
+    title: "Legal",
+    links: [
       { text: "Privacy Policy", href: "/privacy" },
-      { text: "Terms of Service", href: "/terms" }
+      { text: "Terms of Service", href: "/terms" },
+      { text: "Data Protection", href: "/data-protection" }
     ]
   }
 ];

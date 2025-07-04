@@ -12,6 +12,7 @@ import Terms from "@/pages/terms";
 import Blog from "@/pages/blog";
 import Community from "@/pages/community";
 import ApiDocs from "@/pages/api-docs";
+import DataProtection from "@/pages/data-protection";
 import NotFound from "@/pages/not-found";
 
 function Router() {
@@ -26,6 +27,7 @@ function Router() {
       <Route path="/blog" component={Blog} />
       <Route path="/community" component={Community} />
       <Route path="/api-docs" component={ApiDocs} />
+      <Route path="/data-protection" component={DataProtection} />
       <Route component={NotFound} />
     </Switch>
   );
