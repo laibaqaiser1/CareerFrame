@@ -15,19 +15,19 @@ const footerSections = [
   {
     title: "Resources",
     links: [
-      { text: "Career Blog", href: "#" },
-      { text: "Help Center", href: "#" },
-      { text: "Community", href: "#" },
-      { text: "API Docs", href: "#" }
+      { text: "Career Blog", href: "/blog" },
+      { text: "Help Center", href: "/help" },
+      { text: "Community", href: "/community" },
+      { text: "API Docs", href: "/api-docs" }
     ]
   },
   {
     title: "Company",
     links: [
-      { text: "About Us", href: "#" },
-      { text: "Contact", href: "#" },
-      { text: "Privacy Policy", href: "#" },
-      { text: "Terms of Service", href: "#" }
+      { text: "About Us", href: "/about" },
+      { text: "Contact", href: "/contact" },
+      { text: "Privacy Policy", href: "/privacy" },
+      { text: "Terms of Service", href: "/terms" }
     ]
   }
 ];
@@ -49,10 +49,18 @@ export function Footer() {
               Empowering careers through AI-powered guidance and personalized coaching.
             </p>
             <div className="flex space-x-4">
-              <SiX className="w-5 h-5 text-gray-400 hover:text-white cursor-pointer transition-colors" />
-              <SiTiktok className="w-5 h-5 text-gray-400 hover:text-white cursor-pointer transition-colors" />
-              <Linkedin className="text-gray-400 hover:text-white cursor-pointer transition-colors" />
-              <Facebook className="text-gray-400 hover:text-white cursor-pointer transition-colors" />
+              <a href="https://twitter.com/careerframe" target="_blank" rel="noopener noreferrer">
+                <SiX className="w-5 h-5 text-gray-400 hover:text-white cursor-pointer transition-colors" />
+              </a>
+              <a href="https://tiktok.com/@careerframe" target="_blank" rel="noopener noreferrer">
+                <SiTiktok className="w-5 h-5 text-gray-400 hover:text-white cursor-pointer transition-colors" />
+              </a>
+              <a href="https://linkedin.com/company/careerframe" target="_blank" rel="noopener noreferrer">
+                <Linkedin className="text-gray-400 hover:text-white cursor-pointer transition-colors" />
+              </a>
+              <a href="https://facebook.com/careerframe" target="_blank" rel="noopener noreferrer">
+                <Facebook className="text-gray-400 hover:text-white cursor-pointer transition-colors" />
+              </a>
             </div>
           </div>
           
