@@ -115,7 +115,7 @@ export function ComingSoonPage() {
             transition={{ duration: 0.8 }}
             className="text-center"
           >
-            <h1 className="text-3xl lg:text-4xl font-bold max-w-4xl mx-auto" style={{ 
+            <h1 className="text-4xl lg:text-5xl font-bold max-w-4xl mx-auto" style={{ 
               color: '#1E3A8A',
               fontFamily: 'Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif',
               lineHeight: '1.3',
