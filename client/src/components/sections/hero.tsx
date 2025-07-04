@@ -96,11 +96,11 @@ export function HeroSection() {
             </p>
           </motion.div>
         </div>
-        
-        {/* Launch Counter */}
-        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 w-full">
-          <LaunchCounter />
-        </div>
+      </div>
+      
+      {/* Launch Counter - positioned below hero content */}
+      <div className="absolute bottom-0 left-0 right-0 transform translate-y-1/2 z-20">
+        <LaunchCounter />
       </div>
     </section>
   );
