@@ -6,28 +6,31 @@ import { LaunchCounter } from "@/components/ui/launch-counter";
 
 export function HeroSection() {
   return (
-    <section className="min-h-screen flex items-center justify-center px-4 relative overflow-hidden" style={{ backgroundColor: 'white' }}>
+    <section className="min-h-screen flex flex-col justify-center px-4 relative overflow-hidden" style={{ backgroundColor: 'white' }}>
+      
+      {/* Launch Announcement - Higher and Wider */}
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, delay: 0.1 }}
+        className="w-full text-center pt-20 pb-12"
+      >
+        <div className="max-w-6xl mx-auto">
+          <p className="text-3xl lg:text-5xl font-bold text-center" style={{ 
+            color: '#1E3A8A',
+            fontFamily: 'Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif',
+            lineHeight: '1.3',
+            letterSpacing: '-0.02em'
+          }}>
+            Launch day is soon approaching.<br />
+            <span style={{ color: '#88A98F' }}>We're letting in 500 people first.</span><br />
+            You'll want to be one of them!
+          </p>
+        </div>
+      </motion.div>
 
-
-      <div className="w-full max-w-4xl mx-auto relative z-10">
-        <div className="text-center">
-          {/* Launch Announcement */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.1 }}
-            className="mb-8"
-          >
-            <p className="text-2xl lg:text-3xl font-bold mb-8 text-center" style={{ 
-              color: '#1E3A8A',
-              fontFamily: 'Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif',
-              lineHeight: '1.2'
-            }}>
-              Launch day is soon approaching.<br />
-              <span style={{ color: '#88A98F' }}>We're letting in 500 people first.</span><br />
-              You'll want to be one of them!
-            </p>
-          </motion.div>
+      <div className="w-full max-w-4xl mx-auto relative z-10 flex-1 flex items-center">
+        <div className="text-center w-full">
           
           {/* Clean, Professional Layout */}
           <motion.div 
@@ -98,8 +101,8 @@ export function HeroSection() {
         </div>
       </div>
       
-      {/* Launch Counter - positioned below hero content */}
-      <div className="absolute bottom-0 left-0 right-0 transform translate-y-1/2 z-20">
+      {/* Launch Counter - positioned in the space below main content */}
+      <div className="w-full pb-16">
         <LaunchCounter />
       </div>
     </section>
