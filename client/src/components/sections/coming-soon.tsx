@@ -139,28 +139,28 @@ export function ComingSoonPage() {
                 <div className="text-center">
                   <div className="grid grid-cols-4 gap-3 mb-6">
                     {[
-                      { value: timeLeft.days, label: 'Days' },
-                      { value: timeLeft.hours, label: 'Hours' },
-                      { value: timeLeft.minutes, label: 'Minutes' },
-                      { value: timeLeft.seconds, label: 'Seconds' }
+                      { value: 'TBC', label: 'Days' },
+                      { value: 'TBC', label: 'Hours' },
+                      { value: 'TBC', label: 'Minutes' },
+                      { value: 'TBC', label: 'Seconds' }
                     ].map((item, index) => (
                       <motion.div
                         key={item.label}
                         initial={{ scale: 0.8 }}
                         animate={{ scale: 1 }}
                         transition={{ duration: 0.3, delay: index * 0.1 }}
-                        className="bg-white/10 backdrop-blur-sm rounded-xl p-4"
+                        className="bg-white rounded-xl p-4 border-2 border-fresh-green"
                       >
-                        <div className="text-3xl lg:text-4xl font-bold text-white mb-1">
-                          {item.value.toString().padStart(2, '0')}
+                        <div className="text-3xl lg:text-4xl font-bold text-navy mb-1">
+                          {item.value}
                         </div>
-                        <div className="text-sm text-gray-300 uppercase tracking-wide">
+                        <div className="text-sm text-gray-600 uppercase tracking-wide">
                           {item.label}
                         </div>
                       </motion.div>
                     ))}
                   </div>
-                  <p className="text-lg text-gray-300">
+                  <p className="text-lg text-white">
                     Until CareerFrame launches to the public
                   </p>
                 </div>
@@ -169,22 +169,22 @@ export function ComingSoonPage() {
                 <div className="text-center">
                   <h3 className="text-2xl font-bold text-white mb-6">Early Access Spots</h3>
                   
-                  <div className="bg-white/10 backdrop-blur-sm rounded-xl p-8 mb-6">
+                  <div className="bg-white rounded-xl p-8 mb-6 border-2 border-fresh-green">
                     <div className="flex items-center justify-center gap-3 mb-4">
                       <motion.div
                         key={spotsRemaining}
-                        initial={{ scale: 1.2, color: '#10B981' }}
-                        animate={{ scale: 1, color: '#FFFFFF' }}
+                        initial={{ scale: 1.2, color: '#88A98F' }}
+                        animate={{ scale: 1, color: '#1E3A8A' }}
                         transition={{ duration: 0.3 }}
-                        className="text-5xl lg:text-6xl font-bold text-white"
+                        className="text-5xl lg:text-6xl font-bold text-navy"
                       >
                         {spotsRemaining}
                       </motion.div>
-                      <span className="text-3xl text-gray-300">/</span>
-                      <div className="text-3xl text-gray-400">500</div>
+                      <span className="text-3xl text-gray-600">/</span>
+                      <div className="text-3xl text-gray-600">500</div>
                     </div>
                     
-                    <div className="w-full bg-gray-700 rounded-full h-3 mb-4">
+                    <div className="w-full bg-gray-200 rounded-full h-3 mb-4">
                       <motion.div
                         initial={{ width: 0 }}
                         animate={{ width: `${((500 - spotsRemaining) / 500) * 100}%` }}
@@ -193,12 +193,12 @@ export function ComingSoonPage() {
                       />
                     </div>
                     
-                    <p className="text-lg text-gray-300 mb-4">
+                    <p className="text-lg text-gray-700 mb-4">
                       <span className="text-fresh-green font-semibold">
                         {500 - spotsRemaining} joined
                       </span>
                       {' • '}
-                      <span className="text-white font-semibold">
+                      <span className="text-navy font-semibold">
                         {spotsRemaining} spots left
                       </span>
                     </p>
