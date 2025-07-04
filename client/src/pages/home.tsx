@@ -8,7 +8,7 @@ import { HowItWorksSection } from "@/components/sections/how-it-works";
 import { TestimonialsSection } from "@/components/sections/testimonials-new";
 import { ProblemSolutionSection } from "@/components/sections/problem-solution";
 import { PricingSection } from "@/components/sections/pricing";
-import { UrgencyCTASection } from "@/components/sections/urgency-cta";
+
 import { FAQSection } from "@/components/sections/faq";
 
 import { NewsletterSection } from "@/components/sections/newsletter";
@@ -161,9 +161,7 @@ export default function Home() {
         <div className="slide-in-right">
           <PricingSection />
         </div>
-        <div className="fade-in">
-          <UrgencyCTASection />
-        </div>
+
         <div className="scale-in">
           <FAQSection />
         </div>
