@@ -4,15 +4,6 @@ import careerFrameLogo from "@assets/ChatGPT Image Jun 19, 2025, 09_12_42 PM_175
 
 const footerSections = [
   {
-    title: "Platform",
-    links: [
-      { text: "Features", href: "#features" },
-      { text: "How it Works", href: "#how-it-works" },
-      { text: "Pricing", href: "#pricing" },
-      { text: "Success Stories", href: "#testimonials" }
-    ]
-  },
-  {
     title: "Company",
     links: [
       { text: "About Us", href: "/about" },
