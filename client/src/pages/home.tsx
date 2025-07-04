@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { HeroSection } from "@/components/sections/hero";
+import { ComingSoonPage } from "@/components/sections/coming-soon";
 import { WhatToExpectSection } from "@/components/sections/what-to-expect";
 import { TrustSignalsSection } from "@/components/sections/trust-signals";
 import { FeaturesSection } from "@/components/sections/features";
@@ -136,42 +137,50 @@ export default function Home() {
     return () => document.removeEventListener('click', handleSmoothScroll);
   }, []);
 
+  // Toggle between coming soon and full site
+  const isPreLaunch = true; // Set to false after launch
+
   return (
     <>
-      <Navigation />
-      <div className="min-h-screen bg-white page-transition">
-        <div className="fade-in">
-          <HeroSection />
-        </div>
-        <div className="slide-up">
-          <ProblemSolutionSection />
-        </div>
-        <div className="slide-up">
-          <WhatToExpectSection />
-        </div>
-        <div className="slide-in-left">
-          <FeaturesSection />
-        </div>
-        <div className="slide-in-left">
-          <HowItWorksSection />
-        </div>
-        <div className="slide-up">
-          <TestimonialsSection />
-        </div>
-        <div className="slide-in-right">
-          <PricingSection />
-        </div>
-
-        <div className="scale-in">
-          <FAQSection />
-        </div>
-        <div className="slide-up">
-          <NewsletterSection />
-        </div>
-        <Footer />
-        <LiveChat />
-        <CustomCursor />
-      </div>
+      {isPreLaunch ? (
+        <ComingSoonPage />
+      ) : (
+        <>
+          <Navigation />
+          <div className="min-h-screen bg-white page-transition">
+            <div className="fade-in">
+              <HeroSection />
+            </div>
+            <div className="slide-up">
+              <ProblemSolutionSection />
+            </div>
+            <div className="slide-up">
+              <WhatToExpectSection />
+            </div>
+            <div className="slide-in-left">
+              <FeaturesSection />
+            </div>
+            <div className="slide-in-left">
+              <HowItWorksSection />
+            </div>
+            <div className="slide-up">
+              <TestimonialsSection />
+            </div>
+            <div className="slide-in-right">
+              <PricingSection />
+            </div>
+            <div className="scale-in">
+              <FAQSection />
+            </div>
+            <div className="slide-up">
+              <NewsletterSection />
+            </div>
+            <Footer />
+            <LiveChat />
+            <CustomCursor />
+          </div>
+        </>
+      )}
     </>
   );
 }
