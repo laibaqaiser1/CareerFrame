@@ -1,20 +1,16 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { useScrollAnimation } from "@/hooks/use-scroll-animation";
-import { UserCheck, Target, Rocket } from "lucide-react";
 
 const steps = [
   {
-    icon: UserCheck,
     title: "Complete Assessment",
     description: "Answer questions about your skills, experience, and career goals. Our AI analyzes your profile to understand your unique strengths and aspirations."
   },
   {
-    icon: Target,
     title: "Get Your Roadmap",
     description: "Receive a personalized career pathway with specific action steps, skill recommendations, and milestone targets tailored to your dream job."
   },
   {
-    icon: Rocket,
     title: "Take Action",
     description: "Follow your roadmap, track progress with XP points, and leverage our networking features to accelerate your career advancement."
   }
@@ -49,9 +45,6 @@ export function HowItWorksSection() {
               }`}
             >
               <CardContent className="p-8 text-center">
-                <div className="w-16 h-16 rounded-full bg-fresh-green/10 flex items-center justify-center mx-auto mb-6">
-                  <step.icon className="h-8 w-8 text-fresh-green" />
-                </div>
                 <div className="w-8 h-8 rounded-full bg-fresh-green text-white flex items-center justify-center mx-auto mb-4 text-lg font-bold">
                   {index + 1}
                 </div>
