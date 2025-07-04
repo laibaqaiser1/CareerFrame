@@ -107,15 +107,15 @@ export function ComingSoonPage() {
     <section className="min-h-screen bg-white flex flex-col">
       <div className="w-full max-w-6xl mx-auto px-4 flex-1 flex flex-col">
         
-        {/* Main Launch Message - Centered in top portion */}
-        <div className="flex-1 flex items-center justify-center">
+        {/* Main Launch Message - Perfectly centered */}
+        <div className="flex-1 flex items-center justify-center py-16">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             className="text-center"
           >
-            <h1 className="text-3xl lg:text-4xl font-bold mb-8 max-w-4xl mx-auto" style={{ 
+            <h1 className="text-3xl lg:text-4xl font-bold max-w-4xl mx-auto" style={{ 
               color: '#1E3A8A',
               fontFamily: 'Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif',
               lineHeight: '1.3',
