@@ -10,11 +10,29 @@ export function HeroSection() {
 
       <div className="w-full max-w-4xl mx-auto relative z-10">
         <div className="text-center">
+          {/* Launch Announcement */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.1 }}
+            className="mb-8"
+          >
+            <p className="text-2xl lg:text-3xl font-bold mb-8 text-center" style={{ 
+              color: '#1E3A8A',
+              fontFamily: 'Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif',
+              lineHeight: '1.2'
+            }}>
+              Launch day is soon approaching.<br />
+              <span style={{ color: '#88A98F' }}>We're letting in 500 people first.</span><br />
+              You'll want to be one of them!
+            </p>
+          </motion.div>
+          
           {/* Clean, Professional Layout */}
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
+            transition={{ duration: 0.6, delay: 0.3 }}
           >
             <h1 className="font-bold mb-4 text-center" style={{ 
               color: '#1E3A8A',
@@ -27,23 +45,6 @@ export function HeroSection() {
               Find the Right Role<br />
               Get There Faster
             </h1>
-            
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.3 }}
-              className="mb-8"
-            >
-              <p className="text-2xl lg:text-3xl font-bold mb-4 text-center" style={{ 
-                color: '#1E3A8A',
-                fontFamily: 'Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif',
-                lineHeight: '1.2'
-              }}>
-                Launch day is soon approaching.<br />
-                <span style={{ color: '#88A98F' }}>We're letting in 500 people first.</span><br />
-                You'll want to be one of them!
-              </p>
-            </motion.div>
             
             <p className="text-lg lg:text-xl mb-8 max-w-2xl mx-auto text-center" style={{ 
               color: '#6B7280',
