@@ -22,8 +22,7 @@ export function HeroSection() {
             lineHeight: '1.2',
             letterSpacing: '-0.02em'
           }}>
-            Launch day is soon approaching — <span style={{ color: '#88A98F' }}>we're letting in 500 people first.</span><br />
-            You'll want to be one of them!
+            Launch day is soon approaching — <span style={{ color: '#88A98F' }}>we're letting in 500 people first</span> and you'll want to be one of them!
           </p>
         </div>
       </motion.div>
