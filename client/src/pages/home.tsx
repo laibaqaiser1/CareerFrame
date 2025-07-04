@@ -148,6 +148,9 @@ export default function Home() {
         
         {/* Full website content below for exploration */}
         <div className="min-h-screen page-transition">
+          <div className="fade-in">
+            <HeroSection />
+          </div>
           <div className="slide-up">
             <ProblemSolutionSection />
           </div>
