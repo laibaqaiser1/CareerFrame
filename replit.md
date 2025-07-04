@@ -99,6 +99,8 @@ CareerFrame is a full-stack web application that provides AI-powered career coac
 ## Changelog
 
 Changelog:
+- July 4, 2025: Added prominent launch announcement to hero section with "Launch day is soon approaching. We're letting in 500 people first" messaging and animated "Join the Waitlist" CTA button that scrolls to newsletter signup
+- July 4, 2025: Updated newsletter section to function as waitlist signup with launch-focused messaging and improved form design
 - July 4, 2025: Removed "Join the Next Career Transformation Cohort" urgency CTA section completely for post-launch implementation when there are actual users
 - July 4, 2025: Updated Privacy Policy with official Careerframe Ltd document structure, Arron McWilliam contact details, Shropshire address, and comprehensive UK-focused privacy framework
 - July 4, 2025: Removed Platform section from footer (Features, How it Works, Pricing, Success Stories) for cleaner appearance

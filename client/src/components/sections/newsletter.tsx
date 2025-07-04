@@ -52,23 +52,43 @@ export function NewsletterSection() {
     <>
 
       {/* Newsletter & Final CTA */}
-      <section className="py-20 bg-gradient-to-br from-green-400 via-blue-500 to-purple-600 text-white">
+      <section id="newsletter" className="py-20 bg-gradient-to-br from-green-400 via-blue-500 to-purple-600 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div 
             ref={ref}
             className="text-center mb-12"
           >
             <h2 className="text-3xl lg:text-4xl font-bold mb-6">
-              Your Future Starts Now — Take the First Step Toward a Career You Love
+              Join the Waitlist - Be One of the First 500!
             </h2>
-            <Button 
-              size="lg" 
-              className="bg-fresh-green hover:bg-green-600 text-white px-12 py-6 text-xl font-semibold button-hover"
-            >
-              <Rocket className="mr-3 h-6 w-6" />
-              Join For FREE
-            </Button>
-            <p className="text-sm text-blue-200 mt-4">Start your career transformation today • Free, why wouldn't you try?</p>
+            <p className="text-lg text-blue-100 mb-8 max-w-2xl mx-auto">
+              Get exclusive early access to CareerFrame when we launch. Plus, receive career insights and tips delivered to your inbox.
+            </p>
+            
+            <form onSubmit={handleSubscribe} className="max-w-md mx-auto mb-6">
+              <div className="flex flex-col sm:flex-row gap-3">
+                <Input
+                  type="email"
+                  placeholder="Enter your email address"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  required
+                  className="flex-1 px-4 py-3 text-gray-900 bg-white border-0 rounded-lg focus:ring-2 focus:ring-white"
+                />
+                <Button 
+                  type="submit"
+                  disabled={isSubmitting}
+                  className="bg-fresh-green hover:bg-green-600 text-white px-8 py-3 font-semibold rounded-lg"
+                >
+                  {isSubmitting ? "Joining..." : "Join Waitlist"}
+                </Button>
+              </div>
+            </form>
+            
+            <p className="text-sm text-blue-200">
+              <Lock className="inline h-4 w-4 mr-1" />
+              We respect your privacy. Unsubscribe anytime.
+            </p>
           </div>
           
 
