@@ -14,8 +14,14 @@ import Community from "@/pages/community";
 import ApiDocs from "@/pages/api-docs";
 import DataProtection from "@/pages/data-protection";
 import NotFound from "@/pages/not-found";
+import { useEffect } from "react";
+import { initGA } from "./lib/analytics";
+import { useAnalytics } from "./hooks/use-analytics";
 
 function Router() {
+  // Track page views when routes change
+  useAnalytics();
+  
   return (
     <Switch>
       <Route path="/" component={Home} />
@@ -34,6 +40,11 @@ function Router() {
 }
 
 function App() {
+  // Initialize Google Analytics when app loads
+  useEffect(() => {
+    initGA();
+  }, []);
+
   return (
     <QueryClientProvider client={queryClient}>
       <TooltipProvider>

@@ -86,6 +86,14 @@ export function ComingSoonPage() {
         localStorage.setItem('careerframe_spots_remaining', newCount.toString());
       }
       
+      // Track waitlist signup in Google Analytics
+      if (typeof window !== 'undefined' && window.gtag) {
+        window.gtag('event', 'waitlist_signup', {
+          event_category: 'engagement',
+          event_label: 'email_submission'
+        });
+      }
+      
       toast({
         title: "Welcome to the waitlist!",
         description: "You've secured your spot! We'll notify you when we launch.",
