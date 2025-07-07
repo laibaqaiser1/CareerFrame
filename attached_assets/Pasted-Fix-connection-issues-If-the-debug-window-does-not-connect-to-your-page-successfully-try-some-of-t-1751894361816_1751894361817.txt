@@ -1,0 +1,24 @@
+Fix connection issues
+If the debug window does not connect to your page successfully, try some of these solutions:
+
+The URL you entered might not have the Google tag on the page. Try a different URL on your website where you expect to have the Google tag installed.
+The debug parameter added to the page URL may interfere with page behavior. To solve this, edit the domain that you enter for debug mode, and deselect Include debug signal in the URL.
+The Google tag script is loaded after the point when Tag Assistant tries to connect to the page. Click Retry to connect again.
+Your page is an AMP page. AMP is not currently supported by Tag Assistant.
+The page loads the Google tag in an iframe. iframe-loaded tag configurations can only be debugged when the Tag Assistant Chrome extension is also installed.
+Multiple browser redirects can prevent the debug window from loading.
+Ad blockers installed in your web browser may prevent the Google tag from running. Disable ad blockers for the pages you need to test.
+If you have the Tag Assistant Chrome extension installed, make sure the extension has permission to read and change site data for the pages you need to test.
+Consent management tools may block Google tags. Configure any consent management tools that you use to allow interaction with Google's consent API.
+Troubleshooting steps
+If the issue is still not resolved, you can also try some of these troubleshooting steps:
+
+The Google tag may be blocked by a browser extension. Try disabling browser extensions and retrying the connection.
+Check if the Google tag is loaded on the page. Make sure the Google tag is present on the page before you attempt to connect.
+Check if the Google tag is loading correctly. You can use the browser's developer tools to see if the Google tag is loaded correctly.
+Check if the Google tag is firing. You can use the browser's developer tools to see if the Google tag is firing.
+Make sure you're using the correct domain name. Double-check the domain name you're using to connect to the website.
+Make sure you're using the correct website URL. Double-check the website URL you're using to connect to the website.
+Check for any errors in the Google tag code. Make sure the Google tag code is correctly implemented.
+Check if the Google tag is being blocked by a firewall or proxy server. Make sure the Google tag is not being blocked by a firewall or proxy server.
+Check if the Google tag is being blocked by a content security policy (CSP). Make sure the Google tag is not being blocked by a CSP.
