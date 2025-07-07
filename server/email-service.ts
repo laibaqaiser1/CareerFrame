@@ -12,7 +12,7 @@ const sesClient = new SESClient({
 export async function sendWaitlistNotification(subscriberEmail: string): Promise<boolean> {
   try {
     const command = new SendEmailCommand({
-      Source: 'noreply@careerframe.co.uk', // This needs to be verified in AWS SES
+      Source: 'Arron@careerframe.co.uk', // Using your email as sender (verify this in AWS SES)
       Destination: {
         ToAddresses: ['Arron@careerframe.co.uk'],
       },
@@ -66,7 +66,7 @@ This email was sent from your CareerFrame website waitlist system.
 export async function sendWelcomeEmail(subscriberEmail: string): Promise<boolean> {
   try {
     const command = new SendEmailCommand({
-      Source: 'noreply@careerframe.co.uk', // This needs to be verified in AWS SES
+      Source: 'Arron@careerframe.co.uk', // Using your email as sender (verify this in AWS SES)
       Destination: {
         ToAddresses: [subscriberEmail],
       },
