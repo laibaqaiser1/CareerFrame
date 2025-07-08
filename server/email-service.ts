@@ -81,7 +81,7 @@ export async function sendWelcomeEmail(subscriberEmail: string): Promise<boolean
               <html>
                 <body style="font-family: Arial, sans-serif; line-height: 1.6; color: #333;">
                   <h2 style="color: #1E3A8A;">Welcome to CareerFrame!</h2>
-                  <p>Thank you for joining our exclusive waitlist. You're now one of the first 500 people who will get early access to CareerFrame.</p>
+                  <p>Thank you for joining our exclusive waitlist. You're now one of the first 10 people who will get early access to CareerFrame.</p>
                   
                   <h3>What happens next?</h3>
                   <ul>
@@ -111,7 +111,7 @@ export async function sendWelcomeEmail(subscriberEmail: string): Promise<boolean
             Data: `
 Welcome to CareerFrame!
 
-Thank you for joining our exclusive waitlist. You're now one of the first 500 people who will get early access to CareerFrame.
+Thank you for joining our exclusive waitlist. You're now one of the first 10 people who will get early access to CareerFrame.
 
 What happens next?
 - We'll notify you as soon as we launch

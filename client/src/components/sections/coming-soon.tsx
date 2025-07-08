@@ -14,7 +14,7 @@ export function ComingSoonPage() {
     seconds: 0
   });
   
-  const [spotsRemaining, setSpotsRemaining] = useState(487);
+  const [spotsRemaining, setSpotsRemaining] = useState(9);
   const [email, setEmail] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
   const { toast } = useToast();
@@ -50,8 +50,8 @@ export function ComingSoonPage() {
     if (savedSpots) {
       setSpotsRemaining(parseInt(savedSpots));
     } else {
-      setSpotsRemaining(487);
-      localStorage.setItem('careerframe_spots_remaining', '487');
+      setSpotsRemaining(9);
+      localStorage.setItem('careerframe_spots_remaining', '9');
     }
 
     const handleStorageChange = (e: StorageEvent) => {
@@ -192,13 +192,13 @@ export function ComingSoonPage() {
                         {spotsRemaining}
                       </motion.div>
                       <span className="text-2xl text-gray-600">/</span>
-                      <div className="text-2xl text-gray-600">500</div>
+                      <div className="text-2xl text-gray-600">10</div>
                     </div>
                     
                     <div className="w-full bg-gray-200 rounded-full h-2 mb-3">
                       <motion.div
                         initial={{ width: 0 }}
-                        animate={{ width: `${((500 - spotsRemaining) / 500) * 100}%` }}
+                        animate={{ width: `${((10 - spotsRemaining) / 10) * 100}%` }}
                         transition={{ duration: 1, ease: "easeOut" }}
                         className="bg-gradient-to-r from-fresh-green to-green-400 h-2 rounded-full"
                       />
@@ -206,7 +206,7 @@ export function ComingSoonPage() {
                     
                     <p className="text-sm text-gray-700">
                       <span className="text-fresh-green font-semibold">
-                        {500 - spotsRemaining} joined
+                        {10 - spotsRemaining} joined
                       </span>
                       {' • '}
                       <span className="text-navy font-semibold">
@@ -218,7 +218,7 @@ export function ComingSoonPage() {
                   <div className="flex items-center justify-center gap-2">
                     <Zap className="h-4 w-4 text-orange-500" />
                     <p className="text-sm text-orange-200">
-                      {spotsRemaining <= 50 ? 'Almost full!' : 'Filling up fast!'}
+                      {spotsRemaining <= 5 ? 'Almost full!' : 'Filling up fast!'}
                     </p>
                   </div>
                 </div>

@@ -11,7 +11,7 @@ export function LaunchCounter() {
     seconds: 0
   });
   
-  const [spotsRemaining, setSpotsRemaining] = useState(500);
+  const [spotsRemaining, setSpotsRemaining] = useState(9);
   const [isLoading, setIsLoading] = useState(true);
 
   // Calculate countdown to a specific launch date (adjust as needed)
@@ -51,8 +51,8 @@ export function LaunchCounter() {
         if (savedSpots) {
           setSpotsRemaining(parseInt(savedSpots));
         } else {
-          // Start with a realistic number (not exactly 500)
-          const initialSpots = 487;
+          // Start with 9 spots remaining out of 10 total
+          const initialSpots = 9;
           setSpotsRemaining(initialSpots);
           localStorage.setItem('careerframe_spots_remaining', initialSpots.toString());
         }
@@ -164,13 +164,13 @@ export function LaunchCounter() {
                     {spotsRemaining}
                   </motion.div>
                   <span className="text-2xl text-gray-300">/</span>
-                  <div className="text-2xl text-gray-400">500</div>
+                  <div className="text-2xl text-gray-400">10</div>
                 </div>
                 
                 <div className="w-full bg-gray-700 rounded-full h-2 mb-3">
                   <motion.div
                     initial={{ width: 0 }}
-                    animate={{ width: `${((500 - spotsRemaining) / 500) * 100}%` }}
+                    animate={{ width: `${((10 - spotsRemaining) / 10) * 100}%` }}
                     transition={{ duration: 1, ease: "easeOut" }}
                     className="bg-gradient-to-r from-fresh-green to-green-400 h-2 rounded-full"
                   />
@@ -178,7 +178,7 @@ export function LaunchCounter() {
                 
                 <p className="text-sm text-gray-300">
                   <span className="text-fresh-green font-semibold">
-                    {500 - spotsRemaining} joined
+                    {10 - spotsRemaining} joined
                   </span>
                   {' • '}
                   <span className="text-white font-semibold">
@@ -190,7 +190,7 @@ export function LaunchCounter() {
               <div className="flex items-center justify-center md:justify-start gap-2">
                 <Zap className="h-4 w-4 text-yellow-400" />
                 <p className="text-sm text-yellow-200">
-                  {spotsRemaining <= 50 ? 'Almost full!' : 'Filling up fast!'}
+                  {spotsRemaining <= 5 ? 'Almost full!' : 'Filling up fast!'}
                 </p>
               </div>
             </div>
