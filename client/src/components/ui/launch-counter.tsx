@@ -47,15 +47,11 @@ export function LaunchCounter() {
       try {
         // In production, this would be a real API call
         // For now, we'll simulate with localStorage to persist across page refreshes
-        const savedSpots = localStorage.getItem('careerframe_spots_remaining');
-        if (savedSpots) {
-          setSpotsRemaining(parseInt(savedSpots));
-        } else {
-          // Start with 9 spots remaining out of 10 total
-          const initialSpots = 9;
-          setSpotsRemaining(initialSpots);
-          localStorage.setItem('careerframe_spots_remaining', initialSpots.toString());
-        }
+        // Force reset to 9 spots (clearing any old cached values)
+        localStorage.removeItem('careerframe_spots_remaining');
+        const initialSpots = 9;
+        setSpotsRemaining(initialSpots);
+        localStorage.setItem('careerframe_spots_remaining', initialSpots.toString());
       } catch (error) {
         console.error('Error fetching spot count:', error);
       }

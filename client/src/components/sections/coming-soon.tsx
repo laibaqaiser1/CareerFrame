@@ -46,13 +46,10 @@ export function ComingSoonPage() {
 
   // Manage spot tracking
   useEffect(() => {
-    const savedSpots = localStorage.getItem('careerframe_spots_remaining');
-    if (savedSpots) {
-      setSpotsRemaining(parseInt(savedSpots));
-    } else {
-      setSpotsRemaining(9);
-      localStorage.setItem('careerframe_spots_remaining', '9');
-    }
+    // Force reset to 9 spots (clearing any old cached values)
+    localStorage.removeItem('careerframe_spots_remaining');
+    setSpotsRemaining(9);
+    localStorage.setItem('careerframe_spots_remaining', '9');
 
     const handleStorageChange = (e: StorageEvent) => {
       if (e.key === 'careerframe_spots_remaining' && e.newValue) {
