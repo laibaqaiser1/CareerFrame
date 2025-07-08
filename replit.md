@@ -99,9 +99,10 @@ CareerFrame is a full-stack web application that provides AI-powered career coac
 ## Changelog
 
 Changelog:
+- January 8, 2025: Reduced early access spots from 500 to 10 people, updated all counters to show 9 spots remaining (1 joined), fixed localStorage caching issues, updated hero section text to "we're letting in 10 people first"
 - July 4, 2025: Restructured landing page with Coming Soon section at top followed by full website below for user exploration and product understanding before signup
 - July 4, 2025: Coming Soon section includes countdown timer, user counter, and waitlist signup as first section visitors see
-- July 4, 2025: Added countdown timer and live user counter (500/500 spots) to hero section with real-time tracking that decrements when users sign up for waitlist
+- July 4, 2025: Added countdown timer and live user counter (10/10 spots) to hero section with real-time tracking that decrements when users sign up for waitlist
 - July 4, 2025: Integrated LaunchCounter component with smooth animations, gradient backgrounds, and localStorage persistence for spot tracking
 - July 4, 2025: Added prominent launch announcement to hero section with "Launch day is soon approaching. We're letting in 500 people first" messaging and animated "Join the Waitlist" CTA button that scrolls to newsletter signup
 - July 4, 2025: Updated newsletter section to function as waitlist signup with launch-focused messaging and improved form design

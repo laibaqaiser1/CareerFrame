@@ -21,7 +21,7 @@ const faqs = [
   },
   {
     question: "What credentials do your career coaches have?",
-    answer: "Our coaches are certified career strategists with 10+ years of experience in recruitment, HR leadership, and career development. They've personally helped 500+ professionals transition to higher-paying, more fulfilling roles."
+    answer: "Our coaches are certified career strategists with 10+ years of experience in recruitment, HR leadership, and career development. They've personally helped 1000+ professionals transition to higher-paying, more fulfilling roles."
   },
   {
     question: "How does the AI actually work?",

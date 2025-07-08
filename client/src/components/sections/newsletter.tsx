@@ -64,7 +64,7 @@ export function NewsletterSection() {
             className="text-center mb-12"
           >
             <h2 className="text-3xl lg:text-4xl font-bold mb-6">
-              Join the Waitlist - Be One of the First 500!
+              Join the Waitlist - Be One of the First 10!
             </h2>
             <p className="text-lg text-blue-100 mb-8 max-w-2xl mx-auto">
               Get exclusive early access to CareerFrame when we launch. Plus, receive career insights and tips delivered to your inbox.
