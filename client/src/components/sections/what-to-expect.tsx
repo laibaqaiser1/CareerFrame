@@ -49,7 +49,7 @@ export function WhatToExpectSection() {
       <div className="absolute bottom-20 left-20 w-3 h-3 rounded-full opacity-50" style={{ backgroundColor: '#88A98F' }}></div>
       <div className="absolute bottom-10 right-10 w-5 h-5 rounded-full opacity-35" style={{ backgroundColor: '#88A98F' }}></div>
       
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 relative z-10">
         <div className="text-center mb-12">
           <h2 className="text-3xl lg:text-4xl font-bold text-navy mb-4">
             What to Expect After You{" "}
