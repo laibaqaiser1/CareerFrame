@@ -139,7 +139,7 @@ export function FeaturesSection() {
       <WaitlistPopup isOpen={isOpen} onClose={closePopup} />
       {/* Value Proposition */}
       <section className="py-16 bg-gradient-to-r from-emerald-400 to-teal-500">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <div className="max-w-[90%] xl:max-w-[85%] 2xl:max-w-[80%] mx-auto px-4 sm:px-6 lg:px-8 xl:px-16 text-center">
           <div 
             ref={valuePropRef}
             className={`transition-all duration-700 ${valuePropVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
@@ -194,7 +194,7 @@ export function FeaturesSection() {
 
       {/* Main Features */}
       <section id="features" className="py-20 bg-light-grey">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-[90%] xl:max-w-[85%] 2xl:max-w-[80%] mx-auto px-4 sm:px-6 lg:px-8 xl:px-16">
           <div 
             ref={featuresRef}
             className={`text-center mb-16 transition-all duration-700 ${

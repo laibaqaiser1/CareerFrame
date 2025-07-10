@@ -39,7 +39,7 @@ export function FAQSection() {
 
   return (
     <section className="py-20 bg-light-grey">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 xl:px-12">
+      <div className="max-w-[90%] xl:max-w-[85%] 2xl:max-w-[80%] mx-auto px-4 sm:px-6 lg:px-8 xl:px-16">
         <div 
           ref={ref}
           className={`transition-all duration-700 ${

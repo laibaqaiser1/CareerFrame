@@ -18,10 +18,13 @@ import { LiveChat } from "@/components/ui/live-chat";
 import { CustomCursor } from "@/components/ui/custom-cursor";
 import { Button } from "@/components/ui/button";
 import { useScrollReveal } from "@/hooks/use-scroll-animation";
+import { WaitlistPopup } from "@/components/ui/waitlist-popup";
+import { useWaitlistPopup } from "@/hooks/use-waitlist-popup";
 import careerFrameLogo from "@assets/ChatGPT Image Jul 3, 2025, 09_49_49 AM_1751532594455.png";
 
 function Navigation() {
   const [scrolled, setScrolled] = useState(false);
+  const { isOpen, openPopup, closePopup } = useWaitlistPopup();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -32,6 +35,8 @@ function Navigation() {
   }, []);
 
   return (
+    <>
+      <WaitlistPopup isOpen={isOpen} onClose={closePopup} />
     <nav className={`fixed top-0 left-0 right-0 w-full z-50 nav-scroll ${
       scrolled 
         ? 'backdrop-blur-md shadow-lg border-b border-gray-200' 
@@ -44,7 +49,7 @@ function Navigation() {
       right: 0,
       zIndex: 9999
     }}>
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-[90%] xl:max-w-[85%] 2xl:max-w-[80%] mx-auto px-4 sm:px-6 lg:px-8 xl:px-16">
         <div className="flex justify-between items-center h-16">
           <div className="flex-shrink-0 flex items-center">
             <img 
@@ -77,13 +82,18 @@ function Navigation() {
               </div>
             </div>
             
-            <Button className="text-white px-6 py-2 font-semibold button-hover" style={{ backgroundColor: '#88A98F' }}>
+            <Button 
+              onClick={openPopup}
+              className="text-white px-6 py-2 font-semibold button-hover" 
+              style={{ backgroundColor: '#88A98F' }}
+            >
               Sign In
             </Button>
           </div>
         </div>
       </div>
     </nav>
+    </>
   );
 }
 

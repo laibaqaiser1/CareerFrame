@@ -26,7 +26,7 @@ export function HowItWorksSection() {
     <>
       <WaitlistPopup isOpen={isOpen} onClose={closePopup} />
     <section id="how-it-works" className="py-20 bg-gray-50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-[90%] xl:max-w-[85%] 2xl:max-w-[80%] mx-auto px-4 sm:px-6 lg:px-8 xl:px-16">
         <div 
           ref={ref}
           className={`text-center mb-16 transition-all duration-700 ${
