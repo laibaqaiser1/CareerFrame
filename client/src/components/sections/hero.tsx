@@ -2,9 +2,15 @@ import { Button } from "@/components/ui/button";
 import { Heart, ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
 import careerFrameApp from "@assets/image_1750364343735.png";
+import { WaitlistPopup } from "@/components/ui/waitlist-popup";
+import { useWaitlistPopup } from "@/hooks/use-waitlist-popup";
 
 export function HeroSection() {
+  const { isOpen, openPopup, closePopup } = useWaitlistPopup();
+
   return (
+    <>
+      <WaitlistPopup isOpen={isOpen} onClose={closePopup} />
     <section className="min-h-screen flex items-center justify-center px-4 relative overflow-hidden" style={{ backgroundColor: 'white' }}>
 
       <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -41,12 +47,14 @@ export function HeroSection() {
 
             <div className="flex flex-col sm:flex-row justify-center gap-4 mb-4">
               <Button 
+                onClick={openPopup}
                 className="text-white px-6 py-3 shadow-lg button-hover"
                 style={{ backgroundColor: '#88A98F', fontSize: '16px' }}
               >
                 Start for Free
               </Button>
               <Button 
+                onClick={openPopup}
                 variant="outline"
                 className="px-6 py-3 shadow-lg button-hover border-2"
                 style={{ 
@@ -66,5 +74,6 @@ export function HeroSection() {
         </div>
       </div>
     </section>
+    </>
   );
 }

@@ -3,6 +3,8 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible";
 import { useScrollAnimation } from "@/hooks/use-scroll-animation";
+import { WaitlistPopup } from "@/components/ui/waitlist-popup";
+import { useWaitlistPopup } from "@/hooks/use-waitlist-popup";
 import { Check, X, ChevronDown } from "lucide-react";
 import { useState } from "react";
 
@@ -72,8 +74,11 @@ const plans = [
 export function PricingSection() {
   const { ref, isVisible } = useScrollAnimation();
   const [isComparisonOpen, setIsComparisonOpen] = useState(false);
+  const { isOpen, openPopup, closePopup } = useWaitlistPopup();
 
   return (
+    <>
+      <WaitlistPopup isOpen={isOpen} onClose={closePopup} />
     <section id="pricing" className="py-12 bg-gradient-to-br from-yellow-400 via-orange-500 to-red-500">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div 
@@ -167,6 +172,7 @@ export function PricingSection() {
                 )}
                 
                 <Button 
+                  onClick={openPopup}
                   className={`w-full py-3 font-semibold button-hover ${
                     plan.popular 
                       ? 'bg-white hover:bg-gray-100' 
@@ -247,5 +253,6 @@ export function PricingSection() {
 
       </div>
     </section>
+    </>
   );
 }

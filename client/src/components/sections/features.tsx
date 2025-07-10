@@ -1,6 +1,8 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { useScrollAnimation } from "@/hooks/use-scroll-animation";
+import { WaitlistPopup } from "@/components/ui/waitlist-popup";
+import { useWaitlistPopup } from "@/hooks/use-waitlist-popup";
 import { 
   Bot, 
   Search, 
@@ -130,9 +132,11 @@ export function FeaturesSection() {
   const { ref: valuePropRef, isVisible: valuePropVisible } = useScrollAnimation();
   const { ref: featuresRef, isVisible: featuresVisible } = useScrollAnimation();
   const { ref: additionalRef, isVisible: additionalVisible } = useScrollAnimation();
+  const { isOpen, openPopup, closePopup } = useWaitlistPopup();
 
   return (
     <>
+      <WaitlistPopup isOpen={isOpen} onClose={closePopup} />
       {/* Value Proposition */}
       <section className="py-16 bg-gradient-to-r from-emerald-400 to-teal-500">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
@@ -176,6 +180,7 @@ export function FeaturesSection() {
                 Take a 2-minute interactive tour and discover how we'll transform your career journey.
               </p>
               <Button 
+                onClick={openPopup}
                 className="text-white px-8 py-3 text-lg font-semibold inline-flex items-center gap-2"
                 style={{ backgroundColor: '#88A98F' }}
               >
@@ -227,7 +232,12 @@ export function FeaturesSection() {
                     alt={feature.alt}
                     className="rounded-lg w-full h-48 object-cover object-top mb-4" 
                   />
-                  <Button variant="link" className="p-0 h-auto font-semibold" style={{ color: '#1F3A93' }}>
+                  <Button 
+                    onClick={openPopup}
+                    variant="link" 
+                    className="p-0 h-auto font-semibold" 
+                    style={{ color: '#1F3A93' }}
+                  >
                     {feature.cta} <ArrowRight className="ml-1 h-4 w-4" />
                   </Button>
                 </CardContent>

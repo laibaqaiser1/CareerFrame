@@ -1,5 +1,7 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { useScrollAnimation } from "@/hooks/use-scroll-animation";
+import { WaitlistPopup } from "@/components/ui/waitlist-popup";
+import { useWaitlistPopup } from "@/hooks/use-waitlist-popup";
 
 const steps = [
   {
@@ -18,8 +20,11 @@ const steps = [
 
 export function HowItWorksSection() {
   const { ref, isVisible } = useScrollAnimation();
+  const { isOpen, openPopup, closePopup } = useWaitlistPopup();
 
   return (
+    <>
+      <WaitlistPopup isOpen={isOpen} onClose={closePopup} />
     <section id="how-it-works" className="py-20 bg-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div 
@@ -63,6 +68,7 @@ export function HowItWorksSection() {
               Ready to transform your career journey?
             </p>
             <button 
+              onClick={openPopup}
               className="bg-fresh-green text-white px-8 py-3 rounded-lg font-semibold hover:bg-opacity-90 transition-all duration-300 shadow-lg hover:shadow-xl"
             >
               Start Your Assessment
@@ -71,5 +77,6 @@ export function HowItWorksSection() {
         </div>
       </div>
     </section>
+    </>
   );
 }
