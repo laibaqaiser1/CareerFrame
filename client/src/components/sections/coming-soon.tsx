@@ -14,7 +14,7 @@ export function ComingSoonPage() {
     seconds: 0
   });
   
-  const [spotsRemaining, setSpotsRemaining] = useState(9);
+  const [spotsRemaining, setSpotsRemaining] = useState(8);
   const [email, setEmail] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
   const { toast } = useToast();
@@ -46,10 +46,13 @@ export function ComingSoonPage() {
 
   // Manage spot tracking
   useEffect(() => {
-    // Force reset to 9 spots (clearing any old cached values)
-    localStorage.removeItem('careerframe_spots_remaining');
-    setSpotsRemaining(9);
-    localStorage.setItem('careerframe_spots_remaining', '9');
+    // Initialize with current spots (reflecting that 2 people have already joined)
+    const existingSpots = localStorage.getItem('careerframe_spots_remaining');
+    const initialSpots = existingSpots ? parseInt(existingSpots) : 8;
+    setSpotsRemaining(initialSpots);
+    
+    // Set to 8 remaining spots (2 people have already joined)
+    localStorage.setItem('careerframe_spots_remaining', '8');
 
     const handleStorageChange = (e: StorageEvent) => {
       if (e.key === 'careerframe_spots_remaining' && e.newValue) {
@@ -77,10 +80,18 @@ export function ComingSoonPage() {
       if (!response.ok) throw new Error('Failed to subscribe');
 
       // Decrease spots counter
-      if (spotsRemaining > 0) {
-        const newCount = spotsRemaining - 1;
+      const currentSpots = parseInt(localStorage.getItem('careerframe_spots_remaining') || '8');
+      if (currentSpots > 0) {
+        const newCount = currentSpots - 1;
         setSpotsRemaining(newCount);
         localStorage.setItem('careerframe_spots_remaining', newCount.toString());
+        
+        // Trigger storage event to update all components
+        window.dispatchEvent(new StorageEvent('storage', {
+          key: 'careerframe_spots_remaining',
+          newValue: newCount.toString(),
+          oldValue: currentSpots.toString()
+        }));
       }
       
       // Track waitlist signup in Google Analytics

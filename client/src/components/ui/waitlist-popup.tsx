@@ -30,6 +30,20 @@ export function WaitlistPopup({ isOpen, onClose }: WaitlistPopupProps) {
 
       if (!response.ok) throw new Error('Failed to subscribe');
 
+      // Decrease spots counter
+      const currentSpots = parseInt(localStorage.getItem('careerframe_spots_remaining') || '8');
+      if (currentSpots > 0) {
+        const newCount = currentSpots - 1;
+        localStorage.setItem('careerframe_spots_remaining', newCount.toString());
+        
+        // Trigger storage event to update all components
+        window.dispatchEvent(new StorageEvent('storage', {
+          key: 'careerframe_spots_remaining',
+          newValue: newCount.toString(),
+          oldValue: currentSpots.toString()
+        }));
+      }
+
       // Track waitlist signup in Google Analytics
       if (typeof window !== 'undefined' && window.gtag) {
         window.gtag('event', 'waitlist_signup', {

@@ -31,9 +31,18 @@ export function NewsletterSection() {
         throw new Error('Failed to subscribe');
       }
 
-      // Decrease the counter when someone successfully signs up
-      if (typeof (window as any).decrementCareerFrameSpots === 'function') {
-        (window as any).decrementCareerFrameSpots();
+      // Decrease spots counter
+      const currentSpots = parseInt(localStorage.getItem('careerframe_spots_remaining') || '8');
+      if (currentSpots > 0) {
+        const newCount = currentSpots - 1;
+        localStorage.setItem('careerframe_spots_remaining', newCount.toString());
+        
+        // Trigger storage event to update all components
+        window.dispatchEvent(new StorageEvent('storage', {
+          key: 'careerframe_spots_remaining',
+          newValue: newCount.toString(),
+          oldValue: currentSpots.toString()
+        }));
       }
       
       toast({

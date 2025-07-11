@@ -11,7 +11,7 @@ export function LaunchCounter() {
     seconds: 0
   });
   
-  const [spotsRemaining, setSpotsRemaining] = useState(9);
+  const [spotsRemaining, setSpotsRemaining] = useState(8);
   const [isLoading, setIsLoading] = useState(true);
 
   // Calculate countdown to a specific launch date (adjust as needed)
@@ -47,9 +47,8 @@ export function LaunchCounter() {
       try {
         // In production, this would be a real API call
         // For now, we'll simulate with localStorage to persist across page refreshes
-        // Force reset to 9 spots (clearing any old cached values)
-        localStorage.removeItem('careerframe_spots_remaining');
-        const initialSpots = 9;
+        // Set to 8 spots (2 people have already joined)
+        const initialSpots = 8;
         setSpotsRemaining(initialSpots);
         localStorage.setItem('careerframe_spots_remaining', initialSpots.toString());
       } catch (error) {
