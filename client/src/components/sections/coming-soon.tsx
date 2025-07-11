@@ -46,13 +46,10 @@ export function ComingSoonPage() {
 
   // Manage spot tracking
   useEffect(() => {
-    // Initialize with current spots (reflecting that 2 people have already joined)
-    const existingSpots = localStorage.getItem('careerframe_spots_remaining');
-    const initialSpots = existingSpots ? parseInt(existingSpots) : 8;
-    setSpotsRemaining(initialSpots);
-    
-    // Set to 8 remaining spots (2 people have already joined)
+    // Force reset localStorage and set to 8 spots (2 people have already joined)
+    localStorage.clear(); // Clear all localStorage
     localStorage.setItem('careerframe_spots_remaining', '8');
+    setSpotsRemaining(8);
 
     const handleStorageChange = (e: StorageEvent) => {
       if (e.key === 'careerframe_spots_remaining' && e.newValue) {
