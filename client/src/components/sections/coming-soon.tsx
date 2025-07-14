@@ -5,6 +5,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { useToast } from "@/hooks/use-toast";
+import { AnimatedBackground } from "@/components/ui/animated-background";
 
 export function ComingSoonPage() {
   const [timeLeft, setTimeLeft] = useState({
@@ -117,8 +118,9 @@ export function ComingSoonPage() {
   };
 
   return (
-    <section className="min-h-screen bg-white flex flex-col">
-      <div className="w-full max-w-[90%] xl:max-w-[85%] 2xl:max-w-[80%] mx-auto px-4 sm:px-6 lg:px-8 xl:px-16 flex-1 flex flex-col">
+    <section className="min-h-screen bg-white flex flex-col relative">
+      <AnimatedBackground />
+      <div className="w-full max-w-[90%] xl:max-w-[85%] 2xl:max-w-[80%] mx-auto px-4 sm:px-6 lg:px-8 xl:px-16 flex-1 flex flex-col relative z-10">
         
         {/* Main Launch Message - Perfectly centered */}
         <div className="flex-1 flex items-center justify-center py-16">
