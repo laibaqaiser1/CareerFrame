@@ -31,15 +31,17 @@ export function AnimatedBackground() {
         }} 
       />
       
-      {/* Single large logo - fades into top-right corner on scroll */}
+      {/* Single large logo - positioned exactly in top-right corner, facing downwards diagonally */}
       <div 
-        className="absolute top-0 right-0 w-[600px] h-[600px]"
+        className="absolute w-[600px] h-[600px]"
         style={{
+          top: '-50px',
+          right: '-50px',
           backgroundImage: 'url(/careerframe-pattern.svg)',
           backgroundSize: 'contain',
           backgroundRepeat: 'no-repeat',
           backgroundPosition: 'center',
-          transform: `rotate(15deg) translate(${scrollY * 0.2}px, ${-scrollY * 0.6}px)`,
+          transform: `rotate(15deg) translate(${scrollY * 0.4}px, ${scrollY * 0.6}px)`,
           opacity: Math.max(0.3, 0.8 - (scrollY * 0.0008)),
         }}
       />
