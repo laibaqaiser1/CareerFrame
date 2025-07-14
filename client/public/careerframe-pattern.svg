@@ -1,25 +1,26 @@
 <svg width="200" height="200" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <!-- Simple, visible CareerFrame pattern -->
   <defs>
     <pattern id="careerframe-logo" patternUnits="userSpaceOnUse" width="100" height="100">
-      <!-- CareerFrame Logo Pattern -->
-      <g opacity="1">
-        <!-- Frame outline -->
-        <rect x="20" y="20" width="60" height="60" fill="none" stroke="#88A98F" stroke-width="3"/>
-        
-        <!-- Career path lines -->
-        <path d="M25,25 L35,35 L45,25 L55,35 L65,25 L75,35" stroke="#88A98F" stroke-width="2" fill="none"/>
-        <path d="M25,40 L35,50 L45,40 L55,50 L65,40 L75,50" stroke="#88A98F" stroke-width="2" fill="none"/>
-        <path d="M25,55 L35,65 L45,55 L55,65 L65,55 L75,65" stroke="#88A98F" stroke-width="2" fill="none"/>
-        
-        <!-- Central focus point -->
-        <circle cx="50" cy="50" r="4" fill="#88A98F"/>
-        
-        <!-- Corner accents -->
-        <circle cx="25" cy="25" r="2" fill="#88A98F"/>
-        <circle cx="75" cy="25" r="2" fill="#88A98F"/>
-        <circle cx="25" cy="75" r="2" fill="#88A98F"/>
-        <circle cx="75" cy="75" r="2" fill="#88A98F"/>
-      </g>
+      <!-- Frame outline -->
+      <rect x="10" y="10" width="80" height="80" fill="none" stroke="#88A98F" stroke-width="4"/>
+      
+      <!-- Career path zigzag -->
+      <path d="M20,20 L30,30 L40,20 L50,30 L60,20 L70,30 L80,20" stroke="#88A98F" stroke-width="3" fill="none"/>
+      <path d="M20,40 L30,50 L40,40 L50,50 L60,40 L70,50 L80,40" stroke="#88A98F" stroke-width="3" fill="none"/>
+      <path d="M20,60 L30,70 L40,60 L50,70 L60,60 L70,70 L80,60" stroke="#88A98F" stroke-width="3" fill="none"/>
+      
+      <!-- Central focus point -->
+      <circle cx="50" cy="50" r="6" fill="#88A98F"/>
+      
+      <!-- Corner markers -->
+      <circle cx="20" cy="20" r="3" fill="#88A98F"/>
+      <circle cx="80" cy="20" r="3" fill="#88A98F"/>
+      <circle cx="20" cy="80" r="3" fill="#88A98F"/>
+      <circle cx="80" cy="80" r="3" fill="#88A98F"/>
+      
+      <!-- Text indicator -->
+      <text x="50" y="90" text-anchor="middle" font-size="8" fill="#88A98F" font-family="Arial">CF</text>
     </pattern>
   </defs>
   
