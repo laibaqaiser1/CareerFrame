@@ -9,7 +9,7 @@ export function FounderStorySection() {
           <CardContent className="p-8 lg:p-12">
             <div className="text-center mb-8">
               <Quote className="h-12 w-12 text-fresh-green mx-auto mb-4" />
-              <h2 className="text-3xl font-bold text-navy mb-4">
+              <h2 className="text-3xl font-bold text-black mb-4">
                 Why I Created CareerFrame
               </h2>
             </div>
@@ -18,11 +18,11 @@ export function FounderStorySection() {
               <div className="lg:w-1/3">
                 <div className="w-48 h-48 mx-auto rounded-full bg-gradient-to-br from-fresh-green to-navy/20 p-1">
                   <div className="w-full h-full rounded-full bg-soft-grey/20 flex items-center justify-center">
-                    <span className="text-4xl font-bold text-navy">CF</span>
+                    <span className="text-4xl font-bold text-black">CF</span>
                   </div>
                 </div>
                 <div className="text-center mt-4">
-                  <h3 className="text-xl font-semibold text-navy">Arron McWilliam</h3>
+                  <h3 className="text-xl font-semibold text-black">Arron McWilliam</h3>
                   <p className="text-soft-grey">Founder & CEO</p>
                 </div>
               </div>
@@ -38,7 +38,7 @@ export function FounderStorySection() {
                   <p className="mb-4">
                     "That experience stayed with me. It lit a fire. I wanted to build something that gave people like me the guidance, clarity, and confidence I didn't have back then — without the £200-an-hour coaching fees or the irrelevant advice of generic career platforms."
                   </p>
-                  <p className="font-semibold text-navy">
+                  <p className="font-semibold text-black">
                     "That's why I created CareerFrame — a place where you're recognised for your true potential, not just what's written on your CV. It's the platform I wish I had when I was starting over. And now, I'm here to help others find direction, regain confidence, and take control of their future."
                   </p>
                 </blockquote>

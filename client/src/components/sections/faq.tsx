@@ -49,10 +49,10 @@ export function FAQSection() {
           <Collapsible open={isFAQOpen} onOpenChange={setIsFAQOpen}>
             <CollapsibleTrigger className="w-full text-center mb-8">
               <div className="flex items-center justify-center gap-3 cursor-pointer hover:opacity-80 transition-opacity">
-                <h2 className="text-3xl lg:text-4xl font-bold text-navy">
+                <h2 className="text-3xl lg:text-4xl font-bold text-black">
                   Your Questions Answered
                 </h2>
-                <ChevronDown className={`h-8 w-8 text-navy transition-transform duration-300 ${isFAQOpen ? 'rotate-180' : ''}`} />
+                <ChevronDown className={`h-8 w-8 text-black transition-transform duration-300 ${isFAQOpen ? 'rotate-180' : ''}`} />
               </div>
               <p className="text-xl text-soft-grey mt-4">
                 Honest answers to the questions holding you back from taking action
@@ -67,7 +67,7 @@ export function FAQSection() {
                   <Accordion type="single" collapsible className="space-y-4">
                     {faqs.map((faq, index) => (
                       <AccordionItem key={index} value={`item-${index}`} className="border-b border-gray-200">
-                        <AccordionTrigger className="text-left text-lg font-semibold text-navy hover:text-fresh-green transition-colors">
+                        <AccordionTrigger className="text-left text-lg font-semibold text-black hover:text-fresh-green transition-colors">
                           {faq.question}
                         </AccordionTrigger>
                         <AccordionContent className="text-soft-grey pt-4">

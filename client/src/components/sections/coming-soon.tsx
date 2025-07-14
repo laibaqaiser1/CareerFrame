@@ -131,7 +131,7 @@ export function ComingSoonPage() {
             className="text-center"
           >
             <h1 className="text-4xl lg:text-5xl font-bold max-w-4xl mx-auto" style={{ 
-              color: '#1E3A8A',
+              color: '#000000',
               fontFamily: 'Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif',
               lineHeight: '1.3',
               letterSpacing: '-0.01em'
