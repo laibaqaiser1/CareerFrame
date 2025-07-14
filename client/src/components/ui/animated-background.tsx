@@ -39,8 +39,8 @@ export function AnimatedBackground() {
           backgroundSize: 'contain',
           backgroundRepeat: 'no-repeat',
           backgroundPosition: 'center',
-          transform: `rotate(15deg) translate(${scrollY * 0.4}px, ${-scrollY * 0.4}px)`,
-          opacity: Math.max(0.15, 0.4 - (scrollY * 0.0005)),
+          transform: `rotate(15deg) translate(${scrollY * 0.2}px, ${-scrollY * 0.6}px)`,
+          opacity: Math.max(0.2, 0.6 - (scrollY * 0.0008)),
         }}
       />
     </div>
