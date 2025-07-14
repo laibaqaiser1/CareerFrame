@@ -1,29 +1,24 @@
-<svg width="200" height="200" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-  <!-- Simple, visible CareerFrame pattern -->
-  <defs>
-    <pattern id="careerframe-logo" patternUnits="userSpaceOnUse" width="100" height="100">
-      <!-- Frame outline -->
-      <rect x="10" y="10" width="80" height="80" fill="none" stroke="#88A98F" stroke-width="4"/>
-      
-      <!-- Career path zigzag -->
-      <path d="M20,20 L30,30 L40,20 L50,30 L60,20 L70,30 L80,20" stroke="#88A98F" stroke-width="3" fill="none"/>
-      <path d="M20,40 L30,50 L40,40 L50,50 L60,40 L70,50 L80,40" stroke="#88A98F" stroke-width="3" fill="none"/>
-      <path d="M20,60 L30,70 L40,60 L50,70 L60,60 L70,70 L80,60" stroke="#88A98F" stroke-width="3" fill="none"/>
-      
-      <!-- Central focus point -->
-      <circle cx="50" cy="50" r="6" fill="#88A98F"/>
-      
-      <!-- Corner markers -->
-      <circle cx="20" cy="20" r="3" fill="#88A98F"/>
-      <circle cx="80" cy="20" r="3" fill="#88A98F"/>
-      <circle cx="20" cy="80" r="3" fill="#88A98F"/>
-      <circle cx="80" cy="80" r="3" fill="#88A98F"/>
-      
-      <!-- Text indicator -->
-      <text x="50" y="90" text-anchor="middle" font-size="8" fill="#88A98F" font-family="Arial">CF</text>
-    </pattern>
-  </defs>
+<svg width="120" height="120" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
+  <!-- CareerFrame logo pattern -->
   
-  <!-- Apply the pattern -->
-  <rect width="100%" height="100%" fill="url(#careerframe-logo)"/>
+  <!-- Large frame outline -->
+  <rect x="10" y="10" width="100" height="100" fill="none" stroke="#88A98F" stroke-width="2" opacity="0.8"/>
+  
+  <!-- Career progression zigzag paths -->
+  <path d="M15,25 L25,35 L35,25 L45,35 L55,25 L65,35 L75,25 L85,35 L95,25 L105,35" stroke="#88A98F" stroke-width="2" fill="none" opacity="0.7"/>
+  <path d="M15,45 L25,55 L35,45 L45,55 L55,45 L65,55 L75,45 L85,55 L95,45 L105,55" stroke="#88A98F" stroke-width="2" fill="none" opacity="0.7"/>
+  <path d="M15,65 L25,75 L35,65 L45,75 L55,65 L65,75 L75,65 L85,75 L95,65 L105,75" stroke="#88A98F" stroke-width="2" fill="none" opacity="0.7"/>
+  <path d="M15,85 L25,95 L35,85 L45,95 L55,85 L65,95 L75,85 L85,95 L95,85 L105,95" stroke="#88A98F" stroke-width="2" fill="none" opacity="0.7"/>
+  
+  <!-- Central focus point -->
+  <circle cx="60" cy="60" r="4" fill="#88A98F" opacity="0.8"/>
+  
+  <!-- Corner accents -->
+  <circle cx="20" cy="20" r="2" fill="#88A98F" opacity="0.6"/>
+  <circle cx="100" cy="20" r="2" fill="#88A98F" opacity="0.6"/>
+  <circle cx="20" cy="100" r="2" fill="#88A98F" opacity="0.6"/>
+  <circle cx="100" cy="100" r="2" fill="#88A98F" opacity="0.6"/>
+  
+  <!-- CareerFrame branding -->
+  <text x="60" y="105" text-anchor="middle" font-size="6" fill="#88A98F" font-family="Arial, sans-serif" opacity="0.5">CareerFrame</text>
 </svg>
