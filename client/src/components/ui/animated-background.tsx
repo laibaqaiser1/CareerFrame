@@ -25,7 +25,7 @@ export function AnimatedBackground() {
           backgroundSize: '120px 120px',
           backgroundRepeat: 'repeat',
           transform: `translateY(${scrollY * 0.3}px)`,
-          opacity: '0.12'
+          opacity: '0.25'
         }}
       />
     </div>
