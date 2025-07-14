@@ -14,18 +14,18 @@ export function AnimatedBackground() {
 
   return (
     <div className="fixed inset-0 overflow-hidden pointer-events-none">
-      {/* Green-white shaded background gradient */}
-      <div className="absolute inset-0 bg-gradient-to-br from-green-50 via-white to-green-100" />
+      {/* Custom background color */}
+      <div className="absolute inset-0" style={{ backgroundColor: '#F3F7FA' }} />
       
-      {/* Single large logo on the right side */}
+      {/* Single large logo in top right corner diagonally */}
       <div 
-        className="absolute right-0 top-1/2 transform -translate-y-1/2 w-96 h-96 opacity-10"
+        className="absolute -top-20 -right-20 w-80 h-80 opacity-15"
         style={{
           backgroundImage: 'url(/careerframe-pattern.svg)',
           backgroundSize: 'contain',
           backgroundRepeat: 'no-repeat',
           backgroundPosition: 'center',
-          transform: `translateY(${scrollY * 0.1}px) translateY(-50%)`,
+          transform: `rotate(15deg) translateY(${scrollY * 0.1}px)`,
         }}
       />
     </div>
