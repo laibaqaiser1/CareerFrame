@@ -14,12 +14,17 @@ export function AnimatedBackground() {
 
   return (
     <div className="fixed inset-0 overflow-hidden pointer-events-none">
-      {/* Custom background color */}
-      <div className="absolute inset-0" style={{ backgroundColor: '#F3F7FA' }} />
+      {/* Custom background with gradient */}
+      <div 
+        className="absolute inset-0" 
+        style={{ 
+          background: `linear-gradient(135deg, #F3F7FA 0%, #E8F2F8 50%, #F3F7FA 100%)` 
+        }} 
+      />
       
       {/* Single large logo in top right corner diagonally */}
       <div 
-        className="absolute -top-20 -right-20 w-80 h-80 opacity-15"
+        className="absolute -top-32 -right-32 w-[600px] h-[600px] opacity-12"
         style={{
           backgroundImage: 'url(/careerframe-pattern.svg)',
           backgroundSize: 'contain',
