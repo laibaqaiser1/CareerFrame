@@ -18,8 +18,8 @@ export function AnimatedBackground() {
       <div 
         className="absolute inset-0" 
         style={{ 
-          background: `
-            linear-gradient(135deg, 
+          background: 
+            linear-gradient(135 deg, 
               rgba(130, 147, 64, 0.4) 0%, 
               rgba(130, 147, 64, 0.2) 15%, 
               rgba(255, 255, 255, 0.95) 35%, 
@@ -27,10 +27,10 @@ export function AnimatedBackground() {
               rgba(130, 147, 64, 0.2) 85%, 
               rgba(130, 147, 64, 0.4) 100%
             )
-          ` 
+
         }} 
       />
-      
+
       {/* Single large logo - positioned exactly in top-right corner, facing downwards diagonally */}
       <div 
         className="absolute w-[600px] h-[600px]"
@@ -41,7 +41,7 @@ export function AnimatedBackground() {
           backgroundSize: 'contain',
           backgroundRepeat: 'no-repeat',
           backgroundPosition: 'center',
-          transform: `rotate(15deg) translate(0px, ${-scrollY * 0.6}px)`,
+          transform: rotate(15deg) translate(0px, ${-scrollY * 0.6}px),
           opacity: Math.max(0.3, 0.8 - (scrollY * 0.0008)),
         }}
       />
