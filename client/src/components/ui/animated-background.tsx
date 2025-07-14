@@ -31,7 +31,7 @@ export function AnimatedBackground() {
           backgroundRepeat: 'repeat',
           transform: `translateY(${scrollY * 0.3}px)`,
           zIndex: '-1',
-          opacity: '0.15'
+          opacity: '0.4'
         }}
       />
     </div>
