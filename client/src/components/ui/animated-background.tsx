@@ -8,7 +8,7 @@ export function AnimatedBackground() {
       <motion.div
         className="absolute inset-0"
         initial={{ opacity: 0 }}
-        animate={{ opacity: 0.03 }}
+        animate={{ opacity: 0.15 }}
         transition={{ duration: 2 }}
       >
         {/* Large diamond shape 1 */}
@@ -29,14 +29,14 @@ export function AnimatedBackground() {
             <path
               d="M300,50 L500,300 L300,550 L100,300 Z"
               fill="none"
-              stroke="#E5E7EB"
+              stroke="#D1D5DB"
               strokeWidth="2"
               opacity="0.8"
             />
             <path
               d="M300,100 L450,300 L300,500 L150,300 Z"
               fill="none"
-              stroke="#E5E7EB"
+              stroke="#D1D5DB"
               strokeWidth="1.5"
               opacity="0.6"
             />
@@ -61,14 +61,14 @@ export function AnimatedBackground() {
             <path
               d="M250,50 L400,250 L250,450 L100,250 Z"
               fill="none"
-              stroke="#F3F4F6"
+              stroke="#D1D5DB"
               strokeWidth="2"
               opacity="0.7"
             />
             <path
               d="M250,80 L370,250 L250,420 L130,250 Z"
               fill="none"
-              stroke="#F3F4F6"
+              stroke="#D1D5DB"
               strokeWidth="1.5"
               opacity="0.5"
             />
@@ -93,14 +93,14 @@ export function AnimatedBackground() {
             <path
               d="M200,50 L350,200 L200,350 L200,250 L50,250 L50,150 L200,150 Z"
               fill="none"
-              stroke="#E5E7EB"
+              stroke="#D1D5DB"
               strokeWidth="2"
               opacity="0.6"
             />
             <path
               d="M200,80 L320,200 L200,320 L200,230 L80,230 L80,170 L200,170 Z"
               fill="none"
-              stroke="#E5E7EB"
+              stroke="#D1D5DB"
               strokeWidth="1.5"
               opacity="0.4"
             />
@@ -125,14 +125,14 @@ export function AnimatedBackground() {
             <path
               d="M150,30 L270,150 L150,270 L30,150 Z"
               fill="none"
-              stroke="#F9FAFB"
+              stroke="#D1D5DB"
               strokeWidth="2"
               opacity="0.5"
             />
             <path
               d="M150,60 L240,150 L150,240 L60,150 Z"
               fill="none"
-              stroke="#F9FAFB"
+              stroke="#D1D5DB"
               strokeWidth="1.5"
               opacity="0.3"
             />
@@ -156,7 +156,7 @@ export function AnimatedBackground() {
             <path
               d="M20,100 L100,20 L180,100 L100,180 Z"
               fill="none"
-              stroke="#E5E7EB"
+              stroke="#D1D5DB"
               strokeWidth="1"
               opacity="0.4"
             />
@@ -179,7 +179,7 @@ export function AnimatedBackground() {
             <path
               d="M75,15 L135,75 L75,135 L15,75 Z"
               fill="none"
-              stroke="#F3F4F6"
+              stroke="#D1D5DB"
               strokeWidth="1"
               opacity="0.3"
             />
