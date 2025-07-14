@@ -1,17 +1,39 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 
 export function AnimatedBackground() {
+  const [scrollY, setScrollY] = useState(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrollY(window.scrollY);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   return (
     <div className="absolute inset-0 overflow-hidden pointer-events-none">
       {/* Shaded background gradient */}
       <div className="absolute inset-0 bg-gradient-to-br from-gray-50 via-white to-gray-100" />
       
+      {/* CareerFrame Logo Pattern Background */}
+      <div 
+        className="absolute inset-0 w-full h-[150%] opacity-[0.08] z-[-1]"
+        style={{
+          backgroundImage: 'url(/careerframe-pattern.svg)',
+          backgroundSize: '200px 200px',
+          backgroundRepeat: 'repeat',
+          transform: `translateY(${scrollY * 0.3}px)`,
+        }}
+      />
+      
       {/* Large geometric diamond/arrow patterns */}
       <motion.div
         className="absolute inset-0"
         initial={{ opacity: 0 }}
-        animate={{ opacity: 0.6 }}
+        animate={{ opacity: 0.3 }}
         transition={{ duration: 2 }}
       >
         {/* Large diamond shape 1 */}
