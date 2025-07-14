@@ -39,10 +39,10 @@ function Navigation() {
       <WaitlistPopup isOpen={isOpen} onClose={closePopup} />
     <nav className={`fixed top-0 left-0 right-0 w-full z-50 nav-scroll ${
       scrolled 
-        ? 'backdrop-blur-md shadow-lg border-b border-gray-200' 
-        : 'backdrop-blur-sm border-b border-gray-200'
+        ? 'backdrop-blur-md shadow-lg' 
+        : 'backdrop-blur-sm'
     }`} style={{ 
-      backgroundColor: 'rgba(255, 255, 255, 0.95)',
+      backgroundColor: 'transparent',
       position: 'fixed',
       top: 0,
       left: 0,
@@ -62,22 +62,22 @@ function Navigation() {
           <div className="flex items-center space-x-8">
             <div className="hidden md:block">
               <div className="flex items-baseline space-x-8">
-                <a href="#how-it-works" className="px-3 py-2 text-lg font-medium transition-all duration-300 hover:scale-105 hover:shadow-lg relative group" style={{ color: '#1E3A8A' }}>
+                <a href="#how-it-works" className="px-3 py-2 text-lg font-medium transition-all duration-300 hover:scale-105 hover:shadow-lg relative group" style={{ color: '#000000' }}>
                   <span className="relative z-10">How it Works</span>
-                  <div className="absolute inset-0 rounded-lg scale-0 group-hover:scale-100 transition-transform duration-300" style={{ backgroundColor: 'rgba(136, 169, 143, 0.1)' }}></div>
+                  <div className="absolute inset-0 rounded-lg scale-0 group-hover:scale-100 transition-transform duration-300" style={{ backgroundColor: 'rgba(130, 147, 64, 0.1)' }}></div>
                 </a>
-                <a href="#features" className="px-3 py-2 text-lg font-medium transition-all duration-300 hover:scale-105 hover:shadow-lg relative group" style={{ color: '#1E3A8A' }}>
+                <a href="#features" className="px-3 py-2 text-lg font-medium transition-all duration-300 hover:scale-105 hover:shadow-lg relative group" style={{ color: '#000000' }}>
                   <span className="relative z-10">Features</span>
-                  <div className="absolute inset-0 rounded-lg scale-0 group-hover:scale-100 transition-transform duration-300" style={{ backgroundColor: 'rgba(136, 169, 143, 0.1)' }}></div>
+                  <div className="absolute inset-0 rounded-lg scale-0 group-hover:scale-100 transition-transform duration-300" style={{ backgroundColor: 'rgba(130, 147, 64, 0.1)' }}></div>
                 </a>
-                <a href="#testimonials" className="px-3 py-2 text-lg font-medium transition-all duration-300 hover:scale-105 hover:shadow-lg relative group" style={{ color: '#1E3A8A' }}>
+                <a href="#testimonials" className="px-3 py-2 text-lg font-medium transition-all duration-300 hover:scale-105 hover:shadow-lg relative group" style={{ color: '#000000' }}>
                   <span className="relative z-10">Success Stories</span>
-                  <div className="absolute inset-0 rounded-lg scale-0 group-hover:scale-100 transition-transform duration-300" style={{ backgroundColor: 'rgba(136, 169, 143, 0.1)' }}></div>
+                  <div className="absolute inset-0 rounded-lg scale-0 group-hover:scale-100 transition-transform duration-300" style={{ backgroundColor: 'rgba(130, 147, 64, 0.1)' }}></div>
                 </a>
 
-                <a href="#pricing" className="px-3 py-2 text-lg font-medium transition-all duration-300 hover:scale-105 hover:shadow-lg relative group" style={{ color: '#1E3A8A' }}>
+                <a href="#pricing" className="px-3 py-2 text-lg font-medium transition-all duration-300 hover:scale-105 hover:shadow-lg relative group" style={{ color: '#000000' }}>
                   <span className="relative z-10">Pricing</span>
-                  <div className="absolute inset-0 rounded-lg scale-0 group-hover:scale-100 transition-transform duration-300" style={{ backgroundColor: 'rgba(136, 169, 143, 0.1)' }}></div>
+                  <div className="absolute inset-0 rounded-lg scale-0 group-hover:scale-100 transition-transform duration-300" style={{ backgroundColor: 'rgba(130, 147, 64, 0.1)' }}></div>
                 </a>
               </div>
             </div>
@@ -85,7 +85,7 @@ function Navigation() {
             <Button 
               onClick={openPopup}
               className="text-white px-6 py-2 font-semibold button-hover" 
-              style={{ backgroundColor: '#88A98F' }}
+              style={{ backgroundColor: '#829340' }}
             >
               Sign In
             </Button>
