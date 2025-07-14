@@ -14,11 +14,20 @@ export function AnimatedBackground() {
 
   return (
     <div className="fixed inset-0 overflow-hidden pointer-events-none">
-      {/* Custom background with radial gradient - white center fading to green */}
+      {/* Custom background with corner gradients - green in top-left and bottom-right corners */}
       <div 
         className="absolute inset-0" 
         style={{ 
-          background: `radial-gradient(circle at center, white 0%, white 30%, #82934033 70%, #82934033 100%)` 
+          background: `
+            linear-gradient(135deg, 
+              #829340 0%, 
+              rgba(130, 147, 64, 0.3) 15%, 
+              rgba(255, 255, 255, 0.9) 35%, 
+              rgba(255, 255, 255, 0.9) 65%, 
+              rgba(130, 147, 64, 0.3) 85%, 
+              #829340 100%
+            )
+          ` 
         }} 
       />
       
