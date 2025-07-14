@@ -19,15 +19,14 @@ export function AnimatedBackground() {
         className="absolute inset-0" 
         style={{ 
           background: 
-            linear-gradient(135 deg, 
+            `linear-gradient(135deg, 
               rgba(130, 147, 64, 0.4) 0%, 
               rgba(130, 147, 64, 0.2) 15%, 
               rgba(255, 255, 255, 0.95) 35%, 
               rgba(255, 255, 255, 0.95) 65%, 
               rgba(130, 147, 64, 0.2) 85%, 
               rgba(130, 147, 64, 0.4) 100%
-            )
-
+            )`
         }} 
       />
 
@@ -41,7 +40,7 @@ export function AnimatedBackground() {
           backgroundSize: 'contain',
           backgroundRepeat: 'no-repeat',
           backgroundPosition: 'center',
-          transform: rotate(15deg) translate(0px, ${-scrollY * 0.6}px),
+          transform: `rotate(15deg) translate(0px, ${-scrollY * 0.6}px)`,
           opacity: Math.max(0.3, 0.8 - (scrollY * 0.0008)),
         }}
       />
