@@ -40,7 +40,7 @@ export function AnimatedBackground() {
           backgroundRepeat: 'no-repeat',
           backgroundPosition: 'center',
           transform: `rotate(15deg) translate(${scrollY * 0.2}px, ${-scrollY * 0.6}px)`,
-          opacity: Math.max(0.2, 0.6 - (scrollY * 0.0008)),
+          opacity: Math.max(0.3, 0.8 - (scrollY * 0.0008)),
         }}
       />
     </div>
