@@ -26,7 +26,7 @@
   
   /* Custom CareerFrame colors */
   --navy: 0 0% 0%; /* Black */
-  --fresh-green: 158 76% 60%; /* #4ADEAA - matches CareerFrame logo */
+  --fresh-green: 67 29% 45%; /* #829340 - CareerFrame brand green */
   --soft-grey: 220 9% 46%; /* #6B7280 */
   --light-grey: 220 14% 96%; /* #F9FAFB */
 }
@@ -38,7 +38,7 @@ html, body {
 }
 
 body {
-  cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20"><circle cx="10" cy="10" r="8" fill="%2388A98F" opacity="0.8"/></svg>') 10 10, auto;
+  cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20"><circle cx="10" cy="10" r="8" fill="%23829340" opacity="0.8"/></svg>') 10 10, auto;
 }
 
 /* Hover effects for interactive elements */
@@ -48,7 +48,7 @@ a,
 input,
 textarea,
 select {
-  cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" fill="%2388A98F" opacity="0.9"/></svg>') 12 12, pointer !important;
+  cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" fill="%23829340" opacity="0.9"/></svg>') 12 12, pointer !important;
 }
 
 .dark {
@@ -192,13 +192,13 @@ select {
 
   @keyframes pulsateGreen {
     0% {
-      color: #2D5533;
+      color: #6B7A2E;
     }
     50% {
-      color: #4ADE80;
+      color: #829340;
     }
     100% {
-      color: #2D5533;
+      color: #6B7A2E;
     }
   }
 
@@ -435,7 +435,7 @@ select {
 }
 
 .gradient-green {
-  background: linear-gradient(135deg, hsl(var(--fresh-green)) 0%, #3BC19A 100%);
+  background: linear-gradient(135deg, hsl(var(--fresh-green)) 0%, #829340 100%);
 }
 
 /* Clean, professional hero section */

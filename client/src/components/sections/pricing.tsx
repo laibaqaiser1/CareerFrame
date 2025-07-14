@@ -179,8 +179,8 @@ export function PricingSection() {
                       : 'border-2 text-white hover:text-black'
                   }`}
                   style={plan.popular 
-                    ? { color: '#88A98F' }
-                    : { borderColor: '#88A98F', backgroundColor: '#88A98F' }
+                    ? { color: '#829340' }
+                    : { borderColor: '#829340', backgroundColor: '#829340' }
                   }
                   variant={plan.popular ? "default" : "outline"}
                 >

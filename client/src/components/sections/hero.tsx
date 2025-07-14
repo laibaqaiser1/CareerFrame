@@ -49,7 +49,7 @@ export function HeroSection() {
               <Button 
                 onClick={openPopup}
                 className="text-white px-6 py-3 shadow-lg button-hover"
-                style={{ backgroundColor: '#88A98F', fontSize: '16px' }}
+                style={{ backgroundColor: '#829340', fontSize: '16px' }}
               >
                 Start for Free
               </Button>
@@ -58,8 +58,8 @@ export function HeroSection() {
                 variant="outline"
                 className="px-6 py-3 shadow-lg button-hover border-2"
                 style={{ 
-                  borderColor: '#88A98F', 
-                  color: '#88A98F',
+                  borderColor: '#829340', 
+                  color: '#829340',
                   fontSize: '16px'
                 }}
               >
@@ -67,7 +67,7 @@ export function HeroSection() {
               </Button>
             </div>
             
-            <p className="text-sm text-center" style={{ color: '#88A98F' }}>
+            <p className="text-sm text-center" style={{ color: '#829340' }}>
               90-day satisfaction guarantee
             </p>
           </motion.div>

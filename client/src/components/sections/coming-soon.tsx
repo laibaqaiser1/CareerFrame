@@ -136,7 +136,7 @@ export function ComingSoonPage() {
               lineHeight: '1.3',
               letterSpacing: '-0.01em'
             }}>
-              Launch day is soon approaching — <span style={{ color: '#88A98F' }}>we're letting in only 10 people first</span> and you'll want to be one of them!
+              Launch day is soon approaching — <span style={{ color: '#829340' }}>we're letting in only 10 people first</span> and you'll want to be one of them!
             </h1>
           </motion.div>
         </div>
@@ -191,7 +191,7 @@ export function ComingSoonPage() {
                     <div className="flex items-center justify-center gap-2 mb-3">
                       <motion.div
                         key={spotsRemaining}
-                        initial={{ scale: 1.2, color: '#88A98F' }}
+                        initial={{ scale: 1.2, color: '#829340' }}
                         animate={{ scale: 1, color: '#1E3A8A' }}
                         transition={{ duration: 0.3 }}
                         className="text-4xl lg:text-5xl font-bold text-navy"
