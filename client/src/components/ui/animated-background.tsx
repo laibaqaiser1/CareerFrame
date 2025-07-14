@@ -8,7 +8,7 @@ export function AnimatedBackground() {
       <motion.div
         className="absolute inset-0"
         initial={{ opacity: 0 }}
-        animate={{ opacity: 0.1 }}
+        animate={{ opacity: 0.4 }}
         transition={{ duration: 2 }}
       >
         {/* Large flowing line 1 */}
@@ -29,16 +29,16 @@ export function AnimatedBackground() {
             <path
               d="M-100,200 Q200,50 400,200 T800,200"
               stroke="#88A98F"
-              strokeWidth="2"
+              strokeWidth="3"
               fill="none"
-              opacity="0.3"
+              opacity="0.6"
             />
             <path
               d="M-100,220 Q200,70 400,220 T800,220"
               stroke="#88A98F"
-              strokeWidth="1.5"
+              strokeWidth="2"
               fill="none"
-              opacity="0.2"
+              opacity="0.4"
             />
           </svg>
         </motion.div>
@@ -61,23 +61,23 @@ export function AnimatedBackground() {
             <path
               d="M-100,150 Q200,300 400,150 T800,150"
               stroke="#1E3A8A"
-              strokeWidth="2"
+              strokeWidth="3"
               fill="none"
-              opacity="0.2"
+              opacity="0.4"
             />
             <path
               d="M-100,170 Q200,320 400,170 T800,170"
               stroke="#1E3A8A"
-              strokeWidth="1.5"
+              strokeWidth="2"
               fill="none"
-              opacity="0.15"
+              opacity="0.3"
             />
           </svg>
         </motion.div>
 
         {/* Floating geometric shapes */}
         <motion.div
-          className="absolute top-[15%] left-[10%] w-8 h-8 bg-fresh-green rounded-full"
+          className="absolute top-[15%] left-[10%] w-12 h-12 bg-fresh-green rounded-full"
           animate={{
             y: [0, -20, 0],
             x: [0, 10, 0],
@@ -88,11 +88,11 @@ export function AnimatedBackground() {
             repeat: Infinity,
             ease: "easeInOut"
           }}
-          style={{ opacity: 0.1 }}
+          style={{ opacity: 0.2 }}
         />
 
         <motion.div
-          className="absolute top-[60%] right-[15%] w-6 h-6 bg-navy rounded-full"
+          className="absolute top-[60%] right-[15%] w-10 h-10 bg-navy rounded-full"
           animate={{
             y: [0, 15, 0],
             x: [0, -8, 0],
@@ -103,11 +103,11 @@ export function AnimatedBackground() {
             repeat: Infinity,
             ease: "easeInOut"
           }}
-          style={{ opacity: 0.08 }}
+          style={{ opacity: 0.15 }}
         />
 
         <motion.div
-          className="absolute top-[40%] left-[20%] w-4 h-4 bg-fresh-green rotate-45"
+          className="absolute top-[40%] left-[20%] w-8 h-8 bg-fresh-green rotate-45"
           animate={{
             y: [0, -10, 0],
             x: [0, 5, 0],
@@ -118,11 +118,11 @@ export function AnimatedBackground() {
             repeat: Infinity,
             ease: "easeInOut"
           }}
-          style={{ opacity: 0.06 }}
+          style={{ opacity: 0.12 }}
         />
 
         <motion.div
-          className="absolute top-[80%] left-[60%] w-5 h-5 bg-navy rotate-45"
+          className="absolute top-[80%] left-[60%] w-8 h-8 bg-navy rotate-45"
           animate={{
             y: [0, 12, 0],
             x: [0, -6, 0],
@@ -133,14 +133,14 @@ export function AnimatedBackground() {
             repeat: Infinity,
             ease: "easeInOut"
           }}
-          style={{ opacity: 0.05 }}
+          style={{ opacity: 0.1 }}
         />
 
         {/* Subtle grid pattern */}
         <motion.div
           className="absolute inset-0"
           animate={{
-            opacity: [0.02, 0.04, 0.02],
+            opacity: [0.05, 0.1, 0.05],
           }}
           transition={{
             duration: 10,
@@ -150,8 +150,8 @@ export function AnimatedBackground() {
         >
           <svg className="w-full h-full">
             <defs>
-              <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
-                <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#88A98F" strokeWidth="0.5"/>
+              <pattern id="grid" width="60" height="60" patternUnits="userSpaceOnUse">
+                <path d="M 60 0 L 0 0 0 60" fill="none" stroke="#88A98F" strokeWidth="1"/>
               </pattern>
             </defs>
             <rect width="100%" height="100%" fill="url(#grid)" />
@@ -159,19 +159,19 @@ export function AnimatedBackground() {
         </motion.div>
 
         {/* Floating dots */}
-        {[...Array(12)].map((_, i) => (
+        {[...Array(20)].map((_, i) => (
           <motion.div
             key={i}
-            className="absolute w-1 h-1 bg-fresh-green rounded-full"
+            className="absolute w-2 h-2 bg-fresh-green rounded-full"
             style={{
               left: `${Math.random() * 100}%`,
               top: `${Math.random() * 100}%`,
-              opacity: 0.1,
+              opacity: 0.2,
             }}
             animate={{
               y: [0, -30, 0],
               x: [0, Math.random() * 20 - 10, 0],
-              opacity: [0.1, 0.2, 0.1],
+              opacity: [0.2, 0.4, 0.2],
             }}
             transition={{
               duration: 8 + Math.random() * 10,
