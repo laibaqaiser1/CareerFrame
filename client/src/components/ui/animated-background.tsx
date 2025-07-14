@@ -14,11 +14,11 @@ export function AnimatedBackground() {
 
   return (
     <div className="fixed inset-0 overflow-hidden pointer-events-none">
-      {/* Custom background with gradient */}
+      {/* Custom background with radial gradient - white center fading to green */}
       <div 
         className="absolute inset-0" 
         style={{ 
-          background: `linear-gradient(135deg, #82934033 0%, #82934020 50%, #82934033 100%)` 
+          background: `radial-gradient(circle at center, white 0%, white 30%, #82934033 70%, #82934033 100%)` 
         }} 
       />
       
