@@ -1,24 +1,37 @@
-<svg width="120" height="120" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
-  <!-- CareerFrame logo pattern -->
+<svg width="100" height="100" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+  <!-- CareerFrame Logo Shield Pattern -->
+  <defs>
+    <pattern id="careerframe-shield" patternUnits="userSpaceOnUse" width="50" height="50">
+      <!-- CareerFrame Shield Logo -->
+      <g transform="translate(25, 25)">
+        <!-- Shield outline -->
+        <path d="M-12,-15 L12,-15 L12,5 L0,15 L-12,5 Z" 
+              fill="none" 
+              stroke="#88A98F" 
+              stroke-width="1.5" 
+              opacity="0.6"/>
+        
+        <!-- Inner shield -->
+        <path d="M-10,-13 L10,-13 L10,3 L0,12 L-10,3 Z" 
+              fill="none" 
+              stroke="#88A98F" 
+              stroke-width="1" 
+              opacity="0.4"/>
+        
+        <!-- CF Letters -->
+        <!-- Letter C -->
+        <path d="M-8,-8 L-8,-3 L-8,2 L-5,2 L-5,0 L-7,0 L-7,-6 L-5,-6 L-5,-8 Z" 
+              fill="#88A98F" 
+              opacity="0.7"/>
+        
+        <!-- Letter F -->
+        <path d="M-2,-8 L-2,2 L0,2 L0,0 L-0.5,0 L-0.5,-2 L2,-2 L2,-4 L-0.5,-4 L-0.5,-6 L2,-6 L2,-8 Z" 
+              fill="#88A98F" 
+              opacity="0.7"/>
+      </g>
+    </pattern>
+  </defs>
   
-  <!-- Large frame outline -->
-  <rect x="10" y="10" width="100" height="100" fill="none" stroke="#88A98F" stroke-width="2" opacity="0.8"/>
-  
-  <!-- Career progression zigzag paths -->
-  <path d="M15,25 L25,35 L35,25 L45,35 L55,25 L65,35 L75,25 L85,35 L95,25 L105,35" stroke="#88A98F" stroke-width="2" fill="none" opacity="0.7"/>
-  <path d="M15,45 L25,55 L35,45 L45,55 L55,45 L65,55 L75,45 L85,55 L95,45 L105,55" stroke="#88A98F" stroke-width="2" fill="none" opacity="0.7"/>
-  <path d="M15,65 L25,75 L35,65 L45,75 L55,65 L65,75 L75,65 L85,75 L95,65 L105,75" stroke="#88A98F" stroke-width="2" fill="none" opacity="0.7"/>
-  <path d="M15,85 L25,95 L35,85 L45,95 L55,85 L65,95 L75,85 L85,95 L95,85 L105,95" stroke="#88A98F" stroke-width="2" fill="none" opacity="0.7"/>
-  
-  <!-- Central focus point -->
-  <circle cx="60" cy="60" r="4" fill="#88A98F" opacity="0.8"/>
-  
-  <!-- Corner accents -->
-  <circle cx="20" cy="20" r="2" fill="#88A98F" opacity="0.6"/>
-  <circle cx="100" cy="20" r="2" fill="#88A98F" opacity="0.6"/>
-  <circle cx="20" cy="100" r="2" fill="#88A98F" opacity="0.6"/>
-  <circle cx="100" cy="100" r="2" fill="#88A98F" opacity="0.6"/>
-  
-  <!-- CareerFrame branding -->
-  <text x="60" y="105" text-anchor="middle" font-size="6" fill="#88A98F" font-family="Arial, sans-serif" opacity="0.5">CareerFrame</text>
+  <!-- Apply the pattern -->
+  <rect width="100%" height="100%" fill="url(#careerframe-shield)"/>
 </svg>

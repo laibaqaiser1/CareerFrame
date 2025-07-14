@@ -22,10 +22,10 @@ export function AnimatedBackground() {
         className="absolute inset-0 w-full h-full"
         style={{
           backgroundImage: 'url(/careerframe-pattern.svg)',
-          backgroundSize: '120px 120px',
+          backgroundSize: '80px 80px',
           backgroundRepeat: 'repeat',
           transform: `translateY(${scrollY * 0.3}px)`,
-          opacity: '0.4'
+          opacity: '0.3'
         }}
       />
     </div>
