@@ -16,7 +16,7 @@ export function LaunchCounter() {
 
   // Calculate countdown to a specific launch date (adjust as needed)
   useEffect(() => {
-    const launchDate = new Date('2025-07-15T00:00:00').getTime();
+    const launchDate = new Date('2025-08-18T00:00:00').getTime();
     
     const updateCountdown = () => {
       const now = new Date().getTime();
