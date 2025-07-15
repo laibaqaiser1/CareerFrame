@@ -34,15 +34,16 @@ export function AnimatedBackground() {
         className="absolute"
         style={{
           width: "750px",
-          height: "850px",
-          top: "-120px",
-          right: "-80px",
+          height: "990px",
+          top: "-250px",
+          right: "-190px",
           backgroundImage: "url(/careerframe-pattern.svg)",
           backgroundSize: "contain",
           backgroundRepeat: "no-repeat",
           backgroundPosition: "center",
-          transform: `rotate(-30deg) translate(0px, ${-scrollY * 0.6}px)`,
-          opacity: Math.max(0.3, 0.8 - scrollY * 0.0008),
+          transform: `rotate(-30deg) translate(${scrollY * 0.8}px, ${-scrollY * 1.2}px)`,
+          opacity: Math.max(0.1, 0.8 - scrollY * 0.0012),
+          filter: `blur(${Math.min(scrollY * 0.02, 8)}px)`,
         }}
       />
     </div>
