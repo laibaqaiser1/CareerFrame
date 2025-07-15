@@ -35,8 +35,8 @@ export function AnimatedBackground() {
         style={{
           width: "605.13px",
           height: "698.28px",
-          top: "-150px",
-          right: "-100px",
+          top: "-120px",
+          right: "-80px",
           backgroundImage: "url(/careerframe-pattern.svg)",
           backgroundSize: "contain",
           backgroundRepeat: "no-repeat",
