@@ -33,10 +33,10 @@ export function AnimatedBackground() {
       <div
         className="absolute"
         style={{
-          width: "750px",
-          height: "990px",
-          top: "-250px",
-          right: "-190px",
+          width: "800px",
+          height: "1000px",
+          top: "-320px",
+          right: "-220px",
           backgroundImage: "url(/careerframe-pattern.svg)",
           backgroundSize: "contain",
           backgroundRepeat: "no-repeat",
