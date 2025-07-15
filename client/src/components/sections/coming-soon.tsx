@@ -157,10 +157,10 @@ export function ComingSoonPage() {
                   <h3 className="text-xl font-bold mb-6" style={{ color: '#1E3A8A' }}>Launch Countdown</h3>
                   <div className="grid grid-cols-2 gap-3 mb-6">
                     {[
-                      { value: 'TBC', label: 'Days' },
-                      { value: 'TBC', label: 'Hours' },
-                      { value: 'TBC', label: 'Minutes' },
-                      { value: 'TBC', label: 'Seconds' }
+                      { value: timeLeft.days, label: 'Days' },
+                      { value: timeLeft.hours, label: 'Hours' },
+                      { value: timeLeft.minutes, label: 'Minutes' },
+                      { value: timeLeft.seconds, label: 'Seconds' }
                     ].map((item, index) => (
                       <motion.div
                         key={item.label}
