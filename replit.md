@@ -99,6 +99,8 @@ CareerFrame is a full-stack web application that provides AI-powered career coac
 ## Changelog
 
 Changelog:
+- July 15, 2025: Updated hero headline from "Find the Right Role. Get There Faster." to "Your Potential Is Bigger Than Your Job Title — Let's Prove It" for stronger messaging appeal
+- July 15, 2025: Enhanced animated background logo with dramatic scroll effects - increased movement (2.8x vertical, 1.2x horizontal), progressive blur up to 40px, and darkened appearance (30% brightness) for improved visual impact
 - July 14, 2025: Successfully implemented scroll-based animated background with CareerFrame logo SVG pattern - features frame outlines, zigzag career paths, focus points, and "CF" text indicators that move smoothly with scroll at 0.3x speed using fixed positioning and 0.12 opacity for professional appearance
 - January 10, 2025: Major layout overhaul - updated all website sections to use wider responsive containers (max-w-7xl with xl:px-12) for better screen space utilization on desktop displays, replacing narrow max-w-4xl/6xl constraints that caused excessive white space on larger monitors
 - January 8, 2025: Reduced early access spots from 500 to 10 people, updated all counters to show 9 spots remaining (1 joined), fixed localStorage caching issues, updated hero section text to "we're letting in 10 people first"
