@@ -29,7 +29,7 @@ export function HeroSection() {
               lineHeight: '110%',
               fontFamily: 'Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif'
             }}>
-              Your Potential Is Bigger Than Your Job Title — Let's Prove It
+              Your Potential Is Bigger Than <br />Your Job Title — Let's Prove It
             </h1>
             
             <p className="text-lg lg:text-xl mb-8 max-w-2xl mx-auto text-center" style={{ 
