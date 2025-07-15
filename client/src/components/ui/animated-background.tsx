@@ -35,13 +35,13 @@ export function AnimatedBackground() {
         style={{
           width: "750px",
           height: "850px",
-          top: "-220px",
-          right: "-150px",
+          top: "-120px",
+          right: "-80px",
           backgroundImage: "url(/careerframe-pattern.svg)",
           backgroundSize: "contain",
           backgroundRepeat: "no-repeat",
           backgroundPosition: "center",
-          transform: `rotate(0deg) translate(0px, ${-scrollY * 0.6}px)`,
+          transform: `rotate(-30deg) translate(0px, ${-scrollY * 0.6}px)`,
           opacity: Math.max(0.3, 0.8 - scrollY * 0.0008),
         }}
       />
