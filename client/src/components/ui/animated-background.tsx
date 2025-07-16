@@ -43,9 +43,9 @@ export function AnimatedBackground() {
           backgroundPosition: "center",
           transform: `rotate(2deg) translate(${scrollY * 0.3}px, ${-scrollY * 0.7}px)`,
           opacity: 0.8,
-          filter: scrollY > 0 
-          ? `blur(${Math.min(scrollY * 0.08, 35)}px)` 
-          : "none",
+          filter:
+            scrollY > 0 ? `blur(${Math.min(scrollY * 0.05, 24)}px)` : "none",
+          willChange: "filter, transform",
         }}
       />
     </div>
