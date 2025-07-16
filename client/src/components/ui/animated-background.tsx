@@ -42,7 +42,7 @@ export function AnimatedBackground() {
           backgroundRepeat: "no-repeat",
           backgroundPosition: "center",
           transform: `rotate(2deg) translate(${scrollY * 0.3}px, ${-scrollY * 0.7}px)`,
-          opacity: Math.max(0.05, 0.8 - scrollY * 0.0005),
+          opacity: Math.max(0.6, 0.8 - scrollY * 0.0002),
           filter: scrollY > 0 
           ? `blur(${Math.min(scrollY * 0.05, 30)}px)` 
           : "none",
