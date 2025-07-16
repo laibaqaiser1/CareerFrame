@@ -42,14 +42,13 @@ export function AnimatedBackground() {
           backgroundSize: "contain",
           backgroundRepeat: "no-repeat",
           backgroundPosition: "center",
-            transform: `rotate(2deg) translate(0px, ${-scrollY * 1.2}px)`,
-            //opacity: scrollY > 0 ? 3.0 : 1.0,
-            //filter: scrollY > 0 ? blur(${Math.min(scrollY * 0.04, 9)}px) : "none",
-            opacity: scrollY > 0 ? Math.min(2, 0.8 + scrollY * 0.0005) : 0.8,
-            filter:
-              scrollY > 0 ? `blur(${Math.min(scrollY * 0.05, 9)}px) `  : "none",
-            willChange: "filter, transform",
-          transition: "filter 0.3s ease-out, opacity 0.3s ease-out",
+          transform: `rotate(2deg) translate(0px, ${scrollY * 1.5}px)`,
+          //opacity: scrollY > 0 ? 3.0 : 1.0,
+          //filter: scrollY > 0 ? `blur(${Math.min(scrollY * 0.04, 9)}px)` : "none",
+          opacity: scrollY > 0 ? Math.min(1, 0.8 + scrollY * 0.0005) : 0.8,
+          filter:
+            scrollY > 0 ? `blur(${Math.min(scrollY * 0.05, 9)}px)` : "none",
+          willChange: "filter, transform",
         }}
 
       />
