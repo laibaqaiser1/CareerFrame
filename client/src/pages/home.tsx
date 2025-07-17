@@ -55,7 +55,7 @@ function Navigation() {
             <img 
               src={careerFrameLogo} 
               alt="CareerFrame Logo" 
-              style={{ height: '55px' }}
+              style={{ height: '80px' }}
             />
           </div>
           
