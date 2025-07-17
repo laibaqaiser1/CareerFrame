@@ -49,13 +49,13 @@ function Navigation() {
       right: 0,
       zIndex: 9999
     }}>
-      <div className="hero-container max-w-[90%] mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 2xl:px-16">
-        <div className="flex justify-between items-center h-28">
+      <div className="w-full max-w-full mx-auto px-6 sm:px-8 lg:px-12 xl:px-20 2xl:px-28">
+        <div className="flex justify-between items-center h-20">
           <div className="flex-shrink-0 flex items-center">
             <img 
               src={careerFrameLogo} 
               alt="CareerFrame Logo" 
-              className="h-52 w-auto"
+              className="h-14 w-auto"
             />
           </div>
           
