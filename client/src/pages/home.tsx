@@ -55,7 +55,7 @@ function Navigation() {
             <img 
               src={careerFrameLogo} 
               alt="CareerFrame Logo" 
-              className="h-12"
+              className="h-16"
             />
           </div>
           
