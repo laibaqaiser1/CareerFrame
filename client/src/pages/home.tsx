@@ -20,7 +20,7 @@ import { Button } from "@/components/ui/button";
 import { useScrollReveal } from "@/hooks/use-scroll-animation";
 import { WaitlistPopup } from "@/components/ui/waitlist-popup";
 import { useWaitlistPopup } from "@/hooks/use-waitlist-popup";
-import careerFrameLogo from "@assets/Careerframe Logo.png";
+import careerFrameLogo from "@assets/ChatGPT Image Jul 3, 2025, 09_49_49 AM_1751532594455.png";
 
 function Navigation() {
   const [scrolled, setScrolled] = useState(false);
