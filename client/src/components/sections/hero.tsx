@@ -23,18 +23,18 @@ export function HeroSection() {
           >
             <h1 className="font-bold mb-6 text-center" style={{ 
               color: '#1E3A8A',
-              fontSize: 'clamp(64px, 8vw, 96px)',
+              fontSize: 'clamp(48px, 6vw, 80px)',
               fontWeight: '700',
               letterSpacing: 'normal',
-              lineHeight: '105%',
+              lineHeight: '110%',
               fontFamily: 'Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif'
             }}>
               Your Potential Is Bigger Than <br />Your Job Title — Let's Prove It
             </h1>
             
-            <p className="text-xl lg:text-2xl mb-12 max-w-3xl mx-auto text-center" style={{ 
+            <p className="text-lg lg:text-xl mb-10 max-w-2xl mx-auto text-center" style={{ 
               color: '#6B7280',
-              lineHeight: '1.4',
+              lineHeight: '1.5',
               fontFamily: 'Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif',
               fontWeight: '400'
             }}>
