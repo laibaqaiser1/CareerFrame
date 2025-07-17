@@ -50,12 +50,12 @@ function Navigation() {
       zIndex: 9999
     }}>
       <div className="w-full max-w-full mx-auto px-6 sm:px-8 lg:px-12 xl:px-20 2xl:px-28">
-        <div className="flex justify-between items-center h-16">
+        <div className="flex justify-between items-center h-20">
           <div className="flex-shrink-0 flex items-center">
             <img 
               src={careerFrameLogo} 
               alt="CareerFrame Logo" 
-              className="h-12 w-auto"
+              className="h-16 w-auto"
             />
           </div>
           
