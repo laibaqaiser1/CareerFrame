@@ -131,12 +131,11 @@ export function ComingSoonPage() {
             className="text-center"
           >
             <h1 className="text-4xl lg:text-5xl font-bold max-w-4xl mx-auto" style={{ 
-              color: '#000000',
               fontFamily: 'Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif',
               lineHeight: '1.3',
               letterSpacing: '-0.01em'
             }}>
-              Launch day is soon approaching — <span style={{ color: '#829340' }}>we're letting in only 10 people first</span> and you'll want to be one of them!
+              <span style={{ color: '#1E3A8A' }}>Launch day is soon approaching — </span><span style={{ color: '#829340' }}>we're letting in only 10 people first</span><span style={{ color: '#1E3A8A' }}> and you'll want to be one of them!</span>
             </h1>
           </motion.div>
         </div>
