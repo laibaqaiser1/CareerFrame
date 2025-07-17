@@ -13,8 +13,8 @@ export function HeroSection() {
       <WaitlistPopup isOpen={isOpen} onClose={closePopup} />
     <section className="min-h-screen flex items-center justify-center px-4 relative overflow-hidden" style={{ backgroundColor: 'white' }}>
 
-      <div className="w-full max-w-full mx-auto px-6 sm:px-8 lg:px-12 xl:px-20 2xl:px-28 relative z-10">
-        <div className="text-center">
+      <div className="hero-container w-full max-w-[90%] mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 2xl:px-16 relative z-10">
+        <div className="text-center flex flex-col items-center justify-center">
           {/* Clean, Professional Layout */}
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
