@@ -50,13 +50,13 @@ function Navigation() {
       zIndex: 9999
     }}>
       <div className="max-w-full mx-auto px-6 sm:px-8 lg:px-12 xl:px-20 2xl:px-28">
-        <div className="flex justify-between items-center h-36">
+        <div className="flex justify-between items-center h-44">
           <div className="flex-shrink-0 flex items-center">
             <img 
               src={careerFrameLogo} 
               alt="CareerFrame Logo" 
-              className="h-32 w-auto"
-              style={{ maxHeight: '128px' }}
+              className="h-40 w-auto"
+              style={{ maxHeight: '160px' }}
             />
           </div>
           
