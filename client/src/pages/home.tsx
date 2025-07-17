@@ -55,7 +55,13 @@ function Navigation() {
             <img 
               src={careerFrameLogo} 
               alt="CareerFrame Logo" 
-              className="h-16 w-auto"
+              style={{
+                height: '64px',
+                width: 'auto',
+                minHeight: '64px',
+                maxHeight: '64px',
+                display: 'block'
+              }}
             />
           </div>
           
