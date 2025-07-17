@@ -49,33 +49,33 @@ function Navigation() {
       right: 0,
       zIndex: 9999
     }}>
-      <div className="max-w-[90%] xl:max-w-[85%] 2xl:max-w-[80%] mx-auto px-4 sm:px-6 lg:px-8 xl:px-16">
-        <div className="flex justify-between items-center h-16">
+      <div className="max-w-full mx-auto px-6 sm:px-8 lg:px-12 xl:px-20 2xl:px-28">
+        <div className="flex justify-between items-center h-20">
           <div className="flex-shrink-0 flex items-center">
             <img 
               src={careerFrameLogo} 
               alt="CareerFrame Logo" 
-              className="h-48"
+              className="h-12"
             />
           </div>
           
           <div className="flex items-center space-x-8">
             <div className="hidden md:block">
-              <div className="flex items-baseline space-x-8">
-                <a href="#how-it-works" className="px-3 py-2 text-lg font-medium transition-all duration-300 hover:scale-105 hover:shadow-lg relative group" style={{ color: '#000000' }}>
+              <div className="flex items-baseline space-x-10">
+                <a href="#how-it-works" className="px-4 py-3 text-xl font-medium transition-all duration-300 hover:scale-105 hover:shadow-lg relative group" style={{ color: '#000000' }}>
                   <span className="relative z-10">How it Works</span>
                   <div className="absolute inset-0 rounded-lg scale-0 group-hover:scale-100 transition-transform duration-300" style={{ backgroundColor: 'rgba(130, 147, 64, 0.1)' }}></div>
                 </a>
-                <a href="#features" className="px-3 py-2 text-lg font-medium transition-all duration-300 hover:scale-105 hover:shadow-lg relative group" style={{ color: '#000000' }}>
+                <a href="#features" className="px-4 py-3 text-xl font-medium transition-all duration-300 hover:scale-105 hover:shadow-lg relative group" style={{ color: '#000000' }}>
                   <span className="relative z-10">Features</span>
                   <div className="absolute inset-0 rounded-lg scale-0 group-hover:scale-100 transition-transform duration-300" style={{ backgroundColor: 'rgba(130, 147, 64, 0.1)' }}></div>
                 </a>
-                <a href="#testimonials" className="px-3 py-2 text-lg font-medium transition-all duration-300 hover:scale-105 hover:shadow-lg relative group" style={{ color: '#000000' }}>
+                <a href="#testimonials" className="px-4 py-3 text-xl font-medium transition-all duration-300 hover:scale-105 hover:shadow-lg relative group" style={{ color: '#000000' }}>
                   <span className="relative z-10">Success Stories</span>
                   <div className="absolute inset-0 rounded-lg scale-0 group-hover:scale-100 transition-transform duration-300" style={{ backgroundColor: 'rgba(130, 147, 64, 0.1)' }}></div>
                 </a>
 
-                <a href="#pricing" className="px-3 py-2 text-lg font-medium transition-all duration-300 hover:scale-105 hover:shadow-lg relative group" style={{ color: '#000000' }}>
+                <a href="#pricing" className="px-4 py-3 text-xl font-medium transition-all duration-300 hover:scale-105 hover:shadow-lg relative group" style={{ color: '#000000' }}>
                   <span className="relative z-10">Pricing</span>
                   <div className="absolute inset-0 rounded-lg scale-0 group-hover:scale-100 transition-transform duration-300" style={{ backgroundColor: 'rgba(130, 147, 64, 0.1)' }}></div>
                 </a>
@@ -84,7 +84,7 @@ function Navigation() {
             
             <Button 
               onClick={openPopup}
-              className="text-white px-6 py-2 font-semibold button-hover" 
+              className="text-white px-8 py-3 text-xl font-semibold button-hover" 
               style={{ backgroundColor: '#829340' }}
             >
               Sign In
