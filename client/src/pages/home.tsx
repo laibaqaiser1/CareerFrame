@@ -20,7 +20,7 @@ import { Button } from "@/components/ui/button";
 import { useScrollReveal } from "@/hooks/use-scroll-animation";
 import { WaitlistPopup } from "@/components/ui/waitlist-popup";
 import { useWaitlistPopup } from "@/hooks/use-waitlist-popup";
-import careerFrameLogo from "@assets/ChatGPT Image Jul 3, 2025, 09_49_49 AM_1751532594455.png";
+import careerFrameLogo from "@assets/Logo Clear background.png";
 
 function Navigation() {
   const [scrolled, setScrolled] = useState(false);
@@ -50,17 +50,19 @@ function Navigation() {
       zIndex: 9999
     }}>
       <div className="w-full max-w-full mx-auto px-6 sm:px-8 lg:px-12 xl:px-20 2xl:px-28">
-        <div className="flex justify-between items-center h-24">
+        <div className="flex justify-between items-center h-32">
           <div className="flex-shrink-0 flex items-center">
             <img 
               src={careerFrameLogo} 
               alt="CareerFrame Logo" 
               style={{
-                height: '80px',
+                height: '100px',
                 width: 'auto',
-                minHeight: '80px',
-                maxHeight: '80px',
-                display: 'block'
+                minHeight: '100px',
+                maxHeight: '100px',
+                display: 'block',
+                transform: 'scale(1.5)',
+                transformOrigin: 'left center'
               }}
             />
           </div>
