@@ -55,7 +55,13 @@ function Navigation() {
             <img 
               src={careerFrameLogo} 
               alt="CareerFrame Logo" 
-              className="h-14"
+              style={{ 
+                height: '80px',
+                width: 'auto',
+                minHeight: '80px',
+                maxHeight: '80px',
+                objectFit: 'contain'
+              }}
             />
           </div>
           
