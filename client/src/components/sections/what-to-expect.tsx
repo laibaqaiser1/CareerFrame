@@ -49,7 +49,7 @@ export function WhatToExpectSection() {
       <div className="absolute bottom-20 left-20 w-3 h-3 rounded-full opacity-50" style={{ backgroundColor: '#829340' }}></div>
       <div className="absolute bottom-10 right-10 w-5 h-5 rounded-full opacity-35" style={{ backgroundColor: '#829340' }}></div>
       
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 relative z-10">
+      <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 xl:px-20 2xl:px-28 relative z-10">
         <div className="text-center mb-12">
           <h2 className="text-3xl lg:text-4xl font-bold text-navy mb-4">
             What to Expect After You{" "}
@@ -62,7 +62,7 @@ export function WhatToExpectSection() {
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-1 lg:grid-cols-3 gap-8">
           {steps.map((step, index) => (
             <div key={index} className="relative">
               <Card className="h-full shadow-lg hover:shadow-xl transition-shadow duration-300">
@@ -90,7 +90,7 @@ export function WhatToExpectSection() {
           ))}
         </div>
 
-        <div className="mt-12 grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="mt-16 grid md:grid-cols-2 lg:grid-cols-4 gap-8">
           <div className="text-center">
             <div className="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4" style={{ backgroundColor: 'rgba(130, 147, 64, 0.1)' }}>
               <Users className="h-8 w-8" style={{ color: '#829340' }} />
