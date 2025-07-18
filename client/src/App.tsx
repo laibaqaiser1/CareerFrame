@@ -44,15 +44,30 @@ function App() {
   useEffect(() => {
     initGA();
     
-    // Force light mode - more targeted approach
+    // Force light mode completely
     document.documentElement.classList.remove('dark');
+    document.body.classList.remove('dark');
     document.documentElement.setAttribute('data-theme', 'light');
+    document.documentElement.style.colorScheme = 'light';
+    document.body.style.colorScheme = 'light';
+    document.body.style.backgroundColor = 'white';
+    document.body.style.color = 'black';
     
-    // Override system dark mode preference
+    // Add meta tag to prevent dark mode
     const meta = document.createElement('meta');
     meta.name = 'color-scheme';
     meta.content = 'light only';
     document.head.appendChild(meta);
+    
+    // Monitor and prevent dark mode changes
+    const observer = new MutationObserver(() => {
+      document.documentElement.classList.remove('dark');
+      document.body.classList.remove('dark');
+      document.body.style.backgroundColor = 'white';
+      document.body.style.color = 'black';
+    });
+    observer.observe(document.documentElement, { attributes: true, attributeFilter: ['class'] });
+    observer.observe(document.body, { attributes: true, attributeFilter: ['class'] });
   }, []);
 
   return (
