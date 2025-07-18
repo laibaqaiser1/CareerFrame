@@ -118,7 +118,7 @@ export function ComingSoonPage() {
   };
 
   return (
-    <section className="min-h-screen bg-white flex flex-col relative">
+    <section className="min-h-screen bg-white flex flex-col relative pt-32">
       <AnimatedBackground />
       <div className="w-full max-w-full mx-auto px-6 sm:px-8 lg:px-12 xl:px-20 2xl:px-28 flex-1 flex flex-col relative z-10">
         
