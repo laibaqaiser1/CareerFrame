@@ -43,6 +43,10 @@ function App() {
   // Initialize Google Analytics when app loads
   useEffect(() => {
     initGA();
+    
+    // Force light mode by removing any dark class and preventing system preference override
+    document.documentElement.classList.remove('dark');
+    document.documentElement.style.colorScheme = 'light';
   }, []);
 
   return (
