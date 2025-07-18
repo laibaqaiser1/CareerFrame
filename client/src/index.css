@@ -65,50 +65,22 @@ select {
   cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" fill="%23829340" opacity="0.9"/></svg>') 12 12, pointer !important;
 }
 
-/* Completely disable dark mode */
-* {
+/* Force light mode only on root elements */
+html, body {
   color-scheme: light !important;
 }
 
-html, body, div, section, main, header, nav, article, aside, footer {
-  background-color: white !important;
-  color: black !important;
-}
-
-/* Force override any dark mode attempts */
-.dark,
-html.dark,
-body.dark,
-[data-theme="dark"],
-*[class*="dark"] {
-  background-color: white !important;
-  color: black !important;
-  --background: 0 0% 100% !important;
-  --foreground: 220 14% 4% !important;
-  --muted: 220 14% 96% !important;
-  --muted-foreground: 220 9% 46% !important;
-  --popover: 0 0% 100% !important;
-  --popover-foreground: 220 14% 4% !important;
-  --card: 0 0% 100% !important;
-  --card-foreground: 220 14% 4% !important;
-  --border: 220 13% 91% !important;
-  --input: 220 13% 91% !important;
-  --primary: 0 0% 0% !important;
-  --primary-foreground: 210 40% 98% !important;
-  --secondary: 220 14% 96% !important;
-  --secondary-foreground: 220 9% 10% !important;
-  --accent: 220 14% 96% !important;
-  --accent-foreground: 220 9% 10% !important;
-  --destructive: 0 84% 60% !important;
-  --destructive-foreground: 210 40% 98% !important;
-  --ring: 0 0% 0% !important;
-}
-
-/* Override media queries for dark mode */
+/* Override dark mode for mobile devices only */
 @media (prefers-color-scheme: dark) {
-  * {
+  :root {
+    --background: 0 0% 100% !important;
+    --foreground: 220 14% 4% !important;
+    --card: 0 0% 100% !important;
+    --card-foreground: 220 14% 4% !important;
+  }
+  
+  body {
     background-color: white !important;
-    color: black !important;
   }
 }
 

@@ -44,26 +44,15 @@ function App() {
   useEffect(() => {
     initGA();
     
-    // Force light mode by removing any dark class and preventing system preference override
+    // Force light mode - more targeted approach
     document.documentElement.classList.remove('dark');
-    document.body.classList.remove('dark');
-    document.documentElement.style.colorScheme = 'light';
-    document.body.style.colorScheme = 'light';
+    document.documentElement.setAttribute('data-theme', 'light');
     
-    // Add mutation observer to prevent dark mode from being added
-    const observer = new MutationObserver((mutations) => {
-      mutations.forEach((mutation) => {
-        if (mutation.type === 'attributes' && mutation.attributeName === 'class') {
-          const target = mutation.target as HTMLElement;
-          if (target.classList.contains('dark')) {
-            target.classList.remove('dark');
-          }
-        }
-      });
-    });
-    
-    observer.observe(document.documentElement, { attributes: true });
-    observer.observe(document.body, { attributes: true });
+    // Override system dark mode preference
+    const meta = document.createElement('meta');
+    meta.name = 'color-scheme';
+    meta.content = 'light only';
+    document.head.appendChild(meta);
   }, []);
 
   return (
