@@ -258,7 +258,7 @@ export function ComingSoonPage() {
                     </form>
                     
                     <p className="text-xs text-gray-500 mt-3 text-center">
-                      Get notified when we launch + exclusive early access
+                      We'll never share your info with anyone
                     </p>
                   </div>
                 </div>
