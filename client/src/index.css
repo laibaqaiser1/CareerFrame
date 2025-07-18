@@ -65,11 +65,24 @@ select {
   cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" fill="%23829340" opacity="0.9"/></svg>') 12 12, pointer !important;
 }
 
-/* Force override dark mode completely */
+/* Completely disable dark mode */
+* {
+  color-scheme: light !important;
+}
+
+html, body, div, section, main, header, nav, article, aside, footer {
+  background-color: white !important;
+  color: black !important;
+}
+
+/* Force override any dark mode attempts */
 .dark,
 html.dark,
 body.dark,
-[data-theme="dark"] {
+[data-theme="dark"],
+*[class*="dark"] {
+  background-color: white !important;
+  color: black !important;
   --background: 0 0% 100% !important;
   --foreground: 220 14% 4% !important;
   --muted: 220 14% 96% !important;
@@ -89,6 +102,14 @@ body.dark,
   --destructive: 0 84% 60% !important;
   --destructive-foreground: 210 40% 98% !important;
   --ring: 0 0% 0% !important;
+}
+
+/* Override media queries for dark mode */
+@media (prefers-color-scheme: dark) {
+  * {
+    background-color: white !important;
+    color: black !important;
+  }
 }
 
 @layer base {
