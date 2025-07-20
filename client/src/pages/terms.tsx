@@ -1,115 +1,249 @@
 import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
 import { ArrowLeft, FileText, Users, Shield, AlertTriangle } from "lucide-react";
+import careerFrameLogo from "@assets/ChatGPT Image Jul 17, 2025, 03_29_50 PM_1752762637040.png";
 
 export default function Terms() {
   return (
-    <div className="min-h-screen bg-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 py-16">
-        <div className="mb-8">
+    <div className="min-h-screen bg-white relative overflow-hidden">
+      {/* Background Pattern - matching landing page */}
+      <div className="absolute inset-0 z-0">
+        <svg
+          width="100%"
+          height="100%"
+          className="absolute inset-0 opacity-5"
+          style={{ transform: 'scale(1.2)' }}
+        >
+          <defs>
+            <pattern
+              id="terms-careerframe-pattern"
+              x="0"
+              y="0"
+              width="100"
+              height="100"
+              patternUnits="userSpaceOnUse"
+            >
+              <circle cx="50" cy="50" r="20" fill="#829340" opacity="0.1" />
+              <circle cx="20" cy="20" r="8" fill="#1E3A8A" opacity="0.08" />
+              <circle cx="80" cy="80" r="12" fill="#829340" opacity="0.06" />
+            </pattern>
+          </defs>
+          <rect width="100%" height="100%" fill="url(#terms-careerframe-pattern)" />
+        </svg>
+      </div>
+
+      {/* CareerFrame Badge in background */}
+      <div className="absolute top-1/4 right-1/4 opacity-5 transform rotate-12 z-0">
+        <img 
+          src={careerFrameLogo} 
+          alt="CareerFrame Badge" 
+          className="w-64 h-64 object-contain"
+        />
+      </div>
+
+      <div className="max-w-4xl mx-auto px-6 sm:px-8 lg:px-12 xl:px-20 py-16 relative z-10">
+        <div className="mb-12">
           <Link href="/">
-            <Button variant="ghost" className="mb-4">
+            <Button 
+              variant="ghost" 
+              className="mb-6 hover:bg-green-50 transition-colors"
+              style={{ color: '#829340' }}
+            >
               <ArrowLeft className="mr-2 h-4 w-4" />
               Back to Home
             </Button>
           </Link>
-          <h1 className="text-4xl font-bold text-navy mb-4">Terms of Service</h1>
-          <p className="text-lg text-soft-grey">
-            Last updated: July 5, 2025
-          </p>
+          <div className="text-center mb-8">
+            <h1 
+              className="text-5xl font-bold mb-4"
+              style={{ 
+                color: '#1E3A8A',
+                fontFamily: 'Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif'
+              }}
+            >
+              Terms of Service
+            </h1>
+            <p 
+              className="text-lg"
+              style={{ color: '#6B7280' }}
+            >
+              Last updated: July 5, 2025
+            </p>
+          </div>
         </div>
 
         <div className="prose prose-lg max-w-none">
-          <div className="grid md:grid-cols-4 gap-4 mb-8">
-            <div className="text-center p-4 bg-gray-50 rounded-lg">
-              <FileText className="h-8 w-8 text-fresh-green mx-auto mb-2" />
-              <h3 className="font-semibold text-sm">Agreement</h3>
-            </div>
-            <div className="text-center p-4 bg-gray-50 rounded-lg">
-              <Users className="h-8 w-8 text-fresh-green mx-auto mb-2" />
-              <h3 className="font-semibold text-sm">User Rights</h3>
-            </div>
-            <div className="text-center p-4 bg-gray-50 rounded-lg">
-              <Shield className="h-8 w-8 text-fresh-green mx-auto mb-2" />
-              <h3 className="font-semibold text-sm">Protection</h3>
-            </div>
-            <div className="text-center p-4 bg-gray-50 rounded-lg">
-              <AlertTriangle className="h-8 w-8 text-fresh-green mx-auto mb-2" />
-              <h3 className="font-semibold text-sm">Limitations</h3>
-            </div>
+          {/* Clickable Categories */}
+          <div className="grid md:grid-cols-4 gap-6 mb-12">
+            <Link href="/terms/agreement">
+              <div className="text-center p-6 bg-white border-2 rounded-xl shadow-sm hover:shadow-lg transform hover:scale-105 transition-all duration-300 cursor-pointer group"
+                   style={{ borderColor: 'rgba(130, 147, 64, 0.2)' }}>
+                <FileText className="h-12 w-12 mx-auto mb-4 group-hover:scale-110 transition-transform" style={{ color: '#829340' }} />
+                <h3 className="font-bold text-lg mb-2" style={{ color: '#1E3A8A' }}>Agreement</h3>
+                <p className="text-sm" style={{ color: '#6B7280' }}>Terms and conditions</p>
+              </div>
+            </Link>
+            
+            <Link href="/terms/user-rights">
+              <div className="text-center p-6 bg-white border-2 rounded-xl shadow-sm hover:shadow-lg transform hover:scale-105 transition-all duration-300 cursor-pointer group"
+                   style={{ borderColor: 'rgba(130, 147, 64, 0.2)' }}>
+                <Users className="h-12 w-12 mx-auto mb-4 group-hover:scale-110 transition-transform" style={{ color: '#829340' }} />
+                <h3 className="font-bold text-lg mb-2" style={{ color: '#1E3A8A' }}>User Rights</h3>
+                <p className="text-sm" style={{ color: '#6B7280' }}>Your rights & responsibilities</p>
+              </div>
+            </Link>
+            
+            <Link href="/terms/protection">
+              <div className="text-center p-6 bg-white border-2 rounded-xl shadow-sm hover:shadow-lg transform hover:scale-105 transition-all duration-300 cursor-pointer group"
+                   style={{ borderColor: 'rgba(130, 147, 64, 0.2)' }}>
+                <Shield className="h-12 w-12 mx-auto mb-4 group-hover:scale-110 transition-transform" style={{ color: '#829340' }} />
+                <h3 className="font-bold text-lg mb-2" style={{ color: '#1E3A8A' }}>Protection</h3>
+                <p className="text-sm" style={{ color: '#6B7280' }}>Data & privacy protection</p>
+              </div>
+            </Link>
+            
+            <Link href="/terms/limitations">
+              <div className="text-center p-6 bg-white border-2 rounded-xl shadow-sm hover:shadow-lg transform hover:scale-105 transition-all duration-300 cursor-pointer group"
+                   style={{ borderColor: 'rgba(130, 147, 64, 0.2)' }}>
+                <AlertTriangle className="h-12 w-12 mx-auto mb-4 group-hover:scale-110 transition-transform" style={{ color: '#829340' }} />
+                <h3 className="font-bold text-lg mb-2" style={{ color: '#1E3A8A' }}>Limitations</h3>
+                <p className="text-sm" style={{ color: '#6B7280' }}>Liability & restrictions</p>
+              </div>
+            </Link>
           </div>
 
-          <h2 className="text-2xl font-bold text-navy mb-4">Introduction</h2>
-          <p className="text-soft-grey mb-6">
-            Welcome to the Careerframe Ltd website. These Terms of Service ("Terms") govern your use of our website and services. By accessing or using our website, you agree to comply with and be bound by these Terms. If you do not agree to these Terms, please do not use our website.
-          </p>
+          {/* Introduction Section */}
+          <div 
+            className="border rounded-xl p-8 mb-12 shadow-sm"
+            style={{ 
+              backgroundColor: 'rgba(130, 147, 64, 0.05)', 
+              borderColor: 'rgba(130, 147, 64, 0.2)' 
+            }}
+          >
+            <h2 
+              className="text-3xl font-bold mb-6"
+              style={{ color: '#1E3A8A' }}
+            >
+              Introduction
+            </h2>
+            <p 
+              className="text-lg leading-relaxed"
+              style={{ color: '#6B7280' }}
+            >
+              Welcome to the CareerFrame Ltd website. These Terms of Service ("Terms") govern your use of our website and services. By accessing or using our website, you agree to comply with and be bound by these Terms. If you do not agree to these Terms, please do not use our website.
+            </p>
+          </div>
 
-          <h2 className="text-2xl font-bold text-navy mb-4">About Us</h2>
-          <p className="text-soft-grey mb-6">
-            This website is operated by Careerframe Ltd ("we," "us," or "our"), a company registered in the United Kingdom.
-          </p>
-          <p className="text-soft-grey mb-6">
-            For any questions, you can contact us at:
-          </p>
-          <ul className="list-none text-soft-grey mb-6 space-y-2">
-            <li><strong>Email:</strong> Arron@careerframe.co.uk</li>
-            <li><strong>Postal address:</strong> Careerframe Ltd, Registered Office, Shrewsbury, UK</li>
-          </ul>
+          {/* Quick Overview Section */}
+          <section className="mb-12">
+            <h3 
+              className="text-2xl font-bold mb-6"
+              style={{ color: '#1E3A8A' }}
+            >
+              Quick Overview
+            </h3>
+            <div className="grid md:grid-cols-2 gap-6">
+              <div className="space-y-4">
+                <div className="flex items-start">
+                  <div className="w-3 h-3 bg-green-400 rounded-full mt-2 mr-4 flex-shrink-0"></div>
+                  <span className="text-lg" style={{ color: '#6B7280' }}>Use our platform responsibly and lawfully</span>
+                </div>
+                <div className="flex items-start">
+                  <div className="w-3 h-3 bg-green-400 rounded-full mt-2 mr-4 flex-shrink-0"></div>
+                  <span className="text-lg" style={{ color: '#6B7280' }}>Respect intellectual property rights</span>
+                </div>
+                <div className="flex items-start">
+                  <div className="w-3 h-3 bg-green-400 rounded-full mt-2 mr-4 flex-shrink-0"></div>
+                  <span className="text-lg" style={{ color: '#6B7280' }}>Understand XP system terms</span>
+                </div>
+              </div>
+              <div className="space-y-4">
+                <div className="flex items-start">
+                  <div className="w-3 h-3 bg-blue-400 rounded-full mt-2 mr-4 flex-shrink-0"></div>
+                  <span className="text-lg" style={{ color: '#6B7280' }}>Know your rights and limitations</span>
+                </div>
+                <div className="flex items-start">
+                  <div className="w-3 h-3 bg-blue-400 rounded-full mt-2 mr-4 flex-shrink-0"></div>
+                  <span className="text-lg" style={{ color: '#6B7280' }}>Understand data protection measures</span>
+                </div>
+                <div className="flex items-start">
+                  <div className="w-3 h-3 bg-blue-400 rounded-full mt-2 mr-4 flex-shrink-0"></div>
+                  <span className="text-lg" style={{ color: '#6B7280' }}>Review liability limitations</span>
+                </div>
+              </div>
+            </div>
+          </section>
 
-          <h2 className="text-2xl font-bold text-navy mb-4">Use of the Website</h2>
-          <p className="text-soft-grey mb-4">
-            You agree to use the website only for lawful purposes and in a way that does not infringe the rights of, restrict, or inhibit anyone else's use of the website. Prohibited behaviour includes harassing or causing distress to any person, transmitting obscene or offensive content, or disrupting the normal flow of dialogue within our website.
-          </p>
-          <p className="text-soft-grey mb-6">
-            We reserve the right to suspend or terminate your access to the website if you breach these Terms.
-          </p>
+          {/* Summary Call-to-Action */}
+          <div 
+            className="border rounded-xl p-8 text-center mb-12"
+            style={{ 
+              backgroundColor: 'rgba(30, 58, 138, 0.05)', 
+              borderColor: 'rgba(30, 58, 138, 0.2)' 
+            }}
+          >
+            <h3 
+              className="text-2xl font-bold mb-4"
+              style={{ color: '#1E3A8A' }}
+            >
+              Ready to Explore Our Terms?
+            </h3>
+            <p 
+              className="text-lg mb-6 max-w-2xl mx-auto"
+              style={{ color: '#6B7280' }}
+            >
+              Click on any of the sections above to dive deeper into specific areas of our Terms of Service. Each section contains detailed information about your rights, our policies, and important legal information.
+            </p>
+            <div className="flex flex-wrap justify-center gap-4">
+              <Link href="/terms/agreement">
+                <Button 
+                  className="text-white px-6 py-2 shadow-md hover:shadow-lg transition-all"
+                  style={{ backgroundColor: '#829340' }}
+                >
+                  View Agreement Details
+                </Button>
+              </Link>
+              <Link href="/terms/user-rights">
+                <Button 
+                  variant="outline"
+                  className="px-6 py-2 border-2 hover:bg-blue-50 transition-all"
+                  style={{ borderColor: '#1E3A8A', color: '#1E3A8A' }}
+                >
+                  Learn Your Rights
+                </Button>
+              </Link>
+            </div>
+          </div>
+          {/* Contact Section */}
+          <div 
+            className="border-2 rounded-xl p-8 text-center mt-12"
+            style={{ 
+              backgroundColor: 'rgba(130, 147, 64, 0.05)', 
+              borderColor: '#829340' 
+            }}
+          >
+            <h3 className="text-2xl font-bold mb-4" style={{ color: '#1E3A8A' }}>
+              Questions About Our Terms?
+            </h3>
+            <p className="text-lg mb-6" style={{ color: '#6B7280' }}>
+              If you have any questions about these Terms, please don't hesitate to contact us.
+            </p>
+            <a href="mailto:Arron@careerframe.co.uk">
+              <Button 
+                className="text-white px-8 py-3 text-lg shadow-lg hover:shadow-xl transition-all"
+                style={{ backgroundColor: '#829340' }}
+              >
+                Contact Us About Terms
+              </Button>
+            </a>
+          </div>
 
-          <h2 className="text-2xl font-bold text-navy mb-4">Intellectual Property</h2>
-          <p className="text-soft-grey mb-6">
-            All content on this website, including text, graphics, logos, icons, images, and software, is the property of Careerframe Ltd or its licensors and is protected by intellectual property laws. You may view, download, and print content for personal use only. Any other use, including reproduction, modification, distribution, or republication, without our prior written consent, is strictly prohibited.
-          </p>
-
-          <h2 className="text-2xl font-bold text-navy mb-4">Accuracy of Information</h2>
-          <p className="text-soft-grey mb-6">
-            We endeavour to ensure that the information on our website is correct and up to date. However, we do not warrant the accuracy, completeness, or reliability of any content. Information is provided "as is," and we make no representations or warranties of any kind.
-          </p>
-
-          <h2 className="text-2xl font-bold text-navy mb-4">Links to Other Websites</h2>
-          <p className="text-soft-grey mb-6">
-            Our website may contain links to third-party websites. These links are provided for your convenience only. Careerframe Ltd has no control over the content or availability of these websites and is not responsible for any loss or damage that may arise from your use of them.
-          </p>
-
-          <h2 className="text-2xl font-bold text-navy mb-4">XP (Experience Points) and User Rewards</h2>
-          <p className="text-soft-grey mb-6">
-            Our website and services may include the ability to earn Experience Points ("XP") and other virtual rewards. XP is provided for the purpose of tracking engagement and progress within our platform. XP has no monetary value and cannot be exchanged for cash or transferred outside of our platform. We reserve the right to modify, suspend, or discontinue the XP system at any time without notice. Misuse or abuse of the XP system may result in loss of points or suspension of your account.
-          </p>
-
-          <h2 className="text-2xl font-bold text-navy mb-4">Limitation of Liability</h2>
-          <p className="text-soft-grey mb-6">
-            To the fullest extent permitted by law, Careerframe Ltd shall not be liable for any loss or damage, whether direct, indirect, incidental, or consequential, arising from your use of, or inability to use, our website, services, or XP and reward systems.
-          </p>
-
-          <h2 className="text-2xl font-bold text-navy mb-4">Changes to These Terms</h2>
-          <p className="text-soft-grey mb-6">
-            We reserve the right to amend these Terms at any time. Any changes will be posted on this page and will take effect immediately upon posting. Your continued use of the website constitutes acceptance of the updated Terms.
-          </p>
-
-          <h2 className="text-2xl font-bold text-navy mb-4">Governing Law</h2>
-          <p className="text-soft-grey mb-6">
-            These Terms shall be governed by and construed in accordance with the laws of England and Wales. Any disputes arising in connection with these Terms shall be subject to the exclusive jurisdiction of the courts of England and Wales.
-          </p>
-
-          <p className="text-soft-grey mb-6">
-            If you have any questions about these Terms, please contact us at Arron@careerframe.co.uk.
-          </p>
-        </div>
-
-        <div className="text-center mt-8">
-          <a href="mailto:Arron@careerframe.co.uk">
-            <Button className="bg-fresh-green text-white hover:bg-opacity-90">
-              Contact Us About Terms
-            </Button>
-          </a>
+          {/* Footer */}
+          <div className="text-center py-8 border-t mt-12" style={{ borderColor: 'rgba(0,0,0,0.1)' }}>
+            <p className="text-sm" style={{ color: '#6B7280' }}>
+              © 2025 CareerFrame Ltd. All rights reserved. | Last updated: July 5, 2025
+            </p>
+          </div>
         </div>
       </div>
     </div>

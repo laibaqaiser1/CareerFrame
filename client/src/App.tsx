@@ -9,6 +9,10 @@ import Contact from "@/pages/contact";
 import Help from "@/pages/help";
 import Privacy from "@/pages/privacy";
 import Terms from "@/pages/terms";
+import Agreement from "@/pages/agreement";
+import UserRights from "@/pages/user-rights";
+import Protection from "@/pages/protection";
+import Limitations from "@/pages/limitations";
 import Blog from "@/pages/blog";
 import Community from "@/pages/community";
 import ApiDocs from "@/pages/api-docs";
@@ -30,6 +34,10 @@ function Router() {
       <Route path="/help" component={Help} />
       <Route path="/privacy" component={Privacy} />
       <Route path="/terms" component={Terms} />
+      <Route path="/terms/agreement" component={Agreement} />
+      <Route path="/terms/user-rights" component={UserRights} />
+      <Route path="/terms/protection" component={Protection} />
+      <Route path="/terms/limitations" component={Limitations} />
       <Route path="/blog" component={Blog} />
       <Route path="/community" component={Community} />
       <Route path="/api-docs" component={ApiDocs} />
