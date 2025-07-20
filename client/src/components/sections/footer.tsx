@@ -1,5 +1,5 @@
 import { Linkedin, Facebook } from "lucide-react";
-import { SiX, SiTiktok } from "react-icons/si";
+import { SiX, SiTiktok, SiInstagram } from "react-icons/si";
 import careerFrameLogo from "@assets/ChatGPT Image Jun 19, 2025, 09_12_42 PM_1750363966951.png";
 
 const footerSections = [
@@ -48,6 +48,9 @@ export function Footer() {
               </a>
               <a href="https://www.facebook.com/profile.php?id=61577108494161" target="_blank" rel="noopener noreferrer">
                 <Facebook className="text-gray-400 hover:text-white cursor-pointer transition-colors" />
+              </a>
+              <a href="https://www.instagram.com/careerframe_/" target="_blank" rel="noopener noreferrer">
+                <SiInstagram className="w-5 h-5 text-gray-400 hover:text-white cursor-pointer transition-colors" />
               </a>
             </div>
           </div>
