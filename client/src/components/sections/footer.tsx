@@ -37,7 +37,7 @@ export function Footer() {
               Empowering careers through AI-powered guidance and personalized coaching.
             </p>
             <div className="flex space-x-4">
-              <a href="https://x.com/Careerframe_" target="_blank" rel="noopener noreferrer">
+              <a href="https://x.com/careerframe_" target="_blank" rel="noopener noreferrer">
                 <SiX className="w-5 h-5 text-gray-400 hover:text-white cursor-pointer transition-colors" />
               </a>
               <a href="https://tiktok.com/@careerframe" target="_blank" rel="noopener noreferrer">
