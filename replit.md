@@ -179,3 +179,11 @@ Changelog:
 ## User Preferences
 
 Preferred communication style: Simple, everyday language.
+
+### Core Company Values
+- **Courage**: Taking bold steps to innovate and help users make brave career decisions
+- **Discipline**: Maintaining consistent excellence and structured approaches
+- **Respect For Others**: Valuing every individual's unique journey with dignity and empathy
+- **Integrity**: Operating with complete honesty and transparency
+- **Loyalty**: Providing unwavering support and commitment to user success
+- **Selflessness**: Putting user career goals above company interests
