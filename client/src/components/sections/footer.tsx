@@ -46,7 +46,7 @@ export function Footer() {
               <a href="https://linkedin.com/company/careerframe" target="_blank" rel="noopener noreferrer">
                 <Linkedin className="text-gray-400 hover:text-white cursor-pointer transition-colors" />
               </a>
-              <a href="https://facebook.com/careerframe" target="_blank" rel="noopener noreferrer">
+              <a href="https://www.facebook.com/profile.php?id=61577108494161" target="_blank" rel="noopener noreferrer">
                 <Facebook className="text-gray-400 hover:text-white cursor-pointer transition-colors" />
               </a>
             </div>
