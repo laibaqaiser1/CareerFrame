@@ -73,6 +73,42 @@ CareerFrame is a full-stack web application that provides AI-powered career coac
 
 ### Notable Integrations
 - **Replit**: Development environment with hot reload and error overlays
+
+## Recent Changes
+
+### July 20, 2025 - Production Deployment Fix
+- **Issue**: Fixed deployment failure caused by static file serving path mismatch
+- **Solution**: Created build process that copies static files from `dist/public` to `server/public`
+- **Files**: Added `build-and-prepare.sh` and `deployment-fix-notes.md`
+- **Impact**: Production deployments now properly serve static assets
+- **Status**: ✅ Verified working in production mode
+
+## Deployment Process
+
+### Production Build
+```bash
+# Option 1: Manual build and copy
+npm run build
+cp -r dist/public server/public
+
+# Option 2: Use automated script  
+./build-and-prepare.sh
+```
+
+### Production Start
+```bash
+NODE_ENV=production node dist/index.js
+```
+
+### Development Mode (Current)
+```bash
+npm run dev
+```
+
+## Architecture Notes
+- Static files are built to `dist/public` but must be copied to `server/public` for production serving
+- The `serveStatic` function in `server/vite.ts` is protected and cannot be modified
+- Build script handles both frontend compilation and static file preparation
 - **Form Handling**: React Hook Form with Zod resolvers
 - **Date Handling**: date-fns for date manipulation
 - **Carousel**: Embla Carousel for interactive components
