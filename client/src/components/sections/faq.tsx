@@ -38,25 +38,20 @@ export function FAQSection() {
   const [isFAQOpen, setIsFAQOpen] = useState(false);
 
   return (
-    <section className="section-padding section-divider" style={{ backgroundColor: 'var(--background-gray-50)' }}>
-      <div className="max-w-7xl mx-auto container-padding">
+    <section className="py-20 bg-light-grey">
+      <div className="max-w-full mx-auto px-6 sm:px-8 lg:px-12 xl:px-20 2xl:px-28">
         <div 
           ref={ref}
           className={`transition-all duration-700 ${
             isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
           }`}
         >
-          <div className="text-center mb-12">
-            <h2 className="heading-lg text-center element-spacing" style={{ color: 'var(--primary-navy)' }}>
-              Your Questions Answered
-            </h2>
-          </div>
           <Collapsible open={isFAQOpen} onOpenChange={setIsFAQOpen}>
             <CollapsibleTrigger className="w-full text-center mb-8">
               <div className="flex items-center justify-center gap-3 cursor-pointer hover:opacity-80 transition-opacity">
-                <span className="text-base" style={{ color: 'var(--text-secondary)' }}>
-                  {isFAQOpen ? 'Hide FAQs' : 'Show FAQs'}
-                </span>
+                <h2 className="text-3xl lg:text-4xl font-bold text-black">
+                  Your Questions Answered
+                </h2>
                 <ChevronDown className={`h-8 w-8 text-black transition-transform duration-300 ${isFAQOpen ? 'rotate-180' : ''}`} />
               </div>
               <p className="text-xl text-soft-grey mt-4">

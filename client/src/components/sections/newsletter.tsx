@@ -67,16 +67,16 @@ export function NewsletterSection() {
     <>
 
       {/* Newsletter & Final CTA */}
-      <section id="newsletter" className="section-padding section-divider" style={{ backgroundColor: 'var(--background-white)' }}>
-        <div className="max-w-7xl mx-auto container-padding">
+      <section id="newsletter" className="py-20 bg-gradient-to-br from-green-400 via-blue-500 to-purple-600 text-white">
+        <div className="max-w-full mx-auto px-6 sm:px-8 lg:px-12 xl:px-20 2xl:px-28">
           <div 
             ref={ref}
             className="text-center mb-12"
           >
-            <h2 className="heading-lg text-center element-spacing" style={{ color: 'var(--primary-navy)' }}>
+            <h2 className="text-3xl lg:text-4xl font-bold mb-6">
               Join the Waitlist - Be One of the First 10!
             </h2>
-            <p className="text-lg text-center max-w-2xl mx-auto element-spacing" style={{ color: 'var(--text-secondary)' }}>
+            <p className="text-lg text-blue-100 mb-8 max-w-2xl mx-auto">
               Get exclusive early access to CareerFrame when we launch. Plus, receive career insights and tips delivered to your inbox.
             </p>
             
@@ -94,14 +94,14 @@ export function NewsletterSection() {
                   soundType="submit"
                   type="submit"
                   disabled={isSubmitting}
-                  className="btn-primary"
+                  className="bg-fresh-green hover:bg-green-600 text-white px-8 py-3 font-semibold rounded-lg"
                 >
                   {isSubmitting ? "Joining..." : "Join Waitlist"}
                 </SoundButton>
               </div>
             </form>
             
-            <p className="text-sm" style={{ color: 'var(--text-muted)' }}>
+            <p className="text-sm text-blue-200">
               <Lock className="inline h-4 w-4 mr-1" />
               We respect your privacy. Unsubscribe anytime.
             </p>

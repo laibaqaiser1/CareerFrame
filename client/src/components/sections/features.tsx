@@ -138,16 +138,16 @@ export function FeaturesSection() {
     <>
       <WaitlistPopup isOpen={isOpen} onClose={closePopup} />
       {/* Value Proposition */}
-      <section className="section-padding section-divider" style={{ backgroundColor: 'var(--background-white)' }}>
-        <div className="max-w-7xl mx-auto container-padding text-center">
+      <section className="py-16 bg-gradient-to-r from-emerald-400 to-teal-500">
+        <div className="max-w-full mx-auto px-6 sm:px-8 lg:px-12 xl:px-20 2xl:px-28 text-center">
           <div 
             ref={valuePropRef}
             className={`transition-all duration-700 ${valuePropVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
           >
-            <h2 className="heading-lg text-center element-spacing" style={{ color: 'var(--primary-navy)' }}>
+            <h2 className="text-3xl lg:text-4xl font-bold text-white mb-6 drop-shadow-lg">
               What You Get: A Complete Career Development System
             </h2>
-            <p className="text-lg text-center max-w-3xl mx-auto element-spacing" style={{ color: 'var(--text-secondary)' }}>
+            <p className="text-xl text-white max-w-3xl mx-auto mb-12 drop-shadow-md">
               Everything you need to advance your career journey - personalized guidance, proven tools, and expert support.
             </p>
           </div>
@@ -181,7 +181,8 @@ export function FeaturesSection() {
               </p>
               <Button 
                 onClick={openPopup}
-                className="btn-primary inline-flex items-center gap-2"
+                className="text-white px-8 py-3 text-lg font-semibold inline-flex items-center gap-2"
+                style={{ backgroundColor: '#88A98F' }}
               >
                 <Play className="h-5 w-5" />
                 Start Interactive Demo
