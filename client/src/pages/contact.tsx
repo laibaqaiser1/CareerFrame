@@ -82,7 +82,7 @@ export default function Contact() {
             }}
           >
             <h3 className="text-2xl font-semibold mb-6" style={{ color: '#1E3A8A' }}>Send us a message</h3>
-            <form className="space-y-4">
+            <div className="space-y-4">
               <div>
                 <label htmlFor="name" className="block text-sm font-medium mb-2" style={{ color: '#1E3A8A' }}>Name</label>
                 <input 
@@ -120,12 +120,36 @@ export default function Contact() {
                 />
               </div>
               <Button 
+                onClick={() => {
+                  const name = (document.getElementById('name') as HTMLInputElement)?.value || '';
+                  const email = (document.getElementById('email') as HTMLInputElement)?.value || '';
+                  const subject = (document.getElementById('subject') as HTMLInputElement)?.value || '';
+                  const message = (document.getElementById('message') as HTMLTextAreaElement)?.value || '';
+                  
+                  const emailBody = `Name: ${name}%0D%0AEmail: ${email}%0D%0A%0D%0AMessage:%0D%0A${message}`;
+                  const mailtoLink = `mailto:Support@careerframe.co.uk?subject=${encodeURIComponent(subject)}&body=${emailBody}`;
+                  
+                  window.location.href = mailtoLink;
+                }}
                 className="w-full text-white py-3 text-lg shadow-lg hover:shadow-xl transition-all"
                 style={{ backgroundColor: '#829340' }}
               >
                 Send Message
               </Button>
-            </form>
+              
+              <div className="text-center mt-4">
+                <p className="text-sm mb-3" style={{ color: '#6B7280' }}>
+                  Or email us directly:
+                </p>
+                <a 
+                  href="mailto:Support@careerframe.co.uk?subject=Contact%20Form%20Inquiry&body=Hello%20CareerFrame%20Team,%0D%0A%0D%0AI%20would%20like%20to%20get%20in%20touch%20regarding:%0D%0A%0D%0A[Please%20describe%20your%20inquiry%20here]%0D%0A%0D%0AThank%20you!"
+                  className="text-sm font-medium hover:underline transition-colors"
+                  style={{ color: '#829340' }}
+                >
+                  Support@careerframe.co.uk
+                </a>
+              </div>
+            </div>
           </div>
 
           <div className="space-y-6">
