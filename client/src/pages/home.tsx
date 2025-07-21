@@ -21,10 +21,12 @@ import { useScrollReveal } from "@/hooks/use-scroll-animation";
 import { WaitlistPopup } from "@/components/ui/waitlist-popup";
 import { useWaitlistPopup } from "@/hooks/use-waitlist-popup";
 import careerFrameLogo from "@assets/ChatGPT Image Jul 17, 2025, 03_29_50 PM_1752762637040.png";
+import { useSoundEffects } from "@/hooks/useSoundEffects";
 
 function Navigation() {
   const [scrolled, setScrolled] = useState(false);
   const { isOpen, openPopup, closePopup } = useWaitlistPopup();
+  const { playHoverSound, playClickSound } = useSoundEffects();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -62,20 +64,44 @@ function Navigation() {
           <div className="flex items-center space-x-8">
             <div className="hidden md:block">
               <div className="flex items-baseline space-x-10">
-                <a href="#how-it-works" className="px-4 py-3 text-xl font-medium transition-all duration-300 hover:scale-105 hover:shadow-lg relative group" style={{ color: '#000000' }}>
+                <a 
+                  href="#how-it-works" 
+                  className="px-4 py-3 text-xl font-medium transition-all duration-300 hover:scale-105 hover:shadow-lg relative group" 
+                  style={{ color: '#000000' }}
+                  onMouseEnter={playHoverSound}
+                  onClick={playClickSound}
+                >
                   <span className="relative z-10">How it Works</span>
                   <div className="absolute inset-0 rounded-lg scale-0 group-hover:scale-100 transition-transform duration-300" style={{ backgroundColor: 'rgba(130, 147, 64, 0.1)' }}></div>
                 </a>
-                <a href="#features" className="px-4 py-3 text-xl font-medium transition-all duration-300 hover:scale-105 hover:shadow-lg relative group" style={{ color: '#000000' }}>
+                <a 
+                  href="#features" 
+                  className="px-4 py-3 text-xl font-medium transition-all duration-300 hover:scale-105 hover:shadow-lg relative group" 
+                  style={{ color: '#000000' }}
+                  onMouseEnter={playHoverSound}
+                  onClick={playClickSound}
+                >
                   <span className="relative z-10">Features</span>
                   <div className="absolute inset-0 rounded-lg scale-0 group-hover:scale-100 transition-transform duration-300" style={{ backgroundColor: 'rgba(130, 147, 64, 0.1)' }}></div>
                 </a>
-                <a href="#testimonials" className="px-4 py-3 text-xl font-medium transition-all duration-300 hover:scale-105 hover:shadow-lg relative group" style={{ color: '#000000' }}>
+                <a 
+                  href="#testimonials" 
+                  className="px-4 py-3 text-xl font-medium transition-all duration-300 hover:scale-105 hover:shadow-lg relative group" 
+                  style={{ color: '#000000' }}
+                  onMouseEnter={playHoverSound}
+                  onClick={playClickSound}
+                >
                   <span className="relative z-10">Success Stories</span>
                   <div className="absolute inset-0 rounded-lg scale-0 group-hover:scale-100 transition-transform duration-300" style={{ backgroundColor: 'rgba(130, 147, 64, 0.1)' }}></div>
                 </a>
 
-                <a href="#pricing" className="px-4 py-3 text-xl font-medium transition-all duration-300 hover:scale-105 hover:shadow-lg relative group" style={{ color: '#000000' }}>
+                <a 
+                  href="#pricing" 
+                  className="px-4 py-3 text-xl font-medium transition-all duration-300 hover:scale-105 hover:shadow-lg relative group" 
+                  style={{ color: '#000000' }}
+                  onMouseEnter={playHoverSound}
+                  onClick={playClickSound}
+                >
                   <span className="relative z-10">Pricing</span>
                   <div className="absolute inset-0 rounded-lg scale-0 group-hover:scale-100 transition-transform duration-300" style={{ backgroundColor: 'rgba(130, 147, 64, 0.1)' }}></div>
                 </a>

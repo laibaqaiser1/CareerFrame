@@ -3,6 +3,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Link } from "wouter";
 import { ArrowLeft, Mail, MapPin, Clock } from "lucide-react";
 import careerFrameLogo from "@assets/ChatGPT Image Jul 17, 2025, 03_29_50 PM_1752762637040.png";
+import { SoundButton } from "@/components/SoundButton";
 
 export default function Contact() {
   return (
@@ -44,14 +45,14 @@ export default function Contact() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 py-16 relative z-10">
         <div className="mb-12">
           <Link href="/">
-            <Button 
+            <SoundButton 
               variant="ghost" 
               className="mb-6 hover:bg-green-50 transition-colors"
               style={{ color: '#829340' }}
             >
               <ArrowLeft className="mr-2 h-4 w-4" />
               Back to Home
-            </Button>
+            </SoundButton>
           </Link>
           
           <div className="text-center mb-8">
@@ -119,7 +120,8 @@ export default function Contact() {
                   placeholder="Tell us more about your inquiry..."
                 />
               </div>
-              <Button 
+              <SoundButton 
+                soundType="submit"
                 onClick={() => {
                   const name = (document.getElementById('name') as HTMLInputElement)?.value || '';
                   const email = (document.getElementById('email') as HTMLInputElement)?.value || '';
@@ -135,7 +137,7 @@ export default function Contact() {
                 style={{ backgroundColor: '#829340' }}
               >
                 Send Message
-              </Button>
+              </SoundButton>
               
               <div className="text-center mt-4">
                 <p className="text-sm mb-3" style={{ color: '#6B7280' }}>
@@ -219,12 +221,12 @@ export default function Contact() {
             For the fastest response, email us directly. We're committed to helping you succeed in your career journey and will get back to you promptly.
           </p>
           <a href="mailto:Support@careerframe.co.uk">
-            <Button 
+            <SoundButton 
               className="text-white px-8 py-3 text-lg shadow-lg hover:shadow-xl transition-all"
               style={{ backgroundColor: '#829340' }}
             >
               Email Support Now
-            </Button>
+            </SoundButton>
           </a>
         </div>
 

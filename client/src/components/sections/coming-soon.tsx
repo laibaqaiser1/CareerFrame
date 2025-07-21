@@ -4,6 +4,7 @@ import { Users, Clock, Zap, Mail } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import { SoundButton } from "@/components/SoundButton";
 import { useToast } from "@/hooks/use-toast";
 import { AnimatedBackground } from "@/components/ui/animated-background";
 
@@ -247,13 +248,14 @@ export function ComingSoonPage() {
                           required
                           className="px-3 py-2 text-gray-900 border-2 border-gray-200 rounded-lg focus:ring-2 focus:ring-fresh-green focus:border-fresh-green text-sm"
                         />
-                        <Button 
+                        <SoundButton 
+                          soundType="submit"
                           type="submit"
                           disabled={isSubmitting}
                           className="bg-fresh-green hover:bg-green-600 text-white px-6 py-2 font-semibold rounded-lg text-sm"
                         >
                           {isSubmitting ? "Securing..." : "Secure My Spot"}
-                        </Button>
+                        </SoundButton>
                       </div>
                     </form>
                     

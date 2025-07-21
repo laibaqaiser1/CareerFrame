@@ -5,6 +5,7 @@ import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/component
 import { useScrollAnimation } from "@/hooks/use-scroll-animation";
 import { WaitlistPopup } from "@/components/ui/waitlist-popup";
 import { useWaitlistPopup } from "@/hooks/use-waitlist-popup";
+import { SoundButton } from "@/components/SoundButton";
 import { Check, X, ChevronDown } from "lucide-react";
 import { useState } from "react";
 
@@ -171,7 +172,8 @@ export function PricingSection() {
                   </div>
                 )}
                 
-                <Button 
+                <SoundButton 
+                  soundType="submit"
                   onClick={openPopup}
                   className={`w-full py-3 font-semibold button-hover ${
                     plan.popular 
@@ -185,7 +187,7 @@ export function PricingSection() {
                   variant={plan.popular ? "default" : "outline"}
                 >
                   {plan.cta}
-                </Button>
+                </SoundButton>
               </CardContent>
             </Card>
           ))}

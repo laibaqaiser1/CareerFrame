@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import careerFrameApp from "@assets/image_1750364343735.png";
 import { WaitlistPopup } from "@/components/ui/waitlist-popup";
 import { useWaitlistPopup } from "@/hooks/use-waitlist-popup";
+import { SoundButton } from "@/components/SoundButton";
 
 export function HeroSection() {
   const { isOpen, openPopup, closePopup } = useWaitlistPopup();
@@ -45,14 +46,15 @@ export function HeroSection() {
             </p>
 
             <div className="flex flex-col sm:flex-row justify-center gap-4 mb-4">
-              <Button 
+              <SoundButton 
+                soundType="submit"
                 onClick={openPopup}
                 className="text-white px-6 py-3 shadow-lg button-hover"
                 style={{ backgroundColor: '#829340', fontSize: '16px' }}
               >
                 Start for Free
-              </Button>
-              <Button 
+              </SoundButton>
+              <SoundButton 
                 onClick={openPopup}
                 variant="outline"
                 className="px-6 py-3 shadow-lg button-hover border-2"
@@ -63,7 +65,7 @@ export function HeroSection() {
                 }}
               >
                 Subscribe
-              </Button>
+              </SoundButton>
             </div>
             
             <p className="text-sm text-center" style={{ color: '#829340' }}>

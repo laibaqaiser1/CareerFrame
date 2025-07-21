@@ -2,6 +2,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { useScrollAnimation } from "@/hooks/use-scroll-animation";
 import { WaitlistPopup } from "@/components/ui/waitlist-popup";
 import { useWaitlistPopup } from "@/hooks/use-waitlist-popup";
+import { SoundButton } from "@/components/SoundButton";
 
 const steps = [
   {
@@ -67,12 +68,14 @@ export function HowItWorksSection() {
             <p className="text-lg text-soft-grey mb-6">
               Ready to transform your career journey?
             </p>
-            <button 
+            <SoundButton 
+              soundType="submit"
               onClick={openPopup}
-              className="bg-fresh-green text-white px-8 py-3 rounded-lg font-semibold hover:bg-opacity-90 transition-all duration-300 shadow-lg hover:shadow-xl"
+              className="text-white px-8 py-3 rounded-lg font-semibold transition-all duration-300 shadow-lg hover:shadow-xl"
+              style={{ backgroundColor: '#829340' }}
             >
               Start Your Assessment
-            </button>
+            </SoundButton>
           </div>
         </div>
       </div>

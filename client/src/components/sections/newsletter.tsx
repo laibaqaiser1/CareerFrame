@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import { SoundButton } from "@/components/SoundButton";
 import { Card, CardContent } from "@/components/ui/card";
 import { useScrollAnimation } from "@/hooks/use-scroll-animation";
 import { Lock, Mail, Rocket, Calendar } from "lucide-react";
@@ -89,13 +90,14 @@ export function NewsletterSection() {
                   required
                   className="flex-1 px-4 py-3 text-gray-900 bg-white border-0 rounded-lg focus:ring-2 focus:ring-white"
                 />
-                <Button 
+                <SoundButton 
+                  soundType="submit"
                   type="submit"
                   disabled={isSubmitting}
                   className="bg-fresh-green hover:bg-green-600 text-white px-8 py-3 font-semibold rounded-lg"
                 >
                   {isSubmitting ? "Joining..." : "Join Waitlist"}
-                </Button>
+                </SoundButton>
               </div>
             </form>
             
