@@ -22,18 +22,18 @@ const footerSections = [
 
 export function Footer() {
   return (
-    <footer className="bg-gray-900 text-white py-12">
-      <div className="max-w-full mx-auto px-6 sm:px-8 lg:px-12 xl:px-20 2xl:px-28">
+    <footer style={{ backgroundColor: 'var(--primary-navy)' }} className="text-white section-padding">
+      <div className="max-w-7xl mx-auto container-padding">
         <div className="grid md:grid-cols-4 gap-8">
           <div>
             <div className="flex items-center mb-4">
               <img 
                 src={careerFrameLogo} 
                 alt="CareerFrame Logo" 
-                className="h-32"
+                className="h-16 w-auto"
               />
             </div>
-            <p className="text-gray-300 text-sm mb-4">
+            <p className="text-base mb-4" style={{ color: 'rgba(255, 255, 255, 0.8)' }}>
               Empowering careers through AI-powered guidance and personalized coaching.
             </p>
             <div className="flex space-x-4">

@@ -39,70 +39,58 @@ function Navigation() {
   return (
     <>
       <WaitlistPopup isOpen={isOpen} onClose={closePopup} />
-    <nav className={`fixed top-0 left-0 right-0 w-full z-50 nav-scroll ${
+    <nav className={`fixed top-0 left-0 right-0 w-full z-50 transition-all duration-300 ${
       scrolled 
-        ? 'backdrop-blur-md shadow-lg' 
-        : 'backdrop-blur-sm'
+        ? 'bg-white/95 backdrop-blur-md' 
+        : 'bg-transparent'
     }`} style={{ 
-      backgroundColor: 'transparent',
-      position: 'fixed',
-      top: 0,
-      left: 0,
-      right: 0,
-      zIndex: 9999
+      boxShadow: scrolled ? '0 1px 3px 0 rgb(0 0 0 / 0.1)' : 'none',
+      borderBottom: scrolled ? '1px solid #E5E7EB' : 'none'
     }}>
-      <div className="max-w-full mx-auto px-6 sm:px-8 lg:px-12 xl:px-20 2xl:px-28">
-        <div className="flex justify-between items-center h-28">
+      <div className="max-w-7xl mx-auto container-padding">
+        <div className="flex justify-between items-center h-20">
           <div className="flex-shrink-0 flex items-center">
             <img 
               src={careerFrameLogo} 
               alt="CareerFrame Logo" 
-              style={{ height: '180px' }}
+              className="h-12 w-auto"
             />
           </div>
           
           <div className="flex items-center space-x-8">
             <div className="hidden md:block">
-              <div className="flex items-baseline space-x-10">
+              <div className="flex items-baseline space-x-8">
                 <a 
                   href="#how-it-works" 
-                  className="px-4 py-3 text-xl font-medium transition-all duration-300 hover:scale-105 hover:shadow-lg relative group" 
-                  style={{ color: '#000000' }}
+                  className="nav-link"
                   onMouseEnter={playHoverSound}
                   onClick={playClickSound}
                 >
-                  <span className="relative z-10">How it Works</span>
-                  <div className="absolute inset-0 rounded-lg scale-0 group-hover:scale-100 transition-transform duration-300" style={{ backgroundColor: 'rgba(130, 147, 64, 0.1)' }}></div>
+                  How it Works
                 </a>
                 <a 
                   href="#features" 
-                  className="px-4 py-3 text-xl font-medium transition-all duration-300 hover:scale-105 hover:shadow-lg relative group" 
-                  style={{ color: '#000000' }}
+                  className="nav-link"
                   onMouseEnter={playHoverSound}
                   onClick={playClickSound}
                 >
-                  <span className="relative z-10">Features</span>
-                  <div className="absolute inset-0 rounded-lg scale-0 group-hover:scale-100 transition-transform duration-300" style={{ backgroundColor: 'rgba(130, 147, 64, 0.1)' }}></div>
+                  Features
                 </a>
                 <a 
                   href="#testimonials" 
-                  className="px-4 py-3 text-xl font-medium transition-all duration-300 hover:scale-105 hover:shadow-lg relative group" 
-                  style={{ color: '#000000' }}
+                  className="nav-link"
                   onMouseEnter={playHoverSound}
                   onClick={playClickSound}
                 >
-                  <span className="relative z-10">Success Stories</span>
-                  <div className="absolute inset-0 rounded-lg scale-0 group-hover:scale-100 transition-transform duration-300" style={{ backgroundColor: 'rgba(130, 147, 64, 0.1)' }}></div>
+                  Success Stories
                 </a>
-
                 <a 
                   href="#pricing" 
-                  className="px-4 py-3 text-xl font-medium transition-all duration-300 hover:scale-105 hover:shadow-lg relative group" 
-                  style={{ color: '#000000' }}
+                  className="nav-link"
                   onMouseEnter={playHoverSound}
                   onClick={playClickSound}
                 >
-                  <span className="relative z-10">Pricing</span>
+                  Pricing
                   <div className="absolute inset-0 rounded-lg scale-0 group-hover:scale-100 transition-transform duration-300" style={{ backgroundColor: 'rgba(130, 147, 64, 0.1)' }}></div>
                 </a>
               </div>

@@ -30,18 +30,18 @@ export function TestimonialsSection() {
   const { ref, isVisible } = useScrollAnimation();
 
   return (
-    <section id="testimonials" className="py-20 bg-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="testimonials" className="section-padding section-divider" style={{ backgroundColor: 'var(--background-white)' }}>
+      <div className="max-w-7xl mx-auto container-padding">
         <div 
           ref={ref}
           className={`text-center mb-16 transition-all duration-700 ${
             isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
           }`}
         >
-          <h2 className="text-xl lg:text-2xl font-bold text-navy mb-6">
+          <h2 className="heading-lg text-center element-spacing" style={{ color: 'var(--primary-navy)' }}>
             Success Stories from Our Community
           </h2>
-          <p className="text-xl text-soft-grey max-w-3xl mx-auto">
+          <p className="text-lg text-center max-w-3xl mx-auto element-spacing" style={{ color: 'var(--text-secondary)' }}>
             Real people, real transformations. See how CareerFrame helped these professionals find their dream careers.
           </p>
         </div>

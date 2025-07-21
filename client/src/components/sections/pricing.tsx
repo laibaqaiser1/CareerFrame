@@ -80,18 +80,18 @@ export function PricingSection() {
   return (
     <>
       <WaitlistPopup isOpen={isOpen} onClose={closePopup} />
-    <section id="pricing" className="py-12 bg-gradient-to-br from-yellow-400 via-orange-500 to-red-500">
-      <div className="max-w-full mx-auto px-6 sm:px-8 lg:px-12 xl:px-20 2xl:px-28">
+    <section id="pricing" className="section-padding section-divider" style={{ backgroundColor: 'var(--background-white)' }}>
+      <div className="max-w-7xl mx-auto container-padding">
         <div 
           ref={ref}
           className={`text-center mb-16 transition-all duration-700 ${
             isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
           }`}
         >
-          <h2 className="text-xl lg:text-2xl font-bold text-white mb-6 drop-shadow-lg">
+          <h2 className="heading-lg text-center element-spacing" style={{ color: 'var(--primary-navy)' }}>
             Simple Pricing. Powerful Results.
           </h2>
-          <p className="text-xl text-white max-w-3xl mx-auto drop-shadow-md">
+          <p className="text-lg text-center max-w-3xl mx-auto element-spacing" style={{ color: 'var(--text-secondary)' }}>
             Most users see a 5x return on investment within 6 months.<br />
             Start free — upgrade only when you see the value. 90-day satisfaction guarantee.
           </p>
@@ -101,9 +101,13 @@ export function PricingSection() {
           {plans.map((plan, index) => (
             <Card 
               key={index}
-              className={`relative transition-all duration-700 delay-${index * 100} ${
+              className={`card-base relative transition-all duration-700 delay-${index * 100} ${
                 isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-              } ${plan.popular ? 'gradient-green text-white border-2 border-fresh-green' : 'bg-white border-2 border-gray-200'}`}
+              }`}
+              style={{ 
+                borderColor: plan.popular ? 'var(--primary-green)' : 'var(--border-gray)',
+                borderWidth: '2px'
+              }}
             >
               {plan.popular && (
                 <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
