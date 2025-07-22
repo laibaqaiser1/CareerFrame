@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -265,44 +265,55 @@ export function ComingSoonPage() {
           <div className="max-w-4xl mx-auto">
             <div className="text-center mb-12">
               {/* Countdown Timer */}
-              <div className="flex justify-center gap-4 sm:gap-8 mb-12">
+              <div className="flex justify-center items-center gap-2 sm:gap-4 mb-12">
                 {[
                   { value: timeLeft.days, label: 'Days' },
                   { value: timeLeft.hours, label: 'Hours' },
                   { value: timeLeft.minutes, label: 'Min' },
                   { value: timeLeft.seconds, label: 'Sec' }
                 ].map((item, index) => (
-                  <motion.div
-                    key={item.label}
-                    initial={{ scale: 0.8, opacity: 0 }}
-                    animate={{ scale: 1, opacity: 1 }}
-                    transition={{ duration: 0.5, delay: index * 0.1 }}
-                    className="text-center relative"
-                  >
-                    <div 
-                      className="inline-block px-6 py-4 rounded-xl shadow-lg mb-3"
-                      style={{
-                        backgroundColor: 'white',
-                        border: '1px solid rgba(0,0,0,0.1)'
-                      }}
+                  <React.Fragment key={item.label}>
+                    <motion.div
+                      initial={{ scale: 0.8, opacity: 0 }}
+                      animate={{ scale: 1, opacity: 1 }}
+                      transition={{ duration: 0.5, delay: index * 0.1 }}
+                      className="text-center"
                     >
                       <div 
-                        className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold"
-                        style={{ 
-                          color: '#1F2937',
-                          fontFamily: 'Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif'
+                        className="inline-block px-4 py-3 rounded-lg shadow-md"
+                        style={{
+                          backgroundColor: 'white',
+                          border: '1px solid rgba(0,0,0,0.1)',
+                          minWidth: '80px'
                         }}
                       >
-                        {String(item.value).padStart(2, '0')}
+                        <div 
+                          className="text-3xl sm:text-4xl md:text-5xl font-bold"
+                          style={{ 
+                            color: '#1F2937',
+                            fontFamily: 'Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif',
+                            lineHeight: '1'
+                          }}
+                        >
+                          {String(item.value).padStart(2, '0')}
+                        </div>
+                        <div 
+                          className="text-xs font-medium uppercase tracking-wide mt-1"
+                          style={{ color: '#6B7280' }}
+                        >
+                          {item.label}
+                        </div>
                       </div>
-                    </div>
-                    <div 
-                      className="text-xs sm:text-sm md:text-base font-medium uppercase tracking-wider"
-                      style={{ color: '#6B7280' }}
-                    >
-                      {item.label}
-                    </div>
-                  </motion.div>
+                    </motion.div>
+                    {index < 3 && (
+                      <div 
+                        className="text-2xl sm:text-3xl font-bold mx-1"
+                        style={{ color: '#6B7280' }}
+                      >
+                        :
+                      </div>
+                    )}
+                  </React.Fragment>
                 ))}
               </div>
               
