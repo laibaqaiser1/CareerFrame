@@ -357,14 +357,14 @@ export function ComingSoonPage() {
               
               <div className="flex justify-center items-center mt-6 gap-2">
                 <div className="flex -space-x-2">
-                  <img src="/avatars/avatar1.png" alt="User avatar" className="w-8 h-8 rounded-full border-2 border-white object-cover" />
-                  <img src="/avatars/avatar2.png" alt="User avatar" className="w-8 h-8 rounded-full border-2 border-white object-cover" />
-                  <img src="/avatars/avatar3.png" alt="User avatar" className="w-8 h-8 rounded-full border-2 border-white object-cover" />
+                  <img src="/avatar1.png" alt="User avatar" className="w-8 h-8 rounded-full border-2 border-white object-cover" />
+                  <img src="/avatar2.png" alt="User avatar" className="w-8 h-8 rounded-full border-2 border-white object-cover" />
+                  <img src="/avatar3.png" alt="User avatar" className="w-8 h-8 rounded-full border-2 border-white object-cover" />
                 </div>
                 <span className="text-sm ml-2 flex items-center gap-2">
-                  <span className="font-semibold text-white px-2 py-1 rounded" style={{ backgroundColor: '#829340' }}>3 joined</span>
+                  <span className="font-semibold" style={{ color: '#829340' }}>3 joined</span>
                   <span className="text-gray-400">|</span>
-                  <span className="font-semibold text-white px-2 py-1 rounded" style={{ backgroundColor: '#667085' }}>7 spots left</span>
+                  <span className="font-semibold" style={{ color: '#667085' }}>7 spots left</span>
                 </span>
               </div>
             </motion.div>
