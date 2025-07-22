@@ -1,12 +1,13 @@
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import { Users, Clock, Zap, Mail } from "lucide-react";
-import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { SoundButton } from "@/components/SoundButton";
 import { useToast } from "@/hooks/use-toast";
 import { AnimatedBackground } from "@/components/ui/animated-background";
+import { GeometricPattern } from "@/components/ui/geometric-pattern";
+import { AnimatedCornerLogos } from "@/components/ui/animated-corner-logos";
+import careerFrameLogo from "@assets/ChatGPT Image Jul 17, 2025, 03_29_50 PM_1752762637040.png";
 
 export function ComingSoonPage() {
   const [timeLeft, setTimeLeft] = useState({
@@ -119,22 +120,29 @@ export function ComingSoonPage() {
   };
 
   return (
-    <section className="min-h-screen bg-white flex flex-col relative pt-32">
+    <section className="min-h-screen bg-white flex flex-col relative pt-32 overflow-hidden">
+      {/* Geometric Background Pattern */}
+      <GeometricPattern opacity={0.08} />
+      
+      {/* Animated Corner Logos */}
+      <AnimatedCornerLogos logoSrc={careerFrameLogo} />
+      
       <AnimatedBackground />
-      <div className="w-full max-w-full mx-auto px-6 sm:px-8 lg:px-12 xl:px-20 2xl:px-28 flex-1 flex flex-col relative z-10">
+      <div className="w-full max-w-full mx-auto px-6 sm:px-8 lg:px-12 xl:px-20 2xl:px-28 flex-1 flex flex-col relative z-20">
         
         {/* Main Launch Message - Perfectly centered */}
-        <div className="flex-1 flex items-center justify-center py-16">
+        <div className="flex-1 flex items-center justify-center py-8 md:py-16">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="text-center"
+            className="text-center max-w-5xl mx-auto px-4"
           >
-            <h1 className="text-4xl lg:text-5xl font-bold max-w-4xl mx-auto" style={{ 
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6" style={{ 
               fontFamily: 'Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif',
-              lineHeight: '1.3',
-              letterSpacing: '-0.01em'
+              lineHeight: '1.2',
+              letterSpacing: '-0.02em',
+              color: '#1F2937'
             }}>
               <span style={{ color: '#1E3A8A' }}>Launch day is soon approaching — </span><span style={{ color: '#829340' }}>we're letting in only 10 people first</span><span style={{ color: '#1E3A8A' }}> and you'll want to be one of them!</span>
             </h1>
@@ -148,125 +156,104 @@ export function ComingSoonPage() {
           transition={{ duration: 0.8, delay: 0.2 }}
           className="pb-12"
         >
-          <Card className="bg-gradient-to-r from-navy to-navy/90 border-0 shadow-2xl max-w-5xl mx-auto">
-            <CardContent className="p-8 lg:p-12">
-              <div className="grid lg:grid-cols-3 gap-8 items-start">
-                
-                {/* Countdown Timer */}
-                <div className="text-center">
-                  <h3 className="text-xl font-bold mb-6" style={{ color: '#1E3A8A' }}>Launch Countdown</h3>
-                  <div className="grid grid-cols-2 gap-3 mb-6">
-                    {[
-                      { value: timeLeft.days, label: 'Days' },
-                      { value: timeLeft.hours, label: 'Hours' },
-                      { value: timeLeft.minutes, label: 'Minutes' },
-                      { value: timeLeft.seconds, label: 'Seconds' }
-                    ].map((item, index) => (
-                      <motion.div
-                        key={item.label}
-                        initial={{ scale: 0.8 }}
-                        animate={{ scale: 1 }}
-                        transition={{ duration: 0.3, delay: index * 0.1 }}
-                        className="bg-white rounded-lg p-3 border-2 border-fresh-green"
-                      >
-                        <div className="text-xl lg:text-2xl font-bold text-navy mb-1">
-                          {item.value}
-                        </div>
-                        <div className="text-xs text-gray-600 uppercase tracking-wide">
-                          {item.label}
-                        </div>
-                      </motion.div>
-                    ))}
-                  </div>
-                  <p className="text-sm text-white">
-                    Until CareerFrame launches
-                  </p>
-                </div>
-
-                {/* Early Access Spots */}
-                <div className="text-center">
-                  <h3 className="text-xl font-bold mb-6" style={{ color: '#1E3A8A' }}>Early Access Spots</h3>
-                  
-                  <div className="bg-white rounded-lg p-6 mb-4 border-2 border-fresh-green">
-                    <div className="flex items-center justify-center gap-2 mb-3">
-                      <motion.div
-                        key={spotsRemaining}
-                        initial={{ scale: 1.2, color: '#829340' }}
-                        animate={{ scale: 1, color: '#1E3A8A' }}
-                        transition={{ duration: 0.3 }}
-                        className="text-4xl lg:text-5xl font-bold text-navy"
-                      >
-                        {spotsRemaining}
-                      </motion.div>
-                      <span className="text-2xl text-gray-600">/</span>
-                      <div className="text-2xl text-gray-600">10</div>
+          <div className="max-w-4xl mx-auto">
+            <div className="text-center mb-12">
+              {/* Countdown Timer */}
+              <div className="flex justify-center gap-4 sm:gap-8 mb-12">
+                {[
+                  { value: timeLeft.days, label: 'Days' },
+                  { value: timeLeft.hours, label: 'Hours' },
+                  { value: timeLeft.minutes, label: 'Min' },
+                  { value: timeLeft.seconds, label: 'Sec' }
+                ].map((item, index) => (
+                  <motion.div
+                    key={item.label}
+                    initial={{ scale: 0.8, opacity: 0 }}
+                    animate={{ scale: 1, opacity: 1 }}
+                    transition={{ duration: 0.5, delay: index * 0.1 }}
+                    className="text-center relative"
+                  >
+                    <div 
+                      className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-2"
+                      style={{ 
+                        color: '#1F2937',
+                        fontFamily: 'Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif'
+                      }}
+                    >
+                      {String(item.value).padStart(2, '0')}
                     </div>
-                    
-                    <div className="w-full bg-gray-200 rounded-full h-2 mb-3">
-                      <motion.div
-                        initial={{ width: 0 }}
-                        animate={{ width: `${((10 - spotsRemaining) / 10) * 100}%` }}
-                        transition={{ duration: 1, ease: "easeOut" }}
-                        className="bg-gradient-to-r from-fresh-green to-green-400 h-2 rounded-full"
-                      />
+                    <div 
+                      className="text-xs sm:text-sm md:text-base font-medium uppercase tracking-wider"
+                      style={{ color: '#6B7280' }}
+                    >
+                      {item.label}
                     </div>
-                    
-                    <p className="text-sm text-gray-700">
-                      <span className="text-fresh-green font-semibold">
-                        {10 - spotsRemaining} joined
-                      </span>
-                      {' • '}
-                      <span className="text-navy font-semibold">
-                        {spotsRemaining} spots left
-                      </span>
-                    </p>
-                  </div>
-                  
-                  <div className="flex items-center justify-center gap-2">
-                    <Zap className="h-4 w-4 text-orange-500" />
-                    <p className="text-sm text-orange-200">
-                      {spotsRemaining <= 5 ? 'Almost full!' : 'Filling up fast!'}
-                    </p>
-                  </div>
-                </div>
-
-                {/* Waitlist Signup */}
-                <div className="text-center">
-                  <div className="bg-white rounded-lg p-6 border-2 border-fresh-green">
-                    <div className="flex items-center justify-center gap-2 mb-4">
-                      <Mail className="h-5 w-5 text-fresh-green" />
-                      <h3 className="text-lg font-bold text-navy">Join the Waitlist</h3>
-                    </div>
-                    
-                    <form onSubmit={handleWaitlistSignup}>
-                      <div className="flex flex-col gap-3">
-                        <Input
-                          type="email"
-                          placeholder="Enter your email address"
-                          value={email}
-                          onChange={(e) => setEmail(e.target.value)}
-                          required
-                          className="px-3 py-2 text-gray-900 border-2 border-gray-200 rounded-lg focus:ring-2 focus:ring-fresh-green focus:border-fresh-green text-sm"
-                        />
-                        <SoundButton 
-                          soundType="submit"
-                          type="submit"
-                          disabled={isSubmitting}
-                          className="bg-fresh-green hover:bg-green-600 text-white px-6 py-2 font-semibold rounded-lg text-sm"
-                        >
-                          {isSubmitting ? "Securing..." : "Secure My Spot"}
-                        </SoundButton>
-                      </div>
-                    </form>
-                    
-                    <p className="text-xs text-gray-500 mt-3 text-center">
-                      We'll never share your info with anyone
-                    </p>
-                  </div>
-                </div>
+                  </motion.div>
+                ))}
               </div>
-            </CardContent>
-          </Card>
+              
+              <motion.h2 
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.6 }}
+                className="text-lg sm:text-xl md:text-2xl font-semibold mb-8"
+                style={{ 
+                  color: '#1F2937',
+                  fontFamily: 'Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif'
+                }}
+              >
+                Subscribe to enter the waitlist
+              </motion.h2>
+            </div>
+            
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.8 }}
+              className="max-w-md mx-auto"
+            >
+              <form onSubmit={handleWaitlistSignup} className="space-y-4">
+                <Input
+                  type="email"
+                  placeholder="Enter your email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  required
+                  className="w-full px-4 py-4 text-lg border-2 border-gray-200 rounded-lg focus:ring-2 focus:ring-green-400 focus:border-green-400"
+                  style={{
+                    fontFamily: 'Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif'
+                  }}
+                />
+                <SoundButton 
+                  soundType="submit"
+                  type="submit"
+                  disabled={isSubmitting}
+                  className="w-full text-white px-6 py-4 font-semibold rounded-lg text-lg transition-all duration-200 hover:scale-[1.02]"
+                  style={{
+                    backgroundColor: '#829340',
+                    fontFamily: 'Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif'
+                  }}
+                >
+                  {isSubmitting ? "Securing..." : "Secure My Spot"}
+                </SoundButton>
+              </form>
+              
+              <p className="text-sm text-gray-500 text-center mt-4">
+                Get notified when we launch + exclusive early access
+              </p>
+              
+              <div className="flex justify-center items-center mt-6 gap-2">
+                <div className="flex -space-x-2">
+                  <div className="w-8 h-8 bg-blue-500 rounded-full border-2 border-white"></div>
+                  <div className="w-8 h-8 bg-green-500 rounded-full border-2 border-white"></div>
+                  <div className="w-8 h-8 bg-purple-500 rounded-full border-2 border-white"></div>
+                </div>
+                <span className="text-sm text-gray-600 ml-2">
+                  <span className="font-semibold">{10 - spotsRemaining} joined</span> · <span className="text-green-600 font-semibold">{spotsRemaining} spots left</span>
+                </span>
+              </div>
+            </motion.div>
+          </div>
         </motion.div>
       </div>
     </section>
