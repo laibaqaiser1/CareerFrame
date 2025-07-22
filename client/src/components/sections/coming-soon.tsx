@@ -119,7 +119,12 @@ export function ComingSoonPage() {
   };
 
   return (
-    <section className="min-h-screen bg-white flex flex-col relative pt-32 overflow-hidden">
+    <section 
+      className="min-h-screen flex flex-col relative pt-32 overflow-hidden"
+      style={{
+        background: "linear-gradient(303.01deg, #FFF1F0 0%, #FFFAF1 33.33%, #E8FAF6 66.67%, #EAF6FD 100%)"
+      }}
+    >
       {/* Pattern Background - Right Side Only */}
       <motion.div 
         initial={{ opacity: 0, x: 100 }}
