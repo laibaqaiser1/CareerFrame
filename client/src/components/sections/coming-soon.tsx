@@ -280,13 +280,21 @@ export function ComingSoonPage() {
                     className="text-center relative"
                   >
                     <div 
-                      className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-2"
-                      style={{ 
-                        color: '#1F2937',
-                        fontFamily: 'Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif'
+                      className="inline-block px-6 py-4 rounded-xl shadow-lg mb-3"
+                      style={{
+                        backgroundColor: 'white',
+                        border: '1px solid rgba(0,0,0,0.1)'
                       }}
                     >
-                      {String(item.value).padStart(2, '0')}
+                      <div 
+                        className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold"
+                        style={{ 
+                          color: '#1F2937',
+                          fontFamily: 'Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif'
+                        }}
+                      >
+                        {String(item.value).padStart(2, '0')}
+                      </div>
                     </div>
                     <div 
                       className="text-xs sm:text-sm md:text-base font-medium uppercase tracking-wider"
