@@ -4,6 +4,9 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { SoundButton } from "@/components/SoundButton";
 import { useToast } from "@/hooks/use-toast";
+import avatar1 from "@assets/Avatar_1753221030644.png";
+import avatar2 from "@assets/Avatar (1)_1753221039419.png";
+import avatar3 from "@assets/Avatar (2)_1753221045680.png";
 
 export function ComingSoonPage() {
   const [timeLeft, setTimeLeft] = useState({
@@ -357,14 +360,14 @@ export function ComingSoonPage() {
               
               <div className="flex justify-center items-center mt-6 gap-2">
                 <div className="flex -space-x-2">
-                  <img src="/avatar1.png" alt="User avatar" className="w-8 h-8 rounded-full border-2 border-white object-cover" />
-                  <img src="/avatar2.png" alt="User avatar" className="w-8 h-8 rounded-full border-2 border-white object-cover" />
-                  <img src="/avatar3.png" alt="User avatar" className="w-8 h-8 rounded-full border-2 border-white object-cover" />
+                  <img src={avatar1} alt="User avatar" className="w-8 h-8 rounded-full border-2 border-white object-cover" />
+                  <img src={avatar2} alt="User avatar" className="w-8 h-8 rounded-full border-2 border-white object-cover" />
+                  <img src={avatar3} alt="User avatar" className="w-8 h-8 rounded-full border-2 border-white object-cover" />
                 </div>
                 <span className="text-sm ml-2 flex items-center gap-2">
                   <span className="font-semibold" style={{ color: '#829340' }}>3 joined</span>
                   <span className="text-gray-400">|</span>
-                  <span className="font-semibold" style={{ color: '#667085' }}>7 spots left</span>
+                  <span className="font-semibold" style={{ color: '#667085' }}>5 spots left</span>
                 </span>
               </div>
             </motion.div>
