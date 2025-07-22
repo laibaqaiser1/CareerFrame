@@ -39,11 +39,7 @@ function Navigation() {
   return (
     <>
       <WaitlistPopup isOpen={isOpen} onClose={closePopup} />
-    <nav className={`fixed top-0 left-0 right-0 w-full z-50 nav-scroll ${
-      scrolled 
-        ? 'backdrop-blur-md shadow-lg' 
-        : 'backdrop-blur-sm'
-    }`} style={{ 
+    <nav className="fixed top-0 left-0 right-0 w-full z-50" style={{ 
       backgroundColor: 'transparent',
       position: 'fixed',
       top: 0,
