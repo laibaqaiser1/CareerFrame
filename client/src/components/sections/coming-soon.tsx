@@ -248,7 +248,7 @@ export function ComingSoonPage() {
               letterSpacing: '0%',
               textAlign: 'center',
               color: '#6B7280',
-              marginBottom: '24px'
+              marginBottom: '16px'
             }}>
               we're letting in only 10 people first and you'll want to be one of them!
             </p>
@@ -265,7 +265,7 @@ export function ComingSoonPage() {
           <div className="max-w-4xl mx-auto">
             <div className="text-center mb-8">
               {/* Countdown Timer */}
-              <div className="flex justify-center items-center mb-12" style={{ gap: '4px' }}>
+              <div className="flex justify-center items-center mb-8" style={{ gap: '4px' }}>
                 {[
                   { value: timeLeft.days, label: 'Days' },
                   { value: timeLeft.hours, label: 'Hours' },
