@@ -4,9 +4,8 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { SoundButton } from "@/components/SoundButton";
 import { useToast } from "@/hooks/use-toast";
-import { AnimatedBackground } from "@/components/ui/animated-background";
-import { GeometricPattern } from "@/components/ui/geometric-pattern";
-import { AnimatedCornerLogos } from "@/components/ui/animated-corner-logos";
+// Removed AnimatedBackground import
+// Removed unused geometric pattern imports
 // No need to import since we're using public assets directly
 
 export function ComingSoonPage() {
@@ -121,28 +120,48 @@ export function ComingSoonPage() {
 
   return (
     <section className="min-h-screen bg-white flex flex-col relative pt-32 overflow-hidden">
-      {/* Geometric Background Pattern */}
-      <GeometricPattern opacity={0.15} />
-      
-      {/* SVG Pattern Background */}
+      {/* Main Pattern Background from Pattern.png */}
       <motion.div 
         initial={{ opacity: 0 }}
-        animate={{ opacity: 0.12 }}
-        transition={{ duration: 2, delay: 1 }}
+        animate={{ opacity: 0.8 }}
+        transition={{ duration: 1.5 }}
         className="absolute inset-0"
         style={{
-          backgroundImage: "url(/careerframe-pattern.svg)",
+          backgroundImage: "url(/Pattern.png)",
           backgroundRepeat: "repeat",
-          backgroundSize: "350px 350px",
+          backgroundSize: "800px 800px",
           backgroundPosition: "center"
         }}
       />
       
-      {/* Animated Corner Logos */}
-      <AnimatedCornerLogos />
+      {/* Large Corner Frame - Top Left */}
+      <motion.div
+        initial={{ opacity: 0, scale: 0.8 }}
+        animate={{ opacity: 0.9, scale: 1 }}
+        transition={{ duration: 1.2, delay: 0.5 }}
+        className="absolute top-0 left-0 w-96 h-96 lg:w-[500px] lg:h-[500px]"
+        style={{
+          backgroundImage: "url(/TopLeftCornerFrame.png)",
+          backgroundSize: "contain",
+          backgroundRepeat: "no-repeat",
+          backgroundPosition: "top left"
+        }}
+      />
       
-      <AnimatedBackground />
-      <div className="w-full max-w-full mx-auto px-6 sm:px-8 lg:px-12 xl:px-20 2xl:px-28 flex-1 flex flex-col relative z-20">
+      {/* Large Corner Frame - Bottom Right */}
+      <motion.div
+        initial={{ opacity: 0, scale: 0.8 }}
+        animate={{ opacity: 0.9, scale: 1 }}
+        transition={{ duration: 1.2, delay: 0.8 }}
+        className="absolute bottom-0 right-0 w-96 h-96 lg:w-[500px] lg:h-[500px]"
+        style={{
+          backgroundImage: "url(/BottomRightCornerFrame.png)",
+          backgroundSize: "contain",
+          backgroundRepeat: "no-repeat",
+          backgroundPosition: "bottom right"
+        }}
+      />
+      <div className="w-full max-w-full mx-auto px-6 sm:px-8 lg:px-12 xl:px-20 2xl:px-28 flex-1 flex flex-col relative z-10">
         
         {/* Main Launch Message - Perfectly centered */}
         <div className="flex-1 flex items-center justify-center py-8 md:py-16">
