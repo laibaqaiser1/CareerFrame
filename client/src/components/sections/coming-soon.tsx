@@ -170,7 +170,7 @@ export function ComingSoonPage() {
           rotate: 2,
           transition: { duration: 0.3 }
         }}
-        className="absolute top-16 left-0 w-96 h-96 lg:w-[500px] lg:h-[500px]"
+        className="absolute top-0 left-0 w-96 h-96 lg:w-[500px] lg:h-[500px]"
         style={{
           backgroundImage: "url(/TopLeftCornerFrame.png)",
           backgroundSize: "contain",
