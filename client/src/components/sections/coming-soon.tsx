@@ -120,25 +120,51 @@ export function ComingSoonPage() {
 
   return (
     <section className="min-h-screen bg-white flex flex-col relative pt-32 overflow-hidden">
-      {/* Main Pattern Background from Pattern.png */}
+      {/* Pattern Background - Right Side Only */}
       <motion.div 
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 0.8 }}
+        initial={{ opacity: 0, x: 100 }}
+        animate={{ opacity: 0.6, x: 0 }}
         transition={{ duration: 1.5 }}
-        className="absolute inset-0"
+        className="absolute top-0 right-0 w-1/2 h-full"
         style={{
           backgroundImage: "url(/Pattern.png)",
-          backgroundRepeat: "repeat",
-          backgroundSize: "800px 800px",
-          backgroundPosition: "center"
+          backgroundRepeat: "no-repeat",
+          backgroundSize: "cover",
+          backgroundPosition: "right center"
         }}
       />
       
-      {/* Large Corner Frame - Top Left */}
+      {/* Animated Corner Frame - Top Left */}
       <motion.div
-        initial={{ opacity: 0, scale: 0.8 }}
-        animate={{ opacity: 0.9, scale: 1 }}
-        transition={{ duration: 1.2, delay: 0.5 }}
+        initial={{ opacity: 0, scale: 0.5, rotate: -15 }}
+        animate={{ 
+          opacity: 0.8, 
+          scale: 1, 
+          rotate: 0,
+          y: [0, -10, 0],
+          x: [0, 5, 0]
+        }}
+        transition={{ 
+          duration: 1.5, 
+          delay: 0.5,
+          type: "spring",
+          stiffness: 100,
+          y: {
+            duration: 4,
+            repeat: Infinity,
+            ease: "easeInOut"
+          },
+          x: {
+            duration: 6,
+            repeat: Infinity,
+            ease: "easeInOut"
+          }
+        }}
+        whileHover={{ 
+          scale: 1.05, 
+          rotate: 2,
+          transition: { duration: 0.3 }
+        }}
         className="absolute top-0 left-0 w-96 h-96 lg:w-[500px] lg:h-[500px]"
         style={{
           backgroundImage: "url(/TopLeftCornerFrame.png)",
@@ -148,11 +174,37 @@ export function ComingSoonPage() {
         }}
       />
       
-      {/* Large Corner Frame - Bottom Right */}
+      {/* Animated Corner Frame - Bottom Right */}
       <motion.div
-        initial={{ opacity: 0, scale: 0.8 }}
-        animate={{ opacity: 0.9, scale: 1 }}
-        transition={{ duration: 1.2, delay: 0.8 }}
+        initial={{ opacity: 0, scale: 0.5, rotate: 15 }}
+        animate={{ 
+          opacity: 0.8, 
+          scale: 1, 
+          rotate: 0,
+          y: [0, 10, 0],
+          x: [0, -5, 0]
+        }}
+        transition={{ 
+          duration: 1.5, 
+          delay: 0.8,
+          type: "spring",
+          stiffness: 100,
+          y: {
+            duration: 5,
+            repeat: Infinity,
+            ease: "easeInOut"
+          },
+          x: {
+            duration: 7,
+            repeat: Infinity,
+            ease: "easeInOut"
+          }
+        }}
+        whileHover={{ 
+          scale: 1.05, 
+          rotate: -2,
+          transition: { duration: 0.3 }
+        }}
         className="absolute bottom-0 right-0 w-96 h-96 lg:w-[500px] lg:h-[500px]"
         style={{
           backgroundImage: "url(/BottomRightCornerFrame.png)",
