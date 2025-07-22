@@ -175,7 +175,8 @@ export function ComingSoonPage() {
           backgroundImage: "url(/TopLeftCornerFrame.png)",
           backgroundSize: "contain",
           backgroundRepeat: "no-repeat",
-          backgroundPosition: "top left"
+          backgroundPosition: "top left",
+          zIndex: 1
         }}
       />
       
@@ -215,7 +216,8 @@ export function ComingSoonPage() {
           backgroundImage: "url(/BottomRightCornerFrame.png)",
           backgroundSize: "contain",
           backgroundRepeat: "no-repeat",
-          backgroundPosition: "bottom right"
+          backgroundPosition: "bottom right",
+          zIndex: 1
         }}
       />
       <div className="w-full max-w-full mx-auto px-6 sm:px-8 lg:px-12 xl:px-20 2xl:px-28 flex-1 flex flex-col relative z-10">
