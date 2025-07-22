@@ -53,7 +53,13 @@ function Navigation() {
             <img 
               src={careerFrameLogo} 
               alt="CareerFrame Logo" 
-              style={{ height: '120px', zIndex: 10000 }}
+              style={{ 
+                width: '148px', 
+                height: '32px', 
+                transform: 'rotate(0deg)', 
+                opacity: 1, 
+                zIndex: 10000 
+              }}
             />
           </div>
           
