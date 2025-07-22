@@ -228,14 +228,30 @@ export function ComingSoonPage() {
             transition={{ duration: 0.8 }}
             className="text-center max-w-5xl mx-auto px-4"
           >
-            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6" style={{ 
-              fontFamily: 'Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif',
-              lineHeight: '1.2',
-              letterSpacing: '-0.02em',
-              color: '#1F2937'
+            <h1 style={{ 
+              fontFamily: 'Inter',
+              fontWeight: 600,
+              fontSize: '60px',
+              lineHeight: '72px',
+              letterSpacing: '-2%',
+              textAlign: 'center',
+              color: '#1F2937',
+              marginBottom: '16px'
             }}>
-              <span style={{ color: '#1E3A8A' }}>Launch day is soon approaching — </span><span style={{ color: '#829340' }}>we're letting in only 10 people first</span><span style={{ color: '#1E3A8A' }}> and you'll want to be one of them!</span>
+              Launch day is soon approaching
             </h1>
+            <p style={{ 
+              fontFamily: 'Inter',
+              fontWeight: 400,
+              fontSize: '20px',
+              lineHeight: '30px',
+              letterSpacing: '0%',
+              textAlign: 'center',
+              color: '#6B7280',
+              marginBottom: '24px'
+            }}>
+              we're letting in only 10 people first and you'll want to be one of them!
+            </p>
           </motion.div>
         </div>
 
