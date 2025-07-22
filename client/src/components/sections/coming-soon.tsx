@@ -248,7 +248,7 @@ export function ComingSoonPage() {
               letterSpacing: '0%',
               textAlign: 'center',
               color: '#6B7280',
-              marginBottom: '24px'
+              marginBottom: '48px'
             }}>
               we're letting in only 10 people first and you'll want to be one of them!
             </p>
@@ -265,7 +265,7 @@ export function ComingSoonPage() {
           <div className="max-w-4xl mx-auto">
             <div className="text-center mb-12">
               {/* Countdown Timer */}
-              <div className="flex justify-center items-center gap-2 sm:gap-4 mb-12">
+              <div className="flex justify-center items-center mb-16" style={{ gap: '4px' }}>
                 {[
                   { value: timeLeft.days, label: 'Days' },
                   { value: timeLeft.hours, label: 'Hours' },
@@ -280,15 +280,18 @@ export function ComingSoonPage() {
                       className="text-center"
                     >
                       <div 
-                        className="inline-block px-4 py-3 rounded-lg shadow-md"
+                        className="inline-flex flex-col items-center justify-center shadow-md"
                         style={{
                           backgroundColor: 'white',
                           border: '1px solid rgba(0,0,0,0.1)',
-                          minWidth: '80px'
+                          width: '100px',
+                          height: '100px',
+                          borderRadius: '12px',
+                          padding: '8px'
                         }}
                       >
                         <div 
-                          className="text-3xl sm:text-4xl md:text-5xl font-bold"
+                          className="text-2xl font-bold"
                           style={{ 
                             color: '#1F2937',
                             fontFamily: 'Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif',
@@ -307,8 +310,8 @@ export function ComingSoonPage() {
                     </motion.div>
                     {index < 3 && (
                       <div 
-                        className="text-2xl sm:text-3xl font-bold mx-1"
-                        style={{ color: '#6B7280' }}
+                        className="text-2xl font-bold"
+                        style={{ color: '#6B7280', margin: '0 8px' }}
                       >
                         :
                       </div>
