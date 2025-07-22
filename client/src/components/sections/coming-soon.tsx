@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { motion } from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { SoundButton } from "@/components/SoundButton";
@@ -9,6 +9,14 @@ import avatar2 from "@assets/Avatar (1)_1753221039419.png";
 import avatar3 from "@assets/Avatar (2)_1753221045680.png";
 
 export function ComingSoonPage() {
+  const { scrollY } = useScroll();
+  
+  // Transform scroll position to frame positions
+  const topLeftX = useTransform(scrollY, [0, 500], [0, -100]);
+  const topLeftY = useTransform(scrollY, [0, 500], [0, -80]);
+  const bottomRightX = useTransform(scrollY, [0, 500], [0, 100]);
+  const bottomRightY = useTransform(scrollY, [0, 500], [0, 80]);
+  
   const [timeLeft, setTimeLeft] = useState({
     days: 0,
     hours: 0,
@@ -141,83 +149,35 @@ export function ComingSoonPage() {
       
       {/* Animated Corner Frame - Top Left */}
       <motion.div
-        initial={{ opacity: 0, scale: 0.5, rotate: -15 }}
-        animate={{ 
-          opacity: 0.8, 
-          scale: 1, 
-          rotate: 0,
-          y: [0, -10, 0],
-          x: [0, 5, 0]
-        }}
-        transition={{ 
-          duration: 1.5, 
-          delay: 0.5,
-          type: "spring",
-          stiffness: 100,
-          y: {
-            duration: 4,
-            repeat: Infinity,
-            ease: "easeInOut"
-          },
-          x: {
-            duration: 6,
-            repeat: Infinity,
-            ease: "easeInOut"
-          }
-        }}
-        whileHover={{ 
-          scale: 1.05, 
-          rotate: 2,
-          transition: { duration: 0.3 }
-        }}
-        className="absolute top-0 left-0 w-96 h-96 lg:w-[500px] lg:h-[500px]"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 0.8 }}
+        transition={{ duration: 1.5, delay: 0.5 }}
+        className="fixed top-0 left-0 w-96 h-96 lg:w-[500px] lg:h-[500px]"
         style={{
           backgroundImage: "url(/TopLeftCornerFrame.png)",
           backgroundSize: "contain",
           backgroundRepeat: "no-repeat",
           backgroundPosition: "top left",
-          zIndex: 1
+          zIndex: 1,
+          x: topLeftX,
+          y: topLeftY,
         }}
       />
       
       {/* Animated Corner Frame - Bottom Right */}
       <motion.div
-        initial={{ opacity: 0, scale: 0.5, rotate: 15 }}
-        animate={{ 
-          opacity: 0.8, 
-          scale: 1, 
-          rotate: 0,
-          y: [0, 10, 0],
-          x: [0, -5, 0]
-        }}
-        transition={{ 
-          duration: 1.5, 
-          delay: 0.8,
-          type: "spring",
-          stiffness: 100,
-          y: {
-            duration: 5,
-            repeat: Infinity,
-            ease: "easeInOut"
-          },
-          x: {
-            duration: 7,
-            repeat: Infinity,
-            ease: "easeInOut"
-          }
-        }}
-        whileHover={{ 
-          scale: 1.05, 
-          rotate: -2,
-          transition: { duration: 0.3 }
-        }}
-        className="absolute bottom-0 right-0 w-96 h-96 lg:w-[500px] lg:h-[500px]"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 0.8 }}
+        transition={{ duration: 1.5, delay: 0.8 }}
+        className="fixed bottom-0 right-0 w-96 h-96 lg:w-[500px] lg:h-[500px]"
         style={{
           backgroundImage: "url(/BottomRightCornerFrame.png)",
           backgroundSize: "contain",
           backgroundRepeat: "no-repeat",
           backgroundPosition: "bottom right",
-          zIndex: 1
+          zIndex: 1,
+          x: bottomRightX,
+          y: bottomRightY,
         }}
       />
       <div className="w-full max-w-full mx-auto px-6 sm:px-8 lg:px-12 xl:px-20 2xl:px-28 flex-1 flex flex-col relative z-10">

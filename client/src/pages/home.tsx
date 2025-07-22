@@ -55,7 +55,7 @@ function Navigation() {
               alt="CareerFrame Logo" 
               style={{ 
                 width: '148px', 
-                height: '48px', 
+                height: '148px', 
                 transform: 'rotate(0deg)', 
                 opacity: 1, 
                 zIndex: 10000 
