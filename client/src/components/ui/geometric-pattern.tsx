@@ -8,7 +8,7 @@ interface GeometricPatternProps {
 
 export const GeometricPattern: React.FC<GeometricPatternProps> = ({
   className = '',
-  opacity = 0.1
+  opacity = 0.4
 }) => {
   return (
     <div className={`absolute inset-0 overflow-hidden ${className}`}>

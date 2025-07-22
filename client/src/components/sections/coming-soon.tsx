@@ -7,7 +7,7 @@ import { useToast } from "@/hooks/use-toast";
 import { AnimatedBackground } from "@/components/ui/animated-background";
 import { GeometricPattern } from "@/components/ui/geometric-pattern";
 import { AnimatedCornerLogos } from "@/components/ui/animated-corner-logos";
-import careerFrameLogo from "@assets/ChatGPT Image Jul 17, 2025, 03_29_50 PM_1752762637040.png";
+// No need to import since we're using public assets directly
 
 export function ComingSoonPage() {
   const [timeLeft, setTimeLeft] = useState({
@@ -122,10 +122,24 @@ export function ComingSoonPage() {
   return (
     <section className="min-h-screen bg-white flex flex-col relative pt-32 overflow-hidden">
       {/* Geometric Background Pattern */}
-      <GeometricPattern opacity={0.08} />
+      <GeometricPattern opacity={0.15} />
+      
+      {/* SVG Pattern Background */}
+      <motion.div 
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 0.12 }}
+        transition={{ duration: 2, delay: 1 }}
+        className="absolute inset-0"
+        style={{
+          backgroundImage: "url(/careerframe-pattern.svg)",
+          backgroundRepeat: "repeat",
+          backgroundSize: "350px 350px",
+          backgroundPosition: "center"
+        }}
+      />
       
       {/* Animated Corner Logos */}
-      <AnimatedCornerLogos logoSrc={careerFrameLogo} />
+      <AnimatedCornerLogos />
       
       <AnimatedBackground />
       <div className="w-full max-w-full mx-auto px-6 sm:px-8 lg:px-12 xl:px-20 2xl:px-28 flex-1 flex flex-col relative z-20">

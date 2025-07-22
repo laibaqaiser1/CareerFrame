@@ -7,7 +7,7 @@ interface AnimatedCornerLogosProps {
 }
 
 export const AnimatedCornerLogos: React.FC<AnimatedCornerLogosProps> = ({
-  logoSrc = '/careerframe-logo.png',
+  logoSrc = '/TopLeftCornerFrame.png',
   className = ''
 }) => {
   const { scrollYProgress } = useScroll();
@@ -17,7 +17,7 @@ export const AnimatedCornerLogos: React.FC<AnimatedCornerLogosProps> = ({
   const rotate1 = useTransform(scrollYProgress, [0, 0.5], [0, 180]);
   const rotate2 = useTransform(scrollYProgress, [0, 0.5], [0, -180]);
   const scale = useTransform(scrollYProgress, [0, 0.2, 0.8, 1], [1, 1.1, 0.9, 1]);
-  const opacity = useTransform(scrollYProgress, [0, 0.1, 0.9, 1], [0.1, 0.3, 0.2, 0.05]);
+  const opacity = useTransform(scrollYProgress, [0, 0.1, 0.9, 1], [0.3, 0.6, 0.4, 0.2]);
 
   useEffect(() => {
     const timer = setTimeout(() => setIsVisible(true), 500);
@@ -31,7 +31,7 @@ export const AnimatedCornerLogos: React.FC<AnimatedCornerLogosProps> = ({
       rotate: -180
     },
     animate: { 
-      opacity: 0.15, 
+      opacity: 0.6, 
       scale: 1,
       rotate: 0,
       transition: {
@@ -83,7 +83,7 @@ export const AnimatedCornerLogos: React.FC<AnimatedCornerLogosProps> = ({
         style={{ 
           rotate: rotate2,
           scale,
-          opacity: useTransform(opacity, [0, 1], [0, 0.1])
+          opacity: useTransform(opacity, [0, 1], [0, 0.3])
         }}
       >
         <div 
@@ -104,7 +104,7 @@ export const AnimatedCornerLogos: React.FC<AnimatedCornerLogosProps> = ({
         style={{ 
           rotate: useTransform(rotate1, [0, 180], [0, -90]),
           scale: useTransform(scale, [0.5, 1.5], [0.7, 1.1]),
-          opacity: useTransform(opacity, [0, 1], [0, 0.08])
+          opacity: useTransform(opacity, [0, 1], [0, 0.25])
         }}
       >
         <div 
@@ -125,13 +125,13 @@ export const AnimatedCornerLogos: React.FC<AnimatedCornerLogosProps> = ({
         style={{ 
           rotate: useTransform(rotate2, [0, -180], [0, 90]),
           scale: useTransform(scale, [0.5, 1.5], [0.8, 1.2]),
-          opacity: useTransform(opacity, [0, 1], [0, 0.12])
+          opacity: useTransform(opacity, [0, 1], [0, 0.4])
         }}
       >
         <div 
           className="w-full h-full bg-contain bg-no-repeat bg-center transform rotate-12"
           style={{ 
-            backgroundImage: `url(${logoSrc})`,
+            backgroundImage: `url(/BottomRightCornerFrame.png)`,
             filter: 'brightness(1.1) contrast(0.8)'
           }}
         />
@@ -146,7 +146,7 @@ export const AnimatedCornerLogos: React.FC<AnimatedCornerLogosProps> = ({
         style={{ 
           rotate: useTransform(scrollYProgress, [0, 1], [0, 360]),
           scale: useTransform(scale, [0.5, 1.5], [0.5, 0.8]),
-          opacity: useTransform(opacity, [0, 1], [0, 0.05])
+          opacity: useTransform(opacity, [0, 1], [0, 0.2])
         }}
       >
         <div 
@@ -166,7 +166,7 @@ export const AnimatedCornerLogos: React.FC<AnimatedCornerLogosProps> = ({
         style={{ 
           rotate: useTransform(scrollYProgress, [0, 1], [0, -270]),
           scale: useTransform(scale, [0.5, 1.5], [0.6, 0.9]),
-          opacity: useTransform(opacity, [0, 1], [0, 0.06])
+          opacity: useTransform(opacity, [0, 1], [0, 0.22])
         }}
       >
         <div 
