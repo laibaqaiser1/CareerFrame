@@ -248,7 +248,7 @@ export function ComingSoonPage() {
               letterSpacing: '0%',
               textAlign: 'center',
               color: '#6B7280',
-              marginBottom: '16px'
+              marginBottom: '6px'
             }}>
               we're letting in only 10 people first and you'll want to be one of them!
             </p>
