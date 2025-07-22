@@ -221,7 +221,7 @@ export function ComingSoonPage() {
       <div className="w-full max-w-full mx-auto px-6 sm:px-8 lg:px-12 xl:px-20 2xl:px-28 flex-1 flex flex-col relative z-10">
         
         {/* Main Launch Message - Perfectly centered */}
-        <div className="flex-1 flex items-center justify-center py-8 md:py-16">
+        <div className="flex-1 flex items-center justify-center py-4 md:py-8">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -248,7 +248,7 @@ export function ComingSoonPage() {
               letterSpacing: '0%',
               textAlign: 'center',
               color: '#6B7280',
-              marginBottom: '32px'
+              marginBottom: '24px'
             }}>
               we're letting in only 10 people first and you'll want to be one of them!
             </p>
@@ -260,10 +260,10 @@ export function ComingSoonPage() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="pb-12"
+          className="pb-8"
         >
           <div className="max-w-4xl mx-auto">
-            <div className="text-center mb-12">
+            <div className="text-center mb-8">
               {/* Countdown Timer */}
               <div className="flex justify-center items-center mb-12" style={{ gap: '4px' }}>
                 {[
