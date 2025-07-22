@@ -248,24 +248,13 @@ export function ComingSoonPage() {
               letterSpacing: '0%',
               textAlign: 'center',
               color: '#6B7280',
-              marginBottom: '6px'
+              marginBottom: '24px'
             }}>
               we're letting in only 10 people first and you'll want to be one of them!
             </p>
-          </motion.div>
-        </div>
 
-        {/* Combined Countdown Timer, Spots Counter, and Signup - Bottom */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
-          className="pb-8"
-        >
-          <div className="max-w-4xl mx-auto">
-            <div className="text-center mb-8">
-              {/* Countdown Timer */}
-              <div className="flex justify-center items-center mb-8" style={{ gap: '4px' }}>
+            {/* Countdown Timer - Moved inside the main section */}
+            <div className="flex justify-center items-center mb-8" style={{ gap: '4px' }}>
                 {[
                   { value: timeLeft.days, label: 'Days' },
                   { value: timeLeft.hours, label: 'Hours' },
@@ -332,7 +321,6 @@ export function ComingSoonPage() {
               >
                 Subscribe to enter the waitlist
               </motion.h2>
-            </div>
             
             <motion.div
               initial={{ opacity: 0, y: 30 }}
@@ -381,8 +369,8 @@ export function ComingSoonPage() {
                 </span>
               </div>
             </motion.div>
-          </div>
-        </motion.div>
+          </motion.div>
+        </div>
       </div>
     </section>
   );
