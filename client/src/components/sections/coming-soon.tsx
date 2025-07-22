@@ -128,13 +128,13 @@ export function ComingSoonPage() {
       {/* Pattern Background - Right Side Only */}
       <motion.div 
         initial={{ opacity: 0, x: 100 }}
-        animate={{ opacity: 0.6, x: 0 }}
+        animate={{ opacity: 0.9, x: 0 }}
         transition={{ duration: 1.5 }}
         className="absolute top-0 right-0 w-1/2 h-full"
         style={{
           backgroundImage: "url(/Pattern.png)",
           backgroundRepeat: "no-repeat",
-          backgroundSize: "cover",
+          backgroundSize: "contain",
           backgroundPosition: "right center"
         }}
       />
