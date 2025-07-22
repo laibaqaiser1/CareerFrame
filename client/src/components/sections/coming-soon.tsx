@@ -4,9 +4,6 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { SoundButton } from "@/components/SoundButton";
 import { useToast } from "@/hooks/use-toast";
-// Removed AnimatedBackground import
-// Removed unused geometric pattern imports
-// No need to import since we're using public assets directly
 
 export function ComingSoonPage() {
   const [timeLeft, setTimeLeft] = useState({
@@ -16,7 +13,7 @@ export function ComingSoonPage() {
     seconds: 0
   });
   
-  const [spotsRemaining, setSpotsRemaining] = useState(8);
+  const [spotsRemaining, setSpotsRemaining] = useState(7);
   const [email, setEmail] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
   const { toast } = useToast();
@@ -360,12 +357,12 @@ export function ComingSoonPage() {
               
               <div className="flex justify-center items-center mt-6 gap-2">
                 <div className="flex -space-x-2">
-                  <div className="w-8 h-8 bg-blue-500 rounded-full border-2 border-white"></div>
-                  <div className="w-8 h-8 bg-green-500 rounded-full border-2 border-white"></div>
-                  <div className="w-8 h-8 bg-purple-500 rounded-full border-2 border-white"></div>
+                  <img src="/avatars/avatar1.png" alt="User avatar" className="w-8 h-8 rounded-full border-2 border-white object-cover" />
+                  <img src="/avatars/avatar2.png" alt="User avatar" className="w-8 h-8 rounded-full border-2 border-white object-cover" />
+                  <img src="/avatars/avatar3.png" alt="User avatar" className="w-8 h-8 rounded-full border-2 border-white object-cover" />
                 </div>
                 <span className="text-sm text-gray-600 ml-2">
-                  <span className="font-semibold">{10 - spotsRemaining} joined</span> · <span className="text-green-600 font-semibold">{spotsRemaining} spots left</span>
+                  <span className="font-semibold">3 joined</span> · <span className="text-green-600 font-semibold">7 spots left</span>
                 </span>
               </div>
             </motion.div>
