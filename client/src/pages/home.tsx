@@ -62,7 +62,8 @@ function Navigation() {
         position: 'relative',
         width: '100%',
         height: '128px',
-        backgroundColor: 'transparent',
+        backgroundColor: 'transparent !important',
+        background: 'none !important',
         zIndex: 10
       }}
     >

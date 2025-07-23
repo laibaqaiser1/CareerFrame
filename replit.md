@@ -181,6 +181,11 @@ Changelog:
 
 Preferred communication style: Simple, everyday language.
 
+### Navigation Design Preferences
+- Navbar should be completely transparent (not white) with colorful geometric background pattern visible behind it
+- Navbar should scroll away naturally (non-sticky) rather than staying fixed at top
+- Background gradient from Coming Soon section should extend behind navbar area
+
 ### Core Company Values
 - **Courage**: Taking bold steps to innovate and help users make brave career decisions
 - **Discipline**: Maintaining consistent excellence and structured approaches

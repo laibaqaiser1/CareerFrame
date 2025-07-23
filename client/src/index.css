@@ -70,6 +70,12 @@ html, body, * {
 
 /* Allow natural backgrounds - removed forced white */
 
+/* Force navbar transparency */
+nav, nav * {
+  background-color: transparent !important;
+  background: none !important;
+}
+
 body {
   color: black !important;
 }
