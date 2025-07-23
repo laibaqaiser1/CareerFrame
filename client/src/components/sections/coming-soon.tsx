@@ -192,10 +192,10 @@ export function ComingSoonPage() {
         transition={{ duration: 1.5, delay: 0.5 }}
         className="fixed top-0 left-0 w-96 h-96 lg:w-[500px] lg:h-[500px]"
         style={{
-          backgroundImage: "url(/TopLeftCornerFrame.png), linear-gradient(135deg, rgba(130,147,64,0.1) 0%, transparent 100%)",
-          backgroundSize: "contain, contain",
-          backgroundRepeat: "no-repeat, no-repeat",
-          backgroundPosition: "top left, top left",
+          backgroundImage: "url(/TopLeftCornerFrame.png)",
+          backgroundSize: "contain",
+          backgroundRepeat: "no-repeat",
+          backgroundPosition: "top left",
           zIndex: 1,
           x: topLeftX,
           y: topLeftY,
@@ -211,10 +211,10 @@ export function ComingSoonPage() {
         transition={{ duration: 1.5, delay: 0.8 }}
         className="fixed bottom-0 right-0 w-96 h-96 lg:w-[500px] lg:h-[500px]"
         style={{
-          backgroundImage: "url(/BottomRightCornerFrame.png), linear-gradient(315deg, rgba(130,147,64,0.1) 0%, transparent 100%)",
-          backgroundSize: "contain, contain",
-          backgroundRepeat: "no-repeat, no-repeat",
-          backgroundPosition: "bottom right, bottom right",
+          backgroundImage: "url(/BottomRightCornerFrame.png)",
+          backgroundSize: "contain",
+          backgroundRepeat: "no-repeat",
+          backgroundPosition: "bottom right",
           zIndex: 1,
           x: bottomRightX,
           y: bottomRightY,
