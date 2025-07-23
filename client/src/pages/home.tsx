@@ -276,12 +276,13 @@ export default function Home() {
 
   return (
     <>
-      <Navigation />
-      <div className="bg-white">
-        {/* Coming Soon Section at the top */}
-        <div className="fade-in">
-          <ComingSoonPage />
-        </div>
+      <div className="relative">
+        <Navigation />
+        <div className="bg-white" style={{ marginTop: '-128px' }}>
+          {/* Coming Soon Section at the top */}
+          <div className="fade-in" style={{ paddingTop: '128px' }}>
+            <ComingSoonPage />
+          </div>
         
         {/* Full website content below for exploration */}
         <div className="min-h-screen page-transition">
@@ -315,6 +316,7 @@ export default function Home() {
           <Footer />
           <LiveChat />
           <CustomCursor />
+        </div>
         </div>
       </div>
     </>
