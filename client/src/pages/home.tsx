@@ -84,7 +84,7 @@ function Navigation() {
           <div className="flex items-center space-x-4">
             {/* Desktop Navigation */}
             <div className="hidden md:block">
-              <div className="flex items-baseline space-x-10">
+              <div className="flex items-center space-x-10">
                 <a 
                   href="#how-it-works" 
                   className="px-4 py-3 text-xl font-medium transition-all duration-300 hover:scale-105 hover:shadow-lg relative group" 
