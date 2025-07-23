@@ -70,21 +70,7 @@ html, body, * {
 
 /* Allow natural backgrounds - removed forced white */
 
-/* Force navbar container transparency only */
-nav {
-  background-color: transparent !important;
-  background: none !important;
-}
-
-nav > div.max-w-full {
-  background-color: transparent !important;
-  background: none !important;
-}
-
-nav div.flex.justify-between {
-  background-color: transparent !important;
-  background: none !important;
-}
+/* Allow navbar to have its own background */
 
 body {
   color: black !important;
