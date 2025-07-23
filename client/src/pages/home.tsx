@@ -276,7 +276,7 @@ export default function Home() {
   return (
     <>
       <Navigation />
-      <div className="bg-white">
+      <div className="bg-white pt-32">
         {/* Coming Soon Section at the top */}
         <div className="fade-in">
           <ComingSoonPage />
