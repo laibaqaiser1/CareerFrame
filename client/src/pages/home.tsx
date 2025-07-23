@@ -81,62 +81,60 @@ function Navigation() {
             />
           </div>
           
-          <div className="flex items-center space-x-4">
+          <div className="flex items-center space-x-8">
             {/* Desktop Navigation */}
-            <div className="hidden md:block">
-              <div className="flex items-center space-x-10">
-                <a 
-                  href="#how-it-works" 
-                  className="px-4 py-3 text-xl font-medium transition-all duration-300 hover:scale-105 hover:shadow-lg relative group" 
-                  style={{ color: '#000000' }}
-                  onMouseEnter={playHoverSound}
-                  onClick={playClickSound}
-                >
-                  <span className="relative z-10">How it Works</span>
-                  <div className="absolute inset-0 rounded-lg scale-0 group-hover:scale-100 transition-transform duration-300" style={{ backgroundColor: 'rgba(130, 147, 64, 0.1)' }}></div>
-                </a>
-                <a 
-                  href="#features" 
-                  className="px-4 py-3 text-xl font-medium transition-all duration-300 hover:scale-105 hover:shadow-lg relative group" 
-                  style={{ color: '#000000' }}
-                  onMouseEnter={playHoverSound}
-                  onClick={playClickSound}
-                >
-                  <span className="relative z-10">Features</span>
-                  <div className="absolute inset-0 rounded-lg scale-0 group-hover:scale-100 transition-transform duration-300" style={{ backgroundColor: 'rgba(130, 147, 64, 0.1)' }}></div>
-                </a>
-                <a 
-                  href="#testimonials" 
-                  className="px-4 py-3 text-xl font-medium transition-all duration-300 hover:scale-105 hover:shadow-lg relative group" 
-                  style={{ color: '#000000' }}
-                  onMouseEnter={playHoverSound}
-                  onClick={playClickSound}
-                >
-                  <span className="relative z-10">Success Stories</span>
-                  <div className="absolute inset-0 rounded-lg scale-0 group-hover:scale-100 transition-transform duration-300" style={{ backgroundColor: 'rgba(130, 147, 64, 0.1)' }}></div>
-                </a>
+            <div className="hidden md:flex items-center space-x-10">
+              <a 
+                href="#how-it-works" 
+                className="px-4 py-3 text-xl font-medium transition-all duration-300 hover:scale-105 hover:shadow-lg relative group" 
+                style={{ color: '#000000' }}
+                onMouseEnter={playHoverSound}
+                onClick={playClickSound}
+              >
+                <span className="relative z-10">How it Works</span>
+                <div className="absolute inset-0 rounded-lg scale-0 group-hover:scale-100 transition-transform duration-300" style={{ backgroundColor: 'rgba(130, 147, 64, 0.1)' }}></div>
+              </a>
+              <a 
+                href="#features" 
+                className="px-4 py-3 text-xl font-medium transition-all duration-300 hover:scale-105 hover:shadow-lg relative group" 
+                style={{ color: '#000000' }}
+                onMouseEnter={playHoverSound}
+                onClick={playClickSound}
+              >
+                <span className="relative z-10">Features</span>
+                <div className="absolute inset-0 rounded-lg scale-0 group-hover:scale-100 transition-transform duration-300" style={{ backgroundColor: 'rgba(130, 147, 64, 0.1)' }}></div>
+              </a>
+              <a 
+                href="#testimonials" 
+                className="px-4 py-3 text-xl font-medium transition-all duration-300 hover:scale-105 hover:shadow-lg relative group" 
+                style={{ color: '#000000' }}
+                onMouseEnter={playHoverSound}
+                onClick={playClickSound}
+              >
+                <span className="relative z-10">Success Stories</span>
+                <div className="absolute inset-0 rounded-lg scale-0 group-hover:scale-100 transition-transform duration-300" style={{ backgroundColor: 'rgba(130, 147, 64, 0.1)' }}></div>
+              </a>
 
-                <a 
-                  href="#pricing" 
-                  className="px-4 py-3 text-xl font-medium transition-all duration-300 hover:scale-105 hover:shadow-lg relative group" 
-                  style={{ color: '#000000' }}
-                  onMouseEnter={playHoverSound}
-                  onClick={playClickSound}
-                >
-                  <span className="relative z-10">Pricing</span>
-                  <div className="absolute inset-0 rounded-lg scale-0 group-hover:scale-100 transition-transform duration-300" style={{ backgroundColor: 'rgba(130, 147, 64, 0.1)' }}></div>
-                </a>
-              </div>
+              <a 
+                href="#pricing" 
+                className="px-4 py-3 text-xl font-medium transition-all duration-300 hover:scale-105 hover:shadow-lg relative group" 
+                style={{ color: '#000000' }}
+                onMouseEnter={playHoverSound}
+                onClick={playClickSound}
+              >
+                <span className="relative z-10">Pricing</span>
+                <div className="absolute inset-0 rounded-lg scale-0 group-hover:scale-100 transition-transform duration-300" style={{ backgroundColor: 'rgba(130, 147, 64, 0.1)' }}></div>
+              </a>
+              
+              {/* Desktop Sign In Button - Inside navigation for perfect alignment */}
+              <Button 
+                onClick={openPopup}
+                className="text-white px-8 py-3 text-xl font-semibold button-hover rounded-lg" 
+                style={{ backgroundColor: '#829340' }}
+              >
+                Sign In
+              </Button>
             </div>
-            
-            {/* Desktop Sign In Button */}
-            <Button 
-              onClick={openPopup}
-              className="hidden md:block text-white px-8 py-3 text-xl font-semibold button-hover" 
-              style={{ backgroundColor: '#829340' }}
-            >
-              Sign In
-            </Button>
 
             {/* Mobile Menu Button */}
             <button
