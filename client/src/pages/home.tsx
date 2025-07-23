@@ -62,23 +62,10 @@ function Navigation() {
         position: 'relative',
         width: '100%',
         height: '128px',
-        background: 'linear-gradient(303.01deg, #FFF1F0 0%, #FFFAF1 33.33%, #E8FAF6 66.67%, #EAF6FD 100%)',
-        zIndex: 10,
-        overflow: 'hidden'
+        background: 'transparent',
+        zIndex: 10
       }}
     >
-      {/* Geometric background pattern for navbar */}
-      <div
-        className="absolute inset-0 pointer-events-none"
-        style={{
-          backgroundImage: "url(/careerframe-pattern.svg)",
-          backgroundSize: "400px 400px",
-          backgroundRepeat: "repeat",
-          backgroundPosition: "0 0",
-          opacity: 0.15,
-          transform: "scale(1.2)"
-        }}
-      />
       <div className="max-w-full mx-auto px-6 sm:px-8 lg:px-12 xl:px-20 2xl:px-28 relative z-10" style={{ backgroundColor: 'transparent' }}>
         <div className="flex justify-between items-center h-32" style={{ backgroundColor: 'transparent' }}>
           <div className="flex-shrink-0 flex items-center" style={{ zIndex: 10000 }}>

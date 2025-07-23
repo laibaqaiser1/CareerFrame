@@ -131,7 +131,8 @@ export function ComingSoonPage() {
       className="min-h-screen flex flex-col relative overflow-hidden"
       style={{
         background: "linear-gradient(303.01deg, #FFF1F0 0%, #FFFAF1 33.33%, #E8FAF6 66.67%, #EAF6FD 100%)",
-        paddingTop: '0'
+        marginTop: '-128px',
+        paddingTop: '128px'
       }}
     >
       {/* Pattern Background - Right Side Only */}
