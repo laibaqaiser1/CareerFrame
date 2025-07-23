@@ -128,9 +128,10 @@ export function ComingSoonPage() {
 
   return (
     <section 
-      className="min-h-screen flex flex-col relative pt-32 overflow-hidden"
+      className="min-h-screen flex flex-col relative overflow-hidden"
       style={{
-        background: "linear-gradient(303.01deg, #FFF1F0 0%, #FFFAF1 33.33%, #E8FAF6 66.67%, #EAF6FD 100%)"
+        background: "linear-gradient(303.01deg, #FFF1F0 0%, #FFFAF1 33.33%, #E8FAF6 66.67%, #EAF6FD 100%)",
+        paddingTop: '0'
       }}
     >
       {/* Pattern Background - Right Side Only */}
@@ -180,7 +181,7 @@ export function ComingSoonPage() {
           y: bottomRightY,
         }}
       />
-      <div className="w-full max-w-full mx-auto px-4 sm:px-6 md:px-8 lg:px-12 xl:px-20 2xl:px-28 flex-1 flex flex-col relative z-10">
+      <div className="w-full max-w-full mx-auto px-4 sm:px-6 md:px-8 lg:px-12 xl:px-20 2xl:px-28 flex-1 flex flex-col relative z-10 pt-32">
         
         {/* Main Launch Message - Mobile Responsive */}
         <div className="flex-1 flex items-center justify-center py-6 sm:py-8 md:py-12">
