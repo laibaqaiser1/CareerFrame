@@ -59,15 +59,11 @@ function Navigation() {
       <WaitlistPopup isOpen={isOpen} onClose={closePopup} />
     <nav 
       style={{ 
-        position: 'fixed',
-        top: 0,
-        left: 0,
-        right: 0,
+        position: 'relative',
         width: '100%',
         height: '128px',
         backgroundColor: 'transparent',
-        zIndex: 9999,
-        pointerEvents: 'auto'
+        zIndex: 10
       }}
     >
       <div className="max-w-full mx-auto px-6 sm:px-8 lg:px-12 xl:px-20 2xl:px-28">
