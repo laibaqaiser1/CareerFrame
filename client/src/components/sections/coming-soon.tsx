@@ -8,6 +8,26 @@ import avatar1 from "@assets/Avatar_1753221030644.png";
 import avatar2 from "@assets/Avatar (1)_1753221039419.png";
 import avatar3 from "@assets/Avatar (2)_1753221045680.png";
 
+// Preload background images for reliable loading across all devices
+const preloadImages = () => {
+  if (typeof window !== 'undefined') {
+    const imagesToPreload = [
+      '/Pattern.png',
+      '/TopLeftCornerFrame.png', 
+      '/BottomRightCornerFrame.png',
+      '/careerframe-pattern.svg'
+    ];
+    
+    imagesToPreload.forEach(src => {
+      const img = new Image();
+      img.src = src;
+      // Add to browser cache
+      img.onload = () => console.log(`Preloaded: ${src}`);
+      img.onerror = () => console.warn(`Failed to preload: ${src}`);
+    });
+  }
+};
+
 export function ComingSoonPage() {
   const { scrollY } = useScroll();
   
@@ -29,8 +49,11 @@ export function ComingSoonPage() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const { toast } = useToast();
 
-  // Calculate countdown to launch date
+  // Calculate countdown to launch date and preload images
   useEffect(() => {
+    // Preload background images on component mount
+    preloadImages();
+    
     const launchDate = new Date('2025-08-18T00:00:00').getTime();
     
     const updateCountdown = () => {
@@ -128,58 +151,75 @@ export function ComingSoonPage() {
 
   return (
     <section 
-      className="min-h-screen flex flex-col relative overflow-hidden"
+      className="min-h-screen flex flex-col relative overflow-hidden coming-soon-background motion-safe"
       style={{
         background: "linear-gradient(303.01deg, #FFF1F0 0%, #FFFAF1 33.33%, #E8FAF6 66.67%, #EAF6FD 100%)",
         marginTop: '-128px',
-        paddingTop: '128px'
+        paddingTop: '128px',
+        // Ensure background always displays
+        minHeight: '100vh',
+        width: '100%',
+        // Force background to display immediately
+        backgroundAttachment: 'fixed',
+        backgroundSize: 'cover'
       }}
     >
-      {/* Pattern Background - Right Side Only */}
+      {/* Pattern Background - Right Side Only with reliable loading */}
       <motion.div 
         initial={{ opacity: 0, x: 100 }}
         animate={{ opacity: 0.9, x: 0 }}
         transition={{ duration: 1.5 }}
         className="absolute top-0 right-0 w-1/2 h-full"
         style={{
-          backgroundImage: "url(/Pattern.png)",
-          backgroundRepeat: "no-repeat",
-          backgroundSize: "cover",
-          backgroundPosition: "right center"
+          backgroundImage: "url(/Pattern.png), linear-gradient(45deg, rgba(255,241,240,0.1) 0%, rgba(255,250,241,0.1) 100%)",
+          backgroundRepeat: "no-repeat, no-repeat",
+          backgroundSize: "cover, cover",
+          backgroundPosition: "right center, center",
+          // Fallback pattern in case main pattern doesn't load
+          backgroundColor: 'rgba(255,250,241,0.05)',
+          willChange: 'transform'
+        }}
+        onError={(e) => {
+          // Fallback if image fails to load
+          e.currentTarget.style.backgroundImage = "linear-gradient(45deg, rgba(255,241,240,0.2) 0%, rgba(255,250,241,0.2) 100%)";
         }}
       />
       
-      {/* Animated Corner Frame - Top Left */}
+      {/* Animated Corner Frame - Top Left with reliable loading */}
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 0.8 }}
         transition={{ duration: 1.5, delay: 0.5 }}
         className="fixed top-0 left-0 w-96 h-96 lg:w-[500px] lg:h-[500px]"
         style={{
-          backgroundImage: "url(/TopLeftCornerFrame.png)",
-          backgroundSize: "contain",
-          backgroundRepeat: "no-repeat",
-          backgroundPosition: "top left",
+          backgroundImage: "url(/TopLeftCornerFrame.png), linear-gradient(135deg, rgba(130,147,64,0.1) 0%, transparent 100%)",
+          backgroundSize: "contain, contain",
+          backgroundRepeat: "no-repeat, no-repeat",
+          backgroundPosition: "top left, top left",
           zIndex: 1,
           x: topLeftX,
           y: topLeftY,
+          backgroundColor: 'transparent',
+          willChange: 'transform'
         }}
       />
       
-      {/* Animated Corner Frame - Bottom Right */}
+      {/* Animated Corner Frame - Bottom Right with reliable loading */}
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 0.8 }}
         transition={{ duration: 1.5, delay: 0.8 }}
         className="fixed bottom-0 right-0 w-96 h-96 lg:w-[500px] lg:h-[500px]"
         style={{
-          backgroundImage: "url(/BottomRightCornerFrame.png)",
-          backgroundSize: "contain",
-          backgroundRepeat: "no-repeat",
-          backgroundPosition: "bottom right",
+          backgroundImage: "url(/BottomRightCornerFrame.png), linear-gradient(315deg, rgba(130,147,64,0.1) 0%, transparent 100%)",
+          backgroundSize: "contain, contain",
+          backgroundRepeat: "no-repeat, no-repeat",
+          backgroundPosition: "bottom right, bottom right",
           zIndex: 1,
           x: bottomRightX,
           y: bottomRightY,
+          backgroundColor: 'transparent',
+          willChange: 'transform'
         }}
       />
       <div className="w-full max-w-full mx-auto px-4 sm:px-6 md:px-8 lg:px-12 xl:px-20 2xl:px-28 flex-1 flex flex-col relative z-10 pt-32">

@@ -70,6 +70,28 @@ html, body, * {
 
 /* Allow natural backgrounds - removed forced white */
 
+/* Ensure reliable background image loading */
+.coming-soon-background {
+  background: linear-gradient(303.01deg, #FFF1F0 0%, #FFFAF1 33.33%, #E8FAF6 66.67%, #EAF6FD 100%) !important;
+  background-attachment: fixed;
+  background-size: cover;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+}
+
+/* Force hardware acceleration for smoother animations */
+.motion-safe {
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  will-change: transform;
+}
+
+/* Ensure images load reliably across devices */
+img, .background-image {
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
+}
+
 /* Allow navbar to have its own background */
 
 body {
