@@ -190,7 +190,7 @@ export function ComingSoonPage() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 0.8 }}
         transition={{ duration: 1.5, delay: 0.5 }}
-        className="fixed top-0 left-0 w-96 h-96 lg:w-[500px] lg:h-[500px]"
+        className="fixed top-0 left-0 w-48 h-48 sm:w-64 sm:h-64 md:w-80 md:h-80 lg:w-96 lg:h-96 xl:w-[500px] xl:h-[500px]"
         style={{
           backgroundImage: "url(/TopLeftCornerFrame.png)",
           backgroundSize: "contain",
@@ -209,7 +209,7 @@ export function ComingSoonPage() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 0.8 }}
         transition={{ duration: 1.5, delay: 0.8 }}
-        className="fixed bottom-0 right-0 w-96 h-96 lg:w-[500px] lg:h-[500px]"
+        className="fixed bottom-0 right-0 w-48 h-48 sm:w-64 sm:h-64 md:w-80 md:h-80 lg:w-96 lg:h-96 xl:w-[500px] xl:h-[500px]"
         style={{
           backgroundImage: "url(/BottomRightCornerFrame.png)",
           backgroundSize: "contain",
