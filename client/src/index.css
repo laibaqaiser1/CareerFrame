@@ -34,7 +34,6 @@
 /* Force light mode - prevent dark mode activation */
 html, body {
   color-scheme: light !important;
-  background-color: white !important;
 }
 
 html.dark,
@@ -42,7 +41,6 @@ html[data-theme="dark"],
 body.dark,
 body[data-theme="dark"] {
   color-scheme: light !important;
-  background-color: white !important;
 }
 
 /* Custom Cursor Styles */
@@ -70,12 +68,9 @@ html, body, * {
   color-scheme: light !important;
 }
 
-html {
-  background-color: white !important;
-}
+/* Allow natural backgrounds - removed forced white */
 
 body {
-  background-color: white !important;
   color: black !important;
 }
 
