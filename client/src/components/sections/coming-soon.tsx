@@ -222,7 +222,7 @@ export function ComingSoonPage() {
           willChange: 'transform'
         }}
       />
-      <div className="w-full max-w-full mx-auto px-4 sm:px-6 md:px-8 lg:px-12 xl:px-20 2xl:px-28 flex-1 flex flex-col relative z-10 pt-20 sm:pt-24 md:pt-28 lg:pt-32">
+      <div className="w-full max-w-full mx-auto px-4 sm:px-6 md:px-8 lg:px-12 xl:px-20 2xl:px-28 flex-1 flex flex-col relative z-10 pt-16 sm:pt-20 md:pt-24 lg:pt-28">
         
         {/* Main Launch Message - Mobile Responsive */}
         <div className="flex-1 flex items-center justify-center py-6 sm:py-8 md:py-12">
