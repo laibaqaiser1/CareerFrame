@@ -135,6 +135,7 @@ npm run dev
 ## Changelog
 
 Changelog:
+- July 23, 2025: Fixed navigation bar positioning - navbar now stays properly fixed at top with transparent background, main content has pt-32 padding to prevent overlap, and Sign In button aligned correctly with navigation items
 - July 15, 2025: Set launch countdown date to August 18th, 2025 - site now displays live countdown with days, hours, minutes, and seconds remaining until launch
 - July 15, 2025: Updated hero headline from "Find the Right Role. Get There Faster." to "Your Potential Is Bigger Than Your Job Title — Let's Prove It" with proper line break formatting for stronger messaging appeal
 - July 15, 2025: Enhanced animated background logo with dramatic scroll effects - increased movement (2.8x vertical, 1.2x horizontal), progressive blur up to 40px, and darkened appearance (30% brightness) for improved visual impact

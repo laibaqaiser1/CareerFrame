@@ -57,14 +57,18 @@ function Navigation() {
   return (
     <>
       <WaitlistPopup isOpen={isOpen} onClose={closePopup} />
-    <nav className="fixed top-0 left-0 right-0 w-full z-50" style={{ 
-      backgroundColor: 'transparent',
-      position: 'fixed',
-      top: 0,
-      left: 0,
-      right: 0,
-      zIndex: 9999
-    }}>
+    <nav 
+      className="fixed top-0 left-0 right-0 w-full z-50" 
+      style={{ 
+        backgroundColor: 'transparent',
+        position: 'fixed',
+        top: 0,
+        left: 0,
+        right: 0,
+        width: '100%',
+        zIndex: 50
+      }}
+    >
       <div className="max-w-full mx-auto px-6 sm:px-8 lg:px-12 xl:px-20 2xl:px-28">
         <div className="flex justify-between items-center h-32">
           <div className="flex-shrink-0 flex items-center" style={{ zIndex: 10000 }}>
