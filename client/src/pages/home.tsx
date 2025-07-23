@@ -58,15 +58,16 @@ function Navigation() {
     <>
       <WaitlistPopup isOpen={isOpen} onClose={closePopup} />
     <nav 
-      className="fixed top-0 left-0 right-0 w-full z-50" 
       style={{ 
-        backgroundColor: 'transparent',
         position: 'fixed',
         top: 0,
         left: 0,
         right: 0,
         width: '100%',
-        zIndex: 50
+        height: '128px',
+        backgroundColor: 'transparent',
+        zIndex: 9999,
+        pointerEvents: 'auto'
       }}
     >
       <div className="max-w-full mx-auto px-6 sm:px-8 lg:px-12 xl:px-20 2xl:px-28">
@@ -280,7 +281,7 @@ export default function Home() {
   return (
     <>
       <Navigation />
-      <div className="bg-white pt-32">
+      <div className="bg-white">
         {/* Coming Soon Section at the top */}
         <div className="fade-in">
           <ComingSoonPage />
