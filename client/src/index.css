@@ -79,6 +79,25 @@ html, body, * {
   min-height: 100vh;
 }
 
+/* Mobile-specific pattern adjustments */
+@media (max-width: 640px) {
+  .pattern-background {
+    background-size: 60% auto, cover !important;
+  }
+}
+
+@media (min-width: 641px) and (max-width: 768px) {
+  .pattern-background {
+    background-size: 70% auto, cover !important;
+  }
+}
+
+@media (min-width: 769px) {
+  .pattern-background {
+    background-size: cover, cover !important;
+  }
+}
+
 /* Force hardware acceleration for smoother animations */
 .motion-safe {
   transform: translateZ(0);

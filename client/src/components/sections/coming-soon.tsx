@@ -169,11 +169,11 @@ export function ComingSoonPage() {
         initial={{ opacity: 0, x: 100 }}
         animate={{ opacity: 0.9, x: 0 }}
         transition={{ duration: 1.5 }}
-        className="absolute top-0 right-0 w-1/2 h-full"
+        className="absolute top-0 right-0 w-1/2 h-full pattern-background"
         style={{
           backgroundImage: "url(/Pattern.png), linear-gradient(45deg, rgba(255,241,240,0.1) 0%, rgba(255,250,241,0.1) 100%)",
           backgroundRepeat: "no-repeat, no-repeat",
-          backgroundSize: "cover, cover",
+          backgroundSize: "80% auto, cover", // Made pattern smaller on mobile
           backgroundPosition: "right center, center",
           // Fallback pattern in case main pattern doesn't load
           backgroundColor: 'rgba(255,250,241,0.05)',
@@ -222,7 +222,7 @@ export function ComingSoonPage() {
           willChange: 'transform'
         }}
       />
-      <div className="w-full max-w-full mx-auto px-4 sm:px-6 md:px-8 lg:px-12 xl:px-20 2xl:px-28 flex-1 flex flex-col relative z-10 pt-32">
+      <div className="w-full max-w-full mx-auto px-4 sm:px-6 md:px-8 lg:px-12 xl:px-20 2xl:px-28 flex-1 flex flex-col relative z-10 pt-20 sm:pt-24 md:pt-28 lg:pt-32">
         
         {/* Main Launch Message - Mobile Responsive */}
         <div className="flex-1 flex items-center justify-center py-6 sm:py-8 md:py-12">
