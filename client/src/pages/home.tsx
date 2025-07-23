@@ -25,6 +25,7 @@ import { useSoundEffects } from "@/hooks/useSoundEffects";
 
 function Navigation() {
   const [scrolled, setScrolled] = useState(false);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const { isOpen, openPopup, closePopup } = useWaitlistPopup();
   const { playHoverSound, playClickSound } = useSoundEffects();
 
@@ -35,6 +36,23 @@ function Navigation() {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
+  // Close mobile menu when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (mobileMenuOpen && !(event.target as Element).closest('nav')) {
+        setMobileMenuOpen(false);
+      }
+    };
+    
+    if (mobileMenuOpen) {
+      document.addEventListener('click', handleClickOutside);
+    }
+    
+    return () => {
+      document.removeEventListener('click', handleClickOutside);
+    };
+  }, [mobileMenuOpen]);
 
   return (
     <>
@@ -63,7 +81,8 @@ function Navigation() {
             />
           </div>
           
-          <div className="flex items-center space-x-8">
+          <div className="flex items-center space-x-4">
+            {/* Desktop Navigation */}
             <div className="hidden md:block">
               <div className="flex items-baseline space-x-10">
                 <a 
@@ -110,16 +129,97 @@ function Navigation() {
               </div>
             </div>
             
+            {/* Desktop Sign In Button */}
             <Button 
               onClick={openPopup}
-              className="text-white px-8 py-3 text-xl font-semibold button-hover" 
+              className="hidden md:block text-white px-8 py-3 text-xl font-semibold button-hover" 
+              style={{ backgroundColor: '#829340' }}
+            >
+              Sign In
+            </Button>
+
+            {/* Mobile Menu Button */}
+            <button
+              onClick={() => {
+                setMobileMenuOpen(!mobileMenuOpen);
+                playClickSound();
+              }}
+              className="md:hidden p-2 rounded-lg transition-colors duration-200"
+              style={{ backgroundColor: mobileMenuOpen ? 'rgba(130, 147, 64, 0.1)' : 'transparent' }}
+              onMouseEnter={playHoverSound}
+            >
+              <div className="w-6 h-6 flex flex-col justify-center items-center">
+                <span className={`block w-6 h-0.5 bg-black transition-all duration-300 ${mobileMenuOpen ? 'rotate-45 translate-y-1.5' : ''}`}></span>
+                <span className={`block w-6 h-0.5 bg-black transition-all duration-300 mt-1 ${mobileMenuOpen ? 'opacity-0' : ''}`}></span>
+                <span className={`block w-6 h-0.5 bg-black transition-all duration-300 mt-1 ${mobileMenuOpen ? '-rotate-45 -translate-y-1.5' : ''}`}></span>
+              </div>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      {/* Mobile Menu Dropdown */}
+      {mobileMenuOpen && (
+        <div className="md:hidden fixed top-32 left-0 right-0 bg-white shadow-lg border-t z-40">
+          <div className="px-6 py-4 space-y-4">
+            <a 
+              href="#how-it-works" 
+              className="block py-3 text-lg font-medium transition-colors duration-200 hover:text-green-600" 
+              style={{ color: '#000000' }}
+              onClick={() => {
+                setMobileMenuOpen(false);
+                playClickSound();
+              }}
+            >
+              How it Works
+            </a>
+            <a 
+              href="#features" 
+              className="block py-3 text-lg font-medium transition-colors duration-200 hover:text-green-600" 
+              style={{ color: '#000000' }}
+              onClick={() => {
+                setMobileMenuOpen(false);
+                playClickSound();
+              }}
+            >
+              Features
+            </a>
+            <a 
+              href="#testimonials" 
+              className="block py-3 text-lg font-medium transition-colors duration-200 hover:text-green-600" 
+              style={{ color: '#000000' }}
+              onClick={() => {
+                setMobileMenuOpen(false);
+                playClickSound();
+              }}
+            >
+              Success Stories
+            </a>
+            <a 
+              href="#pricing" 
+              className="block py-3 text-lg font-medium transition-colors duration-200 hover:text-green-600" 
+              style={{ color: '#000000' }}
+              onClick={() => {
+                setMobileMenuOpen(false);
+                playClickSound();
+              }}
+            >
+              Pricing
+            </a>
+            <Button 
+              onClick={() => {
+                openPopup();
+                setMobileMenuOpen(false);
+                playClickSound();
+              }}
+              className="w-full text-white px-6 py-3 text-lg font-semibold mt-4" 
               style={{ backgroundColor: '#829340' }}
             >
               Sign In
             </Button>
           </div>
         </div>
-      </div>
+      )}
     </nav>
     </>
   );
