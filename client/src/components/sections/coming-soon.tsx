@@ -180,43 +180,31 @@ export function ComingSoonPage() {
           y: bottomRightY,
         }}
       />
-      <div className="w-full max-w-full mx-auto px-6 sm:px-8 lg:px-12 xl:px-20 2xl:px-28 flex-1 flex flex-col relative z-10">
+      <div className="w-full max-w-full mx-auto px-4 sm:px-6 md:px-8 lg:px-12 xl:px-20 2xl:px-28 flex-1 flex flex-col relative z-10">
         
-        {/* Main Launch Message - Perfectly centered */}
-        <div className="flex-1 flex items-center justify-center py-4 md:py-8">
+        {/* Main Launch Message - Mobile Responsive */}
+        <div className="flex-1 flex items-center justify-center py-6 sm:py-8 md:py-12">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="text-center max-w-5xl mx-auto px-4"
+            className="text-center max-w-5xl mx-auto w-full"
           >
-            <h1 style={{ 
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-semibold text-center text-gray-800 mb-4 leading-tight px-2" style={{ 
               fontFamily: 'Inter',
-              fontWeight: 600,
-              fontSize: '60px',
-              lineHeight: '72px',
-              letterSpacing: '-2%',
-              textAlign: 'center',
-              color: '#1F2937',
-              marginBottom: '16px'
+              letterSpacing: '-0.02em'
             }}>
               Launch day is soon approaching
             </h1>
-            <p style={{ 
+            <p className="text-base sm:text-lg md:text-xl text-center text-gray-600 mb-6 px-4 max-w-3xl mx-auto" style={{ 
               fontFamily: 'Inter',
-              fontWeight: 400,
-              fontSize: '20px',
-              lineHeight: '30px',
-              letterSpacing: '0%',
-              textAlign: 'center',
-              color: '#6B7280',
-              marginBottom: '24px'
+              lineHeight: '1.5'
             }}>
               we're letting in only 10 people first and you'll want to be one of them!
             </p>
 
-            {/* Countdown Timer - Moved inside the main section */}
-            <div className="flex justify-center items-center mb-8" style={{ gap: '4px' }}>
+            {/* Countdown Timer - Mobile Responsive */}
+            <div className="flex justify-center items-center mb-8 gap-1 sm:gap-2 px-4">
                 {[
                   { value: timeLeft.days, label: 'Days' },
                   { value: timeLeft.hours, label: 'Hours' },
@@ -230,40 +218,19 @@ export function ComingSoonPage() {
                       transition={{ duration: 0.5, delay: index * 0.1 }}
                       className="text-center"
                     >
-                      <div 
-                        className="inline-flex flex-col items-center justify-center shadow-md"
-                        style={{
-                          backgroundColor: 'white',
-                          border: '1px solid rgba(0,0,0,0.1)',
-                          width: '100px',
-                          height: '100px',
-                          borderRadius: '12px',
-                          padding: '8px'
-                        }}
-                      >
-                        <div 
-                          className="text-2xl font-bold"
-                          style={{ 
-                            color: '#1F2937',
-                            fontFamily: 'Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif',
-                            lineHeight: '1'
-                          }}
-                        >
+                      <div className="inline-flex flex-col items-center justify-center shadow-md bg-white border border-gray-200 w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 lg:w-28 lg:h-28 rounded-lg sm:rounded-xl p-2">
+                        <div className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-gray-800 leading-none" style={{ 
+                            fontFamily: 'Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif'
+                          }}>
                           {String(item.value).padStart(2, '0')}
                         </div>
-                        <div 
-                          className="text-xs font-medium uppercase tracking-wide mt-1"
-                          style={{ color: '#6B7280' }}
-                        >
+                        <div className="text-xs sm:text-xs md:text-sm font-medium uppercase tracking-wide mt-1 text-gray-600">
                           {item.label}
                         </div>
                       </div>
                     </motion.div>
                     {index < 3 && (
-                      <div 
-                        className="text-2xl font-bold"
-                        style={{ color: '#6B7280', margin: '0 8px' }}
-                      >
+                      <div className="text-lg sm:text-xl md:text-2xl font-bold text-gray-600 mx-1 sm:mx-2">
                         :
                       </div>
                     )}
@@ -288,7 +255,7 @@ export function ComingSoonPage() {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.8 }}
-              className="max-w-md mx-auto"
+              className="max-w-md mx-auto px-4"
             >
               <form onSubmit={handleWaitlistSignup} className="space-y-4">
                 <Input
@@ -297,7 +264,7 @@ export function ComingSoonPage() {
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   required
-                  className="w-full px-4 py-4 text-lg border-2 border-gray-200 rounded-lg focus:ring-2 focus:ring-green-400 focus:border-green-400"
+                  className="w-full px-3 py-3 sm:px-4 sm:py-4 text-base sm:text-lg border-2 border-gray-200 rounded-lg focus:ring-2 focus:ring-green-400 focus:border-green-400"
                   style={{
                     fontFamily: 'Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif'
                   }}
@@ -306,7 +273,7 @@ export function ComingSoonPage() {
                   soundType="submit"
                   type="submit"
                   disabled={isSubmitting}
-                  className="w-full text-white px-6 py-4 font-semibold rounded-lg text-lg transition-all duration-200 hover:scale-[1.02]"
+                  className="w-full text-white px-4 py-3 sm:px-6 sm:py-4 font-semibold rounded-lg text-base sm:text-lg transition-all duration-200 hover:scale-[1.02]"
                   style={{
                     backgroundColor: '#829340',
                     fontFamily: 'Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif'
@@ -320,13 +287,13 @@ export function ComingSoonPage() {
                 Get notified when we launch + exclusive early access
               </p>
               
-              <div className="flex justify-center items-center mt-6 gap-2">
+              <div className="flex justify-center items-center mt-6 gap-2 flex-wrap">
                 <div className="flex -space-x-2">
-                  <img src={avatar1} alt="User avatar" className="w-8 h-8 rounded-full border-2 border-white object-cover" />
-                  <img src={avatar2} alt="User avatar" className="w-8 h-8 rounded-full border-2 border-white object-cover" />
-                  <img src={avatar3} alt="User avatar" className="w-8 h-8 rounded-full border-2 border-white object-cover" />
+                  <img src={avatar1} alt="User avatar" className="w-6 h-6 sm:w-8 sm:h-8 rounded-full border-2 border-white object-cover" />
+                  <img src={avatar2} alt="User avatar" className="w-6 h-6 sm:w-8 sm:h-8 rounded-full border-2 border-white object-cover" />
+                  <img src={avatar3} alt="User avatar" className="w-6 h-6 sm:w-8 sm:h-8 rounded-full border-2 border-white object-cover" />
                 </div>
-                <span className="text-sm ml-2 flex items-center gap-2">
+                <span className="text-xs sm:text-sm ml-2 flex items-center gap-1 sm:gap-2">
                   <span className="font-semibold" style={{ color: '#829340' }}>3 joined</span>
                   <span className="text-gray-400">|</span>
                   <span className="font-semibold" style={{ color: '#667085' }}>5 spots left</span>
