@@ -1,0 +1,124 @@
+2025-07-09 19:21:27,926 - semgrep.run_scan - DEBUG - semgrep version 1.4.0
+2025-07-09 19:21:27,932 - semgrep.git - DEBUG - Failed to get project url from 'git ls-remote': Command failed with exit code: 128
+-----
+Command failed with output:
+fatal: No remote configured to list refs from.
+
+
+Failed to run 'git ls-remote --get-url'. Possible reasons:
+
+- the git binary is not available
+- the current working directory is not a git repository
+- the baseline commit is not a parent of the current commit
+    (if you are running through semgrep-app, check if you are setting `SEMGREP_BRANCH` or `SEMGREP_BASELINE_COMMIT` properly)
+- the current working directory is not marked as safe
+    (fix with `git config --global --add safe.directory $(pwd)`)
+
+Try running the command yourself to debug the issue.
+2025-07-09 19:21:27,933 - semgrep.config_resolver - DEBUG - Loading local config from /home/runner/workspace/.config/.semgrep/semgrep_rules.json
+2025-07-09 19:21:27,935 - semgrep.config_resolver - DEBUG - Done loading local config from /home/runner/workspace/.config/.semgrep/semgrep_rules.json
+2025-07-09 19:21:27,939 - semgrep.config_resolver - DEBUG - Saving rules to /tmp/semgrep-eex3y9t4.rules
+2025-07-09 19:21:28,692 - semgrep.rule_lang - DEBUG - semgrep-core validation response: valid=True
+2025-07-09 19:21:28,692 - semgrep.rule_lang - DEBUG - semgrep-core validation succeeded
+2025-07-09 19:21:28,692 - semgrep.rule_lang - DEBUG - RPC validation succeeded
+2025-07-09 19:21:28,693 - semgrep.config_resolver - DEBUG - loaded 1 configs in 0.7597072124481201
+2025-07-09 19:21:28,769 - semgrep.run_scan - VERBOSE - running 715 rules from 1 config /home/runner/workspace/.config/.semgrep/semgrep_rules.json_0
+2025-07-09 19:21:28,770 - semgrep.run_scan - VERBOSE - No .semgrepignore found. Using default .semgrepignore rules. See the docs for the list of default ignores: https://semgrep.dev/docs/cli-usage/#ignore-files
+2025-07-09 19:21:28,772 - semgrep.run_scan - VERBOSE - Rules:
+2025-07-09 19:21:28,772 - semgrep.run_scan - VERBOSE - <SKIPPED DATA (too many entries; use --max-log-list-entries)>
+2025-07-09 19:21:29,555 - semgrep.core_runner - DEBUG - Passing whole rules directly to semgrep_core
+2025-07-09 19:21:29,896 - semgrep.core_runner - DEBUG - Running Semgrep engine with command:
+2025-07-09 19:21:29,896 - semgrep.core_runner - DEBUG - /tmp/_MEI9vGAZ3/semgrep/bin/opengrep-core -json -rules /tmp/tmp_rxcrgx4.json -j 8 -targets /tmp/tmpyu5v1_d7 -timeout 5 -timeout_threshold 3 -max_memory 0 -fast
+2025-07-09 19:21:37,245 - semgrep.core_runner - DEBUG - --- semgrep-core stderr ---
+[00.10][[34mINFO[0m]: Executed as: /tmp/_MEI9vGAZ3/semgrep/bin/opengrep-core -json -rules /tmp/tmp_rxcrgx4.json -j 8 -targets /tmp/tmpyu5v1_d7 -timeout 5 -timeout_threshold 3 -max_memory 0 -fast
+[00.10][[34mINFO[0m]: Version: 1.4.0
+[00.10][[34mINFO[0m]: Parsing rules in /tmp/tmp_rxcrgx4.json
+[00.57][[34mINFO[0m]: scan: processing 412 files (skipping 0), with 457 rules (skipping 0 )
+[01.69][[33mWARNING[0m]: Fixpoint timeout while performing taint analysis [rule: config..semgrep.vendored-rules.javascript.lang.security.audit.detect-non-literal-require file: client/src/components/ui/sidebar.tsx func: ???]
+[0m[06.65][[33mWARNING[0m]: Fixpoint timeout while performing taint analysis [rule: config..semgrep.vendored-rules.javascript.express.security.require-request file: client/src/components/sections/coming-soon.tsx func: ComingSoonPage:22557]
+[0m--- end semgrep-core stderr ---
+2025-07-09 19:21:37,360 - semgrep.rule_match - DEBUG - match_key = ('', PosixPath('careerframe_website_full.html'), 'config..semgrep.vendored-rules.html.security.audit.missing-integrity') match_id = 73455687deb06336329f376cddf55404b0487297ee8ece547f589d9663cf59d52615eb6d443a6fee1c14a13d319517c6a45e6a04d9e44624a8ec70d122a47ec2_0
+2025-07-09 19:21:37,361 - semgrep.rule_match - DEBUG - match_key = (' src="https://cdn.tailwindcss.com" (?is).*integrity= (google-analytics\\.com|fonts\\.googleapis\\.com|fonts\\.gstatic\\.com|googletagmanager\\.com) .*rel\\s*=\\s*[\'"]?preconnect.* href="... :// ..." href="//..." href=\'... :// ...\' href=\'//...\' src="... :// ..." src="//..." src=\'... :// ...\' src=\'//...\' <link  src="https://cdn.tailwindcss.com" > <script  src="https://cdn.tailwindcss.com" >...</script>', PosixPath('careerframe_website_full.html'), 'config..semgrep.vendored-rules.html.security.audit.missing-integrity') match_id = f0a70bb4ecbe0143c53a52d58df91ada80f8382d31262ee0c14e530854381c8bf6f4de2e7ad636fc995d45c44690f6ab4741300bcf96fbfb77109533b0cbd95f_0
+2025-07-09 19:21:37,362 - semgrep.rule_match - DEBUG - match_key = (' src="https://cdn.tailwindcss.com" (?is).*integrity= (google-analytics\\.com|fonts\\.googleapis\\.com|fonts\\.gstatic\\.com|googletagmanager\\.com) .*rel\\s*=\\s*[\'"]?preconnect.* href="... :// ..." href="//..." href=\'... :// ...\' href=\'//...\' src="... :// ..." src="//..." src=\'... :// ...\' src=\'//...\' <link  src="https://cdn.tailwindcss.com" > <script  src="https://cdn.tailwindcss.com" >...</script>', PosixPath('careerframe_website_full.html'), 'config..semgrep.vendored-rules.html.security.audit.missing-integrity') match_id = f0a70bb4ecbe0143c53a52d58df91ada80f8382d31262ee0c14e530854381c8bf6f4de2e7ad636fc995d45c44690f6ab4741300bcf96fbfb77109533b0cbd95f_0
+2025-07-09 19:21:37,362 - semgrep.rule_match - DEBUG - match_key = (' src="https://cdn.tailwindcss.com" (?is).*integrity= (google-analytics\\.com|fonts\\.googleapis\\.com|fonts\\.gstatic\\.com|googletagmanager\\.com) .*rel\\s*=\\s*[\'"]?preconnect.* href="... :// ..." href="//..." href=\'... :// ...\' href=\'//...\' src="... :// ..." src="//..." src=\'... :// ...\' src=\'//...\' <link  src="https://cdn.tailwindcss.com" > <script  src="https://cdn.tailwindcss.com" >...</script>', PosixPath('careerframe_website_full.html'), 'config..semgrep.vendored-rules.html.security.audit.missing-integrity') match_id = f0a70bb4ecbe0143c53a52d58df91ada80f8382d31262ee0c14e530854381c8bf6f4de2e7ad636fc995d45c44690f6ab4741300bcf96fbfb77109533b0cbd95f_0
+2025-07-09 19:21:37,363 - semgrep.rule_match - DEBUG - match_key = ('', PosixPath('careerframe_website_full.html'), 'config..semgrep.vendored-rules.html.security.audit.missing-integrity') match_id = 73455687deb06336329f376cddf55404b0487297ee8ece547f589d9663cf59d52615eb6d443a6fee1c14a13d319517c6a45e6a04d9e44624a8ec70d122a47ec2_0
+2025-07-09 19:21:37,363 - semgrep.rule_match - DEBUG - match_key = (' src="https://unpkg.com/lucide@latest/dist/umd/lucide.js" (?is).*integrity= (google-analytics\\.com|fonts\\.googleapis\\.com|fonts\\.gstatic\\.com|googletagmanager\\.com) .*rel\\s*=\\s*[\'"]?preconnect.* href="... :// ..." href="//..." href=\'... :// ...\' href=\'//...\' src="... :// ..." src="//..." src=\'... :// ...\' src=\'//...\' <link  src="https://unpkg.com/lucide@latest/dist/umd/lucide.js" > <script  src="https://unpkg.com/lucide@latest/dist/umd/lucide.js" >...</script>', PosixPath('careerframe_website_full.html'), 'config..semgrep.vendored-rules.html.security.audit.missing-integrity') match_id = 74d45ea752fefcc0f3a4de01103ff41ce03a50c01ccb1ff913bac66b34260d93e5e369e4aec0861356b3fa0358f454af84a017b4eda66bda9f9d27525d194dbb_0
+2025-07-09 19:21:37,364 - semgrep.rule_match - DEBUG - match_key = (' src="https://unpkg.com/lucide@latest/dist/umd/lucide.js" (?is).*integrity= (google-analytics\\.com|fonts\\.googleapis\\.com|fonts\\.gstatic\\.com|googletagmanager\\.com) .*rel\\s*=\\s*[\'"]?preconnect.* href="... :// ..." href="//..." href=\'... :// ...\' href=\'//...\' src="... :// ..." src="//..." src=\'... :// ...\' src=\'//...\' <link  src="https://unpkg.com/lucide@latest/dist/umd/lucide.js" > <script  src="https://unpkg.com/lucide@latest/dist/umd/lucide.js" >...</script>', PosixPath('careerframe_website_full.html'), 'config..semgrep.vendored-rules.html.security.audit.missing-integrity') match_id = 74d45ea752fefcc0f3a4de01103ff41ce03a50c01ccb1ff913bac66b34260d93e5e369e4aec0861356b3fa0358f454af84a017b4eda66bda9f9d27525d194dbb_0
+2025-07-09 19:21:37,364 - semgrep.rule_match - DEBUG - match_key = (' src="https://unpkg.com/lucide@latest/dist/umd/lucide.js" (?is).*integrity= (google-analytics\\.com|fonts\\.googleapis\\.com|fonts\\.gstatic\\.com|googletagmanager\\.com) .*rel\\s*=\\s*[\'"]?preconnect.* href="... :// ..." href="//..." href=\'... :// ...\' href=\'//...\' src="... :// ..." src="//..." src=\'... :// ...\' src=\'//...\' <link  src="https://unpkg.com/lucide@latest/dist/umd/lucide.js" > <script  src="https://unpkg.com/lucide@latest/dist/umd/lucide.js" >...</script>', PosixPath('careerframe_website_full.html'), 'config..semgrep.vendored-rules.html.security.audit.missing-integrity') match_id = 74d45ea752fefcc0f3a4de01103ff41ce03a50c01ccb1ff913bac66b34260d93e5e369e4aec0861356b3fa0358f454af84a017b4eda66bda9f9d27525d194dbb_0
+2025-07-09 19:21:37,365 - semgrep.rule_match - DEBUG - match_key = ('', PosixPath('client/index.html'), 'config..semgrep.vendored-rules.html.security.audit.missing-integrity') match_id = 0ee74fd49637bebe183eca7188dbde26e386314e62cc2e7ba1ee60b377b638243fcd84e6c6fa04886198ccacfa6a711bfbcc61a28f9ddc913d5b3c53083cbc90_0
+2025-07-09 19:21:37,366 - semgrep.rule_match - DEBUG - match_key = (' type="text/javascript" src="https://replit.com/public/js/replit-dev-banner.js" (?is).*integrity= (google-analytics\\.com|fonts\\.googleapis\\.com|fonts\\.gstatic\\.com|googletagmanager\\.com) .*rel\\s*=\\s*[\'"]?preconnect.* href="... :// ..." href="//..." href=\'... :// ...\' href=\'//...\' src="... :// ..." src="//..." src=\'... :// ...\' src=\'//...\' <link  type="text/javascript" src="https://replit.com/public/js/replit-dev-banner.js" > <script  type="text/javascript" src="https://replit.com/public/js/replit-dev-banner.js" >...</script>', PosixPath('client/index.html'), 'config..semgrep.vendored-rules.html.security.audit.missing-integrity') match_id = 0728b64e224596592d04447ba8a642ff94e1fb9fcc07be26d49dc7e7f6898e638ad16ffcaca086932c58f4c6400fe32603323afef02cf9bfebcb0e4a53562a40_0
+2025-07-09 19:21:37,366 - semgrep.rule_match - DEBUG - match_key = (' type="text/javascript" src="https://replit.com/public/js/replit-dev-banner.js" (?is).*integrity= (google-analytics\\.com|fonts\\.googleapis\\.com|fonts\\.gstatic\\.com|googletagmanager\\.com) .*rel\\s*=\\s*[\'"]?preconnect.* href="... :// ..." href="//..." href=\'... :// ...\' href=\'//...\' src="... :// ..." src="//..." src=\'... :// ...\' src=\'//...\' <link  type="text/javascript" src="https://replit.com/public/js/replit-dev-banner.js" > <script  type="text/javascript" src="https://replit.com/public/js/replit-dev-banner.js" >...</script>', PosixPath('client/index.html'), 'config..semgrep.vendored-rules.html.security.audit.missing-integrity') match_id = 0728b64e224596592d04447ba8a642ff94e1fb9fcc07be26d49dc7e7f6898e638ad16ffcaca086932c58f4c6400fe32603323afef02cf9bfebcb0e4a53562a40_0
+2025-07-09 19:21:37,367 - semgrep.rule_match - DEBUG - match_key = (' type="text/javascript" src="https://replit.com/public/js/replit-dev-banner.js" (?is).*integrity= (google-analytics\\.com|fonts\\.googleapis\\.com|fonts\\.gstatic\\.com|googletagmanager\\.com) .*rel\\s*=\\s*[\'"]?preconnect.* href="... :// ..." href="//..." href=\'... :// ...\' href=\'//...\' src="... :// ..." src="//..." src=\'... :// ...\' src=\'//...\' <link  type="text/javascript" src="https://replit.com/public/js/replit-dev-banner.js" > <script  type="text/javascript" src="https://replit.com/public/js/replit-dev-banner.js" >...</script>', PosixPath('client/index.html'), 'config..semgrep.vendored-rules.html.security.audit.missing-integrity') match_id = 0728b64e224596592d04447ba8a642ff94e1fb9fcc07be26d49dc7e7f6898e638ad16ffcaca086932c58f4c6400fe32603323afef02cf9bfebcb0e4a53562a40_0
+2025-07-09 19:21:37,368 - semgrep.rule_match - DEBUG - match_key = ('', PosixPath('server/email-service.ts'), 'config..semgrep.vendored-rules.javascript.lang.security.html-in-template-string') match_id = c4b69ef31fa590d1e580a06a8507a182a6bdf307a09a06deed44174f0f224f631a9776fbf5b360c8427b5b9cb45fce3067901308ae692c1dba3c0bf7e74731ee_0
+2025-07-09 19:21:37,368 - semgrep.rule_match - DEBUG - match_key = ('</p>\n                  <hr>\n                  <p style="color: #666; font-size: 12px;">\n                    This email was sent from your CareerFrame website waitlist system.\n                  </p>\n                </body>\n              </html>\n             .*</?[a-zA-Z] `</p>\n                  <hr>\n                  <p style="color: #666; font-size: 12px;">\n                    This email was sent from your CareerFrame website waitlist system.\n                  </p>\n                </body>\n              </html>\n            ${new Date().toLocaleString()}...`\n `...${new Date().toLocaleString()}</p>\n                  <hr>\n                  <p style="color: #666; font-size: 12px;">\n                    This email was sent from your CareerFrame website waitlist system.\n                  </p>\n                </body>\n              </html>\n            `\n', PosixPath('server/email-service.ts'), 'config..semgrep.vendored-rules.javascript.lang.security.html-in-template-string') match_id = d3dc34f21e87479cc59f486b644d3dea2d9b1130c314984a12d0eff88ba505a11f39bd07208830cace8fc89b78671613cbc88d058fe95c7210f52b510cb48266_0
+2025-07-09 19:21:37,369 - semgrep.rule_match - DEBUG - match_key = ('</p>\n                  <hr>\n                  <p style="color: #666; font-size: 12px;">\n                    This email was sent from your CareerFrame website waitlist system.\n                  </p>\n                </body>\n              </html>\n             .*</?[a-zA-Z] `</p>\n                  <hr>\n                  <p style="color: #666; font-size: 12px;">\n                    This email was sent from your CareerFrame website waitlist system.\n                  </p>\n                </body>\n              </html>\n            ${new Date().toLocaleString()}...`\n `...${new Date().toLocaleString()}</p>\n                  <hr>\n                  <p style="color: #666; font-size: 12px;">\n                    This email was sent from your CareerFrame website waitlist system.\n                  </p>\n                </body>\n              </html>\n            `\n', PosixPath('server/email-service.ts'), 'config..semgrep.vendored-rules.javascript.lang.security.html-in-template-string') match_id = d3dc34f21e87479cc59f486b644d3dea2d9b1130c314984a12d0eff88ba505a11f39bd07208830cace8fc89b78671613cbc88d058fe95c7210f52b510cb48266_0
+2025-07-09 19:21:37,370 - semgrep.rule_match - DEBUG - match_key = ('</p>\n                  <hr>\n                  <p style="color: #666; font-size: 12px;">\n                    This email was sent from your CareerFrame website waitlist system.\n                  </p>\n                </body>\n              </html>\n             .*</?[a-zA-Z] `</p>\n                  <hr>\n                  <p style="color: #666; font-size: 12px;">\n                    This email was sent from your CareerFrame website waitlist system.\n                  </p>\n                </body>\n              </html>\n            ${new Date().toLocaleString()}...`\n `...${new Date().toLocaleString()}</p>\n                  <hr>\n                  <p style="color: #666; font-size: 12px;">\n                    This email was sent from your CareerFrame website waitlist system.\n                  </p>\n                </body>\n              </html>\n            `\n', PosixPath('server/email-service.ts'), 'config..semgrep.vendored-rules.javascript.lang.security.html-in-template-string') match_id = d3dc34f21e87479cc59f486b644d3dea2d9b1130c314984a12d0eff88ba505a11f39bd07208830cace8fc89b78671613cbc88d058fe95c7210f52b510cb48266_0
+2025-07-09 19:21:37,370 - semgrep.rule_match - DEBUG - match_key = ('', PosixPath('website_full.html'), 'config..semgrep.vendored-rules.html.security.audit.missing-integrity') match_id = ed61c4efb6172d895ebd1c7e2dc311bfd83c2ff1e10c7ad409ef1244f67c630ec6d4ba7ac4ca9cf93b6234207531a07c68031b215ca6d6347ca685d7139f291e_0
+2025-07-09 19:21:37,371 - semgrep.rule_match - DEBUG - match_key = (' type="text/javascript" src="https://replit.com/public/js/replit-dev-banner.js" (?is).*integrity= (google-analytics\\.com|fonts\\.googleapis\\.com|fonts\\.gstatic\\.com|googletagmanager\\.com) .*rel\\s*=\\s*[\'"]?preconnect.* href="... :// ..." href="//..." href=\'... :// ...\' href=\'//...\' src="... :// ..." src="//..." src=\'... :// ...\' src=\'//...\' <link  type="text/javascript" src="https://replit.com/public/js/replit-dev-banner.js" > <script  type="text/javascript" src="https://replit.com/public/js/replit-dev-banner.js" >...</script>', PosixPath('website_full.html'), 'config..semgrep.vendored-rules.html.security.audit.missing-integrity') match_id = 79ef4dc39fa4208792abf9170af6063fbfe697bc42dfd8f6de695320fd8f4a6b70eb5523f3f08009d4c5d71ed156180bcb2e2d202b95ee65af2d634cfab57ed2_0
+2025-07-09 19:21:37,372 - semgrep.rule_match - DEBUG - match_key = (' type="text/javascript" src="https://replit.com/public/js/replit-dev-banner.js" (?is).*integrity= (google-analytics\\.com|fonts\\.googleapis\\.com|fonts\\.gstatic\\.com|googletagmanager\\.com) .*rel\\s*=\\s*[\'"]?preconnect.* href="... :// ..." href="//..." href=\'... :// ...\' href=\'//...\' src="... :// ..." src="//..." src=\'... :// ...\' src=\'//...\' <link  type="text/javascript" src="https://replit.com/public/js/replit-dev-banner.js" > <script  type="text/javascript" src="https://replit.com/public/js/replit-dev-banner.js" >...</script>', PosixPath('website_full.html'), 'config..semgrep.vendored-rules.html.security.audit.missing-integrity') match_id = 79ef4dc39fa4208792abf9170af6063fbfe697bc42dfd8f6de695320fd8f4a6b70eb5523f3f08009d4c5d71ed156180bcb2e2d202b95ee65af2d634cfab57ed2_0
+2025-07-09 19:21:37,372 - semgrep.rule_match - DEBUG - match_key = (' type="text/javascript" src="https://replit.com/public/js/replit-dev-banner.js" (?is).*integrity= (google-analytics\\.com|fonts\\.googleapis\\.com|fonts\\.gstatic\\.com|googletagmanager\\.com) .*rel\\s*=\\s*[\'"]?preconnect.* href="... :// ..." href="//..." href=\'... :// ...\' href=\'//...\' src="... :// ..." src="//..." src=\'... :// ...\' src=\'//...\' <link  type="text/javascript" src="https://replit.com/public/js/replit-dev-banner.js" > <script  type="text/javascript" src="https://replit.com/public/js/replit-dev-banner.js" >...</script>', PosixPath('website_full.html'), 'config..semgrep.vendored-rules.html.security.audit.missing-integrity') match_id = 79ef4dc39fa4208792abf9170af6063fbfe697bc42dfd8f6de695320fd8f4a6b70eb5523f3f08009d4c5d71ed156180bcb2e2d202b95ee65af2d634cfab57ed2_0
+2025-07-09 19:21:37,375 - semgrep.core_runner - DEBUG - semgrep ran in 0:00:07.819914 on 153 files
+2025-07-09 19:21:37,376 - semgrep.core_runner - DEBUG - findings summary: 5 warning, 0 error, 0 info
+2025-07-09 19:21:37,380 - semgrep.app.auth - DEBUG - Getting API token from settings file
+2025-07-09 19:21:37,380 - semgrep.app.auth - DEBUG - No API token found in settings file
+2025-07-09 19:21:37,513 - semgrep.output - VERBOSE - 
+========================================
+Files skipped:
+========================================
+
+  Always skipped by Opengrep:
+
+   • <none>
+
+  Skipped by .gitignore:
+  (Disable by passing --no-git-ignore)
+
+   • <all files not listed by `git ls-files` were skipped>
+
+  Skipped by .semgrepignore:
+  - https://semgrep.dev/docs/ignoring-files-folders-code/#understand-semgrep-defaults
+
+   • <none>
+
+  Skipped by --include patterns:
+
+   • <none>
+
+  Skipped by --exclude patterns:
+
+   • <none>
+
+  Files skipped due to insufficient read permissions:
+
+   • <none>
+
+  Skipped by limiting to files smaller than 1000000 bytes:
+  (Adjust with the --max-target-bytes flag)
+
+   • attached_assets/58bb5f54-f677-421c-9f7f-f2a72a331bd5_1750363268556.png
+   • attached_assets/Careerframe Logo.png
+   • attached_assets/ChatGPT Image Jul 2, 2025, 08_31_51 PM_1751484757117.png
+   • attached_assets/ChatGPT Image Jul 2, 2025, 08_57_46 PM_1751486270595.png
+   • attached_assets/ChatGPT Image Jul 2, 2025, 11_36_56 PM_1751495822376.png
+   • attached_assets/ChatGPT Image Jul 3, 2025, 09_49_49 AM_1751532594455.png
+   • attached_assets/ChatGPT Image Jun 19, 2025, 09_12_42 PM_1750363966951.png
+   • attached_assets/East Asian Male Choosing Career.png
+   • attached_assets/Landing Page - Careerframe.pptx
+   • attached_assets/Make the background of the hero section_1750360157075.docx
+   • attached_assets/download.png
+   • attached_assets/image_1751487137220.png
+
+  Partially analyzed due to parsing or internal Opengrep errors
+
+   • improved-landing.html (1 lines skipped)
+   • tailwind.config.ts (1 lines skipped)
+
+2025-07-09 19:21:37,514 - semgrep.output - INFO - Some files were skipped or only partially analyzed.
+  Scan was limited to files tracked by git.
+  Partially scanned: 2 files only partially analyzed due to parsing or internal Opengrep errors
+  Scan skipped: 12 files larger than 1.0 MB
+  For a full list of skipped files, run opengrep with the --verbose flag.
+
+Ran 438 rules on 153 files: 5 findings.
+2025-07-09 19:21:37,515 - semgrep.app.version - DEBUG - Version cache does not exist
+2025-07-09 19:21:37,532 - semgrep.metrics - VERBOSE - Not sending pseudonymous metrics since metrics are configured to OFF and registry usage is False
