@@ -2,7 +2,7 @@ name: Deploy to S3
 
 on:
   push:
-    branches: [main] # or your deployment branch
+    branches: [main]
 
 jobs:
   deploy:
@@ -12,11 +12,11 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
 
-      - name: Install dependencies
+      - name: Install root dependencies
         run: npm install
 
-      - name: Build project
-        run: npm run build
+      - name: Build client app only
+        run: npm run build:client
 
       - name: Deploy to S3
         uses: jakejarvis/s3-sync-action@v0.5.1
@@ -26,5 +26,5 @@ jobs:
           AWS_S3_BUCKET: careerframe
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          AWS_REGION:  eu-west-2
-          SOURCE_DIR: ./dist/
+          AWS_REGION: eu-west-2
+          SOURCE_DIR: client/dist
