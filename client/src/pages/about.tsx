@@ -2,7 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Link } from "wouter";
 import { ArrowLeft, Target, Users, Award, Shield, Heart, Zap, Scale, UserCheck, HandHeart } from "lucide-react";
-import careerFrameLogo from "@assets/ChatGPT Image Jul 17, 2025, 03_29_50 PM_1752762637040.png";
+import careerFrameLogo from "../assets/avatar1.png";
 
 export default function About() {
   return (

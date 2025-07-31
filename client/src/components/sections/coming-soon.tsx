@@ -4,26 +4,43 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { SoundButton } from "@/components/SoundButton";
 import { useToast } from "@/hooks/use-toast";
-import avatar1 from "@assets/Avatar_1753221030644.png";
-import avatar2 from "@assets/Avatar (1)_1753221039419.png";
-import avatar3 from "@assets/Avatar (2)_1753221045680.png";
+import avatar1 from "../../assets/avatar1.png";
+import avatar2 from "../../assets/avatar2.png";
+import avatar3 from "../../assets/avatar3.png";
 
-// Preload background images for reliable loading across all devices
+// Enhanced preload with timeout and retry logic for better device compatibility
 const preloadImages = () => {
   if (typeof window !== 'undefined') {
     const imagesToPreload = [
       '/Pattern.png',
       '/TopLeftCornerFrame.png', 
-      '/BottomRightCornerFrame.png',
-      '/careerframe-pattern.svg'
+      '/BottomRightCornerFrame.png'
     ];
     
     imagesToPreload.forEach(src => {
       const img = new Image();
-      img.src = src;
-      // Add to browser cache
-      img.onload = () => console.log(`Preloaded: ${src}`);
-      img.onerror = () => console.warn(`Failed to preload: ${src}`);
+      
+      // Set loading timeout for slow connections
+      const timeout = setTimeout(() => {
+        console.warn(`Timeout loading: ${src}`);
+      }, 10000); // 10 second timeout
+      
+      img.onload = () => {
+        clearTimeout(timeout);
+        console.log(`Preloaded: ${src}`);
+        // Store in sessionStorage to prevent re-loading
+        sessionStorage.setItem(`preloaded_${src.replace('/', '')}`, 'true');
+      };
+      
+      img.onerror = () => {
+        clearTimeout(timeout);
+        console.warn(`Failed to preload: ${src}`);
+        // Set fallback flag
+        sessionStorage.setItem(`failed_${src.replace('/', '')}`, 'true');
+      };
+      
+      // Add cache-busting parameter for reliability
+      img.src = `${src}?v=${Date.now()}`;
     });
   }
 };
@@ -47,12 +64,47 @@ export function ComingSoonPage() {
   const [spotsRemaining, setSpotsRemaining] = useState(7);
   const [email, setEmail] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [imagesLoaded, setImagesLoaded] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
   const { toast } = useToast();
+
+  // Check if mobile view for responsive pattern display
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+    
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
 
   // Calculate countdown to launch date and preload images
   useEffect(() => {
+    // Clear any previous failed states for fresh load
+    if (isMobile) {
+      sessionStorage.removeItem('failed_Pattern.png');
+      console.log('Mobile device detected, clearing pattern cache for fresh load');
+    }
+    
     // Preload background images on component mount
     preloadImages();
+    
+    // Check if images are already loaded from cache
+    const checkCacheStatus = () => {
+      const patternLoaded = sessionStorage.getItem('preloaded_Pattern.png');
+      const topLeftLoaded = sessionStorage.getItem('preloaded_TopLeftCornerFrame.png');
+      const bottomRightLoaded = sessionStorage.getItem('preloaded_BottomRightCornerFrame.png');
+      
+      console.log('Cache status - Pattern:', !!patternLoaded, 'TopLeft:', !!topLeftLoaded, 'BottomRight:', !!bottomRightLoaded, 'Mobile:', isMobile);
+      
+      if (patternLoaded && topLeftLoaded && bottomRightLoaded) {
+        setImagesLoaded(true);
+      }
+    };
+    
+    // Small delay to allow sessionStorage to be checked
+    setTimeout(checkCacheStatus, 100);
     
     const launchDate = new Date('2025-08-18T00:00:00').getTime();
     
@@ -151,37 +203,58 @@ export function ComingSoonPage() {
 
   return (
     <section 
-      className="min-h-screen flex flex-col relative overflow-hidden coming-soon-background motion-safe"
+      className="min-h-screen flex flex-col relative overflow-hidden motion-safe"
       style={{
         background: "linear-gradient(303.01deg, #FFF1F0 0%, #FFFAF1 33.33%, #E8FAF6 66.67%, #EAF6FD 100%)",
         marginTop: '-128px',
         paddingTop: '128px',
-        // Ensure background always displays
         minHeight: '100vh',
         width: '100%',
-        // Force background to display immediately
-        backgroundAttachment: 'fixed',
+        backgroundAttachment: 'scroll', // Better performance on mobile
         backgroundSize: 'cover'
       }}
     >
-      {/* Pattern Background - Right Side Only with reliable loading */}
+      {/* Pattern Background - Enhanced Mobile Coverage */}
       <motion.div 
         initial={{ opacity: 0, x: 100 }}
         animate={{ opacity: 0.9, x: 0 }}
         transition={{ duration: 1.5 }}
-        className="absolute top-0 right-0 w-1/2 h-full pattern-background"
+        className="absolute top-0 right-0 w-1/2 h-full pattern-background md:w-1/2"
         style={{
-          backgroundImage: "url(/Pattern.png), linear-gradient(45deg, rgba(255,241,240,0.1) 0%, rgba(255,250,241,0.1) 100%)",
-          backgroundRepeat: "no-repeat, no-repeat",
-          backgroundSize: "80% auto, cover", // Made pattern smaller on mobile
-          backgroundPosition: "right center, center",
-          // Fallback pattern in case main pattern doesn't load
-          backgroundColor: 'rgba(255,250,241,0.05)',
-          willChange: 'transform'
+          backgroundImage: sessionStorage.getItem('failed_Pattern.png')
+            ? "linear-gradient(45deg, rgba(255,241,240,0.15) 0%, rgba(255,250,241,0.15) 50%, rgba(240,248,255,0.15) 100%)"
+            : "url(/Pattern.png)",
+          backgroundRepeat: "no-repeat",
+          backgroundSize: "cover",
+          backgroundPosition: isMobile ? "center right" : "center",
+          backgroundColor: 'rgba(255,250,241,0.1)',
+          opacity: imagesLoaded ? 1 : 0.7,
+          transition: 'opacity 0.8s ease-in-out',
+          minHeight: '100vh',
+          height: '100%',
+          width: isMobile ? '50%' : '50%',
+          position: 'absolute',
+          top: 0,
+          right: 0,
+          zIndex: 0,
+          transform: 'translateZ(0)',
+          WebkitTransform: 'translateZ(0)',
+          backfaceVisibility: 'hidden',
+          WebkitBackfaceVisibility: 'hidden'
+        }}
+        onLoad={() => {
+          console.log('Pattern background loaded successfully on mobile:', isMobile);
+          setImagesLoaded(true);
         }}
         onError={(e) => {
-          // Fallback if image fails to load
-          e.currentTarget.style.backgroundImage = "linear-gradient(45deg, rgba(255,241,240,0.2) 0%, rgba(255,250,241,0.2) 100%)";
+          console.warn('Pattern image failed to load on mobile:', isMobile, 'using fallback');
+          sessionStorage.setItem('failed_Pattern.png', 'true');
+          const target = e.currentTarget as HTMLElement;
+          target.style.backgroundImage = `
+            linear-gradient(45deg, rgba(255,241,240,0.15) 0%, rgba(255,250,241,0.15) 50%, rgba(240,248,255,0.15) 100%),
+            radial-gradient(circle at 30% 20%, rgba(130,147,64,0.08) 0%, transparent 50%),
+            radial-gradient(circle at 70% 80%, rgba(30,58,138,0.08) 0%, transparent 50%)
+          `;
         }}
       />
       
@@ -192,15 +265,23 @@ export function ComingSoonPage() {
         transition={{ duration: 1.5, delay: 0.5 }}
         className="fixed top-0 left-0 w-48 h-48 sm:w-64 sm:h-64 md:w-80 md:h-80 lg:w-96 lg:h-96 xl:w-[500px] xl:h-[500px]"
         style={{
-          backgroundImage: "url(/TopLeftCornerFrame.png)",
+          backgroundImage: sessionStorage.getItem('failed_TopLeftCornerFrame.png') 
+            ? "none" 
+            : "url(/TopLeftCornerFrame.png)",
           backgroundSize: "contain",
           backgroundRepeat: "no-repeat",
           backgroundPosition: "top left",
           zIndex: 1,
           x: topLeftX,
           y: topLeftY,
-          backgroundColor: 'transparent',
-          willChange: 'transform'
+          backgroundColor: sessionStorage.getItem('failed_TopLeftCornerFrame.png') 
+            ? 'rgba(130,147,64,0.1)' 
+            : 'transparent',
+          willChange: 'transform',
+          transition: 'opacity 0.3s ease'
+        }}
+        onError={() => {
+          sessionStorage.setItem('failed_TopLeftCornerFrame.png', 'true');
         }}
       />
       
@@ -211,18 +292,26 @@ export function ComingSoonPage() {
         transition={{ duration: 1.5, delay: 0.8 }}
         className="fixed bottom-0 right-0 w-48 h-48 sm:w-64 sm:h-64 md:w-80 md:h-80 lg:w-96 lg:h-96 xl:w-[500px] xl:h-[500px]"
         style={{
-          backgroundImage: "url(/BottomRightCornerFrame.png)",
+          backgroundImage: sessionStorage.getItem('failed_BottomRightCornerFrame.png') 
+            ? "none" 
+            : "url(/BottomRightCornerFrame.png)",
           backgroundSize: "contain",
           backgroundRepeat: "no-repeat",
           backgroundPosition: "bottom right",
           zIndex: 1,
           x: bottomRightX,
           y: bottomRightY,
-          backgroundColor: 'transparent',
-          willChange: 'transform'
+          backgroundColor: sessionStorage.getItem('failed_BottomRightCornerFrame.png') 
+            ? 'rgba(30,58,138,0.1)' 
+            : 'transparent',
+          willChange: 'transform',
+          transition: 'opacity 0.3s ease'
+        }}
+        onError={() => {
+          sessionStorage.setItem('failed_BottomRightCornerFrame.png', 'true');
         }}
       />
-      <div className="w-full max-w-full mx-auto px-4 sm:px-6 md:px-8 lg:px-12 xl:px-20 2xl:px-28 flex-1 flex flex-col relative z-10 pt-16 sm:pt-20 md:pt-24 lg:pt-28">
+      <div className="w-full max-w-full mx-auto px-4 sm:px-6 md:px-8 lg:px-12 xl:px-20 2xl:px-28 flex-1 flex flex-col relative z-10 pt-16 sm:pt-20 md:pt-24 lg:pt-20">
         
         {/* Main Launch Message - Mobile Responsive */}
         <div className="flex-1 flex items-center justify-center py-6 sm:py-8 md:py-12">

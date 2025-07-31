@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Heart, ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
-import careerFrameApp from "@assets/image_1750364343735.png";
+import careerFrameApp from "../../assets/avatar1.png";
 import { WaitlistPopup } from "@/components/ui/waitlist-popup";
 import { useWaitlistPopup } from "@/hooks/use-waitlist-popup";
 import { SoundButton } from "@/components/SoundButton";

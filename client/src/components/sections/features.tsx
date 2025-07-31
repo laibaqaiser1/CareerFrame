@@ -16,9 +16,9 @@ import {
   ArrowRight,
   Play
 } from "lucide-react";
-import careerPathwaysImage from "@assets/Screenshot 2025-05-17 182855.png";
-import xpRewardInterface from "@assets/XP & Reward Interface.png";
-import careerChoiceImage from "@assets/East Asian Male Choosing Career.png";
+import careerPathwaysImage from "../../assets/avatar1.png";
+import xpRewardInterface from "../../assets/avatar2.png";
+import careerChoiceImage from "../../assets/avatar3.png";
 
 const features = [
   {

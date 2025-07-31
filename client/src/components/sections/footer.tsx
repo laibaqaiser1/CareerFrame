@@ -1,6 +1,6 @@
 import { Linkedin, Facebook } from "lucide-react";
 import { SiX, SiTiktok, SiInstagram } from "react-icons/si";
-import careerFrameLogo from "@assets/ChatGPT Image Jun 19, 2025, 09_12_42 PM_1750363966951.png";
+import careerFrameLogo from "../../assets/avatar1.png";
 
 const footerSections = [
   {

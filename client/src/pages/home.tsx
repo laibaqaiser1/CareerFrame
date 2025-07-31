@@ -20,7 +20,7 @@ import { Button } from "@/components/ui/button";
 import { useScrollReveal } from "@/hooks/use-scroll-animation";
 import { WaitlistPopup } from "@/components/ui/waitlist-popup";
 import { useWaitlistPopup } from "@/hooks/use-waitlist-popup";
-import careerFrameLogo from "@assets/ChatGPT Image Jul 17, 2025, 03_29_50 PM_1752762637040.png";
+import careerFrameLogo from "@assets/logo_1753453465800.png";
 import { useSoundEffects } from "@/hooks/useSoundEffects";
 
 function Navigation() {
@@ -73,8 +73,8 @@ function Navigation() {
               src={careerFrameLogo} 
               alt="CareerFrame Logo" 
               style={{ 
-                width: '148px', 
-                height: '148px', 
+                width: '200px', 
+                height: 'auto', 
                 transform: 'rotate(0deg)', 
                 opacity: 1, 
                 zIndex: 10000 

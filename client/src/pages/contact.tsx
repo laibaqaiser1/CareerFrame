@@ -2,7 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Link } from "wouter";
 import { ArrowLeft, Mail, MapPin, Clock } from "lucide-react";
-import careerFrameLogo from "@assets/ChatGPT Image Jul 17, 2025, 03_29_50 PM_1752762637040.png";
+import careerFrameLogo from "../assets/avatar1.png";
 import { SoundButton } from "@/components/SoundButton";
 
 export default function Contact() {

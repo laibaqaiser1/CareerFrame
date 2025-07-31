@@ -79,22 +79,38 @@ html, body, * {
   min-height: 100vh;
 }
 
-/* Mobile-specific pattern adjustments */
+/* Enhanced pattern adjustments for right-half full coverage */
 @media (max-width: 640px) {
   .pattern-background {
-    background-size: 60% auto, cover !important;
+    background-size: cover, cover !important;
+    background-position: center, center !important;
+    width: 50% !important;
+    right: 0 !important;
+    min-height: 100vh !important;
+    opacity: 0.95 !important;
+    background-blend-mode: normal !important;
   }
 }
 
 @media (min-width: 641px) and (max-width: 768px) {
   .pattern-background {
-    background-size: 70% auto, cover !important;
+    background-size: cover, cover !important;
+    background-position: center, center !important;
+    width: 50% !important;
+    right: 0 !important;
+    min-height: 100vh !important;
+    opacity: 0.95 !important;
   }
 }
 
 @media (min-width: 769px) {
   .pattern-background {
     background-size: cover, cover !important;
+    background-position: center, center !important;
+    width: 50% !important;
+    right: 0 !important;
+    min-height: 100vh !important;
+    opacity: 0.9 !important;
   }
 }
 
@@ -109,6 +125,25 @@ html, body, * {
 img, .background-image {
   image-rendering: -webkit-optimize-contrast;
   image-rendering: crisp-edges;
+}
+
+/* Additional fallback support for background loading issues */
+.coming-soon-background {
+  /* Always ensure gradient background displays */
+  background: linear-gradient(303.01deg, #FFF1F0 0%, #FFFAF1 33.33%, #E8FAF6 66.67%, #EAF6FD 100%) !important;
+}
+
+/* Image loading state management */
+.pattern-background {
+  transition: opacity 0.5s ease-in-out;
+}
+
+.pattern-background.loading {
+  opacity: 0.7;
+}
+
+.pattern-background.loaded {
+  opacity: 1;
 }
 
 /* Allow navbar to have its own background */
@@ -293,6 +328,31 @@ body.dark,
     }
     100% {
       color: #6B7A2E;
+    }
+  }
+
+  /* Mobile pattern background optimization */
+  .pattern-background {
+    background-attachment: scroll !important;
+    -webkit-background-attachment: scroll !important;
+    transform: translateZ(0);
+    -webkit-transform: translateZ(0);
+    will-change: auto;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+  }
+
+  @media (max-width: 768px) {
+    .pattern-background {
+      background-size: cover !important;
+      background-position: center right !important;
+      background-repeat: no-repeat !important;
+      min-height: 100vh !important;
+      height: 100% !important;
+      position: absolute !important;
+      top: 0 !important;
+      right: 0 !important;
+      width: 50% !important;
     }
   }
 

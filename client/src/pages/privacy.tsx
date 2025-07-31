@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
 import { ArrowLeft, Shield, Eye, Lock, Database, Mail } from "lucide-react";
-import careerFrameLogo from "@assets/ChatGPT Image Jul 17, 2025, 03_29_50 PM_1752762637040.png";
+import careerFrameLogo from "../assets/avatar1.png";
 
 export default function Privacy() {
   return (
