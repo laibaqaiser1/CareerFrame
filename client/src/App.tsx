@@ -59,7 +59,7 @@ function App() {
     document.documentElement.setAttribute('data-theme', 'light');
     document.documentElement.style.colorScheme = 'light';
     document.body.style.colorScheme = 'light';
-    document.body.style.backgroundColor = 'white';
+    // Allow natural backgrounds - removed forced white
     document.body.style.color = 'black';
     
     // Add meta tag to prevent dark mode
@@ -72,7 +72,7 @@ function App() {
     const observer = new MutationObserver(() => {
       document.documentElement.classList.remove('dark');
       document.body.classList.remove('dark');
-      document.body.style.backgroundColor = 'white';
+      // Allow natural backgrounds - removed forced white
       document.body.style.color = 'black';
     });
     observer.observe(document.documentElement, { attributes: true, attributeFilter: ['class'] });

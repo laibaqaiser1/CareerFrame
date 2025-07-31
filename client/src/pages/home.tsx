@@ -63,7 +63,7 @@ function Navigation() {
         width: '100%',
         height: '128px',
         background: 'transparent',
-        zIndex: 10
+        zIndex: 50000 // Increased navbar z-index
       }}
     >
       <div className="max-w-full mx-auto px-6 sm:px-8 lg:px-12 xl:px-20 2xl:px-28 relative z-10" style={{ backgroundColor: 'transparent' }}>
@@ -130,8 +130,13 @@ function Navigation() {
               {/* Desktop Sign In Button - Inside navigation for perfect alignment */}
               <Button 
                 onClick={openPopup}
-                className="text-white px-8 py-3 text-xl font-semibold button-hover rounded-lg" 
-                style={{ backgroundColor: '#829340' }}
+                className="text-white px-8 py-3 text-xl font-semibold button-hover rounded-lg navbar-signin-btn" 
+                style={{ 
+                  backgroundColor: '#829340 !important', 
+                  background: '#829340 !important',
+                  border: '1px solid #829340 !important',
+                  color: 'white !important'
+                }}
               >
                 Sign In
               </Button>
@@ -143,14 +148,18 @@ function Navigation() {
                 setMobileMenuOpen(!mobileMenuOpen);
                 playClickSound();
               }}
-              className="md:hidden p-2 rounded-lg transition-colors duration-200"
-              style={{ backgroundColor: mobileMenuOpen ? 'rgba(130, 147, 64, 0.1)' : 'transparent' }}
+              className="md:hidden p-2 rounded-lg transition-colors duration-200 mobile-menu-toggle"
+              style={{ 
+                backgroundColor: '#829340',
+                border: '1px solid #829340',
+                zIndex: 50001
+              }}
               onMouseEnter={playHoverSound}
             >
               <div className="w-6 h-6 flex flex-col justify-center items-center">
-                <span className={`block w-6 h-0.5 bg-black transition-all duration-300 ${mobileMenuOpen ? 'rotate-45 translate-y-1.5' : ''}`}></span>
-                <span className={`block w-6 h-0.5 bg-black transition-all duration-300 mt-1 ${mobileMenuOpen ? 'opacity-0' : ''}`}></span>
-                <span className={`block w-6 h-0.5 bg-black transition-all duration-300 mt-1 ${mobileMenuOpen ? '-rotate-45 -translate-y-1.5' : ''}`}></span>
+                <span className={`block w-6 h-0.5 transition-all duration-300 ${mobileMenuOpen ? 'rotate-45 translate-y-1.5' : ''}`} style={{ backgroundColor: '#ffffff' }}></span>
+                <span className={`block w-6 h-0.5 transition-all duration-300 mt-1 ${mobileMenuOpen ? 'opacity-0' : ''}`} style={{ backgroundColor: '#ffffff' }}></span>
+                <span className={`block w-6 h-0.5 transition-all duration-300 mt-1 ${mobileMenuOpen ? '-rotate-45 -translate-y-1.5' : ''}`} style={{ backgroundColor: '#ffffff' }}></span>
               </div>
             </button>
           </div>
@@ -159,7 +168,7 @@ function Navigation() {
 
       {/* Mobile Menu Dropdown */}
       {mobileMenuOpen && (
-        <div className="md:hidden fixed top-32 left-0 right-0 bg-white shadow-lg border-t z-40">
+        <div className="md:hidden fixed top-32 left-0 right-0 shadow-lg border-t z-40" style={{ background: 'linear-gradient(303.01deg, #FFF1F0 0%, #FFFAF1 33.33%, #E8FAF6 66.67%, #EAF6FD 100%)' }}>
           <div className="px-6 py-4 space-y-4">
             <a 
               href="#how-it-works" 
@@ -211,8 +220,13 @@ function Navigation() {
                 setMobileMenuOpen(false);
                 playClickSound();
               }}
-              className="w-full text-white px-6 py-3 text-lg font-semibold mt-4" 
-              style={{ backgroundColor: '#829340' }}
+              className="w-full text-white px-6 py-3 text-lg font-semibold mt-4 navbar-signin-btn" 
+              style={{ 
+                backgroundColor: '#829340 !important', 
+                background: '#829340 !important',
+                border: '1px solid #829340 !important',
+                color: 'white !important'
+              }}
             >
               Sign In
             </Button>
@@ -278,9 +292,9 @@ export default function Home() {
     <>
       <div className="relative">
         <Navigation />
-        <div className="bg-white" style={{ marginTop: '-128px' }}>
+        <div style={{ marginTop: '-128px' }}>
           {/* Coming Soon Section at the top */}
-          <div className="fade-in" style={{ paddingTop: '128px' }}>
+          <div className="fade-in">
             <ComingSoonPage />
           </div>
         

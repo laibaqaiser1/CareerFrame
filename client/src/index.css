@@ -73,10 +73,95 @@ html, body, * {
 /* Ensure reliable background image loading */
 .coming-soon-background {
   background: linear-gradient(303.01deg, #FFF1F0 0%, #FFFAF1 33.33%, #E8FAF6 66.67%, #EAF6FD 100%) !important;
-  background-attachment: fixed;
-  background-size: cover;
-  background-repeat: no-repeat;
-  min-height: 100vh;
+}
+
+/* Force white backgrounds for countdown and email elements */
+.countdown-box,
+.countdown-box *,
+.email-input,
+.email-input * {
+  background: #ffffff !important;
+  background-color: #ffffff !important;
+  background-image: none !important;
+  background-attachment: initial !important;
+  background-size: initial !important;
+}
+
+/* Ultra-specific overrides to force white backgrounds */
+div.countdown-box,
+.countdown-timer-box,
+div.countdown-timer-box {
+  background: white !important;
+  background-color: white !important;
+  background-image: none !important;
+}
+
+input.email-input,
+.email-input-field,
+input.email-input-field {
+  background: white !important;
+  background-color: white !important;
+  background-image: none !important;
+}
+
+/* Force white backgrounds after page load */
+body .countdown-timer-box,
+body .email-input-field,
+html .countdown-timer-box,
+html .email-input-field {
+  background: #ffffff !important;
+  background-color: #ffffff !important;
+  background-image: none !important;
+}
+
+/* Force green button styling */
+.secure-my-spot-button,
+button.secure-my-spot-button {
+  background: #829340 !important;
+  background-color: #829340 !important;
+  color: white !important;
+}
+
+/* Force navbar sign-in button styling */
+.navbar-signin-btn,
+button.navbar-signin-btn {
+  background: #829340 !important;
+  background-color: #829340 !important;
+  border: 1px solid #829340 !important;
+  color: white !important;
+}
+
+/* Global green color theme - Replace all instances of bright green with olive green */
+:root {
+  --theme-green: #829340;
+}
+
+/* Mobile menu toggle button visibility - only show on mobile */
+.mobile-menu-toggle {
+  background: #829340 !important;
+  border: 1px solid #829340 !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  display: block !important;
+  position: relative !important;
+  z-index: 50001 !important;
+}
+
+/* Hide toggle button on desktop */
+@media (min-width: 768px) {
+  .mobile-menu-toggle {
+    display: none !important;
+  }
+}
+
+.mobile-menu-toggle:hover {
+  background: rgba(130, 147, 64, 0.9) !important;
+}
+
+/* Force hamburger lines to be white */
+.mobile-menu-toggle span {
+  background-color: #ffffff !important;
+  background: #ffffff !important;
 }
 
 /* Enhanced pattern adjustments for right-half full coverage */
@@ -331,7 +416,7 @@ body.dark,
     }
   }
 
-  /* Mobile pattern background optimization */
+  /* Pattern background optimization for all viewports including Replit preview */
   .pattern-background {
     background-attachment: scroll !important;
     -webkit-background-attachment: scroll !important;
@@ -340,19 +425,23 @@ body.dark,
     will-change: auto;
     backface-visibility: hidden;
     -webkit-backface-visibility: hidden;
+    position: fixed !important;
+    top: 0 !important;
+    right: 0 !important;
+    width: 50% !important;
+    height: 100vh !important;
+    min-height: 100vh !important;
+    background-size: cover !important;
+    background-position: center right !important;
+    background-repeat: no-repeat !important;
+    z-index: 0 !important;
+    pointer-events: none !important;
   }
 
   @media (max-width: 768px) {
     .pattern-background {
-      background-size: cover !important;
-      background-position: center right !important;
-      background-repeat: no-repeat !important;
-      min-height: 100vh !important;
-      height: 100% !important;
-      position: absolute !important;
-      top: 0 !important;
-      right: 0 !important;
       width: 50% !important;
+      background-position: right center !important;
     }
   }
 
@@ -593,3 +682,36 @@ body.dark,
 }
 
 /* Clean, professional hero section */
+/* Simple, effective background approach */
+html, body, #root {
+  background: linear-gradient(303.01deg, #FFF1F0 0%, #FFFAF1 33.33%, #E8FAF6 66.67%, #EAF6FD 100%) !important;
+  min-height: 100vh !important;
+}
+
+.coming-soon-bg {
+  background: linear-gradient(303.01deg, #FFF1F0 0%, #FFFAF1 33.33%, #E8FAF6 66.67%, #EAF6FD 100%) !important;
+  min-height: 100vh !important;
+}
+
+/* Override any white backgrounds */
+.bg-white {
+  background: transparent !important;
+}
+
+/* Override ALL white backgrounds aggressively */
+* {
+  background-attachment: scroll !important;
+}
+
+div {
+  background-color: transparent !important;
+}
+
+/* Force all containers to be transparent except gradient backgrounds */
+html * {
+  background-color: transparent !important;
+}
+
+.coming-soon-bg {
+  background-color: #FFF1F0 !important;
+}
