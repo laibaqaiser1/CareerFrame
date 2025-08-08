@@ -1,129 +1,501 @@
-import { Card, CardContent } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
-import { CheckCircle, ArrowRight, Clock, Users, TrendingUp, Star, Award } from "lucide-react";
+import React from 'react';
+import { motion } from 'framer-motion';
+import { MessageCircle, Clock, TrendingUp, Users, Star, Award } from "lucide-react";
 
 export function WhatToExpectSection() {
-  const steps = [
-    {
-      step: "Step 1",
-      title: "Meet Your AI Coach",
-      description: "Complete a 5-minute assessment to help us understand your goals, skills, and career preferences."
-    },
-    {
-      step: "Step 2", 
-      title: "Get Your Personalized Plan",
-      description: "Receive a custom 90-day roadmap with specific milestones, skill development goals, and target roles."
-    },
-    {
-      step: "Step 3",
-      title: "Begin Your Journey",
-      description: "Start progressing through your milestones with daily guidance, weekly check-ins, and community support."
-    }
-  ];
-
   return (
-    <section id="what-to-expect" className="py-16 relative overflow-hidden" style={{ backgroundColor: '#e6e8f5' }}>
-      {/* Creative Background Pattern */}
-      <div className="absolute inset-0 opacity-20">
-        <svg className="w-full h-full" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
-          <defs>
-            <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
-              <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#829340" strokeWidth="1" opacity="0.3"/>
-            </pattern>
-            <radialGradient id="gradient" cx="50%" cy="50%" r="50%">
-              <stop offset="0%" stopColor="#829340" stopOpacity="0.1"/>
-              <stop offset="100%" stopColor="#829340" stopOpacity="0"/>
-            </radialGradient>
-          </defs>
-          <rect width="100%" height="100%" fill="url(#pattern)"/>
-          <circle cx="100" cy="100" r="60" fill="url(#gradient)"/>
-          <circle cx="300" cy="150" r="40" fill="url(#gradient)"/>
-          <circle cx="350" cy="300" r="50" fill="url(#gradient)"/>
-          <circle cx="50" cy="300" r="35" fill="url(#gradient)"/>
-        </svg>
-      </div>
-      
-      {/* Floating Elements */}
-      <div className="absolute top-10 left-10 w-4 h-4 rounded-full opacity-40" style={{ backgroundColor: '#829340' }}></div>
-      <div className="absolute top-20 right-20 w-6 h-6 rounded-full opacity-30" style={{ backgroundColor: '#829340' }}></div>
-      <div className="absolute bottom-20 left-20 w-3 h-3 rounded-full opacity-50" style={{ backgroundColor: '#829340' }}></div>
-      <div className="absolute bottom-10 right-10 w-5 h-5 rounded-full opacity-35" style={{ backgroundColor: '#829340' }}></div>
-      
-      <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 xl:px-20 2xl:px-28 relative z-10">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl lg:text-4xl font-bold text-navy mb-4">
-            What to Expect After You{" "}
-            <span className="text-3xl lg:text-4xl font-bold">
-              Sign Up
-            </span>
+    <section 
+      id="what-to-expect" 
+      style={{ 
+        backgroundColor: '#ffffff !important',
+        background: '#ffffff !important'
+      }} 
+      className="py-16 what-to-expect-white-bg"
+    >
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Header */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
+          className="text-center mb-12"
+        >
+          <h2 style={{
+            fontFamily: 'Inter, sans-serif',
+            fontWeight: 600,
+            fontSize: '48px',
+            lineHeight: '60px',
+            letterSpacing: '-0.02em',
+            color: '#141414',
+            marginBottom: '16px'
+          }}>
+            What to Expect After You Sign Up
           </h2>
-          <p className="text-xl text-soft-grey">
+          <p style={{
+            fontFamily: 'Inter, sans-serif',
+            fontWeight: 400,
+            fontSize: '20px',
+            lineHeight: '28px',
+            color: '#525252',
+            maxWidth: '672px',
+            margin: '0 auto'
+          }}>
             Your career transformation starts immediately — here's exactly what happens next
           </p>
-        </div>
+        </motion.div>
 
-        <div className="what-to-expect-grid grid grid-cols-1 md:grid-cols-3 gap-8">
-          {steps.map((step, index) => (
-            <div key={index} className="relative">
-              <Card className="h-full shadow-lg hover:shadow-xl transition-shadow duration-300">
-                <CardContent className="p-8">
-                  <div className="flex items-center justify-center w-16 h-16 rounded-full mx-auto mb-6" style={{ backgroundColor: '#829340' }}>
-                    <span className="text-white font-bold text-lg">{index + 1}</span>
-                  </div>
-                  
-                  <div className="text-center mb-4">
-                    <h3 className="text-xl font-bold text-navy mb-3">{step.title}</h3>
-                  </div>
-                  
-                  <p className="text-soft-grey text-center leading-relaxed">
-                    {step.description}
-                  </p>
-                </CardContent>
-              </Card>
-              
-              {index < steps.length - 1 && (
-                <div className="hidden lg:block absolute top-1/2 -right-4 transform -translate-y-1/2">
-                  <ArrowRight className="h-8 w-8" style={{ color: '#829340' }} />
+        {/* 3-Step Process with numbered circles and dotted line */}
+        <div className="mb-20 relative">
+          
+          {/* Desktop Layout - Circles with dotted lines */}
+          <div className="hidden md:block">
+            {/* Numbered circles with dotted line - aligned with content columns */}
+            <div className="grid grid-cols-3 gap-8 mb-8 relative">
+              {/* Circle 1 - centered in first column */}
+              <div className="flex justify-center">
+                <div 
+                  className="numbered-circle numbered-circle-1" 
+                  style={{ 
+                    fontFamily: 'Inter, sans-serif'
+                  }}
+                >
+                  1
                 </div>
-              )}
+              </div>
+              
+              {/* Circle 2 - centered in second column */}
+              <div className="flex justify-center">
+                <div 
+                  className="numbered-circle numbered-circle-2" 
+                  style={{ 
+                    fontFamily: 'Inter, sans-serif'
+                  }}
+                >
+                  2
+                </div>
+              </div>
+              
+              {/* Circle 3 - centered in third column */}
+              <div className="flex justify-center">
+                <div 
+                  className="numbered-circle numbered-circle-3" 
+                  style={{ 
+                    fontFamily: 'Inter, sans-serif'
+                  }}
+                >
+                  3
+                </div>
+              </div>
+              
+              {/* Connecting lines positioned precisely between circles */}
+              <div className="absolute top-6 left-0 right-0 flex justify-center pointer-events-none">
+                <div className="relative" style={{ width: '600px' }}>
+                  {/* Line from circle 1 to circle 2 */}
+                  <div 
+                    className="connecting-line-dash absolute" 
+                    style={{
+                      left: '-115px',
+                      top: '0px',
+                      width: '440px',
+                      height: '3px',
+                      opacity: 1
+                    }}
+                  ></div>
+                  
+                  {/* Line from circle 2 to circle 3 */}
+                  <div 
+                    className="connecting-line-dash absolute" 
+                    style={{
+                      left: '300px',
+                      top: '0px',
+                      width: '400px',
+                      height: '3px',
+                      opacity: 1
+                    }}
+                  ></div>
+                </div>
+              </div>
             </div>
-          ))}
+          </div>
+
+          {/* Content below circles - Desktop */}
+          <div className="hidden md:grid md:grid-cols-3 gap-8">
+            {/* Step 1 - Desktop */}
+            <motion.div
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+              viewport={{ once: true }}
+              className="text-center"
+            >
+              <h3 style={{
+                fontFamily: 'Inter, sans-serif',
+                fontWeight: 600,
+                fontSize: '18px',
+                lineHeight: '24px',
+                color: '#141414',
+                marginBottom: '12px'
+              }}>
+                Meet Your AI Coach
+              </h3>
+              <p style={{
+                fontFamily: 'Inter, sans-serif',
+                fontWeight: 400,
+                fontSize: '14px',
+                lineHeight: '20px',
+                color: '#525252',
+                margin: 0
+              }}>
+                Complete a 5-minute assessment to help us understand your goals, skills, and career preferences.
+              </p>
+            </motion.div>
+
+            {/* Step 2 - Desktop */}
+            <motion.div
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              viewport={{ once: true }}
+              className="text-center"
+            >
+              <h3 style={{
+                fontFamily: 'Inter, sans-serif',
+                fontWeight: 600,
+                fontSize: '18px',
+                lineHeight: '24px',
+                color: '#141414',
+                marginBottom: '12px'
+              }}>
+                Get Your Personalized Plan
+              </h3>
+              <p style={{
+                fontFamily: 'Inter, sans-serif',
+                fontWeight: 400,
+                fontSize: '14px',
+                lineHeight: '20px',
+                color: '#525252',
+                margin: 0
+              }}>
+                Receive a custom 90-day roadmap with specific milestones, skill development goals, and target roles.
+              </p>
+            </motion.div>
+
+            {/* Step 3 - Desktop */}
+            <motion.div
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.3 }}
+              viewport={{ once: true }}
+              className="text-center"
+            >
+              <h3 style={{
+                fontFamily: 'Inter, sans-serif',
+                fontWeight: 600,
+                fontSize: '18px',
+                lineHeight: '24px',
+                color: '#141414',
+                marginBottom: '12px'
+              }}>
+                Begin Your Journey
+              </h3>
+              <p style={{
+                fontFamily: 'Inter, sans-serif',
+                fontWeight: 400,
+                fontSize: '14px',
+                lineHeight: '20px',
+                color: '#525252',
+                margin: 0
+              }}>
+                Start progressing through your milestones with daily guidance, weekly check-ins, and community support.
+              </p>
+            </motion.div>
+          </div>
+
+          {/* Mobile Layout - Centered Vertical Stack with connecting lines */}
+          <div className="md:hidden space-y-6">
+            {/* Step 1 - Mobile */}
+            <motion.div
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+              viewport={{ once: true }}
+              className="text-center relative"
+            >
+              <div className="flex justify-center mb-4">
+                <div 
+                  className="numbered-circle numbered-circle-1" 
+                  style={{ 
+                    fontFamily: 'Inter, sans-serif'
+                  }}
+                >
+                  1
+                </div>
+              </div>
+              <h3 style={{
+                fontFamily: 'Inter, sans-serif',
+                fontWeight: 600,
+                fontSize: '18px',
+                lineHeight: '24px',
+                color: '#141414',
+                marginBottom: '12px'
+              }}>
+                Meet Your AI Coach
+              </h3>
+              <p style={{
+                fontFamily: 'Inter, sans-serif',
+                fontWeight: 400,
+                fontSize: '14px',
+                lineHeight: '20px',
+                color: '#525252',
+                margin: 0
+              }}>
+                Complete a 5-minute assessment to help us understand your goals, skills, and career preferences.
+              </p>
+              {/* Vertical connecting line */}
+              <div className="absolute left-1/2 bottom-0 transform -translate-x-1/2 translate-y-3" style={{
+                width: '3px',
+                height: '24px',
+                background: 'repeating-linear-gradient(to bottom, #D5D7DD 0px, #D5D7DD 13px, transparent 13px, transparent 26px)',
+                backgroundSize: '3px 26px'
+              }}></div>
+            </motion.div>
+
+            {/* Step 2 - Mobile */}
+            <motion.div
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+              viewport={{ once: true }}
+              className="text-center relative"
+            >
+              <div className="flex justify-center mb-4">
+                <div 
+                  className="numbered-circle numbered-circle-2" 
+                  style={{ 
+                    fontFamily: 'Inter, sans-serif'
+                  }}
+                >
+                  2
+                </div>
+              </div>
+              <h3 style={{
+                fontFamily: 'Inter, sans-serif',
+                fontWeight: 600,
+                fontSize: '18px',
+                lineHeight: '24px',
+                color: '#141414',
+                marginBottom: '12px'
+              }}>
+                Get Your Personalized Plan
+              </h3>
+              <p style={{
+                fontFamily: 'Inter, sans-serif',
+                fontWeight: 400,
+                fontSize: '14px',
+                lineHeight: '20px',
+                color: '#525252',
+                margin: 0
+              }}>
+                Receive a custom 90-day roadmap with specific milestones, skill development goals, and target roles.
+              </p>
+              {/* Vertical connecting line */}
+              <div className="absolute left-1/2 bottom-0 transform -translate-x-1/2 translate-y-3" style={{
+                width: '3px',
+                height: '24px',
+                background: 'repeating-linear-gradient(to bottom, #D5D7DD 0px, #D5D7DD 13px, transparent 13px, transparent 26px)',
+                backgroundSize: '3px 26px'
+              }}></div>
+            </motion.div>
+
+            {/* Step 3 - Mobile */}
+            <motion.div
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              viewport={{ once: true }}
+              className="text-center"
+            >
+              <div className="flex justify-center mb-4">
+                <div 
+                  className="numbered-circle numbered-circle-3" 
+                  style={{ 
+                    fontFamily: 'Inter, sans-serif'
+                  }}
+                >
+                  3
+                </div>
+              </div>
+              <h3 style={{
+                fontFamily: 'Inter, sans-serif',
+                fontWeight: 600,
+                fontSize: '18px',
+                lineHeight: '24px',
+                color: '#141414',
+                marginBottom: '12px'
+              }}>
+                Begin Your Journey
+              </h3>
+              <p style={{
+                fontFamily: 'Inter, sans-serif',
+                fontWeight: 400,
+                fontSize: '14px',
+                lineHeight: '20px',
+                color: '#525252',
+                margin: 0
+              }}>
+                Start progressing through your milestones with daily guidance, weekly check-ins, and community support.
+              </p>
+            </motion.div>
+          </div>
         </div>
 
-        <div className="mt-16 grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-          <div className="text-center">
-            <div className="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4" style={{ backgroundColor: 'rgba(130, 147, 64, 0.1)' }}>
-              <Users className="h-8 w-8" style={{ color: '#829340' }} />
-            </div>
-            <div className="text-3xl font-bold text-navy mb-2">12,000+</div>
-            <div className="text-lg font-semibold text-navy mb-1">Future Success Stories</div>
-            <div className="text-sm text-soft-grey">CareerFrame was created to help people land the roles they deserve — and you're next.</div>
+        {/* Stats Section - Grey Box */}
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
+          className="mt-16 rounded-lg p-8 md:p-12 stats-grey-box"
+          style={{
+            backgroundColor: '#FAFAFA !important',
+            //border: '1px solid #E0E0E0',
+            background: '#FAFAFA !important'
+          }}
+        >
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.1 }}
+            viewport={{ once: true }}
+            className="text-center"
+          >
+            <div style={{
+              fontFamily: 'Inter, sans-serif',
+              fontWeight: 600,
+              fontSize: '40px',
+              lineHeight: '48px',
+              color: '#829340',
+              marginBottom: '8px'
+            }}>12,000+</div>
+            <div style={{
+              fontFamily: 'Inter, sans-serif',
+              fontWeight: 600,
+              fontSize: '16px',
+              lineHeight: '20px',
+              color: '#141414',
+              marginBottom: '8px'
+            }}>Future Success Stories</div>
+            <div style={{
+              fontFamily: 'Inter, sans-serif',
+              fontWeight: 400,
+              fontSize: '14px',
+              lineHeight: '20px',
+              color: '#525252'
+            }}>CareerFrame was created to help people land the roles they deserve — and you're next.</div>
+          </motion.div>
+          
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            viewport={{ once: true }}
+            className="text-center"
+          >
+            <div style={{
+              fontFamily: 'Inter, sans-serif',
+              fontWeight: 600,
+              fontSize: '40px',
+              lineHeight: '48px',
+              color: '#829340',
+              marginBottom: '8px'
+            }}>72%</div>
+            <div style={{
+              fontFamily: 'Inter, sans-serif',
+              fontWeight: 600,
+              fontSize: '16px',
+              lineHeight: '20px',
+              color: '#141414',
+              marginBottom: '8px'
+            }}>Reported Improved Career Confidence</div>
+            <div style={{
+              fontFamily: 'Inter, sans-serif',
+              fontWeight: 400,
+              fontSize: '14px',
+              lineHeight: '20px',
+              color: '#525252'
+            }}>After creating a personalised roadmap with CareerFrame</div>
+          </motion.div>
+          
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.3 }}
+            viewport={{ once: true }}
+            className="text-center"
+          >
+            <div style={{
+              fontFamily: 'Inter, sans-serif',
+              fontWeight: 600,
+              fontSize: '40px',
+              lineHeight: '48px',
+              color: '#829340',
+              marginBottom: '8px'
+            }}>Rate us</div>
+            <div style={{
+              fontFamily: 'Inter, sans-serif',
+              fontWeight: 600,
+              fontSize: '16px',
+              lineHeight: '20px',
+              color: '#141414',
+              marginBottom: '8px'
+            }}>Be the first to rate us</div>
+            <div style={{
+              fontFamily: 'Inter, sans-serif',
+              fontWeight: 400,
+              fontSize: '14px',
+              lineHeight: '20px',
+              color: '#525252'
+            }}>Your voice matters</div>
+          </motion.div>
+          
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.4 }}
+            viewport={{ once: true }}
+            className="text-center"
+          >
+            <div style={{
+              fontFamily: 'Inter, sans-serif',
+              fontWeight: 600,
+              fontSize: '40px',
+              lineHeight: '48px',
+              color: '#829340',
+              marginBottom: '8px'
+            }}>90 Days</div>
+            <div style={{
+              fontFamily: 'Inter, sans-serif',
+              fontWeight: 600,
+              fontSize: '16px',
+              lineHeight: '20px',
+              color: '#141414',
+              marginBottom: '8px'
+            }}>Our goal: career breakthroughs</div>
+            <div style={{
+              fontFamily: 'Inter, sans-serif',
+              fontWeight: 400,
+              fontSize: '14px',
+              lineHeight: '20px',
+              color: '#525252'
+            }}>CareerFrame is built for speed — helping you move fast with a clear, financially lean, achievable plan.</div>
+          </motion.div>
           </div>
-          <div className="text-center">
-            <div className="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4" style={{ backgroundColor: 'rgba(130, 147, 64, 0.1)' }}>
-              <TrendingUp className="h-8 w-8" style={{ color: '#829340' }} />
-            </div>
-            <div className="text-3xl font-bold text-navy mb-2">72%</div>
-            <div className="text-lg font-semibold text-navy mb-1">Reported Improved Career Confidence</div>
-            <div className="text-sm text-soft-grey">After creating a personalised roadmap with CareerFrame</div>
-          </div>
-          <div className="text-center">
-            <div className="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4" style={{ backgroundColor: 'rgba(130, 147, 64, 0.1)' }}>
-              <Star className="h-8 w-8" style={{ color: '#829340' }} />
-            </div>
-            <div className="text-3xl font-bold text-navy mb-2">Rate Us</div>
-            <div className="text-lg font-semibold text-navy mb-1">Be the first to rate us</div>
-            <div className="text-sm text-soft-grey">Your voice matters</div>
-          </div>
-          <div className="text-center">
-            <div className="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4" style={{ backgroundColor: 'rgba(130, 147, 64, 0.1)' }}>
-              <Award className="h-8 w-8" style={{ color: '#829340' }} />
-            </div>
-            <div className="text-3xl font-bold text-navy mb-2">90 Days</div>
-            <div className="text-lg font-semibold text-navy mb-1">Our goal: career breakthroughs</div>
-            <div className="text-sm text-soft-grey">CareerFrame is built for speed — helping you move fast with a clear, achievable plan.</div>
-          </div>
-        </div>
+        </motion.div>
+        
+        {/* Section Divider */}
+        <div className="mt-16 pt-16 border-t border-gray-200"></div>
       </div>
     </section>
   );

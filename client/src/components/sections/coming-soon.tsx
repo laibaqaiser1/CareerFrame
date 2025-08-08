@@ -7,6 +7,10 @@ import { useToast } from "@/hooks/use-toast";
 import avatar1 from "../../assets/avatar1.png";
 import avatar2 from "../../assets/avatar2.png";
 import avatar3 from "../../assets/avatar3.png";
+import messageChatIcon from "../../assets/message-chat-circle.png";
+import zapIcon from "../../assets/zap.png";
+import chartBreakoutIcon from "../../assets/chart-breakout-square.png";
+import { Target, TrendingUp, Search, Users, Bot, Trophy } from "lucide-react";
 
 // Enhanced preload with timeout and retry logic for better device compatibility
 const preloadImages = () => {
@@ -23,23 +27,24 @@ const preloadImages = () => {
       // Set loading timeout for slow connections
       const timeout = setTimeout(() => {
         console.warn(`Timeout loading: ${src}`);
+        sessionStorage.setItem(`failed_${src.replace("/", "")}`, "true");
       }, 10000); // 10 second timeout
 
       img.onload = () => {
         clearTimeout(timeout);
         console.log(`Preloaded: ${src}`);
-        // Store in sessionStorage to prevent re-loading
+        // Clear any previous failure flags
+        sessionStorage.removeItem(`failed_${src.replace("/", "")}`);
         sessionStorage.setItem(`preloaded_${src.replace("/", "")}`, "true");
       };
 
       img.onerror = () => {
         clearTimeout(timeout);
         console.warn(`Failed to preload: ${src}`);
-        // Set fallback flag
         sessionStorage.setItem(`failed_${src.replace("/", "")}`, "true");
       };
 
-      // Add cache-busting parameter for reliability
+      // Always use cache-busting parameter for fresh loading
       img.src = `${src}?v=${Date.now()}`;
     });
   }
@@ -66,6 +71,7 @@ export function ComingSoonPage() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [imagesLoaded, setImagesLoaded] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
+  const [cacheVersion] = useState(() => Date.now()); // Stable cache version
   const { toast } = useToast();
 
   // Check if mobile view for responsive pattern display
@@ -76,6 +82,14 @@ export function ComingSoonPage() {
 
     checkMobile();
     window.addEventListener("resize", checkMobile);
+    
+    // Clear pattern cache on mobile to ensure fresh loading
+    if (window.innerWidth < 768) {
+      console.log("Mobile device detected, clearing pattern cache for fresh load");
+      sessionStorage.removeItem("preloaded_Pattern.png");
+      sessionStorage.removeItem("failed_Pattern.png");
+    }
+
     return () => window.removeEventListener("resize", checkMobile);
   }, []);
 
@@ -516,8 +530,9 @@ export function ComingSoonPage() {
   }, [isMobile]);
 
   return (
-    <section
-      className="min-h-screen flex flex-col relative overflow-hidden motion-safe coming-soon-section"
+    <>
+      <section
+        className="min-h-screen flex flex-col relative overflow-hidden motion-safe coming-soon-section"
       style={{
         background:
           "linear-gradient(303.01deg, #FFF1F0 0%, #FFFAF1 33.33%, #E8FAF6 66.67%, #EAF6FD 100%)",
@@ -530,53 +545,28 @@ export function ComingSoonPage() {
       }}
     >
       {/* Pattern Background - Enhanced Mobile Coverage */}
-      <motion.div
-        initial={{ opacity: 0, x: 100 }}
-        animate={{ opacity: 0.9, x: 0 }}
-        transition={{ duration: 1.5 }}
+      <div
         className="absolute top-0 right-0 w-1/2 h-full pattern-background md:w-1/2"
         style={{
           backgroundImage: sessionStorage.getItem("failed_Pattern.png")
             ? "linear-gradient(45deg, rgba(255,241,240,0.15) 0%, rgba(255,250,241,0.15) 50%, rgba(240,248,255,0.15) 100%)"
-            : "url(/Pattern.png)",
+            : `url(/Pattern.png?v=${cacheVersion})`,
           backgroundRepeat: "no-repeat",
-          backgroundSize: "cover",
+          backgroundSize: "cover", 
           backgroundPosition: isMobile ? "center right" : "center",
           backgroundColor: "rgba(255,250,241,0.1)",
-          opacity: imagesLoaded ? 1 : 0.7,
-          transition: "opacity 0.8s ease-in-out",
+          opacity: 1,
           minHeight: "100vh",
           height: "100%",
           width: isMobile ? "50%" : "50%",
           position: "absolute",
           top: 0,
           right: 0,
-          zIndex: 0,
+          zIndex: 1,
           transform: "translateZ(0)",
           WebkitTransform: "translateZ(0)",
           backfaceVisibility: "hidden",
           WebkitBackfaceVisibility: "hidden",
-        }}
-        onLoad={() => {
-          console.log(
-            "Pattern background loaded successfully on mobile:",
-            isMobile,
-          );
-          setImagesLoaded(true);
-        }}
-        onError={(e) => {
-          console.warn(
-            "Pattern image failed to load on mobile:",
-            isMobile,
-            "using fallback",
-          );
-          sessionStorage.setItem("failed_Pattern.png", "true");
-          const target = e.currentTarget as HTMLElement;
-          target.style.backgroundImage = `
-            linear-gradient(45deg, rgba(255,241,240,0.15) 0%, rgba(255,250,241,0.15) 50%, rgba(240,248,255,0.15) 100%),
-            radial-gradient(circle at 30% 20%, rgba(130,147,64,0.08) 0%, transparent 50%),
-            radial-gradient(circle at 70% 80%, rgba(30,58,138,0.08) 0%, transparent 50%)
-          `;
         }}
       />
 
@@ -749,6 +739,429 @@ export function ComingSoonPage() {
           </motion.div>
         </div>
       </div>
+      
+      {/* Section Divider */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16">
+        <div className="border-b border-gray-200"></div>
+      </div>
     </section>
+
+    {/* Career Benefits Section */}
+    <section 
+      className="white-section-override py-16 sm:py-20 lg:py-24 relative" 
+      style={{ 
+        zIndex: 50,
+        isolation: "isolate"
+      }}
+    >
+      {/* Multiple white background layers for complete isolation */}
+      <div 
+        style={{
+          backgroundColor: "#ffffff",
+          background: "#ffffff", 
+          width: "100vw",
+          height: "100%",
+          position: "absolute",
+          top: 0,
+          left: "50%",
+          transform: "translateX(-50%)",
+          zIndex: -3
+        }}
+      />
+      <div 
+        style={{
+          backgroundColor: "#ffffff",
+          background: "#ffffff", 
+          width: "100%",
+          height: "100%",
+          position: "absolute",
+          top: 0,
+          left: 0,
+          zIndex: -2
+        }}
+      />
+      <div 
+        style={{
+          backgroundColor: "#ffffff",
+          background: "#ffffff", 
+          width: "120%",
+          height: "120%",
+          position: "absolute",
+          top: "-10%",
+          left: "-10%",
+          zIndex: -1
+        }}
+      />
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Header */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
+          className="text-center mb-12"
+        >
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-semibold text-gray-900 mb-4">
+            Find the right role get there faster
+          </h2>
+          <p className="text-lg sm:text-xl text-gray-600 mb-8">
+            Real Progress - Real People, 6 x cheaper than the average career coach
+          </p>
+          
+          {/* CTA Buttons */}
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-6 w-full max-w-md mx-auto sm:max-w-none">
+            <Button
+              variant="outline"
+              size="lg"
+              className="w-full sm:w-auto px-6 sm:px-8 py-3 text-base font-semibold border-2 border-gray-300 text-gray-700 hover:border-gray-400 hover:bg-gray-50"
+            >
+              Subscribe
+            </Button>
+            <Button
+              size="lg"
+              className="btn-olive-green w-full sm:w-auto px-6 sm:px-8 py-3 text-base font-semibold text-white"
+              style={{ backgroundColor: "#829340" }}
+            >
+              Start for Free
+            </Button>
+          </div>
+          
+          {/* Guarantee */}
+          <p className="text-sm font-medium text-gray-700">
+            90-day satisfaction guarantee
+          </p>
+        </motion.div>
+
+        {/* Three Feature Columns */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 mt-12 md:mt-16">
+          {/* Column 1 - Feeling stuck */}
+          <motion.div
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.1 }}
+            viewport={{ once: true }}
+            className="flex justify-center"
+          >
+            {/* Outer Container */}
+            <div 
+              className="w-full max-w-sm md:max-w-none feature-column-outer"
+              style={{
+                width: '384px',
+                height: '290px',
+                minWidth: '320px',
+                opacity: 1,
+                position: 'relative',
+                display: 'flex',
+                flexDirection: 'column',
+                alignItems: 'center'
+              }}
+            >
+              {/* Icon - positioned above the grey box */}
+              <div 
+                className="icon-container-white"
+                style={{
+                  width: '64px',
+                  height: '64px',
+                  borderRadius: '8px',
+                  backgroundColor: '#FFFFFF',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  flexShrink: 0,
+                  position: 'relative',
+                  zIndex: 2,
+                  marginBottom: '-32px' // Overlap with grey container
+                }}
+              >
+                <img 
+                  src={messageChatIcon} 
+                  alt="Message chat circle"
+                  className="w-5 h-5"
+                />
+              </div>
+
+              {/* Inner Container - grey background */}
+              <div 
+                className="rounded-2xl feature-column-inner"
+                style={{
+                  width: '384px',
+                  height: '266px',
+                  backgroundColor: '#FAFAFA',
+                  paddingTop: '52px',
+                  paddingRight: '24px',
+                  paddingBottom: '32px',
+                  paddingLeft: '24px',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  alignItems: 'center',
+                  position: 'relative',
+                  zIndex: 1
+                }}
+              >
+                {/* Content */}
+                <div 
+                  className="feature-column-content"
+                  style={{
+                    width: '336px',
+                    height: '134px',
+                    display: 'flex',
+                    flexDirection: 'column',
+                    gap: '20px',
+                    textAlign: 'center'
+                  }}
+                >
+                  <h3 
+                    style={{
+                      fontFamily: 'Inter, sans-serif',
+                      fontWeight: 600,
+                      fontSize: '20px',
+                      lineHeight: '30px',
+                      letterSpacing: '0%',
+                      color: '#141414',
+                      margin: 0
+                    }}
+                  >
+                    Feeling stuck
+                  </h3>
+                  <p 
+                    style={{
+                      fontFamily: 'Inter, sans-serif',
+                      fontWeight: 400,
+                      fontSize: '16px',
+                      lineHeight: '24px',
+                      letterSpacing: '0%',
+                      color: '#525252',
+                      margin: 0
+                    }}
+                  >
+                    Feeling stuck in a job that doesn't excite you? Every day feels like you're not reaching your full potential, just going through the motions without fulfilment.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </motion.div>
+
+          {/* Column 2 - Missing opportunities */}
+          <motion.div
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            viewport={{ once: true }}
+            className="flex justify-center"
+          >
+            {/* Outer Container */}
+            <div 
+              className="feature-column-outer"
+              style={{
+                width: '384px',
+                height: '290px',
+                minWidth: '320px',
+                opacity: 1,
+                position: 'relative',
+                display: 'flex',
+                flexDirection: 'column',
+                alignItems: 'center'
+              }}
+            >
+              {/* Icon - positioned above the grey box */}
+              <div 
+                className="icon-container-white"
+                style={{
+                  width: '64px',
+                  height: '64px',
+                  borderRadius: '8px',
+                  backgroundColor: '#FFFFFF',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  flexShrink: 0,
+                  position: 'relative',
+                  zIndex: 2,
+                  marginBottom: '-32px'
+                }}
+              >
+                <img 
+                  src={zapIcon} 
+                  alt="Lightning bolt zap"
+                  className="w-5 h-5"
+                />
+              </div>
+
+              {/* Inner Container - grey background */}
+              <div 
+                className="rounded-2xl feature-column-inner"
+                style={{
+                  width: '384px',
+                  height: '266px',
+                  backgroundColor: '#FAFAFA',
+                  paddingTop: '52px',
+                  paddingRight: '24px',
+                  paddingBottom: '32px',
+                  paddingLeft: '24px',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  alignItems: 'center',
+                  position: 'relative',
+                  zIndex: 1
+                }}
+              >
+                {/* Content */}
+                <div 
+                  className="feature-column-content"
+                  style={{
+                    width: '336px',
+                    height: '134px',
+                    display: 'flex',
+                    flexDirection: 'column',
+                    gap: '20px',
+                    textAlign: 'center'
+                  }}
+                >
+                  <h3 
+                    style={{
+                      fontFamily: 'Inter, sans-serif',
+                      fontWeight: 600,
+                      fontSize: '20px',
+                      lineHeight: '30px',
+                      letterSpacing: '0%',
+                      color: '#141414',
+                      margin: 0
+                    }}
+                  >
+                    Missing opportunities
+                  </h3>
+                  <p 
+                    style={{
+                      fontFamily: 'Inter, sans-serif',
+                      fontWeight: 400,
+                      fontSize: '16px',
+                      lineHeight: '24px',
+                      letterSpacing: '0%',
+                      color: '#525252',
+                      margin: 0
+                    }}
+                  >
+                    The longer you stay in that job, the more you miss out on the opportunities that could change your life. The routine becomes draining, and the fear of stepping into something new only holds you back.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </motion.div>
+
+          {/* Column 3 - Break free with CareerFrame */}
+          <motion.div
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.3 }}
+            viewport={{ once: true }}
+            className="flex justify-center"
+          >
+            {/* Outer Container */}
+            <div 
+              className="feature-column-outer"
+              style={{
+                width: '384px',
+                height: '290px',
+                minWidth: '320px',
+                opacity: 1,
+                position: 'relative',
+                display: 'flex',
+                flexDirection: 'column',
+                alignItems: 'center'
+              }}
+            >
+              {/* Icon - positioned above the grey box */}
+              <div 
+                className="icon-container-white"
+                style={{
+                  width: '64px',
+                  height: '64px',
+                  borderRadius: '8px',
+                  backgroundColor: '#FFFFFF',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  flexShrink: 0,
+                  position: 'relative',
+                  zIndex: 2,
+                  marginBottom: '-32px'
+                }}
+              >
+                <img 
+                  src={chartBreakoutIcon} 
+                  alt="Chart breakout square"
+                  className="w-5 h-5"
+                />
+              </div>
+
+              {/* Inner Container - grey background */}
+              <div 
+                className="rounded-2xl feature-column-inner"
+                style={{
+                  width: '384px',
+                  height: '266px',
+                  backgroundColor: '#FAFAFA',
+                  paddingTop: '52px',
+                  paddingRight: '24px',
+                  paddingBottom: '32px',
+                  paddingLeft: '24px',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  alignItems: 'center',
+                  position: 'relative',
+                  zIndex: 1
+                }}
+              >
+                {/* Content */}
+                <div 
+                  className="feature-column-content"
+                  style={{
+                    width: '336px',
+                    height: '134px',
+                    display: 'flex',
+                    flexDirection: 'column',
+                    gap: '20px',
+                    textAlign: 'center'
+                  }}
+                >
+                  <h3 
+                    style={{
+                      fontFamily: 'Inter, sans-serif',
+                      fontWeight: 600,
+                      fontSize: '20px',
+                      lineHeight: '30px',
+                      letterSpacing: '0%',
+                      color: '#141414',
+                      margin: 0
+                    }}
+                  >
+                    Break free with CareerFrame
+                  </h3>
+                  <p 
+                    style={{
+                      fontFamily: 'Inter, sans-serif',
+                      fontWeight: 400,
+                      fontSize: '16px',
+                      lineHeight: '24px',
+                      letterSpacing: '0%',
+                      color: '#525252',
+                      margin: 0
+                    }}
+                  >
+                    CareerFrame helps you break free from career confusion. With personalized coaching, skill gap analysis, and tailored career paths, we provide the tools and guidance to help you pursue work that aligns with your goals.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </motion.div>
+        </div>
+      </div>
+      
+      {/* Section Divider */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16">
+        <div className="border-b border-gray-200"></div>
+      </div>
+    </section>
+    </>
   );
 }

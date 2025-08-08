@@ -70,9 +70,76 @@ html, body, * {
 
 /* Allow natural backgrounds - removed forced white */
 
+/* What to Expect section white background */
+.what-to-expect-white-bg,
+#what-to-expect {
+  background: #ffffff !important;
+  background-color: #ffffff !important;
+}
+
+/* Numbered squares for What to Expect section */
+.numbered-circle {
+  width: 48px !important;
+  height: 48px !important;
+  border-radius: 8px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  font-size: 18px !important;
+  font-weight: 600 !important;
+  color: #ffffff !important;
+  position: relative !important;
+  z-index: 20 !important;
+  border: none !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1) !important;
+}
+
+/* Individual square colors */
+.numbered-circle-1 {
+  background-color: #475467 !important;
+  background: #475467 !important;
+}
+
+.numbered-circle-2 {
+  background-color: #1A418C !important;
+  background: #1A418C !important;
+}
+
+.numbered-circle-3 {
+  background-color: #829340 !important;
+  background: #829340 !important;
+}
+
+/* Feature columns grey background */
+.feature-column-inner {
+  background-color: #FAFAFA !important;
+}
+
 /* Ensure reliable background image loading */
 .coming-soon-background {
   background: linear-gradient(303.01deg, #FFF1F0 0%, #FFFAF1 33.33%, #E8FAF6 66.67%, #EAF6FD 100%) !important;
+}
+
+/* Force pure white background for marketing section */
+.white-section-override {
+  background: #ffffff !important;
+  background-color: #ffffff !important;
+  background-image: none !important;
+}
+
+.white-section-override * {
+  background-color: inherit;
+}
+
+.white-section-override::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #ffffff !important;
+  z-index: -1;
 }
 
 /* Force white backgrounds for countdown and email elements */
@@ -112,6 +179,35 @@ html .email-input-field {
   background: #ffffff !important;
   background-color: #ffffff !important;
   background-image: none !important;
+}
+
+/* Force grey box background to show */
+.stats-grey-box {
+  background-color: #FAFAFA !important;
+  background: #FAFAFA !important;
+  background-image: none !important;
+}
+
+.stats-grey-box * {
+  background-color: transparent !important;
+  background-image: none !important;
+}
+
+/* Custom dashed line with specific dash pattern */
+.connecting-line-dash {
+  background-image: repeating-linear-gradient(
+    to right,
+    transparent 0px,
+    transparent 0px,
+    #D5D7DD 0px,
+    #D5D7DD 13px,
+    transparent 13px,
+    transparent 26px
+  ) !important;
+  background-size: 26px 3px !important;
+  background-repeat: repeat-x !important;
+  height: 3px !important;
+  border: none !important;
 }
 
 /* Force green button styling */
@@ -714,4 +810,157 @@ html * {
 
 .coming-soon-bg {
   background-color: #FFF1F0 !important;
+}
+
+/* Feature column inner container override */
+.feature-column-inner {
+  background-color: #FAFAFA !important;
+}
+
+/* White icon container override */
+.icon-container-white {
+  background-color: #FFFFFF !important;
+  border: 1.33px solid #E5E5E5 !important;
+  box-shadow: 0px 1.33px 2.67px 0px #1414140D !important;
+}
+
+/* Olive green button styling */
+.btn-olive-green {
+  background-color: #829340 !important;
+  background: #829340 !important;
+  color: white !important;
+  border: none !important;
+}
+
+.btn-olive-green:hover {
+  background-color: #6b7a35 !important;
+  background: #6b7a35 !important;
+  color: white !important;
+}
+
+/* Mobile responsive feature columns */
+@media (max-width: 768px) {
+  .feature-column-outer {
+    width: 100% !important;
+    max-width: 320px !important;
+    height: auto !important;
+    min-height: 290px !important;
+  }
+  
+  .feature-column-inner {
+    width: 100% !important;
+    max-width: 320px !important;
+    height: auto !important;
+    min-height: 266px !important;
+    padding: 52px 16px 32px 16px !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+  }
+  
+  .feature-column-content {
+    width: 100% !important;
+    max-width: 280px !important;
+    height: auto !important;
+    min-height: 134px !important;
+    padding: 0 !important;
+    margin: 0 auto !important;
+    text-align: center !important;
+    gap: 16px !important;
+  }
+  
+  .feature-column-content h3 {
+    font-size: 18px !important;
+    line-height: 26px !important;
+    margin: 0 !important;
+  }
+  
+  .feature-column-content p {
+    font-size: 15px !important;
+    line-height: 22px !important;
+    margin: 0 !important;
+  }
+  
+  /* Mobile responsive buttons */
+  .btn-olive-green {
+    min-height: 48px !important;
+    touch-action: manipulation;
+  }
+  
+  /* Improve mobile touch targets */
+  button {
+    min-height: 48px;
+    touch-action: manipulation;
+  }
+  
+  /* Mobile button container spacing */
+  .button-container {
+    gap: 16px !important;
+    padding: 0 16px;
+  }
+  
+  /* What to Expect section mobile styles */
+  .what-to-expect-steps {
+    gap: 32px !important;
+  }
+  
+  .what-to-expect-stats {
+    gap: 24px !important;
+  }
+  
+  .what-to-expect-stats .text-center h4 {
+    font-size: 16px !important;
+    line-height: 22px !important;
+  }
+  
+  .what-to-expect-stats .text-center p {
+    font-size: 13px !important;
+    line-height: 18px !important;
+  }
+  
+  .what-to-expect-stats .text-center div {
+    font-size: 28px !important;
+  }
+  
+  /* Hide dotted lines on mobile */
+  @media (max-width: 767px) {
+    .dotted-connector {
+      display: none !important;
+    }
+  }
+  
+  /* Force white background for What to Expect section - complete override */
+  .what-to-expect-isolated {
+    background: #ffffff !important;
+    background-color: #ffffff !important;
+    background-image: none !important;
+    background-attachment: scroll !important;
+    background-blend-mode: normal !important;
+    background-clip: border-box !important;
+    background-origin: padding-box !important;
+    background-position: 0% 0% !important;
+    background-repeat: repeat !important;
+    background-size: auto auto !important;
+    position: relative !important;
+    z-index: 9999 !important;
+  }
+  
+  .what-to-expect-isolated::before,
+  .what-to-expect-isolated::after {
+    content: none !important;
+    display: none !important;
+  }
+  
+  /* Override any inherited background from parent elements */
+  .what-to-expect-isolated,
+  .what-to-expect-isolated > *,
+  .what-to-expect-isolated * {
+    background-image: none !important;
+  }
+  
+  /* Force body background to not interfere */
+  body:has(.what-to-expect-isolated) {
+    background-attachment: scroll !important;
+  }
 }
