@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import { HeroSection } from "@/components/sections/hero";
 import { ComingSoonPage } from "@/components/sections/coming-soon";
 import { WhatToExpectSection } from "@/components/sections/what-to-expect";
 import { TrustSignalsSection } from "@/components/sections/trust-signals";
@@ -7,7 +6,7 @@ import { FeaturesSection } from "@/components/sections/features";
 import { HowItWorksSection } from "@/components/sections/how-it-works";
 
 import { TestimonialsSection } from "@/components/sections/testimonials-new";
-import { ProblemSolutionSection } from "@/components/sections/problem-solution";
+
 import { PricingSection } from "@/components/sections/pricing";
 
 import { FAQSection } from "@/components/sections/faq";
@@ -297,18 +296,14 @@ export default function Home() {
           <div className="fade-in">
             <ComingSoonPage />
           </div>
+          
+          {/* What to Expect Section - Separate from gradient background */}
+          <div className="fade-in">
+            <WhatToExpectSection />
+          </div>
         
         {/* Full website content below for exploration */}
         <div className="min-h-screen page-transition">
-          <div className="fade-in">
-            <HeroSection />
-          </div>
-          <div className="slide-up">
-            <ProblemSolutionSection />
-          </div>
-          <div className="slide-up">
-            <WhatToExpectSection />
-          </div>
           <div className="slide-in-left">
             <FeaturesSection />
           </div>
