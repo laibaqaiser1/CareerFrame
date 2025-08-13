@@ -42,7 +42,7 @@ export function HowItWorksSection() {
         className="py-8 sm:py-12 md:py-16 lg:py-20"
         style={{ backgroundColor: "white" }}
       >
-        <div className="max-w-6xl mx-auto">
+        <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-8">
           <div
             ref={ref}
             className={`text-center mb-16 transition-all duration-700 ${

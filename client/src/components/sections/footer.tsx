@@ -2,40 +2,33 @@ import { Linkedin, Facebook, Shield } from "lucide-react";
 import { SiX, SiTiktok, SiInstagram } from "react-icons/si";
 import careerFrameLogo from "@assets/logo_1753453465800.png";
 
-const footerSections = [
-  {
-    title: "Company",
-    links: [
-      { text: "About Us", href: "/about" },
-      { text: "Contact", href: "/contact" }
-    ]
-  },
-  {
-    title: "Legal",
-    links: [
-      { text: "Privacy Policy", href: "/privacy" },
-      { text: "Terms of Service", href: "/terms" },
-      { text: "Data Protection", href: "/data-protection" }
-    ]
-  }
+const companyLinks = [
+  { text: "About us", href: "/about" },
+  { text: "Contact", href: "/contact" }
+];
+
+const legalLinks = [
+  { text: "Privacy policy", href: "/privacy" },
+  { text: "Terms of services", href: "/terms" },
+  { text: "Data protection", href: "/data-protection" }
 ];
 
 export function Footer() {
   return (
-    <footer className="bg-slate-800 text-white py-12">
-      <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12">
-          {/* Left section with logo and description */}
-          <div className="md:col-span-1">
-            <div className="flex items-center mb-6">
+    <footer className="bg-slate-800 text-white py-16 md:py-20 w-full">
+      <div className="w-full px-6 sm:px-8 lg:px-12 xl:px-20 2xl:px-28">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 md:gap-12">
+          {/* Left section with logo, description and social icons */}
+          <div>
+            <div className="flex items-center mb-4">
               <img 
                 src={careerFrameLogo} 
                 alt="CareerFrame Logo" 
-                className="h-10 w-auto"
+                className="h-8 w-auto"
               />
             </div>
             <p className="text-gray-300 text-sm mb-6 leading-relaxed">
-              Empowering careers through AI-powered guidance and personalized coaching.
+              Empowering careers through AI-powered<br className="hidden md:block" /> guidance and personalized coaching.
             </p>
             <div className="flex space-x-4">
               <a href="https://x.com/careerframe_" target="_blank" rel="noopener noreferrer">
@@ -53,27 +46,37 @@ export function Footer() {
             </div>
           </div>
           
-          {/* Right section with links */}
-          <div className="md:col-span-2 grid grid-cols-1 sm:grid-cols-2 gap-6 md:gap-8">
-            {footerSections.map((section, index) => (
-              <div key={index}>
-                <h4 className="font-semibold mb-4 text-white">{section.title}</h4>
-                <ul className="space-y-3 text-sm text-gray-300">
-                  {section.links.map((link, linkIndex) => (
-                    <li key={linkIndex}>
-                      <a href={link.href} className="hover:text-white transition-colors">
-                        {link.text}
-                      </a>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            ))}
+          {/* Company section */}
+          <div>
+            <h4 className="font-semibold mb-4 text-white">Company</h4>
+            <ul className="space-y-3 text-sm text-gray-300">
+              {companyLinks.map((link, index) => (
+                <li key={index}>
+                  <a href={link.href} className="hover:text-white transition-colors">
+                    {link.text}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+          
+          {/* Legal section */}
+          <div>
+            <h4 className="font-semibold mb-4 text-white">Legal</h4>
+            <ul className="space-y-3 text-sm text-gray-300">
+              {legalLinks.map((link, index) => (
+                <li key={index}>
+                  <a href={link.href} className="hover:text-white transition-colors">
+                    {link.text}
+                  </a>
+                </li>
+              ))}
+            </ul>
           </div>
         </div>
         
-        <div className="border-t border-gray-600 mt-12 pt-6 text-center text-sm text-gray-400">
-          <p>&copy; 2024 CareerFrame. All rights reserved.</p>
+        <div className="border-t border-gray-600 mt-16 pt-8 text-center text-sm text-gray-400">
+          <p>&copy; 2025 CareerFrame. All rights reserved.</p>
         </div>
       </div>
     </footer>

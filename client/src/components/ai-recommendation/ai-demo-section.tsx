@@ -97,7 +97,7 @@ export function AIDemoSection({ className = '' }: AIDemoSectionProps) {
         <div className="grid lg:grid-cols-2 gap-8 items-start">
           {/* Left Side - User Profile Simulation */}
           <motion.div
-            initial={{ opacity: 0, x: -20 }}
+            initial={{ opacity: 1, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
             className="bg-gradient-to-br from-gray-50 to-white rounded-xl p-6 border border-gray-200"
           >
@@ -163,7 +163,7 @@ export function AIDemoSection({ className = '' }: AIDemoSectionProps) {
 
           {/* Right Side - AI Output */}
           <motion.div
-            initial={{ opacity: 0, x: 20 }}
+            initial={{ opacity: 1, x: 20 }}
             animate={{ opacity: 1, x: 0 }}
             className="h-full"
           >
@@ -184,9 +184,9 @@ export function AIDemoSection({ className = '' }: AIDemoSectionProps) {
 
         {/* Feature Highlights */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.3 }}
+          initial={{ opacity: 1, y: 0 }
+          animate={{ opacity: 1, y: 0 }
+          transition={{ delay: 0 }
           className="mt-12 grid md:grid-cols-3 gap-6"
         >
           {[

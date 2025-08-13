@@ -8,25 +8,30 @@ export function WhatToExpectSection() {
       id="what-to-expect" 
       style={{ 
         backgroundColor: '#ffffff !important',
-        background: '#ffffff !important'
+        background: '#ffffff !important',
+        position: 'relative',
+        zIndex: 100002
       }} 
-      className="py-8 sm:py-12 md:py-16 what-to-expect-white-bg"
+      className="py-4 sm:py-8 md:py-6 what-to-expect-white-bg"
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-8">
         {/* Header */}
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0}}
+          whileInView={{ opacity: 1}}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className="text-center mb-6 sm:mb-8 md:mb-12"
+          className="text-center mb-4 sm:mb-6 md:mb-8"
         >
           <h2 
-            className="text-2xl sm:text-3xl md:text-4xl font-semibold text-center text-gray-800 mb-2 sm:mb-4"
+            className="consistent-heading text-center text-gray-800 mb-2 sm:mb-4"
             style={{
-              fontFamily: 'Inter, sans-serif',
-              letterSpacing: '-0.02em',
-              lineHeight: '1.3'
+              fontFamily: 'Inter',
+              fontWeight: 600,
+              fontSize: '20px',
+              lineHeight: '28px',
+              letterSpacing: '-2%',
+              textAlign: 'center'
             }}>
             What to Expect After You Sign Up
           </h2>
@@ -94,7 +99,7 @@ export function WhatToExpectSection() {
                       top: '0px',
                       width: '440px',
                       height: '3px',
-                      opacity: 1
+                      opacity: 1,
                     }}
                   ></div>
                   
@@ -106,7 +111,7 @@ export function WhatToExpectSection() {
                       top: '0px',
                       width: '400px',
                       height: '3px',
-                      opacity: 1
+                      opacity: 1,
                     }}
                   ></div>
                 </div>
@@ -118,9 +123,9 @@ export function WhatToExpectSection() {
           <div className="hidden md:grid md:grid-cols-3 gap-8">
             {/* Step 1 - Desktop */}
             <motion.div
-              initial={{ opacity: 0, y: 40 }}
+              initial={{ opacity: 1, y: 0 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.1 }}
+              transition={{ duration: 0.6, delay: 0 }}
               viewport={{ once: true }}
               className="text-center"
             >
@@ -148,9 +153,9 @@ export function WhatToExpectSection() {
 
             {/* Step 2 - Desktop */}
             <motion.div
-              initial={{ opacity: 0, y: 40 }}
+              initial={{ opacity: 1, y: 0 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
+              transition={{ duration: 0.6, delay: 0 }}
               viewport={{ once: true }}
               className="text-center"
             >
@@ -178,9 +183,9 @@ export function WhatToExpectSection() {
 
             {/* Step 3 - Desktop */}
             <motion.div
-              initial={{ opacity: 0, y: 40 }}
+              initial={{ opacity: 1, y: 0 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.3 }}
+              transition={{ duration: 0.6, delay: 0 }}
               viewport={{ once: true }}
               className="text-center"
             >
@@ -211,7 +216,7 @@ export function WhatToExpectSection() {
           <div className="md:hidden space-y-4 sm:space-y-5">
             {/* Step 1 - Mobile */}
             <motion.div
-              initial={{ opacity: 0, y: 40 }}
+              initial={{ opacity: 1, y: 0 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
               viewport={{ once: true }}
@@ -247,20 +252,13 @@ export function WhatToExpectSection() {
               }}>
                 Complete a 5-minute assessment to help us understand your goals, skills, and career preferences.
               </p>
-              {/* Vertical connecting line */}
-              <div className="absolute left-1/2 bottom-0 transform -translate-x-1/2 translate-y-3" style={{
-                width: '3px',
-                height: '24px',
-                background: 'repeating-linear-gradient(to bottom, #D5D7DD 0px, #D5D7DD 13px, transparent 13px, transparent 26px)',
-                backgroundSize: '3px 26px'
-              }}></div>
             </motion.div>
 
             {/* Step 2 - Mobile */}
             <motion.div
-              initial={{ opacity: 0, y: 40 }}
+              initial={{ opacity: 1, y: 0 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.1 }}
+              transition={{ duration: 0.6, delay: 0 }}
               viewport={{ once: true }}
               className="text-center relative"
             >
@@ -294,20 +292,13 @@ export function WhatToExpectSection() {
               }}>
                 Receive a custom 90-day roadmap with specific milestones, skill development goals, and target roles.
               </p>
-              {/* Vertical connecting line */}
-              <div className="absolute left-1/2 bottom-0 transform -translate-x-1/2 translate-y-3" style={{
-                width: '3px',
-                height: '24px',
-                background: 'repeating-linear-gradient(to bottom, #D5D7DD 0px, #D5D7DD 13px, transparent 13px, transparent 26px)',
-                backgroundSize: '3px 26px'
-              }}></div>
             </motion.div>
 
             {/* Step 3 - Mobile */}
             <motion.div
-              initial={{ opacity: 0, y: 40 }}
+              initial={{ opacity: 1, y: 0 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
+              transition={{ duration: 0.6, delay: 0 }}
               viewport={{ once: true }}
               className="text-center"
             >
@@ -347,7 +338,7 @@ export function WhatToExpectSection() {
 
         {/* Stats Section - Grey Box */}
         <motion.div
-          initial={{ opacity: 0, y: 40 }}
+          initial={{ opacity: 1, y: 0 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
@@ -360,9 +351,9 @@ export function WhatToExpectSection() {
         >
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 1, y: 0 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.1 }}
+            transition={{ duration: 0.6, delay: 0 }}
             viewport={{ once: true }}
             className="text-center"
           >
@@ -392,9 +383,9 @@ export function WhatToExpectSection() {
           </motion.div>
           
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 1, y: 0 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
+            transition={{ duration: 0.6, delay: 0 }}
             viewport={{ once: true }}
             className="text-center"
           >
@@ -424,9 +415,9 @@ export function WhatToExpectSection() {
           </motion.div>
           
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 1, y: 0 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.3 }}
+            transition={{ duration: 0.6, delay: 0 }}
             viewport={{ once: true }}
             className="text-center"
           >
@@ -456,9 +447,9 @@ export function WhatToExpectSection() {
           </motion.div>
           
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 1, y: 0 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.4 }}
+            transition={{ duration: 0.6, delay: 0 }}
             viewport={{ once: true }}
             className="text-center"
           >

@@ -107,8 +107,8 @@ export function SmartInsights({ className = '' }: SmartInsightsProps) {
           return (
             <motion.div
               key={insight.id}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 1, y: 0 }
+              animate={{ opacity: 1, y: 0 }
               transition={{ delay: index * 0.1 }}
               className="bg-white rounded-lg p-4 shadow-sm border border-gray-200 hover:shadow-md transition-shadow duration-200"
             >
@@ -149,9 +149,9 @@ export function SmartInsights({ className = '' }: SmartInsightsProps) {
 
       {/* Summary Card */}
       <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.5 }}
+        initial={{ opacity: 1, y: 0 }
+        animate={{ opacity: 1, y: 0 }
+        transition={{ delay: 0 }
         className="bg-gradient-to-r from-purple-50 to-pink-50 rounded-lg p-4 border border-purple-200"
       >
         <div className="flex items-center space-x-2 mb-2">

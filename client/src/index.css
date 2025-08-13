@@ -43,9 +43,9 @@ body[data-theme="dark"] {
   color-scheme: light !important;
 }
 
-/* Custom Cursor Styles */
+/* Custom Cursor Styles - Hide all scrollbars */
 html, body {
-  overflow-x: auto;
+  overflow-x: hidden;
   position: relative;
 }
 
@@ -69,6 +69,19 @@ html, body, * {
 }
 
 /* Allow natural backgrounds - removed forced white */
+
+/* Get Started Banner - force image display with highest priority */
+.get-started-banner {
+  background-size: cover !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+}
+
+/* Simple get started banner styling */
+.simple-dark-banner {
+  background: linear-gradient(135deg, #1f2937 0%, #111827 100%) !important;
+  background-color: #1f2937 !important;
+}
 
 /* Get in touch section background */
 .get-in-touch-bg {
@@ -108,6 +121,53 @@ html, body, * {
   background: #ffffff !important;
   background-color: #ffffff !important;
   background-image: none !important;
+}
+
+/* Override testimonials section background inheritance */
+#testimonials {
+  background: #ffffff !important;
+  background-color: #ffffff !important;
+  background-image: none !important;
+}
+
+#testimonials,
+#testimonials div,
+#testimonials section {
+  background: #ffffff !important;
+  background-color: #ffffff !important;
+  background-image: none !important;
+}
+
+/* Override animation wrapper classes around testimonials */
+.slide-up:has(#testimonials),
+.slide-in-left:has(#testimonials),
+.slide-in-right:has(#testimonials),
+.fade-in:has(#testimonials),
+.page-transition:has(#testimonials) {
+  background: #ffffff !important;
+  background-color: #ffffff !important;
+  background-image: none !important;
+}
+
+/* Override coming-soon-background if it affects testimonials area */
+.coming-soon-background #testimonials,
+div:has(#testimonials).coming-soon-background {
+  background: #ffffff !important;
+  background-color: #ffffff !important;
+  background-image: none !important;
+}
+
+/* Global override for testimonials - highest priority */
+body #testimonials,
+html #testimonials,
+* #testimonials {
+  background: #ffffff !important;
+  background-color: #ffffff !important;
+  background-image: none !important;
+  background-attachment: initial !important;
+  background-position: initial !important;
+  background-repeat: initial !important;
+  background-size: initial !important;
 }
 
 /* Features section white background - Override everything except images */
@@ -374,7 +434,6 @@ button.navbar-signin-btn {
     background-position: center, center !important;
     width: 50% !important;
     right: 0 !important;
-    min-height: 100vh !important;
     opacity: 0.95 !important;
     background-blend-mode: normal !important;
   }
@@ -386,7 +445,6 @@ button.navbar-signin-btn {
     background-position: center, center !important;
     width: 50% !important;
     right: 0 !important;
-    min-height: 100vh !important;
     opacity: 0.95 !important;
   }
 }
@@ -397,7 +455,6 @@ button.navbar-signin-btn {
     background-position: center, center !important;
     width: 50% !important;
     right: 0 !important;
-    min-height: 100vh !important;
     opacity: 0.9 !important;
   }
 }
@@ -511,21 +568,58 @@ body.dark,
 @layer base {
   * {
     @apply border-border;
+    box-sizing: border-box !important;
+    /* Hide scrollbars for all elements */
+    scrollbar-width: none !important; /* Firefox */
+    -ms-overflow-style: none !important;  /* Internet Explorer 10+ */
+  }
+  
+  *::-webkit-scrollbar {
+    display: none !important;
+    width: 0 !important;
+    height: 0 !important;
   }
 
   body {
     @apply font-sans antialiased bg-background text-foreground;
+    overflow-x: hidden !important; /* Prevent horizontal scrolling */
+    overflow-y: auto !important; /* Allow vertical scrolling but hide scrollbar */
+    scrollbar-width: none !important; /* Firefox */
+    -ms-overflow-style: none !important;  /* Internet Explorer 10+ */
+  }
+  
+  body::-webkit-scrollbar {
+    display: none !important;
+    width: 0 !important;
+    height: 0 !important;
   }
   
   html {
     scroll-behavior: smooth;
-    scroll-padding-top: 80px; /* Account for fixed navigation */
+    scroll-padding-top: 140px; /* Account for navbar height (128px + extra) */
+    overflow-x: hidden !important; /* Prevent horizontal scrolling */
+    overflow-y: auto !important; /* Allow vertical scrolling but hide scrollbar */
+    scrollbar-width: none !important; /* Firefox */
+    -ms-overflow-style: none !important;  /* Internet Explorer 10+ */
+  }
+  
+  html::-webkit-scrollbar {
+    display: none !important;
+    width: 0 !important;
+    height: 0 !important;
   }
   
   /* Mobile-specific scroll padding override */
   @media (max-width: 640px) {
     html {
-      scroll-padding-top: 60px; /* Reduced for mobile */
+      scroll-padding-top: 120px; /* Account for mobile navbar height */
+    }
+  }
+  
+  /* Tablet-specific scroll padding */
+  @media (min-width: 641px) and (max-width: 1024px) {
+    html {
+      scroll-padding-top: 150px; /* Account for tablet navbar height */
     }
   }
 
@@ -543,15 +637,18 @@ body.dark,
   }
 
   .slide-in-left {
-    animation: slideInLeft 0.8s ease-out forwards;
+    /* Disabled animation to prevent horizontal scrolling */
+    /* animation: slideInLeft 0.8s ease-out forwards; */
   }
 
   .slide-in-right {
-    animation: slideInRight 0.8s ease-out forwards;
+    /* Disabled animation to prevent scrollbar issues */
+    /* animation: slideInRight 0.8s ease-out forwards; */
   }
 
   .scale-in {
-    animation: scaleIn 0.5s ease-out forwards;
+    /* Disabled animation to prevent scrollbar issues */
+    /* animation: scaleIn 0.5s ease-out forwards; */
   }
 }
 
@@ -602,7 +699,8 @@ body.dark,
   }
 
   .button-hover:hover {
-    transform: translateY(-2px);
+    /* Disabled translateY to prevent scrollbar issues */
+    /* transform: translateY(-2px); */
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
   }
 
@@ -612,7 +710,8 @@ body.dark,
   }
 
   .card-hover:hover {
-    transform: translateY(-8px) scale(1.02);
+    /* Disabled translateY to prevent scrollbar issues */
+    /* transform: translateY(-8px) scale(1); */
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
   }
 
@@ -657,8 +756,6 @@ body.dark,
     top: 0 !important;
     right: 0 !important;
     width: 50% !important;
-    height: 100vh !important;
-    min-height: 100vh !important;
     background-size: cover !important;
     background-position: center right !important;
     background-repeat: no-repeat !important;
@@ -742,7 +839,7 @@ body.dark,
     50% {
       border-color: #34d399;
       box-shadow: 0 0 15px rgba(52, 211, 153, 0.6), 0 0 25px rgba(16, 185, 129, 0.4);
-      transform: scale(1.05);
+      transform: scale(1);
     }
     100% {
       border-color: #10b981;
@@ -760,7 +857,7 @@ body.dark,
     50% {
       border-color: #10b981;
       box-shadow: 0 0 12px rgba(16, 185, 129, 0.7), 0 0 20px rgba(5, 150, 105, 0.5);
-      transform: scale(1.03);
+      transform: scale(1);
     }
     100% {
       border-color: #059669;
@@ -778,7 +875,7 @@ body.dark,
     50% {
       border-color: #059669;
       box-shadow: 0 0 10px rgba(5, 150, 105, 0.8), 0 0 18px rgba(4, 120, 87, 0.6);
-      transform: scale(1.02);
+      transform: scale(1);
     }
     100% {
       border-color: #047857;
@@ -793,6 +890,34 @@ body.dark,
   .stagger-3 { animation-delay: 0.3s; }
   .stagger-4 { animation-delay: 0.4s; }
   .stagger-5 { animation-delay: 0.5s; }
+
+  /* Consistent heading typography across all sections */
+  .consistent-heading {
+    font-size: 24px !important;
+    line-height: 32px !important;
+    font-weight: 600 !important;
+  }
+
+  @media (min-width: 640px) {
+    .consistent-heading {
+      font-size: 28px !important;
+      line-height: 36px !important;
+    }
+  }
+
+  @media (min-width: 768px) {
+    .consistent-heading {
+      font-size: 32px !important;
+      line-height: 40px !important;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .consistent-heading {
+      font-size: 36px !important;
+      line-height: 44px !important;
+    }
+  }
 }
 
 @keyframes fadeInUp {
@@ -809,11 +934,11 @@ body.dark,
 @keyframes slideInRight {
   from {
     opacity: 0;
-    transform: translateX(30px);
+    /* Removed translateX to prevent horizontal scrolling */
   }
   to {
     opacity: 1;
-    transform: translateX(0);
+    /* Removed translateX to prevent horizontal scrolling */
   }
 }
 
@@ -860,22 +985,22 @@ body.dark,
 @keyframes slideInLeft {
   from {
     opacity: 0;
-    transform: translateX(-30px);
+    /* Removed translateX to prevent horizontal scrolling */
   }
   to {
     opacity: 1;
-    transform: translateX(0);
+    /* Removed translateX to prevent horizontal scrolling */
   }
 }
 
 @keyframes slideInRight {
   from {
     opacity: 0;
-    transform: translateX(30px);
+    /* Removed translateX to prevent horizontal scrolling */
   }
   to {
     opacity: 1;
-    transform: translateX(0);
+    /* Removed translateX to prevent horizontal scrolling */
   }
 }
 
@@ -909,16 +1034,89 @@ body.dark,
   background: linear-gradient(135deg, hsl(var(--fresh-green)) 0%, #829340 100%);
 }
 
+/* GLOBAL SCROLL PREVENTION AND SCROLLBAR HIDING */
+html, body {
+  overflow-x: hidden !important;
+  box-sizing: border-box !important;
+  /* Hide scrollbars for WebKit browsers (Chrome, Safari, Edge) */
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none;  /* Internet Explorer 10+ */
+}
+
+/* Hide scrollbars for WebKit browsers */
+html::-webkit-scrollbar, 
+body::-webkit-scrollbar,
+*::-webkit-scrollbar {
+  display: none;
+  width: 0;
+  height: 0;
+  background: transparent;
+}
+
+/* Ensure all elements hide their scrollbars */
+* {
+  scrollbar-width: none !important; /* Firefox */
+  -ms-overflow-style: none !important;  /* Internet Explorer 10+ */
+}
+
+*::-webkit-scrollbar {
+  display: none !important;
+  width: 0 !important;
+  height: 0 !important;
+}
+
+/* Only apply max-width to container elements, not all elements - restore centering */
+.container, .max-w-screen-xl, .mx-auto {
+  max-width: 1280px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  overflow-x: hidden !important;
+}
+
+/* Allow sections to be full width for backgrounds but center their content */
+section, main {
+  max-width: 100vw !important;
+  overflow-x: hidden !important;
+}
+
 /* Clean, professional hero section */
 /* Simple, effective background approach */
 html, body, #root {
   background: linear-gradient(303.01deg, #FFF1F0 0%, #FFFAF1 33.33%, #E8FAF6 66.67%, #EAF6FD 100%) !important;
-  min-height: 100vh !important;
+  overflow-x: hidden !important;
+}
+
+/* Banner section positioning fixes */
+.coming-soon-section {
+  position: relative;
+  min-height: 85vh;
+  padding-top: 0;
+}
+
+/* Responsive banner content positioning */
+@media (max-width: 640px) {
+  .coming-soon-section .flex-1 {
+    padding-top: 100px !important;
+    padding-bottom: 30px !important;
+  }
+}
+
+@media (min-width: 641px) and (max-width: 1024px) {
+  .coming-soon-section .flex-1 {
+    padding-top: 110px !important;
+    padding-bottom: 40px !important;
+  }
+}
+
+@media (min-width: 1025px) {
+  .coming-soon-section .flex-1 {
+    padding-top: 120px !important;
+    padding-bottom: 50px !important;
+  }
 }
 
 .coming-soon-bg {
   background: linear-gradient(303.01deg, #FFF1F0 0%, #FFFAF1 33.33%, #E8FAF6 66.67%, #EAF6FD 100%) !important;
-  min-height: 100vh !important;
 }
 
 /* Override any white backgrounds - except features section and buttons */
@@ -933,7 +1131,7 @@ html, body, #root {
   background-image: none !important;
 }
 
-.slide-in-left *:not(img):not([class*="video"]):not([style*="background-image"]):not(.olive-green-button):not(button):not(.play-button-circle) {
+.slide-in-left *:not(img):not([class*="video"]):not([style*="background-image"]):not(.olive-green-button):not(button):not(.play-button-circle):not([style*="linear-gradient"]) {
   background-color: transparent !important;
 }
 
@@ -941,6 +1139,13 @@ html, body, #root {
   background: #ffffff !important;
   background-color: #ffffff !important;
   background-image: none !important;
+}
+
+/* Exception for our dark banner - override slide-in-left */
+.slide-in-left .simple-dark-banner {
+  background: linear-gradient(135deg, #1f2937 0%, #111827 100%) !important;
+  background-color: #1f2937 !important;
+  background-image: linear-gradient(135deg, #1f2937 0%, #111827 100%) !important;
 }
 
 /* Keep images and video elements visible */

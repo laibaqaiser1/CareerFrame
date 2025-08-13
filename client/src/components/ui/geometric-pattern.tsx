@@ -109,9 +109,9 @@ export const GeometricPattern: React.FC<GeometricPatternProps> = ({
 
         {/* Animated geometric shapes */}
         <motion.g
-          initial={{ opacity: 0 }}
+          initial={{ opacity: 0}}
           animate={{ opacity: opacity * 0.5 }}
-          transition={{ duration: 2, delay: 0.5 }}
+          transition={{ duration: 2, delay: 0 }
         >
           {/* Large hexagons in corners */}
           <polygon

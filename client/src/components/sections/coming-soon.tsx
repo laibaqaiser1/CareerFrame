@@ -211,18 +211,15 @@ export function ComingSoonPage() {
       const now = new Date().getTime();
       const distance = launchDate - now;
 
-      if (distance > 0) {
-        setTimeLeft({
-          days: Math.floor(distance / (1000 * 60 * 60 * 24)),
-          hours: Math.floor(
-            (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60),
-          ),
-          minutes: Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60)),
-          seconds: Math.floor((distance % (1000 * 60)) / 1000),
-        });
-      } else {
-        setTimeLeft({ days: 0, hours: 0, minutes: 0, seconds: 0 });
-      }
+      // Override with fixed 623 days
+      setTimeLeft({
+        days: 623,
+        hours: Math.floor(
+          (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60),
+        ),
+        minutes: Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60)),
+        seconds: Math.floor((distance % (1000 * 60)) / 1000),
+      });
     };
 
     updateCountdown();
@@ -245,7 +242,7 @@ export function ComingSoonPage() {
         height: ${isMobile ? "280px" : "600px"} !important;
         z-index: 100001 !important;
         pointer-events: none !important;
-        opacity: 0;
+        opacity: 1,
         transition: opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1);
         transform: translateZ(0);
         overflow: hidden !important;
@@ -260,7 +257,7 @@ export function ComingSoonPage() {
         height: 100% !important;
         object-fit: contain !important;
         object-position: ${isTopLeft ? "top left" : "bottom right"} !important;
-        opacity: 0.8 !important;
+        opacity: 1, !important;
         display: block !important;
       `;
 
@@ -532,11 +529,10 @@ export function ComingSoonPage() {
   return (
     <div>
       <section
-        className="min-h-screen flex flex-col relative overflow-hidden motion-safe coming-soon-section"
+        className="flex flex-col relative overflow-hidden motion-safe coming-soon-section"
       style={{
         background:
           "linear-gradient(303.01deg, #FFF1F0 0%, #FFFAF1 33.33%, #E8FAF6 66.67%, #EAF6FD 100%)",
-        minHeight: "100vh",
         width: "100%",
         backgroundAttachment: "scroll",
         backgroundSize: "cover",
@@ -554,8 +550,6 @@ export function ComingSoonPage() {
           backgroundPosition: isMobile ? "center right" : "center",
           backgroundColor: "rgba(255,250,241,0.1)",
           opacity: 1,
-          minHeight: "100vh",
-          height: "100%",
           width: isMobile ? "50%" : "50%",
           position: "absolute",
           top: 0,
@@ -570,11 +564,11 @@ export function ComingSoonPage() {
 
       {/* Corner frames are now injected directly into document.body via useEffect */}
       <div className="w-full max-w-full mx-auto px-4 sm:px-6 md:px-8 lg:px-12 xl:px-20 2xl:px-28 flex-1 flex flex-col relative z-10">
-        {/* Main Launch Message - Mobile Responsive */}
-        <div className="flex-1 flex items-center justify-center py-8 sm:py-12 md:py-16">
+        {/* Main Launch Message - Mobile Responsive with Navbar Spacing */}
+        <div className="flex-1 flex items-center justify-center pt-20 sm:pt-24 md:pt-28 pb-6 sm:pb-8 md:pb-10">
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
+            initial={{ opacity: 1, }}
+            animate={{ opacity: 1 }}
             transition={{ duration: 0.8 }}
             className="text-center max-w-5xl mx-auto w-full"
           >
@@ -608,8 +602,8 @@ export function ComingSoonPage() {
               ].map((item, index) => (
                 <React.Fragment key={item.label}>
                   <motion.div
-                    initial={{ scale: 0.8, opacity: 0 }}
-                    animate={{ scale: 1, opacity: 1 }}
+                    initial={{ opacity: 0}}
+                    animate={{ opacity: 1}}
                     transition={{ duration: 0.5, delay: index * 0.1 }}
                     className="text-center"
                   >
@@ -647,9 +641,9 @@ export function ComingSoonPage() {
             </div>
 
             <motion.h2
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.6 }}
+              initial={{ opacity: 1 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.8, delay: 0 }}
               className="text-base sm:text-lg md:text-xl font-semibold mb-3 sm:mb-4 md:mb-6"
               style={{
                 color: "#1F2937",
@@ -661,12 +655,12 @@ export function ComingSoonPage() {
             </motion.h2>
 
             <motion.div
-              initial={{ opacity: 0, y: 30 }}
+              initial={{ opacity: 1, y: 0 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.8 }}
-              className="max-w-md mx-auto px-4"
+              transition={{ duration: 0.8, delay: 0 }}
+              className="flex flex-col items-center px-4"
             >
-              <form onSubmit={handleWaitlistSignup} className="space-y-4">
+              <form onSubmit={handleWaitlistSignup} className="space-y-4 w-full max-w-sm sm:max-w-md md:max-w-lg" style={{ width: 'min(434px, calc(100vw - 32px))', gap: '6px' }}>
                 <Input
                   type="email"
                   placeholder="Enter your email"
@@ -675,6 +669,7 @@ export function ComingSoonPage() {
                   required
                   className="w-full px-3 py-3 sm:px-4 sm:py-4 text-base sm:text-lg border-2 border-gray-200 rounded-lg focus:ring-2 focus:ring-green-400 focus:border-green-400 email-input-field"
                   style={{
+                    height: '48px',
                     fontFamily:
                       'Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif',
                     backgroundColor: '#ffffff !important',
@@ -683,6 +678,7 @@ export function ComingSoonPage() {
                     opacity: '1 !important',
                     border: '2px solid #e5e7eb !important'
                   }}
+
                 />
                 <SoundButton
                   soundType="submit"
@@ -690,6 +686,7 @@ export function ComingSoonPage() {
                   disabled={isSubmitting}
                   className="w-full text-white px-4 py-3 sm:px-6 sm:py-4 font-semibold rounded-lg text-base sm:text-lg transition-all duration-200 hover:scale-[1.02] hover:bg-green-600 secure-my-spot-button"
                   style={{
+                    height: '48px',
                     backgroundColor: "#829340 !important",
                     background: "#829340 !important",
                     color: "white !important",
@@ -791,10 +788,10 @@ export function ComingSoonPage() {
           zIndex: -1
         }}
       />
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-8">
         {/* Header */}
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 1, y: 0 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
@@ -851,9 +848,9 @@ export function ComingSoonPage() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 mt-12 md:mt-16">
           {/* Column 1 - Feeling stuck */}
           <motion.div
-            initial={{ opacity: 0, y: 40 }}
+            initial={{ opacity: 1, y: 0 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.1 }}
+            transition={{ duration: 0.6, delay: 0 }}
             viewport={{ once: true }}
             className="flex justify-center"
           >
@@ -958,9 +955,9 @@ export function ComingSoonPage() {
 
           {/* Column 2 - Missing opportunities */}
           <motion.div
-            initial={{ opacity: 0, y: 40 }}
+            initial={{ opacity: 1, y: 0 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
+            transition={{ duration: 0.6, delay: 0 }}
             viewport={{ once: true }}
             className="flex justify-center"
           >
@@ -1065,9 +1062,9 @@ export function ComingSoonPage() {
 
           {/* Column 3 - Break free with CareerFrame */}
           <motion.div
-            initial={{ opacity: 0, y: 40 }}
+            initial={{ opacity: 1, y: 0 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.3 }}
+            transition={{ duration: 0.6, delay: 0 }}
             viewport={{ once: true }}
             className="flex justify-center"
           >

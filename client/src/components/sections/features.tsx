@@ -6,7 +6,8 @@ import { useWaitlistPopup } from "@/hooks/use-waitlist-popup";
 import { Bot, TrendingUp, Route, Play, Pause } from "lucide-react";
 import { motion } from "framer-motion";
 import { useState, useRef } from "react";
-import careerPathVideo from "../../assets/Career path product video.mp4";
+import videoCoverImage from "../../assets/VideoCover.png";
+// Using direct path approach for video with spaces in filename
 
 const valueProps = [
   {
@@ -31,25 +32,15 @@ const valueProps = [
 
 export function FeaturesSection() {
   const { ref: sectionRef, isVisible: sectionVisible } = useScrollAnimation();
-  const { ref: videoRef, isVisible: videoVisible } = useScrollAnimation();
+  const { ref: videoSectionRef, isVisible: videoVisible } = useScrollAnimation();
   const { ref: cardsRef, isVisible: cardsVisible } = useScrollAnimation();
   
   // Debug logging
   console.log("FeaturesSection - cardsVisible:", cardsVisible);
   const { isOpen, openPopup, closePopup } = useWaitlistPopup();
   const [isPlaying, setIsPlaying] = useState(false);
-  const videoElementRef = useRef<HTMLVideoElement>(null);
-
-  const toggleVideo = () => {
-    if (videoElementRef.current) {
-      if (isPlaying) {
-        videoElementRef.current.pause();
-      } else {
-        videoElementRef.current.play();
-      }
-      setIsPlaying(!isPlaying);
-    }
-  };
+  const [showVideo, setShowVideo] = useState(false);
+  const videoRef = useRef<HTMLVideoElement>(null);
 
   return (
     <>
@@ -61,15 +52,15 @@ export function FeaturesSection() {
         style={{ backgroundColor: "#ffffff" }}
       >
         <div
-          className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 features-white-bg"
+          className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-8 features-white-bg"
           style={{ backgroundColor: "#ffffff" }}
         >
           {/* Header */}
           <motion.div
             ref={sectionRef}
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 0 }}
             animate={
-              sectionVisible ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }
+              sectionVisible ? { opacity: 1, y: 0 } : { opacity: 0, y: 0 }
             }
             transition={{ duration: 0.6 }}
             className="text-center mb-12"
@@ -78,7 +69,7 @@ export function FeaturesSection() {
               style={{
                 fontFamily: "Inter, sans-serif",
                 fontWeight: 600,
-                fontSize: "36px",
+                fontSize: "30px",
                 lineHeight: "44px",
                 letterSpacing: "-0.02em",
                 textAlign: "center",
@@ -108,79 +99,103 @@ export function FeaturesSection() {
 
           {/* Video Demo Section */}
           <motion.div
-            ref={videoRef}
-            initial={{ opacity: 0, y: 40 }}
+            ref={videoSectionRef}
+            initial={{ opacity: 0, y: 0 }}
             animate={
-              videoVisible ? { opacity: 1, y: 0 } : { opacity: 0, y: 40 }
+              videoVisible ? { opacity: 1, y: 0 } : { opacity: 0, y: 0 }
             }
-            transition={{ duration: 0.7, delay: 0.2 }}
+            transition={{ duration: 0.7, delay: 0 }}
             className="mb-16"
           >
-            <div className="relative rounded-2xl overflow-hidden shadow-2xl bg-gray-900 w-full">
-              <video
-                ref={videoElementRef}
-                className="w-full h-auto"
-                poster="" // You can add a poster image here if needed
-                onPlay={() => setIsPlaying(true)}
-                onPause={() => setIsPlaying(false)}
-                onEnded={() => setIsPlaying(false)}
-                controls
-              >
-                <source src={careerPathVideo} type="video/mp4" />
-                Your browser does not support the video tag.
-              </video>
-
-              {/* Play/Pause Overlay Button */}
-              {!isPlaying && (
-                <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-30">
-                  <button
-                    onClick={toggleVideo}
-                    className="bg-white bg-opacity-90 rounded-full p-6 hover:bg-opacity-100 transition-all duration-300 shadow-lg"
-                  >
-                    <Play className="h-12 w-12 text-gray-800 ml-1" />
-                  </button>
+            <div className="relative rounded-2xl overflow-hidden shadow-2xl bg-gray-900 w-full aspect-video">
+              {showVideo ? (
+                <video
+                  ref={videoRef}
+                  className="w-full h-full object-cover"
+                  controls
+                  autoPlay
+                  playsInline
+                  onPlay={() => {
+                    console.log('Video started playing');
+                    setIsPlaying(true);
+                  }}
+                  onPause={() => {
+                    console.log('Video paused');
+                    setIsPlaying(false);
+                  }}
+                  onEnded={() => {
+                    console.log('Video ended');
+                    setIsPlaying(false);
+                    setShowVideo(false);
+                  }}
+                  onError={(e) => {
+                    console.error('Video error:', e);
+                    console.error('Video error details:', e.currentTarget.error);
+                  }}
+                  onLoadStart={() => console.log('Video load started')}
+                  onLoadedData={() => console.log('Video data loaded')}
+                  onCanPlay={() => console.log('Video can play')}
+                  onCanPlayThrough={() => console.log('Video can play through')}
+                >
+                  <source src="/career-path-video.mp4" type="video/mp4" />
+                  Your browser does not support the video tag.
+                </video>
+              ) : (
+                <div className="relative w-full h-full">
+                  <img
+                    src={videoCoverImage}
+                    alt="CareerFrame Dashboard Preview"
+                    className="w-full h-full object-cover"
+                  />
+                  
+                  {/* Professional Play Button Overlay */}
+                  <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-20">
+                    <button
+                      onClick={() => {
+                        console.log('🎬 Play button clicked!');
+                        setShowVideo(true);
+                      }}
+                      className="bg-white bg-opacity-90 backdrop-blur-sm rounded-full p-6 hover:bg-opacity-100 hover:scale-105 transition-all duration-300 shadow-lg"
+                    >
+                      <Play className="h-12 w-12 text-gray-800 ml-1" />
+                    </button>
+                  </div>
                 </div>
               )}
             </div>
           </motion.div>
 
-          {/* Progress Bar Test - Always Visible on All Screens */}
-          <div className="mb-8">
-            <div className="w-full h-8 bg-red-500 mb-6 flex items-center justify-center text-white font-bold">
-              PROGRESS BAR TEST - SHOULD BE VISIBLE
-            </div>
-            <div className="w-full h-6 bg-gray-400 mb-6 relative">
-              <div className="h-full bg-green-600 w-3/4"></div>
-            </div>
-          </div>
+
 
           {/* Feature Cards */}
           <motion.div
             ref={cardsRef}
-            initial={{ opacity: 0, y: 40 }}
+            initial={{ opacity: 0, y: 0 }}
             animate={
-              cardsVisible ? { opacity: 1, y: 0 } : { opacity: 0, y: 40 }
+              cardsVisible ? { opacity: 1, y: 0 } : { opacity: 0, y: 0 }
             }
-            transition={{ duration: 0.7, delay: 0.4 }}
+            transition={{ duration: 0.7, delay: 0 }}
             className="grid md:grid-cols-3 gap-8 mb-16"
           >
             {valueProps.map((prop, index) => (
               <motion.div
                 key={index}
-                initial={{ opacity: 0, y: 40 }}
+                initial={{ opacity: 0, y: 0 }}
                 animate={
-                  cardsVisible ? { opacity: 1, y: 0 } : { opacity: 0, y: 40 }
+                  cardsVisible ? { opacity: 1, y: 0 } : { opacity: 0, y: 0 }
                 }
-                transition={{ duration: 0.6, delay: 0.5 + index * 0.1 }}
+                transition={{ duration: 0.6, delay: 0 + index * 0.1 }}
                 className="text-center"
               >
-                {/* Individual Progress Bars Test */}
-                <div className="mb-6">
-                  <div className="w-full h-8 bg-purple-500 mb-2 flex items-center justify-center text-white font-bold text-sm">
-                    CARD {index + 1} PROGRESS TEST
-                  </div>
-                  <div className="w-full h-6 bg-orange-400 relative">
-                    <div className="h-full bg-cyan-500 w-2/3"></div>
+                {/* Progress Bar Only */}
+                <div className="mb-6 w-full">
+                  <div className="w-full h-3 bg-gray-300 rounded-full overflow-hidden">
+                    <div 
+                      className="h-full bg-blue-500 rounded-full transition-all duration-1500 ease-out"
+                      style={{ 
+                        width: cardsVisible ? `${75 + (index * 8)}%` : '0%'
+                      }}
+                    />
                   </div>
                 </div>
 
@@ -211,45 +226,51 @@ export function FeaturesSection() {
             ))}
           </motion.div>
 
-          {/* CTA Section - Fixed container with proper layout */}
+          {/* CTA Section - Responsive container with background image */}
           <motion.div
-            initial={{ opacity: 0, y: 40 }}
+            initial={{ opacity: 0, y: 20 }}
             animate={
-              cardsVisible ? { opacity: 1, y: 0 } : { opacity: 0, y: 40 }
+              cardsVisible ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }
             }
-            transition={{ duration: 0.7, delay: 0.8 }}
-            className="mx-auto"
+            transition={{ duration: 0.7, delay: 0.3 }}
+            className="w-full max-w-6xl mx-auto relative overflow-hidden"
             style={{
-              width: "1216px",
-              height: "212px",
-              maxWidth: "calc(100vw - 48px)",
-              background: "linear-gradient(135deg, #1f2937 0%, #111827 100%)",
-              border: "1px solid rgba(255, 255, 255, 0.1)",
               borderRadius: "16px",
-              padding: "64px",
-              boxSizing: "border-box"
+              padding: "32px",
+              boxSizing: "border-box",
+              minHeight: window.innerWidth >= 768 ? "212px" : "120px",
+              display: "flex",
+              alignItems: "center"
             }}
           >
-            <div 
-              className="flex items-center justify-between w-full h-full"
+            {/* Background Image */}
+            <img
+              src="/image.jpg"
+              alt=""
+              className="absolute inset-0 w-full h-full object-cover"
               style={{
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "space-between",
-                width: "100%",
-                height: "100%",
-                color: "white"
+                borderRadius: "16px"
               }}
-            >
-              <div className="text-left flex-1">
+            />
+            {/* Dark overlay */}
+            <div
+              className="absolute inset-0"
+              style={{
+                backgroundColor: "rgba(20, 20, 20, 0.698)",
+                borderRadius: "16px"
+              }}
+            />
+            <div className="flex flex-col md:flex-row items-center justify-between gap-6 w-full relative z-10">
+              <div className="text-left flex-1 flex flex-col justify-center">
                 <h3
                   style={{
                     fontFamily: "Inter, sans-serif",
                     fontWeight: 600,
-                    fontSize: "24px",
-                    lineHeight: "32px",
+                    fontSize: "20px",
+                    lineHeight: "28px",
                     color: "white",
-                    marginBottom: "12px",
+                    marginBottom: "8px",
+                    textShadow: "0 1px 2px rgba(0, 0, 0, 0.8)"
                   }}
                 >
                   See CareerFrame in Action
@@ -258,40 +279,69 @@ export function FeaturesSection() {
                   style={{
                     fontFamily: "Inter, sans-serif",
                     fontWeight: 400,
-                    fontSize: "16px",
-                    lineHeight: "24px",
-                    color: "#D1D5DB",
-                    maxWidth: "400px",
-                    margin: "0"
+                    fontSize: "14px",
+                    lineHeight: "20px",
+                    color: "#E5E7EB",
+                    margin: "0",
+                    textShadow: "0 1px 2px rgba(0, 0, 0, 0.8)"
                   }}
                 >
                   Take a 2-minute Signup tour and discover how we'll transform your career journey.
                 </p>
               </div>
-              <div className="flex-shrink-0 ml-6">
-                <Button
-                  onClick={openPopup}
+              <div className="flex-shrink-0">
+                <div
+                  onClick={() => window.open("https://app.careerframe.co.uk/", "_blank")}
+                  ref={(el) => {
+                    if (el) {
+                      el.style.setProperty("background-color", "#829340", "important");
+                      el.style.setProperty("background", "#829340", "important");
+                      el.style.setProperty("background-image", "none", "important");
+                      el.style.setProperty("border", "2px solid #829340", "important");
+                      el.style.setProperty("color", "#ffffff", "important");
+                    }
+                  }}
                   style={{
-                    backgroundColor: "#829340",
-                    borderColor: "#829340",
                     fontFamily: "Inter, sans-serif",
                     fontWeight: 600,
-                    fontSize: "16px",
-                    padding: "14px 32px",
-                    borderRadius: "24px",
-                    border: "none",
+                    fontSize: "14px",
+                    padding: "10px 20px",
+                    borderRadius: "8px",
                     boxShadow: "0 4px 12px rgba(130, 147, 64, 0.3)",
-                    color: "white"
+                    cursor: "pointer",
+                    transition: "all 0.3s ease",
+                    display: "inline-block",
+                    userSelect: "none",
+                    minWidth: "120px",
+                    textAlign: "center",
+                    position: "relative",
+                    zIndex: "9999"
                   }}
-                  className="text-white hover:bg-opacity-90 transition-all duration-300 hover:shadow-lg"
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.setProperty("background-color", "#6d7a35", "important");
+                    e.currentTarget.style.setProperty("background", "#6d7a35", "important");
+                    e.currentTarget.style.setProperty("border-color", "#6d7a35", "important");
+                    e.currentTarget.style.transform = "translateY(-1px)";
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.setProperty("background-color", "#829340", "important");
+                    e.currentTarget.style.setProperty("background", "#829340", "important");
+                    e.currentTarget.style.setProperty("border-color", "#829340", "important");
+                    e.currentTarget.style.transform = "translateY(0)";
+                  }}
                 >
                   Get started
-                </Button>
+                </div>
               </div>
             </div>
           </motion.div>
         </div>
       </section>
+
+      {/* Section Divider */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 sm:pt-12 md:pt-16">
+        <div className="border-b border-gray-200"></div>
+      </div>
     </>
   );
 }

@@ -6,9 +6,9 @@ export function ProblemSolutionSection() {
       <div className="max-w-full mx-auto px-6 sm:px-8 lg:px-12 xl:px-20 2xl:px-28">
         <motion.div 
           className="bg-white rounded-2xl shadow-lg p-8 lg:p-12"
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.4 }}
+          initial={{ opacity: 0}}
+          animate={{ opacity: 0}}
+          transition={{ duration: 0.8, delay: 0 }
         >
           <div className="grid lg:grid-cols-3 gap-8 text-center">
             <div className="p-6">

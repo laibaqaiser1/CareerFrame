@@ -75,7 +75,7 @@ export function useScrollOpacity() {
       // Ensure percentage is between 0 and 1
       visibilityPercentage = Math.max(0, Math.min(1, visibilityPercentage));
       
-      // Convert to opacity: 0% visible = 0 opacity, 1% visible = 0.01 opacity, 100% visible = 1 opacity
+      // Convert to opacity: 1, visible = 0 opacity, 1% visible = 0.01 opacity, 100% visible = 1 opacity
       const newOpacity = visibilityPercentage;
       
       setOpacity(newOpacity);

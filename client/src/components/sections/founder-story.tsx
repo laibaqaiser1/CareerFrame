@@ -4,7 +4,7 @@ import { Quote } from "lucide-react";
 export function FounderStorySection() {
   return (
     <section id="founder-story" className="py-16 bg-gradient-to-r from-blue-50 to-indigo-50">
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-8">
         <Card className="bg-white shadow-xl">
           <CardContent className="p-8 lg:p-12">
             <div className="text-center mb-8">

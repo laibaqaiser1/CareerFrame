@@ -41,8 +41,8 @@ export function TestimonialsSection() {
   };
 
   return (
-    <section id="testimonials" className="py-8 sm:py-12 md:py-16 lg:py-20 bg-transparent">
-      <div className="max-w-6xl mx-auto px-6">
+    <section id="testimonials" className="py-8 sm:py-12 md:py-16 lg:py-20" style={{ backgroundColor: '#ffffff', background: '#ffffff' }}>
+      <div className="max-w-6xl mx-auto px-4 sm:px-6" style={{ backgroundColor: '#ffffff', background: '#ffffff' }}>
         <div 
           ref={ref}
           className={`text-center mb-16 transition-all duration-700 ${
@@ -68,43 +68,45 @@ export function TestimonialsSection() {
           </p>
         </div>
 
-        <div className="relative max-w-6xl mx-auto">
-          {/* Navigation Arrows - Desktop: outside grid, Mobile: over testimonial */}
+        <div className="relative max-w-5xl mx-auto px-20">
+          {/* Navigation Arrows - Positioned outside testimonial area */}
           <button 
             onClick={prevTestimonial}
-            className="absolute left-2 md:-left-16 top-1/2 -translate-y-1/2 z-10 flex items-center justify-center hover:opacity-70 transition-all duration-200"
+            className="absolute -left-8 md:-left-12 top-1/2 -translate-y-1/2 z-20 flex items-center justify-center p-3 hover:opacity-70 transition-all duration-200 bg-white rounded-full shadow-lg"
           >
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" className="text-gray-600">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" className="text-gray-800">
               <path d="M15 18L9 12L15 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
             </svg>
           </button>
           <button 
             onClick={nextTestimonial}
-            className="absolute right-2 md:-right-16 top-1/2 -translate-y-1/2 z-10 flex items-center justify-center hover:opacity-70 transition-all duration-200"
+            className="absolute -right-8 md:-right-12 top-1/2 -translate-y-1/2 z-20 flex items-center justify-center p-3 hover:opacity-70 transition-all duration-200 bg-white rounded-full shadow-lg"
           >
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" className="text-gray-600">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" className="text-gray-800">
               <path d="M9 18L15 12L9 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
             </svg>
           </button>
 
-          {/* Testimonials Grid - Desktop: 3 cols, Mobile: 1 col centered */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-8 place-items-center">
+          {/* Testimonials Grid - Mobile: 1 at a time, Desktop: 3 cols */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 place-items-center">
             {testimonials.map((testimonial, index) => (
               <div 
                 key={index}
-                className={`bg-white transition-all duration-700 delay-${index * 100} relative flex flex-col ${
+                className={`bg-white transition-all duration-700 delay-${index * 100} relative flex flex-col mx-auto sm:mx-0 sm:max-w-[357px] ${
                   isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
                 } ${
                   // Mobile: show only current testimonial, Desktop: show all
                   'md:block ' + (index === currentIndex ? 'block' : 'hidden md:block')
                 }`}
                 style={{
-                  width: '357px',
-                  height: '236px',
+                  maxWidth: '320px',
+                  width: '100%',
+                  minHeight: '236px',
                   borderRadius: '12px',
                   padding: '20px',
                   opacity: 1,
-                  boxShadow: '0px 12px 80px 0px #002C6D0D'
+                  boxShadow: '0px 12px 80px 0px #002C6D0D',
+                  border: '1px solid rgba(0, 44, 109, 0.08)'
                 }}
               >
                 {/* Star Rating */}

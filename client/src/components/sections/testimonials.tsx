@@ -31,14 +31,25 @@ export function TestimonialsSection() {
 
   return (
     <section id="testimonials" className="py-20 bg-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-8">
         <div 
           ref={ref}
           className={`text-center mb-16 transition-all duration-700 ${
             isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
           }`}
         >
-          <h2 className="text-xl lg:text-2xl font-bold text-navy mb-6">
+          <h2 
+            className="mb-6"
+            style={{
+              fontFamily: "Inter, sans-serif",
+              fontWeight: 600,
+              fontSize: "36px",
+              lineHeight: "44px",
+              letterSpacing: "-0.02em",
+              textAlign: "center",
+              color: "#141414"
+            }}
+          >
             Success Stories from Our Community
           </h2>
           <p className="text-xl text-soft-grey max-w-3xl mx-auto">

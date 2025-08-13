@@ -95,7 +95,7 @@ export function FAQSection() {
 
   return (
     <section className="py-8 sm:py-12 md:py-16 lg:py-20 bg-white">
-      <div className="max-w-4xl mx-auto px-6 sm:px-8 lg:px-12">
+      <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-8">
         <div 
           ref={ref}
           className={`transition-all duration-700 ${
@@ -146,11 +146,9 @@ export function FAQSection() {
 
           {/* Waitlist Section */}
           <div 
-            className="text-center mx-auto px-4 sm:px-6 md:px-8"
+            className="text-center mx-auto px-4 sm:px-6 md:px-8 w-full max-w-7xl"
             style={{
               backgroundColor: '#ECEEE4',
-              width: '1216px',
-              maxWidth: 'calc(100% - 2rem)',
               minHeight: '388px',
               borderRadius: '16px',
               padding: '32px 16px',
@@ -170,16 +168,20 @@ export function FAQSection() {
               </p>
             </div>
             
-            <form onSubmit={handleWaitlistSignup} className="flex flex-col sm:flex-row gap-3 sm:gap-4 max-w-lg mx-auto mb-4 sm:mb-6 px-2">
+            <form onSubmit={handleWaitlistSignup} className="flex flex-col sm:flex-row mx-auto mb-4 sm:mb-6 px-2 w-full justify-center items-center" style={{ gap: '6px' }}>
               <Input
                 type="email"
                 placeholder="Enter your email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                className="flex-1 border-gray-300 h-11 sm:h-12 px-3 sm:px-4 text-sm sm:text-base"
+                className="border-2 border-gray-300 px-3 sm:px-4 text-sm sm:text-base rounded-md focus:border-green-500 focus:ring-2 focus:ring-green-200 outline-none"
                 style={{
-                  backgroundColor: '#ffffff',
-                  background: '#ffffff'
+                  width: 'min(331px, calc(100vw - 48px))',
+                  height: '48px',
+                  backgroundColor: '#ffffff !important',
+                  background: '#ffffff !important',
+                  backgroundImage: 'none !important',
+                  fontFamily: 'Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif'
                 }}
                 required
               />
@@ -188,9 +190,10 @@ export function FAQSection() {
                 disabled={isSubmitting}
                 style={{ 
                   backgroundColor: '#829340',
-                  color: 'white'
+                  color: 'white',
+                  height: '48px'
                 }}
-                className="hover:opacity-90 transition-opacity px-6 sm:px-8 h-11 sm:h-12 text-sm sm:text-base font-medium whitespace-nowrap"
+                className="hover:opacity-90 transition-opacity px-6 sm:px-8 text-sm sm:text-base font-medium w-full sm:w-auto sm:min-w-[140px]"
               >
                 {isSubmitting ? "Joining..." : "Join waitlist"}
               </Button>

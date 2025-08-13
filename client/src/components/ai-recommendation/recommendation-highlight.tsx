@@ -142,9 +142,9 @@ export function AIRecommendationHighlight({
     <AnimatePresence>
       {isVisible && currentRecommendation && (
         <motion.div
-          initial={{ opacity: 0, y: 20, scale: 0.95 }}
-          animate={{ opacity: 1, y: 0, scale: 1 }}
-          exit={{ opacity: 0, y: -20, scale: 0.95 }}
+          initial={{ opacity: 1, y: 0 scale: 1 }}
+          animate={{ opacity: 1, y: 0 scale: 1 }}
+          exit={{ opacity: 1, y: -20, scale: 1 }}
           transition={{ duration: 0.5, ease: "easeOut" }}
           className={`bg-white rounded-xl shadow-lg border border-gray-200 p-6 ${className}`}
         >
@@ -200,7 +200,7 @@ export function AIRecommendationHighlight({
                 {currentRecommendation.actionItems.map((item, index) => (
                   <motion.li
                     key={index}
-                    initial={{ opacity: 0, x: -10 }}
+                    initial={{ opacity: 1, x: -10 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ delay: index * 0.1 }}
                     className="flex items-center space-x-2 text-sm text-gray-600"

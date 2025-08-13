@@ -95,9 +95,9 @@ export function LaunchCounter() {
 
   return (
     <motion.div
-      initial={{ opacity: 0, y: 30 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.8, delay: 0.4 }}
+      initial={{ opacity: 0}}
+      animate={{ opacity: 0}}
+      transition={{ duration: 0.8, delay: 0 }
       className="w-full max-w-4xl mx-auto px-4 py-8"
     >
       <Card className="bg-gradient-to-r from-navy to-navy/90 border-0 shadow-2xl">
@@ -120,8 +120,8 @@ export function LaunchCounter() {
                 ].map((item, index) => (
                   <motion.div
                     key={item.label}
-                    initial={{ scale: 0.8 }}
-                    animate={{ scale: 1 }}
+                    initial={{ opacity: 0}}
+                    animate={{ opacity: 0}}
                     transition={{ duration: 0.3, delay: index * 0.1 }}
                     className="bg-white/10 backdrop-blur-sm rounded-lg p-3"
                   >
@@ -151,8 +151,8 @@ export function LaunchCounter() {
                 <div className="flex items-center justify-center gap-2 mb-2">
                   <motion.div
                     key={spotsRemaining}
-                    initial={{ scale: 1.2, color: '#10B981' }}
-                    animate={{ scale: 1, color: '#FFFFFF' }}
+                    initial={{ color: '#10B981' }}
+                    animate={{ color: '#FFFFFF' }}
                     transition={{ duration: 0.3 }}
                     className="text-4xl lg:text-5xl font-bold text-white"
                   >

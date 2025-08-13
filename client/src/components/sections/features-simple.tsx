@@ -27,7 +27,7 @@ export function FeaturesSection() {
         }}
       >
         <div 
-          className="mx-auto px-6 features-section-white"
+          className="mx-auto px-6"
           style={{
             width: "1216px",
             maxWidth: "calc(100vw - 48px)",
@@ -265,82 +265,86 @@ export function FeaturesSection() {
 
       {/* Bottom "Get Started" Section - Image Background Inside Container */}
       <section 
-        className="py-16 text-white relative overflow-hidden bg-white bg-white-section"
+        className="py-16 text-white relative overflow-hidden get-started-section"
         style={{
-          backgroundColor: "#ffffff !important",
-          background: "#ffffff !important",
-          backgroundImage: "none !important",
+          backgroundColor: "#ffffff",
           minHeight: "300px"
         }}
       >
         <div 
-          className="mx-auto relative z-10"
+          className="mx-auto"
           style={{
             width: "1216px",
             height: "212px",
             maxWidth: "calc(100vw - 48px)",
-            backgroundImage: "linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://images.unsplash.com/photo-1521737711867-e3b97375f902?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80')",
-            backgroundSize: "cover",
-            backgroundPosition: "center",
-            backgroundRepeat: "no-repeat",
             borderRadius: "16px",
             padding: "64px",
             boxSizing: "border-box",
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "space-between"
+            border: "1px solid rgba(255, 255, 255, 0.1)",
+            background: "linear-gradient(135deg, #1f2937 0%, #111827 100%)",
+            backgroundColor: "#1f2937"
           }}
         >
-          <div className="text-left flex-1">
-            <h2 
-              className="mb-4"
-              style={{
-                fontFamily: "Inter, sans-serif",
-                fontWeight: 600,
-                fontSize: "24px",
-                lineHeight: "32px",
-                color: "white",
-                margin: "0 0 12px 0"
-              }}
-            >
-              See CareerFrame in Action
-            </h2>
-            <p 
-              style={{
-                fontFamily: "Inter, sans-serif",
-                fontWeight: 400,
-                fontSize: "16px",
-                lineHeight: "24px",
-                color: "#D1D5DB",
-                maxWidth: "400px",
-                margin: "0"
-              }}
-            >
-              Take a 2-minute Signup tour and discover how we'll transform your career journey.
-            </p>
-          </div>
-          <div className="flex-shrink-0 ml-6">
-            <button 
-              className="text-white font-semibold transition-all olive-green-button"
-              style={{
-                fontFamily: "Inter, sans-serif",
-                fontWeight: 600,
-                fontSize: "16px",
-                padding: "14px 32px",
-                borderRadius: "8px",
-                border: "none",
-                backgroundColor: "#829340",
-                background: "#829340",
-                backgroundImage: "none",
-                boxShadow: "0 4px 12px rgba(130, 147, 64, 0.3)",
-                color: "white !important",
-                opacity: "1 !important"
-              }}
-            >
-              Get started
-            </button>
+          <div 
+            className="flex items-center justify-between w-full h-full"
+            style={{
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "space-between",
+              width: "100%",
+              height: "100%",
+              color: "white"
+            }}
+          >
+            <div className="text-left flex-1">
+              <h3
+                style={{
+                  fontFamily: "Inter, sans-serif",
+                  fontWeight: 600,
+                  fontSize: "24px",
+                  lineHeight: "32px",
+                  color: "white",
+                  marginBottom: "12px",
+                }}
+              >
+                See CareerFrame in Action
+              </h3>
+              <p
+                style={{
+                  fontFamily: "Inter, sans-serif",
+                  fontWeight: 400,
+                  fontSize: "16px",
+                  lineHeight: "24px",
+                  color: "#D1D5DB",
+                  maxWidth: "400px",
+                  margin: "0"
+                }}
+              >
+                Take a 2-minute Signup tour and discover how we'll transform your career journey.
+              </p>
+            </div>
+            <div className="flex-shrink-0 ml-6">
+              <button
+                style={{
+                  backgroundColor: "#829340",
+                  borderColor: "#829340",
+                  fontFamily: "Inter, sans-serif",
+                  fontWeight: 600,
+                  fontSize: "16px",
+                  padding: "14px 32px",
+                  borderRadius: "24px",
+                  border: "none",
+                  boxShadow: "0 4px 12px rgba(130, 147, 64, 0.3)",
+                  color: "white"
+                }}
+                className="text-white hover:bg-opacity-90 transition-all duration-300 hover:shadow-lg"
+              >
+                Get started
+              </button>
+            </div>
           </div>
         </div>
+
       </section>
 
       {/* Section Divider */}

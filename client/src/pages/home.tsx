@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { ComingSoonPage } from "@/components/sections/coming-soon";
 import { WhatToExpectSection } from "@/components/sections/what-to-expect";
 import { TrustSignalsSection } from "@/components/sections/trust-signals";
-import { FeaturesSection } from "@/components/sections/features-simple";
+import { FeaturesSection } from "@/components/sections/features";
 import { HowItWorksSection } from "@/components/sections/how-it-works";
 import { AIDemoSection } from "@/components/ai-recommendation/ai-demo-section";
 
@@ -64,7 +64,7 @@ function Navigation() {
         zIndex: 50000 // Increased navbar z-index
       }}
     >
-      <div className="max-w-full mx-auto px-6 sm:px-8 lg:px-12 xl:px-20 2xl:px-28 relative z-10" style={{ backgroundColor: 'transparent' }}>
+      <div className="w-full px-6 sm:px-8 lg:px-12 xl:px-20 2xl:px-28 relative z-10" style={{ backgroundColor: 'transparent' }}>
         <div className="flex justify-between items-center h-32" style={{ backgroundColor: 'transparent' }}>
           <div className="flex-shrink-0 flex items-center" style={{ zIndex: 10000 }}>
             <img 
@@ -74,7 +74,7 @@ function Navigation() {
                 width: '200px', 
                 height: 'auto', 
                 transform: 'rotate(0deg)', 
-                opacity: 1, 
+                opacity: 1,
                 zIndex: 10000 
               }}
             />
@@ -303,7 +303,7 @@ export default function Home() {
         
         
         {/* Full website content below for exploration */}
-        <div className="min-h-screen page-transition" style={{ background: "transparent", backgroundColor: "transparent" }}>
+        <div className="page-transition" style={{ background: "transparent", backgroundColor: "transparent" }}>
           <div className="slide-in-left" style={{ background: "transparent", backgroundColor: "transparent" }}>
             <FeaturesSection />
           </div>
