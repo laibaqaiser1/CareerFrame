@@ -53,7 +53,7 @@ const preloadImages = () => {
 export function ComingSoonPage() {
   const { scrollY } = useScroll();
 
-  // Transform scroll position to frame positions
+  // Scroll transforms for corner frame animations
   const topLeftX = useTransform(scrollY, [0, 500], [0, -100]);
   const topLeftY = useTransform(scrollY, [0, 500], [0, -80]);
   const bottomRightX = useTransform(scrollY, [0, 500], [0, 100]);
@@ -284,69 +284,25 @@ export function ComingSoonPage() {
       false,
     );
 
-    // Scroll animation handler - smooth animation within banner section only
+    // Scroll animation handler for corner frames
     const handleScroll = () => {
-      if (!topLeftFrame || !bottomRightFrame) return;
-
-      const bannerRect = bannerSection.getBoundingClientRect();
-      const bannerHeight = (bannerSection as HTMLElement).offsetHeight;
-
-      // Calculate scroll progress within banner section bounds only
-      if (bannerRect.top <= 0 && bannerRect.bottom > 0) {
-        const scrollIntoView = Math.abs(bannerRect.top);
-        const maxScroll = bannerHeight * 0.6; // Animate over 60% of banner height
-        const scrollProgress = Math.min(scrollIntoView / maxScroll, 1);
-
-        // Smooth easing for natural movement - cubic bezier for more fluid animation
-        const easedProgress =
-          scrollProgress < 0.5
-            ? 4 * scrollProgress * scrollProgress * scrollProgress
-            : 1 - Math.pow(-2 * scrollProgress + 2, 3) / 2;
-
-        const translateDistance = easedProgress * 100; // 100px movement for better visibility
-        const opacity = Math.max(0.8 - easedProgress * 0.3, 0.4); // More visible fade range
-
-        // Apply transforms with hardware acceleration for both frames identically
-        const topLeftTransform = `translate3d(-${translateDistance}px, -${translateDistance}px, 0px)`;
-        const bottomRightTransform = `translate3d(${translateDistance}px, ${translateDistance}px, 0px)`;
-
-        // Apply identical animation properties to both frames
-        topLeftFrame.style.transform = topLeftTransform;
-        topLeftFrame.style.opacity = opacity.toString();
-        topLeftFrame.style.willChange = "transform, opacity";
-
-        bottomRightFrame.style.transform = bottomRightTransform;
-        bottomRightFrame.style.opacity = opacity.toString();
-        bottomRightFrame.style.willChange = "transform, opacity";
-
-        // Smooth containment with gradual clipping for both frames
-        if (translateDistance > 40) {
-          const clipAmount = Math.min(translateDistance - 40, 60);
-          topLeftFrame.style.clipPath = `inset(${clipAmount}px 0 0 ${clipAmount}px)`;
-          bottomRightFrame.style.clipPath = `inset(0 ${clipAmount}px ${clipAmount}px 0)`;
-        } else {
-          topLeftFrame.style.clipPath = "inset(0 0 0 0)";
-          bottomRightFrame.style.clipPath = "inset(0 0 0 0)";
-        }
-      } else {
-        // Reset to corner positions when banner is fully visible - identical for both
-        topLeftFrame.style.transform = "translate3d(0px, 0px, 0px)";
-        topLeftFrame.style.opacity = "0.8";
-        topLeftFrame.style.clipPath = "inset(0 0 0 0)";
-        topLeftFrame.style.willChange = "auto";
-
-        bottomRightFrame.style.transform = "translate3d(0px, 0px, 0px)";
-        bottomRightFrame.style.opacity = "0.8";
-        bottomRightFrame.style.clipPath = "inset(0 0 0 0)";
-        bottomRightFrame.style.willChange = "auto";
+      if (topLeftFrame && bottomRightFrame) {
+        const scrollValue = window.scrollY;
+        const topLeftXValue = -scrollValue * 0.2; // Subtle parallax
+        const topLeftYValue = -scrollValue * 0.16;
+        const bottomRightXValue = scrollValue * 0.2;
+        const bottomRightYValue = scrollValue * 0.16;
+        
+        topLeftFrame.style.transform = `translate3d(${topLeftXValue}px, ${topLeftYValue}px, 0)`;
+        bottomRightFrame.style.transform = `translate3d(${bottomRightXValue}px, ${bottomRightYValue}px, 0)`;
       }
     };
 
-    // Add scroll listener
+    // Add scroll listener for animations
     window.addEventListener("scroll", handleScroll, { passive: true });
 
     return () => {
-      // Cleanup
+      // Cleanup scroll listener
       window.removeEventListener("scroll", handleScroll);
       const existingFrames = bannerSection.querySelectorAll(
         ".corner-frame-top-left, .corner-frame-bottom-right",
@@ -567,12 +523,15 @@ export function ComingSoonPage() {
         {/* Main Launch Message - Mobile Responsive with Navbar Spacing */}
         <div className="flex-1 flex items-center justify-center pt-20 sm:pt-24 md:pt-28 pb-6 sm:pb-8 md:pb-10">
           <motion.div
-            initial={{ opacity: 1, }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.8 }}
+            initial={{ opacity: 0, y: 40 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
             className="text-center max-w-5xl mx-auto w-full"
           >
-            <h1
+            <motion.h1
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.4 }}
               className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-semibold text-center text-gray-800 mb-4 leading-tight px-2"
               style={{
                 fontFamily: "Inter",
@@ -580,8 +539,11 @@ export function ComingSoonPage() {
               }}
             >
               Launch day is soon approaching
-            </h1>
-            <p
+            </motion.h1>
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.6 }}
               className="text-base sm:text-lg md:text-xl text-center text-gray-600 mb-6 px-4 max-w-3xl mx-auto"
               style={{
                 fontFamily: "Inter",
@@ -590,7 +552,7 @@ export function ComingSoonPage() {
             >
               we're letting in only 10 people first and you'll want to be one of
               them!
-            </p>
+            </motion.p>
 
             {/* Countdown Timer - Mobile Responsive */}
             <div className="flex justify-center items-center mb-4 sm:mb-6 md:mb-8 gap-1 sm:gap-2 px-4">
@@ -641,9 +603,9 @@ export function ComingSoonPage() {
             </div>
 
             <motion.h2
-              initial={{ opacity: 1 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 0.8, delay: 0 }}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 1.0 }}
               className="text-base sm:text-lg md:text-xl font-semibold mb-3 sm:mb-4 md:mb-6"
               style={{
                 color: "#1F2937",
@@ -655,9 +617,9 @@ export function ComingSoonPage() {
             </motion.h2>
 
             <motion.div
-              initial={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0 }}
+              transition={{ duration: 0.7, delay: 1.2 }}
               className="flex flex-col items-center px-4"
             >
               <form onSubmit={handleWaitlistSignup} className="space-y-4 w-full max-w-sm sm:max-w-md md:max-w-lg" style={{ width: 'min(434px, calc(100vw - 32px))', gap: '6px' }}>
@@ -742,438 +704,6 @@ export function ComingSoonPage() {
       </div>
     </section>
 
-    {/* Career Benefits Section */}
-    <section 
-      className="white-section-override py-8 sm:py-12 md:py-16 lg:py-20 relative" 
-      style={{ 
-        zIndex: 50,
-        isolation: "isolate"
-      }}
-    >
-      {/* Multiple white background layers for complete isolation */}
-      <div 
-        style={{
-          backgroundColor: "#ffffff",
-          background: "#ffffff", 
-          width: "100vw",
-          height: "100%",
-          position: "absolute",
-          top: 0,
-          left: "50%",
-          transform: "translateX(-50%)",
-          zIndex: -3
-        }}
-      />
-      <div 
-        style={{
-          backgroundColor: "#ffffff",
-          background: "#ffffff", 
-          width: "100%",
-          height: "100%",
-          position: "absolute",
-          top: 0,
-          left: 0,
-          zIndex: -2
-        }}
-      />
-      <div 
-        style={{
-          backgroundColor: "#ffffff",
-          background: "#ffffff", 
-          width: "120%",
-          height: "120%",
-          position: "absolute",
-          top: "-10%",
-          left: "-10%",
-          zIndex: -1
-        }}
-      />
-      <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-8">
-        {/* Header */}
-        <motion.div
-          initial={{ opacity: 1, y: 0 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          viewport={{ once: true }}
-          className="text-center mb-12"
-        >
-          <h2 
-            className="mb-4"
-            style={{
-              fontFamily: "Inter, sans-serif",
-              fontWeight: 600,
-              fontSize: "36px",
-              lineHeight: "44px",
-              letterSpacing: "-0.02em",
-              textAlign: "center",
-              color: "#141414"
-            }}
-          >
-            Find the right role get there faster
-          </h2>
-          <p className="text-lg sm:text-xl text-gray-600 mb-8">
-            Real Progress - Real People, 6 x cheaper than the average career coach
-          </p>
-          
-          {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-6 w-full max-w-md mx-auto sm:max-w-none">
-            <Button
-              variant="outline"
-              size="lg"
-              className="w-full sm:w-auto px-6 sm:px-8 py-3 text-base font-semibold border-2 border-gray-300 text-gray-700 hover:border-gray-400 hover:bg-gray-50"
-            >
-              Subscribe
-            </Button>
-            <Button
-              size="lg"
-              className="get-started-button w-full sm:w-auto px-6 sm:px-8 py-3 text-base font-semibold text-white"
-              style={{ 
-                backgroundColor: "#829340 !important",
-                background: "#829340 !important",
-                color: "white !important",
-                borderRadius: "8px !important"
-              }}
-            >
-              Start for Free
-            </Button>
-          </div>
-          
-          {/* Guarantee */}
-          <p className="text-sm font-medium text-gray-700">
-            90-day satisfaction guarantee
-          </p>
-        </motion.div>
-
-        {/* Three Feature Columns */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 mt-12 md:mt-16">
-          {/* Column 1 - Feeling stuck */}
-          <motion.div
-            initial={{ opacity: 1, y: 0 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0 }}
-            viewport={{ once: true }}
-            className="flex justify-center"
-          >
-            {/* Outer Container */}
-            <div 
-              className="w-full max-w-sm md:max-w-none feature-column-outer"
-              style={{
-                width: '384px',
-                height: '290px',
-                minWidth: '320px',
-                opacity: 1,
-                position: 'relative',
-                display: 'flex',
-                flexDirection: 'column',
-                alignItems: 'center'
-              }}
-            >
-              {/* Icon - positioned above the grey box */}
-              <div 
-                className="icon-container-white"
-                style={{
-                  width: '64px',
-                  height: '64px',
-                  borderRadius: '8px',
-                  backgroundColor: '#FFFFFF',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  flexShrink: 0,
-                  position: 'relative',
-                  zIndex: 2,
-                  marginBottom: '-32px' // Overlap with grey container
-                }}
-              >
-                <img 
-                  src={messageChatIcon} 
-                  alt="Message chat circle"
-                  className="w-5 h-5"
-                />
-              </div>
-
-              {/* Inner Container - grey background */}
-              <div 
-                className="rounded-2xl feature-column-inner"
-                style={{
-                  width: '384px',
-                  height: '266px',
-                  backgroundColor: '#FAFAFA',
-                  paddingTop: '52px',
-                  paddingRight: '24px',
-                  paddingBottom: '32px',
-                  paddingLeft: '24px',
-                  display: 'flex',
-                  flexDirection: 'column',
-                  alignItems: 'center',
-                  position: 'relative',
-                  zIndex: 1
-                }}
-              >
-                {/* Content */}
-                <div 
-                  className="feature-column-content"
-                  style={{
-                    width: '336px',
-                    height: '134px',
-                    display: 'flex',
-                    flexDirection: 'column',
-                    gap: '20px',
-                    textAlign: 'center'
-                  }}
-                >
-                  <h3 
-                    style={{
-                      fontFamily: 'Inter, sans-serif',
-                      fontWeight: 600,
-                      fontSize: '20px',
-                      lineHeight: '30px',
-                      letterSpacing: '0%',
-                      color: '#141414',
-                      margin: 0
-                    }}
-                  >
-                    Feeling stuck
-                  </h3>
-                  <p 
-                    style={{
-                      fontFamily: 'Inter, sans-serif',
-                      fontWeight: 400,
-                      fontSize: '16px',
-                      lineHeight: '24px',
-                      letterSpacing: '0%',
-                      color: '#525252',
-                      margin: 0
-                    }}
-                  >
-                    Feeling stuck in a job that doesn't excite you? Every day feels like you're not reaching your full potential, just going through the motions without fulfilment.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </motion.div>
-
-          {/* Column 2 - Missing opportunities */}
-          <motion.div
-            initial={{ opacity: 1, y: 0 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0 }}
-            viewport={{ once: true }}
-            className="flex justify-center"
-          >
-            {/* Outer Container */}
-            <div 
-              className="feature-column-outer"
-              style={{
-                width: '384px',
-                height: '290px',
-                minWidth: '320px',
-                opacity: 1,
-                position: 'relative',
-                display: 'flex',
-                flexDirection: 'column',
-                alignItems: 'center'
-              }}
-            >
-              {/* Icon - positioned above the grey box */}
-              <div 
-                className="icon-container-white"
-                style={{
-                  width: '64px',
-                  height: '64px',
-                  borderRadius: '8px',
-                  backgroundColor: '#FFFFFF',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  flexShrink: 0,
-                  position: 'relative',
-                  zIndex: 2,
-                  marginBottom: '-32px'
-                }}
-              >
-                <img 
-                  src={zapIcon} 
-                  alt="Lightning bolt zap"
-                  className="w-5 h-5"
-                />
-              </div>
-
-              {/* Inner Container - grey background */}
-              <div 
-                className="rounded-2xl feature-column-inner"
-                style={{
-                  width: '384px',
-                  height: '266px',
-                  backgroundColor: '#FAFAFA',
-                  paddingTop: '52px',
-                  paddingRight: '24px',
-                  paddingBottom: '32px',
-                  paddingLeft: '24px',
-                  display: 'flex',
-                  flexDirection: 'column',
-                  alignItems: 'center',
-                  position: 'relative',
-                  zIndex: 1
-                }}
-              >
-                {/* Content */}
-                <div 
-                  className="feature-column-content"
-                  style={{
-                    width: '336px',
-                    height: '134px',
-                    display: 'flex',
-                    flexDirection: 'column',
-                    gap: '20px',
-                    textAlign: 'center'
-                  }}
-                >
-                  <h3 
-                    style={{
-                      fontFamily: 'Inter, sans-serif',
-                      fontWeight: 600,
-                      fontSize: '20px',
-                      lineHeight: '30px',
-                      letterSpacing: '0%',
-                      color: '#141414',
-                      margin: 0
-                    }}
-                  >
-                    Missing opportunities
-                  </h3>
-                  <p 
-                    style={{
-                      fontFamily: 'Inter, sans-serif',
-                      fontWeight: 400,
-                      fontSize: '16px',
-                      lineHeight: '24px',
-                      letterSpacing: '0%',
-                      color: '#525252',
-                      margin: 0
-                    }}
-                  >
-                    The longer you stay in that job, the more you miss out on the opportunities that could change your life. The routine becomes draining, and the fear of stepping into something new only holds you back.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </motion.div>
-
-          {/* Column 3 - Break free with CareerFrame */}
-          <motion.div
-            initial={{ opacity: 1, y: 0 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0 }}
-            viewport={{ once: true }}
-            className="flex justify-center"
-          >
-            {/* Outer Container */}
-            <div 
-              className="feature-column-outer"
-              style={{
-                width: '384px',
-                height: '290px',
-                minWidth: '320px',
-                opacity: 1,
-                position: 'relative',
-                display: 'flex',
-                flexDirection: 'column',
-                alignItems: 'center'
-              }}
-            >
-              {/* Icon - positioned above the grey box */}
-              <div 
-                className="icon-container-white"
-                style={{
-                  width: '64px',
-                  height: '64px',
-                  borderRadius: '8px',
-                  backgroundColor: '#FFFFFF',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  flexShrink: 0,
-                  position: 'relative',
-                  zIndex: 2,
-                  marginBottom: '-32px'
-                }}
-              >
-                <img 
-                  src={chartBreakoutIcon} 
-                  alt="Chart breakout square"
-                  className="w-5 h-5"
-                />
-              </div>
-
-              {/* Inner Container - grey background */}
-              <div 
-                className="rounded-2xl feature-column-inner"
-                style={{
-                  width: '384px',
-                  height: '266px',
-                  backgroundColor: '#FAFAFA',
-                  paddingTop: '52px',
-                  paddingRight: '24px',
-                  paddingBottom: '32px',
-                  paddingLeft: '24px',
-                  display: 'flex',
-                  flexDirection: 'column',
-                  alignItems: 'center',
-                  position: 'relative',
-                  zIndex: 1
-                }}
-              >
-                {/* Content */}
-                <div 
-                  className="feature-column-content"
-                  style={{
-                    width: '336px',
-                    height: '134px',
-                    display: 'flex',
-                    flexDirection: 'column',
-                    gap: '20px',
-                    textAlign: 'center'
-                  }}
-                >
-                  <h3 
-                    style={{
-                      fontFamily: 'Inter, sans-serif',
-                      fontWeight: 600,
-                      fontSize: '20px',
-                      lineHeight: '30px',
-                      letterSpacing: '0%',
-                      color: '#141414',
-                      margin: 0
-                    }}
-                  >
-                    Break free with CareerFrame
-                  </h3>
-                  <p 
-                    style={{
-                      fontFamily: 'Inter, sans-serif',
-                      fontWeight: 400,
-                      fontSize: '16px',
-                      lineHeight: '24px',
-                      letterSpacing: '0%',
-                      color: '#525252',
-                      margin: 0
-                    }}
-                  >
-                    CareerFrame helps you break free from career confusion. With personalized coaching, skill gap analysis, and tailored career paths, we provide the tools and guidance to help you pursue work that aligns with your goals.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </motion.div>
-        </div>
-      </div>
-      
-      {/* Section Divider */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16">
-        <div className="border-b border-gray-200"></div>
-      </div>
-    </section>
     </div>
   );
 }

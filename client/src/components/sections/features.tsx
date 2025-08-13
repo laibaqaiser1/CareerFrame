@@ -40,10 +40,34 @@ export function FeaturesSection() {
   const { isOpen, openPopup, closePopup } = useWaitlistPopup();
   const [isPlaying, setIsPlaying] = useState(false);
   const [showVideo, setShowVideo] = useState(false);
+  const [videoPreloaded, setVideoPreloaded] = useState(false);
   const videoRef = useRef<HTMLVideoElement>(null);
+  const preloadVideoRef = useRef<HTMLVideoElement>(null);
 
   return (
     <>
+      {/* Hidden video element for preloading */}
+      <video
+        ref={preloadVideoRef}
+        style={{ display: 'none' }}
+        preload="auto"
+        muted
+        onLoadedData={() => {
+          console.log('Video preloaded successfully');
+          setVideoPreloaded(true);
+        }}
+        onCanPlayThrough={() => {
+          console.log('Video can play through - fully preloaded');
+          setVideoPreloaded(true);
+        }}
+        onError={(e) => {
+          console.error('Video preload error:', e);
+          console.error('Video preload error details:', e.currentTarget.error);
+        }}
+      >
+        <source src="/career-path-video.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
       
       <WaitlistPopup isOpen={isOpen} onClose={closePopup} />
 
@@ -115,6 +139,7 @@ export function FeaturesSection() {
                   controls
                   autoPlay
                   playsInline
+                  preload="auto"
                   onPlay={() => {
                     console.log('Video started playing');
                     setIsPlaying(true);
@@ -150,15 +175,23 @@ export function FeaturesSection() {
                   
                   {/* Professional Play Button Overlay */}
                   <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-20">
-                    <button
-                      onClick={() => {
-                        console.log('🎬 Play button clicked!');
-                        setShowVideo(true);
-                      }}
-                      className="bg-white bg-opacity-90 backdrop-blur-sm rounded-full p-6 hover:bg-opacity-100 hover:scale-105 transition-all duration-300 shadow-lg"
-                    >
-                      <Play className="h-12 w-12 text-gray-800 ml-1" />
-                    </button>
+                    <div className="relative">
+                      {/* Preload indicator */}
+                      {videoPreloaded && (
+                        <div className="absolute -top-2 -right-2 w-3 h-3 bg-green-500 rounded-full animate-pulse"></div>
+                      )}
+                      <button
+                        onClick={() => {
+                          console.log('🎬 Play button clicked!');
+                          console.log('Video preloaded:', videoPreloaded);
+                          setShowVideo(true);
+                        }}
+                        className="bg-white bg-opacity-90 backdrop-blur-sm rounded-full p-6 hover:bg-opacity-100 hover:scale-105 transition-all duration-300 shadow-lg"
+                        title={videoPreloaded ? 'Video ready to play' : 'Loading video...'}
+                      >
+                        <Play className="h-12 w-12 text-gray-800 ml-1" />
+                      </button>
+                    </div>
                   </div>
                 </div>
               )}

@@ -1,16 +1,4 @@
-import { useState, useEffect } from "react";
-
 export function FeaturesSection() {
-  const [isVisible, setIsVisible] = useState(false);
-  
-  // Simple scroll detection to trigger animations
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setIsVisible(true);
-    }, 1000); // Trigger after 1 second for testing
-    
-    return () => clearTimeout(timer);
-  }, []);
   
 
   
@@ -146,7 +134,7 @@ export function FeaturesSection() {
                   <div 
                     className="absolute top-0 left-0 h-full rounded-l-full transition-all duration-1000 ease-out"
                     style={{ 
-                      width: isVisible ? "100%" : "0%",
+                      width: "100%",
                       backgroundColor: "#F97316"
                     }}
                   />
@@ -157,9 +145,8 @@ export function FeaturesSection() {
                   <div 
                     className="absolute top-0 left-0 h-full transition-all duration-1000 ease-out"
                     style={{ 
-                      width: isVisible ? "100%" : "0%",
-                      backgroundColor: "#F97316",
-                      transitionDelay: "0.3s"
+                      width: "100%",
+                      backgroundColor: "#F97316"
                     }}
                   />
                 </div>
@@ -169,9 +156,8 @@ export function FeaturesSection() {
                   <div 
                     className="absolute top-0 left-0 h-full transition-all duration-1000 ease-out"
                     style={{ 
-                      width: isVisible ? "100%" : "0%",
-                      backgroundColor: "#F97316",
-                      transitionDelay: "0.6s"
+                      width: "100%",
+                      backgroundColor: "#F97316"
                     }}
                   />
                 </div>
@@ -181,9 +167,8 @@ export function FeaturesSection() {
                   <div 
                     className="absolute top-0 left-0 h-full transition-all duration-1000 ease-out"
                     style={{ 
-                      width: isVisible ? "100%" : "0%",
-                      backgroundColor: "#F97316",
-                      transitionDelay: "0.9s"
+                      width: "100%",
+                      backgroundColor: "#F97316"
                     }}
                   />
                 </div>
@@ -193,9 +178,8 @@ export function FeaturesSection() {
                   <div 
                     className="absolute top-0 left-0 h-full rounded-r-full transition-all duration-1000 ease-out"
                     style={{ 
-                      width: isVisible ? "100%" : "0%",
-                      backgroundColor: "#F97316",
-                      transitionDelay: "1.2s"
+                      width: "100%",
+                      backgroundColor: "#F97316"
                     }}
                   />
                 </div>
@@ -226,9 +210,8 @@ export function FeaturesSection() {
                       <div 
                         className="absolute top-0 left-0 h-full rounded-full transition-all duration-1000 ease-out"
                         style={{
-                          width: isVisible ? "100%" : "0%",
-                          backgroundColor: "#F97316",
-                          transitionDelay: `${0.8 + index * 0.3}s`
+                          width: "100%",
+                          backgroundColor: "#F97316"
                         }}
                       />
                     </div>
