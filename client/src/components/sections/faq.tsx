@@ -174,9 +174,8 @@ export function FAQSection() {
                 placeholder="Enter your email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                className="border-2 border-gray-300 px-3 sm:px-4 text-sm sm:text-base rounded-md focus:border-green-500 focus:ring-2 focus:ring-green-200 outline-none"
+                className="border-2 border-gray-300 px-3 sm:px-4 text-sm sm:text-base rounded-md focus:border-green-500 focus:ring-2 focus:ring-green-200 outline-none w-full sm:w-[331px]"
                 style={{
-                  width: 'min(331px, calc(100vw - 48px))',
                   height: '48px',
                   backgroundColor: '#ffffff !important',
                   background: '#ffffff !important',
