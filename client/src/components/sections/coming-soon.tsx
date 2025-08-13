@@ -530,17 +530,15 @@ export function ComingSoonPage() {
   }, [isMobile]);
 
   return (
-    <>
+    <div>
       <section
         className="min-h-screen flex flex-col relative overflow-hidden motion-safe coming-soon-section"
       style={{
         background:
           "linear-gradient(303.01deg, #FFF1F0 0%, #FFFAF1 33.33%, #E8FAF6 66.67%, #EAF6FD 100%)",
-        marginTop: "-128px",
-        paddingTop: "128px",
         minHeight: "100vh",
         width: "100%",
-        backgroundAttachment: "scroll", // Better performance on mobile
+        backgroundAttachment: "scroll",
         backgroundSize: "cover",
       }}
     >
@@ -571,9 +569,9 @@ export function ComingSoonPage() {
       />
 
       {/* Corner frames are now injected directly into document.body via useEffect */}
-      <div className="w-full max-w-full mx-auto px-4 sm:px-6 md:px-8 lg:px-12 xl:px-20 2xl:px-28 flex-1 flex flex-col relative z-10 pt-16 sm:pt-20 md:pt-24 lg:pt-20">
+      <div className="w-full max-w-full mx-auto px-4 sm:px-6 md:px-8 lg:px-12 xl:px-20 2xl:px-28 flex-1 flex flex-col relative z-10">
         {/* Main Launch Message - Mobile Responsive */}
-        <div className="flex-1 flex items-center justify-center py-6 sm:py-8 md:py-12">
+        <div className="flex-1 flex items-center justify-center py-8 sm:py-12 md:py-16">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -601,7 +599,7 @@ export function ComingSoonPage() {
             </p>
 
             {/* Countdown Timer - Mobile Responsive */}
-            <div className="flex justify-center items-center mb-8 gap-1 sm:gap-2 px-4">
+            <div className="flex justify-center items-center mb-4 sm:mb-6 md:mb-8 gap-1 sm:gap-2 px-4">
               {[
                 { value: timeLeft.days, label: "Days" },
                 { value: timeLeft.hours, label: "Hours" },
@@ -652,7 +650,7 @@ export function ComingSoonPage() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.6 }}
-              className="text-lg sm:text-xl md:text-2xl font-semibold mb-8"
+              className="text-base sm:text-lg md:text-xl font-semibold mb-3 sm:mb-4 md:mb-6"
               style={{
                 color: "#1F2937",
                 fontFamily:
@@ -736,19 +734,20 @@ export function ComingSoonPage() {
                 </span>
               </div>
             </motion.div>
+
           </motion.div>
         </div>
       </div>
       
       {/* Section Divider */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 sm:pt-12 md:pt-16">
         <div className="border-b border-gray-200"></div>
       </div>
     </section>
 
     {/* Career Benefits Section */}
     <section 
-      className="white-section-override py-16 sm:py-20 lg:py-24 relative" 
+      className="white-section-override py-8 sm:py-12 md:py-16 lg:py-20 relative" 
       style={{ 
         zIndex: 50,
         isolation: "isolate"
@@ -801,7 +800,18 @@ export function ComingSoonPage() {
           viewport={{ once: true }}
           className="text-center mb-12"
         >
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-semibold text-gray-900 mb-4">
+          <h2 
+            className="mb-4"
+            style={{
+              fontFamily: "Inter, sans-serif",
+              fontWeight: 600,
+              fontSize: "36px",
+              lineHeight: "44px",
+              letterSpacing: "-0.02em",
+              textAlign: "center",
+              color: "#141414"
+            }}
+          >
             Find the right role get there faster
           </h2>
           <p className="text-lg sm:text-xl text-gray-600 mb-8">
@@ -819,8 +829,13 @@ export function ComingSoonPage() {
             </Button>
             <Button
               size="lg"
-              className="btn-olive-green w-full sm:w-auto px-6 sm:px-8 py-3 text-base font-semibold text-white"
-              style={{ backgroundColor: "#829340" }}
+              className="get-started-button w-full sm:w-auto px-6 sm:px-8 py-3 text-base font-semibold text-white"
+              style={{ 
+                backgroundColor: "#829340 !important",
+                background: "#829340 !important",
+                color: "white !important",
+                borderRadius: "8px !important"
+              }}
             >
               Start for Free
             </Button>
@@ -1162,6 +1177,6 @@ export function ComingSoonPage() {
         <div className="border-b border-gray-200"></div>
       </div>
     </section>
-    </>
+    </div>
   );
 }

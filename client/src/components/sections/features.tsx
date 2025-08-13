@@ -3,309 +3,293 @@ import { Card, CardContent } from "@/components/ui/card";
 import { useScrollAnimation } from "@/hooks/use-scroll-animation";
 import { WaitlistPopup } from "@/components/ui/waitlist-popup";
 import { useWaitlistPopup } from "@/hooks/use-waitlist-popup";
-import { 
-  Bot, 
-  Search, 
-  TrendingUp, 
-  Target, 
-  FileText, 
-  Users, 
-  Trophy,
-  Goal,
-  Route,
-  ArrowRight,
-  Play
-} from "lucide-react";
-import careerPathwaysImage from "../../assets/avatar1.png";
-import xpRewardInterface from "../../assets/avatar2.png";
-import careerChoiceImage from "../../assets/avatar3.png";
-
-const features = [
-  {
-    icon: Target,
-    title: "Gain Clarity in Your Job Search",
-    description: "Stop feeling overwhelmed by endless job listings. Get specific direction on which roles to target and how to position yourself as the ideal candidate.",
-    image: "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=300",
-    alt: "Professional gaining clarity on career direction",
-    cta: "Get Clear Direction"
-  },
-  {
-    icon: TrendingUp,
-    title: "Overcome Self-Doubt",
-    description: "Build unshakeable confidence in your abilities. Identify your unique strengths and learn how to articulate your value to employers.",
-    image: "https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=300",
-    alt: "Professional building confidence and overcoming doubt",
-    cta: "Build Confidence"
-  },
-  {
-    icon: Trophy,
-    title: "Discover Roles That Align With You",
-    description: "Move beyond settling for 'good enough' jobs. Explore opportunities that align with your values and ambitions through our matching system.",
-    image: careerChoiceImage,
-    alt: "Professional exploring career opportunities",
-    cta: "Explore Opportunities"
-  },
-  {
-    icon: Search,
-    title: "Career Alignment & Role Insights",
-    description: "Get in-depth role overviews and personalized recommendations based on your skills, experience, and career aspirations.",
-    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=300",
-    alt: "Data analysis and career insights dashboard",
-    cta: "Get Role Insights"
-  },
-
-];
-
-const additionalFeatures = [
-  {
-    icon: Users,
-    title: "Connect with Like-Minded Professionals",
-    description: "Join a supportive community of career-changers. Share experiences, celebrate wins, and get encouragement when you need it most.",
-    color: "bg-green-100 text-green-500"
-  },
-  {
-    icon: Goal,
-    title: "Career Alignment & Role Insights",
-    description: "Get in-depth role overviews and personalized recommendations based on your skills, experience, and career aspirations.",
-    color: "bg-cyan-100 text-cyan-500"
-  },
-  {
-    icon: Search,
-    title: "Explore Roles Access (Freemium/Premium)",
-    description: "Get limited or unlimited access to job fit, salaries, and perks.",
-    color: "bg-blue-100 text-blue-500"
-  },
-  {
-    icon: TrendingUp,
-    title: "Deep Skill Gap Analysis (Premium)",
-    description: "Receive a detailed skill gap report to understand areas needing improvement for career advancement.",
-    color: "bg-green-100 text-green-500"
-  },
-  {
-    icon: Target,
-    title: "Milestone Tracker (Freemium/Premium)",
-    description: "Track and celebrate progress with personalized goals and visible milestones.",
-    color: "bg-purple-100 text-purple-500"
-  },
-  {
-    icon: FileText,
-    title: "AI-Powered Resume Builder",
-    description: "Generate a professional, optimized resume tailored to your goals.",
-    color: "bg-pink-100 text-pink-500"
-  },
-  {
-    icon: FileText,
-    title: "AI-Generated Cover Letter",
-    description: "Automatically generate a personalized cover letter for the role you want.",
-    color: "bg-indigo-100 text-indigo-500"
-  },
-  {
-    icon: Trophy,
-    title: "XP Points & Rewards (2x Premium)",
-    description: "Earn XP for milestones and unlock rewards to accelerate your career journey.",
-    color: "bg-yellow-100 text-yellow-500"
-  }
-];
+import { Bot, TrendingUp, Route, Play, Pause } from "lucide-react";
+import { motion } from "framer-motion";
+import { useState, useRef } from "react";
+import careerPathVideo from "../../assets/Career path product video.mp4";
 
 const valueProps = [
   {
     icon: Bot,
     title: "Personalized Career Coaching",
-    description: "Get expert guidance every step of the way. Our AI-powered coach builds a relationship with you, offering tailored advice and strategies that align with your unique strengths and career goals.",
-    color: "bg-fresh-green text-white"
+    description:
+      "Get expert guidance every step of the way. Our AI-powered coach builds a relationship with you, offering tailored advice and strategies that align with your unique strengths and career goals.",
   },
   {
     icon: TrendingUp,
     title: "Skill Gap Analysis & Growth",
-    description: "Discover exactly where you stand. CareerFrame identifies the gaps between your current skills and the ones required for your dream role, giving you a clear path to grow and advance.",
-    color: "bg-navy text-white"
+    description:
+      "Discover exactly where you stand. CareerFrame identifies the gaps between your current skills and the ones required for your dream role, giving you a clear path to grow and advance.",
   },
   {
     icon: Route,
     title: "Tailored Career Pathways",
-    description: "No one-size-fits-all approach. CareerFrame creates a bespoke roadmap for your career, matching you with the right opportunities and learning resources to unlock your potential.",
-    color: "bg-purple-500 text-white"
-  }
+    description:
+      "No one-size-fits-all approach. CareerFrame creates a bespoke roadmap for your career, matching you with the right opportunities and learning resources to unlock your potential.",
+  },
 ];
 
 export function FeaturesSection() {
-  const { ref: valuePropRef, isVisible: valuePropVisible } = useScrollAnimation();
-  const { ref: featuresRef, isVisible: featuresVisible } = useScrollAnimation();
-  const { ref: additionalRef, isVisible: additionalVisible } = useScrollAnimation();
+  const { ref: sectionRef, isVisible: sectionVisible } = useScrollAnimation();
+  const { ref: videoRef, isVisible: videoVisible } = useScrollAnimation();
+  const { ref: cardsRef, isVisible: cardsVisible } = useScrollAnimation();
+  
+  // Debug logging
+  console.log("FeaturesSection - cardsVisible:", cardsVisible);
   const { isOpen, openPopup, closePopup } = useWaitlistPopup();
+  const [isPlaying, setIsPlaying] = useState(false);
+  const videoElementRef = useRef<HTMLVideoElement>(null);
+
+  const toggleVideo = () => {
+    if (videoElementRef.current) {
+      if (isPlaying) {
+        videoElementRef.current.pause();
+      } else {
+        videoElementRef.current.play();
+      }
+      setIsPlaying(!isPlaying);
+    }
+  };
 
   return (
     <>
+      
       <WaitlistPopup isOpen={isOpen} onClose={closePopup} />
-      {/* Value Proposition */}
-      <section className="py-16 bg-gradient-to-r from-emerald-400 to-teal-500">
-        <div className="max-w-full mx-auto px-6 sm:px-8 lg:px-12 xl:px-20 2xl:px-28 text-center">
-          <div 
-            ref={valuePropRef}
-            className={`transition-all duration-700 ${valuePropVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
-          >
-            <h2 className="text-3xl lg:text-4xl font-bold text-white mb-6 drop-shadow-lg">
-              What You Get: A Complete Career Development System
-            </h2>
-            <p className="text-xl text-white max-w-3xl mx-auto mb-12 drop-shadow-md">
-              Everything you need to advance your career journey - personalized guidance, proven tools, and expert support.
-            </p>
-          </div>
-          <div className="grid md:grid-cols-3 gap-8">
-            {valueProps.map((prop, index) => (
-              <div 
-                key={index}
-                className={`text-center transition-all duration-700 card-hover stagger-${index + 1} ${
-                  valuePropVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-                }`}
-              >
-                <div className={`w-16 h-16 ${prop.color} rounded-full flex items-center justify-center mx-auto mb-4`}>
-                  <prop.icon className="h-8 w-8" />
-                </div>
-                <h3 className="text-xl font-semibold text-navy mb-3">{prop.title}</h3>
-                <p className="text-black font-bold">{prop.description}</p>
-              </div>
-            ))}
-          </div>
 
-          {/* Interactive Demo Section */}
-          <div className={`mt-16 text-center transition-all duration-700 ${
-            valuePropVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-          }`}>
-            <div className="bg-white rounded-lg shadow-lg p-8 max-w-2xl mx-auto">
-              <h3 className="text-2xl font-bold text-navy mb-4">
-                See CareerFrame in Action
-              </h3>
-              <p className="text-soft-grey mb-6">
-                Take a 2-minute interactive tour and discover how we'll transform your career journey.
-              </p>
-              <Button 
-                onClick={openPopup}
-                className="text-white px-8 py-3 text-lg font-semibold inline-flex items-center gap-2"
-                style={{ backgroundColor: '#88A98F' }}
+      <section
+        className="py-8 sm:py-12 md:py-16 features-white-bg"
+        style={{ backgroundColor: "#ffffff" }}
+      >
+        <div
+          className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 features-white-bg"
+          style={{ backgroundColor: "#ffffff" }}
+        >
+          {/* Header */}
+          <motion.div
+            ref={sectionRef}
+            initial={{ opacity: 0, y: 30 }}
+            animate={
+              sectionVisible ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }
+            }
+            transition={{ duration: 0.6 }}
+            className="text-center mb-12"
+          >
+            <h2
+              style={{
+                fontFamily: "Inter, sans-serif",
+                fontWeight: 600,
+                fontSize: "36px",
+                lineHeight: "44px",
+                letterSpacing: "-0.02em",
+                textAlign: "center",
+                color: "#141414",
+                marginBottom: "16px",
+              }}
+            >
+              What You Get: A Complete Career
+              <br className="hidden md:block" />
+              Development System
+            </h2>
+            <p
+              style={{
+                fontFamily: "Inter, sans-serif",
+                fontWeight: 400,
+                fontSize: "18px",
+                lineHeight: "28px",
+                color: "#525252",
+                maxWidth: "600px",
+                margin: "0 auto",
+              }}
+            >
+              Everything you need to advance your career journey - personalized
+              guidance, proven tools, and expert support.
+            </p>
+          </motion.div>
+
+          {/* Video Demo Section */}
+          <motion.div
+            ref={videoRef}
+            initial={{ opacity: 0, y: 40 }}
+            animate={
+              videoVisible ? { opacity: 1, y: 0 } : { opacity: 0, y: 40 }
+            }
+            transition={{ duration: 0.7, delay: 0.2 }}
+            className="mb-16"
+          >
+            <div className="relative rounded-2xl overflow-hidden shadow-2xl bg-gray-900 w-full">
+              <video
+                ref={videoElementRef}
+                className="w-full h-auto"
+                poster="" // You can add a poster image here if needed
+                onPlay={() => setIsPlaying(true)}
+                onPause={() => setIsPlaying(false)}
+                onEnded={() => setIsPlaying(false)}
+                controls
               >
-                <Play className="h-5 w-5" />
-                Start Interactive Demo
-              </Button>
+                <source src={careerPathVideo} type="video/mp4" />
+                Your browser does not support the video tag.
+              </video>
+
+              {/* Play/Pause Overlay Button */}
+              {!isPlaying && (
+                <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-30">
+                  <button
+                    onClick={toggleVideo}
+                    className="bg-white bg-opacity-90 rounded-full p-6 hover:bg-opacity-100 transition-all duration-300 shadow-lg"
+                  >
+                    <Play className="h-12 w-12 text-gray-800 ml-1" />
+                  </button>
+                </div>
+              )}
+            </div>
+          </motion.div>
+
+          {/* Progress Bar Test - Always Visible on All Screens */}
+          <div className="mb-8">
+            <div className="w-full h-8 bg-red-500 mb-6 flex items-center justify-center text-white font-bold">
+              PROGRESS BAR TEST - SHOULD BE VISIBLE
+            </div>
+            <div className="w-full h-6 bg-gray-400 mb-6 relative">
+              <div className="h-full bg-green-600 w-3/4"></div>
             </div>
           </div>
-        </div>
-      </section>
 
-      {/* Main Features */}
-      <section id="features" className="py-20 bg-light-grey">
-        <div className="max-w-full mx-auto px-6 sm:px-8 lg:px-12 xl:px-20 2xl:px-28">
-          <div 
-            ref={featuresRef}
-            className={`text-center mb-16 transition-all duration-700 ${
-              featuresVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-            }`}
+          {/* Feature Cards */}
+          <motion.div
+            ref={cardsRef}
+            initial={{ opacity: 0, y: 40 }}
+            animate={
+              cardsVisible ? { opacity: 1, y: 0 } : { opacity: 0, y: 40 }
+            }
+            transition={{ duration: 0.7, delay: 0.4 }}
+            className="grid md:grid-cols-3 gap-8 mb-16"
           >
-            <h2 className="text-xl lg:text-2xl font-bold text-navy mb-6">
-              Powerful Features to Accelerate Your Career
-            </h2>
-            <p className="text-xl text-soft-grey max-w-3xl mx-auto">
-              Every tool you need to discover, prepare for, and land your dream career - all powered by intelligent AI guidance.
-            </p>
-          </div>
-
-          <div className="grid lg:grid-cols-2 gap-12 mb-16">
-            {features.map((feature, index) => (
-              <Card 
+            {valueProps.map((prop, index) => (
+              <motion.div
                 key={index}
-                className={`bg-white shadow-lg card-hover transition-all duration-500 delay-${index * 100} ${
-                  featuresVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-                }`}
+                initial={{ opacity: 0, y: 40 }}
+                animate={
+                  cardsVisible ? { opacity: 1, y: 0 } : { opacity: 0, y: 40 }
+                }
+                transition={{ duration: 0.6, delay: 0.5 + index * 0.1 }}
+                className="text-center"
               >
-                <CardContent className="p-8">
-                  <div className="flex items-start mb-6">
-                    <div className="w-12 h-12 bg-fresh-green/10 rounded-lg flex items-center justify-center mr-4">
-                      <feature.icon className="h-6 w-6 text-fresh-green" />
-                    </div>
-                    <div>
-                      <h3 className="text-2xl font-bold text-navy mb-2">{feature.title}</h3>
-                      <p className="text-soft-grey">{feature.description}</p>
-                    </div>
+                {/* Individual Progress Bars Test */}
+                <div className="mb-6">
+                  <div className="w-full h-8 bg-purple-500 mb-2 flex items-center justify-center text-white font-bold text-sm">
+                    CARD {index + 1} PROGRESS TEST
                   </div>
-                  <img 
-                    src={feature.image}
-                    alt={feature.alt}
-                    className="rounded-lg w-full h-48 object-cover object-top mb-4" 
-                  />
-                  <Button 
-                    onClick={openPopup}
-                    variant="link" 
-                    className="p-0 h-auto font-semibold" 
-                    style={{ color: '#1F3A93' }}
-                  >
-                    {feature.cta} <ArrowRight className="ml-1 h-4 w-4" />
-                  </Button>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-
-          {/* Additional Features Grid */}
-          <div 
-            ref={additionalRef}
-            className="grid md:grid-cols-2 lg:grid-cols-3 gap-6"
-          >
-            {additionalFeatures.map((feature, index) => (
-              <Card 
-                key={index}
-                className={`bg-white shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-500 delay-${index * 50} ${
-                  additionalVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-                }`}
-              >
-                <CardContent className="p-5">
-                  <div className={`w-10 h-10 ${feature.color} rounded-lg flex items-center justify-center mb-3`}>
-                    <feature.icon className="h-5 w-5" />
-                  </div>
-                  <h4 className="text-base font-semibold text-navy mb-2">{feature.title}</h4>
-                  <p className="text-sm text-soft-grey">{feature.description}</p>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-
-          {/* XP & Rewards Highlight */}
-          <div className="mt-16">
-            <Card className="gradient-green text-white overflow-hidden">
-              <CardContent className="p-8 lg:p-12">
-                <div className="grid lg:grid-cols-2 gap-8 items-center">
-                  <div>
-                    <h3 className="text-3xl font-bold mb-4">🏆 Earn XP & Unlock Rewards</h3>
-                    <p className="text-green-50 text-lg mb-6">
-                      Complete tasks like CV building, skill upgrades, or community engagement to earn XP. Exchange points for discounts with partner brands or unlock premium features.
-                    </p>
-                    <div className="flex items-center space-x-6">
-                      <div className="text-center">
-                        <div className="text-2xl font-bold">Build</div>
-                        <div className="text-green-200 text-sm">Your Skills</div>
-                      </div>
-                      <div className="text-center">
-                        <div className="text-2xl font-bold">Earn</div>
-                        <div className="text-green-200 text-sm">XP Points</div>
-                      </div>
-                      <div className="text-center">
-                        <div className="text-2xl font-bold">Unlock</div>
-                        <div className="text-green-200 text-sm">Rewards</div>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="text-center">
-                    <img 
-                      src={xpRewardInterface}
-                      alt="CareerFrame XP and Rewards Interface showing team leaderboards and milestone tracking" 
-                      className="rounded-xl mx-auto max-w-full h-auto" 
-                    />
+                  <div className="w-full h-6 bg-orange-400 relative">
+                    <div className="h-full bg-cyan-500 w-2/3"></div>
                   </div>
                 </div>
-              </CardContent>
-            </Card>
-          </div>
 
+                <h3
+                  style={{
+                    fontFamily: "Inter, sans-serif",
+                    fontWeight: 600,
+                    fontSize: "20px",
+                    lineHeight: "28px",
+                    color: "#141414",
+                    marginBottom: "12px",
+                  }}
+                >
+                  {prop.title}
+                </h3>
+                <p
+                  style={{
+                    fontFamily: "Inter, sans-serif",
+                    fontWeight: 400,
+                    fontSize: "16px",
+                    lineHeight: "24px",
+                    color: "#525252",
+                  }}
+                >
+                  {prop.description}
+                </p>
+              </motion.div>
+            ))}
+          </motion.div>
 
+          {/* CTA Section - Fixed container with proper layout */}
+          <motion.div
+            initial={{ opacity: 0, y: 40 }}
+            animate={
+              cardsVisible ? { opacity: 1, y: 0 } : { opacity: 0, y: 40 }
+            }
+            transition={{ duration: 0.7, delay: 0.8 }}
+            className="mx-auto"
+            style={{
+              width: "1216px",
+              height: "212px",
+              maxWidth: "calc(100vw - 48px)",
+              background: "linear-gradient(135deg, #1f2937 0%, #111827 100%)",
+              border: "1px solid rgba(255, 255, 255, 0.1)",
+              borderRadius: "16px",
+              padding: "64px",
+              boxSizing: "border-box"
+            }}
+          >
+            <div 
+              className="flex items-center justify-between w-full h-full"
+              style={{
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "space-between",
+                width: "100%",
+                height: "100%",
+                color: "white"
+              }}
+            >
+              <div className="text-left flex-1">
+                <h3
+                  style={{
+                    fontFamily: "Inter, sans-serif",
+                    fontWeight: 600,
+                    fontSize: "24px",
+                    lineHeight: "32px",
+                    color: "white",
+                    marginBottom: "12px",
+                  }}
+                >
+                  See CareerFrame in Action
+                </h3>
+                <p
+                  style={{
+                    fontFamily: "Inter, sans-serif",
+                    fontWeight: 400,
+                    fontSize: "16px",
+                    lineHeight: "24px",
+                    color: "#D1D5DB",
+                    maxWidth: "400px",
+                    margin: "0"
+                  }}
+                >
+                  Take a 2-minute Signup tour and discover how we'll transform your career journey.
+                </p>
+              </div>
+              <div className="flex-shrink-0 ml-6">
+                <Button
+                  onClick={openPopup}
+                  style={{
+                    backgroundColor: "#829340",
+                    borderColor: "#829340",
+                    fontFamily: "Inter, sans-serif",
+                    fontWeight: 600,
+                    fontSize: "16px",
+                    padding: "14px 32px",
+                    borderRadius: "24px",
+                    border: "none",
+                    boxShadow: "0 4px 12px rgba(130, 147, 64, 0.3)",
+                    color: "white"
+                  }}
+                  className="text-white hover:bg-opacity-90 transition-all duration-300 hover:shadow-lg"
+                >
+                  Get started
+                </Button>
+              </div>
+            </div>
+          </motion.div>
         </div>
       </section>
     </>

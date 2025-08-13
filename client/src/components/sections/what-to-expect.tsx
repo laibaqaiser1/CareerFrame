@@ -10,7 +10,7 @@ export function WhatToExpectSection() {
         backgroundColor: '#ffffff !important',
         background: '#ffffff !important'
       }} 
-      className="py-16 what-to-expect-white-bg"
+      className="py-8 sm:py-12 md:py-16 what-to-expect-white-bg"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
@@ -19,34 +19,29 @@ export function WhatToExpectSection() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className="text-center mb-12"
+          className="text-center mb-6 sm:mb-8 md:mb-12"
         >
-          <h2 style={{
-            fontFamily: 'Inter, sans-serif',
-            fontWeight: 600,
-            fontSize: '48px',
-            lineHeight: '60px',
-            letterSpacing: '-0.02em',
-            color: '#141414',
-            marginBottom: '16px'
-          }}>
+          <h2 
+            className="text-2xl sm:text-3xl md:text-4xl font-semibold text-center text-gray-800 mb-2 sm:mb-4"
+            style={{
+              fontFamily: 'Inter, sans-serif',
+              letterSpacing: '-0.02em',
+              lineHeight: '1.3'
+            }}>
             What to Expect After You Sign Up
           </h2>
-          <p style={{
-            fontFamily: 'Inter, sans-serif',
-            fontWeight: 400,
-            fontSize: '20px',
-            lineHeight: '28px',
-            color: '#525252',
-            maxWidth: '672px',
-            margin: '0 auto'
-          }}>
+          <p 
+            className="text-sm sm:text-base md:text-lg text-center text-gray-600 max-w-xs sm:max-w-lg md:max-w-2xl mx-auto px-4 sm:px-0"
+            style={{
+              fontFamily: 'Inter, sans-serif',
+              lineHeight: '1.5'
+            }}>
             Your career transformation starts immediately — here's exactly what happens next
           </p>
         </motion.div>
 
         {/* 3-Step Process with numbered circles and dotted line */}
-        <div className="mb-20 relative">
+        <div className="mb-8 sm:mb-12 md:mb-20 relative">
           
           {/* Desktop Layout - Circles with dotted lines */}
           <div className="hidden md:block">
@@ -213,7 +208,7 @@ export function WhatToExpectSection() {
           </div>
 
           {/* Mobile Layout - Centered Vertical Stack with connecting lines */}
-          <div className="md:hidden space-y-6">
+          <div className="md:hidden space-y-4 sm:space-y-5">
             {/* Step 1 - Mobile */}
             <motion.div
               initial={{ opacity: 0, y: 40 }}
@@ -222,7 +217,7 @@ export function WhatToExpectSection() {
               viewport={{ once: true }}
               className="text-center relative"
             >
-              <div className="flex justify-center mb-4">
+              <div className="flex justify-center mb-3">
                 <div 
                   className="numbered-circle numbered-circle-1" 
                   style={{ 
@@ -269,7 +264,7 @@ export function WhatToExpectSection() {
               viewport={{ once: true }}
               className="text-center relative"
             >
-              <div className="flex justify-center mb-4">
+              <div className="flex justify-center mb-3">
                 <div 
                   className="numbered-circle numbered-circle-2" 
                   style={{ 
@@ -316,7 +311,7 @@ export function WhatToExpectSection() {
               viewport={{ once: true }}
               className="text-center"
             >
-              <div className="flex justify-center mb-4">
+              <div className="flex justify-center mb-3">
                 <div 
                   className="numbered-circle numbered-circle-3" 
                   style={{ 

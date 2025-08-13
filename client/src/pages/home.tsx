@@ -2,16 +2,15 @@ import { useEffect, useState } from "react";
 import { ComingSoonPage } from "@/components/sections/coming-soon";
 import { WhatToExpectSection } from "@/components/sections/what-to-expect";
 import { TrustSignalsSection } from "@/components/sections/trust-signals";
-import { FeaturesSection } from "@/components/sections/features";
+import { FeaturesSection } from "@/components/sections/features-simple";
 import { HowItWorksSection } from "@/components/sections/how-it-works";
+import { AIDemoSection } from "@/components/ai-recommendation/ai-demo-section";
 
 import { TestimonialsSection } from "@/components/sections/testimonials-new";
 
 import { PricingSection } from "@/components/sections/pricing";
 
 import { FAQSection } from "@/components/sections/faq";
-
-import { NewsletterSection } from "@/components/sections/newsletter";
 import { Footer } from "@/components/sections/footer";
 import { LiveChat } from "@/components/ui/live-chat";
 import { CustomCursor } from "@/components/ui/custom-cursor";
@@ -302,25 +301,31 @@ export default function Home() {
             <WhatToExpectSection />
           </div>
         
+        
         {/* Full website content below for exploration */}
-        <div className="min-h-screen page-transition">
-          <div className="slide-in-left">
+        <div className="min-h-screen page-transition" style={{ background: "transparent", backgroundColor: "transparent" }}>
+          <div className="slide-in-left" style={{ background: "transparent", backgroundColor: "transparent" }}>
             <FeaturesSection />
           </div>
-          <div className="slide-in-left">
+          <div className="slide-in-left" style={{ background: "transparent", backgroundColor: "transparent" }}>
             <HowItWorksSection />
           </div>
-          <div className="slide-up">
+          
+          {/* Section Divider */}
+          <div className="py-8">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+              <div className="border-b border-gray-200"></div>
+            </div>
+          </div>
+          
+          <div className="slide-up" style={{ background: "transparent", backgroundColor: "transparent" }}>
             <TestimonialsSection />
           </div>
-          <div className="slide-in-right">
+          <div className="slide-in-right" style={{ background: "transparent", backgroundColor: "transparent" }}>
             <PricingSection />
           </div>
-          <div className="scale-in">
+          <div className="scale-in" style={{ background: "transparent", backgroundColor: "transparent" }}>
             <FAQSection />
-          </div>
-          <div className="slide-up">
-            <NewsletterSection />
           </div>
           <Footer />
           <LiveChat />

@@ -70,6 +70,101 @@ html, body, * {
 
 /* Allow natural backgrounds - removed forced white */
 
+/* Get in touch section background */
+.get-in-touch-bg {
+  background-color: #ECEEE4 !important;
+  background-image: none !important;
+  background: #ECEEE4 !important;
+  position: relative !important;
+}
+
+.get-in-touch-bg::before {
+  content: '' !important;
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  bottom: 0 !important;
+  background-color: #ECEEE4 !important;
+  background-image: none !important;
+  z-index: -1 !important;
+  border-radius: inherit !important;
+}
+
+/* Play button specific styles to ensure white background displays */
+.play-button-circle {
+  background-color: #ffffff !important;
+}
+
+/* Ensure white backgrounds for sections */
+.bg-white-section {
+  background: #ffffff !important;
+  background-color: #ffffff !important;
+  background-image: none !important;
+}
+
+/* Force white background for slide-in-left wrapper when it contains features */
+.slide-in-left:has(.bg-white-section) {
+  background: #ffffff !important;
+  background-color: #ffffff !important;
+  background-image: none !important;
+}
+
+/* Features section white background - Override everything except images */
+.features-section-white,
+.features-section-white *:not(img) {
+  background-color: white !important;
+  background: white !important;
+  background-image: none !important;
+}
+
+.features-video-white,
+.features-video-white *:not(img) {
+  background-color: white !important;
+  background: white !important;
+  background-image: none !important;
+}
+
+/* Force white backgrounds on specific sections */
+section.features-section-white {
+  background: white !important;
+  background-color: white !important;
+  background-image: none !important;
+}
+
+/* Override parent wrapper backgrounds for features section */
+.slide-in-left:has(.features-section-white),
+.min-h-screen:has(.features-section-white),
+.page-transition:has(.features-section-white) {
+  background: transparent !important;
+  background-color: transparent !important;
+  background-image: none !important;
+}
+
+/* Force transparency on all wrapper divs around features */
+div:has(section.features-section-white) {
+  background: transparent !important;
+  background-color: transparent !important;
+  background-image: none !important;
+}
+
+/* Additional aggressive overrides for features section */
+.features-section-white {
+  position: relative !important;
+  z-index: 10 !important;
+}
+
+.features-section-white::before {
+  content: "" !important;
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  bottom: 0 !important;
+  background: white !important;
+  z-index: -1 !important;
+}
+
 /* What to Expect section white background */
 .what-to-expect-white-bg,
 #what-to-expect {
@@ -122,6 +217,18 @@ html, body, * {
 
 /* Force pure white background for marketing section */
 .white-section-override {
+  background: #ffffff !important;
+}
+
+/* Features section white background */
+.features-white-bg {
+  background: #ffffff !important;
+  background-color: #ffffff !important;
+  background-image: none !important;
+}
+
+.features-white-bg,
+.features-white-bg * {
   background: #ffffff !important;
   background-color: #ffffff !important;
   background-image: none !important;
@@ -327,6 +434,16 @@ img, .background-image {
   opacity: 1;
 }
 
+/* Video cover image visibility fix - override any white background rules */
+.features-video-white img {
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  background: transparent !important;
+  z-index: 10 !important;
+  position: relative !important;
+}
+
 /* Allow navbar to have its own background */
 
 body {
@@ -335,10 +452,18 @@ body {
 
 /* Completely override dark mode */
 @media (prefers-color-scheme: dark) {
-  html, body, *, *::before, *::after {
+  html, body {
     background-color: white !important;
     color: black !important;
     border-color: rgba(0, 0, 0, 0.1) !important;
+  }
+  
+  /* Allow specific elements to have transparent backgrounds */
+  .slide-in-left, .slide-up, .slide-in-right, .scale-in, 
+  section[style*="background: transparent"],
+  div[style*="background: transparent"],
+  section#testimonials {
+    background-color: transparent !important;
   }
   
   :root {
@@ -394,7 +519,14 @@ body.dark,
   
   html {
     scroll-behavior: smooth;
-    scroll-padding-top: 120px; /* Account for fixed navigation */
+    scroll-padding-top: 80px; /* Account for fixed navigation */
+  }
+  
+  /* Mobile-specific scroll padding override */
+  @media (max-width: 640px) {
+    html {
+      scroll-padding-top: 60px; /* Reduced for mobile */
+    }
   }
 
   /* Page transition animations */
@@ -789,22 +921,207 @@ html, body, #root {
   min-height: 100vh !important;
 }
 
-/* Override any white backgrounds */
-.bg-white {
+/* Override any white backgrounds - except features section and buttons */
+.bg-white:not(.features-section-white):not(.olive-green-button):not(button):not(.play-button-circle) {
   background: transparent !important;
 }
 
-/* Override ALL white backgrounds aggressively */
-* {
-  background-attachment: scroll !important;
+/* FEATURES SECTION WHITE BACKGROUND - FINAL OVERRIDE */
+.slide-in-left {
+  background: #ffffff !important;
+  background-color: #ffffff !important;
+  background-image: none !important;
 }
 
-div {
+.slide-in-left *:not(img):not([class*="video"]):not([style*="background-image"]):not(.olive-green-button):not(button):not(.play-button-circle) {
   background-color: transparent !important;
 }
 
-/* Force all containers to be transparent except gradient backgrounds */
-html * {
+.slide-in-left section {
+  background: #ffffff !important;
+  background-color: #ffffff !important;
+  background-image: none !important;
+}
+
+/* Keep images and video elements visible */
+.slide-in-left img,
+.slide-in-left [class*="video"],
+.slide-in-left [class*="image"] {
+  background-color: transparent !important;
+}
+
+/* Video container specific overrides - ONLY for main video container */
+.main-video-container .main-video-frame {
+  background-image: url('/VideoCover.png') !important;
+  background-size: cover !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+}
+
+/* Play button styling - Force solid white background */
+.play-button-circle,
+button.play-button-circle,
+div.play-button-circle,
+.main-video-container .play-button-circle,
+html body section div .play-button-circle,
+html body .play-button-circle {
+  background: #FFFFFFCC !important;
+  background-color: #FFFFFFCC !important;
+  background-image: none !important;
+  backdrop-filter: blur(4px) !important;
+  border: 1px solid rgba(200, 200, 200, 0.3) !important;
+  opacity: 1 !important;
+  z-index: 999 !important;
+}
+
+/* Ensure "See CareerFrame in Action" section keeps its dark background */
+.bg-white-section {
+  background: #ffffff !important;
+  background-color: #ffffff !important;
+  background-image: none !important;
+}
+
+/* Dark background container inside should remain dark */
+.bg-white-section div[style*="background"] {
+  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://images.unsplash.com/photo-1521737711867-e3b97375f902?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80') !important;
+}
+
+/* Get Started Button - Force Olive Green with Rounded Corners */
+button.get-started-button,
+.get-started-button,
+button[class*="get-started"],
+button[class*="Start for Free"],
+*[class*="get-started"],
+*[style*="backgroundColor: \"#829340\""] {
+  background: #829340 !important;
+  background-color: #829340 !important;
+  color: white !important;
+  border-radius: 8px !important;
+  border: none !important;
+  font-weight: 600 !important;
+  padding: 14px 32px !important;
+  box-shadow: 0 4px 12px rgba(130, 147, 64, 0.3) !important;
+  opacity: 1 !important;
+}
+
+button.get-started-button:hover,
+.get-started-button:hover,
+button[class*="get-started"]:hover,
+button[class*="Start for Free"]:hover {
+  background-color: #6b7a35 !important;
+  background: #6b7a35 !important;
+  opacity: 0.9 !important;
+}
+
+/* Force all buttons with olive styling to be visible */
+.btn-olive-green {
+  background: #829340 !important;
+  background-color: #829340 !important;
+  color: white !important;
+  opacity: 1 !important;
+}
+
+/* Force olive green button to override any transparency - ULTIMATE PRIORITY */
+html body section div button.olive-green-button,
+html body .olive-green-button,
+body section .olive-green-button,
+button.olive-green-button,
+.olive-green-button,
+button[class*="olive-green"] {
+  background: #829340 !important;
+  background-color: #829340 !important;
+  background-image: none !important;
+  opacity: 1 !important;
+  color: white !important;
+  border: none !important;
+  box-shadow: 0 4px 12px rgba(130, 147, 64, 0.3) !important;
+  z-index: 999 !important;
+}
+
+/* Nuclear option - override any possible transparency on this specific button */
+button.olive-green-button * {
+  opacity: 1 !important;
+}
+
+.olive-green-button:hover {
+  background: #6b7a35 !important;
+  background-color: #6b7a35 !important;
+  opacity: 0.9 !important;
+}
+
+/* Force buttons with specific inline styles to override any transparency */
+button[style*="backgroundColor: \"#829340\""],
+button[style*="backgroundColor: #829340"],
+button[style*="background: #829340"],
+.get-started-button {
+  background: #829340 !important;
+  background-color: #829340 !important;
+  opacity: 1 !important;
+  color: white !important;
+}
+
+/* Force play button with specific styling to be visible */
+div[style*="backgroundColor: '#FFFFFFCC'"],
+div[style*="background: '#FFFFFFCC'"] {
+  background: #FFFFFFCC !important;
+  background-color: #FFFFFFCC !important;
+  opacity: 1 !important;
+}
+
+/* Force white background for the inner content container only */
+.features-section-white {
+  background-color: #ffffff !important;
+  background: #ffffff !important;
+  border-radius: 8px !important;
+  padding: 24px !important;
+}
+
+/* Override any gradients or background images in specific video containers */
+.features-section-white .main-video-container,
+.features-section-white .main-video-frame {
+  background: #ffffff !important;
+  background-color: #ffffff !important;
+}
+
+/* Force white background throughout the entire page when features section is visible */
+body:has(.features-section-white),
+html:has(.features-section-white) {
+  background: #ffffff !important;
+  background-color: #ffffff !important;
+  background-image: none !important;
+}
+
+/* More specific targeting for the features wrapper area */
+section.features-section-white,
+section.features-section-white ~ *,
+div:has(.features-section-white) {
+  background: #ffffff !important;
+  background-color: #ffffff !important;
+}
+
+/* Section Divider - Force White Background */
+.section-divider-white {
+  background: #ffffff !important;
+  background-color: #ffffff !important;
+  background-image: none !important;
+}
+
+/* Remove conflicting CSS that might hide images */
+.features-video-white * {
+  background: none !important;
+}
+
+/* Ensure play button is above everything */
+.play-button-circle {
+  position: relative !important;
+  z-index: 10 !important;
+}
+
+/* Ensure all images are always visible */
+img {
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
   background-color: transparent !important;
 }
 

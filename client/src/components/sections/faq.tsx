@@ -1,10 +1,10 @@
-import { Card, CardContent } from "@/components/ui/card";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
-import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible";
 import { useScrollAnimation } from "@/hooks/use-scroll-animation";
-import { Play, ChevronDown } from "lucide-react";
+import { Plus, Minus, Lock } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
 import { useState } from "react";
+import { useToast } from "@/hooks/use-toast";
 
 const faqs = [
   {
@@ -35,54 +35,174 @@ const faqs = [
 
 export function FAQSection() {
   const { ref, isVisible } = useScrollAnimation();
-  const [isFAQOpen, setIsFAQOpen] = useState(false);
+  const [email, setEmail] = useState("");
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const { toast } = useToast();
+
+  const handleWaitlistSignup = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!email) return;
+
+    setIsSubmitting(true);
+    
+    try {
+      const response = await fetch('/api/newsletter/subscribe', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email }),
+      });
+
+      if (!response.ok) throw new Error('Failed to subscribe');
+
+      // Decrease spots counter
+      const currentSpots = parseInt(localStorage.getItem('careerframe_spots_remaining') || '8');
+      if (currentSpots > 0) {
+        const newCount = currentSpots - 1;
+        localStorage.setItem('careerframe_spots_remaining', newCount.toString());
+        
+        // Trigger storage event to update all components
+        window.dispatchEvent(new StorageEvent('storage', {
+          key: 'careerframe_spots_remaining',
+          newValue: newCount.toString(),
+          oldValue: currentSpots.toString()
+        }));
+      }
+
+      // Track waitlist signup in Google Analytics
+      if (typeof window !== 'undefined' && window.gtag) {
+        window.gtag('event', 'waitlist_signup', {
+          event_category: 'engagement',
+          event_label: 'section_submission'
+        });
+      }
+      
+      toast({
+        title: "Welcome to the waitlist!",
+        description: "You've secured your spot! We'll notify you when we launch.",
+      });
+      
+      setEmail("");
+    } catch (error) {
+      toast({
+        title: "Failed to join waitlist",
+        description: "Please try again later.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
 
   return (
-    <section className="py-20 bg-light-grey">
-      <div className="max-w-full mx-auto px-6 sm:px-8 lg:px-12 xl:px-20 2xl:px-28">
+    <section className="py-8 sm:py-12 md:py-16 lg:py-20 bg-white">
+      <div className="max-w-4xl mx-auto px-6 sm:px-8 lg:px-12">
         <div 
           ref={ref}
           className={`transition-all duration-700 ${
             isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
           }`}
         >
-          <Collapsible open={isFAQOpen} onOpenChange={setIsFAQOpen}>
-            <CollapsibleTrigger className="w-full text-center mb-8">
-              <div className="flex items-center justify-center gap-3 cursor-pointer hover:opacity-80 transition-opacity">
-                <h2 className="text-3xl lg:text-4xl font-bold text-black">
-                  Your Questions Answered
-                </h2>
-                <ChevronDown className={`h-8 w-8 text-black transition-transform duration-300 ${isFAQOpen ? 'rotate-180' : ''}`} />
-              </div>
-              <p className="text-xl text-soft-grey mt-4">
-                Honest answers to the questions holding you back from taking action
+          {/* Header */}
+          <div className="text-center mb-12">
+            <h2 
+              style={{
+                fontFamily: "Inter, sans-serif",
+                fontWeight: 600,
+                fontSize: "36px",
+                lineHeight: "44px",
+                letterSpacing: "-0.02em",
+                textAlign: "center",
+                color: "#141414"
+              }}
+            >
+              Frequently asked questions
+            </h2>
+            <p className="text-gray-600 mt-4 text-lg">
+              Honest answers to the questions holding you back from taking action
+            </p>
+          </div>
+
+          {/* FAQ Accordion */}
+          <Accordion type="single" collapsible className="mb-16">
+            {faqs.map((faq, index) => (
+              <AccordionItem 
+                key={index} 
+                value={`item-${index}`} 
+                className={`${index < faqs.length - 1 ? 'border-b border-gray-200 pb-6 mb-6' : 'pb-6 border-b-0'}`}
+              >
+                <AccordionTrigger className="text-left text-lg font-medium text-gray-900 hover:text-gray-700 transition-colors py-0 flex justify-between items-center w-full group [&>svg]:hidden">
+                  <span className="pr-4">{faq.question}</span>
+                  <div className="flex-shrink-0 w-6 h-6 rounded-full border border-gray-300 flex items-center justify-center group-hover:border-gray-400 transition-colors">
+                    <Plus className="h-3 w-3 text-gray-500 group-hover:text-gray-700 transition-colors group-data-[state=open]:hidden" />
+                    <Minus className="h-3 w-3 text-gray-500 group-hover:text-gray-700 transition-colors group-data-[state=closed]:hidden" />
+                  </div>
+                </AccordionTrigger>
+                <AccordionContent className="text-gray-600 pt-4 pb-0 leading-relaxed">
+                  {faq.answer}
+                </AccordionContent>
+              </AccordionItem>
+            ))}
+          </Accordion>
+
+          {/* Waitlist Section */}
+          <div 
+            className="text-center mx-auto px-4 sm:px-6 md:px-8"
+            style={{
+              backgroundColor: '#ECEEE4',
+              width: '1216px',
+              maxWidth: 'calc(100% - 2rem)',
+              minHeight: '388px',
+              borderRadius: '16px',
+              padding: '32px 16px',
+              display: 'flex',
+              flexDirection: 'column',
+              justifyContent: 'center',
+              gap: '24px',
+              boxSizing: 'border-box'
+            }}
+          >
+            <div className="px-2">
+              <h3 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-4 leading-tight">
+                Join the Waitlist - Be One of the First 10!
+              </h3>
+              <p className="text-gray-600 mb-6 sm:mb-8 max-w-2xl mx-auto text-base sm:text-lg leading-relaxed">
+                Get exclusive early access to CareerFrame when we launch. Plus, receive career insights and tips delivered to your inbox.
               </p>
-            </CollapsibleTrigger>
+            </div>
             
-            <CollapsibleContent className={`transition-all duration-700 delay-200 ${
-              isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-            }`}>
-              <Card className="bg-white shadow-lg mt-8">
-                <CardContent className="p-8">
-                  <Accordion type="single" collapsible className="space-y-4">
-                    {faqs.map((faq, index) => (
-                      <AccordionItem key={index} value={`item-${index}`} className="border-b border-gray-200">
-                        <AccordionTrigger className="text-left text-lg font-semibold text-black hover:text-fresh-green transition-colors">
-                          {faq.question}
-                        </AccordionTrigger>
-                        <AccordionContent className="text-soft-grey pt-4">
-                          {faq.answer}
-                        </AccordionContent>
-                      </AccordionItem>
-                    ))}
-                  </Accordion>
-                </CardContent>
-              </Card>
-            </CollapsibleContent>
-          </Collapsible>
+            <form onSubmit={handleWaitlistSignup} className="flex flex-col sm:flex-row gap-3 sm:gap-4 max-w-lg mx-auto mb-4 sm:mb-6 px-2">
+              <Input
+                type="email"
+                placeholder="Enter your email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                className="flex-1 border-gray-300 h-11 sm:h-12 px-3 sm:px-4 text-sm sm:text-base"
+                style={{
+                  backgroundColor: '#ffffff',
+                  background: '#ffffff'
+                }}
+                required
+              />
+              <Button 
+                type="submit"
+                disabled={isSubmitting}
+                style={{ 
+                  backgroundColor: '#829340',
+                  color: 'white'
+                }}
+                className="hover:opacity-90 transition-opacity px-6 sm:px-8 h-11 sm:h-12 text-sm sm:text-base font-medium whitespace-nowrap"
+              >
+                {isSubmitting ? "Joining..." : "Join waitlist"}
+              </Button>
+            </form>
+            
+            <div className="flex items-center justify-center gap-2 text-xs sm:text-sm text-gray-500 px-2">
+              <Lock className="h-3 w-3 sm:h-4 sm:w-4 flex-shrink-0" />
+              <span className="text-center">90-day satisfaction guarantee</span>
+            </div>
+          </div>
+
         </div>
-
-
       </div>
     </section>
   );
