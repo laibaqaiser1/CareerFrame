@@ -3,10 +3,13 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Link } from "wouter";
 import { ArrowLeft, Target, Users, Award, Shield, Heart, Zap, Scale, UserCheck, HandHeart } from "lucide-react";
 import careerFrameLogo from "../assets/avatar1.png";
+import { Navbar } from "@/components/sections/navbar";
+import { Footer } from "@/components/sections/footer";
 
 export default function About() {
   return (
     <div className="min-h-screen bg-white">
+      <Navbar />
 
       {/* CareerFrame Badge */}
       <div className="absolute top-1/3 right-1/4 opacity-5 transform rotate-12 z-0">
@@ -312,6 +315,7 @@ export default function About() {
           </p>
         </div>
       </div>
+      <Footer />
     </div>
   );
 }

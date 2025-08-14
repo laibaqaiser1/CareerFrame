@@ -2,10 +2,13 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Link } from "wouter";
 import { ArrowLeft, Shield, Lock, Eye, Database, FileText, Users } from "lucide-react";
+import { Navbar } from "@/components/sections/navbar";
+import { Footer } from "@/components/sections/footer";
 
 export default function DataProtection() {
   return (
     <div className="min-h-screen bg-white">
+      <Navbar />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 py-16">
         <div className="mb-8">
           <Link href="/">
@@ -198,6 +201,7 @@ export default function DataProtection() {
           </a>
         </div>
       </div>
+      <Footer />
     </div>
   );
 }

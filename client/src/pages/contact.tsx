@@ -4,10 +4,13 @@ import { Link } from "wouter";
 import { ArrowLeft, Mail, MapPin, Clock } from "lucide-react";
 import careerFrameLogo from "../assets/avatar1.png";
 import { SoundButton } from "@/components/SoundButton";
+import { Navbar } from "@/components/sections/navbar";
+import { Footer } from "@/components/sections/footer";
 
 export default function Contact() {
   return (
     <div className="min-h-screen bg-white">
+      <Navbar />
 
       {/* CareerFrame Badge */}
       <div className="absolute top-1/4 right-1/4 opacity-5 transform rotate-12 z-0">
@@ -213,6 +216,7 @@ export default function Contact() {
           </p>
         </div>
       </div>
+      <Footer />
     </div>
   );
 }

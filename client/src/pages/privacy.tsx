@@ -2,10 +2,13 @@ import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
 import { ArrowLeft, Shield, Eye, Lock, Database, Mail } from "lucide-react";
 import careerFrameLogo from "../assets/avatar1.png";
+import { Navbar } from "@/components/sections/navbar";
+import { Footer } from "@/components/sections/footer";
 
 export default function Privacy() {
   return (
     <div className="min-h-screen bg-white">
+      <Navbar />
 
       {/* CareerFrame Badge in background */}
       <div className="absolute top-1/4 right-1/4 opacity-5 transform rotate-12 z-0">
@@ -435,14 +438,9 @@ export default function Privacy() {
             </div>
           </section>
 
-          {/* Footer */}
-          <div className="text-center py-8 border-t" style={{ borderColor: 'rgba(0,0,0,0.1)' }}>
-            <p className="text-sm" style={{ color: '#6B7280' }}>
-              © 2025 CareerFrame. All rights reserved. | Effective Date: July 20, 2025
-            </p>
-          </div>
         </div>
       </div>
+      <Footer />
     </div>
   );
 }
