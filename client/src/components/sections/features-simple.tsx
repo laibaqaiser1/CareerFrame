@@ -126,10 +126,9 @@ export function FeaturesSection() {
           {/* Three Column Features with Connected Progress Bars */}
           <div className="relative">
             
-            {/* Desktop: Connected Progress Bars */}
+            {/* Desktop: Connected Progress Bars - COMMENTED OUT FOR NOW
             <div className="hidden md:block mb-8">
               <div className="flex items-center w-full">
-                {/* Feature 1 Progress */}
                 <div className="flex-1 h-4 rounded-l-full relative overflow-hidden" style={{ backgroundColor: "#D5D7DD" }}>
                   <div 
                     className="absolute top-0 left-0 h-full rounded-l-full transition-all duration-1000 ease-out"
@@ -140,7 +139,6 @@ export function FeaturesSection() {
                   />
                 </div>
                 
-                {/* Connector */}
                 <div className="w-4 h-4 relative overflow-hidden" style={{ backgroundColor: "#D5D7DD" }}>
                   <div 
                     className="absolute top-0 left-0 h-full transition-all duration-1000 ease-out"
@@ -151,7 +149,6 @@ export function FeaturesSection() {
                   />
                 </div>
                 
-                {/* Feature 2 Progress */}
                 <div className="flex-1 h-4 relative overflow-hidden" style={{ backgroundColor: "#D5D7DD" }}>
                   <div 
                     className="absolute top-0 left-0 h-full transition-all duration-1000 ease-out"
@@ -162,7 +159,6 @@ export function FeaturesSection() {
                   />
                 </div>
                 
-                {/* Connector */}
                 <div className="w-4 h-4 relative overflow-hidden" style={{ backgroundColor: "#D5D7DD" }}>
                   <div 
                     className="absolute top-0 left-0 h-full transition-all duration-1000 ease-out"
@@ -173,7 +169,6 @@ export function FeaturesSection() {
                   />
                 </div>
                 
-                {/* Feature 3 Progress */}
                 <div className="flex-1 h-4 rounded-r-full relative overflow-hidden" style={{ backgroundColor: "#D5D7DD" }}>
                   <div 
                     className="absolute top-0 left-0 h-full rounded-r-full transition-all duration-1000 ease-out"
@@ -185,6 +180,7 @@ export function FeaturesSection() {
                 </div>
               </div>
             </div>
+            */}
 
             {/* Feature Cards */}
             <div className="grid md:grid-cols-3 gap-8">
@@ -202,9 +198,16 @@ export function FeaturesSection() {
                   description: "No one-size-fits-all approach. CareerFrame creates a bespoke roadmap for your career, matching you with the right opportunities and learning resources to unlock your potential."
                 }
               ].map((feature, index) => (
-                <div key={index} className="text-center">
+                <div 
+                  key={index} 
+                  className="text-center"
+                  style={{
+                    borderTop: index === 0 ? '4px solid #829340' : '4px solid #F5F5F5',
+                    paddingTop: "20px"
+                  }}
+                >
                   
-                  {/* Mobile: Individual Progress Bars */}
+                  {/* Mobile: Individual Progress Bars - COMMENTED OUT FOR NOW
                   <div className="md:hidden mb-6">
                     <div className="w-full h-4 rounded-full relative overflow-hidden" style={{ backgroundColor: "#D5D7DD" }}>
                       <div 
@@ -216,6 +219,7 @@ export function FeaturesSection() {
                       />
                     </div>
                   </div>
+                  */}
                   
                   <h3 
                     className="mb-4"
@@ -255,7 +259,7 @@ export function FeaturesSection() {
         }}
       >
         <div 
-          className="mx-auto"
+          className="mx-auto relative get-started-dark-container"
           style={{
             width: "1216px",
             height: "212px",
@@ -264,19 +268,21 @@ export function FeaturesSection() {
             padding: "64px",
             boxSizing: "border-box",
             border: "1px solid rgba(255, 255, 255, 0.1)",
-            background: "linear-gradient(135deg, #1f2937 0%, #111827 100%)",
-            backgroundColor: "#1f2937"
+            background: "linear-gradient(135deg, #1f2937 0%, #111827 100%), linear-gradient(0deg, rgba(20, 20, 20, 0.698), rgba(20, 20, 20, 0.698))",
+            backgroundColor: "rgba(20, 20, 20, 0.698)"
           }}
         >
           <div 
-            className="flex items-center justify-between w-full h-full"
+            className="flex items-center justify-between w-full h-full relative"
             style={{
               display: "flex",
               alignItems: "center",
               justifyContent: "space-between",
               width: "100%",
               height: "100%",
-              color: "white"
+              color: "white",
+              zIndex: 10,
+              position: "relative"
             }}
           >
             <div className="text-left flex-1">

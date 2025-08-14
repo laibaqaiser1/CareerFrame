@@ -208,7 +208,7 @@ export function FeaturesSection() {
               cardsVisible ? { opacity: 1, y: 0 } : { opacity: 0, y: 0 }
             }
             transition={{ duration: 0.7, delay: 0 }}
-            className="grid md:grid-cols-3 gap-8 mb-16"
+            className="grid md:grid-cols-3 gap-8 md:gap-0 mb-16"
           >
             {valueProps.map((prop, index) => (
               <motion.div
@@ -219,8 +219,12 @@ export function FeaturesSection() {
                 }
                 transition={{ duration: 0.6, delay: 0 + index * 0.1 }}
                 className="text-center"
+                style={{
+                  borderTop: index === 0 ? '4px solid #829340' : '4px solid #F5F5F5',
+                  paddingTop: "20px"
+                }}
               >
-                {/* Progress Bar Only */}
+                {/* Progress Bar - COMMENTED OUT FOR NOW
                 <div className="mb-6 w-full">
                   <div className="w-full h-3 bg-gray-300 rounded-full overflow-hidden">
                     <div 
@@ -231,6 +235,7 @@ export function FeaturesSection() {
                     />
                   </div>
                 </div>
+                */}
 
                 <h3
                   style={{

@@ -280,19 +280,21 @@ div:has(section.features-section-white) {
   background: #ffffff !important;
 }
 
-/* Features section white background */
-.features-white-bg {
+/* Features section white background - Modified to exclude dark containers */
+.features-white-bg:not(.get-started-dark-container):not([class*="get-started-dark-container"]) {
   background: #ffffff !important;
   background-color: #ffffff !important;
   background-image: none !important;
 }
 
-.features-white-bg,
-.features-white-bg * {
+/* DISABLED: This rule was also causing dark background override issues
+.features-white-bg:not(.get-started-dark-container),
+.features-white-bg *:not(.get-started-dark-container):not(.get-started-section .get-started-dark-container):not([class*="get-started-dark-container"]) {
   background: #ffffff !important;
   background-color: #ffffff !important;
   background-image: none !important;
 }
+*/
 
 .white-section-override * {
   background-color: inherit;
@@ -1090,9 +1092,11 @@ html, body, #root {
   background-image: none !important;
 }
 
-.slide-in-left *:not(img):not([class*="video"]):not([style*="background-image"]):not(.olive-green-button):not(button):not(.play-button-circle):not([style*="linear-gradient"]) {
+/* DISABLED: This rule was causing dark background override issues
+.slide-in-left *:not(img):not([class*="video"]):not([style*="background-image"]):not(.olive-green-button):not(button):not(.play-button-circle):not([style*="linear-gradient"]):not(.get-started-dark-container):not([class*="get-started-dark-container"]) {
   background-color: transparent !important;
 }
+*/
 
 .slide-in-left section {
   background: #ffffff !important;
@@ -1145,10 +1149,12 @@ html body .play-button-circle {
   background-image: none !important;
 }
 
-/* Dark background container inside should remain dark */
-.bg-white-section div[style*="background"] {
+/* Dark background container inside should remain dark - but exclude GetStarted section */
+.bg-white-section div[style*="background"]:not(.get-started-section div) {
   background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://images.unsplash.com/photo-1521737711867-e3b97375f902?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80') !important;
 }
+
+
 
 /* Get Started Button - Force Olive Green with Rounded Corners */
 button.get-started-button,
@@ -1205,6 +1211,50 @@ button[class*="olive-green"] {
 /* Nuclear option - override any possible transparency on this specific button */
 button.olive-green-button * {
   opacity: 1 !important;
+}
+
+/* FINAL SOLUTION: Force dark overlay on GetStarted container using all possible selectors */
+.get-started-dark-container,
+div.get-started-dark-container,
+html .get-started-dark-container,
+html body .get-started-dark-container,
+section .get-started-dark-container,
+.slide-in-left .get-started-dark-container,
+.features-white-bg .get-started-dark-container,
+.white-section-override .get-started-dark-container,
+.slide-in-left div.get-started-dark-container,
+html body .slide-in-left .get-started-dark-container {
+  background: rgba(20, 20, 20, 0.698) !important;
+  background-color: rgba(20, 20, 20, 0.698) !important;
+  background-image: none !important;
+  background-blend-mode: normal !important;
+  position: relative !important;
+}
+
+/* Add the gradient base layer */
+.get-started-dark-container::before {
+  content: "";
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  bottom: 0 !important;
+  background: linear-gradient(135deg, #1f2937 0%, #111827 100%) !important;
+  border-radius: inherit !important;
+  z-index: -2 !important;
+}
+
+/* Add the dark overlay on top */
+.get-started-dark-container::after {
+  content: "";
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  bottom: 0 !important;
+  background: rgba(20, 20, 20, 0.698) !important;
+  border-radius: inherit !important;
+  z-index: -1 !important;
 }
 
 .olive-green-button:hover {
