@@ -72,18 +72,18 @@ export function TestimonialsSection() {
           {/* Navigation Arrows - Positioned outside testimonial area */}
           <button 
             onClick={prevTestimonial}
-            className="absolute -left-8 md:-left-12 top-1/2 -translate-y-1/2 z-20 flex items-center justify-center p-3 hover:opacity-70 transition-all duration-200 bg-white rounded-full shadow-lg"
+            className="absolute -left-2 md:-left-3 top-1/2 -translate-y-1/2 z-20 flex items-center justify-center p-2 hover:opacity-70 transition-all duration-200"
           >
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" className="text-gray-800">
-              <path d="M15 18L9 12L15 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" className="text-gray-600">
+              <path d="M15 18L9 12L15 6" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"/>
             </svg>
           </button>
           <button 
             onClick={nextTestimonial}
-            className="absolute -right-8 md:-right-12 top-1/2 -translate-y-1/2 z-20 flex items-center justify-center p-3 hover:opacity-70 transition-all duration-200 bg-white rounded-full shadow-lg"
+            className="absolute -right-2 md:-right-3 top-1/2 -translate-y-1/2 z-20 flex items-center justify-center p-2 hover:opacity-70 transition-all duration-200"
           >
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" className="text-gray-800">
-              <path d="M9 18L15 12L9 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" className="text-gray-600">
+              <path d="M9 18L15 12L9 6" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"/>
             </svg>
           </button>
 

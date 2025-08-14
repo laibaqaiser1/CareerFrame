@@ -176,10 +176,7 @@ export function FeaturesSection() {
                   {/* Professional Play Button Overlay */}
                   <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-20">
                     <div className="relative">
-                      {/* Preload indicator */}
-                      {videoPreloaded && (
-                        <div className="absolute -top-2 -right-2 w-3 h-3 bg-green-500 rounded-full animate-pulse"></div>
-                      )}
+
                       <button
                         onClick={() => {
                           console.log('🎬 Play button clicked!');
