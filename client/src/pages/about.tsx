@@ -6,32 +6,7 @@ import careerFrameLogo from "../assets/avatar1.png";
 
 export default function About() {
   return (
-    <div className="min-h-screen bg-white relative overflow-hidden">
-      {/* Background Pattern */}
-      <div className="absolute inset-0 z-0">
-        <svg
-          width="100%"
-          height="100%"
-          className="absolute inset-0 opacity-5"
-          style={{ transform: 'scale(1.2)' }}
-        >
-          <defs>
-            <pattern
-              id="about-pattern"
-              x="0"
-              y="0"
-              width="120"
-              height="120"
-              patternUnits="userSpaceOnUse"
-            >
-              <circle cx="60" cy="60" r="25" fill="#829340" opacity="0.1" />
-              <circle cx="20" cy="20" r="10" fill="#1E3A8A" opacity="0.08" />
-              <rect x="80" y="80" width="15" height="15" fill="#829340" opacity="0.06" />
-            </pattern>
-          </defs>
-          <rect width="100%" height="100%" fill="url(#about-pattern)" />
-        </svg>
-      </div>
+    <div className="min-h-screen bg-white">
 
       {/* CareerFrame Badge */}
       <div className="absolute top-1/3 right-1/4 opacity-5 transform rotate-12 z-0">

@@ -5,31 +5,7 @@ import careerFrameLogo from "../assets/avatar1.png";
 
 export default function Agreement() {
   return (
-    <div className="min-h-screen bg-white relative overflow-hidden">
-      {/* Background Pattern */}
-      <div className="absolute inset-0 z-0">
-        <svg
-          width="100%"
-          height="100%"
-          className="absolute inset-0 opacity-5"
-          style={{ transform: 'scale(1.2)' }}
-        >
-          <defs>
-            <pattern
-              id="agreement-pattern"
-              x="0"
-              y="0"
-              width="100"
-              height="100"
-              patternUnits="userSpaceOnUse"
-            >
-              <circle cx="50" cy="50" r="20" fill="#829340" opacity="0.1" />
-              <circle cx="20" cy="20" r="8" fill="#1E3A8A" opacity="0.08" />
-            </pattern>
-          </defs>
-          <rect width="100%" height="100%" fill="url(#agreement-pattern)" />
-        </svg>
-      </div>
+    <div className="min-h-screen bg-white">
 
       {/* CareerFrame Badge */}
       <div className="absolute top-1/4 right-1/4 opacity-5 transform rotate-12 z-0">

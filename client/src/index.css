@@ -1080,10 +1080,12 @@ html, body, #root {
   background: linear-gradient(303.01deg, #FFF1F0 0%, #FFFAF1 33.33%, #E8FAF6 66.67%, #EAF6FD 100%) !important;
 }
 
-/* Override any white backgrounds - except features section and buttons */
+/* Override any white backgrounds - except features section and buttons - DISABLED to allow footer pages to have white backgrounds */
+/*
 .bg-white:not(.features-section-white):not(.olive-green-button):not(button):not(.play-button-circle) {
   background: transparent !important;
 }
+*/
 
 /* FEATURES SECTION WHITE BACKGROUND - FINAL OVERRIDE */
 .slide-in-left {
