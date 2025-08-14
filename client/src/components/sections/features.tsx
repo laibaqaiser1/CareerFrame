@@ -43,6 +43,24 @@ export function FeaturesSection() {
   const [videoPreloaded, setVideoPreloaded] = useState(false);
   const videoRef = useRef<HTMLVideoElement>(null);
   const preloadVideoRef = useRef<HTMLVideoElement>(null);
+  
+  // Interactive green border functionality
+  const [activeFeature, setActiveFeature] = useState(0);
+  
+  const handleFeatureClick = (index: number) => {
+    console.log('🎯 FEATURE CLICKED:', index, 'Current active:', activeFeature);
+    setActiveFeature(index);
+  };
+
+  const handleFeatureHover = (index: number) => {
+    console.log('👆 FEATURE HOVERED:', index, 'Current active:', activeFeature);
+    setActiveFeature(index);
+  };
+
+  const handleFeatureTouch = (index: number) => {
+    console.log('📱 FEATURE TOUCHED:', index, 'Current active:', activeFeature);
+    setActiveFeature(index);
+  };
 
   return (
     <>
@@ -215,25 +233,18 @@ export function FeaturesSection() {
                   cardsVisible ? { opacity: 1, y: 0 } : { opacity: 0, y: 0 }
                 }
                 transition={{ duration: 0.6, delay: 0 + index * 0.1 }}
-                className="text-center"
+                className="text-center cursor-pointer p-4 rounded-lg transition-all duration-300 hover:bg-gray-50 active:bg-gray-100"
                 style={{
-                  borderTop: index === 0 ? '4px solid #829340' : '4px solid #F5F5F5',
-                  paddingTop: "20px"
+                  borderTop: activeFeature === index ? '4px solid #829340' : '4px solid #F5F5F5',
+                  paddingTop: "20px",
+                  position: "relative"
                 }}
+                onClick={() => handleFeatureClick(index)}
+                onMouseEnter={() => handleFeatureHover(index)}
+                onTouchStart={() => handleFeatureTouch(index)}
+                onFocus={() => handleFeatureHover(index)}
+                tabIndex={0}
               >
-                {/* Progress Bar - COMMENTED OUT FOR NOW
-                <div className="mb-6 w-full">
-                  <div className="w-full h-3 bg-gray-300 rounded-full overflow-hidden">
-                    <div 
-                      className="h-full bg-blue-500 rounded-full transition-all duration-1500 ease-out"
-                      style={{ 
-                        width: cardsVisible ? `${75 + (index * 8)}%` : '0%'
-                      }}
-                    />
-                  </div>
-                </div>
-                */}
-
                 <h3
                   style={{
                     fontFamily: "Inter, sans-serif",
@@ -268,14 +279,12 @@ export function FeaturesSection() {
               cardsVisible ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }
             }
             transition={{ duration: 0.7, delay: 0.3 }}
-            className="w-full max-w-6xl mx-auto relative overflow-hidden"
+            className="w-full max-w-6xl mx-auto relative overflow-hidden grid grid-cols-1 md:grid-cols-[auto_1fr] gap-6 md:gap-0"
             style={{
               borderRadius: "16px",
               padding: "32px",
               boxSizing: "border-box",
-              minHeight: window.innerWidth >= 768 ? "212px" : "120px",
-              display: "flex",
-              alignItems: "center"
+              minHeight: window.innerWidth >= 768 ? "212px" : "120px"
             }}
           >
             {/* Background Image */}
@@ -295,81 +304,89 @@ export function FeaturesSection() {
                 borderRadius: "16px"
               }}
             />
-            <div className="flex flex-col md:flex-row items-center justify-between gap-6 w-full relative z-10">
-              <div className="text-left flex-1 flex flex-col justify-center">
-                <h3
-                  style={{
-                    fontFamily: "Inter, sans-serif",
-                    fontWeight: 600,
-                    fontSize: "20px",
-                    lineHeight: "28px",
-                    color: "white",
-                    marginBottom: "8px",
-                    textShadow: "0 1px 2px rgba(0, 0, 0, 0.8)"
-                  }}
-                >
-                  See CareerFrame in Action
-                </h3>
-                <p
-                  style={{
-                    fontFamily: "Inter, sans-serif",
-                    fontWeight: 400,
-                    fontSize: "14px",
-                    lineHeight: "20px",
-                    color: "#E5E7EB",
-                    margin: "0",
-                    textShadow: "0 1px 2px rgba(0, 0, 0, 0.8)"
-                  }}
-                >
-                  Take a 2-minute Signup tour and discover how we'll transform your career journey.
-                </p>
-              </div>
-              <div className="flex-shrink-0">
-                <div
-                  onClick={() => window.open("https://app.careerframe.co.uk/", "_blank")}
-                  ref={(el) => {
-                    if (el) {
-                      el.style.setProperty("background-color", "#829340", "important");
-                      el.style.setProperty("background", "#829340", "important");
-                      el.style.setProperty("background-image", "none", "important");
-                      el.style.setProperty("border", "2px solid #829340", "important");
-                      el.style.setProperty("color", "#ffffff", "important");
-                    }
-                  }}
-                  style={{
-                    fontFamily: "Inter, sans-serif",
-                    fontWeight: 600,
-                    fontSize: "14px",
-                    padding: "10px 20px",
-                    borderRadius: "8px",
-                    boxShadow: "0 4px 12px rgba(130, 147, 64, 0.3)",
-                    cursor: "pointer",
-                    transition: "all 0.3s ease",
-                    display: "inline-block",
-                    userSelect: "none",
-                    minWidth: "120px",
-                    textAlign: "center",
-                    position: "relative",
-                    zIndex: "9999"
-                  }}
-                  onMouseEnter={(e) => {
-                    e.currentTarget.style.setProperty("background-color", "#6d7a35", "important");
-                    e.currentTarget.style.setProperty("background", "#6d7a35", "important");
-                    e.currentTarget.style.setProperty("border-color", "#6d7a35", "important");
-                    e.currentTarget.style.transform = "translateY(-1px)";
-                  }}
-                  onMouseLeave={(e) => {
-                    e.currentTarget.style.setProperty("background-color", "#829340", "important");
-                    e.currentTarget.style.setProperty("background", "#829340", "important");
-                    e.currentTarget.style.setProperty("border-color", "#829340", "important");
-                    e.currentTarget.style.transform = "translateY(0)";
-                  }}
-                >
-                  Get started
-                </div>
+            
+            {/* Text Content - First Column */}
+            <div className="text-left flex flex-col justify-center relative z-10 md:col-span-1">
+              <h3
+                className="md:whitespace-nowrap whitespace-normal"
+                style={{
+                  fontFamily: "Inter",
+                  fontWeight: 600,
+                  fontSize: "30px",
+                  lineHeight: "38px",
+                  letterSpacing: "0%",
+                  color: "white",
+                  marginBottom: "8px",
+                  textShadow: "0 1px 2px rgba(0, 0, 0, 0.8)"
+                }}
+              >
+                See CareerFrame in Action
+              </h3>
+              <p
+                className="md:whitespace-nowrap whitespace-normal"
+                style={{
+                  fontFamily: "Inter",
+                  fontWeight: 400,
+                  fontSize: "20px",
+                  lineHeight: "30px",
+                  letterSpacing: "0%",
+                  color: "#CDD3B2",
+                  margin: "0",
+                  textShadow: "0 1px 2px rgba(0, 0, 0, 0.8)"
+                }}
+              >
+                Take a 2-minute Signup tour and discover how we'll transform your career journey.
+              </p>
+            </div>
+
+            {/* Get Started Button - Second Column */}
+            <div className="flex items-center justify-center relative z-10 md:col-span-1">
+              <div
+                className="w-full md:w-32"
+                onClick={() => window.open("https://app.careerframe.co.uk/", "_blank")}
+                ref={(el) => {
+                  if (el) {
+                    el.style.setProperty("background-color", "#829340", "important");
+                    el.style.setProperty("background", "#829340", "important");
+                    el.style.setProperty("background-image", "none", "important");
+                    el.style.setProperty("border", "2px solid #829340", "important");
+                    el.style.setProperty("color", "#ffffff", "important");
+                  }
+                }}
+                style={{
+                  fontFamily: "Inter, sans-serif",
+                  fontWeight: 600,
+                  fontSize: "14px",
+                  padding: "12px 20px",
+                  borderRadius: "8px",
+                  boxShadow: "0 4px 12px rgba(130, 147, 64, 0.3)",
+                  cursor: "pointer",
+                  transition: "all 0.3s ease",
+                  display: "inline-block",
+                  userSelect: "none",
+                  textAlign: "center",
+                  position: "relative",
+                  zIndex: "9999"
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.setProperty("background-color", "#6d7a35", "important");
+                  e.currentTarget.style.setProperty("background", "#6d7a35", "important");
+                  e.currentTarget.style.setProperty("border-color", "#6d7a35", "important");
+                  e.currentTarget.style.transform = "translateY(-1px)";
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.setProperty("background-color", "#829340", "important");
+                  e.currentTarget.style.setProperty("background", "#829340", "important");
+                  e.currentTarget.style.setProperty("border-color", "#829340", "important");
+                  e.currentTarget.style.transform = "translateY(0)";
+                }}
+              >
+                Get started
               </div>
             </div>
           </motion.div>
+
+
         </div>
       </section>
 

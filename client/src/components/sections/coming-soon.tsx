@@ -211,15 +211,18 @@ export function ComingSoonPage() {
       const now = new Date().getTime();
       const distance = launchDate - now;
 
-      // Override with fixed 623 days
-      setTimeLeft({
-        days: 623,
-        hours: Math.floor(
-          (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60),
-        ),
-        minutes: Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60)),
-        seconds: Math.floor((distance % (1000 * 60)) / 1000),
-      });
+      if (distance > 0) {
+        setTimeLeft({
+          days: Math.floor(distance / (1000 * 60 * 60 * 24)),
+          hours: Math.floor(
+            (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60),
+          ),
+          minutes: Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60)),
+          seconds: Math.floor((distance % (1000 * 60)) / 1000),
+        });
+      } else {
+        setTimeLeft({ days: 0, hours: 0, minutes: 0, seconds: 0 });
+      }
     };
 
     updateCountdown();
@@ -562,7 +565,7 @@ export function ComingSoonPage() {
                 { value: timeLeft.minutes, label: "Min" },
                 { value: timeLeft.seconds, label: "Sec" },
               ].map((item, index) => (
-                <React.Fragment key={item.label}>
+                <div key={`${item.label}-container`} className="flex items-center">
                   <motion.div
                     initial={{ opacity: 0}}
                     animate={{ opacity: 1}}
@@ -598,7 +601,7 @@ export function ComingSoonPage() {
                       :
                     </div>
                   )}
-                </React.Fragment>
+                </div>
               ))}
             </div>
 

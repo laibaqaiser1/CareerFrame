@@ -6,6 +6,8 @@ import { TrustSignalsSection } from "@/components/sections/trust-signals";
 import { FeaturesSection } from "@/components/sections/features";
 import { HowItWorksSection } from "@/components/sections/how-it-works";
 import { AIDemoSection } from "@/components/ai-recommendation/ai-demo-section";
+import { PowerfulFeaturesSection } from "@/components/sections/powerful-features";
+import { RewardsSection } from "@/components/sections/rewards-section";
 
 import { TestimonialsSection } from "@/components/sections/testimonials-new";
 
@@ -95,7 +97,7 @@ function Navigation() {
                 <div className="absolute inset-0 rounded-lg scale-0 group-hover:scale-100 transition-transform duration-300" style={{ backgroundColor: 'rgba(130, 147, 64, 0.1)' }}></div>
               </a>
               <a 
-                href="#features" 
+                href="#powerful-features" 
                 className="px-4 py-3 text-xl font-medium transition-all duration-300 hover:scale-105 hover:shadow-lg relative group" 
                 style={{ color: '#000000' }}
                 onMouseEnter={playHoverSound}
@@ -181,7 +183,7 @@ function Navigation() {
               How it Works
             </a>
             <a 
-              href="#features" 
+              href="#powerful-features" 
               className="block py-3 text-lg font-medium transition-colors duration-200 hover:text-green-600" 
               style={{ color: '#000000' }}
               onClick={() => {
@@ -297,14 +299,14 @@ export default function Home() {
             <ComingSoonPage />
           </div>
           
-          {/* Career Benefits Section - ABOVE What to Expect, Static, no scroll animations */}
-          <div className="static-section">
-            <CareerBenefitsSection />
-          </div>
-
           {/* What to Expect Section - Separate from gradient background */}
           <div className="fade-in">
             <WhatToExpectSection />
+          </div>
+
+          {/* Career Benefits Section - Static, no scroll animations */}
+          <div className="static-section">
+            <CareerBenefitsSection />
           </div>
         
         
@@ -313,6 +315,31 @@ export default function Home() {
           <div className="slide-in-left" style={{ background: "transparent", backgroundColor: "transparent" }}>
             <FeaturesSection />
           </div>
+          
+          {/* Powerful Features Section - Position #5 */}
+          <div className="fade-in">
+            <PowerfulFeaturesSection />
+          </div>
+          
+          {/* Section Divider */}
+          <div className="py-8">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+              <div className="border-b border-gray-200"></div>
+            </div>
+          </div>
+          
+          {/* Rewards Section - Position #6 */}
+          <div className="fade-in">
+            <RewardsSection />
+          </div>
+          
+          {/* Section Divider */}
+          <div className="py-8">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+              <div className="border-b border-gray-200"></div>
+            </div>
+          </div>
+          
           <div className="slide-in-left" style={{ background: "transparent", backgroundColor: "transparent" }}>
             <HowItWorksSection />
           </div>

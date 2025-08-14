@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Link } from "wouter";
-import { ArrowLeft, Mail, MapPin, Clock } from "lucide-react";
+import { ArrowLeft, Mail, MapPin, Clock, Users, Shield, Handshake, Newspaper, AlertTriangle, Building } from "lucide-react";
 import careerFrameLogo from "../assets/avatar1.png";
 import { SoundButton } from "@/components/SoundButton";
 import { Navbar } from "@/components/sections/navbar";
@@ -13,11 +13,11 @@ export default function Contact() {
       <Navbar />
 
       {/* CareerFrame Badge */}
-      <div className="absolute top-1/4 right-1/4 opacity-5 transform rotate-12 z-0">
+      <div className="absolute top-1/4 right-2 md:right-1/4 opacity-5 transform rotate-12 z-0 hidden sm:block">
         <img 
           src={careerFrameLogo} 
           alt="CareerFrame Badge" 
-          className="w-64 h-64 object-contain"
+          className="w-48 md:w-56 lg:w-64 h-48 md:h-56 lg:h-64 object-contain"
         />
       </div>
 
@@ -36,7 +36,7 @@ export default function Contact() {
           
           <div className="text-center mb-8">
             <h1 
-              className="text-5xl font-bold mb-4"
+              className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 px-4"
               style={{ 
                 color: '#1E3A8A',
                 fontFamily: 'Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif'
@@ -45,176 +45,235 @@ export default function Contact() {
               Contact Us
             </h1>
             <p 
-              className="text-xl max-w-3xl mx-auto"
+              className="text-base sm:text-lg lg:text-xl max-w-3xl mx-auto px-4"
               style={{ color: '#6B7280' }}
             >
-              We're here to help you on your career journey. Get in touch with our team for support, guidance, or any questions about CareerFrame.
+              We'd love to hear from you. Choose the best route and we'll get back to you quickly.
             </p>
           </div>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-8 mb-16">
-          <div 
-            className="border rounded-xl p-8"
-            style={{ 
-              backgroundColor: 'rgba(30, 58, 138, 0.05)', 
-              borderColor: 'rgba(30, 58, 138, 0.2)' 
-            }}
+        {/* Contact Options Grid */}
+        <div className="mb-12 md:mb-16 px-4">
+          <h2 
+            className="text-2xl md:text-3xl font-bold mb-8 text-center"
+            style={{ color: '#1E3A8A' }}
           >
-            <h3 className="text-2xl font-semibold mb-6" style={{ color: '#1E3A8A' }}>Send us a message</h3>
-            <div className="space-y-4">
-              <div>
-                <label htmlFor="name" className="block text-sm font-medium mb-2" style={{ color: '#1E3A8A' }}>Name</label>
-                <input 
-                  type="text" 
-                  id="name" 
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 transition-colors"
-                  placeholder="Your full name"
-                />
-              </div>
-              <div>
-                <label htmlFor="email" className="block text-sm font-medium mb-2" style={{ color: '#1E3A8A' }}>Email</label>
-                <input 
-                  type="email" 
-                  id="email" 
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 transition-colors"
-                  placeholder="your.email@example.com"
-                />
-              </div>
-              <div>
-                <label htmlFor="subject" className="block text-sm font-medium mb-2" style={{ color: '#1E3A8A' }}>Subject</label>
-                <input 
-                  type="text" 
-                  id="subject" 
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 transition-colors"
-                  placeholder="How can we help?"
-                />
-              </div>
-              <div>
-                <label htmlFor="message" className="block text-sm font-medium mb-2" style={{ color: '#1E3A8A' }}>Message</label>
-                <textarea 
-                  id="message" 
-                  rows={4}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 transition-colors"
-                  placeholder="Tell us more about your inquiry..."
-                />
-              </div>
-              <SoundButton 
-                soundType="submit"
-                onClick={() => {
-                  const name = (document.getElementById('name') as HTMLInputElement)?.value || '';
-                  const email = (document.getElementById('email') as HTMLInputElement)?.value || '';
-                  const subject = (document.getElementById('subject') as HTMLInputElement)?.value || '';
-                  const message = (document.getElementById('message') as HTMLTextAreaElement)?.value || '';
-                  
-                  const emailBody = `Name: ${name}%0D%0AEmail: ${email}%0D%0A%0D%0AMessage:%0D%0A${message}`;
-                  const mailtoLink = `mailto:Support@careerframe.co.uk?subject=${encodeURIComponent(subject)}&body=${emailBody}`;
-                  
-                  window.location.href = mailtoLink;
-                }}
-                className="w-full text-white py-3 text-lg shadow-lg hover:shadow-xl transition-all"
-                style={{ backgroundColor: '#829340' }}
-              >
-                Send Message
-              </SoundButton>
-              
-              <div className="text-center mt-4">
-                <p className="text-sm mb-3" style={{ color: '#6B7280' }}>
-                  Or email us directly:
-                </p>
-                <a 
-                  href="mailto:Support@careerframe.co.uk?subject=Contact%20Form%20Inquiry&body=Hello%20CareerFrame%20Team,%0D%0A%0D%0AI%20would%20like%20to%20get%20in%20touch%20regarding:%0D%0A%0D%0A[Please%20describe%20your%20inquiry%20here]%0D%0A%0D%0AThank%20you!"
-                  className="text-sm font-medium hover:underline transition-colors"
-                  style={{ color: '#829340' }}
-                >
-                  Support@careerframe.co.uk
-                </a>
-              </div>
-            </div>
-          </div>
-
-          <div className="space-y-6">
+            Talk to Us
+          </h2>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
+            {/* General Enquiries */}
             <div 
-              className="border rounded-xl p-8"
-              style={{ 
-                backgroundColor: 'rgba(130, 147, 64, 0.05)', 
-                borderColor: 'rgba(130, 147, 64, 0.2)' 
-              }}
-            >
-              <Mail className="h-12 w-12 mb-4" style={{ color: '#829340' }} />
-              <h4 className="text-xl font-semibold mb-3" style={{ color: '#1E3A8A' }}>Email Support</h4>
-              <p className="text-lg mb-4" style={{ color: '#6B7280' }}>For all inquiries, support, and assistance</p>
-              <a 
-                href="mailto:Support@careerframe.co.uk" 
-                className="text-lg font-medium hover:underline transition-colors"
-                style={{ color: '#829340' }}
-              >
-                Support@careerframe.co.uk
-              </a>
-            </div>
-
-            <div 
-              className="border rounded-xl p-8"
-              style={{ 
-                backgroundColor: 'rgba(130, 147, 64, 0.05)', 
-                borderColor: 'rgba(130, 147, 64, 0.2)' 
-              }}
-            >
-              <Clock className="h-12 w-12 mb-4" style={{ color: '#1E3A8A' }} />
-              <h4 className="text-xl font-semibold mb-3" style={{ color: '#1E3A8A' }}>Response Time</h4>
-              <p className="text-lg mb-2" style={{ color: '#6B7280' }}>We aim to respond to all emails within</p>
-              <p className="text-lg font-medium" style={{ color: '#829340' }}>24 hours during business days</p>
-            </div>
-
-            <div 
-              className="border rounded-xl p-8"
+              className="border rounded-xl p-6"
               style={{ 
                 backgroundColor: 'rgba(30, 58, 138, 0.05)', 
                 borderColor: 'rgba(30, 58, 138, 0.2)' 
               }}
             >
-              <MapPin className="h-12 w-12 mb-4" style={{ color: '#1E3A8A' }} />
-              <h4 className="text-xl font-semibold mb-3" style={{ color: '#1E3A8A' }}>Office Address</h4>
-              <div className="text-lg" style={{ color: '#6B7280' }}>
-                <p>CareerFrame Ltd</p>
-                <p>Battlefield Industrial Estate</p>
-                <p>Shrewsbury, SY1 4AP</p>
-                <p>United Kingdom</p>
+              <Mail className="h-8 w-8 mb-3" style={{ color: '#1E3A8A' }} />
+              <h4 className="text-lg font-semibold mb-2" style={{ color: '#1E3A8A' }}>General Enquiries</h4>
+              <a 
+                href="mailto:info@careerframe.co.uk" 
+                className="text-base font-medium hover:underline transition-colors break-all"
+                style={{ color: '#829340' }}
+              >
+                info@careerframe.co.uk
+              </a>
+            </div>
+
+            {/* Support & Billing */}
+            <div 
+              className="border rounded-xl p-6"
+              style={{ 
+                backgroundColor: 'rgba(130, 147, 64, 0.05)', 
+                borderColor: 'rgba(130, 147, 64, 0.2)' 
+              }}
+            >
+              <Users className="h-8 w-8 mb-3" style={{ color: '#829340' }} />
+              <h4 className="text-lg font-semibold mb-2" style={{ color: '#1E3A8A' }}>Support & Billing</h4>
+              <a 
+                href="mailto:support@careerframe.co.uk" 
+                className="text-base font-medium hover:underline transition-colors break-all"
+                style={{ color: '#829340' }}
+              >
+                support@careerframe.co.uk
+              </a>
+            </div>
+
+            {/* Privacy & Data */}
+            <div 
+              className="border rounded-xl p-6"
+              style={{ 
+                backgroundColor: 'rgba(255, 69, 0, 0.05)', 
+                borderColor: 'rgba(255, 69, 0, 0.2)' 
+              }}
+            >
+              <Shield className="h-8 w-8 mb-3" style={{ color: '#FF4500' }} />
+              <h4 className="text-lg font-semibold mb-2" style={{ color: '#1E3A8A' }}>Privacy & Data Requests</h4>
+              <a 
+                href="mailto:privacy@careerframe.co.uk" 
+                className="text-base font-medium hover:underline transition-colors break-all"
+                style={{ color: '#829340' }}
+              >
+                privacy@careerframe.co.uk
+              </a>
+            </div>
+
+            {/* Partnerships */}
+            <div 
+              className="border rounded-xl p-6"
+              style={{ 
+                backgroundColor: 'rgba(138, 43, 226, 0.05)', 
+                borderColor: 'rgba(138, 43, 226, 0.2)' 
+              }}
+            >
+              <Handshake className="h-8 w-8 mb-3" style={{ color: '#8A2BE2' }} />
+              <h4 className="text-lg font-semibold mb-2" style={{ color: '#1E3A8A' }}>Partnerships</h4>
+              <a 
+                href="mailto:partnerships@careerframe.co.uk" 
+                className="text-base font-medium hover:underline transition-colors break-all"
+                style={{ color: '#829340' }}
+              >
+                partnerships@careerframe.co.uk
+              </a>
+            </div>
+
+            {/* Press */}
+            <div 
+              className="border rounded-xl p-6"
+              style={{ 
+                backgroundColor: 'rgba(255, 20, 147, 0.05)', 
+                borderColor: 'rgba(255, 20, 147, 0.2)' 
+              }}
+            >
+              <Newspaper className="h-8 w-8 mb-3" style={{ color: '#FF1493' }} />
+              <h4 className="text-lg font-semibold mb-2" style={{ color: '#1E3A8A' }}>Press</h4>
+              <a 
+                href="mailto:press@careerframe.co.uk" 
+                className="text-base font-medium hover:underline transition-colors break-all"
+                style={{ color: '#829340' }}
+              >
+                press@careerframe.co.uk
+              </a>
+            </div>
+
+            {/* Complaints */}
+            <div 
+              className="border rounded-xl p-6"
+              style={{ 
+                backgroundColor: 'rgba(220, 20, 60, 0.05)', 
+                borderColor: 'rgba(220, 20, 60, 0.2)' 
+              }}
+            >
+              <AlertTriangle className="h-8 w-8 mb-3" style={{ color: '#DC143C' }} />
+              <h4 className="text-lg font-semibold mb-2" style={{ color: '#1E3A8A' }}>Complaints</h4>
+              <a 
+                href="mailto:complaints@careerframe.co.uk" 
+                className="text-base font-medium hover:underline transition-colors break-all"
+                style={{ color: '#829340' }}
+              >
+                complaints@careerframe.co.uk
+              </a>
+            </div>
+          </div>
+        </div>
+
+        {/* Response Times & Registered Details */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 mb-12 md:mb-16 px-4">
+          {/* Response Times */}
+          <div 
+            className="border rounded-xl p-6 md:p-8"
+            style={{ 
+              backgroundColor: 'rgba(130, 147, 64, 0.05)', 
+              borderColor: 'rgba(130, 147, 64, 0.2)' 
+            }}
+          >
+            <Clock className="h-10 w-10 md:h-12 md:w-12 mb-4" style={{ color: '#829340' }} />
+            <h3 className="text-xl md:text-2xl font-semibold mb-4 md:mb-6" style={{ color: '#1E3A8A' }}>Response Times</h3>
+            <div className="space-y-3">
+              <p className="text-base md:text-lg" style={{ color: '#6B7280' }}>
+                We aim to reply within <span className="font-semibold" style={{ color: '#829340' }}>2 working days</span>
+              </p>
+              <p className="text-base md:text-lg" style={{ color: '#6B7280' }}>
+                For data rights requests, we will respond within <span className="font-semibold" style={{ color: '#829340' }}>one month</span> as required by UK GDPR
+              </p>
+            </div>
+          </div>
+
+          {/* Registered Details */}
+          <div 
+            className="border rounded-xl p-6 md:p-8"
+            style={{ 
+              backgroundColor: 'rgba(30, 58, 138, 0.05)', 
+              borderColor: 'rgba(30, 58, 138, 0.2)' 
+            }}
+          >
+            <Building className="h-10 w-10 md:h-12 md:w-12 mb-4" style={{ color: '#1E3A8A' }} />
+            <h3 className="text-xl md:text-2xl font-semibold mb-4 md:mb-6" style={{ color: '#1E3A8A' }}>Registered Details</h3>
+            <div className="space-y-4">
+              <div className="flex items-start space-x-3">
+                <MapPin className="h-5 w-5 mt-1 flex-shrink-0" style={{ color: '#829340' }} />
+                <div>
+                  <p className="text-base md:text-lg font-medium mb-1" style={{ color: '#1E3A8A' }}>Registered Address:</p>
+                  <p className="text-base md:text-lg" style={{ color: '#6B7280' }}>
+                    Battlefield Industrial Estate<br />
+                    Shrewsbury, Shropshire, SY4 3DB
+                  </p>
+                </div>
+              </div>
+              <div className="flex items-start space-x-3">
+                <Building className="h-5 w-5 mt-1 flex-shrink-0" style={{ color: '#829340' }} />
+                <div>
+                  <p className="text-base md:text-lg font-medium mb-1" style={{ color: '#1E3A8A' }}>Company Number:</p>
+                  <p className="text-base md:text-lg" style={{ color: '#6B7280' }}>16331497</p>
+                </div>
+              </div>
+              <div className="flex items-start space-x-3">
+                <Shield className="h-5 w-5 mt-1 flex-shrink-0" style={{ color: '#829340' }} />
+                <div>
+                  <p className="text-base md:text-lg font-medium mb-1" style={{ color: '#1E3A8A' }}>ICO Registration:</p>
+                  <p className="text-base md:text-lg" style={{ color: '#6B7280' }}>C1742472</p>
+                </div>
               </div>
             </div>
           </div>
         </div>
 
-        {/* Support Information */}
-        <div 
-          className="border-2 rounded-xl p-8 text-center"
-          style={{ 
-            backgroundColor: 'rgba(130, 147, 64, 0.05)', 
-            borderColor: '#829340' 
-          }}
-        >
-          <h2 className="text-3xl font-bold mb-4" style={{ color: '#1E3A8A' }}>
-            Need Quick Help?
+        {/* Prefer a Form Section */}
+        <div className="mb-12 md:mb-16 px-4">
+          <h2 
+            className="text-2xl md:text-3xl font-bold mb-6 text-center"
+            style={{ color: '#1E3A8A' }}
+          >
+            Prefer a Form?
           </h2>
-          <p className="text-lg mb-6 max-w-2xl mx-auto" style={{ color: '#6B7280' }}>
-            For the fastest response, email us directly. We're committed to helping you succeed in your career journey and will get back to you promptly.
-          </p>
-          <a href="mailto:Support@careerframe.co.uk">
+          <div 
+            className="border rounded-xl p-6 md:p-8 text-center max-w-2xl mx-auto"
+            style={{ 
+              backgroundColor: 'rgba(130, 147, 64, 0.05)', 
+              borderColor: 'rgba(130, 147, 64, 0.2)' 
+            }}
+          >
+            <Mail className="h-12 w-12 mx-auto mb-4" style={{ color: '#829340' }} />
+            <h3 className="text-xl font-semibold mb-4" style={{ color: '#1E3A8A' }}>Quick Contact Form</h3>
+            <p className="text-base md:text-lg mb-6" style={{ color: '#6B7280' }}>
+              Use the in‑app help widget or contact form. Include your account email and a brief description so we can help faster.
+            </p>
             <SoundButton 
-              className="text-white px-8 py-3 text-lg shadow-lg hover:shadow-xl transition-all"
+              className="px-6 py-3 text-white shadow-lg hover:shadow-xl transition-all rounded-lg"
               style={{ backgroundColor: '#829340' }}
+              onClick={() => {
+                const mailtoLink = `mailto:info@careerframe.co.uk?subject=Contact%20Form%20Inquiry&body=Hello%20CareerFrame%20Team,%0D%0A%0D%0AAccount%20Email:%20[Your%20email%20here]%0D%0A%0D%0ABrief%20Description:%0D%0A[Please%20describe%20your%20inquiry%20here]%0D%0A%0D%0AThank%20you!`;
+                window.location.href = mailtoLink;
+              }}
             >
-              Email Support Now
+              Open Contact Form
             </SoundButton>
-          </a>
+          </div>
         </div>
 
-        {/* Footer */}
-        <div className="text-center py-8 border-t mt-12" style={{ borderColor: 'rgba(0,0,0,0.1)' }}>
-          <p className="text-sm" style={{ color: '#6B7280' }}>
-            © 2025 CareerFrame Ltd. All rights reserved. | We're here to support your career success
-          </p>
-        </div>
+
       </div>
       <Footer />
     </div>

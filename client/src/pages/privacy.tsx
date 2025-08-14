@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
-import { ArrowLeft, Shield, Eye, Lock, Database, Mail } from "lucide-react";
+import { ArrowLeft, Mail } from "lucide-react";
 import careerFrameLogo from "../assets/avatar1.png";
 import { Navbar } from "@/components/sections/navbar";
 import { Footer } from "@/components/sections/footer";
@@ -10,12 +10,12 @@ export default function Privacy() {
     <div className="min-h-screen bg-white">
       <Navbar />
 
-      {/* CareerFrame Badge in background */}
-      <div className="absolute top-1/4 right-1/4 opacity-5 transform rotate-12 z-0">
+      {/* CareerFrame Badge */}
+      <div className="absolute top-1/4 right-2 md:right-1/4 opacity-5 transform rotate-12 z-0 hidden sm:block">
         <img 
           src={careerFrameLogo} 
           alt="CareerFrame Badge" 
-          className="w-64 h-64 object-contain"
+          className="w-48 md:w-56 lg:w-64 h-48 md:h-56 lg:h-64 object-contain"
         />
       </div>
 
@@ -31,9 +31,10 @@ export default function Privacy() {
               Back to Home
             </Button>
           </Link>
+          
           <div className="text-center mb-8">
             <h1 
-              className="text-5xl font-bold mb-4"
+              className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 px-4"
               style={{ 
                 color: '#1E3A8A',
                 fontFamily: 'Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif'
@@ -42,399 +43,318 @@ export default function Privacy() {
               Privacy Policy
             </h1>
             <p 
-              className="text-lg"
+              className="text-base md:text-lg px-4"
               style={{ color: '#6B7280' }}
             >
-              Effective Date: July 20, 2025
+              Your privacy matters to us - kept clear and friendly
             </p>
           </div>
         </div>
 
-        <div className="prose prose-lg max-w-none">
+        <div className="prose prose-lg max-w-none px-4">
           {/* Introduction */}
           <div 
-            className="border rounded-xl p-8 mb-12 shadow-sm"
+            className="border rounded-xl p-6 md:p-8 mb-8 md:mb-12 shadow-sm"
             style={{ 
               backgroundColor: 'rgba(130, 147, 64, 0.05)', 
               borderColor: 'rgba(130, 147, 64, 0.2)' 
             }}
           >
-            <div className="flex items-center mb-6">
-              <Shield className="w-8 h-8 mr-3" style={{ color: '#829340' }} />
-              <h3 
-                className="text-2xl font-semibold mb-0"
-                style={{ color: '#1E3A8A' }}
-              >
-                Our Promise to You
-              </h3>
-            </div>
             <p 
-              className="text-lg mb-4 leading-relaxed"
+              className="text-base md:text-lg leading-relaxed mb-0"
               style={{ color: '#6B7280' }}
             >
-              At CareerFrame, we're dedicated to helping you find and grow into the right career — and we take your trust very seriously. Protecting your privacy is a core part of how we build and operate our platform.
-            </p>
-            <p 
-              className="text-lg leading-relaxed"
-              style={{ color: '#6B7280' }}
-            >
-              We keep things simple: we only collect the information we need to deliver our services, and we don't keep it any longer than necessary. Below we explain what we collect, why, and how you can stay in control.
+              This policy explains our data protection principles and security practices. For specific details of the personal data we collect and why, see our comprehensive privacy information below.
             </p>
           </div>
 
-          {/* Section 1 */}
-          <section className="mb-12">
+          {/* Section 1 - Who We Are */}
+          <section className="mb-8 md:mb-12">
             <h2 
-              className="text-3xl font-bold mb-6 flex items-center"
+              className="text-xl md:text-2xl lg:text-3xl font-bold mb-4 md:mb-6 flex items-start"
               style={{ color: '#1E3A8A' }}
             >
-              <span className="bg-blue-100 text-blue-600 rounded-full w-8 h-8 flex items-center justify-center text-lg font-bold mr-4">1</span>
-              Who We Are
+              <span className="bg-blue-100 text-blue-600 rounded-full w-8 h-8 flex items-center justify-center text-base md:text-lg font-bold mr-3 md:mr-4 flex-shrink-0 mt-1">1</span>
+              <span>Who We Are</span>
             </h2>
-            <p 
-              className="text-lg mb-4 leading-relaxed"
+            <div 
+              className="text-base md:text-lg mb-4 leading-relaxed space-y-4"
               style={{ color: '#6B7280' }}
             >
-              CareerFrame helps people identify and close skill gaps to reach their career goals through personalized coaching and guidance. Your information belongs to you, and our role is to use it only to provide and improve our service — nothing more.
-            </p>
-            <div 
-              className="bg-gray-50 border-l-4 p-6 rounded-r-lg"
-              style={{ borderLeftColor: '#829340' }}
-            >
-              <div className="flex items-center">
-                <Mail className="w-5 h-5 mr-3" style={{ color: '#829340' }} />
-                <p className="text-lg font-medium mb-0" style={{ color: '#1E3A8A' }}>
-                  Contact us anytime at: <a href="mailto:privacy@careerframe.co.uk" className="underline hover:no-underline" style={{ color: '#829340' }}>privacy@careerframe.co.uk</a>
-                </p>
+              <p>
+                We are CareerFrame Ltd, a UK-based career development platform helping individuals find the right career path. We're based at Battlefield Industrial Estate, Shrewsbury, Shropshire, SY4 3DB.
+              </p>
+              <div className="bg-gray-50 p-4 rounded-lg">
+                <p className="font-semibold mb-2" style={{ color: '#1E3A8A' }}>Controller Details:</p>
+                <p>CareerFrame Ltd, Battlefield Industrial Estate, Shrewsbury, Shropshire, SY4 3DB</p>
+                <p>Company Number: 16331497</p>
+                <p>ICO Registration: C1742472</p>
+                <p>Privacy contact: <a href="mailto:privacy@careerframe.co.uk" className="text-green-600 hover:underline">privacy@careerframe.co.uk</a></p>
               </div>
             </div>
           </section>
 
-          {/* Section 2 */}
-          <section className="mb-12">
+          {/* Section 2 - Scope */}
+          <section className="mb-8 md:mb-12">
             <h2 
-              className="text-3xl font-bold mb-6 flex items-center"
+              className="text-xl md:text-2xl lg:text-3xl font-bold mb-4 md:mb-6 flex items-start"
               style={{ color: '#1E3A8A' }}
             >
-              <span className="bg-blue-100 text-blue-600 rounded-full w-8 h-8 flex items-center justify-center text-lg font-bold mr-4">2</span>
-              Where This Privacy Policy Applies
+              <span className="bg-blue-100 text-blue-600 rounded-full w-8 h-8 flex items-center justify-center text-base md:text-lg font-bold mr-3 md:mr-4 flex-shrink-0 mt-1">2</span>
+              <span>Scope</span>
             </h2>
             <p 
-              className="text-lg leading-relaxed"
+              className="text-base md:text-lg leading-relaxed"
               style={{ color: '#6B7280' }}
             >
-              This Privacy Policy applies to the CareerFrame website, web app, and related services under the CareerFrame brand. If we launch services with different privacy practices, those will have their own policy.
+              This policy applies to all personal data processed by CareerFrame in connection with our services, websites, apps, support channels, analytics, and integrations (e.g., payment providers, communications vendors, course partners). It covers employees, contractors, and suppliers who handle personal data on our behalf.
             </p>
           </section>
 
-          {/* Section 3 */}
-          <section className="mb-12">
+          {/* Section 3 - Lawful Bases & Purposes */}
+          <section className="mb-8 md:mb-12">
             <h2 
-              className="text-3xl font-bold mb-6 flex items-center"
+              className="text-xl md:text-2xl lg:text-3xl font-bold mb-4 md:mb-6 flex items-start"
               style={{ color: '#1E3A8A' }}
             >
-              <span className="bg-blue-100 text-blue-600 rounded-full w-8 h-8 flex items-center justify-center text-lg font-bold mr-4">3</span>
-              What We Collect & Why
+              <span className="bg-blue-100 text-blue-600 rounded-full w-8 h-8 flex items-center justify-center text-base md:text-lg font-bold mr-3 md:mr-4 flex-shrink-0 mt-1">3</span>
+              <span>Lawful Bases & Purposes</span>
             </h2>
-            <p 
-              className="text-lg mb-6 leading-relaxed"
+            <div 
+              className="text-base md:text-lg leading-relaxed space-y-4"
               style={{ color: '#6B7280' }}
             >
-              We aim to collect the minimum data necessary for your experience.
+              <p>We process personal data under the UK GDPR on the following lawful bases:</p>
+              <div className="space-y-3">
+                <div className="bg-blue-50 p-4 rounded-lg">
+                  <p className="font-semibold mb-2" style={{ color: '#1E3A8A' }}>Contract:</p>
+                  <p>To create/manage accounts, deliver platform functionality (AI coach, milestone tracking, skill-gap analysis, CV/cover letters), and handle payments.</p>
+                </div>
+                <div className="bg-green-50 p-4 rounded-lg">
+                  <p className="font-semibold mb-2" style={{ color: '#1E3A8A' }}>Legitimate Interests:</p>
+                  <p>To secure our services, prevent fraud/abuse, improve features, and provide limited service communications. We conduct balancing tests where appropriate.</p>
+                </div>
+                <div className="bg-yellow-50 p-4 rounded-lg">
+                  <p className="font-semibold mb-2" style={{ color: '#1E3A8A' }}>Consent:</p>
+                  <p>For certain marketing communications, optional analytics/cookies, and where required by law.</p>
+                </div>
+                <div className="bg-purple-50 p-4 rounded-lg">
+                  <p className="font-semibold mb-2" style={{ color: '#1E3A8A' }}>Legal Obligation:</p>
+                  <p>To meet accounting, tax, and regulatory duties.</p>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          {/* Section 4 - Data Minimisation & Retention */}
+          <section className="mb-8 md:mb-12">
+            <h2 
+              className="text-xl md:text-2xl lg:text-3xl font-bold mb-4 md:mb-6 flex items-start"
+              style={{ color: '#1E3A8A' }}
+            >
+              <span className="bg-blue-100 text-blue-600 rounded-full w-8 h-8 flex items-center justify-center text-base md:text-lg font-bold mr-3 md:mr-4 flex-shrink-0 mt-1">4</span>
+              <span>Data Minimisation & Retention</span>
+            </h2>
+            <div 
+              className="text-base md:text-lg leading-relaxed space-y-4"
+              style={{ color: '#6B7280' }}
+            >
+              <div className="space-y-3">
+                <div className="bg-blue-50 p-4 rounded-lg">
+                  <p className="font-semibold mb-2" style={{ color: '#1E3A8A' }}>Account Data:</p>
+                  <p>Retained while your account is active; deleted or anonymised within 90 days of deletion request, subject to legal holds.</p>
+                </div>
+                <div className="bg-green-50 p-4 rounded-lg">
+                  <p className="font-semibold mb-2" style={{ color: '#1E3A8A' }}>Payment Records:</p>
+                  <p>Kept for up to 7 years to comply with tax and accounting laws.</p>
+                </div>
+                <div className="bg-yellow-50 p-4 rounded-lg">
+                  <p className="font-semibold mb-2" style={{ color: '#1E3A8A' }}>Support Tickets:</p>
+                  <p>Up to 24 months for audit and training purposes.</p>
+                </div>
+                <div className="bg-purple-50 p-4 rounded-lg">
+                  <p className="font-semibold mb-2" style={{ color: '#1E3A8A' }}>Backups/Logs:</p>
+                  <p>Rotate on fixed schedules and are deleted per our retention calendar.</p>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          {/* Section 5 - Security Measures */}
+          <section className="mb-8 md:mb-12">
+            <h2 
+              className="text-xl md:text-2xl lg:text-3xl font-bold mb-4 md:mb-6 flex items-start"
+              style={{ color: '#1E3A8A' }}
+            >
+              <span className="bg-blue-100 text-blue-600 rounded-full w-8 h-8 flex items-center justify-center text-base md:text-lg font-bold mr-3 md:mr-4 flex-shrink-0 mt-1">5</span>
+              <span>Security Measures</span>
+            </h2>
+            <div 
+              className="text-base md:text-lg leading-relaxed space-y-4"
+              style={{ color: '#6B7280' }}
+            >
+              <ul className="space-y-2 list-disc list-inside">
+                <li>Encryption in transit (TLS) and at rest for primary data stores</li>
+                <li>Role-based access controls (RBAC), least-privilege IAM, and MFA for staff</li>
+                <li>Segregated environments for development, staging, and production</li>
+                <li>Regular patching, vulnerability scanning, and change control</li>
+                <li>Audit logging and monitoring for anomalous access</li>
+                <li>Vendor due diligence and contractual data protection terms with processors</li>
+                <li>Staff training on security, privacy, and phishing awareness</li>
+              </ul>
+            </div>
+          </section>
+
+          {/* Section 6 - International Data Transfers */}
+          <section className="mb-8 md:mb-12">
+            <h2 
+              className="text-xl md:text-2xl lg:text-3xl font-bold mb-4 md:mb-6 flex items-start"
+              style={{ color: '#1E3A8A' }}
+            >
+              <span className="bg-blue-100 text-blue-600 rounded-full w-8 h-8 flex items-center justify-center text-base md:text-lg font-bold mr-3 md:mr-4 flex-shrink-0 mt-1">6</span>
+              <span>International Data Transfers</span>
+            </h2>
+            <p 
+              className="text-base md:text-lg leading-relaxed"
+              style={{ color: '#6B7280' }}
+            >
+              Where personal data is transferred outside the UK (e.g., to sub-processors), we use appropriate safeguards such as the UK Addendum to the EU Standard Contractual Clauses or other legally recognised mechanisms. We maintain a list of key sub-processors in our Privacy Policy and update it when suppliers change.
             </p>
-            
-            <div className="grid md:grid-cols-2 gap-6 mb-8">
-              <div 
-                className="border rounded-lg p-6"
-                style={{ borderColor: 'rgba(130, 147, 64, 0.2)', backgroundColor: 'rgba(130, 147, 64, 0.02)' }}
-              >
-                <h4 className="text-xl font-semibold mb-4" style={{ color: '#1E3A8A' }}>
-                  Information you provide
-                </h4>
-                <ul className="space-y-3">
-                  <li className="flex items-start">
-                    <div className="w-2 h-2 bg-green-400 rounded-full mt-2 mr-3 flex-shrink-0"></div>
-                    <span style={{ color: '#6B7280' }}>Account details: name, email, date of birth (to verify you're over 18)</span>
-                  </li>
-                  <li className="flex items-start">
-                    <div className="w-2 h-2 bg-green-400 rounded-full mt-2 mr-3 flex-shrink-0"></div>
-                    <span style={{ color: '#6B7280' }}>Profile details: your current skills, career goals, milestones — so we can coach you</span>
-                  </li>
-                  <li className="flex items-start">
-                    <div className="w-2 h-2 bg-green-400 rounded-full mt-2 mr-3 flex-shrink-0"></div>
-                    <span style={{ color: '#6B7280' }}>Communication: messages you send through the platform, and feedback you provide to us</span>
-                  </li>
-                </ul>
+          </section>
+
+          {/* Section 7 - AI Processing & Automated Decisions */}
+          <section className="mb-8 md:mb-12">
+            <h2 
+              className="text-xl md:text-2xl lg:text-3xl font-bold mb-4 md:mb-6 flex items-start"
+              style={{ color: '#1E3A8A' }}
+            >
+              <span className="bg-blue-100 text-blue-600 rounded-full w-8 h-8 flex items-center justify-center text-base md:text-lg font-bold mr-3 md:mr-4 flex-shrink-0 mt-1">7</span>
+              <span>AI Processing & Automated Decisions</span>
+            </h2>
+            <div 
+              className="text-base md:text-lg leading-relaxed space-y-4"
+              style={{ color: '#6B7280' }}
+            >
+              <p>
+                Our AI features assist with career alignment, skill gap insights, milestone suggestions, and drafting CV/cover letters. Outputs are recommendations only and do not make legally or similarly significant automated decisions about you. You remain in control of your choices and can request human review via <a href="mailto:support@careerframe.co.uk" className="text-green-600 hover:underline">support@careerframe.co.uk</a>.
+              </p>
+            </div>
+          </section>
+
+          {/* Section 8 - Your Rights */}
+          <section className="mb-8 md:mb-12">
+            <h2 
+              className="text-xl md:text-2xl lg:text-3xl font-bold mb-4 md:mb-6 flex items-start"
+              style={{ color: '#1E3A8A' }}
+            >
+              <span className="bg-blue-100 text-blue-600 rounded-full w-8 h-8 flex items-center justify-center text-base md:text-lg font-bold mr-3 md:mr-4 flex-shrink-0 mt-1">8</span>
+              <span>Your Rights</span>
+            </h2>
+            <div 
+              className="text-base md:text-lg leading-relaxed space-y-4"
+              style={{ color: '#6B7280' }}
+            >
+              <p>You have rights under UK GDPR, including: access; rectification; erasure; restriction; portability; and objection to certain processing (including direct marketing). You can withdraw consent at any time where processing is based on consent.</p>
+              
+              <div className="bg-blue-50 p-4 rounded-lg">
+                <p className="font-semibold mb-2" style={{ color: '#1E3A8A' }}>How to Exercise Your Rights:</p>
+                <p>Email <a href="mailto:privacy@careerframe.co.uk" className="text-green-600 hover:underline">privacy@careerframe.co.uk</a> from your registered address. We may need to verify your identity.</p>
               </div>
               
-              <div 
-                className="border rounded-lg p-6"
-                style={{ borderColor: 'rgba(30, 58, 138, 0.2)', backgroundColor: 'rgba(30, 58, 138, 0.02)' }}
-              >
-                <h4 className="text-xl font-semibold mb-4" style={{ color: '#1E3A8A' }}>
-                  Information we collect automatically
-                </h4>
-                <ul className="space-y-3">
-                  <li className="flex items-start">
-                    <div className="w-2 h-2 bg-blue-400 rounded-full mt-2 mr-3 flex-shrink-0"></div>
-                    <span style={{ color: '#6B7280' }}>Usage data: logins, feature use, pages visited — to maintain, secure, and improve the service</span>
-                  </li>
-                  <li className="flex items-start">
-                    <div className="w-2 h-2 bg-blue-400 rounded-full mt-2 mr-3 flex-shrink-0"></div>
-                    <span style={{ color: '#6B7280' }}>Device data: IP address, browser type, device type — for security and analytics</span>
-                  </li>
-                </ul>
+              <div className="bg-yellow-50 p-4 rounded-lg">
+                <p className="font-semibold mb-2" style={{ color: '#1E3A8A' }}>Complaints:</p>
+                <p>You can complain to the UK Information Commissioner's Office (ICO). See <a href="https://ico.org.uk" className="text-green-600 hover:underline" target="_blank" rel="noopener noreferrer">ico.org.uk</a> for details.</p>
               </div>
             </div>
+          </section>
+
+          {/* Section 9 - Data Breaches */}
+          <section className="mb-8 md:mb-12">
+            <h2 
+              className="text-xl md:text-2xl lg:text-3xl font-bold mb-4 md:mb-6 flex items-start"
+              style={{ color: '#1E3A8A' }}
+            >
+              <span className="bg-blue-100 text-blue-600 rounded-full w-8 h-8 flex items-center justify-center text-base md:text-lg font-bold mr-3 md:mr-4 flex-shrink-0 mt-1">9</span>
+              <span>Data Breaches</span>
+            </h2>
+            <p 
+              className="text-base md:text-lg leading-relaxed"
+              style={{ color: '#6B7280' }}
+            >
+              We maintain an incident response plan. Where required by law, we will notify the ICO within 72 hours of becoming aware of a notifiable breach and will inform affected individuals without undue delay.
+            </p>
+          </section>
+
+          {/* Section 10 - Questions or Concerns */}
+          <section className="mb-8 md:mb-12">
+            <h2 
+              className="text-xl md:text-2xl lg:text-3xl font-bold mb-4 md:mb-6 flex items-start"
+              style={{ color: '#1E3A8A' }}
+            >
+              <span className="bg-blue-100 text-blue-600 rounded-full w-8 h-8 flex items-center justify-center text-base md:text-lg font-bold mr-3 md:mr-4 flex-shrink-0 mt-1">10</span>
+              <span>Questions or Concerns?</span>
+            </h2>
+            <p 
+              className="text-base md:text-lg mb-4 leading-relaxed"
+              style={{ color: '#6B7280' }}
+            >
+              We're here to help. Email us at privacy@careerframe.co.uk or write to us at our registered address. You can also contact the UK Information Commissioner's Office (ICO) if you're unhappy with how we handle your data.
+            </p>
             
             <div 
-              className="bg-red-50 border border-red-200 rounded-lg p-6"
-            >
-              <p className="text-lg font-medium" style={{ color: '#EF4444' }}>
-                We do not use or share your data for profiling, targeted advertising, or any purpose unrelated to the service you signed up for.
-              </p>
-            </div>
-          </section>
-
-          {/* Section 4 */}
-          <section className="mb-12">
-            <h2 
-              className="text-3xl font-bold mb-6 flex items-center"
-              style={{ color: '#1E3A8A' }}
-            >
-              <span className="bg-blue-100 text-blue-600 rounded-full w-8 h-8 flex items-center justify-center text-lg font-bold mr-4">4</span>
-              How We Use Your Information
-            </h2>
-            <p 
-              className="text-lg mb-6 leading-relaxed"
-              style={{ color: '#6B7280' }}
-            >
-              We use your information to:
-            </p>
-            <div className="grid md:grid-cols-2 gap-4 mb-6">
-              <div className="flex items-start">
-                <div className="w-3 h-3 bg-green-400 rounded-full mt-2 mr-4 flex-shrink-0"></div>
-                <span className="text-lg" style={{ color: '#6B7280' }}>Provide and maintain your account and milestones</span>
-              </div>
-              <div className="flex items-start">
-                <div className="w-3 h-3 bg-green-400 rounded-full mt-2 mr-4 flex-shrink-0"></div>
-                <span className="text-lg" style={{ color: '#6B7280' }}>Tailor coaching and advice to your goals</span>
-              </div>
-              <div className="flex items-start">
-                <div className="w-3 h-3 bg-green-400 rounded-full mt-2 mr-4 flex-shrink-0"></div>
-                <span className="text-lg" style={{ color: '#6B7280' }}>Keep our platform secure and compliant with law</span>
-              </div>
-              <div className="flex items-start">
-                <div className="w-3 h-3 bg-green-400 rounded-full mt-2 mr-4 flex-shrink-0"></div>
-                <span className="text-lg" style={{ color: '#6B7280' }}>Improve the functionality and experience of our service</span>
-              </div>
-            </div>
-            <p 
-              className="text-lg leading-relaxed"
-              style={{ color: '#6B7280' }}
-            >
-              We may also use anonymized, aggregated data to improve CareerFrame — never to identify you personally.
-            </p>
-          </section>
-
-          {/* Section 5 */}
-          <section className="mb-12">
-            <h2 
-              className="text-3xl font-bold mb-6 flex items-center"
-              style={{ color: '#1E3A8A' }}
-            >
-              <span className="bg-blue-100 text-blue-600 rounded-full w-8 h-8 flex items-center justify-center text-lg font-bold mr-4">5</span>
-              How We Share Your Information
-            </h2>
-            <p 
-              className="text-lg mb-6 leading-relaxed"
-              style={{ color: '#6B7280' }}
-            >
-              We only share your information:
-            </p>
-            <div className="space-y-4 mb-6">
-              <div className="flex items-start">
-                <div className="w-3 h-3 bg-blue-400 rounded-full mt-2 mr-4 flex-shrink-0"></div>
-                <span className="text-lg" style={{ color: '#6B7280' }}>With trusted service providers who help operate our platform (e.g., hosting, payments) — under strict confidentiality agreements</span>
-              </div>
-              <div className="flex items-start">
-                <div className="w-3 h-3 bg-blue-400 rounded-full mt-2 mr-4 flex-shrink-0"></div>
-                <span className="text-lg" style={{ color: '#6B7280' }}>When required by law or to protect the safety of users</span>
-              </div>
-              <div className="flex items-start">
-                <div className="w-3 h-3 bg-blue-400 rounded-full mt-2 mr-4 flex-shrink-0"></div>
-                <span className="text-lg" style={{ color: '#6B7280' }}>With your explicit consent, if we introduce optional features that involve partners</span>
-              </div>
-            </div>
-            <div 
-              className="bg-green-50 border border-green-200 rounded-lg p-6"
-            >
-              <p className="text-lg font-medium" style={{ color: '#059669' }}>
-                We never sell your data, nor use it for third-party advertising.
-              </p>
-            </div>
-          </section>
-
-          {/* Section 6 */}
-          <section className="mb-12">
-            <h2 
-              className="text-3xl font-bold mb-6 flex items-center"
-              style={{ color: '#1E3A8A' }}
-            >
-              <span className="bg-blue-100 text-blue-600 rounded-full w-8 h-8 flex items-center justify-center text-lg font-bold mr-4">6</span>
-              How Long We Keep Your Data
-            </h2>
-            <p 
-              className="text-lg mb-6 leading-relaxed"
-              style={{ color: '#6B7280' }}
-            >
-              We keep your information only as long as it's needed to provide the service or meet legal requirements, then we delete it.
-            </p>
-            <p 
-              className="text-lg mb-6 leading-relaxed"
-              style={{ color: '#6B7280' }}
-            >
-              If you delete your account, we remove your personal data within 30 days, except where required to:
-            </p>
-            <div className="space-y-3 mb-6">
-              <div className="flex items-start">
-                <div className="w-3 h-3 bg-orange-400 rounded-full mt-2 mr-4 flex-shrink-0"></div>
-                <span className="text-lg" style={{ color: '#6B7280' }}>Retain limited records to comply with tax, fraud prevention, or other legal obligations</span>
-              </div>
-              <div className="flex items-start">
-                <div className="w-3 h-3 bg-orange-400 rounded-full mt-2 mr-4 flex-shrink-0"></div>
-                <span className="text-lg" style={{ color: '#6B7280' }}>Retain records of consent or disputes for up to 6 years, as allowed under UK law</span>
-              </div>
-            </div>
-            <p 
-              className="text-lg mb-4 leading-relaxed"
-              style={{ color: '#6B7280' }}
-            >
-              Inactive accounts may be closed after 2 years of inactivity.
-            </p>
-            <div 
-              className="bg-blue-50 border border-blue-200 rounded-lg p-6"
-            >
-              <p className="text-lg font-medium" style={{ color: '#2563EB' }}>
-                We don't keep your data "just in case."
-              </p>
-            </div>
-          </section>
-
-          {/* Section 7 */}
-          <section className="mb-12">
-            <h2 
-              className="text-3xl font-bold mb-6 flex items-center"
-              style={{ color: '#1E3A8A' }}
-            >
-              <span className="bg-blue-100 text-blue-600 rounded-full w-8 h-8 flex items-center justify-center text-lg font-bold mr-4">7</span>
-              Your Rights
-            </h2>
-            <p 
-              className="text-lg mb-6 leading-relaxed"
-              style={{ color: '#6B7280' }}
-            >
-              You're in control of your data. At any time you can:
-            </p>
-            <div className="grid md:grid-cols-2 gap-4 mb-6">
-              <div className="flex items-start">
-                <div className="text-green-500 mr-3 mt-1">✅</div>
-                <span className="text-lg" style={{ color: '#6B7280' }}>Request a copy of your data</span>
-              </div>
-              <div className="flex items-start">
-                <div className="text-green-500 mr-3 mt-1">✅</div>
-                <span className="text-lg" style={{ color: '#6B7280' }}>Ask us to correct or delete your data</span>
-              </div>
-              <div className="flex items-start">
-                <div className="text-green-500 mr-3 mt-1">✅</div>
-                <span className="text-lg" style={{ color: '#6B7280' }}>Withdraw consent where processing is based on consent</span>
-              </div>
-              <div className="flex items-start">
-                <div className="text-green-500 mr-3 mt-1">✅</div>
-                <span className="text-lg" style={{ color: '#6B7280' }}>Object to certain processing or request we limit it</span>
-              </div>
-            </div>
-            <div 
-              className="bg-gray-50 border-l-4 p-6 rounded-r-lg"
-              style={{ borderLeftColor: '#829340' }}
-            >
-              <p className="text-lg font-medium" style={{ color: '#1E3A8A' }}>
-                Just email us at: <a href="mailto:privacy@careerframe.co.uk" className="underline hover:no-underline" style={{ color: '#829340' }}>privacy@careerframe.co.uk</a>
-              </p>
-              <p className="text-base mt-2" style={{ color: '#6B7280' }}>
-                We may ask for proof of identity to protect your account and others.
-              </p>
-            </div>
-          </section>
-
-          {/* Section 8 */}
-          <section className="mb-12">
-            <h2 
-              className="text-3xl font-bold mb-6 flex items-center"
-              style={{ color: '#1E3A8A' }}
-            >
-              <span className="bg-blue-100 text-blue-600 rounded-full w-8 h-8 flex items-center justify-center text-lg font-bold mr-4">8</span>
-              No Children Allowed
-            </h2>
-            <div 
-              className="bg-yellow-50 border border-yellow-200 rounded-lg p-6"
-            >
-              <p className="text-lg font-medium" style={{ color: '#D97706' }}>
-                CareerFrame is for users 18 and over. We do not knowingly collect data from children.
-              </p>
-            </div>
-          </section>
-
-          {/* Section 9 */}
-          <section className="mb-12">
-            <h2 
-              className="text-3xl font-bold mb-6 flex items-center"
-              style={{ color: '#1E3A8A' }}
-            >
-              <span className="bg-blue-100 text-blue-600 rounded-full w-8 h-8 flex items-center justify-center text-lg font-bold mr-4">9</span>
-              Changes to This Policy
-            </h2>
-            <p 
-              className="text-lg leading-relaxed"
-              style={{ color: '#6B7280' }}
-            >
-              We'll update this policy if our practices change. We'll notify you of material changes before they take effect so you can review them.
-            </p>
-          </section>
-
-          {/* Section 10 */}
-          <section className="mb-16">
-            <h2 
-              className="text-3xl font-bold mb-6 flex items-center"
-              style={{ color: '#1E3A8A' }}
-            >
-              <span className="bg-blue-100 text-blue-600 rounded-full w-8 h-8 flex items-center justify-center text-lg font-bold mr-4">10</span>
-              Contact Us
-            </h2>
-            <p 
-              className="text-lg mb-6 leading-relaxed"
-              style={{ color: '#6B7280' }}
-            >
-              If you have any questions or concerns, please reach out to:
-            </p>
-            <div 
-              className="border-2 rounded-xl p-8 text-center"
+              className="border rounded-xl p-6 md:p-8 text-center"
               style={{ 
                 backgroundColor: 'rgba(130, 147, 64, 0.05)', 
-                borderColor: '#829340' 
+                borderColor: 'rgba(130, 147, 64, 0.2)' 
               }}
             >
-              <Mail className="w-12 h-12 mx-auto mb-4" style={{ color: '#829340' }} />
-              <h3 className="text-2xl font-bold mb-2" style={{ color: '#1E3A8A' }}>
-                Get in Touch
+              <Mail className="w-10 h-10 md:w-12 md:h-12 mx-auto mb-4" style={{ color: '#829340' }} />
+              <h3 className="text-lg md:text-xl font-bold mb-2" style={{ color: '#1E3A8A' }}>
+                Contact Information
               </h3>
+              <p className="text-sm md:text-base mb-3" style={{ color: '#6B7280' }}>
+                CareerFrame Ltd<br />
+                Battlefield Industrial Estate<br />
+                Shrewsbury, Shropshire, SY4 3DB
+              </p>
               <a 
-                href="mailto:privacy@careerframe.co.uk" 
-                className="text-2xl font-medium underline hover:no-underline transition-colors"
+                href="mailto:privacy@careerframe.co.uk"
+                className="text-sm md:text-base font-medium hover:underline transition-colors break-all"
                 style={{ color: '#829340' }}
               >
                 📧 privacy@careerframe.co.uk
               </a>
+            </div>
+          </section>
+
+          {/* Section 11 - Policy Governance */}
+          <section className="mb-8 md:mb-12">
+            <h2 
+              className="text-xl md:text-2xl lg:text-3xl font-bold mb-4 md:mb-6 flex items-start"
+              style={{ color: '#1E3A8A' }}
+            >
+              <span className="bg-blue-100 text-blue-600 rounded-full w-8 h-8 flex items-center justify-center text-base md:text-lg font-bold mr-3 md:mr-4 flex-shrink-0 mt-1">11</span>
+              <span>Policy Governance</span>
+            </h2>
+            <div 
+              className="text-base md:text-lg leading-relaxed space-y-4"
+              style={{ color: '#6B7280' }}
+            >
+              <p>We review this policy at least annually or after significant changes to our services, laws, or suppliers.</p>
+              
+              <div className="bg-gray-50 p-4 rounded-lg">
+                <p className="font-semibold mb-2" style={{ color: '#1E3A8A' }}>Roles & Responsibilities:</p>
+                <ul className="space-y-1 list-disc list-inside">
+                  <li><strong>Senior management:</strong> accountable for overall compliance</li>
+                  <li><strong>Privacy lead:</strong> coordinates data protection activities and vendor oversight</li>
+                  <li><strong>All staff/contractors:</strong> must follow this policy, complete training, and report incidents promptly</li>
+                </ul>
+              </div>
+              
+              <div className="bg-blue-50 p-4 rounded-lg text-center">
+                <p className="font-semibold" style={{ color: '#1E3A8A' }}>Last Updated: August 2025</p>
+                <p className="text-sm mt-2">This policy will be reviewed annually or when significant changes occur to our services or applicable laws.</p>
+              </div>
             </div>
           </section>
 

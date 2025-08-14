@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Link } from "wouter";
-import { ArrowLeft, Target, Users, Award, Shield, Heart, Zap, Scale, UserCheck, HandHeart } from "lucide-react";
+import { ArrowLeft, Target, Users, Award, Shield, Heart, Zap, Scale, UserCheck, HandHeart, Mail } from "lucide-react";
 import careerFrameLogo from "../assets/avatar1.png";
 import { Navbar } from "@/components/sections/navbar";
 import { Footer } from "@/components/sections/footer";
@@ -12,11 +12,11 @@ export default function About() {
       <Navbar />
 
       {/* CareerFrame Badge */}
-      <div className="absolute top-1/3 right-1/4 opacity-5 transform rotate-12 z-0">
+      <div className="absolute top-1/3 right-2 md:right-1/4 opacity-5 transform rotate-12 z-0 hidden sm:block">
         <img 
           src={careerFrameLogo} 
           alt="CareerFrame Badge" 
-          className="w-72 h-72 object-contain"
+          className="w-48 md:w-64 lg:w-72 h-48 md:h-64 lg:h-72 object-contain"
         />
       </div>
 
@@ -35,7 +35,7 @@ export default function About() {
           
           <div className="text-center mb-8">
             <h1 
-              className="text-5xl font-bold mb-4"
+              className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 px-4"
               style={{ 
                 color: '#1E3A8A',
                 fontFamily: 'Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif'
@@ -44,40 +44,44 @@ export default function About() {
               About CareerFrame
             </h1>
             <p 
-              className="text-xl max-w-3xl mx-auto"
+              className="text-base sm:text-lg lg:text-xl max-w-3xl mx-auto px-4"
               style={{ color: '#6B7280' }}
             >
-              Empowering professionals to discover and achieve their dream careers through AI-powered guidance, built on the foundation of strong values and authentic relationships.
+              Your Future, Made Clear. We're a modern career platform built to help people move into work they actually want.
             </p>
           </div>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-8 mb-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 mb-12 md:mb-16 px-4">
           <div 
-            className="border rounded-xl p-8"
+            className="border rounded-xl p-6 md:p-8"
             style={{ 
               backgroundColor: 'rgba(30, 58, 138, 0.05)', 
               borderColor: 'rgba(30, 58, 138, 0.2)' 
             }}
           >
-            <Target className="h-12 w-12 mb-4" style={{ color: '#829340' }} />
-            <h3 className="text-2xl font-semibold mb-4" style={{ color: '#1E3A8A' }}>Our Mission</h3>
-            <p className="text-lg" style={{ color: '#6B7280' }}>
-              To eliminate career confusion and help every professional find their perfect career path through personalized AI guidance and actionable insights, while upholding the highest standards of integrity and respect.
-            </p>
+            <Target className="h-10 w-10 md:h-12 md:w-12 mb-4" style={{ color: '#829340' }} />
+            <h3 className="text-xl md:text-2xl font-semibold mb-3 md:mb-4" style={{ color: '#1E3A8A' }}>What We Offer</h3>
+            <div className="text-base md:text-lg leading-relaxed space-y-2" style={{ color: '#6B7280' }}>
+              <p>• Career alignment that maps your strengths and interests to real roles</p>
+              <p>• Skill‑gap insights with a clear plan to close them</p>
+              <p>• Milestone tracking so you can see progress and stay motivated</p>
+              <p>• Application tools that turn your profile into tailored CVs and cover letters</p>
+              <p>• Industry connections through communities and curated learning partners</p>
+            </div>
           </div>
 
           <div 
-            className="border rounded-xl p-8"
+            className="border rounded-xl p-6 md:p-8"
             style={{ 
               backgroundColor: 'rgba(130, 147, 64, 0.05)', 
               borderColor: 'rgba(130, 147, 64, 0.2)' 
             }}
           >
-            <Users className="h-12 w-12 mb-4" style={{ color: '#1E3A8A' }} />
-            <h3 className="text-2xl font-semibold mb-4" style={{ color: '#1E3A8A' }}>Our Vision</h3>
-            <p className="text-lg" style={{ color: '#6B7280' }}>
-              A world where every professional feels confident, fulfilled, and aligned with their career path, supported by intelligent technology, authentic community, and unwavering commitment to their success.
+            <Users className="h-10 w-10 md:h-12 md:w-12 mb-4" style={{ color: '#1E3A8A' }} />
+            <h3 className="text-xl md:text-2xl font-semibold mb-3 md:mb-4" style={{ color: '#1E3A8A' }}>Our Promise</h3>
+            <p className="text-base md:text-lg leading-relaxed" style={{ color: '#6B7280' }}>
+              Helpful guidance, straight talk, and technology that serves people—not the other way around. We're building the most supportive place on the internet to change your career.
             </p>
           </div>
         </div>
@@ -99,17 +103,17 @@ export default function About() {
           >
             <div className="space-y-6">
               <p className="text-lg leading-relaxed" style={{ color: '#6B7280' }}>
-                CareerFrame was founded on the belief that everyone deserves to find work that truly fulfills them. We saw too many talented professionals stuck in careers that didn't align with their values, skills, or aspirations.
+                Our founder, Arron McWilliam, struggled with career transition after leaving the British Armed Forces. Navigating job boards, translating experience, and finding a path that fit felt harder than it should be.
               </p>
               <p className="text-lg leading-relaxed" style={{ color: '#6B7280' }}>
-                Our team of career experts, AI researchers, and industry professionals came together to create a platform that provides personalized, actionable career guidance at scale. We combine cutting-edge AI technology with proven career development methodologies, always guided by our core values.
+                CareerFrame exists to fix that—so no one has to do it alone. We combine an AI coach, practical milestones, and real‑world resources so you can align your skills to roles, close gaps fast, and apply with confidence.
               </p>
               <div 
                 className="bg-white rounded-lg p-6 border-l-4"
                 style={{ borderColor: '#829340' }}
               >
                 <p className="text-lg font-medium" style={{ color: '#1E3A8A' }}>
-                  Today, CareerFrame helps thousands of professionals discover their ideal career paths, develop the right skills, and make confident career transitions with courage, discipline, and unwavering support.
+                  Today, CareerFrame helps professionals move into work they actually want through personalized guidance and practical tools that make career transitions clearer and more achievable.
                 </p>
               </div>
             </div>
@@ -281,6 +285,35 @@ export default function About() {
                 </ul>
               </div>
             </div>
+          </div>
+        </div>
+
+        {/* Media & Partnerships */}
+        <div className="mb-16">
+          <h2 
+            className="text-3xl font-bold mb-8 text-center"
+            style={{ color: '#1E3A8A' }}
+          >
+            Media & Partnerships
+          </h2>
+          <div 
+            className="border rounded-xl p-8 max-w-3xl mx-auto text-center"
+            style={{ 
+              backgroundColor: 'rgba(130, 147, 64, 0.05)', 
+              borderColor: 'rgba(130, 147, 64, 0.2)' 
+            }}
+          >
+            <Mail className="w-12 h-12 mx-auto mb-4" style={{ color: '#829340' }} />
+            <p className="text-lg mb-4" style={{ color: '#6B7280' }}>
+              For press inquiries, partnership opportunities, or media collaborations, we'd love to hear from you.
+            </p>
+            <a 
+              href="mailto:partnerships@careerframe.co.uk"
+              className="text-xl font-medium hover:underline transition-colors inline-flex items-center"
+              style={{ color: '#829340' }}
+            >
+              📧 partnerships@careerframe.co.uk
+            </a>
           </div>
         </div>
 

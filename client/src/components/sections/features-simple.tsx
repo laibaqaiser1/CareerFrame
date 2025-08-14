@@ -1,7 +1,22 @@
-export function FeaturesSection() {
-  
+import { useState, useEffect } from 'react';
 
-  
+export function FeaturesSection() {
+  const [activeFeature, setActiveFeature] = useState(0);
+
+  useEffect(() => {
+    console.log('🔥 FEATURES COMPONENT LOADED - activeFeature:', activeFeature);
+  }, [activeFeature]);
+
+  const handleFeatureClick = (index: number) => {
+    console.log('🎯 FEATURE CLICKED:', index, 'Current active:', activeFeature);
+    setActiveFeature(index);
+  };
+
+  const handleFeatureHover = (index: number) => {
+    console.log('👆 FEATURE HOVERED:', index, 'Current active:', activeFeature);
+    setActiveFeature(index);
+  };
+
   return (
     <>
 
@@ -38,6 +53,19 @@ export function FeaturesSection() {
           >
             What You Get: A Complete Career <br className="hidden md:block" />Development System
           </h2>
+          
+          {/* Debug Display */}
+          <div style={{
+            backgroundColor: "#f0f0f0",
+            padding: "10px",
+            marginBottom: "20px",
+            borderRadius: "5px",
+            textAlign: "center",
+            fontSize: "14px",
+            color: "#333"
+          }}>
+            Active Feature: {activeFeature} | Click any feature below to test interaction
+          </div>
           
           <p 
             className="text-center mb-12 max-w-3xl mx-auto"
@@ -200,11 +228,18 @@ export function FeaturesSection() {
               ].map((feature, index) => (
                 <div 
                   key={index} 
-                  className="text-center"
+                  className="text-center cursor-pointer p-4 rounded-lg transition-all duration-300 hover:bg-gray-50"
                   style={{
-                    borderTop: index === 0 ? '4px solid #829340' : '4px solid #F5F5F5',
-                    paddingTop: "20px"
+                    position: "relative",
+                    border: activeFeature === index ? '2px solid #829340' : '2px solid transparent',
+                    borderTop: activeFeature === index ? '4px solid #829340' : '4px solid #F5F5F5'
                   }}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    handleFeatureClick(index);
+                  }}
+                  onMouseEnter={() => handleFeatureHover(index)}
                 >
                   
                   {/* Mobile: Individual Progress Bars - COMMENTED OUT FOR NOW
@@ -272,65 +307,70 @@ export function FeaturesSection() {
             backgroundColor: "rgba(20, 20, 20, 0.698)"
           }}
         >
+          {/* Text Content */}
           <div 
-            className="flex items-center justify-between w-full h-full relative"
             style={{
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "space-between",
-              width: "100%",
-              height: "100%",
+              position: "absolute",
+              top: "50%",
+              left: "64px",
+              transform: "translateY(-50%)",
+              maxWidth: "400px",
               color: "white",
-              zIndex: 10,
-              position: "relative"
+              zIndex: 10
             }}
           >
-            <div className="text-left flex-1">
-              <h3
-                style={{
-                  fontFamily: "Inter, sans-serif",
-                  fontWeight: 600,
-                  fontSize: "24px",
-                  lineHeight: "32px",
-                  color: "white",
-                  marginBottom: "12px",
-                }}
-              >
-                See CareerFrame in Action
-              </h3>
-              <p
-                style={{
-                  fontFamily: "Inter, sans-serif",
-                  fontWeight: 400,
-                  fontSize: "16px",
-                  lineHeight: "24px",
-                  color: "#D1D5DB",
-                  maxWidth: "400px",
-                  margin: "0"
-                }}
-              >
-                Take a 2-minute Signup tour and discover how we'll transform your career journey.
-              </p>
-            </div>
-            <div className="flex-shrink-0 ml-6">
-              <button
-                style={{
-                  backgroundColor: "#829340",
-                  borderColor: "#829340",
-                  fontFamily: "Inter, sans-serif",
-                  fontWeight: 600,
-                  fontSize: "16px",
-                  padding: "14px 32px",
-                  borderRadius: "24px",
-                  border: "none",
-                  boxShadow: "0 4px 12px rgba(130, 147, 64, 0.3)",
-                  color: "white"
-                }}
-                className="text-white hover:bg-opacity-90 transition-all duration-300 hover:shadow-lg"
-              >
-                Get started
-              </button>
-            </div>
+            <h3
+              style={{
+                fontFamily: "Inter, sans-serif",
+                fontWeight: 600,
+                fontSize: "24px",
+                lineHeight: "32px",
+                color: "white",
+                marginBottom: "12px",
+              }}
+            >
+              See CareerFrame in Action
+            </h3>
+            <p
+              style={{
+                fontFamily: "Inter, sans-serif",
+                fontWeight: 400,
+                fontSize: "16px",
+                lineHeight: "24px",
+                color: "#D1D5DB",
+                margin: "0"
+              }}
+            >
+              Take a 2-minute Signup tour and discover how we'll transform your career journey.
+            </p>
+          </div>
+          
+          {/* Truly Centered Button */}
+          <div style={{ 
+            position: "absolute",
+            top: "50%",
+            left: "50%",
+            transform: "translate(-50%, -50%)",
+            zIndex: 11
+          }}>
+            <button
+              style={{
+                backgroundColor: "#829340",
+                borderColor: "#829340",
+                fontFamily: "Inter, sans-serif",
+                fontWeight: 600,
+                fontSize: "16px",
+                padding: "14px 32px",
+                borderRadius: "24px",
+                border: "none",
+                boxShadow: "0 4px 12px rgba(130, 147, 64, 0.3)",
+                color: "white",
+                whiteSpace: "nowrap"
+              }}
+              className="text-white hover:bg-opacity-90 transition-all duration-300 hover:shadow-lg"
+            >
+              Get started
+            </button>
           </div>
         </div>
 

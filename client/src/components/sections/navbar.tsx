@@ -19,41 +19,47 @@ export function Navbar() {
 
           {/* Navigation Links */}
           <div className="hidden md:flex items-center space-x-8">
-            <Link href="/about">
-              <a className="text-gray-600 hover:text-gray-900 transition-colors font-medium">
-                About
-              </a>
+            <a 
+              href="#powerful-features"
+              className="text-gray-600 hover:text-gray-900 transition-colors font-medium"
+            >
+              Features
+            </a>
+            <Link href="/about" className="text-gray-600 hover:text-gray-900 transition-colors font-medium">
+              About
             </Link>
-            <Link href="/contact">
-              <a className="text-gray-600 hover:text-gray-900 transition-colors font-medium">
-                Contact
-              </a>
+            <Link href="/contact" className="text-gray-600 hover:text-gray-900 transition-colors font-medium">
+              Contact
             </Link>
-            <Link href="/">
-              <a 
-                className="px-4 py-2 rounded-lg font-medium transition-colors"
-                style={{ 
-                  backgroundColor: '#829340',
-                  color: 'white'
-                }}
-              >
-                Get Started
-              </a>
+            <Link 
+              href="/" 
+              className="px-4 py-2 rounded-lg font-medium transition-colors ml-2"
+              style={{ 
+                backgroundColor: '#829340',
+                color: 'white'
+              }}
+            >
+              Get Started
             </Link>
           </div>
 
           {/* Mobile menu button */}
-          <div className="md:hidden">
-            <Link href="/">
-              <a 
-                className="px-3 py-2 rounded-lg text-sm font-medium transition-colors"
-                style={{ 
-                  backgroundColor: '#829340',
-                  color: 'white'
-                }}
-              >
-                Home
-              </a>
+          <div className="md:hidden flex space-x-2">
+            <a 
+              href="#powerful-features"
+              className="px-3 py-2 rounded-lg text-sm font-medium text-gray-600"
+            >
+              Features
+            </a>
+            <Link 
+              href="/"
+              className="px-3 py-2 rounded-lg text-sm font-medium transition-colors"
+              style={{ 
+                backgroundColor: '#829340',
+                color: 'white'
+              }}
+            >
+              Home
             </Link>
           </div>
         </div>
