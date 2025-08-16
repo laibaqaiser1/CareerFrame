@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { useScrollAnimation } from "@/hooks/use-scroll-animation";
+
 import { WaitlistPopup } from "@/components/ui/waitlist-popup";
 import { useWaitlistPopup } from "@/hooks/use-waitlist-popup";
 import { Bot, TrendingUp, Route, Play, Pause } from "lucide-react";
@@ -31,12 +31,8 @@ const valueProps = [
 ];
 
 export function FeaturesSection() {
-  const { ref: sectionRef, isVisible: sectionVisible } = useScrollAnimation();
-  const { ref: videoSectionRef, isVisible: videoVisible } = useScrollAnimation();
-  const { ref: cardsRef, isVisible: cardsVisible } = useScrollAnimation();
-  
   // Debug logging
-  console.log("FeaturesSection - cardsVisible:", cardsVisible);
+  console.log("FeaturesSection - cardsVisible:", true);
   const { isOpen, openPopup, closePopup } = useWaitlistPopup();
   const [isPlaying, setIsPlaying] = useState(false);
   const [showVideo, setShowVideo] = useState(false);
@@ -98,15 +94,7 @@ export function FeaturesSection() {
           style={{ backgroundColor: "#ffffff" }}
         >
           {/* Header */}
-          <motion.div
-            ref={sectionRef}
-            initial={{ opacity: 0, y: 0 }}
-            animate={
-              sectionVisible ? { opacity: 1, y: 0 } : { opacity: 0, y: 0 }
-            }
-            transition={{ duration: 0.6 }}
-            className="text-center mb-12"
-          >
+          <div className="text-center mb-12">
             <h2
               style={{
                 fontFamily: "Inter, sans-serif",
@@ -137,18 +125,10 @@ export function FeaturesSection() {
               Everything you need to advance your career journey - personalized
               guidance, proven tools, and expert support.
             </p>
-          </motion.div>
+          </div>
 
           {/* Video Demo Section */}
-          <motion.div
-            ref={videoSectionRef}
-            initial={{ opacity: 0, y: 0 }}
-            animate={
-              videoVisible ? { opacity: 1, y: 0 } : { opacity: 0, y: 0 }
-            }
-            transition={{ duration: 0.7, delay: 0 }}
-            className="mb-16"
-          >
+          <div className="mb-16">
             <div className="relative rounded-2xl overflow-hidden shadow-2xl bg-gray-900 w-full aspect-video">
               {showVideo ? (
                 <video
@@ -211,28 +191,15 @@ export function FeaturesSection() {
                 </div>
               )}
             </div>
-          </motion.div>
+          </div>
 
 
 
           {/* Feature Cards */}
-          <motion.div
-            ref={cardsRef}
-            initial={{ opacity: 0, y: 0 }}
-            animate={
-              cardsVisible ? { opacity: 1, y: 0 } : { opacity: 0, y: 0 }
-            }
-            transition={{ duration: 0.7, delay: 0 }}
-            className="grid md:grid-cols-3 gap-8 md:gap-0 mb-16"
-          >
+          <div className="grid md:grid-cols-3 gap-8 md:gap-0 mb-16">
             {valueProps.map((prop, index) => (
-              <motion.div
+              <div
                 key={index}
-                initial={{ opacity: 0, y: 0 }}
-                animate={
-                  cardsVisible ? { opacity: 1, y: 0 } : { opacity: 0, y: 0 }
-                }
-                transition={{ duration: 0.6, delay: 0 + index * 0.1 }}
                 className="text-center cursor-pointer p-4 rounded-lg transition-all duration-300 hover:bg-gray-50 active:bg-gray-100"
                 style={{
                   borderTop: activeFeature === index ? '4px solid #829340' : '4px solid #F5F5F5',
@@ -268,23 +235,18 @@ export function FeaturesSection() {
                 >
                   {prop.description}
                 </p>
-              </motion.div>
+              </div>
             ))}
-          </motion.div>
+          </div>
 
           {/* CTA Section - Responsive container with background image */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={
-              cardsVisible ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }
-            }
-            transition={{ duration: 0.7, delay: 0.3 }}
+          <div
             className="w-full max-w-6xl mx-auto relative overflow-hidden grid grid-cols-1 md:grid-cols-[auto_1fr] gap-6 md:gap-0"
             style={{
               borderRadius: "16px",
               padding: "32px",
               boxSizing: "border-box",
-              minHeight: window.innerWidth >= 768 ? "212px" : "120px"
+              minHeight: "212px"
             }}
           >
             {/* Background Image */}
@@ -384,7 +346,7 @@ export function FeaturesSection() {
                 Get started
               </div>
             </div>
-          </motion.div>
+          </div>
 
 
         </div>

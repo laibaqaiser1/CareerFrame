@@ -1,5 +1,5 @@
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
-import { useScrollAnimation } from "@/hooks/use-scroll-animation";
+
 import { Plus, Minus, Lock } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -34,7 +34,6 @@ const faqs = [
 ];
 
 export function FAQSection() {
-  const { ref, isVisible } = useScrollAnimation();
   const [email, setEmail] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
   const { toast } = useToast();
@@ -96,12 +95,6 @@ export function FAQSection() {
   return (
     <section className="py-8 sm:py-12 md:py-16 lg:py-20 bg-white">
       <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-8">
-        <div 
-          ref={ref}
-          className={`transition-all duration-700 ${
-            isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-          }`}
-        >
           {/* Header */}
           <div className="text-center mb-12">
             <h2 
@@ -203,8 +196,6 @@ export function FAQSection() {
               <span className="text-center">90-day satisfaction guarantee</span>
             </div>
           </div>
-
-        </div>
       </div>
     </section>
   );

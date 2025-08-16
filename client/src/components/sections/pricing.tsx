@@ -2,7 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible";
-import { useScrollAnimation } from "@/hooks/use-scroll-animation";
+
 import { WaitlistPopup } from "@/components/ui/waitlist-popup";
 import { useWaitlistPopup } from "@/hooks/use-waitlist-popup";
 import { SoundButton } from "@/components/SoundButton";
@@ -73,7 +73,6 @@ const plans = [
 ];
 
 export function PricingSection() {
-  const { ref, isVisible } = useScrollAnimation();
   const [isComparisonOpen, setIsComparisonOpen] = useState(false);
   const { isOpen, openPopup, closePopup } = useWaitlistPopup();
 
@@ -82,12 +81,7 @@ export function PricingSection() {
       <WaitlistPopup isOpen={isOpen} onClose={closePopup} />
     <section id="pricing" className="py-12" style={{background: "linear-gradient(129.61deg, #FACB15 0%, #EF4543 100%)"}}>
       <div className="max-w-full mx-auto px-6 sm:px-8 lg:px-12 xl:px-20 2xl:px-28">
-        <div 
-          ref={ref}
-          className={`text-center mb-16 transition-all duration-700 ${
-            isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-          }`}
-        >
+        <div className="text-center mb-16">
           <h2 
             className="mb-6 drop-shadow-lg"
             style={{
@@ -112,9 +106,7 @@ export function PricingSection() {
           {plans.map((plan, index) => (
             <Card 
               key={index}
-              className={`relative transition-all duration-700 delay-${index * 100} ${
-                isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-              } border-2 border-gray-200 rounded-xl flex flex-col`}
+              className="relative border-2 border-gray-200 rounded-xl flex flex-col"
               style={{backgroundColor: 'white', width: '470px'}}
             >
               <CardContent className="p-6 flex-1 flex flex-col">
