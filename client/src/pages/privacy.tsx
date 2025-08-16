@@ -40,281 +40,141 @@ export default function Privacy() {
                 fontFamily: 'Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif'
               }}
             >
-              Privacy Policy
+              Welcome to CareerFrame's Privacy Policy!
             </h1>
             <p 
               className="text-base md:text-lg px-4"
               style={{ color: '#6B7280' }}
             >
-              Your privacy matters to us - kept clear and friendly
+              Your privacy matters to us. This page explains what information we collect, why we collect it, and how we keep it safe. We've kept it clear and friendly so you can understand your rights and our responsibilities.
             </p>
           </div>
         </div>
 
         <div className="prose prose-lg max-w-none px-4">
-          {/* Introduction */}
+          {/* Section 1: Who We Are */}
+          <section className="mb-8">
+            <h2 
+              className="text-xl md:text-2xl font-semibold mb-4"
+              style={{ color: '#1E3A8A' }}
+            >
+              1) Who We Are
+            </h2>
+            <p className="text-base md:text-lg leading-relaxed" style={{ color: '#6B7280' }}>
+              We are CareerFrame Ltd, a UK-based career development platform helping individuals find the right career path. We're based at Battlefield Industrial Estate, Shrewsbury, Shropshire, SY4 3DB. Company Number: 16331497 | ICO Registration: C1742472.
+            </p>
+          </section>
+
+          {/* Section 2: What Information We Collect */}
+          <section className="mb-8">
+            <h2 
+              className="text-xl md:text-2xl font-semibold mb-4"
+              style={{ color: '#1E3A8A' }}
+            >
+              2) What Information We Collect
+            </h2>
+            <p className="text-base md:text-lg leading-relaxed" style={{ color: '#6B7280' }}>
+              We collect information that helps us provide our services, such as your name, email, work history, and career preferences. We also collect data about how you use our platform so we can improve it.
+            </p>
+          </section>
+
+          {/* Section 3: How We Use Your Information */}
+          <section className="mb-8">
+            <h2 
+              className="text-xl md:text-2xl font-semibold mb-4"
+              style={{ color: '#1E3A8A' }}
+            >
+              3) How We Use Your Information
+            </h2>
+            <p className="text-base md:text-lg leading-relaxed" style={{ color: '#6B7280' }}>
+              We use your information to deliver the services you sign up for, such as career alignment, skill gap analysis, and milestone tracking. We may also use it to send you updates, respond to your questions, and keep our platform secure.
+            </p>
+          </section>
+
+          {/* Section 4: Your Privacy Choices & Rights */}
+          <section className="mb-8">
+            <h2 
+              className="text-xl md:text-2xl font-semibold mb-4"
+              style={{ color: '#1E3A8A' }}
+            >
+              4) Your Privacy Choices & Rights
+            </h2>
+            <p className="text-base md:text-lg leading-relaxed" style={{ color: '#6B7280' }}>
+              You have the right to see, update, or delete your information, and to object to certain uses. If you ever want to exercise your rights, just email us at <a href="mailto:privacy@careerframe.co.uk" className="underline" style={{ color: '#829340' }}>privacy@careerframe.co.uk</a>.
+            </p>
+          </section>
+
+          {/* Section 5: How We Keep Your Data Safe */}
+          <section className="mb-8">
+            <h2 
+              className="text-xl md:text-2xl font-semibold mb-4"
+              style={{ color: '#1E3A8A' }}
+            >
+              5) How We Keep Your Data Safe
+            </h2>
+            <p className="text-base md:text-lg leading-relaxed" style={{ color: '#6B7280' }}>
+              We use encryption, access controls, and regular security checks to keep your data safe. Only trained staff have access to personal information, and only when necessary.
+            </p>
+          </section>
+
+          {/* Section 6: How Long We Keep Your Data */}
+          <section className="mb-8">
+            <h2 
+              className="text-xl md:text-2xl font-semibold mb-4"
+              style={{ color: '#1E3A8A' }}
+            >
+              6) How Long We Keep Your Data
+            </h2>
+            <p className="text-base md:text-lg leading-relaxed" style={{ color: '#6B7280' }}>
+              We keep your information only as long as needed to provide our services and comply with the law. When we no longer need it, we securely delete or anonymise it.
+            </p>
+          </section>
+
+          {/* Section 7: Questions or Concerns? */}
+          <section className="mb-8">
+            <h2 
+              className="text-xl md:text-2xl font-semibold mb-4"
+              style={{ color: '#1E3A8A' }}
+            >
+              7) Questions or Concerns?
+            </h2>
+            <p className="text-base md:text-lg leading-relaxed" style={{ color: '#6B7280' }}>
+              We're here to help. Email us at <a href="mailto:privacy@careerframe.co.uk" className="underline" style={{ color: '#829340' }}>privacy@careerframe.co.uk</a> or write to us at our registered address. You can also contact the UK Information Commissioner's Office (ICO) if you're unhappy with how we handle your data.
+            </p>
+          </section>
+
+          {/* Closing Message */}
           <div 
-            className="border rounded-xl p-6 md:p-8 mb-8 md:mb-12 shadow-sm"
+            className="border rounded-xl p-6 md:p-8 mt-8 md:mt-12 shadow-sm"
             style={{ 
               backgroundColor: 'rgba(130, 147, 64, 0.05)', 
               borderColor: 'rgba(130, 147, 64, 0.2)' 
             }}
           >
+            <div className="flex items-center mb-4">
+              <Mail className="h-6 w-6 mr-3" style={{ color: '#829340' }} />
+              <h3 
+                className="text-lg md:text-xl font-semibold"
+                style={{ color: '#1E3A8A' }}
+              >
+                Thank You for Trusting CareerFrame
+              </h3>
+            </div>
             <p 
               className="text-base md:text-lg leading-relaxed mb-4"
               style={{ color: '#6B7280' }}
             >
-              We serve users aged 18+ only.
+              Thanks for trusting CareerFrame. We'll always do our best to keep your information safe and use it responsibly.
             </p>
             <p 
-              className="text-base md:text-lg leading-relaxed mb-4"
+              className="text-base md:text-lg"
               style={{ color: '#6B7280' }}
             >
-              <strong>Email Privacy</strong>
-            </p>
-            <p 
-              className="text-base md:text-lg leading-relaxed mb-0"
-              style={{ color: '#6B7280' }}
-            >
-              <strong>Know your rights</strong>
+              Questions? Contact us: <a href="mailto:privacy@careerframe.co.uk" className="underline font-medium" style={{ color: '#829340' }}>privacy@careerframe.co.uk</a>
             </p>
           </div>
 
-          {/* Section 1 - Who We Are */}
-          <section className="mb-8 md:mb-12">
-            <h2 
-              className="text-xl md:text-2xl lg:text-3xl font-bold mb-4 md:mb-6 flex items-start"
-              style={{ color: '#1E3A8A' }}
-            >
-              <span className="bg-blue-100 text-blue-600 rounded-full w-8 h-8 flex items-center justify-center text-base md:text-lg font-bold mr-3 md:mr-4 flex-shrink-0 mt-1">1</span>
-              <span>Who we are</span>
-            </h2>
-            <div 
-              className="text-base md:text-lg mb-4 leading-relaxed space-y-4"
-              style={{ color: '#6B7280' }}
-            >
-              <p>
-                CareerFrame Ltd ("CareerFrame", "we", "our", "us") provides an AI-enabled career development platform that helps individuals align to roles, identify skill gaps, and take guided steps toward employment. We act as a data controller for personal data of users who sign up to our platform and as a data processor where we process personal data strictly on behalf of business customers (if/when applicable).
-              </p>
-              <p>
-                <strong>Controller:</strong> CareerFrame Ltd, Battlefield Industrial Estate, Shrewsbury, Shropshire, SY4 3DB, Company Number 16331497.<br/>
-                <strong>ICO Registration:</strong> C1742472.<br/>
-                <strong>Privacy contact:</strong> <a href="mailto:privacy@careerframe.co.uk" style={{ color: '#829340' }}>privacy@careerframe.co.uk</a>
-              </p>
-              <p>
-                This policy explains our data protection principles and security practices. For specific details of the personal data we collect and why, see our Privacy Policy.
-              </p>
-            </div>
-          </section>
 
-          {/* Section 2 - Scope */}
-          <section className="mb-8 md:mb-12">
-            <h2 
-              className="text-xl md:text-2xl lg:text-3xl font-bold mb-4 md:mb-6 flex items-start"
-              style={{ color: '#1E3A8A' }}
-            >
-              <span className="bg-blue-100 text-blue-600 rounded-full w-8 h-8 flex items-center justify-center text-base md:text-lg font-bold mr-3 md:mr-4 flex-shrink-0 mt-1">2</span>
-              <span>Scope</span>
-            </h2>
-            <p 
-              className="text-base md:text-lg leading-relaxed"
-              style={{ color: '#6B7280' }}
-            >
-              This policy applies to all personal data processed by CareerFrame in connection with our services, websites, apps, support channels, analytics, and integrations (e.g., payment providers, communications vendors, course partners). It covers employees, contractors, and suppliers who handle personal data on our behalf.
-            </p>
-          </section>
-
-          {/* Section 3 - Lawful bases & purposes */}
-          <section className="mb-8 md:mb-12">
-            <h2 
-              className="text-xl md:text-2xl lg:text-3xl font-bold mb-4 md:mb-6 flex items-start"
-              style={{ color: '#1E3A8A' }}
-            >
-              <span className="bg-blue-100 text-blue-600 rounded-full w-8 h-8 flex items-center justify-center text-base md:text-lg font-bold mr-3 md:mr-4 flex-shrink-0 mt-1">3</span>
-              <span>Lawful bases & purposes (summary)</span>
-            </h2>
-            <div 
-              className="text-base md:text-lg leading-relaxed space-y-4"
-              style={{ color: '#6B7280' }}
-            >
-              <p>We process personal data under the UK GDPR on the following lawful bases:</p>
-              <ul className="space-y-2 ml-4">
-                <li><strong>Contract:</strong> to create/manage accounts, deliver platform functionality (AI coach, milestone tracking, skill-gap analysis, CV/cover letters), and handle payments.</li>
-                <li><strong>Legitimate interests:</strong> to secure our services, prevent fraud/abuse, improve features, and provide limited service communications. We conduct balancing tests where appropriate.</li>
-                <li><strong>Consent:</strong> for certain marketing communications, optional analytics/cookies, and where required by law.</li>
-                <li><strong>Legal obligation:</strong> to meet accounting, tax, and regulatory duties.</li>
-              </ul>
-            </div>
-          </section>
-
-          {/* Section 4 - Data minimisation & retention */}
-          <section className="mb-8 md:mb-12">
-            <h2 
-              className="text-xl md:text-2xl lg:text-3xl font-bold mb-4 md:mb-6 flex items-start"
-              style={{ color: '#1E3A8A' }}
-            >
-              <span className="bg-blue-100 text-blue-600 rounded-full w-8 h-8 flex items-center justify-center text-base md:text-lg font-bold mr-3 md:mr-4 flex-shrink-0 mt-1">4</span>
-              <span>Data minimisation & retention</span>
-            </h2>
-            <div 
-              className="text-base md:text-lg leading-relaxed space-y-3"
-              style={{ color: '#6B7280' }}
-            >
-              <p><strong>Account data:</strong> retained while your account is active; deleted or anonymised within 90 days of deletion request, subject to legal holds.</p>
-              <p><strong>Payment records:</strong> kept for up to 7 years to comply with tax and accounting laws.</p>
-              <p><strong>Support tickets:</strong> up to 24 months for audit and training.</p>
-              <p><strong>Backups/logs:</strong> rotate on fixed schedules and are deleted per our retention calendar.</p>
-            </div>
-          </section>
-
-          {/* Section 5 - Security measures */}
-          <section className="mb-8 md:mb-12">
-            <h2 
-              className="text-xl md:text-2xl lg:text-3xl font-bold mb-4 md:mb-6 flex items-start"
-              style={{ color: '#1E3A8A' }}
-            >
-              <span className="bg-blue-100 text-blue-600 rounded-full w-8 h-8 flex items-center justify-center text-base md:text-lg font-bold mr-3 md:mr-4 flex-shrink-0 mt-1">5</span>
-              <span>Security measures</span>
-            </h2>
-            <div 
-              className="text-base md:text-lg leading-relaxed space-y-2"
-              style={{ color: '#6B7280' }}
-            >
-              <ul className="space-y-2 ml-4">
-                <li>Encryption in transit (TLS) and at rest for primary data stores.</li>
-                <li>Role-based access controls (RBAC), least-privilege IAM, and MFA for staff.</li>
-                <li>Segregated environments for development, staging, and production.</li>
-                <li>Regular patching, vulnerability scanning, and change control.</li>
-                <li>Audit logging and monitoring for anomalous access.</li>
-                <li>Vendor due diligence and contractual data protection terms with processors.</li>
-                <li>Staff training on security, privacy, and phishing awareness.</li>
-              </ul>
-            </div>
-          </section>
-
-          {/* Section 6 - International data transfers */}
-          <section className="mb-8 md:mb-12">
-            <h2 
-              className="text-xl md:text-2xl lg:text-3xl font-bold mb-4 md:mb-6 flex items-start"
-              style={{ color: '#1E3A8A' }}
-            >
-              <span className="bg-blue-100 text-blue-600 rounded-full w-8 h-8 flex items-center justify-center text-base md:text-lg font-bold mr-3 md:mr-4 flex-shrink-0 mt-1">6</span>
-              <span>International data transfers</span>
-            </h2>
-            <p 
-              className="text-base md:text-lg leading-relaxed"
-              style={{ color: '#6B7280' }}
-            >
-              Where personal data is transferred outside the UK (e.g., to sub-processors), we use appropriate safeguards such as the UK Addendum to the EU Standard Contractual Clauses or other legally recognised mechanisms. We maintain a list of key sub-processors in our Privacy Policy and update it when suppliers change.
-            </p>
-          </section>
-
-          {/* Section 7 - AI processing & automated decisions */}
-          <section className="mb-8 md:mb-12">
-            <h2 
-              className="text-xl md:text-2xl lg:text-3xl font-bold mb-4 md:mb-6 flex items-start"
-              style={{ color: '#1E3A8A' }}
-            >
-              <span className="bg-blue-100 text-blue-600 rounded-full w-8 h-8 flex items-center justify-center text-base md:text-lg font-bold mr-3 md:mr-4 flex-shrink-0 mt-1">7</span>
-              <span>AI processing & automated decisions</span>
-            </h2>
-            <p 
-              className="text-base md:text-lg leading-relaxed"
-              style={{ color: '#6B7280' }}
-            >
-              Our AI features assist with career alignment, skill gap insights, milestone suggestions, and drafting CV/cover letters. Outputs are recommendations only and do not make legally or similarly significant automated decisions about you. You remain in control of your choices and can request human review via <a href="mailto:support@careerframe.co.uk" style={{ color: '#829340' }}>support@careerframe.co.uk</a>.
-            </p>
-          </section>
-
-          {/* Section 8 - Your rights */}
-          <section className="mb-8 md:mb-12">
-            <h2 
-              className="text-xl md:text-2xl lg:text-3xl font-bold mb-4 md:mb-6 flex items-start"
-              style={{ color: '#1E3A8A' }}
-            >
-              <span className="bg-blue-100 text-blue-600 rounded-full w-8 h-8 flex items-center justify-center text-base md:text-lg font-bold mr-3 md:mr-4 flex-shrink-0 mt-1">8</span>
-              <span>Your rights</span>
-            </h2>
-            <div 
-              className="text-base md:text-lg leading-relaxed space-y-4"
-              style={{ color: '#6B7280' }}
-            >
-              <p>You have rights under UK GDPR, including: access; rectification; erasure; restriction; portability; and objection to certain processing (including direct marketing). You can withdraw consent at any time where processing is based on consent.</p>
-              <p><strong>How to exercise:</strong> email <a href="mailto:privacy@careerframe.co.uk" style={{ color: '#829340' }}>privacy@careerframe.co.uk</a> from your registered address. We may need to verify your identity.</p>
-              <p><strong>Complaints:</strong> you can complain to the UK Information Commissioner's Office (ICO). See ico.org.uk for details.</p>
-            </div>
-          </section>
-
-          {/* Section 9 - Data breaches */}
-          <section className="mb-8 md:mb-12">
-            <h2 
-              className="text-xl md:text-2xl lg:text-3xl font-bold mb-4 md:mb-6 flex items-start"
-              style={{ color: '#1E3A8A' }}
-            >
-              <span className="bg-blue-100 text-blue-600 rounded-full w-8 h-8 flex items-center justify-center text-base md:text-lg font-bold mr-3 md:mr-4 flex-shrink-0 mt-1">9</span>
-              <span>Data breaches</span>
-            </h2>
-            <p 
-              className="text-base md:text-lg leading-relaxed"
-              style={{ color: '#6B7280' }}
-            >
-              We maintain an incident response plan. Where required by law, we will notify the ICO within 72 hours of becoming aware of a notifiable breach and will inform affected individuals without undue delay.
-            </p>
-          </section>
-
-          {/* Section 10 - Roles & responsibilities */}
-          <section className="mb-8 md:mb-12">
-            <h2 
-              className="text-xl md:text-2xl lg:text-3xl font-bold mb-4 md:mb-6 flex items-start"
-              style={{ color: '#1E3A8A' }}
-            >
-              <span className="bg-blue-100 text-blue-600 rounded-full w-8 h-8 flex items-center justify-center text-base md:text-lg font-bold mr-3 md:mr-4 flex-shrink-0 mt-1">10</span>
-              <span>Roles & responsibilities</span>
-            </h2>
-            <div 
-              className="text-base md:text-lg leading-relaxed space-y-3"
-              style={{ color: '#6B7280' }}
-            >
-              <p><strong>Senior management:</strong> accountable for overall compliance.</p>
-              <p><strong>Privacy lead:</strong> coordinates data protection activities and vendor oversight.</p>
-              <p><strong>All staff/contractors:</strong> must follow this policy, complete training, and report incidents promptly.</p>
-            </div>
-          </section>
-
-          {/* Section 11 - Policy governance */}
-          <section className="mb-8 md:mb-12">
-            <h2 
-              className="text-xl md:text-2xl lg:text-3xl font-bold mb-4 md:mb-6 flex items-start"
-              style={{ color: '#1E3A8A' }}
-            >
-              <span className="bg-blue-100 text-blue-600 rounded-full w-8 h-8 flex items-center justify-center text-base md:text-lg font-bold mr-3 md:mr-4 flex-shrink-0 mt-1">11</span>
-              <span>Policy governance</span>
-            </h2>
-            <p 
-              className="text-base md:text-lg leading-relaxed"
-              style={{ color: '#6B7280' }}
-            >
-              We review this policy at least annually or after significant changes to our services, laws, or suppliers.
-            </p>
-          </section>
-
-          {/* COMMENTED OUT - Previous Privacy Policy Sections Available for Reference */}
-          {/*
-          
-          PREVIOUS PRIVACY POLICY SECTIONS (COMMENTED OUT FOR SIMPLICITY)
-          These sections contained user-friendly explanations and are maintained here for reference.
-          They can be uncommented if needed for alternative presentation.
-
-          - What Information We Collect
-          - How We Use Your Information  
-          - Your Privacy Choices & Rights
-          - How We Keep Your Data Safe
-          - How Long We Keep Your Data
-          - Questions or Concerns?
-          
-          Contact privacy@careerframe.co.uk for access to alternative privacy policy presentations.
-          
-          */}
 
         </div>
       </div>

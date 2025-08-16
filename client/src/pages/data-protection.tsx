@@ -17,9 +17,9 @@ export default function DataProtection() {
               Back to Home
             </Button>
           </Link>
-          <h1 className="text-4xl font-bold text-navy mb-4">User Data Deletion & Data Protection Policy</h1>
+          <h1 className="text-4xl font-bold text-navy mb-4">Data Protection Policy</h1>
           <p className="text-lg text-soft-grey">
-            Your data protection rights and how to request deletion of your personal data
+            We serve users aged 18+ only. Email Privacy - Know your rights
           </p>
         </div>
 
@@ -56,136 +56,124 @@ export default function DataProtection() {
         </div>
 
         <div className="prose prose-lg max-w-none">
-          <h2 className="text-2xl font-bold text-navy mb-4">Introduction</h2>
-          <p className="text-soft-grey mb-6">
-            Careerframe Ltd respects your privacy and is committed to protecting your personal data. This page explains your data protection rights, including how you can request the deletion of your personal data held by Careerframe Ltd, in line with the UK General Data Protection Regulation (UK GDPR).
-          </p>
-
-          <h2 className="text-2xl font-bold text-navy mb-4">Data Protection Commitment</h2>
-          <p className="text-soft-grey mb-4">
-            We take your privacy seriously and adhere to data protection principles, ensuring your data is:
-          </p>
-          <ul className="list-disc list-inside text-soft-grey mb-6 space-y-2">
-            <li>Processed lawfully, fairly, and transparently</li>
-            <li>Collected for specified, explicit, and legitimate purposes</li>
-            <li>Relevant, limited, and kept up to date</li>
-            <li>Stored securely and retained only as long as necessary</li>
-            <li>Processed in a manner that ensures appropriate security and confidentiality</li>
-          </ul>
-
-          <p className="text-soft-grey mb-4">
-            You have the following rights under data protection law:
-          </p>
-          <div className="bg-fresh-green/10 border border-fresh-green/20 rounded-lg p-6 mb-8">
-            <div className="grid md:grid-cols-2 gap-4">
-              <div className="flex items-start space-x-3">
-                <Database className="h-5 w-5 text-fresh-green mt-0.5" />
-                <div>
-                  <h4 className="font-medium">Right to access your personal data</h4>
-                </div>
-              </div>
-              <div className="flex items-start space-x-3">
-                <FileText className="h-5 w-5 text-fresh-green mt-0.5" />
-                <div>
-                  <h4 className="font-medium">Right to rectify inaccurate or incomplete data</h4>
-                </div>
-              </div>
-              <div className="flex items-start space-x-3">
-                <Users className="h-5 w-5 text-fresh-green mt-0.5" />
-                <div>
-                  <h4 className="font-medium">Right to request erasure of your personal data ("right to be forgotten")</h4>
-                </div>
-              </div>
-              <div className="flex items-start space-x-3">
-                <Lock className="h-5 w-5 text-fresh-green mt-0.5" />
-                <div>
-                  <h4 className="font-medium">Right to restrict processing</h4>
-                </div>
-              </div>
-              <div className="flex items-start space-x-3">
-                <Database className="h-5 w-5 text-fresh-green mt-0.5" />
-                <div>
-                  <h4 className="font-medium">Right to data portability</h4>
-                </div>
-              </div>
-              <div className="flex items-start space-x-3">
-                <Eye className="h-5 w-5 text-fresh-green mt-0.5" />
-                <div>
-                  <h4 className="font-medium">Right to object to processing</h4>
-                </div>
-              </div>
-              <div className="flex items-start space-x-3">
-                <Shield className="h-5 w-5 text-fresh-green mt-0.5" />
-                <div>
-                  <h4 className="font-medium">Right to withdraw consent at any time (where consent was the basis for processing)</h4>
-                </div>
+          {/* Section 1: Who we are */}
+          <section className="mb-8">
+            <h2 className="text-2xl font-bold text-navy mb-4">1) Who we are</h2>
+            <p className="text-soft-grey mb-4">
+              CareerFrame Ltd ("CareerFrame", "we", "our", "us") provides an AI-enabled career development platform that helps individuals align to roles, identify skill gaps, and take guided steps toward employment. We act as a data controller for personal data of users who sign up to our platform and as a data processor where we process personal data strictly on behalf of business customers (if/when applicable).
+            </p>
+            <div className="bg-gray-50 rounded-lg p-6 mb-6">
+              <div className="space-y-2 text-soft-grey">
+                <p><strong>Controller:</strong> CareerFrame Ltd, Battlefield Industrial Estate, Shrewsbury, Shropshire, SY4 3DB, Company Number 16331497.</p>
+                <p><strong>ICO Registration:</strong> C1742472.</p>
+                <p><strong>Privacy contact:</strong> <a href="mailto:privacy@careerframe.co.uk" className="text-fresh-green hover:underline">privacy@careerframe.co.uk</a></p>
               </div>
             </div>
-          </div>
-
-          <h2 className="text-2xl font-bold text-navy mb-4">Your Right to Erasure</h2>
-          <p className="text-soft-grey mb-4">
-            You have the right to request that we delete your personal data where:
-          </p>
-          <ul className="list-disc list-inside text-soft-grey mb-4 space-y-2">
-            <li>The data is no longer necessary for the purposes for which it was collected</li>
-            <li>You withdraw your consent (where applicable)</li>
-            <li>You object to processing and there are no overriding legitimate grounds</li>
-            <li>The data was processed unlawfully</li>
-            <li>Deletion is required to comply with a legal obligation</li>
-          </ul>
-          <p className="text-soft-grey mb-8">
-            We may not always be able to comply fully if we are required to retain certain data for legal, regulatory, or legitimate business purposes (e.g., tax records or legal claims).
-          </p>
-
-          <h2 className="text-2xl font-bold text-navy mb-4">How to Request Data Deletion</h2>
-          <p className="text-soft-grey mb-4">
-            You can request the deletion of your personal data at any time by contacting our Data Privacy Manager:
-          </p>
-          <div className="bg-gray-50 rounded-lg p-6 mb-6">
-            <h4 className="font-semibold text-navy mb-3">Contact Information</h4>
-            <ul className="list-none text-soft-grey space-y-2">
-              <li><strong>Data Privacy Manager:</strong> Arron McWilliam</li>
-              <li><strong>Email:</strong> Arron@careerframe.co.uk</li>
-              <li><strong>Postal address:</strong> Careerframe Ltd, Registered Office, Shrewsbury, UK</li>
-              <li><strong>Subject line:</strong> Data Deletion Request</li>
-            </ul>
-          </div>
-          <h4 className="font-semibold text-navy mb-3">Information to include in your request:</h4>
-          <ul className="list-disc list-inside text-soft-grey mb-6 space-y-2">
-            <li>Full name</li>
-            <li>Email address associated with your account</li>
-            <li>Description of the data you wish to have deleted</li>
-          </ul>
-          <p className="text-soft-grey mb-8">
-            We may ask you to verify your identity to ensure your data remains secure.
-          </p>
-
-          <h2 className="text-2xl font-bold text-navy mb-4">How We Process Your Request</h2>
-          <p className="text-soft-grey mb-4">
-            We aim to respond to all legitimate requests within one month. If your request is complex or if you have made multiple requests, it may take longer. We will keep you informed.
-          </p>
-          <p className="text-soft-grey mb-8">
-            Where possible, your data will be deleted from our active systems and securely removed from backups at the next available scheduled cycle.
-          </p>
-
-          <h2 className="text-2xl font-bold text-navy mb-4">Consequences of Data Deletion</h2>
-          <div className="bg-yellow-50 border border-yellow-200 rounded-lg p-6 mb-8">
             <p className="text-soft-grey">
-              <strong>Please note:</strong> Deletion of your data will result in the closure of your account and the loss of any accumulated XP, rewards, or progress associated with it. This action cannot be reversed once completed.
+              This policy explains our data protection principles and security practices. For specific details of the personal data we collect and why, see our Privacy Policy.
             </p>
-          </div>
+          </section>
 
-          <h2 className="text-2xl font-bold text-navy mb-4">Contact</h2>
-          <p className="text-soft-grey mb-4">
-            If you have any questions about this policy, your rights, or how we handle your data, please contact our Data Privacy Manager at Arron@careerframe.co.uk.
-          </p>
-          <p className="text-soft-grey mb-6">
-            You also have the right to lodge a complaint with the UK Information Commissioner's Office (ICO) at www.ico.org.uk, but we encourage you to contact us first so we can try to resolve your concerns.
-          </p>
-          <p className="text-soft-grey mb-6">
-            <strong>Last updated:</strong> July 5, 2025
-          </p>
+          {/* Section 2: Scope */}
+          <section className="mb-8">
+            <h2 className="text-2xl font-bold text-navy mb-4">2) Scope</h2>
+            <p className="text-soft-grey">
+              This policy applies to all personal data processed by CareerFrame in connection with our services, websites, apps, support channels, analytics, and integrations (e.g., payment providers, communications vendors, course partners). It covers employees, contractors, and suppliers who handle personal data on our behalf.
+            </p>
+          </section>
+
+          {/* Section 3: Lawful bases & purposes */}
+          <section className="mb-8">
+            <h2 className="text-2xl font-bold text-navy mb-4">3) Lawful bases & purposes (summary)</h2>
+            <p className="text-soft-grey mb-4">
+              We process personal data under the UK GDPR on the following lawful bases:
+            </p>
+            <ul className="list-disc list-inside text-soft-grey space-y-3">
+              <li><strong>Contract:</strong> to create/manage accounts, deliver platform functionality (AI coach, milestone tracking, skill-gap analysis, CV/cover letters), and handle payments.</li>
+              <li><strong>Legitimate interests:</strong> to secure our services, prevent fraud/abuse, improve features, and provide limited service communications. We conduct balancing tests where appropriate.</li>
+              <li><strong>Consent:</strong> for certain marketing communications, optional analytics/cookies, and where required by law.</li>
+              <li><strong>Legal obligation:</strong> to meet accounting, tax, and regulatory duties.</li>
+            </ul>
+          </section>
+
+          {/* Section 4: Data minimisation & retention */}
+          <section className="mb-8">
+            <h2 className="text-2xl font-bold text-navy mb-4">4) Data minimisation & retention</h2>
+            <ul className="list-disc list-inside text-soft-grey space-y-3">
+              <li><strong>Account data:</strong> retained while your account is active; deleted or anonymised within 90 days of deletion request, subject to legal holds.</li>
+              <li><strong>Payment records:</strong> kept for up to 7 years to comply with tax and accounting laws.</li>
+              <li><strong>Support tickets:</strong> up to 24 months for audit and training.</li>
+              <li><strong>Backups/logs:</strong> rotate on fixed schedules and are deleted per our retention calendar.</li>
+            </ul>
+          </section>
+
+          {/* Section 5: Security measures */}
+          <section className="mb-8">
+            <h2 className="text-2xl font-bold text-navy mb-4">5) Security measures</h2>
+            <ul className="list-disc list-inside text-soft-grey space-y-2">
+              <li>Encryption in transit (TLS) and at rest for primary data stores.</li>
+              <li>Role-based access controls (RBAC), least-privilege IAM, and MFA for staff.</li>
+              <li>Segregated environments for development, staging, and production.</li>
+              <li>Regular patching, vulnerability scanning, and change control.</li>
+              <li>Audit logging and monitoring for anomalous access.</li>
+              <li>Vendor due diligence and contractual data protection terms with processors.</li>
+              <li>Staff training on security, privacy, and phishing awareness.</li>
+            </ul>
+          </section>
+
+          {/* Section 6: International data transfers */}
+          <section className="mb-8">
+            <h2 className="text-2xl font-bold text-navy mb-4">6) International data transfers</h2>
+            <p className="text-soft-grey">
+              Where personal data is transferred outside the UK (e.g., to sub-processors), we use appropriate safeguards such as the UK Addendum to the EU Standard Contractual Clauses or other legally recognised mechanisms. We maintain a list of key sub-processors in our Privacy Policy and update it when suppliers change.
+            </p>
+          </section>
+
+          {/* Section 7: AI processing & automated decisions */}
+          <section className="mb-8">
+            <h2 className="text-2xl font-bold text-navy mb-4">7) AI processing & automated decisions</h2>
+            <p className="text-soft-grey">
+              Our AI features assist with career alignment, skill gap insights, milestone suggestions, and drafting CV/cover letters. Outputs are recommendations only and do not make legally or similarly significant automated decisions about you. You remain in control of your choices and can request human review via <a href="mailto:support@careerframe.co.uk" className="text-fresh-green hover:underline">support@careerframe.co.uk</a>.
+            </p>
+          </section>
+
+          {/* Section 8: Your rights */}
+          <section className="mb-8">
+            <h2 className="text-2xl font-bold text-navy mb-4">8) Your rights</h2>
+            <p className="text-soft-grey mb-4">
+              You have rights under UK GDPR, including: access; rectification; erasure; restriction; portability; and objection to certain processing (including direct marketing). You can withdraw consent at any time where processing is based on consent.
+            </p>
+            <div className="space-y-3 text-soft-grey">
+              <p><strong>How to exercise:</strong> email <a href="mailto:privacy@careerframe.co.uk" className="text-fresh-green hover:underline">privacy@careerframe.co.uk</a> from your registered address. We may need to verify your identity.</p>
+              <p><strong>Complaints:</strong> you can complain to the UK Information Commissioner's Office (ICO). See <a href="https://ico.org.uk" target="_blank" rel="noopener noreferrer" className="text-fresh-green hover:underline">ico.org.uk</a> for details.</p>
+            </div>
+          </section>
+
+          {/* Section 9: Data breaches */}
+          <section className="mb-8">
+            <h2 className="text-2xl font-bold text-navy mb-4">9) Data breaches</h2>
+            <p className="text-soft-grey">
+              We maintain an incident response plan. Where required by law, we will notify the ICO within 72 hours of becoming aware of a notifiable breach and will inform affected individuals without undue delay.
+            </p>
+          </section>
+
+          {/* Section 10: Roles & responsibilities */}
+          <section className="mb-8">
+            <h2 className="text-2xl font-bold text-navy mb-4">10) Roles & responsibilities</h2>
+            <ul className="list-disc list-inside text-soft-grey space-y-3">
+              <li><strong>Senior management:</strong> accountable for overall compliance.</li>
+              <li><strong>Privacy lead:</strong> coordinates data protection activities and vendor oversight.</li>
+              <li><strong>All staff/contractors:</strong> must follow this policy, complete training, and report incidents promptly.</li>
+            </ul>
+          </section>
+
+          {/* Section 11: Policy governance */}
+          <section className="mb-8">
+            <h2 className="text-2xl font-bold text-navy mb-4">11) Policy governance</h2>
+            <p className="text-soft-grey">
+              We review this policy at least annually or after significant changes to our services, laws, or suppliers.
+            </p>
+          </section>
         </div>
 
         <div className="flex flex-col sm:flex-row gap-4 justify-center mt-8">
@@ -194,9 +182,9 @@ export default function DataProtection() {
               View Privacy Policy
             </Button>
           </Link>
-          <a href="mailto:Arron@careerframe.co.uk?subject=Data Deletion Request">
+          <a href="mailto:privacy@careerframe.co.uk?subject=Data Protection Enquiry">
             <Button className="bg-fresh-green text-white hover:bg-opacity-90">
-              Request Data Deletion
+              Contact Privacy Team
             </Button>
           </a>
         </div>
