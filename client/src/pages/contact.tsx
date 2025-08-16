@@ -1,3 +1,4 @@
+import React, { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Link } from "wouter";
@@ -6,8 +7,11 @@ import careerFrameLogo from "../assets/avatar1.png";
 import { SoundButton } from "@/components/SoundButton";
 import { Navbar } from "@/components/sections/navbar";
 import { Footer } from "@/components/sections/footer";
+import { ContactForm } from "@/components/ContactForm";
 
 export default function Contact() {
+  const [isContactFormOpen, setIsContactFormOpen] = useState(false);
+
   return (
     <div className="min-h-screen bg-white">
       <Navbar />
@@ -263,10 +267,7 @@ export default function Contact() {
             <SoundButton 
               className="px-6 py-3 text-white shadow-lg hover:shadow-xl transition-all rounded-lg"
               style={{ backgroundColor: '#829340' }}
-              onClick={() => {
-                const mailtoLink = `mailto:info@careerframe.co.uk?subject=Contact%20Form%20Inquiry&body=Hello%20CareerFrame%20Team,%0D%0A%0D%0AAccount%20Email:%20[Your%20email%20here]%0D%0A%0D%0ABrief%20Description:%0D%0A[Please%20describe%20your%20inquiry%20here]%0D%0A%0D%0AThank%20you!`;
-                window.location.href = mailtoLink;
-              }}
+              onClick={() => setIsContactFormOpen(true)}
             >
               Open Contact Form
             </SoundButton>
@@ -276,6 +277,35 @@ export default function Contact() {
 
       </div>
       <Footer />
+      
+      {/* COMMENTED OUT - Previous Direct Email Implementation */}
+      {/*
+      
+      PREVIOUS CONTACT FORM IMPLEMENTATION (COMMENTED FOR REFERENCE)
+      This section contained the direct mailto functionality that opened the user's email client.
+      It has been replaced with a proper contact form modal component.
+      
+      Previous button implementation:
+      <SoundButton 
+        className="px-6 py-3 text-white shadow-lg hover:shadow-xl transition-all rounded-lg"
+        style={{ backgroundColor: '#829340' }}
+        onClick={() => {
+          const mailtoLink = `mailto:info@careerframe.co.uk?subject=Contact%20Form%20Inquiry&body=Hello%20CareerFrame%20Team,%0D%0A%0D%0AAccount%20Email:%20[Your%20email%20here]%0D%0A%0D%0ABrief%20Description:%0D%0A[Please%20describe%20your%20inquiry%20here]%0D%0A%0D%0AThank%20you!`;
+          window.location.href = mailtoLink;
+        }}
+      >
+        Open Contact Form
+      </SoundButton>
+      
+      Contact support@careerframe.co.uk for technical support regarding contact form functionality.
+      
+      */}
+
+      {/* Contact Form Modal */}
+      <ContactForm 
+        isOpen={isContactFormOpen} 
+        onClose={() => setIsContactFormOpen(false)} 
+      />
     </div>
   );
 }

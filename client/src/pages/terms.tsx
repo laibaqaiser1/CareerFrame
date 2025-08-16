@@ -51,30 +51,14 @@ export default function Terms() {
         </div>
 
         <div className="prose prose-lg max-w-none px-4">
-          {/* Introduction */}
-          <div 
-            className="border rounded-xl p-6 md:p-8 mb-8 md:mb-12 shadow-sm"
-            style={{ 
-              backgroundColor: 'rgba(130, 147, 64, 0.05)', 
-              borderColor: 'rgba(130, 147, 64, 0.2)' 
-            }}
-          >
-            <p 
-              className="text-base md:text-lg leading-relaxed mb-0"
-              style={{ color: '#6B7280' }}
-            >
-              These Terms govern your use of CareerFrame's websites and services (the "Service"). By creating an account or using the Service, you agree to these Terms.
-            </p>
-          </div>
-
-          {/* Section 1 - About These Terms */}
+          {/* Section 1 - About these terms */}
           <section className="mb-8 md:mb-12">
             <h2 
               className="text-xl md:text-2xl lg:text-3xl font-bold mb-4 md:mb-6 flex items-start"
               style={{ color: '#1E3A8A' }}
             >
               <span className="bg-blue-100 text-blue-600 rounded-full w-8 h-8 flex items-center justify-center text-base md:text-lg font-bold mr-3 md:mr-4 flex-shrink-0 mt-1">1</span>
-              <span>About These Terms</span>
+              <span>About these terms</span>
             </h2>
             <div 
               className="text-base md:text-lg mb-4 leading-relaxed space-y-4"
@@ -83,42 +67,40 @@ export default function Terms() {
               <p>
                 These Terms govern your use of CareerFrame's websites and services (the "Service"). By creating an account or using the Service, you agree to these Terms.
               </p>
-              <div className="bg-gray-50 p-4 rounded-lg">
-                <p className="font-semibold mb-2" style={{ color: '#1E3A8A' }}>Provider:</p>
-                <p>CareerFrame Ltd, Battlefield Industrial Estate, Shrewsbury, Shropshire, SY4 3DB</p>
-                <p>Company Number: 16331497</p>
-                <p>Contact: <a href="mailto:support@careerframe.co.uk" className="text-green-600 hover:underline">support@careerframe.co.uk</a></p>
-                <p>Governing law: England & Wales</p>
+              <div className="bg-gray-50 p-4 rounded-lg space-y-2">
+                <p><strong>Provider:</strong> CareerFrame Ltd, Battlefield Industrial Estate, Shrewsbury, Shropshire, SY4 3DB, Company Number 16331497.</p>
+                <p><strong>Contact:</strong> <a href="mailto:support@careerframe.co.uk" style={{ color: '#829340' }}>support@careerframe.co.uk</a></p>
+                <p><strong>Governing law:</strong> England & Wales.</p>
               </div>
             </div>
           </section>
 
-          {/* Section 2 - Who Can Use CareerFrame */}
+          {/* Section 2 - Who can use CareerFrame */}
           <section className="mb-8 md:mb-12">
             <h2 
               className="text-xl md:text-2xl lg:text-3xl font-bold mb-4 md:mb-6 flex items-start"
               style={{ color: '#1E3A8A' }}
             >
               <span className="bg-blue-100 text-blue-600 rounded-full w-8 h-8 flex items-center justify-center text-base md:text-lg font-bold mr-3 md:mr-4 flex-shrink-0 mt-1">2</span>
-              <span>Who Can Use CareerFrame</span>
+              <span>Who can use CareerFrame</span>
             </h2>
             <div 
               className="text-base md:text-lg leading-relaxed space-y-3"
               style={{ color: '#6B7280' }}
             >
-              <p>• You must be 18 or older and capable of forming a contract in your jurisdiction.</p>
-              <p>• If you use CareerFrame on behalf of a company, you represent that you have authority to bind that company and that "you" includes that entity.</p>
+              <p>You must be 18 or older and capable of forming a contract in your jurisdiction.</p>
+              <p>If you use CareerFrame on behalf of a company, you represent that you have authority to bind that company and that "you" includes that entity.</p>
             </div>
           </section>
 
-          {/* Section 3 - Your Account & Security */}
+          {/* Section 3 - Your account & security */}
           <section className="mb-8 md:mb-12">
             <h2 
               className="text-xl md:text-2xl lg:text-3xl font-bold mb-4 md:mb-6 flex items-start"
               style={{ color: '#1E3A8A' }}
             >
               <span className="bg-blue-100 text-blue-600 rounded-full w-8 h-8 flex items-center justify-center text-base md:text-lg font-bold mr-3 md:mr-4 flex-shrink-0 mt-1">3</span>
-              <span>Your Account & Security</span>
+              <span>Your account & security</span>
             </h2>
             <p 
               className="text-base md:text-lg leading-relaxed"
@@ -128,14 +110,14 @@ export default function Terms() {
             </p>
           </section>
 
-          {/* Section 4 - Service Description */}
+          {/* Section 4 - Service description */}
           <section className="mb-8 md:mb-12">
             <h2 
               className="text-xl md:text-2xl lg:text-3xl font-bold mb-4 md:mb-6 flex items-start"
               style={{ color: '#1E3A8A' }}
             >
               <span className="bg-blue-100 text-blue-600 rounded-full w-8 h-8 flex items-center justify-center text-base md:text-lg font-bold mr-3 md:mr-4 flex-shrink-0 mt-1">4</span>
-              <span>Service Description</span>
+              <span>Service description</span>
             </h2>
             <p 
               className="text-base md:text-lg leading-relaxed"
@@ -145,61 +127,63 @@ export default function Terms() {
             </p>
           </section>
 
-          {/* Section 5 - Plans, Billing & Cancellations */}
+          {/* Section 5 - Plans, billing & cancellations */}
           <section className="mb-8 md:mb-12">
             <h2 
               className="text-xl md:text-2xl lg:text-3xl font-bold mb-4 md:mb-6 flex items-start"
               style={{ color: '#1E3A8A' }}
             >
               <span className="bg-blue-100 text-blue-600 rounded-full w-8 h-8 flex items-center justify-center text-base md:text-lg font-bold mr-3 md:mr-4 flex-shrink-0 mt-1">5</span>
-              <span>Plans, Billing & Cancellations</span>
+              <span>Plans, billing & cancellations</span>
             </h2>
             <div 
-              className="text-base md:text-lg leading-relaxed space-y-3"
+              className="text-base md:text-lg leading-relaxed space-y-4"
               style={{ color: '#6B7280' }}
             >
-              <p>• <strong>Freemium:</strong> limited access as described on our pricing page.</p>
-              <p>• <strong>Premium:</strong> paid subscription with expanded limits and features. Fees and renewal cadence are shown at checkout.</p>
-              <p>• <strong>Billing:</strong> Subscriptions renew automatically until cancelled. You authorise us and our payment processor to charge the payment method on file.</p>
-              <p>• <strong>Cancellation:</strong> Cancel any time via account settings; access continues until the end of the billing period.</p>
-              <p>• <strong>Cooling‑off (UK consumers):</strong> You may have a 14‑day right to cancel digital services. By starting a paid plan immediately, you consent to immediate performance and acknowledge you may lose the right to cancel once the service is fully provided within the 14 days.</p>
-              <p>• <strong>Refunds:</strong> Except where required by law, fees are non‑refundable once a billing period starts. We may issue a pro‑rata credit if we materially fail to deliver the core Service and cannot remedy within a reasonable time.</p>
+              <p><strong>Freemium:</strong> limited access as described on our pricing page.</p>
+              <p><strong>Premium:</strong> paid subscription with expanded limits and features. Fees and renewal cadence are shown at checkout.</p>
+              <p><strong>Billing:</strong> Subscriptions renew automatically until cancelled. You authorise us and our payment processor to charge the payment method on file.</p>
+              <p><strong>Cancellation:</strong> Cancel any time via account settings; access continues until the end of the billing period.</p>
+              <p><strong>Cooling‑off (UK consumers):</strong> You may have a 14‑day right to cancel digital services. By starting a paid plan immediately, you consent to immediate performance and acknowledge you may lose the right to cancel once the service is fully provided within the 14 days.</p>
+              <p><strong>Refunds:</strong> Except where required by law, fees are non‑refundable once a billing period starts. We may issue a pro‑rata credit if we materially fail to deliver the core Service and cannot remedy within a reasonable time.</p>
             </div>
           </section>
 
-          {/* Section 6 - Acceptable Use */}
+          {/* Section 6 - Acceptable use */}
           <section className="mb-8 md:mb-12">
             <h2 
               className="text-xl md:text-2xl lg:text-3xl font-bold mb-4 md:mb-6 flex items-start"
               style={{ color: '#1E3A8A' }}
             >
               <span className="bg-blue-100 text-blue-600 rounded-full w-8 h-8 flex items-center justify-center text-base md:text-lg font-bold mr-3 md:mr-4 flex-shrink-0 mt-1">6</span>
-              <span>Acceptable Use</span>
+              <span>Acceptable use</span>
             </h2>
             <div 
-              className="text-base md:text-lg leading-relaxed space-y-3"
+              className="text-base md:text-lg leading-relaxed space-y-2"
               style={{ color: '#6B7280' }}
             >
-              <p>• Do not break the law, infringe IP, or violate others' privacy.</p>
-              <p>• Do not upload unlawful, discriminatory, or harmful content.</p>
-              <p>• Do not reverse engineer, scrape, or overload the Service.</p>
-              <p>• Do not misrepresent your identity or professional qualifications.</p>
-              <p>• Do not use outputs to create misleading or deceptive applications.</p>
-              <p>• Do not interfere with others' use or the security of the Service.</p>
+              <ul className="space-y-2 ml-4">
+                <li>Do not break the law, infringe IP, or violate others' privacy.</li>
+                <li>Do not upload unlawful, discriminatory, or harmful content.</li>
+                <li>Do not reverse engineer, scrape, or overload the Service.</li>
+                <li>Do not misrepresent your identity or professional qualifications.</li>
+                <li>Do not use outputs to create misleading or deceptive applications.</li>
+                <li>Do not interfere with others' use or the security of the Service.</li>
+              </ul>
             </div>
           </section>
 
-          {/* Section 7 - Your Content & Licences */}
+          {/* Section 7 - Your content & licences */}
           <section className="mb-8 md:mb-12">
             <h2 
               className="text-xl md:text-2xl lg:text-3xl font-bold mb-4 md:mb-6 flex items-start"
               style={{ color: '#1E3A8A' }}
             >
               <span className="bg-blue-100 text-blue-600 rounded-full w-8 h-8 flex items-center justify-center text-base md:text-lg font-bold mr-3 md:mr-4 flex-shrink-0 mt-1">7</span>
-              <span>Your Content & Licences</span>
+              <span>Your content & licences</span>
             </h2>
             <div 
-              className="text-base md:text-lg leading-relaxed space-y-3"
+              className="text-base md:text-lg leading-relaxed space-y-4"
               style={{ color: '#6B7280' }}
             >
               <p>You retain ownership of content you upload. You grant CareerFrame a worldwide, non‑exclusive licence to host, process, display, and create derivative works as needed to operate and improve the Service. You represent you have rights to the content you upload.</p>
@@ -207,14 +191,14 @@ export default function Terms() {
             </div>
           </section>
 
-          {/* Section 8 - AI Outputs & Guidance */}
+          {/* Section 8 - AI outputs & guidance */}
           <section className="mb-8 md:mb-12">
             <h2 
               className="text-xl md:text-2xl lg:text-3xl font-bold mb-4 md:mb-6 flex items-start"
               style={{ color: '#1E3A8A' }}
             >
               <span className="bg-blue-100 text-blue-600 rounded-full w-8 h-8 flex items-center justify-center text-base md:text-lg font-bold mr-3 md:mr-4 flex-shrink-0 mt-1">8</span>
-              <span>AI Outputs & Guidance</span>
+              <span>AI outputs & guidance</span>
             </h2>
             <p 
               className="text-base md:text-lg leading-relaxed"
@@ -224,14 +208,14 @@ export default function Terms() {
             </p>
           </section>
 
-          {/* Section 9 - Third-Party Services */}
+          {/* Section 9 - Third-party services */}
           <section className="mb-8 md:mb-12">
             <h2 
               className="text-xl md:text-2xl lg:text-3xl font-bold mb-4 md:mb-6 flex items-start"
               style={{ color: '#1E3A8A' }}
             >
               <span className="bg-blue-100 text-blue-600 rounded-full w-8 h-8 flex items-center justify-center text-base md:text-lg font-bold mr-3 md:mr-4 flex-shrink-0 mt-1">9</span>
-              <span>Third‑Party Services</span>
+              <span>Third‑party services</span>
             </h2>
             <p 
               className="text-base md:text-lg leading-relaxed"
@@ -241,14 +225,14 @@ export default function Terms() {
             </p>
           </section>
 
-          {/* Section 10 - Availability & Changes */}
+          {/* Section 10 - Availability & changes */}
           <section className="mb-8 md:mb-12">
             <h2 
               className="text-xl md:text-2xl lg:text-3xl font-bold mb-4 md:mb-6 flex items-start"
               style={{ color: '#1E3A8A' }}
             >
               <span className="bg-blue-100 text-blue-600 rounded-full w-8 h-8 flex items-center justify-center text-base md:text-lg font-bold mr-3 md:mr-4 flex-shrink-0 mt-1">10</span>
-              <span>Availability & Changes</span>
+              <span>Availability & changes</span>
             </h2>
             <p 
               className="text-base md:text-lg leading-relaxed"
@@ -258,14 +242,14 @@ export default function Terms() {
             </p>
           </section>
 
-          {/* Section 11 - Suspension & Termination */}
+          {/* Section 11 - Suspension & termination */}
           <section className="mb-8 md:mb-12">
             <h2 
               className="text-xl md:text-2xl lg:text-3xl font-bold mb-4 md:mb-6 flex items-start"
               style={{ color: '#1E3A8A' }}
             >
               <span className="bg-blue-100 text-blue-600 rounded-full w-8 h-8 flex items-center justify-center text-base md:text-lg font-bold mr-3 md:mr-4 flex-shrink-0 mt-1">11</span>
-              <span>Suspension & Termination</span>
+              <span>Suspension & termination</span>
             </h2>
             <p 
               className="text-base md:text-lg leading-relaxed"
@@ -309,14 +293,14 @@ export default function Terms() {
             </p>
           </section>
 
-          {/* Section 14 - Dispute Resolution */}
+          {/* Section 14 - Dispute resolution */}
           <section className="mb-8 md:mb-12">
             <h2 
               className="text-xl md:text-2xl lg:text-3xl font-bold mb-4 md:mb-6 flex items-start"
               style={{ color: '#1E3A8A' }}
             >
               <span className="bg-blue-100 text-blue-600 rounded-full w-8 h-8 flex items-center justify-center text-base md:text-lg font-bold mr-3 md:mr-4 flex-shrink-0 mt-1">14</span>
-              <span>Dispute Resolution</span>
+              <span>Dispute resolution</span>
             </h2>
             <p 
               className="text-base md:text-lg leading-relaxed"
@@ -325,6 +309,24 @@ export default function Terms() {
               These Terms are governed by the laws of England and Wales. UK consumers may have access to Alternative Dispute Resolution (ADR) schemes; details available on request.
             </p>
           </section>
+
+          {/* COMMENTED OUT - Previous Terms Sections Available for Reference */}
+          {/*
+          
+          PREVIOUS TERMS OF SERVICE SECTIONS (COMMENTED OUT FOR SIMPLICITY)
+          These sections contained simplified explanations and are maintained here for reference.
+          They can be uncommented if needed for alternative presentation.
+
+          - Basic Terms Overview
+          - User Rights & Responsibilities  
+          - Service Features & Limitations
+          - Payment & Cancellation Policies
+          - Content & Privacy Guidelines
+          - Contact Information
+          
+          Contact support@careerframe.co.uk for access to alternative terms presentations.
+          
+          */}
 
           {/* Contact Section */}
           <div 
