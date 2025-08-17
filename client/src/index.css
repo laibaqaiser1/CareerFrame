@@ -43,7 +43,7 @@ body[data-theme="dark"] {
   color-scheme: light !important;
 }
 
-/* Custom Cursor Styles - Hide all scrollbars */
+/* Custom Cursor Styles */
 html, body {
   overflow-x: hidden;
   position: relative;
@@ -51,6 +51,24 @@ html, body {
 
 body {
   cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20"><circle cx="10" cy="10" r="8" fill="%23829340" opacity="0.8"/></svg>') 10 10, auto;
+}
+
+/* Prevent individual sections from creating scrollbars */
+section:not(.allow-overflow):not([class*="rounded"]):not([class*="border"]) {
+  overflow: visible !important;
+}
+
+/* Prevent unnecessary scrollbars on main layout containers */
+.min-h-screen:not(.allow-overflow):not([class*="rounded"]), 
+div[class*="min-h-screen"]:not(.allow-overflow):not([class*="rounded"]),
+div[class*="flex-col"]:not(.allow-overflow):not([class*="rounded"]),
+div[class*="relative"]:not(.allow-overflow):not([class*="rounded"]):not([class*="border"]):not([class*="shadow"]) {
+  overflow: visible !important;
+}
+
+/* Specifically target main page sections that shouldn't have scrollbars */
+section[class*="py-"]:not([class*="overflow-"]):not([class*="rounded"]):not([class*="border"]) {
+  overflow: visible !important;
 }
 
 /* Hover effects for interactive elements */
@@ -474,6 +492,20 @@ img, .background-image {
   image-rendering: crisp-edges;
 }
 
+/* Dropdown slide animation for features */
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+    max-height: 0;
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+    max-height: 500px;
+  }
+}
+
 /* Additional fallback support for background loading issues */
 .coming-soon-background {
   /* Always ensure gradient background displays */
@@ -576,12 +608,190 @@ body.dark,
   body {
     @apply font-sans antialiased bg-background text-foreground;
     overflow-x: hidden !important; /* Prevent horizontal scrolling */
+    overflow-y: auto !important; /* Ensure only main body scrollbar is visible */
   }
   
   html {
     scroll-behavior: smooth;
     scroll-padding-top: 140px; /* Account for navbar height (128px + extra) */
     overflow-x: hidden !important; /* Prevent horizontal scrolling */
+    overflow-y: auto !important; /* Ensure only main html scrollbar is visible */
+  }
+  
+  /* Force all major sections to not create their own scrollbars */
+  section {
+    overflow: visible !important;
+  }
+  
+  /* Remove overflow-hidden from all sections unless they need it for visual effects */
+  section[class*="overflow-hidden"]:not([class*="rounded"]):not([class*="border"]):not([class*="shadow"]) {
+    overflow: visible !important;
+  }
+  
+  /* Override any container divs that might create scrollbars */
+  div[class*="flex"]:not([class*="overflow-"]):not([class*="rounded"]):not([class*="border"]) {
+    overflow: visible !important;
+  }
+  
+  /* Specifically target elements that commonly create unwanted scrollbars */
+  .min-h-screen,
+  [class*="min-h-"],
+  [class*="flex-col"],
+  [class*="relative"]:not([class*="overflow-"]):not([class*="rounded"]):not([class*="border"]):not([class*="shadow"]) {
+    overflow: visible !important;
+  }
+  
+  /* Exception: Allow overflow-hidden for specific visual effects */
+  [class*="overflow-hidden"][class*="rounded"],
+  [class*="overflow-hidden"][class*="border"],
+  [class*="overflow-hidden"][class*="shadow"],
+  .video-container,
+  .image-container,
+  .bg-image {
+    /* Keep original overflow settings for visual effects */
+  }
+  
+  /* Aggressive override: Remove all overflow constraints from page sections */
+  section.py-16,
+  section[class*="py-"],
+  .coming-soon-section,
+  .get-started-section,
+  .features-section,
+  .testimonials-section,
+  .pricing-section,
+  .faq-section {
+    overflow: visible !important;
+  }
+  
+  /* Override any wrapper divs around sections */
+  div:has(> section) {
+    overflow: visible !important;
+  }
+  
+  /* Numbered circles for What to Expect section */
+  .numbered-circle {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: 600;
+    font-size: 18px;
+    border: 3px solid;
+  }
+  
+  .numbered-circle-1 {
+    background: linear-gradient(135deg, #829340 0%, #9db04f 100%);
+    border-color: #829340;
+  }
+  
+  .numbered-circle-2 {
+    background: linear-gradient(135deg, #829340 0%, #9db04f 100%);
+    border-color: #829340;
+  }
+  
+  .numbered-circle-3 {
+    background: linear-gradient(135deg, #829340 0%, #9db04f 100%);
+    border-color: #829340;
+  }
+  
+  /* Connecting lines between circles */
+  .connecting-line-dash {
+    background: repeating-linear-gradient(
+      to right,
+      #829340 0px,
+      #829340 10px,
+      transparent 10px,
+      transparent 20px
+    );
+    opacity: 0.6;
+  }
+  
+  /* Prevent all temporary scrollbars on specific sections */
+  .coming-soon-section,
+  .coming-soon-section *,
+  #how-it-works,
+  #how-it-works * {
+    overflow: visible !important;
+    overflow-x: visible !important;
+    overflow-y: visible !important;
+  }
+  
+  /* Force container dimensions to prevent scroll triggers */
+  .coming-soon-section .max-w-5xl,
+  .coming-soon-section .max-w-7xl,
+  #how-it-works .max-w-7xl {
+    max-width: none !important;
+    width: 100% !important;
+    overflow: visible !important;
+  }
+  
+  /* Prevent motion animations from causing overflow */
+  .coming-soon-section [class*="motion"],
+  #how-it-works [class*="motion"],
+  .coming-soon-section [class*="animate"],
+  #how-it-works [class*="animate"] {
+    overflow: visible !important;
+    contain: none !important;
+  }
+  
+  /* Prevent background images from causing overflow */
+  .coming-soon-section .relative,
+  #how-it-works .relative {
+    overflow: visible !important;
+  }
+  
+  /* Prevent background pattern and corner frames from causing scrollbars */
+  .coming-soon-bg,
+  .pattern-bg,
+  .corner-frame,
+  .corner-frame-top-left,
+  .corner-frame-bottom-right {
+    overflow: visible !important;
+    contain: none !important;
+    will-change: auto !important;
+  }
+  
+  /* Ensure the main content container doesn't create overflow context */
+  .coming-soon-section > div {
+    overflow: visible !important;
+    min-height: auto !important;
+    height: auto !important;
+  }
+  
+  /* Remove any transform containers that might cause scrollbars */
+  .transform,
+  .translate-x-0,
+  .translate-y-0,
+  [style*="transform"] {
+    contain: none !important;
+  }
+  
+  /* Global overflow prevention for temporary scrollbar issues */
+  * {
+    scrollbar-width: none !important; /* Firefox */
+    -ms-overflow-style: none !important; /* IE and Edge */
+  }
+  
+  *::-webkit-scrollbar {
+    display: none !important; /* Chrome, Safari, Opera */
+  }
+  
+  /* Only allow main body scrollbar */
+  html, body {
+    scrollbar-width: auto !important;
+    -ms-overflow-style: auto !important;
+  }
+  
+  html::-webkit-scrollbar, body::-webkit-scrollbar {
+    display: block !important;
+  }
+  
+  /* Prevent CSS containment from creating scroll contexts */
+  * {
+    contain: none !important;
   }
   
   /* Mobile-specific scroll padding override */
@@ -1015,15 +1225,24 @@ html, body {
   box-sizing: border-box !important;
 }
 
-/* Hide scrollbars for clean appearance but allow scrolling */
+/* Show scrollbars for proper navigation */
 ::-webkit-scrollbar {
-  width: 0px;
-  background: transparent;
+  width: 8px;
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #c1c1c1;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #a8a8a8;
 }
 
 body {
-  scrollbar-width: none; /* Firefox */
-  -ms-overflow-style: none;  /* Internet Explorer 10+ */
+  scrollbar-width: auto; /* Firefox */
+  -ms-overflow-style: auto;  /* Internet Explorer 10+ */
 }
 
 /* Only apply max-width to container elements, not all elements - restore centering */

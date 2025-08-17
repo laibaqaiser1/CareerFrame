@@ -181,11 +181,11 @@ export function HowItWorksSection() {
 
             <SoundButton
               soundType="submit"
-              onClick={openPopup}
+              onClick={() => window.open("https://app.careerframe.co.uk/", "_blank")}
               className="text-white px-6 py-3 rounded-lg font-medium transition-all duration-300 shadow-lg hover:shadow-xl"
               style={{ backgroundColor: "#829340" }}
             >
-              Get in touch
+              Get Started
             </SoundButton>
           </div>
         </div>

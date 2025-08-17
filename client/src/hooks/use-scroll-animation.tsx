@@ -1,10 +1,22 @@
 import { useEffect, useRef, useState } from 'react';
 
 export function useScrollAnimation() {
-  const [isVisible, setIsVisible] = useState(false);
+  const [isVisible, setIsVisible] = useState(true);
   const ref = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
+    // Check if element is initially in viewport
+    const checkInitialVisibility = () => {
+      if (ref.current) {
+        const rect = ref.current.getBoundingClientRect();
+        const isInViewport = rect.top < window.innerHeight && rect.bottom > 0;
+        setIsVisible(isInViewport);
+      }
+    };
+
+    // Check initial visibility after a brief delay to ensure DOM is ready
+    const timeoutId = setTimeout(checkInitialVisibility, 50);
+
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
@@ -22,6 +34,7 @@ export function useScrollAnimation() {
     }
 
     return () => {
+      clearTimeout(timeoutId);
       if (ref.current) {
         observer.unobserve(ref.current);
       }

@@ -154,10 +154,10 @@ export function FAQSection() {
           >
             <div className="px-2">
               <h3 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-4 leading-tight">
-                Join the Waitlist - Be One of the First 10!
+                Ready to Transform Your Career?
               </h3>
               <p className="text-gray-600 mb-6 sm:mb-8 max-w-2xl mx-auto text-base sm:text-lg leading-relaxed">
-                Get exclusive early access to CareerFrame when we launch. Plus, receive career insights and tips delivered to your inbox.
+                Join thousands of professionals already using CareerFrame to discover their dream careers. Get started today!
               </p>
             </div>
             
@@ -178,8 +178,8 @@ export function FAQSection() {
                 required
               />
               <Button 
-                type="submit"
-                disabled={isSubmitting}
+                type="button"
+                onClick={() => window.open("https://app.careerframe.co.uk/", "_blank")}
                 style={{ 
                   backgroundColor: '#829340',
                   color: 'white',
@@ -187,7 +187,7 @@ export function FAQSection() {
                 }}
                 className="hover:opacity-90 transition-opacity px-6 sm:px-8 text-sm sm:text-base font-medium w-full sm:w-auto sm:min-w-[140px]"
               >
-                {isSubmitting ? "Joining..." : "Join waitlist"}
+                Get Started
               </Button>
             </form>
             

@@ -20,7 +20,7 @@ export function Navbar() {
           {/* Navigation Links */}
           <div className="hidden md:flex items-center space-x-8">
             <a 
-              href="#powerful-features"
+              href="/#powerful-features"
               className="text-gray-600 hover:text-gray-900 transition-colors font-medium"
             >
               Features
@@ -31,22 +31,24 @@ export function Navbar() {
             <Link href="/contact" className="text-gray-600 hover:text-gray-900 transition-colors font-medium">
               Contact
             </Link>
-            <Link 
-              href="/" 
+            <a 
+              href="https://app.careerframe.co.uk/"
+              target="_blank"
+              rel="noopener noreferrer"
               className="px-4 py-2 rounded-lg font-medium transition-colors ml-2"
               style={{ 
                 backgroundColor: '#829340',
                 color: 'white'
               }}
             >
-              Get Started
-            </Link>
+              Sign In
+            </a>
           </div>
 
           {/* Mobile menu button */}
           <div className="md:hidden flex space-x-2">
             <a 
-              href="#powerful-features"
+              href="/#powerful-features"
               className="px-3 py-2 rounded-lg text-sm font-medium text-gray-600"
             >
               Features

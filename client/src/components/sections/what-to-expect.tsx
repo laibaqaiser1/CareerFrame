@@ -17,7 +17,7 @@ export function WhatToExpectSection() {
       <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-8">
         {/* Header */}
         <motion.div
-          initial={{ opacity: 0}}
+          initial={{ opacity: 1}}
           whileInView={{ opacity: 1}}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}

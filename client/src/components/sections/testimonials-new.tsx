@@ -2,6 +2,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { useScrollAnimation } from "@/hooks/use-scroll-animation";
 import { Star, ChevronLeft, ChevronRight } from "lucide-react";
 import { useState } from "react";
+import cartoonImage from "@/assets/cartoon.jpeg";
 
 // Authentic testimonials from real CareerFrame users
 const testimonials = [
@@ -27,7 +28,7 @@ const testimonials = [
       "After a career break, I finally have a realistic pathway to my target role. I know exactly which skills to refresh and how to prove them. The roadmap gives me clear weekly targets, which has boosted my confidence massively.",
     name: "James Patel",
     role: "Returner — Back to Work After Career Break",
-    image: "/Avatar3.png",
+    image: cartoonImage,
   },
 ];
 

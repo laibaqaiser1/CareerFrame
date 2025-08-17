@@ -287,7 +287,7 @@ export function FeaturesSection() {
 
       {/* Bottom "Get Started" Section - Image Background Inside Container */}
       <section 
-        className="py-16 text-white relative overflow-hidden get-started-section"
+        className="py-16 text-white relative get-started-section"
         style={{
           backgroundColor: "#ffffff",
           minHeight: "300px"
@@ -354,6 +354,7 @@ export function FeaturesSection() {
             zIndex: 11
           }}>
             <button
+              onClick={() => window.open("https://app.careerframe.co.uk/", "_blank")}
               style={{
                 backgroundColor: "#829340",
                 borderColor: "#829340",
@@ -365,7 +366,8 @@ export function FeaturesSection() {
                 border: "none",
                 boxShadow: "0 4px 12px rgba(130, 147, 64, 0.3)",
                 color: "white",
-                whiteSpace: "nowrap"
+                whiteSpace: "nowrap",
+                cursor: "pointer"
               }}
               className="text-white hover:bg-opacity-90 transition-all duration-300 hover:shadow-lg"
             >

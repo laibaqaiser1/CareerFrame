@@ -264,7 +264,7 @@ export function PricingSection() {
 
                   <SoundButton 
                     soundType="submit"
-                    onClick={openPopup}
+                    onClick={() => window.open("https://app.careerframe.co.uk/", "_blank")}
                     className={`w-full py-2 text-sm font-semibold button-hover border-2 hover:opacity-90 ${
                       plan.popular 
                         ? 'text-white' 

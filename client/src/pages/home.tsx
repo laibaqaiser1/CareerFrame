@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { ComingSoonPage } from "@/components/sections/coming-soon";
-import { WhatToExpectSection } from "@/components/sections/what-to-expect";
+
 import { CareerBenefitsSection } from "@/components/sections/career-benefits";
 import { TrustSignalsSection } from "@/components/sections/trust-signals";
 import { FeaturesSection } from "@/components/sections/features";
@@ -299,10 +299,7 @@ export default function Home() {
             <ComingSoonPage />
           </div>
           
-          {/* What to Expect Section - Separate from gradient background */}
-          <div className="fade-in">
-            <WhatToExpectSection />
-          </div>
+
 
           {/* Career Benefits Section - Static, no scroll animations */}
           <div className="static-section">
