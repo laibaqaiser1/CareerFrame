@@ -721,10 +721,7 @@ body.dark,
   
   /* Force container dimensions to prevent scroll triggers */
   .coming-soon-section .max-w-5xl,
-  .coming-soon-section .max-w-7xl,
-  #how-it-works .max-w-7xl {
-    max-width: none !important;
-    width: 100% !important;
+  #how-it-works .max-w-5xl {
     overflow: visible !important;
   }
   
