@@ -1,4 +1,5 @@
 import React from "react";
+import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import messageChatIcon from "@/assets/message-chat-circle.png";
 import zapIcon from "@/assets/zap.png";
@@ -283,6 +284,327 @@ export function CareerBenefitsSection() {
               </div>
             </div>
           </div>
+        </div>
+
+        {/* Three Feature Columns */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 mt-8">
+          {/* Column 1 - Feeling stuck */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 1.2 }}
+            className="flex justify-center"
+          >
+            {/* Outer Container */}
+            <div 
+              className="w-full max-w-sm md:max-w-none feature-column-outer"
+              style={{
+                width: '384px',
+                height: '290px',
+                minWidth: '320px',
+                opacity: 1,
+                position: 'relative',
+                display: 'flex',
+                flexDirection: 'column',
+                alignItems: 'center'
+              }}
+            >
+              {/* Icon - positioned above the grey box */}
+              <div 
+                className="icon-container-white"
+                style={{
+                  width: '64px',
+                  height: '64px',
+                  borderRadius: '8px',
+                  backgroundColor: '#FFFFFF',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  flexShrink: 0,
+                  position: 'relative',
+                  zIndex: 2,
+                  marginBottom: '-32px' // Overlap with grey container
+                }}
+              >
+                <img 
+                  src={messageChatIcon} 
+                  alt="Message chat circle"
+                  className="w-5 h-5"
+                />
+              </div>
+
+              {/* Inner Container - grey background */}
+              <div 
+                className="rounded-2xl feature-column-inner"
+                style={{
+                  width: '384px',
+                  height: '266px',
+                  backgroundColor: '#FAFAFA',
+                  paddingTop: '52px',
+                  paddingRight: '24px',
+                  paddingBottom: '32px',
+                  paddingLeft: '24px',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  alignItems: 'center',
+                  position: 'relative',
+                  zIndex: 1
+                }}
+              >
+                {/* Content */}
+                <div 
+                  className="feature-column-content"
+                  style={{
+                    width: '336px',
+                    height: '134px',
+                    display: 'flex',
+                    flexDirection: 'column',
+                    gap: '20px',
+                    textAlign: 'center'
+                  }}
+                >
+                  <h3 
+                    style={{
+                      fontFamily: 'Inter, sans-serif',
+                      fontWeight: 600,
+                      fontSize: '20px',
+                      lineHeight: '30px',
+                      letterSpacing: '0%',
+                      color: '#141414',
+                      margin: 0
+                    }}
+                  >
+                    Feeling stuck
+                  </h3>
+                  <p 
+                    style={{
+                      fontFamily: 'Inter, sans-serif',
+                      fontWeight: 400,
+                      fontSize: '16px',
+                      lineHeight: '24px',
+                      letterSpacing: '0%',
+                      color: '#525252',
+                      margin: 0
+                    }}
+                  >
+                    Feeling stuck in a job that doesn't excite you? Every day feels like you're not reaching your full potential, just going through the motions without fulfilment.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </motion.div>
+
+          {/* Column 2 - Missing opportunities */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 1.4 }}
+            className="flex justify-center"
+          >
+            {/* Outer Container */}
+            <div 
+              className="feature-column-outer"
+              style={{
+                width: '384px',
+                height: '290px',
+                minWidth: '320px',
+                opacity: 1,
+                position: 'relative',
+                display: 'flex',
+                flexDirection: 'column',
+                alignItems: 'center'
+              }}
+            >
+              {/* Icon - positioned above the grey box */}
+              <div 
+                className="icon-container-white"
+                style={{
+                  width: '64px',
+                  height: '64px',
+                  borderRadius: '8px',
+                  backgroundColor: '#FFFFFF',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  flexShrink: 0,
+                  position: 'relative',
+                  zIndex: 2,
+                  marginBottom: '-32px'
+                }}
+              >
+                <img 
+                  src={zapIcon} 
+                  alt="Lightning bolt zap"
+                  className="w-5 h-5"
+                />
+              </div>
+
+              {/* Inner Container - grey background */}
+              <div 
+                className="rounded-2xl feature-column-inner"
+                style={{
+                  width: '384px',
+                  height: '266px',
+                  backgroundColor: '#FAFAFA',
+                  paddingTop: '52px',
+                  paddingRight: '24px',
+                  paddingBottom: '32px',
+                  paddingLeft: '24px',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  alignItems: 'center',
+                  position: 'relative',
+                  zIndex: 1
+                }}
+              >
+                {/* Content */}
+                <div 
+                  className="feature-column-content"
+                  style={{
+                    width: '336px',
+                    height: '134px',
+                    display: 'flex',
+                    flexDirection: 'column',
+                    gap: '20px',
+                    textAlign: 'center'
+                  }}
+                >
+                  <h3 
+                    style={{
+                      fontFamily: 'Inter, sans-serif',
+                      fontWeight: 600,
+                      fontSize: '20px',
+                      lineHeight: '30px',
+                      letterSpacing: '0%',
+                      color: '#141414',
+                      margin: 0
+                    }}
+                  >
+                    Missing opportunities
+                  </h3>
+                  <p 
+                    style={{
+                      fontFamily: 'Inter, sans-serif',
+                      fontWeight: 400,
+                      fontSize: '16px',
+                      lineHeight: '24px',
+                      letterSpacing: '0%',
+                      color: '#525252',
+                      margin: 0
+                    }}
+                  >
+                    The longer you stay in that job, the more you miss out on the opportunities that could change your life. The routine becomes draining, and the fear of stepping into something new only holds you back.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </motion.div>
+
+          {/* Column 3 - Break free with CareerFrame */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 1.6 }}
+            className="flex justify-center"
+          >
+            {/* Outer Container */}
+            <div 
+              className="feature-column-outer"
+              style={{
+                width: '384px',
+                height: '290px',
+                minWidth: '320px',
+                opacity: 1,
+                position: 'relative',
+                display: 'flex',
+                flexDirection: 'column',
+                alignItems: 'center'
+              }}
+            >
+              {/* Icon - positioned above the grey box */}
+              <div 
+                className="icon-container-white"
+                style={{
+                  width: '64px',
+                  height: '64px',
+                  borderRadius: '8px',
+                  backgroundColor: '#FFFFFF',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  flexShrink: 0,
+                  position: 'relative',
+                  zIndex: 2,
+                  marginBottom: '-32px'
+                }}
+              >
+                <img 
+                  src={chartBreakoutIcon} 
+                  alt="Chart breakout square"
+                  className="w-5 h-5"
+                />
+              </div>
+
+              {/* Inner Container - grey background */}
+              <div 
+                className="rounded-2xl feature-column-inner"
+                style={{
+                  width: '384px',
+                  height: '266px',
+                  backgroundColor: '#FAFAFA',
+                  paddingTop: '52px',
+                  paddingRight: '24px',
+                  paddingBottom: '32px',
+                  paddingLeft: '24px',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  alignItems: 'center',
+                  position: 'relative',
+                  zIndex: 1
+                }}
+              >
+                {/* Content */}
+                <div 
+                  className="feature-column-content"
+                  style={{
+                    width: '336px',
+                    height: '134px',
+                    display: 'flex',
+                    flexDirection: 'column',
+                    gap: '20px',
+                    textAlign: 'center'
+                  }}
+                >
+                  <h3 
+                    style={{
+                      fontFamily: 'Inter, sans-serif',
+                      fontWeight: 600,
+                      fontSize: '20px',
+                      lineHeight: '30px',
+                      letterSpacing: '0%',
+                      color: '#141414',
+                      margin: 0
+                    }}
+                  >
+                    Break free with CareerFrame
+                  </h3>
+                  <p 
+                    style={{
+                      fontFamily: 'Inter, sans-serif',
+                      fontWeight: 400,
+                      fontSize: '16px',
+                      lineHeight: '24px',
+                      letterSpacing: '0%',
+                      color: '#525252',
+                      margin: 0
+                    }}
+                  >
+                    CareerFrame helps you break free from career confusion. With personalized coaching, skill gap analysis, and tailored career paths, we provide the tools and guidance to help you pursue work that aligns with your goals.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </motion.div>
         </div>
 
         {/* Stats Section - Grey Box */}

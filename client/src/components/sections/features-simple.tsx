@@ -23,7 +23,7 @@ export function FeaturesSection() {
       
       {/* Main Features Section - White Background */}
       <section 
-        className="py-4"
+        className="pb-4"
         style={{
           backgroundColor: "transparent",
           background: "transparent"

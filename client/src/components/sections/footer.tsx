@@ -3,13 +3,13 @@ import { SiX, SiTiktok, SiInstagram } from "react-icons/si";
 import careerFrameLogo from "@assets/logo_1753453465800.png";
 
 const companyLinks = [
-  { text: "About us", href: "/about" },
+  { text: "About us", href: "/about-us" },
   { text: "Contact", href: "/contact" }
 ];
 
 const legalLinks = [
-  { text: "Privacy policy", href: "/privacy" },
-  { text: "Terms of services", href: "/terms" },
+  { text: "Privacy policy", href: "/privacy-policy" },
+  { text: "Terms of services", href: "/terms-of-service" },
   { text: "Data protection", href: "/data-protection" }
 ];
 

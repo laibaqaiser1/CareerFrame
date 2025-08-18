@@ -30,11 +30,11 @@ function Router() {
   return (
     <Switch>
       <Route path="/" component={Home} />
-      <Route path="/about" component={About} />
+      <Route path="/about-us" component={About} />
       <Route path="/contact" component={Contact} />
       <Route path="/help" component={Help} />
-      <Route path="/privacy" component={Privacy} />
-      <Route path="/terms" component={Terms} />
+      <Route path="/privacy-policy" component={Privacy} />
+      <Route path="/terms-of-service" component={Terms} />
       <Route path="/terms/agreement" component={Agreement} />
       <Route path="/terms/user-rights" component={UserRights} />
       <Route path="/terms/protection" component={Protection} />
@@ -43,6 +43,12 @@ function Router() {
       <Route path="/community" component={Community} />
       <Route path="/api-docs" component={ApiDocs} />
       <Route path="/data-protection" component={DataProtection} />
+      
+      {/* Backward compatibility routes */}
+      <Route path="/about" component={About} />
+      <Route path="/privacy" component={Privacy} />
+      <Route path="/terms" component={Terms} />
+      
       <Route component={NotFound} />
     </Switch>
   );
