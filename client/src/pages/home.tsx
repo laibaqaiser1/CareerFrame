@@ -130,7 +130,7 @@ function Navigation() {
               
               {/* Desktop Sign In Button - Inside navigation for perfect alignment */}
               <Button 
-                onClick={openPopup}
+                onClick={() => window.open('https://app.careerframe.co.uk/', '_blank')}
                 className="text-white px-8 py-3 text-xl font-semibold button-hover rounded-lg navbar-signin-btn" 
                 style={{ 
                   backgroundColor: '#829340 !important', 
@@ -217,7 +217,7 @@ function Navigation() {
             </a>
             <Button 
               onClick={() => {
-                openPopup();
+                window.open('https://app.careerframe.co.uk/', '_blank');
                 setMobileMenuOpen(false);
                 playClickSound();
               }}

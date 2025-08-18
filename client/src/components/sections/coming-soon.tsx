@@ -541,7 +541,7 @@ export function ComingSoonPage() {
                 letterSpacing: "-0.02em",
               }}
             >
-              What to Expect After You Sign Up
+              Find the right role get there faster
             </motion.h1>
             <motion.p
               initial={{ opacity: 0, y: 20 }}
@@ -553,361 +553,371 @@ export function ComingSoonPage() {
                 lineHeight: "1.5",
               }}
             >
-              Your career transformation starts immediately — here's exactly what happens next
+              Real Progress - Real People, 6 x cheaper than the average career coach
             </motion.p>
 
-            {/* 3-Step Process - Desktop Layout */}
-            <div className="hidden md:block mb-8">
-              {/* Numbered circles with dotted line */}
-              <div className="grid grid-cols-3 gap-8 mb-8 relative">
-                {/* Circle 1 */}
-                <div className="flex justify-center">
-                  <div 
-                    className="numbered-circle numbered-circle-1" 
-                    style={{ 
-                      fontFamily: 'Inter, sans-serif'
-                    }}
-                  >
-                    1
-                  </div>
-                </div>
-                
-                {/* Circle 2 */}
-                <div className="flex justify-center">
-                  <div 
-                    className="numbered-circle numbered-circle-2" 
-                    style={{ 
-                      fontFamily: 'Inter, sans-serif'
-                    }}
-                  >
-                    2
-                  </div>
-                </div>
-                
-                {/* Circle 3 */}
-                <div className="flex justify-center">
-                  <div 
-                    className="numbered-circle numbered-circle-3" 
-                    style={{ 
-                      fontFamily: 'Inter, sans-serif'
-                    }}
-                  >
-                    3
-                  </div>
-                </div>
-                
-                {/* Connecting lines */}
-                <div className="absolute top-6 left-0 right-0 flex justify-center pointer-events-none">
-                  <div className="relative" style={{ width: '600px' }}>
-                    <div 
-                      className="connecting-line-dash absolute" 
-                      style={{
-                        left: '-115px',
-                        top: '0px',
-                        width: '440px',
-                        height: '3px',
-                        opacity: 1,
-                      }}
-                    ></div>
-                    <div 
-                      className="connecting-line-dash absolute" 
-                      style={{
-                        left: '300px',
-                        top: '0px',
-                        width: '400px',
-                        height: '3px',
-                        opacity: 1,
-                      }}
-                    ></div>
-                  </div>
-                </div>
-              </div>
-
-              {/* Content below circles - Desktop */}
-              <div className="grid grid-cols-3 gap-8">
-                <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: 0.8 }}
-                  className="text-center"
-                >
-                  <h3 style={{
-                    fontFamily: 'Inter, sans-serif',
-                    fontWeight: 600,
-                    fontSize: '18px',
-                    lineHeight: '24px',
-                    color: '#141414',
-                    marginBottom: '12px'
-                  }}>
-                    Meet Your AI Coach
-                  </h3>
-                  <p style={{
-                    fontFamily: 'Inter, sans-serif',
-                    fontWeight: 400,
-                    fontSize: '14px',
-                    lineHeight: '20px',
-                    color: '#525252',
-                    margin: 0
-                  }}>
-                    Complete a 5-minute assessment to help us understand your goals, skills, and career preferences.
-                  </p>
-                </motion.div>
-
-                <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: 1.0 }}
-                  className="text-center"
-                >
-                  <h3 style={{
-                    fontFamily: 'Inter, sans-serif',
-                    fontWeight: 600,
-                    fontSize: '18px',
-                    lineHeight: '24px',
-                    color: '#141414',
-                    marginBottom: '12px'
-                  }}>
-                    Get Your Personalized Plan
-                  </h3>
-                  <p style={{
-                    fontFamily: 'Inter, sans-serif',
-                    fontWeight: 400,
-                    fontSize: '14px',
-                    lineHeight: '20px',
-                    color: '#525252',
-                    margin: 0
-                  }}>
-                    Receive a custom 90-day roadmap with specific milestones, skill development goals, and target roles.
-                  </p>
-                </motion.div>
-
-                <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: 1.2 }}
-                  className="text-center"
-                >
-                  <h3 style={{
-                    fontFamily: 'Inter, sans-serif',
-                    fontWeight: 600,
-                    fontSize: '18px',
-                    lineHeight: '24px',
-                    color: '#141414',
-                    marginBottom: '12px'
-                  }}>
-                    Begin Your Journey
-                  </h3>
-                  <p style={{
-                    fontFamily: 'Inter, sans-serif',
-                    fontWeight: 400,
-                    fontSize: '14px',
-                    lineHeight: '20px',
-                    color: '#525252',
-                    margin: 0
-                  }}>
-                    Start progressing through your milestones with daily guidance, weekly check-ins, and community support.
-                  </p>
-                </motion.div>
-              </div>
-            </div>
-
-            {/* Mobile Layout - Vertical Stack */}
-            <div className="md:hidden space-y-6 mb-8">
-              {[
-                {
-                  number: 1,
-                  title: "Meet Your AI Coach",
-                  description: "Complete a 5-minute assessment to help us understand your goals, skills, and career preferences."
-                },
-                {
-                  number: 2,
-                  title: "Get Your Personalized Plan", 
-                  description: "Receive a custom 90-day roadmap with specific milestones, skill development goals, and target roles."
-                },
-                {
-                  number: 3,
-                  title: "Begin Your Journey",
-                  description: "Start progressing through your milestones with daily guidance, weekly check-ins, and community support."
-                }
-              ].map((step, index) => (
-                <motion.div
-                  key={step.number}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: 0.8 + (index * 0.2) }}
-                  className="text-center"
-                >
-                  <div className="flex justify-center mb-3">
-                    <div 
-                      className={`numbered-circle numbered-circle-${step.number}`}
-                      style={{ 
-                        fontFamily: 'Inter, sans-serif'
-                      }}
-                    >
-                      {step.number}
-                    </div>
-                  </div>
-                  <h3 style={{
-                    fontFamily: 'Inter, sans-serif',
-                    fontWeight: 600,
-                    fontSize: '18px',
-                    lineHeight: '24px',
-                    color: '#141414',
-                    marginBottom: '12px'
-                  }}>
-                    {step.title}
-                  </h3>
-                  <p style={{
-                    fontFamily: 'Inter, sans-serif',
-                    fontWeight: 400,
-                    fontSize: '14px',
-                    lineHeight: '20px',
-                    color: '#525252',
-                    margin: 0
-                  }}>
-                    {step.description}
-                  </p>
-                </motion.div>
-              ))}
-            </div>
-
-            {/* Stats Section - Grey Box */}
+            {/* CTA Buttons */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 1.4 }}
-              className="mt-8 rounded-lg p-8 md:p-12 stats-grey-box"
-              style={{
-                backgroundColor: '#FAFAFA !important',
-                background: '#FAFAFA !important'
-              }}
+              transition={{ duration: 0.6, delay: 0.8 }}
+              className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-6 w-full max-w-md mx-auto sm:max-w-none"
             >
-              <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-                <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: 1.6 }}
-                  className="text-center"
-                >
-                  <div style={{
-                    fontFamily: 'Inter, sans-serif',
-                    fontWeight: 600,
-                    fontSize: '40px',
-                    lineHeight: '48px',
-                    color: '#829340',
-                    marginBottom: '8px'
-                  }}>12,000+</div>
-                  <div style={{
-                    fontFamily: 'Inter, sans-serif',
-                    fontWeight: 600,
-                    fontSize: '16px',
-                    lineHeight: '20px',
-                    color: '#141414',
-                    marginBottom: '8px'
-                  }}>Future Success Stories</div>
-                  <div style={{
-                    fontFamily: 'Inter, sans-serif',
-                    fontWeight: 400,
-                    fontSize: '14px',
-                    lineHeight: '20px',
-                    color: '#525252'
-                  }}>CareerFrame was created to help people land the roles they deserve — and you're next.</div>
-                </motion.div>
-                
-                <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: 1.8 }}
-                  className="text-center"
-                >
-                  <div style={{
-                    fontFamily: 'Inter, sans-serif',
-                    fontWeight: 600,
-                    fontSize: '40px',
-                    lineHeight: '48px',
-                    color: '#829340',
-                    marginBottom: '8px'
-                  }}>72%</div>
-                  <div style={{
-                    fontFamily: 'Inter, sans-serif',
-                    fontWeight: 600,
-                    fontSize: '16px',
-                    lineHeight: '20px',
-                    color: '#141414',
-                    marginBottom: '8px'
-                  }}>Reported Improved Career Confidence</div>
-                  <div style={{
-                    fontFamily: 'Inter, sans-serif',
-                    fontWeight: 400,
-                    fontSize: '14px',
-                    lineHeight: '20px',
-                    color: '#525252'
-                  }}>After creating a personalised roadmap with CareerFrame</div>
-                </motion.div>
-                
-                <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: 2.0 }}
-                  className="text-center"
-                >
-                  <div style={{
-                    fontFamily: 'Inter, sans-serif',
-                    fontWeight: 600,
-                    fontSize: '40px',
-                    lineHeight: '48px',
-                    color: '#829340',
-                    marginBottom: '8px'
-                  }}>Rate us</div>
-                  <div style={{
-                    fontFamily: 'Inter, sans-serif',
-                    fontWeight: 600,
-                    fontSize: '16px',
-                    lineHeight: '20px',
-                    color: '#141414',
-                    marginBottom: '8px'
-                  }}>Be the first to rate us</div>
-                  <div style={{
-                    fontFamily: 'Inter, sans-serif',
-                    fontWeight: 400,
-                    fontSize: '14px',
-                    lineHeight: '20px',
-                    color: '#525252'
-                  }}>Your voice matters</div>
-                </motion.div>
-                
-                <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: 2.2 }}
-                  className="text-center"
-                >
-                  <div style={{
-                    fontFamily: 'Inter, sans-serif',
-                    fontWeight: 600,
-                    fontSize: '40px',
-                    lineHeight: '48px',
-                    color: '#829340',
-                    marginBottom: '8px'
-                  }}>90 Days</div>
-                  <div style={{
-                    fontFamily: 'Inter, sans-serif',
-                    fontWeight: 600,
-                    fontSize: '16px',
-                    lineHeight: '20px',
-                    color: '#141414',
-                    marginBottom: '8px'
-                  }}>Our goal: career breakthroughs</div>
-                  <div style={{
-                    fontFamily: 'Inter, sans-serif',
-                    fontWeight: 400,
-                    fontSize: '14px',
-                    lineHeight: '20px',
-                    color: '#525252'
-                  }}>CareerFrame is built for speed — helping you move fast with a clear, financially lean, achievable plan.</div>
-                </motion.div>
-              </div>
+              <Button
+                variant="outline"
+                size="lg"
+                className="w-full sm:w-auto px-6 sm:px-8 py-3 text-base font-semibold border-2 border-gray-300 text-gray-700 hover:border-gray-400 hover:bg-gray-50"
+                onClick={() => window.open('https://app.careerframe.co.uk/', '_blank')}
+              >
+                Subscribe
+              </Button>
+              <Button
+                size="lg"
+                className="get-started-button w-full sm:w-auto px-6 sm:px-8 py-3 text-base font-semibold text-white"
+                style={{ 
+                  backgroundColor: "#829340 !important",
+                  background: "#829340 !important",
+                  color: "white !important",
+                  borderRadius: "8px !important"
+                }}
+                onClick={() => window.open('https://app.careerframe.co.uk/', '_blank')}
+              >
+                Start for Free
+              </Button>
             </motion.div>
+            
+            {/* Guarantee */}
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 1.0 }}
+              className="text-sm font-medium text-gray-700 mb-8"
+            >
+              90-day satisfaction guarantee
+            </motion.p>
+
+
+
+            {/* Three Feature Columns */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 mt-8">
+              {/* Column 1 - Feeling stuck */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 1.2 }}
+                className="flex justify-center"
+              >
+                {/* Outer Container */}
+                <div 
+                  className="w-full max-w-sm md:max-w-none feature-column-outer"
+                  style={{
+                    width: '384px',
+                    height: '290px',
+                    minWidth: '320px',
+                    opacity: 1,
+                    position: 'relative',
+                    display: 'flex',
+                    flexDirection: 'column',
+                    alignItems: 'center'
+                  }}
+                >
+                  {/* Icon - positioned above the grey box */}
+                  <div 
+                    className="icon-container-white"
+                    style={{
+                      width: '64px',
+                      height: '64px',
+                      borderRadius: '8px',
+                      backgroundColor: '#FFFFFF',
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      flexShrink: 0,
+                      position: 'relative',
+                      zIndex: 2,
+                      marginBottom: '-32px' // Overlap with grey container
+                    }}
+                  >
+                    <img 
+                      src={messageChatIcon} 
+                      alt="Message chat circle"
+                      className="w-5 h-5"
+                    />
+                  </div>
+
+                  {/* Inner Container - grey background */}
+                  <div 
+                    className="rounded-2xl feature-column-inner"
+                    style={{
+                      width: '384px',
+                      height: '266px',
+                      backgroundColor: '#FAFAFA',
+                      paddingTop: '52px',
+                      paddingRight: '24px',
+                      paddingBottom: '32px',
+                      paddingLeft: '24px',
+                      display: 'flex',
+                      flexDirection: 'column',
+                      alignItems: 'center',
+                      position: 'relative',
+                      zIndex: 1
+                    }}
+                  >
+                    {/* Content */}
+                    <div 
+                      className="feature-column-content"
+                      style={{
+                        width: '336px',
+                        height: '134px',
+                        display: 'flex',
+                        flexDirection: 'column',
+                        gap: '20px',
+                        textAlign: 'center'
+                      }}
+                    >
+                      <h3 
+                        style={{
+                          fontFamily: 'Inter, sans-serif',
+                          fontWeight: 600,
+                          fontSize: '20px',
+                          lineHeight: '30px',
+                          letterSpacing: '0%',
+                          color: '#141414',
+                          margin: 0
+                        }}
+                      >
+                        Feeling stuck
+                      </h3>
+                      <p 
+                        style={{
+                          fontFamily: 'Inter, sans-serif',
+                          fontWeight: 400,
+                          fontSize: '16px',
+                          lineHeight: '24px',
+                          letterSpacing: '0%',
+                          color: '#525252',
+                          margin: 0
+                        }}
+                      >
+                        Feeling stuck in a job that doesn't excite you? Every day feels like you're not reaching your full potential, just going through the motions without fulfilment.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </motion.div>
+
+              {/* Column 2 - Missing opportunities */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 1.4 }}
+                className="flex justify-center"
+              >
+                {/* Outer Container */}
+                <div 
+                  className="feature-column-outer"
+                  style={{
+                    width: '384px',
+                    height: '290px',
+                    minWidth: '320px',
+                    opacity: 1,
+                    position: 'relative',
+                    display: 'flex',
+                    flexDirection: 'column',
+                    alignItems: 'center'
+                  }}
+                >
+                  {/* Icon - positioned above the grey box */}
+                  <div 
+                    className="icon-container-white"
+                    style={{
+                      width: '64px',
+                      height: '64px',
+                      borderRadius: '8px',
+                      backgroundColor: '#FFFFFF',
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      flexShrink: 0,
+                      position: 'relative',
+                      zIndex: 2,
+                      marginBottom: '-32px'
+                    }}
+                  >
+                    <img 
+                      src={zapIcon} 
+                      alt="Lightning bolt zap"
+                      className="w-5 h-5"
+                    />
+                  </div>
+
+                  {/* Inner Container - grey background */}
+                  <div 
+                    className="rounded-2xl feature-column-inner"
+                    style={{
+                      width: '384px',
+                      height: '266px',
+                      backgroundColor: '#FAFAFA',
+                      paddingTop: '52px',
+                      paddingRight: '24px',
+                      paddingBottom: '32px',
+                      paddingLeft: '24px',
+                      display: 'flex',
+                      flexDirection: 'column',
+                      alignItems: 'center',
+                      position: 'relative',
+                      zIndex: 1
+                    }}
+                  >
+                    {/* Content */}
+                    <div 
+                      className="feature-column-content"
+                      style={{
+                        width: '336px',
+                        height: '134px',
+                        display: 'flex',
+                        flexDirection: 'column',
+                        gap: '20px',
+                        textAlign: 'center'
+                      }}
+                    >
+                      <h3 
+                        style={{
+                          fontFamily: 'Inter, sans-serif',
+                          fontWeight: 600,
+                          fontSize: '20px',
+                          lineHeight: '30px',
+                          letterSpacing: '0%',
+                          color: '#141414',
+                          margin: 0
+                        }}
+                      >
+                        Missing opportunities
+                      </h3>
+                      <p 
+                        style={{
+                          fontFamily: 'Inter, sans-serif',
+                          fontWeight: 400,
+                          fontSize: '16px',
+                          lineHeight: '24px',
+                          letterSpacing: '0%',
+                          color: '#525252',
+                          margin: 0
+                        }}
+                      >
+                        The longer you stay in that job, the more you miss out on the opportunities that could change your life. The routine becomes draining, and the fear of stepping into something new only holds you back.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </motion.div>
+
+              {/* Column 3 - Break free with CareerFrame */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 1.6 }}
+                className="flex justify-center"
+              >
+                {/* Outer Container */}
+                <div 
+                  className="feature-column-outer"
+                  style={{
+                    width: '384px',
+                    height: '290px',
+                    minWidth: '320px',
+                    opacity: 1,
+                    position: 'relative',
+                    display: 'flex',
+                    flexDirection: 'column',
+                    alignItems: 'center'
+                  }}
+                >
+                  {/* Icon - positioned above the grey box */}
+                  <div 
+                    className="icon-container-white"
+                    style={{
+                      width: '64px',
+                      height: '64px',
+                      borderRadius: '8px',
+                      backgroundColor: '#FFFFFF',
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      flexShrink: 0,
+                      position: 'relative',
+                      zIndex: 2,
+                      marginBottom: '-32px'
+                    }}
+                  >
+                    <img 
+                      src={chartBreakoutIcon} 
+                      alt="Chart breakout square"
+                      className="w-5 h-5"
+                    />
+                  </div>
+
+                  {/* Inner Container - grey background */}
+                  <div 
+                    className="rounded-2xl feature-column-inner"
+                    style={{
+                      width: '384px',
+                      height: '266px',
+                      backgroundColor: '#FAFAFA',
+                      paddingTop: '52px',
+                      paddingRight: '24px',
+                      paddingBottom: '32px',
+                      paddingLeft: '24px',
+                      display: 'flex',
+                      flexDirection: 'column',
+                      alignItems: 'center',
+                      position: 'relative',
+                      zIndex: 1
+                    }}
+                  >
+                    {/* Content */}
+                    <div 
+                      className="feature-column-content"
+                      style={{
+                        width: '336px',
+                        height: '134px',
+                        display: 'flex',
+                        flexDirection: 'column',
+                        gap: '20px',
+                        textAlign: 'center'
+                      }}
+                    >
+                      <h3 
+                        style={{
+                          fontFamily: 'Inter, sans-serif',
+                          fontWeight: 600,
+                          fontSize: '20px',
+                          lineHeight: '30px',
+                          letterSpacing: '0%',
+                          color: '#141414',
+                          margin: 0
+                        }}
+                      >
+                        Break free with CareerFrame
+                      </h3>
+                      <p 
+                        style={{
+                          fontFamily: 'Inter, sans-serif',
+                          fontWeight: 400,
+                          fontSize: '16px',
+                          lineHeight: '24px',
+                          letterSpacing: '0%',
+                          color: '#525252',
+                          margin: 0
+                        }}
+                      >
+                        CareerFrame helps you break free from career confusion. With personalized coaching, skill gap analysis, and tailored career paths, we provide the tools and guidance to help you pursue work that aligns with your goals.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </motion.div>
+            </div>
 
 
 
