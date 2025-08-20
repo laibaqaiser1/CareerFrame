@@ -187,12 +187,30 @@ export function ComingSoonPage() {
     preloadImages(() => {
       console.log("All images preloaded, setting pattern ready");
       setPatternReady(true);
-      // Force reflow to ensure pattern displays
+      // Force reflow to ensure pattern displays and ensure proper z-index layering
       setTimeout(() => {
         const section = document.querySelector('.coming-soon-section');
         if (section) {
           console.log("Pattern class applied:", section.classList.contains('pattern-loaded'));
           console.log("Section background:", window.getComputedStyle(section).background.substring(0, 100));
+          
+          // Force pattern pseudo-element to the back
+          const style = document.createElement('style');
+          style.textContent = `
+            section.coming-soon-section.pattern-loaded::after {
+              z-index: -999 !important;
+            }
+          `;
+          document.head.appendChild(style);
+          
+          // Ensure any existing corner frames are on top
+          const cornerFrames = section.querySelectorAll('.corner-frame-top-left, .corner-frame-bottom-right');
+          cornerFrames.forEach(frame => {
+            if (frame instanceof HTMLElement) {
+              frame.style.zIndex = '999999';
+              frame.style.position = 'absolute';
+            }
+          });
         }
       }, 100);
     });
@@ -266,7 +284,7 @@ export function ComingSoonPage() {
           : (isMobile ? "bottom: -5px !important; right: -5px !important;" : "bottom: 0px !important; right: 0px !important;")}
         width: ${isMobile ? "280px" : "520px"} !important;
         height: ${isMobile ? "280px" : "600px"} !important;
-        z-index: 100001 !important;
+        z-index: 999999 !important;
         pointer-events: none !important;
         opacity: 1,
         transition: opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1);
@@ -292,6 +310,8 @@ export function ComingSoonPage() {
         setTimeout(() => {
           frameDiv.style.opacity = "0.8";
           frameDiv.style.transform = "translateZ(0) translate3d(0px, 0px, 0px)";
+          frameDiv.style.zIndex = "999999"; // Force highest z-index
+          frameDiv.style.position = "absolute"; // Ensure positioning context
           console.log(
             `🖼️ ${isTopLeft ? "TopLeft" : "BottomRight"} Frame loaded and positioned`,
           );
@@ -327,6 +347,10 @@ export function ComingSoonPage() {
         } else {
           bottomRightFrame.style.transform = `translate3d(${bottomRightXValue}px, ${bottomRightYValue}px, 0)`;
         }
+        
+        // Ensure frames stay on top during scroll animation
+        topLeftFrame.style.zIndex = "999999";
+        bottomRightFrame.style.zIndex = "999999";
         
         // Debug scroll animation (reduced frequency) - can be removed in production
         // if (scrollValue % 10 === 0) {
