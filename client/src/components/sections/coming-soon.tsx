@@ -524,30 +524,30 @@ export function ComingSoonPage() {
       {/* Corner frames are now injected directly into document.body via useEffect */}
       <div className="w-full max-w-full mx-auto px-4 sm:px-6 md:px-8 lg:px-12 xl:px-20 2xl:px-28 flex-1 flex flex-col relative z-10">
         {/* What to Expect After You Sign Up Content */}
-        <div className="flex-1 flex items-center justify-center pt-20 sm:pt-24 md:pt-28 pb-6 sm:pb-8 md:pb-10">
+        <div className="flex-1 flex items-center justify-center pt-12 sm:pt-16 md:pt-20 pb-4 sm:pb-6 md:pb-8">
           <motion.div
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-center max-w-5xl mx-auto w-full"
+            className="text-center max-w-xl mx-auto w-full"
           >
             <motion.h1
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.4 }}
-              className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-semibold text-center text-gray-800 mb-4 leading-tight px-2"
+              className="text-4xl sm:text-4xl md:text-5xl lg:text-6xl font-semibold text-center text-gray-800 mb-4 leading-tight px-2"
               style={{
                 fontFamily: "Inter",
                 letterSpacing: "-0.02em",
               }}
             >
-              Find the right role get there faster
+              Your Potential Is Bigger Than your Job Title — Let's Prove It
             </motion.h1>
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.6 }}
-              className="text-base sm:text-lg md:text-xl text-center text-gray-600 mb-6 px-4 max-w-3xl mx-auto"
+              className="text-sm sm:text-base md:text-lg text-center text-gray-600 mb-4 px-4 max-w-2xl mx-auto"
               style={{
                 fontFamily: "Inter",
                 lineHeight: "1.5",
@@ -561,19 +561,19 @@ export function ComingSoonPage() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.8 }}
-              className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-6 w-full max-w-md mx-auto sm:max-w-none"
+              className="flex flex-col sm:flex-row gap-3 justify-center items-center mb-4 w-full max-w-sm mx-auto sm:max-w-none"
             >
               <Button
                 variant="outline"
-                size="lg"
-                className="w-full sm:w-auto px-6 sm:px-8 py-3 text-base font-semibold border-2 border-gray-300 text-gray-700 hover:border-gray-400 hover:bg-gray-50"
+                size="sm"
+                className="w-full sm:w-auto px-4 sm:px-6 py-2 text-sm font-semibold border-2 border-gray-300 text-gray-700 hover:border-gray-400 hover:bg-gray-50"
                 onClick={() => window.open('https://app.careerframe.co.uk/', '_blank')}
               >
                 Subscribe
               </Button>
               <Button
-                size="lg"
-                className="get-started-button w-full sm:w-auto px-6 sm:px-8 py-3 text-base font-semibold text-white"
+                size="sm"
+                className="get-started-button w-full sm:w-auto px-4 sm:px-6 py-2 text-sm font-semibold text-white"
                 style={{ 
                   backgroundColor: "#829340 !important",
                   background: "#829340 !important",
@@ -591,7 +591,7 @@ export function ComingSoonPage() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 1.0 }}
-              className="text-sm font-medium text-gray-700 mb-8"
+              className="text-xs font-medium text-gray-700 mb-6"
             >
               90-day satisfaction guarantee
             </motion.p>
@@ -608,10 +608,7 @@ export function ComingSoonPage() {
         </div>
       </div>
       
-      {/* Section Divider */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 sm:pt-12 md:pt-16">
-        <div className="border-b border-gray-200"></div>
-      </div>
+
     </section>
 
     </div>

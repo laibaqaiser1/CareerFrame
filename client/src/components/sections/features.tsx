@@ -86,7 +86,7 @@ export function FeaturesSection() {
       <WaitlistPopup isOpen={isOpen} onClose={closePopup} />
 
       <section
-        className="py-8 sm:py-12 md:py-16 features-white-bg"
+        className="features-white-bg py-8"
         style={{ backgroundColor: "#ffffff" }}
       >
         <div
@@ -96,16 +96,7 @@ export function FeaturesSection() {
           {/* Header */}
           <div className="text-center mb-12">
             <h2
-              style={{
-                fontFamily: "Inter, sans-serif",
-                fontWeight: 600,
-                fontSize: "30px",
-                lineHeight: "44px",
-                letterSpacing: "-0.02em",
-                textAlign: "center",
-                color: "#141414",
-                marginBottom: "16px",
-              }}
+              className="section-heading text-center"
             >
               What You Get: A Complete Career
               <br className="hidden md:block" />
@@ -239,7 +230,7 @@ export function FeaturesSection() {
             ))}
           </div>
 
-          {/* CTA Section - Responsive container with background image */}
+          {/* CTA Section - COMMENTED OUT 
           <div
             className="w-full max-w-6xl mx-auto relative overflow-hidden grid grid-cols-1 md:grid-cols-[auto_1fr] gap-6 md:gap-0"
             style={{
@@ -249,7 +240,6 @@ export function FeaturesSection() {
               minHeight: "212px"
             }}
           >
-            {/* Background Image */}
             <img
               src="/image.jpg"
               alt=""
@@ -258,7 +248,6 @@ export function FeaturesSection() {
                 borderRadius: "16px"
               }}
             />
-            {/* Dark overlay */}
             <div
               className="absolute inset-0"
               style={{
@@ -267,7 +256,6 @@ export function FeaturesSection() {
               }}
             />
             
-            {/* Text Content - First Column */}
             <div className="text-left flex flex-col justify-center relative z-10 md:col-span-1">
               <h3
                 className="md:whitespace-nowrap whitespace-normal"
@@ -301,7 +289,6 @@ export function FeaturesSection() {
               </p>
             </div>
 
-            {/* Get Started Button - Second Column */}
             <div className="flex items-center justify-center relative z-10 md:col-span-1">
               <div
                 className="w-full md:w-32"
@@ -347,15 +334,13 @@ export function FeaturesSection() {
               </div>
             </div>
           </div>
+          */}
 
 
         </div>
       </section>
 
-      {/* Section Divider */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 sm:pt-12 md:pt-16">
-        <div className="border-b border-gray-200"></div>
-      </div>
+
     </>
   );
 }

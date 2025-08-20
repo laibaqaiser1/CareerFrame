@@ -39,7 +39,7 @@ export function HowItWorksSection() {
       <WaitlistPopup isOpen={isOpen} onClose={closePopup} />
       <section
         id="how-it-works"
-        className="py-8 sm:py-12 md:py-16 lg:py-20"
+        className="py-8"
         style={{ backgroundColor: "white" }}
       >
         <div className="max-w-5xl mx-auto px-4 sm:px-6 md:px-8 lg:px-12 xl:px-20 2xl:px-28">
@@ -129,7 +129,7 @@ export function HowItWorksSection() {
             })}
           </div>
 
-          {/* CTA Section */}
+          {/* CTA Section 
           <div
             className={`get-in-touch-bg rounded-2xl p-8 text-center transition-all duration-700 delay-300 ${
               isVisible
@@ -187,7 +187,7 @@ export function HowItWorksSection() {
             >
               Get Started
             </SoundButton>
-          </div>
+          </div> */}
         </div>
       </section>
     </>

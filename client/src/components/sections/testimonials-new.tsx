@@ -49,7 +49,7 @@ export function TestimonialsSection() {
   return (
     <section
       id="testimonials"
-      className="py-8 sm:py-12 md:py-16 lg:py-20"
+      className="py-8"
       style={{ backgroundColor: "#ffffff", background: "#ffffff" }}
     >
       <div

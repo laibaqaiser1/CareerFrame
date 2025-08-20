@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { ComingSoonPage } from "@/components/sections/coming-soon";
 
 import { CareerBenefitsSection } from "@/components/sections/career-benefits";
+import { WhatToExpectSection } from "@/components/sections/what-to-expect";
 import { TrustSignalsSection } from "@/components/sections/trust-signals";
 import { FeaturesSection } from "@/components/sections/features";
 import { HowItWorksSection } from "@/components/sections/how-it-works";
@@ -15,6 +16,7 @@ import { PricingSection } from "@/components/sections/pricing";
 
 import { FAQSection } from "@/components/sections/faq";
 import { Footer } from "@/components/sections/footer";
+import { SectionDivider } from "@/components/ui/section-divider";
 import { LiveChat } from "@/components/ui/live-chat";
 import { CustomCursor } from "@/components/ui/custom-cursor";
 import { Button } from "@/components/ui/button";
@@ -305,55 +307,44 @@ export default function Home() {
           <div className="static-section">
             <CareerBenefitsSection />
           </div>
-        
-        
-        {/* Full website content below for exploration */}
-        <div className="page-transition" style={{ background: "transparent", backgroundColor: "transparent" }}>
-          <div className="slide-in-left" style={{ background: "transparent", backgroundColor: "transparent" }}>
-            <FeaturesSection />
-          </div>
+          <SectionDivider />
           
-          {/* Powerful Features Section - Position #5 */}
+
+          
+          {/* Powerful Features Section - Position 4 */}
           <div className="fade-in">
             <PowerfulFeaturesSection />
           </div>
+          <SectionDivider />
           
-          {/* Section Divider */}
-          <div className="py-8">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-              <div className="border-b border-gray-200"></div>
-            </div>
-          </div>
-          
-          {/* Rewards Section - Position #6 */}
+          {/* Earn XP & Unlock Rewards Section - Position 5 */}
           <div className="fade-in">
             <RewardsSection />
           </div>
-          
-          {/* Section Divider */}
-          <div className="py-8">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-              <div className="border-b border-gray-200"></div>
-            </div>
-          </div>
-          
+          <SectionDivider />
+        
+        {/* Full website content below for exploration */}
+        <div className="page-transition" style={{ background: "transparent", backgroundColor: "transparent" }}>
+          {/* How It Works Section - Position 6 */}
           <div className="slide-in-left" style={{ background: "transparent", backgroundColor: "transparent" }}>
             <HowItWorksSection />
           </div>
+          <SectionDivider />
           
-          {/* Section Divider */}
-          <div className="py-8">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-              <div className="border-b border-gray-200"></div>
-            </div>
+          {/* What You Get Section - Position 7 */}
+          <div className="slide-in-left" style={{ background: "transparent", backgroundColor: "transparent" }}>
+            <FeaturesSection />
           </div>
+          <SectionDivider />
           
           <div className="slide-up" style={{ background: "transparent", backgroundColor: "transparent" }}>
             <TestimonialsSection />
           </div>
+          
           <div className="slide-in-right" style={{ background: "transparent", backgroundColor: "transparent" }}>
             <PricingSection />
           </div>
+          
           <div className="scale-in" style={{ background: "transparent", backgroundColor: "transparent" }}>
             <FAQSection />
           </div>

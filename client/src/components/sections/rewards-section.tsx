@@ -2,20 +2,12 @@ import rewardsImg from "@/assets/rewards.png";
 
 export function RewardsSection() {
   return (
-    <section className="py-16 px-4 sm:px-6 lg:px-8" style={{ backgroundColor: "#ffffff" }}>
-      <div className="max-w-7xl mx-auto">
+    <section className="py-8 px-4 sm:px-6 lg:px-8" style={{ backgroundColor: "#ffffff" }}>
+      <div className="max-w-2xl mx-auto">
         {/* Header Section - Separate Row */}
         <div className="text-left mb-12">
           <h2
-            style={{
-              fontFamily: "Inter, sans-serif",
-              fontWeight: 600,
-              fontSize: "36px",
-              lineHeight: "44px",
-              letterSpacing: "-0.02em",
-              color: "#1f2937",
-              marginBottom: "16px"
-            }}
+            className="section-heading text-left"
           >
             Earn XP & Unlock Rewards
           </h2>

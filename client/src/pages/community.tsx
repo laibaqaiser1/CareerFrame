@@ -6,7 +6,7 @@ import { ArrowLeft, Users, MessageSquare, Trophy, Calendar } from "lucide-react"
 export default function Community() {
   return (
     <div className="min-h-screen bg-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 py-16">
+      <div className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 py-16">
         <div className="mb-8">
           <Link href="/">
             <Button variant="ghost" className="mb-4">

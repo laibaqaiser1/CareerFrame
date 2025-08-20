@@ -31,6 +31,17 @@
   --light-grey: 220 14% 96%; /* #F9FAFB */
 }
 
+/* Consistent Section Heading Style */
+.section-heading {
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  font-size: 36px;
+  line-height: 44px;
+  letter-spacing: -0.02em;
+  color: rgb(31, 41, 55);
+  margin-bottom: 16px;
+}
+
 /* Force light mode - prevent dark mode activation */
 html, body {
   color-scheme: light !important;

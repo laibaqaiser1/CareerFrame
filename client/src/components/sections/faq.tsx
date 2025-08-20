@@ -93,44 +93,36 @@ export function FAQSection() {
   };
 
   return (
-    <section className="py-8 sm:py-12 md:py-16 lg:py-20 bg-white">
-      <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-8">
+    <section className="pt-12 pb-8 bg-white">
+      <div className="max-w-2xl mx-auto px-6 sm:px-8 lg:px-8">
           {/* Header */}
-          <div className="text-center mb-12">
+          <div className="text-center mb-8">
             <h2 
-              style={{
-                fontFamily: "Inter, sans-serif",
-                fontWeight: 600,
-                fontSize: "36px",
-                lineHeight: "44px",
-                letterSpacing: "-0.02em",
-                textAlign: "center",
-                color: "#141414"
-              }}
+              className="section-heading text-center"
             >
               Frequently asked questions
             </h2>
-            <p className="text-gray-600 mt-4 text-lg">
+            <p className="text-gray-600 mt-3 text-sm">
               Honest answers to the questions holding you back from taking action
             </p>
           </div>
 
           {/* FAQ Accordion */}
-          <Accordion type="single" collapsible className="mb-16">
+          <Accordion type="single" collapsible className="mb-8">
             {faqs.map((faq, index) => (
               <AccordionItem 
                 key={index} 
                 value={`item-${index}`} 
-                className={`${index < faqs.length - 1 ? 'border-b border-gray-200 pb-6 mb-6' : 'pb-6 border-b-0'}`}
+                className={`${index < faqs.length - 1 ? 'border-b border-gray-200 pb-4 mb-4' : 'pb-4 border-b-0'}`}
               >
                 <AccordionTrigger className="text-left text-lg font-medium text-gray-900 hover:text-gray-700 transition-colors py-0 flex justify-between items-center w-full group [&>svg]:hidden">
                   <span className="pr-4">{faq.question}</span>
-                  <div className="flex-shrink-0 w-6 h-6 rounded-full border border-gray-300 flex items-center justify-center group-hover:border-gray-400 transition-colors">
+                  <div className="flex-shrink-0 w-5 h-5 rounded-full border border-gray-300 flex items-center justify-center group-hover:border-gray-400 transition-colors">
                     <Plus className="h-3 w-3 text-gray-500 group-hover:text-gray-700 transition-colors group-data-[state=open]:hidden" />
                     <Minus className="h-3 w-3 text-gray-500 group-hover:text-gray-700 transition-colors group-data-[state=closed]:hidden" />
                   </div>
                 </AccordionTrigger>
-                <AccordionContent className="text-gray-600 pt-4 pb-0 leading-relaxed">
+                <AccordionContent className="text-gray-600 pt-3 pb-0 text-sm leading-relaxed">
                   {faq.answer}
                 </AccordionContent>
               </AccordionItem>
@@ -139,37 +131,37 @@ export function FAQSection() {
 
           {/* Waitlist Section */}
           <div 
-            className="text-center mx-auto px-4 sm:px-6 md:px-8 w-full max-w-7xl"
+            className="text-center mx-auto px-3 sm:px-4 md:px-6 w-full max-w-xl"
             style={{
               backgroundColor: '#ECEEE4',
-              minHeight: '388px',
-              borderRadius: '16px',
-              padding: '32px 16px',
+              minHeight: '280px',
+              borderRadius: '12px',
+              padding: '24px 12px',
               display: 'flex',
               flexDirection: 'column',
               justifyContent: 'center',
-              gap: '24px',
+              gap: '16px',
               boxSizing: 'border-box'
             }}
           >
             <div className="px-2">
-              <h3 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-4 leading-tight">
+              <h3 className="text-lg sm:text-xl font-bold text-gray-900 mb-3 leading-tight">
                 Ready to Transform Your Career?
               </h3>
-              <p className="text-gray-600 mb-6 sm:mb-8 max-w-2xl mx-auto text-base sm:text-lg leading-relaxed">
+              <p className="text-gray-600 mb-4 sm:mb-6 max-w-lg mx-auto text-sm sm:text-base leading-relaxed">
                 Join thousands of professionals already using CareerFrame to discover their dream careers. Get started today!
               </p>
             </div>
             
-            <form onSubmit={handleWaitlistSignup} className="flex flex-col sm:flex-row mx-auto mb-4 sm:mb-6 px-2 w-full justify-center items-center" style={{ gap: '6px' }}>
+            <form onSubmit={handleWaitlistSignup} className="flex flex-col sm:flex-row mx-auto mb-3 sm:mb-4 px-2 w-full justify-center items-center" style={{ gap: '4px' }}>
               <Input
                 type="email"
                 placeholder="Enter your email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                className="border-2 border-gray-300 px-3 sm:px-4 text-sm sm:text-base rounded-md focus:border-green-500 focus:ring-2 focus:ring-green-200 outline-none w-full sm:w-[331px]"
+                className="border-2 border-gray-300 px-3 sm:px-4 text-xs sm:text-sm rounded-md focus:border-green-500 focus:ring-2 focus:ring-green-200 outline-none w-full sm:w-[280px]"
                 style={{
-                  height: '48px',
+                  height: '40px',
                   backgroundColor: '#ffffff !important',
                   background: '#ffffff !important',
                   backgroundImage: 'none !important',
@@ -183,9 +175,9 @@ export function FAQSection() {
                 style={{ 
                   backgroundColor: '#829340',
                   color: 'white',
-                  height: '48px'
+                  height: '40px'
                 }}
-                className="hover:opacity-90 transition-opacity px-6 sm:px-8 text-sm sm:text-base font-medium w-full sm:w-auto sm:min-w-[140px]"
+                className="hover:opacity-90 transition-opacity px-4 sm:px-6 text-xs sm:text-sm font-medium w-full sm:w-auto sm:min-w-[120px]"
               >
                 Get Started
               </Button>

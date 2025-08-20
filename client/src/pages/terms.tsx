@@ -19,7 +19,7 @@ export default function Terms() {
         />
       </div>
 
-      <div className="max-w-4xl mx-auto px-6 sm:px-8 lg:px-12 xl:px-20 py-16 relative z-10">
+      <div className="max-w-xl mx-auto px-6 sm:px-8 lg:px-12 xl:px-20 py-16 relative z-10">
         <div className="mb-12">
           <Link href="/">
             <Button 

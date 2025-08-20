@@ -4,7 +4,7 @@ import careerFrameLogo from "@assets/logo_1753453465800.png";
 export function Navbar() {
   return (
     <nav className="bg-white border-b border-gray-200 shadow-sm sticky top-0 z-50">
-      <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 xl:px-20">
+      <div className="max-w-2xl mx-auto px-6 sm:px-8 lg:px-12 xl:px-20">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <Link href="/">
@@ -12,7 +12,7 @@ export function Navbar() {
               <img 
                 src={careerFrameLogo} 
                 alt="CareerFrame Logo" 
-                className="h-8 w-auto"
+                className="h-6 w-auto"
               />
             </div>
           </Link>
@@ -35,7 +35,7 @@ export function Navbar() {
               href="https://app.careerframe.co.uk/"
               target="_blank"
               rel="noopener noreferrer"
-              className="px-4 py-2 rounded-lg font-medium transition-colors ml-2"
+              className="px-3 py-1.5 rounded-lg text-sm font-medium transition-colors ml-2"
               style={{ 
                 backgroundColor: '#829340',
                 color: 'white'

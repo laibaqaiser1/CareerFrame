@@ -16,7 +16,7 @@ const legalLinks = [
 export function Footer() {
   return (
     <footer className="bg-slate-800 text-white py-16 md:py-20 w-full">
-      <div className="w-full px-6 sm:px-8 lg:px-12 xl:px-20 2xl:px-28">
+      <div className="max-w-2xl mx-auto px-6 sm:px-8 lg:px-12 xl:px-20 2xl:px-28">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 md:gap-12">
           {/* Left section with logo, description and social icons */}
           <div>

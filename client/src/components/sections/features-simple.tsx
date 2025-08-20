@@ -32,7 +32,7 @@ export function FeaturesSection() {
         <div 
           className="mx-auto px-6"
           style={{
-            width: "1216px",
+            width: "600px",
             maxWidth: "calc(100vw - 48px)",
             backgroundColor: "#ffffff",
             background: "#ffffff",
@@ -40,16 +40,7 @@ export function FeaturesSection() {
           }}
         >
           <h2 
-            className="text-center mb-4"
-            style={{
-              fontFamily: "Inter, sans-serif",
-              fontWeight: 600,
-              fontSize: "36px",
-              lineHeight: "44px",
-              letterSpacing: "-0.02em",
-              textAlign: "center",
-              color: "#141414"
-            }}
+            className="section-heading text-center"
           >
             What You Get: A Complete Career <br className="hidden md:block" />Development System
           </h2>
@@ -68,11 +59,11 @@ export function FeaturesSection() {
           </div>
           
           <p 
-            className="text-center mb-12 max-w-3xl mx-auto"
+            className="text-center mb-8 max-w-2xl mx-auto"
             style={{
               fontFamily: "Inter, sans-serif",
               fontWeight: 400,
-              fontSize: "16px",
+              fontSize: "14px",
               color: "#525252",
               lineHeight: "1.6"
             }}
@@ -82,9 +73,9 @@ export function FeaturesSection() {
 
           {/* Video Section with CareerFrame Interface */}
           <div 
-            className="mb-12 relative mx-auto main-video-container"
+            className="mb-8 relative mx-auto main-video-container"
             style={{
-              width: "1216px",
+              width: "600px",
               maxWidth: "calc(100vw - 48px)"
             }}
           >
@@ -378,17 +369,7 @@ export function FeaturesSection() {
 
       </section>
 
-      {/* Section Divider */}
-      <div 
-        className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 section-divider-white"
-        style={{
-          backgroundColor: "#ffffff !important",
-          background: "#ffffff !important",
-          backgroundImage: "none !important"
-        }}
-      >
-        <div className="border-b border-gray-200"></div>
-      </div>
+
     </>
   );
 }

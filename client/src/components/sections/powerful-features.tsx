@@ -49,25 +49,62 @@ This means you don't just apply blind — you apply with foresight. You'll know 
     }
   ];
 
+  const additionalFeatures = [
+    {
+      icon: "👥",
+      title: "Connect with Like-Minded Professionals",
+      description: "Join a supportive community of career-changers. Share experiences, celebrate wins, and get encouragement when you need it most.",
+      iconColor: "text-green-500"
+    },
+    {
+      icon: "🎯",
+      title: "Career Alignment & Role Insights",
+      description: "Get in-depth role overviews and personalized recommendations based on your skills, experience, and career aspirations.",
+      iconColor: "text-cyan-500"
+    },
+    {
+      icon: "🔍",
+      title: "Explore Roles Access (Freemium/Premium)",
+      description: "Get limited or unlimited access to job fit, salaries, and perks.",
+      iconColor: "text-blue-500"
+    },
+    {
+      icon: "📈",
+      title: "Deep Skill Gap Analysis (Premium)",
+      description: "Receive a detailed skill gap report to understand areas needing improvement for career advancement.",
+      iconColor: "text-green-500"
+    },
+    {
+      icon: "📄",
+      title: "AI-Powered Resume Builder",
+      description: "Generate a professional, optimized resume tailored to your goals.",
+      iconColor: "text-pink-500"
+    },
+    {
+      icon: "📝",
+      title: "AI-Generated Cover Letter",
+      description: "Automatically generate a personalized cover letter for the role you want.",
+      iconColor: "text-indigo-500"
+    },
+    {
+      icon: "🏆",
+      title: "XP Points & Rewards (2x Premium)",
+      description: "Earn XP for milestones and unlock rewards to accelerate your career journey.",
+      iconColor: "text-yellow-500"
+    }
+  ];
+
   const handleFeatureClick = (index: number) => {
     setExpandedFeature(expandedFeature === index ? null : index);
   };
 
   return (
-    <section id="powerful-features" className="py-16 px-4 sm:px-6 lg:px-8" style={{ backgroundColor: "#ffffff" }}>
-      <div className="max-w-7xl mx-auto">
+    <section id="powerful-features" className="py-8 px-4 sm:px-6 lg:px-8" style={{ backgroundColor: "#ffffff" }}>
+      <div className="max-w-2xl mx-auto">
         {/* Header */}
         <div className="text-center mb-16">
           <h2
-            style={{
-              fontFamily: "Inter, sans-serif",
-              fontWeight: 600,
-              fontSize: "36px",
-              lineHeight: "44px",
-              letterSpacing: "-0.02em",
-              color: "#1f2937",
-              marginBottom: "16px"
-            }}
+            className="section-heading text-center"
           >
             Powerful features to accelerate your career
           </h2>
@@ -208,6 +245,63 @@ This means you don't just apply blind — you apply with foresight. You'll know 
                     </div>
                   </div>
                 )}
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Additional Features Grid */}
+        <div className="mt-16 mb-12">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {additionalFeatures.map((feature, index) => (
+              <div
+                key={index}
+                className="bg-gray-50 rounded-lg p-6 hover:shadow-md transition-all duration-300"
+                style={{
+                  border: "1px solid #e5e7eb"
+                }}
+              >
+                <div>
+                  <div
+                    className="w-8 h-8 rounded-lg flex items-center justify-center text-lg mb-3"
+                    style={{
+                      backgroundColor: feature.iconColor === "text-green-500" ? "#dcfce7" :
+                                     feature.iconColor === "text-cyan-500" ? "#cffafe" :
+                                     feature.iconColor === "text-blue-500" ? "#dbeafe" :
+                                     feature.iconColor === "text-pink-500" ? "#fce7f3" :
+                                     feature.iconColor === "text-indigo-500" ? "#e0e7ff" :
+                                     feature.iconColor === "text-yellow-500" ? "#fef3c7" : "#f3f4f6"
+                    }}
+                  >
+                    {feature.icon}
+                  </div>
+                  <h4
+                    className="mb-2"
+                    style={{
+                      fontFamily: "Inter, sans-serif",
+                      fontWeight: 600,
+                      fontSize: "16px",
+                      lineHeight: "24px",
+                      color: "#141414",
+                      margin: 0,
+                      marginBottom: "8px"
+                    }}
+                  >
+                    {feature.title}
+                  </h4>
+                  <p
+                    style={{
+                      fontFamily: "Inter, sans-serif",
+                      fontWeight: 400,
+                      fontSize: "14px",
+                      lineHeight: "20px",
+                      color: "#6b7280",
+                      margin: 0
+                    }}
+                  >
+                    {feature.description}
+                  </p>
+                </div>
               </div>
             ))}
           </div>

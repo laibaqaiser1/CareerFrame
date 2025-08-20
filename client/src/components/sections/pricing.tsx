@@ -79,7 +79,7 @@ export function PricingSection() {
   return (
     <>
       <WaitlistPopup isOpen={isOpen} onClose={closePopup} />
-    <section id="pricing" className="py-12" style={{background: "linear-gradient(129.61deg, #FACB15 0%, #EF4543 100%)"}}>
+    <section id="pricing" className="py-8" style={{background: "linear-gradient(129.61deg, #FACB15 0%, #EF4543 100%)"}}>
       <div className="max-w-full mx-auto px-6 sm:px-8 lg:px-12 xl:px-20 2xl:px-28">
         <div className="text-center mb-16">
           <h2 
