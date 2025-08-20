@@ -61,16 +61,19 @@ function Navigation() {
     <>
       <WaitlistPopup isOpen={isOpen} onClose={closePopup} />
     <nav 
+      className={`fixed top-0 left-0 right-0 w-full h-32 transition-all duration-300 z-[100003] ${
+        scrolled 
+          ? 'backdrop-blur-md bg-white/70 border-b border-white/20 shadow-lg' 
+          : 'bg-transparent'
+      }`}
       style={{ 
-        position: 'relative',
-        width: '100%',
-        height: '128px',
-        background: 'transparent',
-        zIndex: 50000 // Increased navbar z-index
+        backdropFilter: scrolled ? 'blur(12px) saturate(180%)' : 'none',
+        WebkitBackdropFilter: scrolled ? 'blur(12px) saturate(180%)' : 'none',
+        backgroundColor: scrolled ? 'rgba(255, 255, 255, 0.7)' : 'transparent'
       }}
     >
-      <div className="w-full px-6 sm:px-8 lg:px-12 xl:px-20 2xl:px-28 relative z-10" style={{ backgroundColor: 'transparent' }}>
-        <div className="flex justify-between items-center h-32" style={{ backgroundColor: 'transparent' }}>
+      <div className="w-full px-6 sm:px-8 lg:px-12 xl:px-20 2xl:px-28 relative z-10">
+        <div className="flex justify-between items-center h-32">
           <div className="flex-shrink-0 flex items-center" style={{ zIndex: 10000 }}>
             <img 
               src={careerFrameLogo} 
@@ -295,7 +298,7 @@ export default function Home() {
     <>
       <div className="relative">
         <Navigation />
-        <div style={{ marginTop: '-128px' }}>
+        <div style={{ paddingTop: '0px' }}>
           {/* Coming Soon Section at the top */}
           <div className="fade-in">
             <ComingSoonPage />

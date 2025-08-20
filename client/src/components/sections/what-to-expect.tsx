@@ -10,7 +10,7 @@ export function WhatToExpectSection() {
         backgroundColor: '#ffffff !important',
         background: '#ffffff !important',
         position: 'relative',
-        zIndex: 100002
+        zIndex: 10
       }} 
       className="what-to-expect-white-bg"
     >

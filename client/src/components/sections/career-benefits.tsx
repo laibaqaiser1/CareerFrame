@@ -9,7 +9,7 @@ export function CareerBenefitsSection() {
   return (
     <section className="white-section-override relative py-8" 
       style={{ 
-        zIndex: 50,
+        zIndex: 10,
         backgroundColor: "#ffffff",
         background: "#ffffff" 
       }}

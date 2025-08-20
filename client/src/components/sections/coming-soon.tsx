@@ -13,13 +13,16 @@ import chartBreakoutIcon from "../../assets/chart-breakout-square.png";
 import { Target, TrendingUp, Search, Users, Bot, Trophy } from "lucide-react";
 
 // Enhanced preload with timeout and retry logic for better device compatibility
-const preloadImages = () => {
+const preloadImages = (callback?: () => void) => {
   if (typeof window !== "undefined") {
     const imagesToPreload = [
       "/Pattern.png",
-      "/TopLeftCornerFrame.png",
+      "/TopLeftCornerFrame.png", 
       "/BottomRightCornerFrame.png",
     ];
+
+    let loadedCount = 0;
+    const totalImages = imagesToPreload.length;
 
     imagesToPreload.forEach((src) => {
       const img = new Image();
@@ -28,6 +31,8 @@ const preloadImages = () => {
       const timeout = setTimeout(() => {
         console.warn(`Timeout loading: ${src}`);
         sessionStorage.setItem(`failed_${src.replace("/", "")}`, "true");
+        loadedCount++;
+        if (loadedCount === totalImages && callback) callback();
       }, 10000); // 10 second timeout
 
       img.onload = () => {
@@ -36,12 +41,16 @@ const preloadImages = () => {
         // Clear any previous failure flags
         sessionStorage.removeItem(`failed_${src.replace("/", "")}`);
         sessionStorage.setItem(`preloaded_${src.replace("/", "")}`, "true");
+        loadedCount++;
+        if (loadedCount === totalImages && callback) callback();
       };
 
       img.onerror = () => {
         clearTimeout(timeout);
         console.warn(`Failed to preload: ${src}`);
         sessionStorage.setItem(`failed_${src.replace("/", "")}`, "true");
+        loadedCount++;
+        if (loadedCount === totalImages && callback) callback();
       };
 
       // Always use cache-busting parameter for fresh loading
@@ -70,6 +79,7 @@ export function ComingSoonPage() {
   const [email, setEmail] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [imagesLoaded, setImagesLoaded] = useState(false);
+  const [patternReady, setPatternReady] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
   const [cacheVersion] = useState(() => Date.now()); // Stable cache version
   const { toast } = useToast();
@@ -174,7 +184,18 @@ export function ComingSoonPage() {
     }
 
     // Preload background images on component mount
-    preloadImages();
+    preloadImages(() => {
+      console.log("All images preloaded, setting pattern ready");
+      setPatternReady(true);
+      // Force reflow to ensure pattern displays
+      setTimeout(() => {
+        const section = document.querySelector('.coming-soon-section');
+        if (section) {
+          console.log("Pattern class applied:", section.classList.contains('pattern-loaded'));
+          console.log("Section background:", window.getComputedStyle(section).background.substring(0, 100));
+        }
+      }, 100);
+    });
 
     // Check if images are already loaded from cache
     const checkCacheStatus = () => {
@@ -237,10 +258,12 @@ export function ComingSoonPage() {
 
     const createCornerFrame = (src: string, isTopLeft: boolean) => {
       const frameDiv = document.createElement("div");
-      frameDiv.className = `corner-frame-${isTopLeft ? "top-left" : "bottom-right"}`;
+      frameDiv.className = `corner-frame-${isTopLeft ? "top-left" : "bottom-right"} ${isTopLeft ? "" : "bottom-right-frame"}`;
       frameDiv.style.cssText = `
         position: absolute !important;
-        ${isTopLeft ? "top: -40px !important; left: -30px !important;" : "bottom: 0px !important; right: 0px !important;"}
+        ${isTopLeft 
+          ? (isMobile ? "top: -20px !important; left: -20px !important;" : "top: -40px !important; left: -30px !important;")
+          : (isMobile ? "bottom: -5px !important; right: -5px !important;" : "bottom: 0px !important; right: 0px !important;")}
         width: ${isMobile ? "280px" : "520px"} !important;
         height: ${isMobile ? "280px" : "600px"} !important;
         z-index: 100001 !important;
@@ -287,7 +310,7 @@ export function ComingSoonPage() {
       false,
     );
 
-    // Scroll animation handler for corner frames
+    // Scroll animation handler for corner frames (both mobile and desktop)
     const handleScroll = () => {
       if (topLeftFrame && bottomRightFrame) {
         const scrollValue = window.scrollY;
@@ -297,7 +320,18 @@ export function ComingSoonPage() {
         const bottomRightYValue = scrollValue * 0.16;
         
         topLeftFrame.style.transform = `translate3d(${topLeftXValue}px, ${topLeftYValue}px, 0)`;
-        bottomRightFrame.style.transform = `translate3d(${bottomRightXValue}px, ${bottomRightYValue}px, 0)`;
+        
+        // Combine scale and translate for bottom right frame on mobile
+        if (isMobile) {
+          bottomRightFrame.style.transform = `scale(0.8) translate3d(${bottomRightXValue}px, ${bottomRightYValue}px, 0)`;
+        } else {
+          bottomRightFrame.style.transform = `translate3d(${bottomRightXValue}px, ${bottomRightYValue}px, 0)`;
+        }
+        
+        // Debug scroll animation (reduced frequency) - can be removed in production
+        // if (scrollValue % 10 === 0) {
+        //   console.log(`🔄 Scroll: ${scrollValue}px, TopLeft: (${topLeftXValue}, ${topLeftYValue}), BottomRight: (${bottomRightXValue}, ${bottomRightYValue})`);
+        // }
       }
     };
 
@@ -310,7 +344,7 @@ export function ComingSoonPage() {
       const existingFrames = bannerSection.querySelectorAll(
         ".corner-frame-top-left, .corner-frame-bottom-right",
       );
-      existingFrames.forEach((frame) => frame.remove());
+      existingFrames.forEach((frame: Element) => frame.remove());
     };
   }, [isMobile]);
 
@@ -488,38 +522,12 @@ export function ComingSoonPage() {
   return (
     <div>
       <section
-        className="flex flex-col relative motion-safe coming-soon-section"
+        className={`flex flex-col relative motion-safe force-animations coming-soon-section ${patternReady ? 'pattern-loaded' : ''}`}
       style={{
-        background:
-          "linear-gradient(303.01deg, #FFF1F0 0%, #FFFAF1 33.33%, #E8FAF6 66.67%, #EAF6FD 100%)",
+        background: `linear-gradient(303.01deg, #FFF1F0 0%, #FFFAF1 33.33%, #E8FAF6 66.67%, #EAF6FD 100%)`,
         width: "100%",
-        backgroundAttachment: "scroll",
-        backgroundSize: "cover",
       }}
     >
-      {/* Pattern Background - Enhanced Mobile Coverage */}
-      <div
-        className="absolute top-0 right-0 w-1/2 h-full pattern-background md:w-1/2"
-        style={{
-          backgroundImage: sessionStorage.getItem("failed_Pattern.png")
-            ? "linear-gradient(45deg, rgba(255,241,240,0.15) 0%, rgba(255,250,241,0.15) 50%, rgba(240,248,255,0.15) 100%)"
-            : `url(/Pattern.png?v=${cacheVersion})`,
-          backgroundRepeat: "no-repeat",
-          backgroundSize: "cover", 
-          backgroundPosition: isMobile ? "center right" : "center",
-          backgroundColor: "rgba(255,250,241,0.1)",
-          opacity: 1,
-          width: isMobile ? "50%" : "50%",
-          position: "absolute",
-          top: 0,
-          right: 0,
-          zIndex: 1,
-          transform: "translateZ(0)",
-          WebkitTransform: "translateZ(0)",
-          backfaceVisibility: "hidden",
-          WebkitBackfaceVisibility: "hidden",
-        }}
-      />
 
       {/* Corner frames are now injected directly into document.body via useEffect */}
       <div className="w-full max-w-full mx-auto px-4 sm:px-6 md:px-8 lg:px-12 xl:px-20 2xl:px-28 flex-1 flex flex-col relative z-10">
@@ -529,13 +537,13 @@ export function ComingSoonPage() {
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-center max-w-xl mx-auto w-full"
+            className="text-center max-w-xl mx-auto w-full mobile-fade-in"
           >
             <motion.h1
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.4 }}
-              className="text-4xl sm:text-4xl md:text-5xl lg:text-6xl font-semibold text-center text-gray-800 mb-4 leading-tight px-2"
+              className="text-4xl sm:text-4xl md:text-5xl lg:text-6xl font-semibold text-center text-gray-800 mb-4 leading-tight px-2 mobile-slide-up"
               style={{
                 fontFamily: "Inter",
                 letterSpacing: "-0.02em",
@@ -547,7 +555,7 @@ export function ComingSoonPage() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.6 }}
-              className="text-sm sm:text-base md:text-lg text-center text-gray-600 mb-4 px-4 max-w-2xl mx-auto"
+              className="text-sm sm:text-base md:text-lg text-center text-gray-600 mb-4 px-4 max-w-2xl mx-auto mobile-fade-in-delayed"
               style={{
                 fontFamily: "Inter",
                 lineHeight: "1.5",

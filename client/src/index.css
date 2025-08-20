@@ -497,6 +497,68 @@ button.navbar-signin-btn {
   will-change: transform;
 }
 
+/* Ensure animations work on all devices including mobile */
+@media (max-width: 768px) {
+  .motion-safe * {
+    animation-play-state: running !important;
+    animation-fill-mode: forwards !important;
+  }
+  
+  /* Force enable framer-motion animations on mobile */
+  [data-framer-motion] {
+    animation-play-state: running !important;
+  }
+}
+
+/* Override any motion preferences that might disable animations */
+@media (prefers-reduced-motion: reduce) {
+  .force-animations * {
+    animation: revert !important;
+    transition: revert !important;
+  }
+}
+
+/* Fallback CSS animations for mobile devices */
+@media (max-width: 768px) {
+  .mobile-fade-in {
+    animation: mobileFadeIn 1s ease-out forwards;
+    opacity: 0;
+  }
+  
+  .mobile-slide-up {
+    animation: mobileSlideUp 1s ease-out 0.3s forwards;
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  
+  .mobile-fade-in-delayed {
+    animation: mobileFadeIn 1s ease-out 0.6s forwards;
+    opacity: 0;
+  }
+}
+
+@keyframes mobileFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes mobileSlideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 /* Ensure images load reliably across devices */
 img, .background-image {
   image-rendering: -webkit-optimize-contrast;
@@ -830,18 +892,26 @@ body.dark,
   }
 
   .slide-in-left {
-    /* Disabled animation to prevent horizontal scrolling */
-    /* animation: slideInLeft 0.8s ease-out forwards; */
+    animation: slideInLeft 0.8s ease-out forwards;
   }
 
   .slide-in-right {
-    /* Disabled animation to prevent scrollbar issues */
-    /* animation: slideInRight 0.8s ease-out forwards; */
+    animation: slideInRight 0.8s ease-out forwards;
   }
 
   .scale-in {
-    /* Disabled animation to prevent scrollbar issues */
-    /* animation: scaleIn 0.5s ease-out forwards; */
+    animation: scaleIn 0.5s ease-out forwards;
+  }
+
+  /* Mobile-specific animation overrides to prevent scrollbar issues */
+  @media (max-width: 768px) {
+    .slide-in-left, .slide-in-right {
+      animation-duration: 0.4s; /* Faster animations on mobile */
+    }
+    
+    .scale-in {
+      animation-duration: 0.3s; /* Faster scale animations on mobile */
+    }
   }
 }
 
@@ -940,28 +1010,85 @@ body.dark,
   .pattern-background {
     background-attachment: scroll !important;
     -webkit-background-attachment: scroll !important;
-    transform: translateZ(0);
-    -webkit-transform: translateZ(0);
+    transform: translateZ(0) !important;
+    -webkit-transform: translateZ(0) !important;
     will-change: auto;
     backface-visibility: hidden;
     -webkit-backface-visibility: hidden;
-    position: fixed !important;
+    position: absolute !important;
     top: 0 !important;
     right: 0 !important;
     width: 50% !important;
+    height: 100% !important;
     background-size: cover !important;
     background-position: center right !important;
     background-repeat: no-repeat !important;
-    z-index: 0 !important;
+    z-index: 10 !important;
     pointer-events: none !important;
+    opacity: 1 !important;
+    display: block !important;
+    visibility: visible !important;
+  }
+
+  /* Pattern background container - NEW CLASS to avoid conflicts */
+  .pattern-background-container {
+    background-attachment: scroll !important;
+    -webkit-background-attachment: scroll !important;
+    transform: translateZ(0) !important;
+    -webkit-transform: translateZ(0) !important;
+    will-change: auto !important;
+    backface-visibility: hidden !important;
+    -webkit-backface-visibility: hidden !important;
+    position: absolute !important;
+    top: 0 !important;
+    right: 0 !important;
+    width: 50% !important;
+    height: 100% !important;
+    background-size: cover !important;
+    background-position: center right !important;
+    background-repeat: no-repeat !important;
+    z-index: 100 !important;
+    pointer-events: none !important;
+    opacity: 1 !important;
+    display: block !important;
+    visibility: visible !important;
+  }
+
+  /* Force pattern background to show using pseudo-element */
+  section.coming-soon-section.pattern-loaded::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 50%;
+    height: 100%;
+    background: url('/Pattern.png') center right/cover no-repeat;
+    pointer-events: none;
+    z-index: -1;
+    opacity: 0.8;
   }
 
   @media (max-width: 768px) {
-    .pattern-background {
-      width: 50% !important;
-      background-position: right center !important;
+    section.coming-soon-section.pattern-loaded::after {
+      width: 60%;
+      right: -5%;
+    }
+    
+    /* Bottom right corner frame mobile setup */
+    .bottom-right-frame {
+      transform-origin: bottom right !important;
+      will-change: transform !important;
     }
   }
+
+/* Glass navigation effect */
+.glass-nav {
+  backdrop-filter: blur(12px) saturate(180%) !important;
+  -webkit-backdrop-filter: blur(12px) saturate(180%) !important;
+  background: rgba(255, 255, 255, 0.7) !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2) !important;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1) !important;
+}
 
   /* Electric square animations with different speeds */
   .electric-square-1 {
@@ -1178,22 +1305,22 @@ body.dark,
 @keyframes slideInLeft {
   from {
     opacity: 0;
-    /* Removed translateX to prevent horizontal scrolling */
+    transform: translateY(15px); /* Use vertical movement instead of horizontal */
   }
   to {
     opacity: 1;
-    /* Removed translateX to prevent horizontal scrolling */
+    transform: translateY(0);
   }
 }
 
 @keyframes slideInRight {
   from {
     opacity: 0;
-    /* Removed translateX to prevent horizontal scrolling */
+    transform: translateY(15px); /* Use vertical movement instead of horizontal */
   }
   to {
     opacity: 1;
-    /* Removed translateX to prevent horizontal scrolling */
+    transform: translateY(0);
   }
 }
 
