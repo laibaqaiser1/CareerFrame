@@ -28,7 +28,7 @@ export function Footer() {
               />
             </div>
             <p className="text-gray-300 text-sm mb-6 leading-relaxed">
-              Empowering careers through AI-powered<br className="hidden md:block" /> guidance and personalized coaching.
+              Empowering careers through AI-powered guidance and personalized coaching.
             </p>
             <div className="flex space-x-4">
               <a href="https://x.com/careerframe_" target="_blank" rel="noopener noreferrer">
